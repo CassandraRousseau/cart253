@@ -1,13 +1,13 @@
 /**************************************************
-Drawing an Alien Activity
+ Activity 02: Draw an Alien
 Cassandra Rousseau
 
-Creation of an alien.
+Drawing an alien on a canvas.
 **************************************************/
 
 // setup()
 //
-// Description of setup() goes here.
+// Draws an alien face.
 function setup() {
 
 //Set the backgroud in pink
@@ -43,7 +43,7 @@ rect(320, 345, 90, 10);
 
 // draw()
 //
-// Description of draw() goes here.
+// Does nothing.
 function draw() {
 
 }
