@@ -5,10 +5,13 @@ Pippin Barr
 Here is a description of this template p5 project.
 **************************************************/
 let bgShade = 0;
-let circleX = 0;
-let circleY=250;
-let circleSize = 200;
-let circleSpeed=2;
+let circle = {
+x:250,
+y:250,
+size:200,
+speed:2,
+fill:0
+};
 
 // setup()
 //
@@ -23,13 +26,15 @@ createCanvas(500, 500);
 //
 // Description of draw() goes here.
 function draw() {
-  bgShade=bgShade +1;
   background(bgShade);
-circleX+= circleSpeed;
+  circle.speed=random(-5,5);
+circle.x+= circle.speed;
 
-ellipse(circleX,circleY, circleSize);
+circle.size=random(10,100);
+circle.fill=random(0,255);
+fill(circle.fill);
+ellipse(circle.x,circle.y, circle.size);
 
-console.log(`circleX: ${circleX}, circleY: ${circleY},circleSize: ${circleSize},circleSpeed: ${circleSpeed}`);
 
 
 }
