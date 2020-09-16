@@ -4,7 +4,7 @@ Cassandra Rousseau
 
 Here is a description of this template p5 project.
 **************************************************/
-let background ={
+let bg ={
   r:0,
   g:0,
   b:0,
@@ -36,8 +36,8 @@ noStroke();
 //
 function draw() {
 //background
-background(background.r,background.g,background.b);
-background.r+=1;
+bg(bg.r,bg.g,bg.b);
+bg.r+=1;
 //circle1
 fill(circle1.fill, circle1.alpha);
 ellipse(circle1.x,circle1.y,circle1.size)
