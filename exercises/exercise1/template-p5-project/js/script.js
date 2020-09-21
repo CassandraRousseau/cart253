@@ -12,30 +12,30 @@ let circle1 ={
   x:100,
   y:200,
 size:100,
-r:200,
-g:200,
-b:0,
-alpha:200,
-speed:1,
+r:255,
+g:100,
+b:10,
+alpha:225,
+speed:0.75,
 growth:1,
 };
 let circle2={
 x:500,
 y:100,
 size:150,
-r:0,
-g:0,
-b:255,
+r:200,
+g:155,
+b:10,
 alpha:225,
 speed:-1,
-growth:-0.5,
+growth:-0.25,
 };
 
 let arc1={
   x:10,
   y:700,
   w:900,
-  h:700,
+  h:675,
   start:0,
   stop:180,
 };
@@ -51,28 +51,47 @@ let arc2 ={
   b:0,
   alpha:255
 };
-let oval={
-  x:0,
-  y:250,
-  w:150,
-  h:100,
-  r:200,
-  g:200,
-  b:0,
-  speed:5,
+let oval1={
+x:0,
+y:500,
+w:500,
+h:0,
+r:200,
+g:100,
+b:0,
+growth:-1,
 };
-let rectangle={
-  w:50,
+let oval2={
+  w:195,
   h:100,
+  r:225,
+  g:125,
+  b:0,
+};
+let rectangle1={
+  w:80,
+  h:145,
   tl:5,
   tr:5,
+  r:0,
+  g:215,
+  b:215,
+};
+let rectangle2={
+  w:195,
+  h:45,
+  tl:5,
+  tr:5,
+  r:0,
+  g:215,
+  b:215,
 };
 // setup()
 //
 // Creating the canvas.
 function setup() {
 createCanvas(500,500);
-stroke(255);
+stroke(255,150);
 strokeWeight(8);
 }
 
@@ -82,7 +101,7 @@ strokeWeight(8);
 function draw() {
 //background(universe)
 background(bg.r,bg.g,bg.b);
-bg.b= map (circle1.size,100,width,0,225);
+bg.b= map (circle1.size,110,width,0,225);
 //stars
 point(300,200);
 point(200,300);
@@ -100,33 +119,62 @@ point(0,200);
 point(0,30);
 
 //Jupiter
-ellipse(circle1.x,circle1.y,circle1.size);
 fill(circle1.r,circle1.g,circle1.b,circle1.alpha);
+circle1.g= map (circle1.x,250,width,0,255);
+circle1.b = map (circle1.x,250,width,0,255);
+ellipse(circle1.x,circle1.y,circle1.size);
 circle1.x+=circle1.speed;
 circle1.size+=circle1.growth;
 circle1.size=constrain(circle1.size,0,150);
 //Mars
-ellipse(circle2.x,circle2.y,circle2.size);
 fill(circle2.r,circle2.g,circle2.b);
+circle2.b = map (circle1.x,500,250,0,150);
+ellipse(circle2.x,circle2.y,circle2.size);
 circle2.x+=circle2.speed;
 circle2.y= constrain(circle2.y,0,250);
 circle2.x= constrain (circle2.x,0,width);
 circle2.size+=circle2.growth;
 circle2.size=constrain(circle2.size,0,100);
 //saturn ring
-ellipse(arc1.x,arc1.y,arc1.w,arc1.h,arc1.start,arc1.stop);
+push();
 noFill();
-//saturn 
-ellipse(arc2.x,arc2.y,arc2.w,arc2.h,arc2.start,arc2.stop);
+stroke(255,255);
+strokeWeight(15);
+ellipse(arc1.x,arc1.y,arc1.w,arc1.h,arc1.start,arc1.stop);
+pop();
+//saturn
+push();
+blendMode(HARD_LIGHT);
 fill(arc2.r,arc2.g,arc2.b);
-//spacecraft cockpit
-rect(mouseX,mouseY,rectangle.w,rectangle.h,rectangle.tl,rectangle.tr);
-
+ellipse(arc2.x,arc2.y,arc2.w,arc2.h,arc2.start,arc2.stop);
+//saturn shades
+noStroke();
+fill(oval1.r,oval1.g,oval1.b);
+ellipse(oval1.x,oval1.y,oval1.w,oval1.h);
+oval1.y+= oval1.growth
+oval1.y= constrain(oval1.y,500,200);
+pop();
 //spacecraft
-ellipse(mouseX,mouseY,oval.w,oval.h);
-
-fill(oval.r,oval.g,oval.b);
-oval.r= map(mouseX,0,mouseY,10,225);
-
-
+fill(oval2.r,oval2.g,oval2.b);
+ellipse(mouseX,mouseY,oval2.w,oval2.h);
+oval2.r= map(mouseX,0,mouseY,10,225);
+//spacecraft cockpit
+push();
+noStroke();
+fill(rectangle1.r,rectangle1.g,rectangle1.b);
+rectangle1.b= map(mouseX,0,mouseY,10,225);
+rect(mouseX,mouseY,rectangle1.w,rectangle1.h,rectangle1.tl,rectangle1.tr);
+pop();
+rectMode(CENTER);
+//hiding cockpit on spacecraft
+push();
+noStroke();
+fill(oval2.r,oval2.g,oval2.b);
+ellipse(mouseX,mouseY,oval2.w,oval2.h);
+oval2.r= map(mouseX,0,mouseY,10,225);
+pop();
+//Spacecraft's windows
+fill(rectangle2.r,rectangle2.g,rectangle2.b);
+rectangle2.g= map(mouseX,0,mouseY,10,225);
+rect(mouseX,mouseY,rectangle2.w,rectangle2.h,rectangle2.tl,rectangle2.tr);
 }
