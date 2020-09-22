@@ -3,11 +3,16 @@ Template p5 project
 Cassandra Rousseau
 Conditionals experiments
 **************************************************/
-let caterpillar = {
-  x: 100,
+let bg= {
+  r:0,
+  g:0,
+  b:0,
+}
+let circle = {
+  x: 250,
   y: 250,
-  segmentSize: 50,
-};
+  size: 100,
+}
 // setup()
 //
 // Description of setup() goes here.
@@ -18,13 +23,11 @@ function setup() {
 //
 // Description of draw() goes here.
 function draw() {
-  background(0);
-  noStroke();
-  fill(100,200,100);
-  let x = caterpillar.x;
-  let numSegments = 10;
-  for(let i=0;i<numSegments;i++) {
-    ellipse(x, caterpillar.y, caterpillar.segmentSize);
-    x = x + 40;
-  }
+  background(bg.r,bg.g,bg.b);
+ellipse(circle.x,circle.y,circle.size);
+}
+function mouseDragged(){
+  bg.r=random(0,255);
+  bg.g=random(0,255);
+  bg.b=random(0,255);
 }
