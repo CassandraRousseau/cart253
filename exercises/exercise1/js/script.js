@@ -31,7 +31,6 @@ size:150,
 r:200,
 g:155,
 b:10,
-alpha:225,
 speed:-1,
 growth:-0.25,
 };
@@ -54,7 +53,7 @@ let arc2 ={
   r:200,
   g:200,
   b:0,
-  alpha:255,
+
 };
 let oval1 = {
   x:0,
