@@ -3,13 +3,7 @@ Template p5 project
 Cassandra Rousseau
 Conditionals experiments
 **************************************************/
-let backgroundShade = 0;
-let circle = {
-  x: 0,
-  y: 250,
-  size: 100,
-  speed: 1,
-};
+let displayCircle= false;
 // setup()
 //
 // Description of setup() goes here.
@@ -20,10 +14,15 @@ function setup() {
 //
 // Description of draw() goes here.
 function draw() {
-  background(backgroundShade);
-  circle.x += circle.speed;
-if(!(circle.x<width/3)){
-    fill(255,0,0);
+  background(0);
+  if (mouseIsPressed){
+    displayCircle=true;
+  }
+if(displayCircle){
+  ellipse(250,250,100,100);
 }
-  ellipse(circle.x, circle.y, circle.size);
+
+
+
+
 }
