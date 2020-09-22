@@ -1,15 +1,14 @@
 /**************************************************
 Template p5 project
-Pippin Barr
-
-Here is a description of this template p5 project.
+Cassandra Rousseau
+Conditionals experiments
 **************************************************/
 let backgroundShade = 0;
 let circle = {
   x: 0,
   y: 250,
   size: 100,
-  speed: 5,
+  speed: 1,
 };
 // setup()
 //
@@ -23,18 +22,8 @@ function setup() {
 function draw() {
   background(backgroundShade);
   circle.x += circle.speed;
-  if (circle.x > width) {
-    circle.speed = -circle.speed;
-  }
-  if(circle.x<0){
-    circle.speed=-circle.speed;
-  }
-  if(mouseY<height/2){
-fill(255,0,0);
-
-  }
-  if(mouseY>height/2){
-    fill(0,0,255);
-  }
+if(!(circle.x<width/3)){
+    fill(255,0,0);
+}
   ellipse(circle.x, circle.y, circle.size);
 }
