@@ -14,19 +14,28 @@ y:250,
 size:100,
 vx:0,
 vy:0,
-speed:5
-}
-let red={
+speed:5,
+fill:{
   r:255,
   g:0,
   b:0
 }
+}
+
 // setup()
 //
-// Description of setup() goes here.
-function setup() {}
+// Creating the canvas
+function setup() {
+  createCanvas(windowWidth,windowHeight);
+}
 
 // draw()
 //
 // Description of draw() goes here.
-function draw() {}
+function draw() {
+  background(0);
+
+  fill(covid19.fill.r,covid19.fill.g,covid19.fill.b);
+  noStroke();
+  ellipse(covid19.x,covid19.y,covid19.size);
+}
