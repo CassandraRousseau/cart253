@@ -1,5 +1,5 @@
 /**************************************************
-Activity 04: Dodging COVID-19
+Exercise 02: Dodge-em 
 Cassandra Rousseau
 COVID-19, represented by a red circle, will move from the left side of
 the canvas to the right at a random y position. Each time it reaches the
