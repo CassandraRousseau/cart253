@@ -15,17 +15,17 @@ let covid19 = {
   vx: 0,
   vy: 0,
   speed: 5,
-  fill: {
-    r: 255,
-    g: 0,
-    b: 0,
-  },
 };
 let user = {
   x: 250,
   y: 250,
-  size: 100,
-  fill: 255,
+  w: 100,
+  h:50,
+  fill:{
+  r:100,
+  g:100,
+  b:200,
+  }
 };
 let numStatic = 500;
 // setup()
@@ -43,14 +43,14 @@ function setup() {
 // Creating the COVID19 simulation.
 function draw() {
   //Creating background
-  background(0);
+  background(255);
   //Display static
   for (let i = 0; i < numStatic; i++) {
     let x = random(0, width);
     let y = random(0, height);
-    stroke(255);
-    point(x, y);
-  }
+    stroke(200,100,100);
+    ellipse(x, y,50);
+  };
   //Creating COVID19 movement
   noStroke();
   covid19.x += covid19.vx;
@@ -58,20 +58,27 @@ function draw() {
   if (covid19.x > width) {
     covid19.x = 0;
     covid19.y = random(0, height);
+  };
 if (covid19.y<height/2){
-  covid19.fill(0);
-    }
-  else {
-    covid19.fill(255,10,100)
+  fill(255);
 }
-  }
+else{
+    fill(200,100,100)
+};
+
   //Display COVID19
-  fill(covid19.fill.r, covid19.fill.g, covid19.fill.b);
+
   ellipse(covid19.x, covid19.y, covid19.size);
   //Display user
   fill(user.fill);
-  ellipse(user.x, user.y, user.size);
+  rect(user.x, user.y, user.w,user.h);
+  if (user.x>width/2){
+fill(255);
 }
+else{
+      fill(user.r,user.g,user.b);
+  };
+
   //Creating catching effect
 function mouseDragged() {
   user.x = mouseX;
@@ -79,5 +86,5 @@ function mouseDragged() {
   let d = dist(user.x, user.y, covid19.x, covid19.y);
   if (d < covid19.size / 2 + user.size / 2) {
     noLoop();
-  }
+  };
 }
