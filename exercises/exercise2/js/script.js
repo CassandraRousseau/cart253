@@ -53,32 +53,31 @@ function draw() {
   };
   //Creating COVID19 movement
   noStroke();
-  covid19.x += covid19.vx;
-  covid19.y += covid19.vy;
   if (covid19.x > width) {
     covid19.x = 0;
     covid19.y = random(0, height);
   };
+  if (mouseX>covid19.x){
+    covid19.vx=covid19.speed;
+  }
+  else if(mouseX<covid19.x){
+    covid19.vx=-covid19.speed;
+  }
+if(mouseY>covid19.y){
+  covid.vy=covid19.speed;
+}
+else if(mouseY<covid19.y){
+  covid.vy=-covid19.speed;
+}
+covid19.x += covid19.vx;
+covid19.y += covid19.vy;
+
 if (covid19.y<height/2){
   fill(255);
 }
 else{
     fill(200,100,100)
 };
-
-  //Display COVID19
-
-  ellipse(covid19.x, covid19.y, covid19.size);
-  //Display user
-  fill(user.fill);
-  rect(user.x, user.y, user.w,user.h);
-  if (user.x>width/2){
-fill(255);
-}
-else{
-      fill(user.r,user.g,user.b);
-  };
-
   //Creating catching effect
 function mouseDragged() {
   user.x = mouseX;
@@ -86,5 +85,15 @@ function mouseDragged() {
   let d = dist(user.x, user.y, covid19.x, covid19.y);
   if (d < covid19.size / 2 + user.size / 2) {
     noLoop();
+  };
+  //Display COVID19
+  ellipse(covid19.x, covid19.y, covid19.size);
+  //Display user
+  rect(user.x, user.y, user.w,user.h);
+  if (user.x>width/2){
+fill(255);
+}
+else{
+fill(user.r,user.g,user.b);
   };
 }
