@@ -1,5 +1,5 @@
 /**************************************************
-Exercise 02: Dodge-em 
+Exercise 02: Dodge-em
 Cassandra Rousseau
 COVID-19, represented by a red circle, will move from the left side of
 the canvas to the right at a random y position. Each time it reaches the
@@ -58,13 +58,12 @@ function draw() {
   if (covid19.x > width) {
     covid19.x = 0;
     covid19.y = random(0, height);
-  }
-  //Creating catching effect
-  user.x = mouseX;
-  user.y = mouseY;
-  let d = dist(user.x, user.y, covid19.x, covid19.y);
-  if (d < covid19.size / 2 + user.size / 2) {
-    noLoop();
+if (covid19.y<height/2){
+  covid19.fill(0);
+    }
+  else {
+    covid19.fill(255,10,100)
+}
   }
   //Display COVID19
   fill(covid19.fill.r, covid19.fill.g, covid19.fill.b);
@@ -72,4 +71,13 @@ function draw() {
   //Display user
   fill(user.fill);
   ellipse(user.x, user.y, user.size);
+}
+  //Creating catching effect
+function mouseDragged() {
+  user.x = mouseX;
+  user.y = mouseY;
+  let d = dist(user.x, user.y, covid19.x, covid19.y);
+  if (d < covid19.size / 2 + user.size / 2) {
+    noLoop();
+  }
 }
