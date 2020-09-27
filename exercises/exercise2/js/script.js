@@ -1,12 +1,11 @@
 /**************************************************
 Exercise 02: Dodge-em
 Cassandra Rousseau
-COVID-19, represented by a red circle, will move from the left side of
-the canvas to the right at a random y position. Each time it reaches the
-right side, it will reset to the left at a random y position. The user will
-control their own circle with the mouse position. If the COVID-19 circle touches
-the user circle, everything stops! In the background we see random static for visual
- flair and we don’t see the mouse cursor.
+COVID-19 bacteria will move from the left side of the canvas to the right at a random y position. Each time it reaches the
+right side, it will reset to the left at a random y position.COVID-19 will disappear at the bottom of the screen and
+reappar at the top. The user will control their mask by mouse dragging. The mask will disappear at the left side
+of the screen and reappear at the right side. If the COVID-19 touches the user's mask, everything stops!
+In the background we see random static for visual flair and we don’t see the mouse cursor.
 **************************************************/
 let covid19 = {
   x: 0,
@@ -31,7 +30,7 @@ let mask = {
     alpha: undefined,
   },
 };
-let numStatic = 300;
+let numStatic = 400;
 //Loading images for simulation.
 function preload() {
   covid19.image = loadImage("assets/images/covidicon.png");
@@ -47,7 +46,7 @@ function setup() {
 }
 // draw()
 //
-// Creating COVID19 simulation.
+// Creating COVID-19 simulation.
 function draw() {
   //Creating background
   background(255);
@@ -59,7 +58,7 @@ function draw() {
     stroke(200, 100, 100);
     ellipse(x, y, 50);
   }
-  //Creating COVID19 movement
+  //Creating COVID-19 movement
   noStroke();
   covid19.x += covid19.vx;
   covid19.y += covid19.vy;
@@ -67,13 +66,13 @@ function draw() {
     covid19.x = 0;
     covid19.y = random(0, height);
   }
-  //Modifying Covid19 tints
+  //Modifying COVID-19 tints and opacity
   if (covid19.y < height / 2) {
     tint(255, 225);
   } else {
     tint(200, 100, 100, 20);
   }
-  //Dsiplay COVID19 image
+  //Display COVID-19 image
   image(covid19.image, covid19.x, covid19.y, covid19.w, covid19.h);
   //Display mask image
   tint(mask.tint.r, mask.tint.g, mask.tint.b, mask.tint.alpha);
