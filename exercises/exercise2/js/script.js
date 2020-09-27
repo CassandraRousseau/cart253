@@ -32,7 +32,7 @@ let mask = {
   },
 };
 let numStatic = 300;
-// setup()
+//Loading images for simulation.
 function preload() {
   covid19.image = loadImage("assets/images/covidicon.png");
   mask.image = loadImage("assets/images/bluemask.png");
@@ -45,10 +45,9 @@ function setup() {
   covid19.vx = covid19.speed;
   noCursor();
 }
-
 // draw()
 //
-// Creating the COVID19 simulation.
+// Creating COVID19 simulation.
 function draw() {
   //Creating background
   background(255);
@@ -68,12 +67,15 @@ function draw() {
     covid19.x = 0;
     covid19.y = random(0, height);
   }
+  //Modifying Covid19 tints
   if (covid19.y < height / 2) {
     tint(255, 225);
   } else {
     tint(200, 100, 100, 20);
   }
+  //Dsiplay COVID19 image
   image(covid19.image, covid19.x, covid19.y, covid19.w, covid19.h);
+  //Display mask image
   tint(mask.tint.r, mask.tint.g, mask.tint.b, mask.tint.alpha);
   image(mask.image, mask.x, mask.y, mask.w, mask.h);
 }
@@ -85,7 +87,7 @@ function mouseDragged() {
   if (d < covid19.w / 2 + mask.w / 2) {
     noLoop();
   }
-  //Modifying user fill
+  //Modifying mask tints and opacity
   if (mask.x > width / 2) {
     mask.tint.r = 255;
     mask.tint.g = 255;
