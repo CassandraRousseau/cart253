@@ -41,7 +41,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   covid19.y = random(0, height);
   covid19.vx = covid19.speed;
-  noCursor();
+noCursor();
 }
 
 // draw()
@@ -50,11 +50,12 @@ function setup() {
 function draw() {
   //Creating background
   background(255);
-  //Display static
 
+  //Display static
   for (let i = 0; i < numStatic; i++) {
     let x = random(0, width);
     let y = random(0, height);
+    fill(255);
     stroke(200, 100, 100);
     ellipse(x, y,50);
   }
@@ -72,23 +73,27 @@ function draw() {
   } else {
     fill(200, 100, 100);
   }
-}
+  ellipse(covid19.x, covid19.y, covid19.size);
 
+  fill(user.fill.r, user.fill.g, user.fill.b);
+  rect(user.x, user.y, user.w, user.h);
+}
 //Creating catching effect
 function mouseDragged() {
   user.x = mouseX;
   user.y = mouseY;
   let d = dist(user.x, user.y, covid19.x, covid19.y);
-  if (d < covid19.size / 2 + user.size / 2) {
+  if (d < covid19.size / 2 + user.h/2) {
     noLoop();
   }
-  //Display COVID19
-  ellipse(covid19.x, covid19.y, covid19.size);
-  //Display user
-  rect(user.x, user.y, user.w, user.h);
+  //Modifying user fill
   if (user.x > width / 2) {
-    fill(255);
+    user.fill.r = 255;
+    user.fill.g = 255;
+    user.fill.b = 255;
   } else {
-    fill(user.fill.r, user.fill.g, user.fill.b);
+    user.fill.r = 100;
+    user.fill.g = 100;
+    user.fill.b = 200;
   }
 }
