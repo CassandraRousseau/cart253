@@ -16,7 +16,7 @@ let covid19 = {
   image: undefined,
   vx: 0,
   vy: 0,
-  speed: 5,
+  speed: 15,
 };
 let mask = {
   x: 250,
@@ -28,6 +28,7 @@ let mask = {
     r: 100,
     g: 100,
     b: 200,
+    alpha: undefined,
   },
 };
 let numStatic = 300;
@@ -68,12 +69,12 @@ function draw() {
     covid19.y = random(0, height);
   }
   if (covid19.y < height / 2) {
-    tint(255);
+    tint(255, 225);
   } else {
-    tint(200, 100, 100);
+    tint(200, 100, 100, 20);
   }
   image(covid19.image, covid19.x, covid19.y, covid19.w, covid19.h);
-  tint(mask.tint.r, mask.tint.g, mask.tint.b);
+  tint(mask.tint.r, mask.tint.g, mask.tint.b, mask.tint.alpha);
   image(mask.image, mask.x, mask.y, mask.w, mask.h);
 }
 //Creating catching effect
@@ -89,9 +90,11 @@ function mouseDragged() {
     mask.tint.r = 255;
     mask.tint.g = 255;
     mask.tint.b = 255;
+    mask.tint.alpha = 200;
   } else {
     mask.tint.r = 100;
     mask.tint.g = 100;
-    mask.tint.b = 200;
+    mask.tint.b = 100;
+    mask.tint.alpha = 50;
   }
 }
