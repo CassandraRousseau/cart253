@@ -51,13 +51,12 @@ function draw() {
   //Creating background
   background(255);
   //Display static
-  let x=circle.x
-  let y=circle.y
+
   for (let i = 0; i < numStatic; i++) {
     let x = random(0, width);
     let y = random(0, height);
     stroke(200, 100, 100);
-    ellipse(x, y,circle.size);
+    ellipse(x, y,50);
   }
 
   //Creating COVID19 movement
