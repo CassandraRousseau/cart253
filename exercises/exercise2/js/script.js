@@ -12,6 +12,7 @@ let covid19 = {
   x: 0,
   y: 250,
   size: 100,
+  image: undefined,
   vx: 0,
   vy: 0,
   speed: 5,
@@ -19,8 +20,8 @@ let covid19 = {
 let mask = {
   x: 250,
   y: 250,
-  w: 100,
-  h: 50,
+  size: 100,
+  image: undefined,
   tint: {
     r: 100,
     g: 100,
@@ -30,8 +31,8 @@ let mask = {
 let numStatic = 300;
 // setup()
 function preload() {
-  covid19 = loadimage("assets/images/covidicon.png");
-  mask = loadimage("assets/images/bluemask.png");
+  covid19.image = loadimage("assets/images/covidicon.png");
+  mask.image = loadimage("assets/images/bluemask.png");
 }
 //
 // Creating the canvas
@@ -69,16 +70,16 @@ function draw() {
   } else {
     tint(200, 100, 100);
   }
-  image(covid19, covid19.x, covid.y, covid19.size);
+  image(covid19.image, covid19.x, covid.y, covid19.size);
   tint(mask.tint.r, mask.tint.g, mask.tint.b);
-  rect(mask.x, mask.y, mask.w, mask.h);
+  image(mack.image, mask.x, mask.y, mask.size);
 }
 //Creating catching effect
 function mouseDragged() {
   mask.x = mouseX;
   mask.y = mouseY;
   let d = dist(mask.x, mask.y, covid19.x, covid19.y);
-  if (d < covid19.size / 2 + mask.h / 2) {
+  if (d < covid19.size / 2 + mask.size / 2) {
     noLoop();
   }
   //Modifying user fill
