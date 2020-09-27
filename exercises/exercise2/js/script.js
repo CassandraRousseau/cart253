@@ -11,7 +11,8 @@ the user circle, everything stops! In the background we see random static for vi
 let covid19 = {
   x: 0,
   y: 250,
-  size: 100,
+  w: 150,
+  h: 150,
   image: undefined,
   vx: 0,
   vy: 0,
@@ -20,7 +21,8 @@ let covid19 = {
 let mask = {
   x: 250,
   y: 250,
-  size: 100,
+  w: 150,
+  h: 150,
   image: undefined,
   tint: {
     r: 100,
@@ -31,8 +33,8 @@ let mask = {
 let numStatic = 300;
 // setup()
 function preload() {
-  covid19.image = loadimage("assets/images/covidicon.png");
-  mask.image = loadimage("assets/images/bluemask.png");
+  covid19.image = loadImage("assets/images/covidicon.png");
+  mask.image = loadImage("assets/images/bluemask.png");
 }
 //
 // Creating the canvas
@@ -70,26 +72,26 @@ function draw() {
   } else {
     tint(200, 100, 100);
   }
-  image(covid19.image, covid19.x, covid.y, covid19.size);
+  image(covid19.image, covid19.x, covid19.y, covid19.w, covid19.h);
   tint(mask.tint.r, mask.tint.g, mask.tint.b);
-  image(mack.image, mask.x, mask.y, mask.size);
+  image(mask.image, mask.x, mask.y, mask.w, mask.h);
 }
 //Creating catching effect
 function mouseDragged() {
   mask.x = mouseX;
   mask.y = mouseY;
   let d = dist(mask.x, mask.y, covid19.x, covid19.y);
-  if (d < covid19.size / 2 + mask.size / 2) {
+  if (d < covid19.w / 2 + mask.w / 2) {
     noLoop();
   }
   //Modifying user fill
   if (mask.x > width / 2) {
-    mask.fill.r = 255;
-    mask.fill.g = 255;
-    mask.fill.b = 255;
+    mask.tint.r = 255;
+    mask.tint.g = 255;
+    mask.tint.b = 255;
   } else {
-    mask.fill.r = 100;
-    mask.fill.g = 100;
-    mask.fill.b = 200;
+    mask.tint.r = 100;
+    mask.tint.g = 100;
+    mask.tint.b = 200;
   }
 }
