@@ -36,26 +36,52 @@ function setup() {
 
 // draw()
 //
-// Creating the animation.
+//Creating the background.
 function draw() {
-  //Creating the background.
   background(0);
+}
+// Creating the simulation.
+function simulation() {
+  move();
+  checkOffscreen();
+  checkOverlap();
+  display();
+}
+function move() {
   //Setting circles movements
   circle1.x += circle1.vx;
   circle1.y += circle1.vy;
   circle2.x += circle2.vx;
   circle2.y += circle2.vy;
-  //Display circles
-  ellipse(circle1.x, circle1.y, circle1.size);
-  ellipse(circle2.x, circle2.y, circle2.size);
+}
+function checkOffscreen() {
   //Checking if circles go outside the canvas.
-  if (circle.x < 0 || (circle.x > width && circle.y < 0) || circle.y > height) {
+  if (
+    circle1.x < 0 ||
+    circle1.x > width ||
+    circle1.y < 0 ||
+    circle1.y > height ||
+    circle2.x < 0 ||
+    circle2.x > width ||
+    circle2.y < 0 ||
+    circle2.y > height
+  ) {
     string("Sad ending");
   }
-  //Checking if circles overlapped
+}
+function checkOverlap() {
+  //Checking if circles overlapped{
   let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
   if (d < circle1.size / 2 + circle2.size / 2) {
     string("True love!");
   }
-  //
+}
+function display() {
+  //Display circles
+  ellipse(circle1.x, circle1.y, circle1.size);
+  ellipse(circle2.x, circle2.y, circle2.size);
+}
+
+function title() {
+  string("LOVE?");
 }
