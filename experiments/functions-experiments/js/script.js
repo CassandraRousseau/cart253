@@ -10,6 +10,10 @@ Here is a description of this template p5 project.
 // Description of setup() goes here.
 function setup() {
 createCanvas(500,500);
+let hotCelsius = toCelsius(100);
+console.log('100 degrees Farenheit is ${hotCelsius} degrees Celsius.');
+let coldCelsius= toCelsius(10);
+console.log('10 degrees Farenheit is ${coldCelsius} degrees Celsius.');
 }
 
 // draw()
@@ -17,19 +21,8 @@ createCanvas(500,500);
 // Description of draw() goes here.
 function draw() {
 background(0);
-parallels(100,100,5,1,100,1);
-parallels(50,50,10,2,20,10);
-parallels(200,200,15,7,3,20);
-parallels(312,257,20,5,300,1);
 }
-function parallels(x,y,numLines,lineWidth,lineHeight,lineSpacing){
-
-  for(let i=0;i<numLines;i++){
-    noStroke();
-    fill(255);
-    rectMode(CENTER);
-    rect(x,y,lineWidth,lineHeight);
-    x+=lineSpacing;
-}
-
+function toCelsius(farenheit){
+  let celsius =(farenheit-32)*5/9;
+  return celsius;
 }
