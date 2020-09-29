@@ -45,4 +45,7 @@ function draw() {
   circle2.vx = random(-circle2.speed, circle2.speed);
   circle2.vy = random(-circle2.speed, circle2.speed);
   ellipse(circle2.x, circle2.y, circle2.size);
+  if (circle.x < 0 || (circle.x > width && circle.y < 0) || circle.y > height) {
+    string("Sad ending");
+  }
 }
