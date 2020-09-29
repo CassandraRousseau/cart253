@@ -4,35 +4,37 @@ Cassandra Rousseau
 
 Here is a description of this template p5 project.
 **************************************************/
-let hello= {
-  string:'Hello,world!',
-  x:250,
+let circle= {
+  x:0,
   y:250,
-  vx:5,
-  vy:1,
-  size:64,
+  vx:0,
+  vy:0,
+  speed:2,
+  size:100,
 }
 // setup()
 //
 // Description of setup() goes here.
 function setup() {
 createCanvas(500,500);
-
+circle.vx=circle.speed;
+textSize(32);
+textAlign(CENTER,CENTER);
 }
-
+let state='title';
 // draw()
 //
 // Description of draw() goes here.
 function draw() {
 background(0);
-hello.x+=hello.vx;
-hello.y+=hello.vy;
-hello.size+=1;
-textAlign(CENTER,CENTER);
-textSize(hello.size);
-textStyle(BOLD);
-fill(200,50,200);
-stroke(50,200,50);
-strokeWeight(3);
-text(hello.string,hello.x,hello.y);
+//text
+fill(255);
+text('Life',width/2,height/2);
+//Animation
+circle.x+=circle.vx;
+circle.y+=circle.vy;
+ellipse(circle.x,circle.y,circle.size);
+//Ending
+fill(127);
+
 }
