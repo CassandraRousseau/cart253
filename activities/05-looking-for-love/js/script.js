@@ -53,7 +53,9 @@ function draw() {
     string("Sad ending");
   }
   //Checking if circles overlapped
-  if (dis) {
+  let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
+  if (d < circle1.size / 2 + circle2.size / 2) {
     string("True love!");
   }
+  //
 }
