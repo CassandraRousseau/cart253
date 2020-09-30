@@ -21,7 +21,7 @@ let circle2 = {
   vy: 0,
   speed: 2,
 };
-let state = "simulation";
+let state = "title";
 // setup()
 //
 // Creating the canvas.
@@ -114,8 +114,8 @@ function display() {
   ellipse(circle1.x, circle1.y, circle1.size);
   ellipse(circle2.x, circle2.y, circle2.size);
 }
-function mousePrssed() {
+function mousePressed() {
   if (state === "title") {
-    let state = "simulation";
+    state = "simulation";
   }
 }
