@@ -21,11 +21,13 @@ let circle2 = {
   vy: 0,
   speed: 2,
 };
+let state = "simulation";
 // setup()
 //
 // Creating the canvas.
 function setup() {
   createCanvas(500, 500);
+  //Setting circles positions
   circle1.x = width / 3;
   circle2.x = (2 * width) / 3;
   circle1.vx = random(-circle1.speed, circle1.speed);
@@ -39,6 +41,15 @@ function setup() {
 //Creating the background.
 function draw() {
   background(0);
+  if (state === "title") {
+    title();
+  } else if (state === "simulation") {
+    simulation();
+  } else if (state === "love") {
+    love();
+  } else if (state === "sadness") {
+    sadness();
+  }
 }
 // Creating the simulation.
 function simulation() {
@@ -46,6 +57,30 @@ function simulation() {
   checkOffscreen();
   checkOverlap();
   display();
+}
+function title() {
+  push();
+  textSize(65);
+  fill(200, 100, 100);
+  textAlign(CENTER, CENTER);
+  text("LOVE?", width / 2, height / 2);
+  pop();
+}
+function love() {
+  push();
+  textSize(65);
+  fill(200, 100, 100);
+  textAlign(CENTER, CENTER);
+  text("TRUE LOVE!", width / 2, height / 2);
+  pop();
+}
+function sadness() {
+  push();
+  textSize(65);
+  fill(100, 100, 200);
+  textAlign(CENTER, CENTER);
+  text("FAKE LOVE...", width / 2, height / 2);
+  pop();
 }
 function move() {
   //Setting circles movements
@@ -56,24 +91,22 @@ function move() {
 }
 function checkOffscreen() {
   //Checking if circles go outside the canvas.
-  if (
-    circle1.x < 0 ||
-    circle1.x > width ||
-    circle1.y < 0 ||
-    circle1.y > height ||
-    circle2.x < 0 ||
-    circle2.x > width ||
-    circle2.y < 0 ||
-    circle2.y > height
-  ) {
-    string("Sad ending");
+  if (isOffscreen(circle1) || isOffscreen(circle2)) {
+    state = "sadness";
+  }
+}
+function isOffscreen(circle) {
+  if (circle.x < 0 || circle.x > width || circle.y < 0 || circle.y > height) {
+    return true;
+  } else {
+    return false;
   }
 }
 function checkOverlap() {
   //Checking if circles overlapped{
   let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
   if (d < circle1.size / 2 + circle2.size / 2) {
-    string("True love!");
+    state = "love";
   }
 }
 function display() {
@@ -81,7 +114,8 @@ function display() {
   ellipse(circle1.x, circle1.y, circle1.size);
   ellipse(circle2.x, circle2.y, circle2.size);
 }
-
-function title() {
-  string("LOVE?");
+function mousePrssed() {
+  if (state === "title") {
+    let state = "simulation";
+  }
 }
