@@ -6,8 +6,8 @@ they each move off in a random direction. If they touch each other,the simulatio
 If one goes off the edge of the canvas, the simulation ends in deep sadness.
 **************************************************/
 let circle1 = {
-  x: 150,
-  y: 250,
+  x: 0,
+  y: 0,
   size: 100,
   vx: 0,
   vy: 0,
@@ -111,7 +111,7 @@ function checkOverlap() {
 }
 function display() {
   //Display circles
-  ellipse(circle1.x, circle1.y, circle1.size);
+  ellipse(mouseX, mouseY, circle1.size);
   ellipse(circle2.x, circle2.y, circle2.size);
 }
 function mousePressed() {
