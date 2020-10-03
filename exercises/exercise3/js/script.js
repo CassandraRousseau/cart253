@@ -94,8 +94,9 @@ function instructions() {
   push();
   textSize(65);
   fill(200, 100, 100);
-  textAlign(CENTER, CENTER);
-  text("Cupidventure", width / 2, height / 2);
+  textAlign(LEFTCORNER, UPLEFTCORNER);
+  text("Hello Cupid!", 100,10);
+  text("Your misssion is")
   pop();
 }
 function love() {
