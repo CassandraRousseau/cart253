@@ -29,18 +29,13 @@ let bg = {
 let coffeeshop = {
   image: undefined,
 };
+let table={
+  image:undefined,
+};
 let hand = {
-  x: 250,
-  y: 250,
-  w: 150,
-  h: 150,
+  x:0,
+  y:0,
   image: undefined,
-  tint: {
-    r: 100,
-    g: 100,
-    b: 200,
-    alpha: undefined,
-  },
 };
 let plate = {
   x: 100,
@@ -79,7 +74,8 @@ function preload() {
   coffeeshop.image = loadImage("assets/images/");
   success.image = loadImage("assets/images/");
   failure.image = loadImage("assets/images/");
-    table.image = loadImage("assets/images/");
+    table.image = loadImage("assets/images/table.png");
+    hand.image = loadImage("assets/images/");
 }
 // setup()
 //
@@ -125,8 +121,6 @@ function title() {
 }
 function welcome() {
   push();
-  //Display COVID-19 image
-  image(covid19.image, covid19.x, covid19.y, covid19.w, covid19.h);
   //Display mask image
   textSize(65);
   fill(200, 100, 100);
@@ -176,13 +170,27 @@ function mousePressed(){
   }
 }
 function move() {
-  //Setting circles movements
-  circle1.x += circle1.vx;
-  circle1.y += circle1.vy;
-  circle2.x += circle2.vx;
-  circle2.y += circle2.vy;
-  circle2.y = constrain(circle2.y, width/2,height/2);
-  circle2.x = constrain(circle2.x,width/2,height/2);
+  //Setting mug movements
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  coffee.y = constrain(coffee.y, width/2,height/2);
+  coffee.x = constrain(coffee.x,width/2,height/2);
+  mug.y = constrain(mug.y, width/2,height/2);
+  mug.x = constrain(mug.x,width/2,height/2);
+  shadow.y = constrain(shadow.y, width/2,height/2);
+  shadow.x = constrain(shadow.x,width/2,height/2);
+handle.y = constrain(handle.y, width/2,height/2);
+handle.x = constrain(handle.x,width/2,height/2);
+plate.y = constrain(plate.y, width/2,height/2);
+plate.x = constrain(plate.x,width/2,height/2);
 }
 
 function isOffscreen(circle) {
@@ -203,15 +211,21 @@ function display() {
   //Display circles
   ellipse(circle1.x, circle1.y, circle1.size);
   ellipse(circle2.x, circle2.y, circle2.size);
+  ellipse(circle1.x, circle1.y, circle1.size);
+  ellipse(circle2.x, circle2.y, circle2.size);
+  //Display table image
+  image(table.image,windowWidth,windowHeight);
+  //Display hand image
+  image(hand.image,mouseX,mouseY);
 }
-function mouseDragged() {
-  mask.x = mouseX;
-  mask.y = mouseY;
-  let d = dist(mask.x, mask.y, covid19.x, covid19.y);
-  if (d < covid19.w / 2 + mask.w / 2) {
-    noLoop();
+function drawing() {
+  hand.x = mouseX;
+  hand.y = mouseY;
+  stroke(255)
+  if (mouseIsPressed===true) {
+  line(mouseX,mouseY,pmouseX,pmouseY)
   }
-
+  noLoop();
 // draw()
 //
 //Creating the solar system
