@@ -71,6 +71,7 @@ let handle= {
 let state = "title";
 //Loading images for simulation.
 function preload() {
+  soundTrack = loadSound ("");
   coffeeshop.image = loadImage("assets/images/");
   success.image = loadImage("assets/images/");
   failure.image = loadImage("assets/images/");
@@ -123,7 +124,7 @@ function welcome() {
   push();
   //Display mask image
   textSize(65);
-  fill(200, 100, 100);
+  fill(200,200,100);
   textAlign(CENTER, CENTER);
   text("LOVE?", width / 2, height / 2);
   pop();
@@ -153,7 +154,7 @@ function failure() {
   text("FAKE LOVE...", width / 2, height / 2);
   pop();
 }
-function checkOffscreen() {
+function wrongDrawing() {
   //Checking if circles go outside the canvas.
   if (isOffscreen(circle1) || isOffscreen(circle2)) {
     state = "failure";
@@ -200,7 +201,7 @@ function isOffscreen(circle) {
     return false;
   }
 }
-function checkOverlap() {
+function rightDrawing() {
   //Checking if circles overlapped{
   let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
   if (d < circle1.size / 2 + circle2.size / 2) {
@@ -221,152 +222,9 @@ function display() {
 function drawing() {
   hand.x = mouseX;
   hand.y = mouseY;
-  stroke(255)
+  stroke(255);
+  strokeWeight(5);
   if (mouseIsPressed===true) {
   line(mouseX,mouseY,pmouseX,pmouseY)
   }
   noLoop();
-// draw()
-//
-//Creating the solar system
-  //Draws the strokes
-  stroke(255, 150);
-  strokeWeight(8);
-
-
-  //Draws Jupiter(left circle)
-  fill(circle1.r, circle1.g, circle1.b, circle1.alpha);
-
-  ellipse(circle1.x, circle1.y, circle1.size);
-  circle1.x += circle1.speed;
-
-  circle1.size = constrain(circle1.size, 0, 150);
-  //Draws Mars(right circle)
-  fill(circle2.r, circle2.g, circle2.b);
-  circle2.b = map(circle1.x, 500, 250, 0, 150);
-  ellipse(circle2.x, circle2.y, circle2.size);
-  circle2.x += circle2.speed;
-  circle2.size += circle2.growth;
-  circle2.size = constrain(circle2.size, 0, 100);
-  //Draws Saturn ring
-  push();
-  noFill();
-  stroke(255, 255);
-  strokeWeight(15);
-  arc1.x = random(0, 20);
-  ellipse(arc1.x, arc1.y, arc1.w, arc1.h, arc1.start, arc1.stop);
-  arc1.x += arc1.speed;
-  pop();
-  //Draws Saturn(bottom left circle)
-  push();
-  blendMode(HARD_LIGHT);
-  fill(arc2.r, arc2.g, arc2.b);
-  ellipse(arc2.x, arc2.y, arc2.w, arc2.h, arc2.start, arc2.stop);
-  //Draws Saturn shadow
-  noStroke();
-  fill(oval1.r, oval1.g, oval1.b);
-  ellipse(oval1.x, oval1.y, oval1.w, oval1.h);
-  oval1.w += oval1.growth;
-  oval1.w = constrain(oval1.w, 0, 500);
-  oval1.h += oval1.growth;
-  oval1.h = constrain(oval1.h, 0, 500);
-  pop();
-  //Draws the spaceship
-  fill(oval2.r, oval2.g, oval2.b);
-  ellipse(mouseX, mouseY, oval2.w, oval2.h);
-  oval2.r = map(mouseX, 0, mouseY, 10, 225);
-  //Draws the spaceship cockpit
-  push();
-  noStroke();
-  fill(rectangle1.r, rectangle1.g, rectangle1.b);
-  rectangle1.b = map(mouseX, 0, mouseY, 10, 225);
-  rect(
-    mouseX,
-    mouseY,
-    rectangle1.w,
-    rectangle1.h,
-    rectangle1.tl,
-    rectangle1.tr
-  );
-  pop();
-  rectMode(CENTER);
-  //Hiding a part of the cockpit on spaceship
-  push();
-  noStroke();
-  fill(oval2.r, oval2.g, oval2.b);
-  ellipse(mouseX, mouseY, oval2.w, oval2.h);
-  oval2.r = map(mouseX, 0, mouseY, 10, 225);
-  pop();
-  //Draws the spaceship's windows
-  fill(rectangle2.r, rectangle2.g, rectangle2.b);
-  rectangle2.g = map(mouseX, 0, mouseY, 10, 225);
-  rect(
-    mouseX,
-    mouseY,
-    rectangle2.w,
-    rectangle2.h,
-    rectangle2.tl,
-    rectangle2.tr
-  );
-}
-////////
-//
-// Creating the canvas
-function setup() {
-  covid19.y = random(0, height);
-  covid19.vx = covid19.speed;
-}
-// draw()
-//
-// Creating COVID-19 simulation.
-function draw() {
-  //Creating background
-  background(255);
-  //Display static
-  for (let i = 0; i < numStatic; i++) {
-    let x = random(0, width);
-    let y = random(0, height);
-    fill(255);
-    stroke(200, 100, 100);
-    ellipse(x, y, 50);
-  }
-  //Creating COVID-19 movement
-  noStroke();
-  covid19.x += covid19.vx;
-  covid19.y += covid19.vy;
-  if (covid19.x > width) {
-    covid19.x = 0;
-    covid19.y = random(0, height);
-  }
-  //Modifying COVID-19 tints and opacity
-  if (covid19.y < height / 2) {
-    tint(255, 225);
-  } else {
-    tint(200, 100, 100, 20);
-  }
-
-}
-
-  //Modifying mask tints and opacity
-  if (mask.x > width / 2) {
-    mask.tint.r = 255;
-    mask.tint.g = 255;
-    mask.tint.b = 255;
-    mask.tint.alpha = 200;
-  } else {
-    mask.tint.r = 100;
-    mask.tint.g = 100;
-    mask.tint.b = 100;
-    mask.tint.alpha = 50;
-  }
-}
-/////
-
-  //Setting circles positions
-  circle1.x = width / 3;
-  circle2.x = (2 * width) / 3;
-  circle1.vx = random(-circle1.speed, circle1.speed);
-  circle1.vy = random(-circle1.speed, circle1.speed);
-  circle2.vx = random(-circle2.speed, circle2.speed);
-  circle2.vy = random(-circle2.speed, circle2.speed);
-}
