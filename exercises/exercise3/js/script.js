@@ -29,17 +29,24 @@ let cupid = {
   size: 100,
   image: undefined,
 };
+let invisibleheart = {
+  x: 350,
+  y: 250,
+  size: 100,
+  image: undefined,
+};
 let state = "title";
 function preload() {
   heartbreak.image = loadImage("assets/images/heartbreak.png");
   cupid.image = loadImage("assets/images/cupid.png");
   heart.image = loadImage("assets/images/heart.png");
+  invisibleheart.image = loadImage("assets/images/invisibleheart.png");
 }
 // setup()
 //
 // Creating the canvas.
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
   //Setting circles positions
   circle1.x = width / 3;
   circle2.x = (2 * width) / 3;
@@ -56,12 +63,16 @@ function draw() {
   background(0);
   if (state === "title") {
     title();
+  } else if (state === "instructions") {
+    instructions();
   } else if (state === "simulation") {
     simulation();
   } else if (state === "love") {
     love();
   } else if (state === "sadness") {
     sadness();
+  }else if (state==="?"){
+    ?();
   }
 }
 // Creating the simulation.
@@ -76,7 +87,15 @@ function title() {
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
-  text("LOVE?", width / 2, height / 2);
+  text("Cupidventure", width / 2, height / 2);
+  pop();
+}
+function instructions() {
+  push();
+  textSize(65);
+  fill(200, 100, 100);
+  textAlign(CENTER, CENTER);
+  text("Cupidventure", width / 2, height / 2);
   pop();
 }
 function love() {
@@ -84,7 +103,7 @@ function love() {
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
-  text("TRUE LOVE!", width / 2, height / 2);
+  text("SPREAD LOVE!", width / 2, height / 2);
   pop();
 }
 function sadness() {
@@ -92,15 +111,23 @@ function sadness() {
   textSize(65);
   fill(100, 100, 200);
   textAlign(CENTER, CENTER);
-  text("FAKE LOVE...", width / 2, height / 2);
+  text("...", width / 2, height / 2);
+  pop();
+}
+function ?(){
+  push();
+  textSize(65);
+  fill(100, 100, 200);
+  textAlign(CENTER, CENTER);
+  text("...", width / 2, height / 2);
   pop();
 }
 function move() {
   //Setting circles movements
-  circle1.x += circle1.vx;
-  circle1.y += circle1.vy;
-  circle2.x += circle2.vx;
-  circle2.y += circle2.vy;
+  heart.x += heart.vx;
+  heart.y += heart.vy;
+  heartbreak.x += heartbreak.vx;
+  heartbreak.y += heartbreak.vy;
 }
 function checkOffscreen() {
   //Checking if circles go outside the canvas.
@@ -129,6 +156,8 @@ function display() {
 }
 function mousePressed() {
   if (state === "title") {
+    state = "instructions";
+  } else if (state === "instructions") {
     state = "simulation";
   }
 }
