@@ -5,23 +5,36 @@ We will open with a title screen. When the simulation begins we see two circles 
 they each move off in a random direction. If they touch each other,the simulation ends with love triumphant!
 If one goes off the edge of the canvas, the simulation ends in deep sadness.
 **************************************************/
-let circle1 = {
+let heart = {
   x: 0,
   y: 0,
   size: 100,
   vx: 0,
   vy: 0,
   speed: 2,
+  image: undefined,
 };
-let circle2 = {
+let heartbreak = {
   x: 350,
   y: 250,
   size: 100,
   vx: 0,
   vy: 0,
   speed: 2,
+  image: undefined,
+};
+let cupid = {
+  x: 0,
+  y: 0,
+  size: 100,
+  image: undefined,
 };
 let state = "title";
+function preload() {
+  heartbreak.image = loadImage("assets/images/heartbreak.png");
+  cupid.image = loadImage("assets/images/cupid.png");
+  heart.image = loadImage("assets/images/heart.png");
+}
 // setup()
 //
 // Creating the canvas.
