@@ -18,6 +18,7 @@ let heartbreak = {
   x: 350,
   y: 250,
   size: 100,
+  growth: 1,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -49,11 +50,15 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   //Setting circles positions
   heart.x = width / 3;
+    heart.x =2* -width / 3;
   heartbreak.x = (2 * width) / 3;
   heart.vx = random(-heart.speed, heart.speed);
   heart.vy = random(-heart.speed, heart.speed);
   heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
   heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
+  invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
+  invisibleheart.vy = random(-invisibleheart.speed,invisibleheart.speed);
+  loop();
 }
 
 // draw()
@@ -145,16 +150,12 @@ function unknown() {
     0,
     300
   );
-  text(
-    "I will never forget my experience within this community ",
-    0,
-    450
-  );
+  text("I will never forget my experience within this community ", 0, 450);
   text("Farewell,", 0, 500);
-    text("Cupid", 0, 550);
+  text("Cupid", 0, 550);
   pop();
 }
-function quit(){
+function quit() {
   push();
   textSize(85);
   fill(255);
@@ -183,14 +184,16 @@ function isHeartbreakoverwhelm() {
     return false;
   }
 }
-function checkOverlap() {
+function () {
   //Checking if circles overlapped{
   let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
   if (d < circle1.size / 2 + circle2.size / 2) {
     state = "love";
   }
 }
-function growing() {}
+function growing() {
+  heartbreak.size += heartbreak.growth;
+}
 function display() {
   //Display circles
   image(cupid.image, mouseX, mouseY, cupid.size);
@@ -208,11 +211,7 @@ function mousePressed() {
     state = "instructions";
   } else if (state === "instructions") {
     state = "simulation";
-  }
-  else if(){
-
-  }
-  else if(state==="unknown"){
-    state="quit"
+  } else if (state === "unknown") {
+    state = "quit";
   }
 }
