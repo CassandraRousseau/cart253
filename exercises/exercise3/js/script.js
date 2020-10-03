@@ -48,12 +48,12 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //Setting circles positions
-  circle1.x = width / 3;
-  circle2.x = (2 * width) / 3;
-  circle1.vx = random(-circle1.speed, circle1.speed);
-  circle1.vy = random(-circle1.speed, circle1.speed);
-  circle2.vx = random(-circle2.speed, circle2.speed);
-  circle2.vy = random(-circle2.speed, circle2.speed);
+  heart.x = width / 3;
+  heartbreak.x = (2 * width) / 3;
+  heart.vx = random(-heart.speed, heart.speed);
+  heart.vy = random(-heart.speed, heart.speed);
+  heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
+  heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
 }
 
 // draw()
@@ -78,29 +78,40 @@ function draw() {
 // Creating the simulation.
 function simulation() {
   move();
-  checkOffscreen();
+  checkHeartbreakoverwhelm();
   checkOverlap();
   display();
 }
 function title() {
   push();
-  textSize(65);
-  fill(200, 100, 100);
+  textSize(85);
+  fill(255);
   textAlign(CENTER, CENTER);
+  textFont("CCSignLanguage");
   text("Cupidventure", width / 2, height / 2);
   pop();
 }
 function instructions() {
   push();
-  textSize(65);
+  textSize(35);
   fill(200, 100, 100);
-  textAlign(LEFTCORNER, UPLEFTCORNER);
-  text("Hello Cupid!", 0, 10);
+  textAlign(LEFT, TOP);
+  textFont("CCSignLanguage");
+  text("Hello Cupid!", 0, 50);
+  text("Your misssion today is too fight against heartbreaks!", 0, 150);
+  text("Spread love by throwing arrows on these unfortunate couples! ", 0, 200);
   text(
-    "Your misssion today is too fight against heartbreaks! Spread love by throwing arrows on these unfortunate couples! To fly through the city, move your mouse. To throw arrows, click on the left side of your mouse. Watchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place! Good luck!",
+    "To fly through the city, move your mouse.To throw arrows, click on the left side ",
     0,
-    height / 2
+    300
   );
+  text("of your mouse.", 0, 350);
+  text(
+    "Watchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms",
+    0,
+    450
+  );
+  text("the place! Good luck!", 0, 500);
   pop();
 }
 function love() {
@@ -122,10 +133,34 @@ function sadness() {
 }
 function unknown() {
   push();
-  textSize(65);
-  fill(100, 100, 200);
+  textSize(35);
+  fill(255);
+  textAlign(LEFT, TOP);
+  textFont("Consolas");
+  text("Dear Boss,", 0, 50);
+  text("I have the misfortune to announce you my departure.", 0, 150);
+  text("It is time for me to go and discover new horizons.", 0, 200);
+  text(
+    "Thanks to all the members of the organization for the gained knowledge during the past years, ",
+    0,
+    300
+  );
+  text(
+    "I will never forget my experience within this community ",
+    0,
+    450
+  );
+  text("Farewell,", 0, 500);
+    text("Cupid", 0, 550);
+  pop();
+}
+function quit(){
+  push();
+  textSize(85);
+  fill(255);
   textAlign(CENTER, CENTER);
-  text("...", width / 2, height / 2);
+  textFont("Consolas");
+  text("YOU QUIT YOUR JOB.", 0, 200);
   pop();
 }
 function move() {
@@ -173,5 +208,11 @@ function mousePressed() {
     state = "instructions";
   } else if (state === "instructions") {
     state = "simulation";
+  }
+  else if(){
+
+  }
+  else if(state==="unknown"){
+    state="quit"
   }
 }
