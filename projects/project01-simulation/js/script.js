@@ -11,20 +11,22 @@ let coffee = {
   vx: 0,
   vy: 0,
   speed: 2,
+  fill:{
+    r:200,
+    g:200,
+    b:100,
+  }
 };
 let shadow = {
   x: 350,
   y: 250,
   size: 100,
+  fill:255,
+  stroke:127,
+  strokeWeight:3,
   vx: 0,
   vy: 0,
   speed: 2,
-};
-
-let bg = {
-  r: 0,
-  g: 0,
-  b: 0,
 };
 let coffeeshop = {
   image: undefined,
@@ -41,22 +43,16 @@ let plate = {
   x: 100,
   y: 200,
   size: 100,
-  r: 255,
-  g: 100,
-  b: 10,
-  alpha: 225,
+fill:255
   speed: 0.75,
-  growth: 1,
+
 };
 let mug = {
   x: 500,
   y: 100,
   size: 150,
-  r: 200,
-  g: 155,
-  b: 10,
-  speed: -1,
-  growth: -0.25,
+fill:255
+  speed: 1,
 };
 
 let handle= {
@@ -64,9 +60,7 @@ let handle= {
   h: 145,
   tl: 5,
   tr: 5,
-  r: 0,
-  g: 215,
-  b: 215,
+fill:255
 };
 let state = "title";
 //Loading images for simulation.
