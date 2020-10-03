@@ -43,7 +43,7 @@ let plate = {
   x: 100,
   y: 200,
   size: 100,
-fill:255
+fill:255,
   speed: 0.75,
 
 };
@@ -117,10 +117,16 @@ function title() {
 function welcome() {
   push();
   //Display mask image
-  textSize(65);
+  textSize(35);
   fill(200,200,100);
-  textAlign(CENTER, CENTER);
-  text("LOVE?", width / 2, height / 2);
+  textFont("Blambot Pro BB")
+  textAlign(LEFT, TOP);
+  text("Welcome new employee!", 0, 50);
+    text("We are glad to have you in our team!", 0, 150);
+    text("This newly open coffeeshop need your talent to create succulent latte!",0.200);
+    text("Press your mouse and drag it to make drawings on latte",0,300);
+    text("Follow the guidelines to create beautiful artworks!",0,350);
+      text("Be artsy, have fun and good luck!",0,350);
   pop();
 }
 function simulation() {
@@ -136,6 +142,7 @@ function success() {
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
   text("Congratulations!", width / 2, height / 2);
+    text("Customers ADORE your latte!", width / 2, 350);
   pop();
 }
 function failure() {
@@ -145,7 +152,9 @@ function failure() {
   textSize(65);
   fill(100, 100, 200);
   textAlign(CENTER, CENTER);
-  text("FAKE LOVE...", width / 2, height / 2);
+  text("OH NO!", width / 2, height / 2);
+    text("Coffeeccino is closing!", width / 2, 350);
+        text("You will have to find another job...", width / 2, 450);
   pop();
 }
 function wrongDrawing() {
