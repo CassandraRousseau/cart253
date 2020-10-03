@@ -71,8 +71,8 @@ function draw() {
     love();
   } else if (state === "sadness") {
     sadness();
-  }else if (state==="?"){
-    ?();
+  } else if (state === "unknown") {
+    unknown();
   }
 }
 // Creating the simulation.
@@ -95,8 +95,12 @@ function instructions() {
   textSize(65);
   fill(200, 100, 100);
   textAlign(LEFTCORNER, UPLEFTCORNER);
-  text("Hello Cupid!", 100,10);
-  text("Your misssion is")
+  text("Hello Cupid!", 0, 10);
+  text(
+    "Your misssion today is too fight against heartbreaks! Spread love by throwing arrows on these unfortunate couples! To fly through the city, move your mouse. To throw arrows, click on the left side of your mouse. Watchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place! Good luck!",
+    0,
+    height / 2
+  );
   pop();
 }
 function love() {
@@ -104,7 +108,8 @@ function love() {
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
-  text("SPREAD LOVE!", width / 2, height / 2);
+  text("Congratulations!", width / 2, height / 2);
+  text("Love is spread!", width / 2, (2 * height) / 2);
   pop();
 }
 function sadness() {
@@ -112,10 +117,10 @@ function sadness() {
   textSize(65);
   fill(100, 100, 200);
   textAlign(CENTER, CENTER);
-  text("...", width / 2, height / 2);
+  text("Game Over", width / 2, height / 2);
   pop();
 }
-function ?(){
+function unknown() {
   push();
   textSize(65);
   fill(100, 100, 200);
@@ -150,12 +155,18 @@ function checkOverlap() {
     state = "love";
   }
 }
+function growing() {}
 function display() {
   //Display circles
-  image(cupid.image,mouseX, mouseY,cupid.size);
-  image(heart.image,heart.x, heart.y, heart.size);
-  image(invisibleheart.image,invisibleheart.x, invisibleheart.y,invisibleheart.size);
-  image(heartbreak.image,heartbreak.x, heartbreak.y, heartbreak.size);
+  image(cupid.image, mouseX, mouseY, cupid.size);
+  image(heart.image, heart.x, heart.y, heart.size);
+  image(
+    invisibleheart.image,
+    invisibleheart.x,
+    invisibleheart.y,
+    invisibleheart.size
+  );
+  image(heartbreak.image, heartbreak.x, heartbreak.y, heartbreak.size);
 }
 function mousePressed() {
   if (state === "title") {
