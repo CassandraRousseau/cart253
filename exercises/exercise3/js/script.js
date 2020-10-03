@@ -129,14 +129,14 @@ function move() {
   heartbreak.x += heartbreak.vx;
   heartbreak.y += heartbreak.vy;
 }
-function checkOffscreen() {
+function checkHeartbreakoverwhelm() {
   //Checking if circles go outside the canvas.
-  if (isOffscreen(circle1) || isOffscreen(circle2)) {
+  if (isHeartbreakoverwhelm()) {
     state = "sadness";
   }
 }
-function isOffscreen(circle) {
-  if (circle.x < 0 || circle.x > width || circle.y < 0 || circle.y > height) {
+function isHeartbreakoverwhelm() {
+  if (heartbreak.size > width && heartbreak.size > height) {
     return true;
   } else {
     return false;
@@ -151,8 +151,10 @@ function checkOverlap() {
 }
 function display() {
   //Display circles
-  ellipse(mouseX, mouseY, circle1.size);
-  ellipse(circle2.x, circle2.y, circle2.size);
+  image(cupid.image,mouseX, mouseY,cupid.size);
+  image(heart.image,heart.x, heart.y, heart.size);
+  image(invisibleheart.image,invisibleheart.x, invisibleheart.y,invisibleheart.size);
+  image(heartbreak.image,heartbreak.x, heartbreak.y, heartbreak.size);
 }
 function mousePressed() {
   if (state === "title") {
