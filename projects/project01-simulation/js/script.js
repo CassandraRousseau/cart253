@@ -4,7 +4,22 @@ Cassandra Rousseau
 
 Here is a description of this template p5 project.
 **************************************************/
-
+let coffee = {
+  x: 150,
+  y: 250,
+  size: 200,
+  vx: 0,
+  vy: 0,
+  speed: 2,
+};
+let shadow = {
+  x: 350,
+  y: 250,
+  size: 100,
+  vx: 0,
+  vy: 0,
+  speed: 2,
+};
 
 let bg = {
   r: 0,
@@ -14,7 +29,7 @@ let bg = {
 let coffeeshop = {
   image: undefined,
 };
-let mask = {
+let hand = {
   x: 250,
   y: 250,
   w: 150,
@@ -27,7 +42,7 @@ let mask = {
     alpha: undefined,
   },
 };
-let circle1 = {
+let plate = {
   x: 100,
   y: 200,
   size: 100,
@@ -38,7 +53,7 @@ let circle1 = {
   speed: 0.75,
   growth: 1,
 };
-let circle2 = {
+let mug = {
   x: 500,
   y: 100,
   size: 150,
@@ -49,43 +64,7 @@ let circle2 = {
   growth: -0.25,
 };
 
-let arc1 = {
-  y: 725,
-  w: 900,
-  h: 675,
-  start: 0,
-  stop: 180,
-  speed: -25,
-};
-let arc2 = {
-  x: 0,
-  y: 500,
-  w: 500,
-  h: 500,
-  start: 0,
-  stop: 180,
-  r: 200,
-  g: 200,
-  b: 0,
-};
-let oval1 = {
-  x: 0,
-  y: 500,
-  w: 0,
-  h: 0,
-  r: 200,
-  g: 100,
-  b: 0,
-  growth: 1,
-};
-let oval2 = {
-  w: 195,
-  h: 100,
-  r: 225,
-  g: 125,
-  b: 0,
-};
-let rectangle1 = {
+let handle= {
   w: 80,
   h: 145,
   tl: 5,
@@ -106,7 +85,8 @@ function preload() {
 //
 // Creating the canvas.
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windoWidth, windowHeight);
+    noCursor();
 }
 function draw() {
   background(0);
@@ -127,10 +107,20 @@ function title() {
   //Display COVID-19 image
   image(coffeshop.image, windowWidth, windowHeight);
   //Display mask image
+  textFont("CCSignLanguage");
   textSize(65);
-  fill(200, 100, 100);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
   textAlign(CENTER, CENTER);
   text("Coffeeccino", width / 2, height / 2);
+  pop();
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text("Press Spacebar to start", width/2, 2 * height / 2);
   pop();
 }
 function welcome() {
@@ -176,10 +166,8 @@ function checkOffscreen() {
   }
 }
 function keyPressed() {
-  if (state === "title") {
-    else if(keyCode===32){
+  if (state === "title" && keyCode===32){
       state = "welcome";
-    }
   }
 }
 function mousePressed(){
@@ -193,6 +181,8 @@ function move() {
   circle1.y += circle1.vy;
   circle2.x += circle2.vx;
   circle2.y += circle2.vy;
+  circle2.y = constrain(circle2.y, width/2,height/2);
+  circle2.x = constrain(circle2.x,width/2,height/2);
 }
 
 function isOffscreen(circle) {
@@ -214,14 +204,17 @@ function display() {
   ellipse(circle1.x, circle1.y, circle1.size);
   ellipse(circle2.x, circle2.y, circle2.size);
 }
+function mouseDragged() {
+  mask.x = mouseX;
+  mask.y = mouseY;
+  let d = dist(mask.x, mask.y, covid19.x, covid19.y);
+  if (d < covid19.w / 2 + mask.w / 2) {
+    noLoop();
+  }
 
 // draw()
 //
 //Creating the solar system
-
-  //Draws the background(universe)
-  background(bg.r, bg.g, bg.b);
-  bg.b = map(circle1.x, 250, width, 0, 225);
   //Draws the strokes
   stroke(255, 150);
   strokeWeight(8);
@@ -229,19 +222,16 @@ function display() {
 
   //Draws Jupiter(left circle)
   fill(circle1.r, circle1.g, circle1.b, circle1.alpha);
-  circle1.g = map(circle1.x, 250, width, 0, 255);
-  circle1.b = map(circle1.x, 250, width, 0, 255);
+
   ellipse(circle1.x, circle1.y, circle1.size);
   circle1.x += circle1.speed;
-  circle1.size += circle1.growth;
+
   circle1.size = constrain(circle1.size, 0, 150);
   //Draws Mars(right circle)
   fill(circle2.r, circle2.g, circle2.b);
   circle2.b = map(circle1.x, 500, 250, 0, 150);
   ellipse(circle2.x, circle2.y, circle2.size);
   circle2.x += circle2.speed;
-  circle2.y = constrain(circle2.y, 0, 250);
-  circle2.x = constrain(circle2.x, 0, width);
   circle2.size += circle2.growth;
   circle2.size = constrain(circle2.size, 0, 100);
   //Draws Saturn ring
@@ -309,10 +299,8 @@ function display() {
 //
 // Creating the canvas
 function setup() {
-  createCanvas(windowWidth, windowHeight);
   covid19.y = random(0, height);
   covid19.vx = covid19.speed;
-  noCursor();
 }
 // draw()
 //
@@ -344,14 +332,7 @@ function draw() {
   }
 
 }
-//Creating catching effect
-function mouseDragged() {
-  mask.x = mouseX;
-  mask.y = mouseY;
-  let d = dist(mask.x, mask.y, covid19.x, covid19.y);
-  if (d < covid19.w / 2 + mask.w / 2) {
-    noLoop();
-  }
+
   //Modifying mask tints and opacity
   if (mask.x > width / 2) {
     mask.tint.r = 255;
@@ -366,28 +347,7 @@ function mouseDragged() {
   }
 }
 /////
-let circle1 = {
-  x: 150,
-  y: 250,
-  size: 100,
-  vx: 0,
-  vy: 0,
-  speed: 2,
-};
-let circle2 = {
-  x: 350,
-  y: 250,
-  size: 100,
-  vx: 0,
-  vy: 0,
-  speed: 2,
-};
 
-// setup()
-//
-// Creating the canvas.
-function setup() {
-  createCanvas(500, 500);
   //Setting circles positions
   circle1.x = width / 3;
   circle2.x = (2 * width) / 3;
