@@ -51,7 +51,7 @@ let mug = {
   x: 500,
   y: 100,
   size: 150,
-fill:255
+fill:255,
   speed: 1,
 };
 
@@ -70,7 +70,7 @@ function preload() {
   success.image = loadImage("assets/images/");
   failure.image = loadImage("assets/images/");
     table.image = loadImage("assets/images/table.png");
-    hand.image = loadImage("assets/images/");
+    hand.image = loadImage("assets/images/hand.png");
 }
 // setup()
 //
