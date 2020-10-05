@@ -9,8 +9,8 @@ If one goes off the edge of the canvas, the simulation ends in deep sadness.
 let heart = {
   x: 0,
   y: 0,
-  w: 50,
-  h: 50,
+  w: 100,
+  h: 100,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -31,15 +31,15 @@ let heartbreak = {
 let cupid = {
   x: 250,
   y: 250,
-  w: 50,
-  h: 50,
+  w: 200,
+  h: 200,
   image: undefined,
 };
 let invisibleheart = {
   x: 350,
   y: 250,
-  w: 50,
-  h: 50,
+  w: 100,
+  h: 100,
   image: undefined,
   vx: 0,
   vy: 0,
@@ -48,8 +48,8 @@ let invisibleheart = {
 let arrow = {
   x: -100,
   y: -100,
-  w: 30,
-  h: 10,
+  w: 50,
+  h: 20,
   fill: 255,
   vx: 0,
   vy: 0,
@@ -69,7 +69,7 @@ function preload() {
 // Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  //Setting circles positions
+  //Setting hearts positions
   heart.x = width / 3;
   heart.x = (2 * -width) / 3;
   heartbreak.x = (2 * width) / 3;
@@ -195,21 +195,10 @@ function move() {
   arrow.y += arrow.vy;
   heart.x += heart.vx;
   heart.y += heart.vy;
+  invisibleheart.x += invisibleheart.vx;
+  invisibleheart.y += invisibleheart.vy;
   heartbreak.x += heartbreak.vx;
   heartbreak.y += heartbreak.vy;
-}
-function checkHeartbreakoverwhelm() {
-  //Checking if circles go outside the canvas.
-  if (isHeartbreakoverwhelm()) {
-    state = "sadness";
-  }
-}
-function isHeartbreakoverwhelm() {
-  if (heartbreak.w > width && heartbreak.h > height) {
-    return true;
-  } else {
-    return false;
-  }
 }
 function heartbreakEliminated() {
   if (arrow.x > width) {
@@ -225,14 +214,18 @@ function heartbreakEliminated() {
     // Kill the enemy
     heartbreak.active = false;
   }
-
-  if (arrow.shooted) {
-    ellipse(arrow.x, arrow.y, arrow.w, arrow.h);
+}
+function checkHeartbreakoverwhelm() {
+  //Checking if circles go outside the canvas.
+  if (isHeartbreakoverwhelm()) {
+    state = "sadness";
   }
-
-  if (heartbreak.active) {
-    fill(255, 0, 0);
-    ellipse(heartbreak.x, heartbreak.y, heartbreak.w, heartbreak.h);
+}
+function isHeartbreakoverwhelm() {
+  if (heartbreak.w > width && heartbreak.h > height) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -259,6 +252,14 @@ function display() {
     heartbreak.h
   );
   rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
+  if (arrow.shooted) {
+    ellipse(arrow.x, arrow.y, arrow.w, arrow.h);
+  }
+
+  if (heartbreak.active) {
+    fill(255, 0, 0);
+    ellipse(heartbreak.x, heartbreak.y, heartbreak.w, heartbreak.h);
+  }
 }
 function mousePressed() {
   if (state === "title") {
