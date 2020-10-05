@@ -58,6 +58,7 @@ let arrow = {
 };
 
 let state = "title";
+//Loading my javascript objects
 function preload() {
   heartbreak.image = loadImage("assets/images/heartbreak.png");
   cupid.image = loadImage("assets/images/cupid.png");
@@ -86,6 +87,7 @@ function setup() {
 //Creating the background.
 function draw() {
   background(0);
+  //Making the order of the simulation
   if (state === "title") {
     title();
   } else if (state === "instructions") {
@@ -108,6 +110,7 @@ function simulation() {
   growing();
   display();
 }
+//Creating the title
 function title() {
   push();
   textSize(85);
@@ -118,6 +121,7 @@ function title() {
   heartbreakEliminated;
   pop();
 }
+//Creating the instructions
 function instructions() {
   push();
   textSize(35);
@@ -141,6 +145,7 @@ function instructions() {
   text("the place! Good luck!", 0, 500);
   pop();
 }
+//Creating the good ending
 function love() {
   push();
   textSize(65);
@@ -150,6 +155,7 @@ function love() {
   text("Love is spread!", width / 2, (2 * height) / 2);
   pop();
 }
+//Creating the bad ending
 function sadness() {
   push();
   textSize(65);
@@ -158,6 +164,7 @@ function sadness() {
   text("Game Over", width / 2, height / 2);
   pop();
 }
+//Creating the easter egg
 function unknown() {
   push();
   textSize(35);
@@ -177,6 +184,7 @@ function unknown() {
   text("Cupid", 0, 550);
   pop();
 }
+//Creating the unknown ending
 function quit() {
   push();
   textSize(85);
@@ -188,7 +196,6 @@ function quit() {
 }
 function move() {
   //Setting circles movements
-
   cupid.x = mouseX;
   cupid.y = mouseY;
   arrow.x += arrow.vx;
@@ -200,6 +207,7 @@ function move() {
   heartbreak.x += heartbreak.vx;
   heartbreak.y += heartbreak.vy;
 }
+//Setting the shooting effect
 function heartbreakEliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -209,14 +217,14 @@ function heartbreakEliminated() {
     (arrow.shooted & heartbreak.active && d < arrow.size / 2,
     heartbreak.size / 2)
   ) {
-    // Stop the bullet
+    // Stop the arrow
     arrow.shooted = false;
-    // Kill the enemy
+    // Eliminated heartbreak
     heartbreak.active = false;
   }
 }
 function checkHeartbreakoverwhelm() {
-  //Checking if circles go outside the canvas.
+  //Checking if heartbreak go outside the canvas.
   if (isHeartbreakoverwhelm()) {
     state = "sadness";
   }
@@ -228,13 +236,13 @@ function isHeartbreakoverwhelm() {
     return false;
   }
 }
-
+//Setting growing effect of heartbreak
 function growing() {
   heartbreak.w += heartbreak.growth;
   heartbreak.h += heartbreak.growth;
 }
 function display() {
-  //Display circles
+  //Display images
   image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
   image(heart.image, heart.x, heart.y, heart.w, heart.h);
   image(
@@ -244,21 +252,19 @@ function display() {
     invisibleheart.w,
     invisibleheart.h
   );
-  image(
-    heartbreak.image,
-    heartbreak.x,
-    heartbreak.y,
-    heartbreak.w,
-    heartbreak.h
-  );
-  rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
+  //Setting when arrow or heartbreak are displayed
   if (arrow.shooted) {
-    ellipse(arrow.x, arrow.y, arrow.w, arrow.h);
+    rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
 
   if (heartbreak.active) {
-    fill(255, 0, 0);
-    ellipse(heartbreak.x, heartbreak.y, heartbreak.w, heartbreak.h);
+    image(
+      heartbreak.image,
+      heartbreak.x,
+      heartbreak.y,
+      heartbreak.w,
+      heartbreak.h
+    );
   }
 }
 function mousePressed() {
