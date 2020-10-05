@@ -9,7 +9,8 @@ If one goes off the edge of the canvas, the simulation ends in deep sadness.
 let heart = {
   x: 0,
   y: 0,
-  size: 100,
+  w: 50,
+  h: 50,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -18,34 +19,42 @@ let heart = {
 let heartbreak = {
   x: 350,
   y: 250,
-  size: 100,
+  w: 50,
+  h: 50,
   growth: 1,
   vx: 0,
   vy: 0,
   speed: 2,
   image: undefined,
-    active: true
+  active: true,
 };
 let cupid = {
   x: 250,
   y: 250,
-  size: 100,
+  w: 50,
+  h: 50,
   image: undefined,
 };
 let invisibleheart = {
   x: 350,
   y: 250,
-  size: 100,
+  w: 50,
+  h: 50,
   image: undefined,
+  vx: 0,
+  vy: 0,
+  speed: 2,
 };
 let arrow = {
   x: -100,
   y: -100,
-  size: 10,
+  w: 30,
+  h: 10,
+  fill: 255,
   vx: 0,
   vy: 0,
   speed: 20,
-  shooted: false
+  shooted: false,
 };
 
 let state = "title";
@@ -62,15 +71,14 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   //Setting circles positions
   heart.x = width / 3;
-    heart.x =2* -width / 3;
+  heart.x = (2 * -width) / 3;
   heartbreak.x = (2 * width) / 3;
   heart.vx = random(-heart.speed, heart.speed);
   heart.vy = random(-heart.speed, heart.speed);
   heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
   heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
-  invisibleheart.vy = random(-invisibleheart.speed,invisibleheart.speed);
-  loop();
+  invisibleheart.vy = random(-invisibleheart.speed, invisibleheart.speed);
 }
 
 // draw()
@@ -96,7 +104,8 @@ function draw() {
 function simulation() {
   move();
   checkHeartbreakoverwhelm();
-  checkOverlap();
+  heartbreakEliminated();
+  growing();
   display();
 }
 function title() {
@@ -106,6 +115,7 @@ function title() {
   textAlign(CENTER, CENTER);
   textFont("CCSignLanguage");
   text("Cupidventure", width / 2, height / 2);
+  heartbreakEliminated;
   pop();
 }
 function instructions() {
@@ -179,10 +189,10 @@ function quit() {
 function move() {
   //Setting circles movements
 
-    cupid.x = mouseX;
-    cupid.y = mouseY;
-    arrow.x += arrow.vx;
-    arrow.y += arrow.vy;
+  cupid.x = mouseX;
+  cupid.y = mouseY;
+  arrow.x += arrow.vx;
+  arrow.y += arrow.vy;
   heart.x += heart.vx;
   heart.y += heart.vy;
   heartbreak.x += heartbreak.vx;
@@ -195,50 +205,60 @@ function checkHeartbreakoverwhelm() {
   }
 }
 function isHeartbreakoverwhelm() {
-  if (heartbreak.size > width && heartbreak.size > height) {
+  if (heartbreak.w > width && heartbreak.h > height) {
     return true;
   } else {
     return false;
   }
 }
 function heartbreakEliminated() {
-   if (arrow.x > width) {
+  if (arrow.x > width) {
     arrow.shooted = false;
   }
-  let d = dist(arrow.x, arrow.y,heartbreak.x,heartbreak.y);
-  if (arrow.shooted &,heartbreak.active && d < arrow.size / 2 ,heartbreak.size / 2) {
+  let d = dist(arrow.x, arrow.y, heartbreak.x, heartbreak.y);
+  if (
+    (arrow.shooted & heartbreak.active && d < arrow.size / 2,
+    heartbreak.size / 2)
+  ) {
     // Stop the bullet
     arrow.shooted = false;
     // Kill the enemy
-heartbreak.active = false;}
-
-  fill(255);
-  ellipse(circle.x, circle.y, circle.size);
+    heartbreak.active = false;
+  }
 
   if (arrow.shooted) {
-    ellipse(arrow.x, arrow.y, arrow.size);
+    ellipse(arrow.x, arrow.y, arrow.w, arrow.h);
   }
 
   if (heartbreak.active) {
     fill(255, 0, 0);
-    ellipse(heartbreak.x, heartbreak.y, heartbreak.size);
+    ellipse(heartbreak.x, heartbreak.y, heartbreak.w, heartbreak.h);
   }
 }
 
 function growing() {
-  heartbreak.size += heartbreak.growth;
+  heartbreak.w += heartbreak.growth;
+  heartbreak.h += heartbreak.growth;
 }
 function display() {
   //Display circles
-  image(cupid.image, mouseX, mouseY, cupid.size);
-  image(heart.image, heart.x, heart.y, heart.size);
+  image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
+  image(heart.image, heart.x, heart.y, heart.w, heart.h);
   image(
     invisibleheart.image,
     invisibleheart.x,
     invisibleheart.y,
-    invisibleheart.size
+    invisibleheart.w,
+    invisibleheart.h
   );
-  image(heartbreak.image, heartbreak.x, heartbreak.y, heartbreak.size);
+  image(
+    heartbreak.image,
+    heartbreak.x,
+    heartbreak.y,
+    heartbreak.w,
+    heartbreak.h
+  );
+  rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
 }
 function mousePressed() {
   if (state === "title") {
@@ -247,12 +267,11 @@ function mousePressed() {
     state = "simulation";
   } else if (state === "unknown") {
     state = "quit";
+  } else if (arrow.shooted) {
+    return;
   }
-  else if (arrow.shooted) {
-      return;
-    }
-    arrow.shooted = true;
-    arrow.x = circle.x;
-    arrow.y = circle.y;
-    arrow.vx = arrow.speed;
+  arrow.shooted = true;
+  arrow.x = circle.x;
+  arrow.y = circle.y;
+  arrow.vx = arrow.speed;
 }
