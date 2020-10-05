@@ -6,7 +6,27 @@ they each move off in a random direction. If they touch each other,the simulatio
 If one goes off the edge of the canvas, the simulation ends in deep sadness.
 **************************************************/
 "use strict";
-let heart = {
+let heart1 = {
+  x: 0,
+  y: 0,
+  w: 100,
+  h: 100,
+  vx: 0,
+  vy: 0,
+  speed: 1,
+  image: undefined,
+};
+let heart2 = {
+  x: 0,
+  y: 0,
+  w: 100,
+  h: 100,
+  vx: 0,
+  vy: 0,
+  speed: 1,
+  image: undefined,
+};
+let heart3 = {
   x: 0,
   y: 0,
   w: 100,
@@ -63,7 +83,9 @@ let state = "title";
 function preload() {
   heartbreak.image = loadImage("assets/images/heartbreak.png");
   cupid.image = loadImage("assets/images/cupid.png");
-  heart.image = loadImage("assets/images/heart.png");
+  heart1.image = loadImage("assets/images/heart.png");
+  heart2.image = loadImage("assets/images/heart.png");
+  heart3.image = loadImage("assets/images/heart.png");
   invisibleheart.image = loadImage("assets/images/invisibleheart.png");
 }
 // setup()
@@ -72,11 +94,17 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //Setting hearts positions
-  heart.x = width / 3;
+  heart1.x = width / 3;
+  heart2.x = (1 * width) / 3;
+  heart3.x = (2 * width) / 3;
   invisibleheart.x = (1 * width) / 3;
   heartbreak.x = (2 * width) / 3;
-  heart.vx = random(-heart.speed, heart.speed);
-  heart.vy = random(-heart.speed, heart.speed);
+  heart1.vx = random(-heart1.speed, heart1.speed);
+  heart1.vy = random(-heart1.speed, heart1.speed);
+  heart2.vx = random(-heart2.speed, heart2.speed);
+  heart2.vy = random(-heart2.speed, heart2.speed);
+  heart3.vx = random(-heart3.speed, heart3.speed);
+  heart3.vy = random(-heart3.speed, heart3.speed);
   heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
   heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
@@ -112,6 +140,7 @@ function simulation() {
   heartbreakEliminated();
   invisibleheartTouched();
   growing();
+  displayheart();
   display();
 }
 //Creating the title
@@ -205,8 +234,12 @@ function move() {
   cupid.y = mouseY;
   arrow.x += arrow.vx;
   arrow.y += arrow.vy;
-  heart.x += heart.vx;
-  heart.y += heart.vy;
+  heart1.x += heart1.vx;
+  heart1.y += heart1.vy;
+  heart2.x += heart2.vx;
+  heart2.y += heart2.vy;
+  heart3.x += heart3.vx;
+  heart3.y += heart3.vy;
   invisibleheart.x += invisibleheart.vx;
   invisibleheart.y += invisibleheart.vy;
   heartbreak.x += heartbreak.vx;
@@ -263,10 +296,10 @@ function growing() {
   heartbreak.w += heartbreak.growth;
   heartbreak.h += heartbreak.growth;
 }
-function repetition(x, y) {
-  for (let i = 0; i < 10; i++) {
-    image(heart.image, heart.x, heart.y, heart.w, heart.h);
-  }
+function displayheart() {
+  image(heart1.image, heart1.x, heart1.y, heart1.w, heart1.h);
+  image(heart2.image, heart2.x, heart2.y, heart2.w, heart2.h);
+  image(heart3.image, heart3.x, heart3.y, heart3.w, heart3.h);
 }
 function display() {
   //Display images
@@ -286,15 +319,13 @@ function display() {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
   if (heartbreak.active) {
-    for (let i = 0; i < 10; i++) {
-      image(
-        heartbreak.image,
-        heartbreak.x,
-        heartbreak.y,
-        heartbreak.w,
-        heartbreak.h
-      );
-    }
+    image(
+      heartbreak.image,
+      heartbreak.x,
+      heartbreak.y,
+      heartbreak.w,
+      heartbreak.h
+    );
   }
 }
 
