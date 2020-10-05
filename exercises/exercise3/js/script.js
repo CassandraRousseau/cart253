@@ -5,6 +5,7 @@ We will open with a title screen. When the simulation begins we see two circles 
 they each move off in a random direction. If they touch each other,the simulation ends with love triumphant!
 If one goes off the edge of the canvas, the simulation ends in deep sadness.
 **************************************************/
+"use strict";
 let heart = {
   x: 0,
   y: 0,
@@ -23,10 +24,11 @@ let heartbreak = {
   vy: 0,
   speed: 2,
   image: undefined,
+    active: true
 };
 let cupid = {
-  x: 0,
-  y: 0,
+  x: 250,
+  y: 250,
   size: 100,
   image: undefined,
 };
@@ -36,6 +38,16 @@ let invisibleheart = {
   size: 100,
   image: undefined,
 };
+let arrow = {
+  x: -100,
+  y: -100,
+  size: 10,
+  vx: 0,
+  vy: 0,
+  speed: 20,
+  shooted: false
+};
+
 let state = "title";
 function preload() {
   heartbreak.image = loadImage("assets/images/heartbreak.png");
@@ -166,6 +178,11 @@ function quit() {
 }
 function move() {
   //Setting circles movements
+
+    cupid.x = mouseX;
+    cupid.y = mouseY;
+    arrow.x += arrow.vx;
+    arrow.y += arrow.vy;
   heart.x += heart.vx;
   heart.y += heart.vy;
   heartbreak.x += heartbreak.vx;
@@ -184,13 +201,30 @@ function isHeartbreakoverwhelm() {
     return false;
   }
 }
-function () {
-  //Checking if circles overlapped{
-  let d = dist(circle1.x, circle1.y, circle2.x, circle2.y);
-  if (d < circle1.size / 2 + circle2.size / 2) {
-    state = "love";
+function heartbreakEliminated() {
+   if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y,heartbreak.x,heartbreak.y);
+  if (arrow.shooted &,heartbreak.active && d < arrow.size / 2 ,heartbreak.size / 2) {
+    // Stop the bullet
+    arrow.shooted = false;
+    // Kill the enemy
+heartbreak.active = false;}
+
+  fill(255);
+  ellipse(circle.x, circle.y, circle.size);
+
+  if (arrow.shooted) {
+    ellipse(arrow.x, arrow.y, arrow.size);
+  }
+
+  if (heartbreak.active) {
+    fill(255, 0, 0);
+    ellipse(heartbreak.x, heartbreak.y, heartbreak.size);
   }
 }
+
 function growing() {
   heartbreak.size += heartbreak.growth;
 }
@@ -214,4 +248,11 @@ function mousePressed() {
   } else if (state === "unknown") {
     state = "quit";
   }
+  else if (arrow.shooted) {
+      return;
+    }
+    arrow.shooted = true;
+    arrow.x = circle.x;
+    arrow.y = circle.y;
+    arrow.vx = arrow.speed;
 }
