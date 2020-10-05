@@ -13,7 +13,7 @@ let heart = {
   h: 100,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 1,
   image: undefined,
 };
 let heartbreak = {
@@ -24,7 +24,7 @@ let heartbreak = {
   growth: 1,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 1,
   image: undefined,
   active: true,
 };
@@ -43,7 +43,7 @@ let invisibleheart = {
   image: undefined,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 1,
   active: true,
 };
 let arrow = {
@@ -73,7 +73,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   //Setting hearts positions
   heart.x = width / 3;
-  heart.x = (2 * -width) / 3;
+  invisibleheart.x = (1 * width) / 3;
   heartbreak.x = (2 * width) / 3;
   heart.vx = random(-heart.speed, heart.speed);
   heart.vy = random(-heart.speed, heart.speed);
@@ -101,6 +101,8 @@ function draw() {
     sadness();
   } else if (state === "unknown") {
     unknown();
+  } else if (state === "quit") {
+    quit();
   }
 }
 // Creating the simulation.
@@ -108,6 +110,7 @@ function simulation() {
   move();
   checkHeartbreakoverwhelm();
   heartbreakEliminated();
+  invisibleheartTouched();
   growing();
   display();
 }
@@ -133,11 +136,11 @@ function instructions() {
   text("Your misssion today is too fight against heartbreaks!", 0, 150);
   text("Spread love by throwing arrows on these unfortunate couples! ", 0, 200);
   text(
-    "To fly through the city, move your mouse.To throw arrows, click on the left side ",
+    "To fly through the city, move your mouse.To throw arrows, press the spacebar ",
     0,
     300
   );
-  text("of your mouse.", 0, 350);
+  text("button.", 0, 350);
   text(
     "Watchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms",
     0,
@@ -151,9 +154,13 @@ function love() {
   push();
   textSize(65);
   fill(200, 100, 100);
+  textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
   text("Congratulations!", width / 2, height / 2);
-  text("Love is spread!", width / 2, (2 * height) / 2);
+  push();
+  textSize(35);
+  text("Love is spread!", width / 2, 400);
+  pop();
   pop();
 }
 //Creating the bad ending
@@ -175,11 +182,8 @@ function unknown() {
   text("Dear Boss,", 0, 50);
   text("I have the misfortune to announce you my departure.", 0, 150);
   text("It is time for me to go and discover new horizons.", 0, 200);
-  text(
-    "Thanks to all the members of the organization for the gained knowledge during the past years, ",
-    0,
-    300
-  );
+  text("Thanks to all the members of the organization for the gained ", 0, 300);
+  text("knowledge during the past years,", 0, 350);
   text("I will never forget my experience within this community ", 0, 450);
   text("Farewell,", 0, 500);
   text("Cupid", 0, 550);
@@ -192,7 +196,7 @@ function quit() {
   fill(255);
   textAlign(CENTER, CENTER);
   textFont("Consolas");
-  text("YOU QUIT YOUR JOB.", 0, 200);
+  text("YOU QUIT YOUR JOB.", width / 2, height / 2);
   pop();
 }
 function move() {
@@ -208,6 +212,7 @@ function move() {
   heartbreak.x += heartbreak.vx;
   heartbreak.y += heartbreak.vy;
 }
+
 //Setting the shooting effect
 function heartbreakEliminated() {
   if (arrow.x > width) {
@@ -219,8 +224,10 @@ function heartbreakEliminated() {
     arrow.shooted = false;
     // Eliminated heartbreak
     heartbreak.active = false;
+    state = "love";
   }
 }
+
 //Setting shooting on invisible heart
 function invisibleheartTouched() {
   if (arrow.x > width) {
@@ -235,10 +242,6 @@ function invisibleheartTouched() {
     arrow.shooted = false;
     // Touched invisibleheart
     invisibleheart.active = false;
-  }
-}
-function checkinvisibleheartTouched() {
-  if (invisibleheartTouched()) {
     state = "unknown";
   }
 }
@@ -260,10 +263,17 @@ function growing() {
   heartbreak.w += heartbreak.growth;
   heartbreak.h += heartbreak.growth;
 }
+function repetition(x, y) {
+  for (let i = 0; i < 10; i++) {
+    image(heart.image, heart.x, heart.y, heart.w, heart.h);
+  }
+}
 function display() {
   //Display images
+  push();
+  imageMode(CENTER);
   image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
-  image(heart.image, heart.x, heart.y, heart.w, heart.h);
+  pop();
   image(
     invisibleheart.image,
     invisibleheart.x,
@@ -276,13 +286,15 @@ function display() {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
   if (heartbreak.active) {
-    image(
-      heartbreak.image,
-      heartbreak.x,
-      heartbreak.y,
-      heartbreak.w,
-      heartbreak.h
-    );
+    for (let i = 0; i < 10; i++) {
+      image(
+        heartbreak.image,
+        heartbreak.x,
+        heartbreak.y,
+        heartbreak.w,
+        heartbreak.h
+      );
+    }
   }
 }
 
@@ -295,8 +307,8 @@ function mousePressed() {
     state = "quit";
   }
 }
-function mouseClicked() {
-  if (!arrow.shooted) {
+function keyPressed() {
+  if (!arrow.shooted && keyCode === 32) {
     arrow.shooted = true;
     arrow.x = cupid.x;
     arrow.y = cupid.y;
