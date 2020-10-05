@@ -44,6 +44,7 @@ let invisibleheart = {
   vx: 0,
   vy: 0,
   speed: 2,
+  active: true,
 };
 let arrow = {
   x: -100,
@@ -213,14 +214,32 @@ function heartbreakEliminated() {
     arrow.shooted = false;
   }
   let d = dist(arrow.x, arrow.y, heartbreak.x, heartbreak.y);
-  if (
-    (arrow.shooted & heartbreak.active && d < arrow.size / 2,
-    heartbreak.size / 2)
-  ) {
+  if (arrow.shooted & heartbreak.active && d < arrow.w / 2 + heartbreak.w / 2) {
     // Stop the arrow
     arrow.shooted = false;
     // Eliminated heartbreak
     heartbreak.active = false;
+  }
+}
+//Setting shooting on invisible heart
+function invisibleheartTouched() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, invisibleheart.x, invisibleheart.y);
+  if (
+    arrow.shooted & invisibleheart.active &&
+    d < arrow.w / 2 + invisibleheart.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Touched invisibleheart
+    invisibleheart.active = false;
+  }
+}
+function checkinvisibleheartTouched() {
+  if (invisibleheartTouched()) {
+    state = "unknown";
   }
 }
 function checkHeartbreakoverwhelm() {
@@ -256,7 +275,6 @@ function display() {
   if (arrow.shooted) {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
-
   if (heartbreak.active) {
     image(
       heartbreak.image,
@@ -267,6 +285,7 @@ function display() {
     );
   }
 }
+
 function mousePressed() {
   if (state === "title") {
     state = "instructions";
@@ -274,11 +293,13 @@ function mousePressed() {
     state = "simulation";
   } else if (state === "unknown") {
     state = "quit";
-  } else if (arrow.shooted) {
-    return;
   }
-  arrow.shooted = true;
-  arrow.x = circle.x;
-  arrow.y = circle.y;
-  arrow.vx = arrow.speed;
+}
+function mouseClicked() {
+  if (!arrow.shooted) {
+    arrow.shooted = true;
+    arrow.x = cupid.x;
+    arrow.y = cupid.y;
+    arrow.vx = arrow.speed;
+  }
 }
