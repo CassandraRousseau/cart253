@@ -245,14 +245,38 @@ function draw() {
 //
 // Creating the simulation.
 function simulation() {
-  move();
+  cupidmove();
+  arrowmove();
+  heartmove(heart1);
+  heartmove(heart2);
+  heartmove(heart3);
+  heartmove(heart4);
+  heartmove(heart5);
+  invisibleheartmove();
+  heartbreakmove(heartbreak1);
+  heartbreakmove(heartbreak2);
+  heartbreakmove(heartbreak3);
+  heartbreakmove(heartbreak4);
+  heartbreakmove(heartbreak5);
   checkheartbreakEliminated();
   checkHeartbreakoverwhelm();
   invisibleheartTouched();
   display();
-  constrainingPosition();
-  growing();
-  constrainingGrowth();
+  constrainingPosition(heartbreak1);
+  constrainingPosition(heartbreak2);
+  constrainingPosition(heartbreak3);
+  constrainingPosition(heartbreak4);
+  constrainingPosition(heartbreak5);
+  growing(heartbreak1);
+  growing(heartbreak2);
+  growing(heartbreak3);
+  growing(heartbreak4);
+  growing(heartbreak5);
+  constrainingGrowth(heartbreak1);
+  constrainingGrowth(heartbreak2);
+  constrainingGrowth(heartbreak3);
+  constrainingGrowth(heartbreak4);
+  constrainingGrowth(heartbreak5);
 }
 //
 //Creating the title
@@ -336,42 +360,34 @@ function quit() {
 }
 //
 //Setting javascript objects movements
-function move() {
+function cupidmove() {
   cupid.x = mouseX;
   cupid.y = mouseY;
+}
+function arrowmove() {
   arrow.x += arrow.vx;
   arrow.y += arrow.vy;
-  heart1.x += heart1.vx;
-  heart1.y += heart1.vy;
-  heart2.x += heart2.vx;
-  heart2.y += heart2.vy;
-  heart3.x += heart3.vx;
-  heart3.y += heart3.vy;
-  heart4.x += heart4.vx;
-  heart4.y += heart4.vy;
-  heart5.x += heart5.vx;
-  heart5.y += heart5.vy;
+}
+function heartmove(heart) {
+  heart.x += heart.vx;
+  heart.y += heart.vy;
+}
+function invisibleheartmove() {
   invisibleheart.x += invisibleheart.vx;
   invisibleheart.y += invisibleheart.vy;
-  heartbreak1.x += heartbreak1.vx;
-  heartbreak1.y += heartbreak1.vy;
-  heartbreak2.x += heartbreak2.vx;
-  heartbreak2.y += heartbreak2.vy;
-  heartbreak3.x += heartbreak3.vx;
-  heartbreak3.y += heartbreak3.vy;
-  heartbreak4.x += heartbreak4.vx;
-  heartbreak4.y += heartbreak4.vy;
-  heartbreak5.x += heartbreak5.vx;
-  heartbreak5.y += heartbreak5.vy;
+}
+function heartbreakmove(heartbreak) {
+  heartbreak.x += heartbreak.vx;
+  heartbreak.y += heartbreak.vy;
 }
 //
 //Checking if heartbreaks are all eliminated
 function checkheartbreakEliminated() {
-  isheartbreak1Eliminated();
-  isheartbreak2Eliminated();
-  isheartbreak3Eliminated();
-  isheartbreak4Eliminated();
-  isheartbreak5Eliminated();
+  isheartbreakEliminated(heartbreak1);
+  isheartbreakEliminated(heartbreak2);
+  isheartbreakEliminated(heartbreak3);
+  isheartbreakEliminated(heartbreak4);
+  isheartbreakEliminated(heartbreak5);
   if (
     !heartbreak1.active &&
     !heartbreak2.active &&
@@ -383,148 +399,45 @@ function checkheartbreakEliminated() {
   }
 }
 //
-//Setting the shooting effect for heartbreak1
-function isheartbreak1Eliminated() {
+//Setting the shooting effect for heartbreaks
+function isheartbreakEliminated(heartbreak) {
   if (arrow.x > width) {
     arrow.shooted = false;
   }
-  let d = dist(arrow.x, arrow.y, heartbreak1.x, heartbreak1.y);
+  let d = dist(arrow.x, arrow.y, heartbreak.x, heartbreak.y);
   if (
     arrow.shooted &&
-    heartbreak1.active &&
-    d < arrow.w / 2 + heartbreak1.w / 2
+    heartbreak.active &&
+    d < arrow.w / 2 + heartbreak.w / 2
   ) {
     // Stop the arrow
     arrow.shooted = false;
     // Eliminated heartbreak1
-    heartbreak1.active = false;
-  }
-}
-//
-//Setting the shooting effect for heartbreak2
-function isheartbreak2Eliminated() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak2.x, heartbreak2.y);
-  if (
-    arrow.shooted &&
-    heartbreak2.active &&
-    d < arrow.w / 2 + heartbreak2.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak2
-    heartbreak2.active = false;
-  }
-}
-//
-//Setting the shooting effect for heartbreak3
-function isheartbreak3Eliminated() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak3.x, heartbreak3.y);
-  if (
-    arrow.shooted &&
-    heartbreak3.active &&
-    d < arrow.w / 2 + heartbreak3.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak3
-    heartbreak3.active = false;
-  }
-}
-//
-//Setting the shooting effect for heartbreak4
-function isheartbreak4Eliminated() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak4.x, heartbreak4.y);
-  if (
-    arrow.shooted &&
-    heartbreak4.active &&
-    d < arrow.w / 2 + heartbreak4.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak4
-    heartbreak4.active = false;
-  }
-}
-//
-//Setting the shooting effect for heartbreak5
-function isheartbreak5Eliminated() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak5.x, heartbreak5.y);
-  if (
-    arrow.shooted &&
-    heartbreak5.active &&
-    d < arrow.w / 2 + heartbreak5.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak5
-    heartbreak5.active = false;
+    heartbreak.active = false;
   }
 }
 //
 //Checking if heartbreaks go outside the canvas.
 function checkHeartbreakoverwhelm() {
   if (
-    isHeartbreak1overwhelm() ||
-    isHeartbreak2overwhelm() ||
-    isHeartbreak3overwhelm() ||
-    isHeartbreak4overwhelm() ||
-    isHeartbreak5overwhelm()
+    isHeartbreakoverwhelm(heartbreak1) ||
+    isHeartbreakoverwhelm(heartbreak2) ||
+    isHeartbreakoverwhelm(heartbreak3) ||
+    isHeartbreakoverwhelm(heartbreak4) ||
+    isHeartbreakoverwhelm(heartbreak5)
   ) {
     state = "sadness";
   }
 }
 //
-function isHeartbreak1overwhelm() {
-  if (heartbreak1.w === width && heartbreak1.h === height) {
+function isHeartbreakoverwhelm(heartbreak) {
+  if (heartbreak.w === width && heartbreak.h === height) {
     return true;
   } else {
     return false;
   }
 }
-//
-function isHeartbreak2overwhelm() {
-  if (heartbreak2.w === width && heartbreak2.h === height) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//
-function isHeartbreak3overwhelm() {
-  if (heartbreak3.w === width && heartbreak3.h === height) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//
-function isHeartbreak4overwhelm() {
-  if (heartbreak4.w === width && heartbreak4.h === height) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//
-function isHeartbreak5overwhelm() {
-  if (heartbreak5.w === width && heartbreak5.h === height) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 //
 //Setting shooting on invisible heart
 function invisibleheartTouched() {
@@ -551,9 +464,17 @@ function display() {
   displaycloud(1200, 300, 500, 500);
   displaycloud(600, 500, 500, 300);
   displaycloud(800, 100, 600, 300);
-  displayheart();
+  displayheart(heart1);
+  displayheart(heart2);
+  displayheart(heart3);
+  displayheart(heart4);
+  displayheart(heart5);
   displaytherest();
-  displayheartbreak();
+  displayheartbreak(heartbreak1);
+  displayheartbreak(heartbreak2);
+  displayheartbreak(heartbreak3);
+  displayheartbreak(heartbreak4);
+  displayheartbreak(heartbreak5);
 }
 //
 //Display clouds
@@ -567,64 +488,20 @@ function displaycloud(x, y, w, h) {
 }
 //
 //Display hearts
-function displayheart() {
-  image(heart1.image, heart1.x, heart1.y, heart1.w, heart1.h);
-  image(heart2.image, heart2.x, heart2.y, heart2.w, heart2.h);
-  image(heart3.image, heart3.x, heart3.y, heart3.w, heart3.h);
-  image(heart4.image, heart4.x, heart4.y, heart4.w, heart4.h);
-  image(heart5.image, heart5.x, heart5.y, heart5.w, heart5.h);
+function displayheart(heart) {
+  image(heart.image, heart.x, heart.y, heart.w, heart.h);
 }
 //
 //Setting when heartbreaks are displayed
-function displayheartbreak() {
-  if (heartbreak1.active) {
+function displayheartbreak(heartbreak) {
+  if (heartbreak.active) {
     imageMode(CENTER);
     image(
-      heartbreak1.image,
-      heartbreak1.x,
-      heartbreak1.y,
-      heartbreak1.w,
-      heartbreak1.h
-    );
-  }
-  if (heartbreak2.active) {
-    imageMode(CENTER);
-    image(
-      heartbreak2.image,
-      heartbreak2.x,
-      heartbreak2.y,
-      heartbreak2.w,
-      heartbreak2.h
-    );
-  }
-  if (heartbreak3.active) {
-    imageMode(CENTER);
-    image(
-      heartbreak3.image,
-      heartbreak3.x,
-      heartbreak3.y,
-      heartbreak3.w,
-      heartbreak3.h
-    );
-  }
-  if (heartbreak4.active) {
-    imageMode(CENTER);
-    image(
-      heartbreak4.image,
-      heartbreak4.x,
-      heartbreak4.y,
-      heartbreak4.w,
-      heartbreak4.h
-    );
-  }
-  if (heartbreak5.active) {
-    imageMode(CENTER);
-    image(
-      heartbreak5.image,
-      heartbreak5.x,
-      heartbreak5.y,
-      heartbreak5.w,
-      heartbreak5.h
+      heartbreak.image,
+      heartbreak.x,
+      heartbreak.y,
+      heartbreak.w,
+      heartbreak.h
     );
   }
 }
@@ -651,45 +528,21 @@ function displaytherest() {
 }
 //
 //Constraining heartbreaks moving outside the canvas
-function constrainingPosition() {
-  heartbreak1.x = constrain(heartbreak1.x, 0, width);
-  heartbreak1.y = constrain(heartbreak1.y, 0, height);
-  heartbreak2.x = constrain(heartbreak2.x, 0, width);
-  heartbreak2.y = constrain(heartbreak2.y, 0, height);
-  heartbreak3.x = constrain(heartbreak3.x, 0, width);
-  heartbreak3.y = constrain(heartbreak3.y, 0, height);
-  heartbreak4.x = constrain(heartbreak4.x, 0, width);
-  heartbreak4.y = constrain(heartbreak4.y, 0, height);
-  heartbreak5.x = constrain(heartbreak5.x, 0, width);
-  heartbreak5.y = constrain(heartbreak5.y, 0, height);
+function constrainingPosition(heartbreak) {
+  heartbreak.x = constrain(heartbreak.x, 0, width);
+  heartbreak.y = constrain(heartbreak.y, 0, height);
 }
 //
 //Setting growing effect on heartbreaks
-function growing() {
-  heartbreak1.w += heartbreak1.growth;
-  heartbreak1.h += heartbreak1.growth;
-  heartbreak2.w += heartbreak2.growth;
-  heartbreak2.h += heartbreak2.growth;
-  heartbreak3.w += heartbreak3.growth;
-  heartbreak3.h += heartbreak3.growth;
-  heartbreak4.w += heartbreak4.growth;
-  heartbreak4.h += heartbreak4.growth;
-  heartbreak5.w += heartbreak5.growth;
-  heartbreak5.h += heartbreak5.growth;
+function growing(heartbreak) {
+  heartbreak.w += heartbreak.growth;
+  heartbreak.h += heartbreak.growth;
 }
 //
 //Constraining heartbreaks growing outside the canvas
-function constrainingGrowth() {
-  heartbreak1.w = constrain(heartbreak1.w, 0, width);
-  heartbreak1.h = constrain(heartbreak1.h, 0, height);
-  heartbreak2.w = constrain(heartbreak2.w, 0, width);
-  heartbreak2.h = constrain(heartbreak2.h, 0, height);
-  heartbreak3.w = constrain(heartbreak3.w, 0, width);
-  heartbreak3.h = constrain(heartbreak3.h, 0, height);
-  heartbreak4.w = constrain(heartbreak4.w, 0, width);
-  heartbreak4.h = constrain(heartbreak4.h, 0, height);
-  heartbreak5.w = constrain(heartbreak5.w, 0, width);
-  heartbreak5.h = constrain(heartbreak5.h, 0, height);
+function constrainingGrowth(heartbreak) {
+  heartbreak.w = constrain(heartbreak.w, 0, width);
+  heartbreak.h = constrain(heartbreak.h, 0, height);
 }
 //
 //Setting mouse commands
