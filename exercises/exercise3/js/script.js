@@ -1,9 +1,11 @@
 /**************************************************
 Exercise 3: Love,actually
 Cassandra Rousseau
-We will open with a title screen. When the simulation begins we see two circles in darkness,
-they each move off in a random direction. If they touch each other,the simulation ends with love triumphant!
-If one goes off the edge of the canvas, the simulation ends in deep sadness.
+The game open with a title screen. It's follows with an introduction page. When the simulation begins we see a cupid in darkness
+surrounded by different type of hearts.They each move off in a random direction except for the cupid which is controlled
+by the mouse. If the user eliminated all the heartbreaks surronding,the simulation ends with love triumphant!
+If one of the heartbreak gots bigger than the edge of the canvas, the simulation ends in deep sadness.However, if the user shoot the
+invisible heart, it will leads to an unknown ending...
 **************************************************/
 "use strict";
 let heart1 = {
@@ -147,7 +149,7 @@ let arrow = {
 };
 
 let state = "title";
-//Loading my javascript objects
+//Loading javascript objects
 function preload() {
   cupid.image = loadImage("assets/images/cupid.png");
   heart1.image = loadImage("assets/images/heart.png");
@@ -346,6 +348,7 @@ function move() {
   heartbreak5.x += heartbreak5.vx;
   heartbreak5.y += heartbreak5.vy;
 }
+//Checking if heartbreaks are all eliminated
 function checkheartbreakEliminated() {
   if (
     isheartbreak1Eliminated() &&
@@ -357,7 +360,7 @@ function checkheartbreakEliminated() {
     state = "love";
   }
 }
-//Setting the shooting effect
+//Setting the shooting effect for heartbreak1
 function isheartbreak1Eliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -369,10 +372,11 @@ function isheartbreak1Eliminated() {
   ) {
     // Stop the arrow
     arrow.shooted = false;
-    // Eliminated heartbreak
+    // Eliminated heartbreak1
     heartbreak1.active = false;
   }
 }
+//Setting the shooting effect for heartbreak2
 function isheartbreak2Eliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -384,10 +388,11 @@ function isheartbreak2Eliminated() {
   ) {
     // Stop the arrow
     arrow.shooted = false;
-    // Eliminated heartbreak
+    // Eliminated heartbreak2
     heartbreak2.active = false;
   }
 }
+//Setting the shooting effect for heartbreak3
 function isheartbreak3Eliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -399,10 +404,11 @@ function isheartbreak3Eliminated() {
   ) {
     // Stop the arrow
     arrow.shooted = false;
-    // Eliminated heartbreak
+    // Eliminated heartbreak3
     heartbreak3.active = false;
   }
 }
+//Setting the shooting effect for heartbreak4
 function isheartbreak4Eliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -414,10 +420,11 @@ function isheartbreak4Eliminated() {
   ) {
     // Stop the arrow
     arrow.shooted = false;
-    // Eliminated heartbreak
+    // Eliminated heartbreak4
     heartbreak4.active = false;
   }
 }
+//Setting the shooting effect for heartbreak5
 function isheartbreak5Eliminated() {
   if (arrow.x > width) {
     arrow.shooted = false;
@@ -429,12 +436,12 @@ function isheartbreak5Eliminated() {
   ) {
     // Stop the arrow
     arrow.shooted = false;
-    // Eliminated heartbreak
+    // Eliminated heartbreak5
     heartbreak5.active = false;
   }
 }
 function checkHeartbreakoverwhelm() {
-  //Checking if heartbreak go outside the canvas.
+  //Checking if heartbreaks go outside the canvas.
   if (
     isHeartbreak1overwhelm() &&
     isHeartbreak2overwhelm() &&
@@ -497,7 +504,7 @@ function invisibleheartTouched() {
     state = "unknown";
   }
 }
-//Setting growing effect of heartbreak
+//Setting growing effect on heartbreaks
 function growing() {
   heartbreak1.w += heartbreak1.growth;
   heartbreak1.h += heartbreak1.growth;
@@ -509,13 +516,27 @@ function growing() {
   heartbreak4.h += heartbreak4.growth;
   heartbreak5.w += heartbreak5.growth;
   heartbreak5.h += heartbreak5.growth;
-  heartbreak1.growth = constrain();
 }
+//Constraining heartbreaks moving and growing outside the canvas
+function constraining() {
+  heartbreak1.growth = constrain(heartbreak1.x, 0, width);
+  heartbreak1.growth = constrain(heartbreak1.y, 0, height);
+  heartbreak2.growth = constrain(heartbreak2.x, 0, width);
+  heartbreak2.growth = constrain(heartbreak2.y, 0, height);
+  heartbreak3.growth = constrain(heartbreak3.x, 0, width);
+  heartbreak3.growth = constrain(heartbreak3.y, 0, height);
+  heartbreak4.growth = constrain(heartbreak4.x, 0, width);
+  heartbreak4.growth = constrain(heartbreak4.y, 0, height);
+  heartbreak5.growth = constrain(heartbreak5.x, 0, width);
+  heartbreak5.growth = constrain(heartbreak5.y, 0, height);
+}
+//Display images
 function display() {
   displayheart();
   displaytherest();
   displayheartbreak();
 }
+//Display hearts
 function displayheart() {
   image(heart1.image, heart1.x, heart1.y, heart1.w, heart1.h);
   image(heart2.image, heart2.x, heart2.y, heart2.w, heart2.h);
@@ -523,8 +544,8 @@ function displayheart() {
   image(heart4.image, heart4.x, heart4.y, heart4.w, heart4.h);
   image(heart5.image, heart5.x, heart5.y, heart5.w, heart5.h);
 }
+//Display the rest of javascript objects
 function displaytherest() {
-  //Display images
   push();
   imageMode(CENTER);
   image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
@@ -536,11 +557,12 @@ function displaytherest() {
     invisibleheart.w,
     invisibleheart.h
   );
-  //Setting when arrow or heartbreak are displayed
+  //Setting when arrow is displayed
   if (arrow.shooted) {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
 }
+//Setting when heartbreaks are displayed
 function displayheartbreak() {
   if (heartbreak1.active) {
     image(
@@ -588,7 +610,7 @@ function displayheartbreak() {
     );
   }
 }
-
+//Setting mouse commands
 function mousePressed() {
   if (state === "title") {
     state = "instructions";
@@ -598,6 +620,7 @@ function mousePressed() {
     state = "quit";
   }
 }
+//Setting keys commands
 function keyPressed() {
   if (!arrow.shooted && keyCode === 32) {
     arrow.shooted = true;
