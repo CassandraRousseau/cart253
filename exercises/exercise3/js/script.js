@@ -9,8 +9,8 @@ If one goes off the edge of the canvas, the simulation ends in deep sadness.
 let heart1 = {
   x: 0,
   y: 0,
-  w: 100,
-  h: 100,
+  w: 300,
+  h: 300,
   vx: 0,
   vy: 0,
   speed: 1,
@@ -19,8 +19,8 @@ let heart1 = {
 let heart2 = {
   x: 0,
   y: 0,
-  w: 100,
-  h: 100,
+  w: 300,
+  h: 300,
   vx: 0,
   vy: 0,
   speed: 1,
@@ -29,14 +29,34 @@ let heart2 = {
 let heart3 = {
   x: 0,
   y: 0,
-  w: 100,
-  h: 100,
+  w: 300,
+  h: 300,
   vx: 0,
   vy: 0,
   speed: 1,
   image: undefined,
 };
-let heartbreak = {
+let heart4 = {
+  x: 0,
+  y: 0,
+  w: 300,
+  h: 300,
+  vx: 0,
+  vy: 0,
+  speed: 1,
+  image: undefined,
+};
+let heart5 = {
+  x: 0,
+  y: 0,
+  w: 300,
+  h: 300,
+  vx: 0,
+  vy: 0,
+  speed: 1,
+  image: undefined,
+};
+let heartbreak1 = {
   x: 350,
   y: 250,
   w: 50,
@@ -44,7 +64,55 @@ let heartbreak = {
   growth: 1,
   vx: 0,
   vy: 0,
+  speed: 0.5,
+  image: undefined,
+  active: true,
+};
+let heartbreak2 = {
+  x: 350,
+  y: 250,
+  w: 50,
+  h: 50,
+  growth: 2,
+  vx: 0,
+  vy: 0,
   speed: 1,
+  image: undefined,
+  active: true,
+};
+let heartbreak3 = {
+  x: 350,
+  y: 250,
+  w: 50,
+  h: 50,
+  growth: 0.5,
+  vx: 0,
+  vy: 0,
+  speed: 2,
+  image: undefined,
+  active: true,
+};
+let heartbreak4 = {
+  x: 350,
+  y: 250,
+  w: 50,
+  h: 50,
+  growth: 0.75,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  image: undefined,
+  active: true,
+};
+let heartbreak5 = {
+  x: 350,
+  y: 250,
+  w: 50,
+  h: 50,
+  growth: 3,
+  vx: 0,
+  vy: 0,
+  speed: 0.75,
   image: undefined,
   active: true,
 };
@@ -81,11 +149,17 @@ let arrow = {
 let state = "title";
 //Loading my javascript objects
 function preload() {
-  heartbreak.image = loadImage("assets/images/heartbreak.png");
   cupid.image = loadImage("assets/images/cupid.png");
   heart1.image = loadImage("assets/images/heart.png");
   heart2.image = loadImage("assets/images/heart.png");
   heart3.image = loadImage("assets/images/heart.png");
+  heart4.image = loadImage("assets/images/heart.png");
+  heart5.image = loadImage("assets/images/heart.png");
+  heartbreak1.image = loadImage("assets/images/heartbreak.png");
+  heartbreak2.image = loadImage("assets/images/heartbreak.png");
+  heartbreak3.image = loadImage("assets/images/heartbreak.png");
+  heartbreak4.image = loadImage("assets/images/heartbreak.png");
+  heartbreak5.image = loadImage("assets/images/heartbreak.png");
   invisibleheart.image = loadImage("assets/images/invisibleheart.png");
 }
 // setup()
@@ -98,15 +172,31 @@ function setup() {
   heart2.x = (1 * width) / 3;
   heart3.x = (2 * width) / 3;
   invisibleheart.x = (1 * width) / 3;
-  heartbreak.x = (2 * width) / 3;
+  heartbreak1.x = (2 * width) / 3;
+  heartbreak2.x = (1 * width) / 3;
+  heartbreak3.x = width / 3;
+  heartbreak4.x = (2 * width) / 3;
+  heartbreak5.x = (1 * width) / 3;
   heart1.vx = random(-heart1.speed, heart1.speed);
   heart1.vy = random(-heart1.speed, heart1.speed);
   heart2.vx = random(-heart2.speed, heart2.speed);
   heart2.vy = random(-heart2.speed, heart2.speed);
   heart3.vx = random(-heart3.speed, heart3.speed);
   heart3.vy = random(-heart3.speed, heart3.speed);
-  heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
-  heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
+  heart4.vx = random(-heart4.speed, heart4.speed);
+  heart4.vy = random(-heart4.speed, heart4.speed);
+  heart5.vx = random(-heart5.speed, heart5.speed);
+  heart5.vy = random(-heart5.speed, heart5.speed);
+  heartbreak1.vx = random(-heartbreak1.speed, heartbreak1.speed);
+  heartbreak1.vy = random(-heartbreak1.speed, heartbreak1.speed);
+  heartbreak2.vx = random(-heartbreak2.speed, heartbreak2.speed);
+  heartbreak2.vy = random(-heartbreak2.speed, heartbreak2.speed);
+  heartbreak3.vx = random(-heartbreak3.speed, heartbreak3.speed);
+  heartbreak3.vy = random(-heartbreak3.speed, heartbreak3.speed);
+  heartbreak4.vx = random(-heartbreak4.speed, heartbreak4.speed);
+  heartbreak4.vy = random(-heartbreak4.speed, heartbreak4.speed);
+  heartbreak5.vx = random(-heartbreak5.speed, heartbreak5.speed);
+  heartbreak5.vy = random(-heartbreak5.speed, heartbreak5.speed);
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
   invisibleheart.vy = random(-invisibleheart.speed, invisibleheart.speed);
 }
@@ -136,11 +226,10 @@ function draw() {
 // Creating the simulation.
 function simulation() {
   move();
+  checkheartbreakEliminated();
   checkHeartbreakoverwhelm();
-  heartbreakEliminated();
   invisibleheartTouched();
   growing();
-  displayheart();
   display();
 }
 //Creating the title
@@ -151,7 +240,7 @@ function title() {
   textAlign(CENTER, CENTER);
   textFont("CCSignLanguage");
   text("Cupidventure", width / 2, height / 2);
-  heartbreakEliminated;
+  1;
   pop();
 }
 //Creating the instructions
@@ -229,7 +318,7 @@ function quit() {
   pop();
 }
 function move() {
-  //Setting circles movements
+  //Setting javascript objects movements
   cupid.x = mouseX;
   cupid.y = mouseY;
   arrow.x += arrow.vx;
@@ -240,27 +329,157 @@ function move() {
   heart2.y += heart2.vy;
   heart3.x += heart3.vx;
   heart3.y += heart3.vy;
+  heart4.x += heart4.vx;
+  heart4.y += heart4.vy;
+  heart5.x += heart5.vx;
+  heart5.y += heart5.vy;
   invisibleheart.x += invisibleheart.vx;
   invisibleheart.y += invisibleheart.vy;
-  heartbreak.x += heartbreak.vx;
-  heartbreak.y += heartbreak.vy;
+  heartbreak1.x += heartbreak1.vx;
+  heartbreak1.y += heartbreak1.vy;
+  heartbreak2.x += heartbreak2.vx;
+  heartbreak2.y += heartbreak2.vy;
+  heartbreak3.x += heartbreak3.vx;
+  heartbreak3.y += heartbreak3.vy;
+  heartbreak4.x += heartbreak4.vx;
+  heartbreak4.y += heartbreak4.vy;
+  heartbreak5.x += heartbreak5.vx;
+  heartbreak5.y += heartbreak5.vy;
 }
-
-//Setting the shooting effect
-function heartbreakEliminated() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak.x, heartbreak.y);
-  if (arrow.shooted & heartbreak.active && d < arrow.w / 2 + heartbreak.w / 2) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak
-    heartbreak.active = false;
+function checkheartbreakEliminated() {
+  if (
+    isheartbreak1Eliminated() &&
+    isheartbreak2Eliminated() &&
+    isheartbreak3Eliminated() &&
+    isheartbreak4Eliminated() &&
+    isheartbreak5Eliminated()
+  ) {
     state = "love";
   }
 }
-
+//Setting the shooting effect
+function isheartbreak1Eliminated() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, heartbreak1.x, heartbreak1.y);
+  if (
+    arrow.shooted & heartbreak1.active &&
+    d < arrow.w / 2 + heartbreak1.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Eliminated heartbreak
+    heartbreak1.active = false;
+  }
+}
+function isheartbreak2Eliminated() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, heartbreak2.x, heartbreak2.y);
+  if (
+    arrow.shooted & heartbreak2.active &&
+    d < arrow.w / 2 + heartbreak2.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Eliminated heartbreak
+    heartbreak2.active = false;
+  }
+}
+function isheartbreak3Eliminated() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, heartbreak3.x, heartbreak3.y);
+  if (
+    arrow.shooted & heartbreak3.active &&
+    d < arrow.w / 2 + heartbreak3.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Eliminated heartbreak
+    heartbreak3.active = false;
+  }
+}
+function isheartbreak4Eliminated() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, heartbreak4.x, heartbreak4.y);
+  if (
+    arrow.shooted & heartbreak4.active &&
+    d < arrow.w / 2 + heartbreak4.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Eliminated heartbreak
+    heartbreak4.active = false;
+  }
+}
+function isheartbreak5Eliminated() {
+  if (arrow.x > width) {
+    arrow.shooted = false;
+  }
+  let d = dist(arrow.x, arrow.y, heartbreak5.x, heartbreak5.y);
+  if (
+    arrow.shooted & heartbreak5.active &&
+    d < arrow.w / 2 + heartbreak5.w / 2
+  ) {
+    // Stop the arrow
+    arrow.shooted = false;
+    // Eliminated heartbreak
+    heartbreak5.active = false;
+  }
+}
+function checkHeartbreakoverwhelm() {
+  //Checking if heartbreak go outside the canvas.
+  if (
+    isHeartbreak1overwhelm() &&
+    isHeartbreak2overwhelm() &&
+    isHeartbreak3overwhelm() &&
+    isHeartbreak4overwhelm() &&
+    isHeartbreak5overwhelm()
+  ) {
+    state = "sadness";
+  }
+}
+function isHeartbreak1overwhelm() {
+  if (heartbreak1.w > width && heartbreak1.h > height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isHeartbreak2overwhelm() {
+  if (heartbreak2.w > width && heartbreak2.h > height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isHeartbreak3overwhelm() {
+  if (heartbreak3.w > width && heartbreak3.h > height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isHeartbreak4overwhelm() {
+  if (heartbreak4.w > width && heartbreak4.h > height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isHeartbreak5overwhelm() {
+  if (heartbreak5.w > width && heartbreak5.h > height) {
+    return true;
+  } else {
+    return false;
+  }
+}
 //Setting shooting on invisible heart
 function invisibleheartTouched() {
   if (arrow.x > width) {
@@ -278,30 +497,33 @@ function invisibleheartTouched() {
     state = "unknown";
   }
 }
-function checkHeartbreakoverwhelm() {
-  //Checking if heartbreak go outside the canvas.
-  if (isHeartbreakoverwhelm()) {
-    state = "sadness";
-  }
-}
-function isHeartbreakoverwhelm() {
-  if (heartbreak.w > width && heartbreak.h > height) {
-    return true;
-  } else {
-    return false;
-  }
-}
 //Setting growing effect of heartbreak
 function growing() {
-  heartbreak.w += heartbreak.growth;
-  heartbreak.h += heartbreak.growth;
+  heartbreak1.w += heartbreak1.growth;
+  heartbreak1.h += heartbreak1.growth;
+  heartbreak2.w += heartbreak2.growth;
+  heartbreak2.h += heartbreak2.growth;
+  heartbreak3.w += heartbreak3.growth;
+  heartbreak3.h += heartbreak3.growth;
+  heartbreak4.w += heartbreak4.growth;
+  heartbreak4.h += heartbreak4.growth;
+  heartbreak5.w += heartbreak5.growth;
+  heartbreak5.h += heartbreak5.growth;
+  heartbreak1.growth = constrain();
+}
+function display() {
+  displayheart();
+  displaytherest();
+  displayheartbreak();
 }
 function displayheart() {
   image(heart1.image, heart1.x, heart1.y, heart1.w, heart1.h);
   image(heart2.image, heart2.x, heart2.y, heart2.w, heart2.h);
   image(heart3.image, heart3.x, heart3.y, heart3.w, heart3.h);
+  image(heart4.image, heart4.x, heart4.y, heart4.w, heart4.h);
+  image(heart5.image, heart5.x, heart5.y, heart5.w, heart5.h);
 }
-function display() {
+function displaytherest() {
   //Display images
   push();
   imageMode(CENTER);
@@ -318,13 +540,51 @@ function display() {
   if (arrow.shooted) {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
-  if (heartbreak.active) {
+}
+function displayheartbreak() {
+  if (heartbreak1.active) {
     image(
-      heartbreak.image,
-      heartbreak.x,
-      heartbreak.y,
-      heartbreak.w,
-      heartbreak.h
+      heartbreak1.image,
+      heartbreak1.x,
+      heartbreak1.y,
+      heartbreak1.w,
+      heartbreak1.h
+    );
+  }
+  if (heartbreak2.active) {
+    image(
+      heartbreak2.image,
+      heartbreak2.x,
+      heartbreak2.y,
+      heartbreak2.w,
+      heartbreak2.h
+    );
+  }
+  if (heartbreak3.active) {
+    image(
+      heartbreak3.image,
+      heartbreak3.x,
+      heartbreak3.y,
+      heartbreak3.w,
+      heartbreak3.h
+    );
+  }
+  if (heartbreak4.active) {
+    image(
+      heartbreak4.image,
+      heartbreak4.x,
+      heartbreak4.y,
+      heartbreak4.w,
+      heartbreak4.h
+    );
+  }
+  if (heartbreak5.active) {
+    image(
+      heartbreak5.image,
+      heartbreak5.x,
+      heartbreak5.y,
+      heartbreak5.w,
+      heartbreak5.h
     );
   }
 }
