@@ -14,8 +14,8 @@ let letter =
   "Dear Boss,\nI have the misfortune to announce you my departure.\nIt is time for me to leave and discover new horizons.\nThanks to all the organization members for the given experience during the past years.\nI will never forget my time spent with you.\nFarewell,\nCupid";
 //
 let heart1 = {
-  x: 0,
-  y: 0,
+  x: 100,
+  y: 100,
   w: 300,
   h: 300,
   vx: 0,
@@ -24,8 +24,8 @@ let heart1 = {
   image: undefined,
 };
 let heart2 = {
-  x: 0,
-  y: 0,
+  x: 200,
+  y: 200,
   w: 300,
   h: 300,
   vx: 0,
@@ -34,8 +34,8 @@ let heart2 = {
   image: undefined,
 };
 let heart3 = {
-  x: 0,
-  y: 0,
+  x: 300,
+  y: 300,
   w: 300,
   h: 300,
   vx: 0,
@@ -44,8 +44,8 @@ let heart3 = {
   image: undefined,
 };
 let heart4 = {
-  x: 0,
-  y: 0,
+  x: 400,
+  y: 400,
   w: 300,
   h: 300,
   vx: 0,
@@ -54,8 +54,8 @@ let heart4 = {
   image: undefined,
 };
 let heart5 = {
-  x: 0,
-  y: 0,
+  x: 500,
+  y: 500,
   w: 300,
   h: 300,
   vx: 0,
@@ -64,8 +64,8 @@ let heart5 = {
   image: undefined,
 };
 let heartbreak1 = {
-  x: 350,
-  y: 250,
+  x: 100,
+  y: 100,
   w: 50,
   h: 50,
   growth: 1,
@@ -76,8 +76,8 @@ let heartbreak1 = {
   active: true,
 };
 let heartbreak2 = {
-  x: 350,
-  y: 250,
+  x: 200,
+  y: 200,
   w: 50,
   h: 50,
   growth: 2,
@@ -88,8 +88,8 @@ let heartbreak2 = {
   active: true,
 };
 let heartbreak3 = {
-  x: 350,
-  y: 250,
+  x: 300,
+  y: 300,
   w: 50,
   h: 50,
   growth: 0.5,
@@ -100,8 +100,8 @@ let heartbreak3 = {
   active: true,
 };
 let heartbreak4 = {
-  x: 350,
-  y: 250,
+  x: 400,
+  y: 400,
   w: 50,
   h: 50,
   growth: 0.75,
@@ -112,8 +112,8 @@ let heartbreak4 = {
   active: true,
 };
 let heartbreak5 = {
-  x: 350,
-  y: 250,
+  x: 500,
+  y: 500,
   w: 50,
   h: 50,
   growth: 3,
@@ -192,34 +192,34 @@ function setup() {
   heart1.x = width / 3;
   heart2.x = (1 * width) / 3;
   heart3.x = (2 * width) / 3;
+  heart4.x = (1 * width) / 3;
+  heart5.x = width / 3;
   invisibleheart.x = (1 * width) / 3;
   heartbreak1.x = (2 * width) / 3;
   heartbreak2.x = (1 * width) / 3;
   heartbreak3.x = width / 3;
   heartbreak4.x = (2 * width) / 3;
   heartbreak5.x = (1 * width) / 3;
-  heart1.vx = random(-heart1.speed, heart1.speed);
-  heart1.vy = random(-heart1.speed, heart1.speed);
-  heart2.vx = random(-heart2.speed, heart2.speed);
-  heart2.vy = random(-heart2.speed, heart2.speed);
-  heart3.vx = random(-heart3.speed, heart3.speed);
-  heart3.vy = random(-heart3.speed, heart3.speed);
-  heart4.vx = random(-heart4.speed, heart4.speed);
-  heart4.vy = random(-heart4.speed, heart4.speed);
-  heart5.vx = random(-heart5.speed, heart5.speed);
-  heart5.vy = random(-heart5.speed, heart5.speed);
-  heartbreak1.vx = random(-heartbreak1.speed, heartbreak1.speed);
-  heartbreak1.vy = random(-heartbreak1.speed, heartbreak1.speed);
-  heartbreak2.vx = random(-heartbreak2.speed, heartbreak2.speed);
-  heartbreak2.vy = random(-heartbreak2.speed, heartbreak2.speed);
-  heartbreak3.vx = random(-heartbreak3.speed, heartbreak3.speed);
-  heartbreak3.vy = random(-heartbreak3.speed, heartbreak3.speed);
-  heartbreak4.vx = random(-heartbreak4.speed, heartbreak4.speed);
-  heartbreak4.vy = random(-heartbreak4.speed, heartbreak4.speed);
-  heartbreak5.vx = random(-heartbreak5.speed, heartbreak5.speed);
-  heartbreak5.vy = random(-heartbreak5.speed, heartbreak5.speed);
+  setHeartspeed(heart1);
+  setHeartspeed(heart2);
+  setHeartspeed(heart3);
+  setHeartspeed(heart4);
+  setHeartspeed(heart5);
+  setHeartbreakspeed(heartbreak1);
+  setHeartbreakspeed(heartbreak2);
+  setHeartbreakspeed(heartbreak3);
+  setHeartbreakspeed(heartbreak4);
+  setHeartbreakspeed(heartbreak5);
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
   invisibleheart.vy = random(-invisibleheart.speed, invisibleheart.speed);
+}
+function setHeartspeed(heart) {
+  heart.vx = random(-heart.speed, heart.speed);
+  heart.vy = random(-heart.speed, heart.speed);
+}
+function setHeartbreakspeed(heartbreak) {
+  heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
+  heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
 }
 //
 //Creating the background.
