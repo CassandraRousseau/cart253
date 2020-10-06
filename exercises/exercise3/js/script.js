@@ -231,8 +231,10 @@ function simulation() {
   checkheartbreakEliminated();
   checkHeartbreakoverwhelm();
   invisibleheartTouched();
-  growing();
   display();
+  constrainingPosition();
+  growing();
+  constrainingGrowth();
 }
 //Creating the title
 function title() {
@@ -453,35 +455,35 @@ function checkHeartbreakoverwhelm() {
   }
 }
 function isHeartbreak1overwhelm() {
-  if (heartbreak1.w > width && heartbreak1.h > height) {
+  if (heartbreak1.w === width && heartbreak1.h === height) {
     return true;
   } else {
     return false;
   }
 }
 function isHeartbreak2overwhelm() {
-  if (heartbreak2.w > width && heartbreak2.h > height) {
+  if (heartbreak2.w === width && heartbreak2.h === height) {
     return true;
   } else {
     return false;
   }
 }
 function isHeartbreak3overwhelm() {
-  if (heartbreak3.w > width && heartbreak3.h > height) {
+  if (heartbreak3.w === width && heartbreak3.h === height) {
     return true;
   } else {
     return false;
   }
 }
 function isHeartbreak4overwhelm() {
-  if (heartbreak4.w > width && heartbreak4.h > height) {
+  if (heartbreak4.w === width && heartbreak4.h === height) {
     return true;
   } else {
     return false;
   }
 }
 function isHeartbreak5overwhelm() {
-  if (heartbreak5.w > width && heartbreak5.h > height) {
+  if (heartbreak5.w === width && heartbreak5.h === height) {
     return true;
   } else {
     return false;
@@ -503,32 +505,6 @@ function invisibleheartTouched() {
     invisibleheart.active = false;
     state = "unknown";
   }
-}
-//Setting growing effect on heartbreaks
-function growing() {
-  heartbreak1.w += heartbreak1.growth;
-  heartbreak1.h += heartbreak1.growth;
-  heartbreak2.w += heartbreak2.growth;
-  heartbreak2.h += heartbreak2.growth;
-  heartbreak3.w += heartbreak3.growth;
-  heartbreak3.h += heartbreak3.growth;
-  heartbreak4.w += heartbreak4.growth;
-  heartbreak4.h += heartbreak4.growth;
-  heartbreak5.w += heartbreak5.growth;
-  heartbreak5.h += heartbreak5.growth;
-}
-//Constraining heartbreaks moving and growing outside the canvas
-function constraining() {
-  heartbreak1.growth = constrain(heartbreak1.x, 0, width);
-  heartbreak1.growth = constrain(heartbreak1.y, 0, height);
-  heartbreak2.growth = constrain(heartbreak2.x, 0, width);
-  heartbreak2.growth = constrain(heartbreak2.y, 0, height);
-  heartbreak3.growth = constrain(heartbreak3.x, 0, width);
-  heartbreak3.growth = constrain(heartbreak3.y, 0, height);
-  heartbreak4.growth = constrain(heartbreak4.x, 0, width);
-  heartbreak4.growth = constrain(heartbreak4.y, 0, height);
-  heartbreak5.growth = constrain(heartbreak5.x, 0, width);
-  heartbreak5.growth = constrain(heartbreak5.y, 0, height);
 }
 //Display images
 function display() {
@@ -610,6 +586,45 @@ function displayheartbreak() {
     );
   }
 }
+function constrainingPosition() {
+  heartbreak1.x = constrain(heartbreak1.x, 0, width);
+  heartbreak1.y = constrain(heartbreak1.y, 0, height);
+  heartbreak2.x = constrain(heartbreak2.x, 0, width);
+  heartbreak2.y = constrain(heartbreak2.y, 0, height);
+  heartbreak3.x = constrain(heartbreak3.x, 0, width);
+  heartbreak3.y = constrain(heartbreak3.y, 0, height);
+  heartbreak4.x = constrain(heartbreak4.x, 0, width);
+  heartbreak4.y = constrain(heartbreak4.y, 0, height);
+  heartbreak5.x = constrain(heartbreak5.x, 0, width);
+  heartbreak5.y = constrain(heartbreak5.y, 0, height);
+}
+//Setting growing effect on heartbreaks
+function growing() {
+  heartbreak1.w += heartbreak1.growth;
+  heartbreak1.h += heartbreak1.growth;
+  heartbreak2.w += heartbreak2.growth;
+  heartbreak2.h += heartbreak2.growth;
+  heartbreak3.w += heartbreak3.growth;
+  heartbreak3.h += heartbreak3.growth;
+  heartbreak4.w += heartbreak4.growth;
+  heartbreak4.h += heartbreak4.growth;
+  heartbreak5.w += heartbreak5.growth;
+  heartbreak5.h += heartbreak5.growth;
+}
+//Constraining heartbreaks moving and growing outside the canvas
+function constrainingGrowth() {
+  heartbreak1.w = constrain(heartbreak1.x, 0, width);
+  heartbreak1.h = constrain(heartbreak1.y, 0, height);
+  heartbreak2.w = constrain(heartbreak2.x, 0, width);
+  heartbreak2.h = constrain(heartbreak2.y, 0, height);
+  heartbreak3.w = constrain(heartbreak3.x, 0, width);
+  heartbreak3.h = constrain(heartbreak3.y, 0, height);
+  heartbreak4.w = constrain(heartbreak4.x, 0, width);
+  heartbreak4.h = constrain(heartbreak4.y, 0, height);
+  heartbreak5.w = constrain(heartbreak5.x, 0, width);
+  heartbreak5.h = constrain(heartbreak5.y, 0, height);
+}
+
 //Setting mouse commands
 function mousePressed() {
   if (state === "title") {
