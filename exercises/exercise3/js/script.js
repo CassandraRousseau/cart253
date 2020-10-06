@@ -125,8 +125,8 @@ let heartbreak5 = {
 let cupid = {
   x: 250,
   y: 250,
-  w: 200,
-  h: 200,
+  w: 300,
+  h: 300,
   image: undefined,
 };
 let invisibleheart = {
@@ -178,6 +178,7 @@ function preload() {
 // Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  noCursor();
   //Setting hearts positions
   heart1.x = width / 3;
   heart2.x = (1 * width) / 3;
@@ -286,11 +287,15 @@ function love() {
 //Creating the bad ending
 function sadness() {
   push();
-  textSize(65);
+  textSize(90);
   fill(0);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
   text("Game Over", width / 2, height / 2);
+  push();
+  textSize(40);
+  text("Heartbreaks conquered the world :'(", width / 2, 400);
+  pop();
   pop();
 }
 //Creating the easter egg
