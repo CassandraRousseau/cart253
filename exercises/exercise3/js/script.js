@@ -157,6 +157,16 @@ let arrow = {
   speed: 20,
   shooted: false,
 };
+let cloud = {
+  x: 0,
+  y: 0,
+  w: 300,
+  h: 300,
+  vx: 0,
+  vy: 0,
+  speed: 1,
+  image: undefined,
+};
 //
 let state = "title";
 //
@@ -174,6 +184,7 @@ function preload() {
   heartbreak4.image = loadImage("assets/images/heartbreak.png");
   heartbreak5.image = loadImage("assets/images/heartbreak.png");
   invisibleheart.image = loadImage("assets/images/invisibleheart.png");
+  cloud.image = loadImage("assets/images/cloud.png");
 }
 //
 // Creating the canvas.
@@ -538,9 +549,24 @@ function invisibleheartTouched() {
 //
 //Display images
 function display() {
+  displaycloud(150, 400, 300, 300);
+  displaycloud(100, 100, 500, 300);
+  displaycloud(1200, 300, 500, 500);
+  displaycloud(600, 500, 500, 300);
+  displaycloud(800, 100, 600, 300);
   displayheart();
   displaytherest();
   displayheartbreak();
+}
+//
+//Display clouds
+function displaycloud(x, y, w, h) {
+  for (let i = 0; i < 1; i++) {
+    // We can still use x and y as variables
+    image(cloud.image, x, y, w, h);
+    // Including changing x inside our loop
+    x = x + 5;
+  }
 }
 //
 //Display hearts
@@ -550,27 +576,6 @@ function displayheart() {
   image(heart3.image, heart3.x, heart3.y, heart3.w, heart3.h);
   image(heart4.image, heart4.x, heart4.y, heart4.w, heart4.h);
   image(heart5.image, heart5.x, heart5.y, heart5.w, heart5.h);
-}
-//
-//Display the rest of javascript objects
-function displaytherest() {
-  push();
-  imageMode(CENTER);
-  image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
-  pop();
-  push();
-  image(
-    invisibleheart.image,
-    invisibleheart.x,
-    invisibleheart.y,
-    invisibleheart.w,
-    invisibleheart.h
-  );
-  pop();
-  //Setting when arrow is displayed
-  if (arrow.shooted) {
-    rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
-  }
 }
 //
 //Setting when heartbreaks are displayed
@@ -624,6 +629,27 @@ function displayheartbreak() {
       heartbreak5.w,
       heartbreak5.h
     );
+  }
+}
+//
+//Display the rest of javascript objects
+function displaytherest() {
+  push();
+  imageMode(CENTER);
+  image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
+  pop();
+  push();
+  image(
+    invisibleheart.image,
+    invisibleheart.x,
+    invisibleheart.y,
+    invisibleheart.w,
+    invisibleheart.h
+  );
+  pop();
+  //Setting when arrow is displayed
+  if (arrow.shooted) {
+    rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
 }
 //
