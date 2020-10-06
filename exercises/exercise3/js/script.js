@@ -162,9 +162,6 @@ let cloud = {
   y: 0,
   w: 300,
   h: 300,
-  vx: 0,
-  vy: 0,
-  speed: 1,
   image: undefined,
 };
 //
