@@ -309,7 +309,7 @@ function sadness() {
   text("Game Over", width / 2, height / 2);
   push();
   textSize(40);
-  text("Heartbreaks conquered the world :'(", width / 2, 400);
+  text("Sadness conquered the world :'(", width / 2, 400);
   pop();
   pop();
 }
