@@ -200,6 +200,7 @@ function setup() {
   heartbreak3.x = width / 3;
   heartbreak4.x = (2 * width) / 3;
   heartbreak5.x = (1 * width) / 3;
+  //Setting random hearts direction
   setHeartspeed(heart1);
   setHeartspeed(heart2);
   setHeartspeed(heart3);
@@ -213,10 +214,14 @@ function setup() {
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
   invisibleheart.vy = random(-invisibleheart.speed, invisibleheart.speed);
 }
+//
+//Setting hearts speed
 function setHeartspeed(heart) {
   heart.vx = random(-heart.speed, heart.speed);
   heart.vy = random(-heart.speed, heart.speed);
 }
+//
+//Setting heartbreaks positions
 function setHeartbreakspeed(heartbreak) {
   heartbreak.vx = random(-heartbreak.speed, heartbreak.speed);
   heartbreak.vy = random(-heartbreak.speed, heartbreak.speed);
@@ -359,23 +364,31 @@ function quit() {
   pop();
 }
 //
-//Setting javascript objects movements
+//Setting cupid movements
 function cupidmove() {
   cupid.x = mouseX;
   cupid.y = mouseY;
 }
+//
+//Setting arrow movements
 function arrowmove() {
   arrow.x += arrow.vx;
   arrow.y += arrow.vy;
 }
+//
+//Setting hearts movements
 function heartmove(heart) {
   heart.x += heart.vx;
   heart.y += heart.vy;
 }
+//
+//Setting invisible heart movements
 function invisibleheartmove() {
   invisibleheart.x += invisibleheart.vx;
   invisibleheart.y += invisibleheart.vy;
 }
+//
+//Setting heartbreaks movements
 function heartbreakmove(heartbreak) {
   heartbreak.x += heartbreak.vx;
   heartbreak.y += heartbreak.vy;
@@ -429,7 +442,7 @@ function checkHeartbreakoverwhelm() {
     state = "sadness";
   }
 }
-//
+//Setting when checking if heartbreaks go outside the canvas
 function isHeartbreakoverwhelm(heartbreak) {
   if (heartbreak.w === width && heartbreak.h === height) {
     return true;
@@ -437,7 +450,6 @@ function isHeartbreakoverwhelm(heartbreak) {
     return false;
   }
 }
-
 //
 //Setting shooting on invisible heart
 function invisibleheartTouched() {
@@ -480,9 +492,7 @@ function display() {
 //Display clouds
 function displaycloud(x, y, w, h) {
   for (let i = 0; i < 1; i++) {
-    // We can still use x and y as variables
     image(cloud.image, x, y, w, h);
-    // Including changing x inside our loop
     x = x + 5;
   }
 }
