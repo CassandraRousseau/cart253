@@ -12,6 +12,7 @@ let intro =
   "Hello Cupid! \nYour misssion today is too fight against heartbreaks!\nSpread love by throwing arrows on these unfortunate couples!\nTo fly through the sky, move your mouse.To throw arrows, press the spacebar button.\nWatchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place!\nGood luck!";
 let letter =
   "Dear Boss,\nI have the misfortune to announce you my departure.\nIt is time for me to leave and discover new horizons.\nThanks to all the organization members for the given experience during the past years.\nI will never forget my time spent with you.\nFarewell,\nCupid";
+//
 let heart1 = {
   x: 0,
   y: 0,
@@ -156,8 +157,9 @@ let arrow = {
   speed: 20,
   shooted: false,
 };
-
+//
 let state = "title";
+//
 //Loading javascript objects
 function preload() {
   cupid.image = loadImage("assets/images/cupid.png");
@@ -173,7 +175,6 @@ function preload() {
   heartbreak5.image = loadImage("assets/images/heartbreak.png");
   invisibleheart.image = loadImage("assets/images/invisibleheart.png");
 }
-// setup()
 //
 // Creating the canvas.
 function setup() {
@@ -212,8 +213,6 @@ function setup() {
   invisibleheart.vx = random(-invisibleheart.speed, invisibleheart.speed);
   invisibleheart.vy = random(-invisibleheart.speed, invisibleheart.speed);
 }
-
-// draw()
 //
 //Creating the background.
 function draw() {
@@ -235,6 +234,7 @@ function draw() {
     quit();
   }
 }
+//
 // Creating the simulation.
 function simulation() {
   move();
@@ -246,6 +246,7 @@ function simulation() {
   growing();
   constrainingGrowth();
 }
+//
 //Creating the title
 function title() {
   push();
@@ -260,6 +261,7 @@ function title() {
   pop();
   pop();
 }
+//
 //Creating the instructions
 function instructions() {
   push();
@@ -270,6 +272,7 @@ function instructions() {
   text(intro, 10, 50, windowWidth, windowHeight);
   pop();
 }
+//
 //Creating the good ending
 function love() {
   push();
@@ -284,6 +287,7 @@ function love() {
   pop();
   pop();
 }
+//
 //Creating the bad ending
 function sadness() {
   push();
@@ -298,6 +302,7 @@ function sadness() {
   pop();
   pop();
 }
+//
 //Creating the easter egg
 function unknown() {
   push();
@@ -309,6 +314,7 @@ function unknown() {
   text(letter, 0, 50, windowWidth, windowHeight);
   pop();
 }
+//
 //Creating the unknown ending
 function quit() {
   push();
@@ -320,8 +326,9 @@ function quit() {
   text("YOU QUIT YOUR JOB.", width / 2, height / 2);
   pop();
 }
+//
+//Setting javascript objects movements
 function move() {
-  //Setting javascript objects movements
   cupid.x = mouseX;
   cupid.y = mouseY;
   arrow.x += arrow.vx;
@@ -349,6 +356,7 @@ function move() {
   heartbreak5.x += heartbreak5.vx;
   heartbreak5.y += heartbreak5.vy;
 }
+//
 //Checking if heartbreaks are all eliminated
 function checkheartbreakEliminated() {
   isheartbreak1Eliminated();
@@ -366,6 +374,7 @@ function checkheartbreakEliminated() {
     state = "love";
   }
 }
+//
 //Setting the shooting effect for heartbreak1
 function isheartbreak1Eliminated() {
   if (arrow.x > width) {
@@ -383,6 +392,7 @@ function isheartbreak1Eliminated() {
     heartbreak1.active = false;
   }
 }
+//
 //Setting the shooting effect for heartbreak2
 function isheartbreak2Eliminated() {
   if (arrow.x > width) {
@@ -400,6 +410,7 @@ function isheartbreak2Eliminated() {
     heartbreak2.active = false;
   }
 }
+//
 //Setting the shooting effect for heartbreak3
 function isheartbreak3Eliminated() {
   if (arrow.x > width) {
@@ -417,6 +428,7 @@ function isheartbreak3Eliminated() {
     heartbreak3.active = false;
   }
 }
+//
 //Setting the shooting effect for heartbreak4
 function isheartbreak4Eliminated() {
   if (arrow.x > width) {
@@ -434,6 +446,7 @@ function isheartbreak4Eliminated() {
     heartbreak4.active = false;
   }
 }
+//
 //Setting the shooting effect for heartbreak5
 function isheartbreak5Eliminated() {
   if (arrow.x > width) {
@@ -451,8 +464,9 @@ function isheartbreak5Eliminated() {
     heartbreak5.active = false;
   }
 }
+//
+//Checking if heartbreaks go outside the canvas.
 function checkHeartbreakoverwhelm() {
-  //Checking if heartbreaks go outside the canvas.
   if (
     isHeartbreak1overwhelm() ||
     isHeartbreak2overwhelm() ||
@@ -463,6 +477,7 @@ function checkHeartbreakoverwhelm() {
     state = "sadness";
   }
 }
+//
 function isHeartbreak1overwhelm() {
   if (heartbreak1.w === width && heartbreak1.h === height) {
     return true;
@@ -470,6 +485,7 @@ function isHeartbreak1overwhelm() {
     return false;
   }
 }
+//
 function isHeartbreak2overwhelm() {
   if (heartbreak2.w === width && heartbreak2.h === height) {
     return true;
@@ -477,6 +493,7 @@ function isHeartbreak2overwhelm() {
     return false;
   }
 }
+//
 function isHeartbreak3overwhelm() {
   if (heartbreak3.w === width && heartbreak3.h === height) {
     return true;
@@ -484,6 +501,7 @@ function isHeartbreak3overwhelm() {
     return false;
   }
 }
+//
 function isHeartbreak4overwhelm() {
   if (heartbreak4.w === width && heartbreak4.h === height) {
     return true;
@@ -491,6 +509,7 @@ function isHeartbreak4overwhelm() {
     return false;
   }
 }
+//
 function isHeartbreak5overwhelm() {
   if (heartbreak5.w === width && heartbreak5.h === height) {
     return true;
@@ -498,6 +517,7 @@ function isHeartbreak5overwhelm() {
     return false;
   }
 }
+//
 //Setting shooting on invisible heart
 function invisibleheartTouched() {
   if (arrow.x > width) {
@@ -515,12 +535,14 @@ function invisibleheartTouched() {
     state = "unknown";
   }
 }
+//
 //Display images
 function display() {
   displayheart();
   displaytherest();
   displayheartbreak();
 }
+//
 //Display hearts
 function displayheart() {
   image(heart1.image, heart1.x, heart1.y, heart1.w, heart1.h);
@@ -529,6 +551,7 @@ function displayheart() {
   image(heart4.image, heart4.x, heart4.y, heart4.w, heart4.h);
   image(heart5.image, heart5.x, heart5.y, heart5.w, heart5.h);
 }
+//
 //Display the rest of javascript objects
 function displaytherest() {
   push();
@@ -536,7 +559,6 @@ function displaytherest() {
   image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
   pop();
   push();
-
   image(
     invisibleheart.image,
     invisibleheart.x,
@@ -550,6 +572,7 @@ function displaytherest() {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
   }
 }
+//
 //Setting when heartbreaks are displayed
 function displayheartbreak() {
   if (heartbreak1.active) {
@@ -603,6 +626,7 @@ function displayheartbreak() {
     );
   }
 }
+//
 //Constraining heartbreaks moving outside the canvas
 function constrainingPosition() {
   heartbreak1.x = constrain(heartbreak1.x, 0, width);
@@ -616,6 +640,7 @@ function constrainingPosition() {
   heartbreak5.x = constrain(heartbreak5.x, 0, width);
   heartbreak5.y = constrain(heartbreak5.y, 0, height);
 }
+//
 //Setting growing effect on heartbreaks
 function growing() {
   heartbreak1.w += heartbreak1.growth;
@@ -629,6 +654,7 @@ function growing() {
   heartbreak5.w += heartbreak5.growth;
   heartbreak5.h += heartbreak5.growth;
 }
+//
 //Constraining heartbreaks growing outside the canvas
 function constrainingGrowth() {
   heartbreak1.w = constrain(heartbreak1.w, 0, width);
@@ -642,7 +668,7 @@ function constrainingGrowth() {
   heartbreak5.w = constrain(heartbreak5.w, 0, width);
   heartbreak5.h = constrain(heartbreak5.h, 0, height);
 }
-
+//
 //Setting mouse commands
 function mousePressed() {
   if (state === "title") {
@@ -653,6 +679,7 @@ function mousePressed() {
     state = "quit";
   }
 }
+//
 //Setting keys commands
 function keyPressed() {
   if (!arrow.shooted && keyCode === 32) {
