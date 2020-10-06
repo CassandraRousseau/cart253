@@ -586,6 +586,7 @@ function displayheartbreak() {
     );
   }
 }
+//Constraining heartbreaks moving outside the canvas
 function constrainingPosition() {
   heartbreak1.x = constrain(heartbreak1.x, 0, width);
   heartbreak1.y = constrain(heartbreak1.y, 0, height);
@@ -611,7 +612,7 @@ function growing() {
   heartbreak5.w += heartbreak5.growth;
   heartbreak5.h += heartbreak5.growth;
 }
-//Constraining heartbreaks moving and growing outside the canvas
+//Constraining heartbreaks growing outside the canvas
 function constrainingGrowth() {
   heartbreak1.w = constrain(heartbreak1.x, 0, width);
   heartbreak1.h = constrain(heartbreak1.y, 0, height);
