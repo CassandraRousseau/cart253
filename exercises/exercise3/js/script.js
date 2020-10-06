@@ -247,7 +247,7 @@ function draw() {
     quit();
   }
 }
-//
+///
 // Creating the simulation.
 function simulation() {
   cupidmove();
