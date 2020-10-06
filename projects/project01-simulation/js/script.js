@@ -66,7 +66,7 @@ let state = "title";
 //Loading images for simulation.
 function preload() {
   soundTrack = loadSound ("");
-  coffeeshop.image = loadImage("assets/images/");
+  coffeeshop.image = loadImage("assets/images/coffeeshop.png");
   success.image = loadImage("assets/images/");
   failure.image = loadImage("assets/images/");
     table.image = loadImage("assets/images/table.png");
