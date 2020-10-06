@@ -9,7 +9,7 @@ invisible heart, it will leads to an unknown ending...
 **************************************************/
 "use strict";
 let intro =
-  "Hello Cupid! \nYour misssion today is too fight against heartbreaks!\nSpread love by throwing arrows on these unfortunate couples!\nTo fly through the sky, move your mouse.To throw arrows, press the spacebar button.\nWatchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place!\nGood luck!";
+  "Hello Cupid! \nYour mission today is to fight against heartbreaks!\nSpread love by throwing arrows on these unfortunate couples!\nTo fly through the sky, move your mouse.To throw arrows, press the spacebar button.\nWatchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place!\nGood luck!";
 let letter =
   "Dear Boss,\nI have the misfortune to announce you my departure.\nIt is time for me to leave and discover new horizons.\nThanks to all the organization members for the given experience during the past years.\nI will never forget my time spent with you.\nFarewell,\nCupid";
 //
