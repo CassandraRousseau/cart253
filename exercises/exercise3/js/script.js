@@ -8,6 +8,10 @@ If one of the heartbreak gots bigger than the edge of the canvas, the simulation
 invisible heart, it will leads to an unknown ending...
 **************************************************/
 "use strict";
+let intro =
+  "Hello Cupid! \nYour misssion today is too fight against heartbreaks!\nSpread love by throwing arrows on these unfortunate couples!\nTo fly through the sky, move your mouse.To throw arrows, press the spacebar button.\nWatchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms the place!\nGood luck!";
+let letter =
+  "Dear Boss,\nI have the misfortune to announce you my departure.\nIt is time for me to leave and discover new horizons.\nThanks to all the organization members for the given experience during the past years.\nI will never forget my time spent with you.\nFarewell,\nCupid";
 let heart1 = {
   x: 0,
   y: 0,
@@ -135,6 +139,11 @@ let invisibleheart = {
   vy: 0,
   speed: 1,
   active: true,
+  tint: {
+    r: 100,
+    g: 200,
+    b: 205,
+  },
 };
 let arrow = {
   x: -100,
@@ -207,7 +216,7 @@ function setup() {
 //
 //Creating the background.
 function draw() {
-  background(0);
+  background(100, 200, 205);
   //Making the order of the simulation
   if (state === "title") {
     title();
@@ -239,48 +248,37 @@ function simulation() {
 //Creating the title
 function title() {
   push();
-  textSize(85);
+  textSize(105);
   fill(255);
   textAlign(CENTER, CENTER);
   textFont("CCSignLanguage");
   text("Cupidventure", width / 2, height / 2);
-  1;
+  push();
+  textSize(35);
+  text("Click your mouse to start", width / 2, 450);
+  pop();
   pop();
 }
 //Creating the instructions
 function instructions() {
   push();
-  textSize(35);
-  fill(200, 100, 100);
+  textSize(45);
+  fill(255);
   textAlign(LEFT, TOP);
   textFont("CCSignLanguage");
-  text("Hello Cupid!", 0, 50);
-  text("Your misssion today is too fight against heartbreaks!", 0, 150);
-  text("Spread love by throwing arrows on these unfortunate couples! ", 0, 200);
-  text(
-    "To fly through the city, move your mouse.To throw arrows, press the spacebar ",
-    0,
-    300
-  );
-  text("button.", 0, 350);
-  text(
-    "Watchout! Sadness spreads easily! Get rid of all the heartbreaks before it overwhelms",
-    0,
-    450
-  );
-  text("the place! Good luck!", 0, 500);
+  text(intro, 10, 50, windowWidth, windowHeight);
   pop();
 }
 //Creating the good ending
 function love() {
   push();
-  textSize(65);
-  fill(200, 100, 100);
+  textSize(85);
+  fill(225, 125, 125);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
   text("Congratulations!", width / 2, height / 2);
   push();
-  textSize(35);
+  textSize(45);
   text("Love is spread!", width / 2, 400);
   pop();
   pop();
@@ -289,7 +287,8 @@ function love() {
 function sadness() {
   push();
   textSize(65);
-  fill(100, 100, 200);
+  fill(0);
+  textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
   text("Game Over", width / 2, height / 2);
   pop();
@@ -297,23 +296,18 @@ function sadness() {
 //Creating the easter egg
 function unknown() {
   push();
-  textSize(35);
+  background(0);
+  textSize(45);
   fill(255);
   textAlign(LEFT, TOP);
   textFont("Consolas");
-  text("Dear Boss,", 0, 50);
-  text("I have the misfortune to announce you my departure.", 0, 150);
-  text("It is time for me to go and discover new horizons.", 0, 200);
-  text("Thanks to all the members of the organization for the gained ", 0, 300);
-  text("knowledge during the past years,", 0, 350);
-  text("I will never forget my experience within this community ", 0, 450);
-  text("Farewell,", 0, 500);
-  text("Cupid", 0, 550);
+  text(letter, 0, 50, windowWidth, windowHeight);
   pop();
 }
 //Creating the unknown ending
 function quit() {
   push();
+  background(0);
   textSize(85);
   fill(255);
   textAlign(CENTER, CENTER);
@@ -352,12 +346,17 @@ function move() {
 }
 //Checking if heartbreaks are all eliminated
 function checkheartbreakEliminated() {
+  isheartbreak1Eliminated();
+  isheartbreak2Eliminated();
+  isheartbreak3Eliminated();
+  isheartbreak4Eliminated();
+  isheartbreak5Eliminated();
   if (
-    isheartbreak1Eliminated() &&
-    isheartbreak2Eliminated() &&
-    isheartbreak3Eliminated() &&
-    isheartbreak4Eliminated() &&
-    isheartbreak5Eliminated()
+    !heartbreak1.active &&
+    !heartbreak2.active &&
+    !heartbreak3.active &&
+    !heartbreak4.active &&
+    !heartbreak5.active
   ) {
     state = "love";
   }
@@ -369,7 +368,8 @@ function isheartbreak1Eliminated() {
   }
   let d = dist(arrow.x, arrow.y, heartbreak1.x, heartbreak1.y);
   if (
-    arrow.shooted & heartbreak1.active &&
+    arrow.shooted &&
+    heartbreak1.active &&
     d < arrow.w / 2 + heartbreak1.w / 2
   ) {
     // Stop the arrow
@@ -385,7 +385,8 @@ function isheartbreak2Eliminated() {
   }
   let d = dist(arrow.x, arrow.y, heartbreak2.x, heartbreak2.y);
   if (
-    arrow.shooted & heartbreak2.active &&
+    arrow.shooted &&
+    heartbreak2.active &&
     d < arrow.w / 2 + heartbreak2.w / 2
   ) {
     // Stop the arrow
@@ -401,7 +402,8 @@ function isheartbreak3Eliminated() {
   }
   let d = dist(arrow.x, arrow.y, heartbreak3.x, heartbreak3.y);
   if (
-    arrow.shooted & heartbreak3.active &&
+    arrow.shooted &&
+    heartbreak3.active &&
     d < arrow.w / 2 + heartbreak3.w / 2
   ) {
     // Stop the arrow
@@ -417,7 +419,8 @@ function isheartbreak4Eliminated() {
   }
   let d = dist(arrow.x, arrow.y, heartbreak4.x, heartbreak4.y);
   if (
-    arrow.shooted & heartbreak4.active &&
+    arrow.shooted &&
+    heartbreak4.active &&
     d < arrow.w / 2 + heartbreak4.w / 2
   ) {
     // Stop the arrow
@@ -433,7 +436,8 @@ function isheartbreak5Eliminated() {
   }
   let d = dist(arrow.x, arrow.y, heartbreak5.x, heartbreak5.y);
   if (
-    arrow.shooted & heartbreak5.active &&
+    arrow.shooted &&
+    heartbreak5.active &&
     d < arrow.w / 2 + heartbreak5.w / 2
   ) {
     // Stop the arrow
@@ -445,10 +449,10 @@ function isheartbreak5Eliminated() {
 function checkHeartbreakoverwhelm() {
   //Checking if heartbreaks go outside the canvas.
   if (
-    isHeartbreak1overwhelm() &&
-    isHeartbreak2overwhelm() &&
-    isHeartbreak3overwhelm() &&
-    isHeartbreak4overwhelm() &&
+    isHeartbreak1overwhelm() ||
+    isHeartbreak2overwhelm() ||
+    isHeartbreak3overwhelm() ||
+    isHeartbreak4overwhelm() ||
     isHeartbreak5overwhelm()
   ) {
     state = "sadness";
@@ -526,6 +530,8 @@ function displaytherest() {
   imageMode(CENTER);
   image(cupid.image, mouseX, mouseY, cupid.w, cupid.h);
   pop();
+  push();
+
   image(
     invisibleheart.image,
     invisibleheart.x,
@@ -533,6 +539,7 @@ function displaytherest() {
     invisibleheart.w,
     invisibleheart.h
   );
+  pop();
   //Setting when arrow is displayed
   if (arrow.shooted) {
     rect(arrow.x, arrow.y, arrow.w, arrow.h, arrow.fill);
@@ -541,6 +548,7 @@ function displaytherest() {
 //Setting when heartbreaks are displayed
 function displayheartbreak() {
   if (heartbreak1.active) {
+    imageMode(CENTER);
     image(
       heartbreak1.image,
       heartbreak1.x,
@@ -550,6 +558,7 @@ function displayheartbreak() {
     );
   }
   if (heartbreak2.active) {
+    imageMode(CENTER);
     image(
       heartbreak2.image,
       heartbreak2.x,
@@ -559,6 +568,7 @@ function displayheartbreak() {
     );
   }
   if (heartbreak3.active) {
+    imageMode(CENTER);
     image(
       heartbreak3.image,
       heartbreak3.x,
@@ -568,6 +578,7 @@ function displayheartbreak() {
     );
   }
   if (heartbreak4.active) {
+    imageMode(CENTER);
     image(
       heartbreak4.image,
       heartbreak4.x,
@@ -577,6 +588,7 @@ function displayheartbreak() {
     );
   }
   if (heartbreak5.active) {
+    imageMode(CENTER);
     image(
       heartbreak5.image,
       heartbreak5.x,
@@ -614,16 +626,16 @@ function growing() {
 }
 //Constraining heartbreaks growing outside the canvas
 function constrainingGrowth() {
-  heartbreak1.w = constrain(heartbreak1.x, 0, width);
-  heartbreak1.h = constrain(heartbreak1.y, 0, height);
-  heartbreak2.w = constrain(heartbreak2.x, 0, width);
-  heartbreak2.h = constrain(heartbreak2.y, 0, height);
-  heartbreak3.w = constrain(heartbreak3.x, 0, width);
-  heartbreak3.h = constrain(heartbreak3.y, 0, height);
-  heartbreak4.w = constrain(heartbreak4.x, 0, width);
-  heartbreak4.h = constrain(heartbreak4.y, 0, height);
-  heartbreak5.w = constrain(heartbreak5.x, 0, width);
-  heartbreak5.h = constrain(heartbreak5.y, 0, height);
+  heartbreak1.w = constrain(heartbreak1.w, 0, width);
+  heartbreak1.h = constrain(heartbreak1.h, 0, height);
+  heartbreak2.w = constrain(heartbreak2.w, 0, width);
+  heartbreak2.h = constrain(heartbreak2.h, 0, height);
+  heartbreak3.w = constrain(heartbreak3.w, 0, width);
+  heartbreak3.h = constrain(heartbreak3.h, 0, height);
+  heartbreak4.w = constrain(heartbreak4.w, 0, width);
+  heartbreak4.h = constrain(heartbreak4.h, 0, height);
+  heartbreak5.w = constrain(heartbreak5.w, 0, width);
+  heartbreak5.h = constrain(heartbreak5.h, 0, height);
 }
 
 //Setting mouse commands
