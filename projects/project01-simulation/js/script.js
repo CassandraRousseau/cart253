@@ -68,7 +68,7 @@ function preload() {
   soundTrack = loadSound ("");
   coffeeshop.image = loadImage("assets/images/coffeeshop.png");
   success.image = loadImage("assets/images/");
-  failure.image = loadImage("assets/images/");
+  failure.image = loadImage("assets/images/failure.png");
     table.image = loadImage("assets/images/table.png");
     hand.image = loadImage("assets/images/hand.png");
 }
@@ -146,8 +146,7 @@ function success() {
   pop();
 }
 function failure() {
-  tint(mask.tint.r, mask.tint.g, mask.tint.b, mask.tint.alpha);
-  image(mask.image, mask.x, mask.y, mask.w, mask.h);
+  image(failure.image, windowWidth,windowHeight);
   push();
   textSize(65);
   fill(100, 100, 200);
