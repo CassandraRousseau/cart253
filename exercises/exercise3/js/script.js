@@ -473,9 +473,9 @@ function invisibleheartTouched() {
 function display() {
   displaycloud(150, 400, 300, 300);
   displaycloud(100, 100, 500, 300);
-  displaycloud(1200, 300, 500, 500);
-  displaycloud(600, 500, 500, 300);
-  displaycloud(800, 100, 600, 300);
+  displaycloud(500, 300, 500, 500);
+  displaycloud(500, 500, 500, 300);
+  displaycloud(500, 100, 500, 300);
   displayheart(heart1);
   displayheart(heart2);
   displayheart(heart3);
