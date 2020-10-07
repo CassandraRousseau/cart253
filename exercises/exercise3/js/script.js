@@ -184,7 +184,7 @@ function preload() {
   cloud.image = loadImage("assets/images/cloud.png");
 }
 ///
-// Creating the canvas.
+/// Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noCursor();
