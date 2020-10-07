@@ -183,7 +183,7 @@ function preload() {
   invisibleheart.image = loadImage("assets/images/invisibleheart.png");
   cloud.image = loadImage("assets/images/cloud.png");
 }
-//
+///
 // Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
