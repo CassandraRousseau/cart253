@@ -184,6 +184,8 @@ function move() {
   shadow.y += shadow.vy;
   plate.x += plate.vx;
   plate.y += plate.vy;
+}
+function  constraining(){
   coffee.y = constrain(coffee.y, width/2,height/2);
   coffee.x = constrain(coffee.x,width/2,height/2);
   mug.y = constrain(mug.y, width/2,height/2);
@@ -195,7 +197,6 @@ handle.x = constrain(handle.x,width/2,height/2);
 plate.y = constrain(plate.y, width/2,height/2);
 plate.x = constrain(plate.x,width/2,height/2);
 }
-
 function isOffscreen(circle) {
   if (circle.x < 0 || circle.x > width || circle.y < 0 || circle.y > height) {
     return true;
@@ -211,13 +212,14 @@ function rightDrawing() {
   }
 }
 function display() {
-  //Display circles
-  ellipse(circle1.x, circle1.y, circle1.size);
-  ellipse(circle2.x, circle2.y, circle2.size);
-  ellipse(circle1.x, circle1.y, circle1.size);
-  ellipse(circle2.x, circle2.y, circle2.size);
   //Display table image
   image(table.image,windowWidth,windowHeight);
+  //Display circles
+  ellipse(coffee.x, coffee.y, coffee.size);
+  ellipse(mug.x, mug.y, mug.size);
+  rect(handle.x,handle.y,handle.w,handle.h,handle.tl,handle.tr)
+  ellipse(shadow.x, shadow.y, shadow.size);
+  ellipse(plate.x, plate.y, plate.size);
   //Display hand image
   image(hand.image,mouseX,mouseY);
 }
@@ -229,4 +231,3 @@ function drawing() {
   if (mouseIsPressed===true) {
   line(mouseX,mouseY,pmouseX,pmouseY)
   }
-  noLoop();
