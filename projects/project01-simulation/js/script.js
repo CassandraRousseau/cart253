@@ -77,11 +77,15 @@ let hand = {
 let failure = {
   image: undefined,
 };
+let success = {
+  image: undefined,
+};
 let state = "title";
 //Loading images for simulation.
 function preload() {
   coffeeshop.image = loadImage("assets/images/coffeeshop.png");
   failure.image = loadImage("assets/images/failure.png");
+  success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
   hand.image = loadImage("assets/images/hand.png");
 }
@@ -153,6 +157,7 @@ function simulation() {
 //Setting the good ending
 function success() {
   push();
+  iamge(success.image, windowWidth, windowHeight);
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
