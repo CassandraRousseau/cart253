@@ -4,6 +4,7 @@ Cassandra Rousseau
 
 Here is a description of this template p5 project.
 **************************************************/
+let instructions="Welcome new employee!\nWe are glad to have you in our team!\nThis newly open coffeeshop need your talent to create succulent latte!\nPress your mouse and drag it to make drawings on latte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!"
 let coffee = {
   x: 150,
   y: 250,
@@ -121,12 +122,7 @@ function welcome() {
   fill(200,200,100);
   textFont("Blambot Pro BB")
   textAlign(LEFT, TOP);
-  text("Welcome new employee!", 0, 50);
-    text("We are glad to have you in our team!", 0, 150);
-    text("This newly open coffeeshop need your talent to create succulent latte!",0.200);
-    text("Press your mouse and drag it to make drawings on latte",0,300);
-    text("Follow the guidelines to create beautiful artworks!",0,350);
-      text("Be artsy, have fun and good luck!",0,350);
+  text("Instructions", 10, 50);
   pop();
 }
 function simulation() {
