@@ -11,14 +11,14 @@ let instructions =
 let plate = {
   x: 0,
   y: 0,
-  size: 300,
+  size: 500,
   fill: 255,
   speed: 2,
 };
 let coffee = {
   x: 0,
   y: 0,
-  size: 50,
+  size: 250,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -31,7 +31,7 @@ let coffee = {
 let shadow = {
   x: 0,
   y: 0,
-  size: 100,
+  size: 450,
   stroke: 127,
   strokeWeight: 3,
   vx: 0,
@@ -42,7 +42,7 @@ let shadow = {
 let mug = {
   x: 0,
   y: 0,
-  size: 200,
+  size: 400,
   stroke: 127,
   strokeWeight: 3,
   fill: 255,
@@ -105,7 +105,7 @@ function draw() {
   } else if (state === "simulation") {
     simulation();
   } else if (state === "success") {
-    success();
+    open();
   } else if (state === "failure") {
     closed();
   }
@@ -155,7 +155,7 @@ function simulation() {
   drawing();
 }
 //Setting the good ending
-function success() {
+function open() {
   push();
   iamge(success.image, windowWidth, windowHeight);
   textSize(65);
