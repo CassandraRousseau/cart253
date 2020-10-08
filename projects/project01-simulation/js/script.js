@@ -2,61 +2,64 @@
 Project 01: Simulation
 Cassandra Rousseau
 
-Here is a description of this template p5 project.
+Creating a barista simulation.
 **************************************************/
+"use strict";
 let instructions =
   "Welcome new employee!\nWe are glad to have you in our team!\nThis newly open coffeeshop need your talent to \ncreate succulent latte!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
-let coffee = {
-  x: 0,
-  y: 0,
-  size: 175,
-  vx: 0,
-  vy: 0,
-  speed: 0.5,
-  fill: {
-    r: 200,
-    g: 200,
-    b: 100,
-  },
-};
-let shadow = {
-  x: 350,
-  y: 250,
-  size: 250,
-  fill: 255,
-  stroke: 127,
-  strokeWeight: 3,
-  vx: 0,
-  vy: 0,
-  speed: 0.5,
-};
 
 let plate = {
   x: 0,
   y: 0,
   size: 300,
   fill: 255,
-  speed: 0.5,
+  speed: 2,
 };
+let coffee = {
+  x: 0,
+  y: 0,
+  size: 50,
+  vx: 0,
+  vy: 0,
+  speed: 2,
+  fill: {
+    r: 143,
+    g: 60,
+    b: 0,
+  },
+};
+let shadow = {
+  x: 0,
+  y: 0,
+  size: 100,
+  stroke: 127,
+  strokeWeight: 3,
+  vx: 0,
+  vy: 0,
+  speed: 2,
+};
+
 let mug = {
   x: 0,
   y: 0,
   size: 200,
+  stroke: 127,
+  strokeWeight: 3,
   fill: 255,
-  speed: 0.5,
+  speed: 2,
 };
 
 let handle = {
   x: 0,
   y: 0,
-  w: 80,
-  h: 145,
+  w: 50,
+  h: 100,
   tl: 5,
   tr: 5,
   fill: 255,
   vx: 0,
   vy: 0,
-  speed: 0.5,
+  speed: 2,
 };
 let coffeeshop = {
   image: undefined,
@@ -67,6 +70,8 @@ let table = {
 let hand = {
   x: 0,
   y: 0,
+  w: 400,
+  h: 400,
   image: undefined,
 };
 let failure = {
@@ -87,6 +92,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noCursor();
 }
+//Setting the states of the game
 function draw() {
   if (state === "title") {
     title();
@@ -100,12 +106,13 @@ function draw() {
     closed();
   }
 }
+//Setting the title
 function title() {
   push();
-  //Display COVID-19 image
+  //Display coffeeshop background
   image(coffeeshop.image, windowWidth, windowHeight);
   background(coffeeshop.image);
-  //Display mask image
+  //Display text
   textFont("CCSignLanguage");
   textSize(125);
   fill(255);
@@ -124,10 +131,10 @@ function title() {
   text("Press Spacebar to start", width / 2, 450);
   pop();
 }
+//Setting the instructions
 function welcome() {
   push();
   background(257, 255, 196);
-  //Display mask image
   textSize(35);
   fill(112, 26, 0);
   textFont("Blambot Pro BB");
@@ -135,6 +142,7 @@ function welcome() {
   text(instructions, 10, 50, windowWidth, windowHeight);
   pop();
 }
+//Setting simulation
 function simulation() {
   move();
   acceleration();
@@ -142,6 +150,7 @@ function simulation() {
   display();
   drawing();
 }
+//Setting the good ending
 function success() {
   push();
   textSize(65);
@@ -151,6 +160,7 @@ function success() {
   text("Customers ADORE your latte!", width / 2, 350);
   pop();
 }
+//Setting the bad ending
 function closed() {
   image(failure.image, windowWidth, windowHeight);
   push();
@@ -162,9 +172,8 @@ function closed() {
   text("You will have to find another job...", width / 2, 450);
   pop();
 }
-
+//Setting coffee cup movement
 function move() {
-  //Setting mug movements
   plate.x += plate.vx;
   plate.y += plate.vy;
   shadow.x += shadow.vx;
@@ -176,6 +185,7 @@ function move() {
   coffee.x += coffee.vx;
   coffee.y += coffee.vy;
 }
+//Setting cup speed
 function acceleration() {
   plate.x += plate.speed;
   shadow.x += shadow.speed;
@@ -183,32 +193,43 @@ function acceleration() {
   mug.x += mug.speed;
   coffee.x += coffee.speed;
 }
-
+//Diplaying the images
 function display() {
   push();
   //Display table image
   image(table.image, windowWidth, windowHeight);
   background(table.image);
-  //Display circles
+  //Display coffee cup
   fill(plate.fill);
-  ellipse(plate.x, height / 2, plate.size);
-  fill(shadow.fill);
+  circle(plate.x, height / 2, plate.size);
+  pop();
+  push();
+  noFill();
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
-  ellipse(shadow.x, height / 2, shadow.size);
+  circle(shadow.x, height / 2, shadow.size);
+  pop();
+  push();
   fill(handle.fill);
   rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
+  pop();
+  push();
   fill(mug.fill);
-  ellipse(mug.x, height / 2, mug.size);
-  fill(coffee.r, coffee.g, coffee.b);
-  ellipse(coffee.x, height / 2, coffee.size);
+  stroke(mug.stroke);
+  strokeWeight(mug.strokeWeight);
+  circle(mug.x, height / 2, mug.size);
+  pop();
+  push();
+  fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
+  circle(coffee.x, height / 2, coffee.size);
   pop();
   //Display hand image
   push();
   imageMode(CENTER);
-  image(hand.image, mouseX, mouseY);
+  image(hand.image, mouseX, mouseY, hand.w, hand.h);
   pop();
 }
+//Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
 
@@ -220,15 +241,17 @@ function constraining() {
 
   coffee.x = constrain(coffee.x, 0, width / 2);
 }
+//Setting the drawing function
 function drawing() {
   hand.x = mouseX;
   hand.y = mouseY;
   stroke(255);
-  strokeWeight(5);
+  strokeWeight(10);
   if (mouseIsPressed === true) {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
+//Setting keys to change states
 function keyPressed() {
   if (state === "title" && keyCode === 32) {
     state = "welcome";
