@@ -6,7 +6,7 @@ Creating a barista simulation.
 **************************************************/
 "use strict";
 let instructions =
-  "Welcome new employee!\nWe are glad to have you in our team!\nThis newly open coffeeshop need your talent to \ncreate succulent latte!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
+  "Welcome new employee!\nWe are glad to have you in our team!\nThis newly open coffeeshop needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
 
 let plate = {
   x: 0,
