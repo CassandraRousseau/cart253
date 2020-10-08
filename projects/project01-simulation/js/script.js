@@ -7,9 +7,9 @@ Here is a description of this template p5 project.
 let instructions =
   "Welcome new employee!\nWe are glad to have you in our team!\nThis newly open coffeeshop need your talent to \ncreate succulent latte!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
 let coffee = {
-  x: 150,
-  y: 250,
-  size: 200,
+  x: 0,
+  y: 0,
+  size: 175,
   vx: 0,
   vy: 0,
   speed: 0.5,
@@ -22,10 +22,38 @@ let coffee = {
 let shadow = {
   x: 350,
   y: 250,
-  size: 100,
-  fill: 127,
+  size: 250,
+  fill: 255,
   stroke: 127,
   strokeWeight: 3,
+  vx: 0,
+  vy: 0,
+  speed: 0.5,
+};
+
+let plate = {
+  x: 0,
+  y: 0,
+  size: 300,
+  fill: 255,
+  speed: 0.5,
+};
+let mug = {
+  x: 0,
+  y: 0,
+  size: 200,
+  fill: 255,
+  speed: 0.5,
+};
+
+let handle = {
+  x: 0,
+  y: 0,
+  w: 80,
+  h: 145,
+  tl: 5,
+  tr: 5,
+  fill: 255,
   vx: 0,
   vy: 0,
   speed: 0.5,
@@ -40,31 +68,6 @@ let hand = {
   x: 0,
   y: 0,
   image: undefined,
-};
-let plate = {
-  x: 100,
-  y: 200,
-  size: 100,
-  fill: 255,
-  speed: 0.5,
-};
-let mug = {
-  x: 500,
-  y: 100,
-  size: 150,
-  fill: 255,
-  speed: 0.5,
-};
-
-let handle = {
-  w: 80,
-  h: 145,
-  tl: 5,
-  tr: 5,
-  fill: 255,
-  vx: 0,
-  vy: 0,
-  speed: 0.5,
 };
 let failure = {
   image: undefined,
@@ -162,23 +165,23 @@ function closed() {
 
 function move() {
   //Setting mug movements
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
   plate.x += plate.vx;
   plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
 }
 function acceleration() {
-  coffee.x += coffee.speed;
-  mug.x += mug.speed;
-  handle.x += handle.speed;
-  shadow.x += shadow.speed;
   plate.x += plate.speed;
+  shadow.x += shadow.speed;
+  handle.x += handle.speed;
+  mug.x += mug.speed;
+  coffee.x += coffee.speed;
 }
 
 function display() {
@@ -188,30 +191,34 @@ function display() {
   background(table.image);
   //Display circles
   fill(plate.fill);
-  ellipse(plate.x, plate.y, plate.size);
+  ellipse(plate.x, height / 2, plate.size);
   fill(shadow.fill);
-  ellipse(shadow.x, shadow.y, shadow.size);
+  stroke(shadow.stroke);
+  strokeWeight(shadow.strokeWeight);
+  ellipse(shadow.x, height / 2, shadow.size);
   fill(handle.fill);
-  rect(handle.x, handle.y, handle.w, handle.h, handle.tl, handle.tr);
+  rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
   fill(mug.fill);
-  ellipse(mug.x, mug.y, mug.size);
+  ellipse(mug.x, height / 2, mug.size);
   fill(coffee.r, coffee.g, coffee.b);
-  ellipse(coffee.x, coffee.y, coffee.size);
+  ellipse(coffee.x, height / 2, coffee.size);
+  pop();
   //Display hand image
+  push();
+  imageMode(CENTER);
   image(hand.image, mouseX, mouseY);
   pop();
 }
 function constraining() {
-  coffee.y = constrain(coffee.y, width / 2, height / 2);
-  coffee.x = constrain(coffee.x, width / 2, height / 2);
-  mug.y = constrain(mug.y, width / 2, height / 2);
-  mug.x = constrain(mug.x, width / 2, height / 2);
-  shadow.y = constrain(shadow.y, width / 2, height / 2);
-  shadow.x = constrain(shadow.x, width / 2, height / 2);
-  handle.y = constrain(handle.y, width / 2, height / 2);
-  handle.x = constrain(handle.x, width / 2, height / 2);
-  plate.y = constrain(plate.y, width / 2, height / 2);
-  plate.x = constrain(plate.x, width / 2, height / 2);
+  plate.x = constrain(plate.x, 0, width / 2);
+
+  shadow.x = constrain(shadow.x, 0, width / 2);
+
+  handle.x = constrain(handle.x, 0, width / 2);
+
+  mug.x = constrain(mug.x, 0, width / 2);
+
+  coffee.x = constrain(coffee.x, 0, width / 2);
 }
 function drawing() {
   hand.x = mouseX;
