@@ -6,7 +6,7 @@ Creating a barista simulation.
 **************************************************/
 "use strict";
 let instructions =
-  "Hello new employee!\n Welcome to Coffeeccino!\nWe are glad to have you in our team!\nThis newly open coffeeshop needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
+  "Hello new employee!\n Welcome to Coffeeccino!\nWe are glad to have you in our team!\nThis newly open café needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
 
 let plate = {
   x: 0,
@@ -61,7 +61,7 @@ let handle = {
   vy: 0,
   speed: 2,
 };
-let coffeeshop = {
+let café = {
   image: undefined,
 };
 let table = {
@@ -83,7 +83,7 @@ let success = {
 let state = "title";
 //Loading images for simulation.
 function preload() {
-  coffeeshop.image = loadImage("assets/images/coffeeshop.png");
+  café.image = loadImage("assets/images/cafe.png");
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
@@ -114,8 +114,8 @@ function draw() {
 function title() {
   push();
   //Display coffeeshop background
-  image(coffeeshop.image, windowWidth, windowHeight);
-  background(coffeeshop.image);
+  image(café.image, windowWidth, windowHeight);
+  background(café.image);
   //Display text
   textFont("CCSignLanguage");
   textSize(125);
