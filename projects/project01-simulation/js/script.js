@@ -89,13 +89,6 @@ let cafe = {
 let table = {
   image: undefined,
 };
-let hand = {
-  x: 0,
-  y: 0,
-  w: 500,
-  h: 500,
-  image: undefined,
-};
 let failure = {
   image: undefined,
 };
@@ -109,18 +102,15 @@ function preload() {
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
-  hand.image = loadImage("assets/images/hand.png");
 }
 // setup()
 //
 // Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  noCursor();
 }
 //Setting the states of the game
 function draw() {
-  background(257, 255, 196);
   if (state === "title") {
     title();
   } else if (state === "welcome") {
@@ -138,6 +128,7 @@ function title() {
   push();
   //Display cafe background
   image(cafe.image, windowWidth, windowHeight);
+  background(cafe.image);
   //Display title
   textFont("CCSignLanguage");
   textSize(125);
@@ -160,6 +151,7 @@ function title() {
 //Setting the instructions
 function welcome() {
   push();
+  background(257, 255, 196);
   textSize(35);
   fill(112, 26, 0);
   textFont("Blambot Pro BB");
@@ -177,12 +169,13 @@ function simulation() {
     constraining();
     display();
   }
+  erasing();
   drawing();
 }
 //Setting the good ending
 function open() {
   push();
-  image(success.image, windowWidth, windowHeight);
+  iamge(success.image, windowWidth, windowHeight);
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
@@ -206,6 +199,7 @@ function displaytable() {
   push();
   //Display table image
   image(table.image, windowWidth, windowHeight);
+  background(table.image);
   pop();
 }
 //Setting coffee cup movement
@@ -236,7 +230,6 @@ function display() {
   displayhandle();
   displaymug();
   displaycoffee();
-  displayhand();
 }
 function displayplate() {
   //Display coffee cup
@@ -279,13 +272,7 @@ function displaycoffee() {
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
 }
-function displayhand() {
-  //Display hand image
-  push();
-  imageMode(CENTER);
-  image(hand.image, mouseX, mouseY, hand.w, hand.h);
-  pop();
-}
+
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
@@ -314,11 +301,19 @@ function mouseIsPressed() {
 }
 //Setting the drawing function
 function drawing() {
-  hand.x = mouseX;
-  hand.y = mouseY;
   stroke(255);
   strokeWeight(10);
   if (mouseIsPressed === true) {
     line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+}
+function letterIsPressed() {
+  if (state === "simulation" && keyCode === 90) {
+    erasing();
+  }
+}
+function erasing() {
+  if (letterIsPressed === true) {
+    erase();
   }
 }
