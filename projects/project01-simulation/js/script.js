@@ -242,7 +242,7 @@ function displayplate() {
   ellipse(plate.x, height / 2, plate.w, plate.h);
   pop();
 }
-function diplayshadow() {
+function displayshadow() {
   push();
   noFill();
   stroke(shadow.stroke);
