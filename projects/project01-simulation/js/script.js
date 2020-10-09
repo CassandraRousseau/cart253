@@ -293,21 +293,26 @@ function constraining() {
 
   coffee.x = constrain(coffee.x, 0, width / 2);
 }
-//Setting the drawing function
-function drawing() {
-  hand.x = mouseX;
-  hand.y = mouseY;
-  stroke(255);
-  strokeWeight(10);
-  if (mouseIsPressed === true) {
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  }
-}
 //Setting keys to change states
 function keyPressed() {
   if (state === "title" && keyCode === 32) {
     state = "welcome";
   } else if (state === "welcome") {
     state = "simulation";
+  }
+}
+function mousePressed() {
+  if (state === "simulation") {
+    drawing();
+  }
+}
+//Setting the drawing function
+function drawing() {
+  hand.x = mouseX;
+  hand.y = mouseY;
+  stroke(255);
+  strokeWeight(10);
+  if (mousePressed === true) {
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
