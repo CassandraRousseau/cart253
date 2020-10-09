@@ -248,7 +248,7 @@ function diplayshadow() {
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
   ellipse(shadow.x, height / 2, shadow.w, shadow.h);
-  console.log("shadow.x:${shadow.x}");
+  console.log("shadow");
   pop();
 }
 function displayhandle() {
