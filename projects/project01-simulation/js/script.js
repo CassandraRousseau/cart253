@@ -101,7 +101,8 @@ let circle = {
 let donebutton = {
   x: 0,
   y: 0,
-  size: 100,
+  w: 100,
+  h: 100,
 };
 let cafe = {
   image: undefined,
@@ -135,8 +136,26 @@ function draw() {
     title();
   } else if (state === "welcome") {
     welcome();
-  } else if (state === "simulation") {
-    simulation();
+  } else if (state === "level1") {
+    level1();
+  } else if (state === "level2") {
+    level2();
+  } else if (state === "level3") {
+    level3();
+  } else if (state === "level4") {
+    level4();
+  } else if (state === "level5") {
+    level5();
+  } else if (state === "level6") {
+    level6();
+  } else if (state === "level7") {
+    level7();
+  } else if (state === "level8") {
+    level8();
+  } else if (state === "level9") {
+    level9();
+  } else if (state === "level10") {
+    level10();
   } else if (state === "success") {
     open();
   } else if (state === "failure") {
@@ -182,7 +201,8 @@ function welcome() {
 //Setting the good ending
 function open() {
   push();
-  iamge(success.image, windowWidth, windowHeight);
+  image(success.image, windowWidth, windowHeight);
+  background(success.image);
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
@@ -193,6 +213,7 @@ function open() {
 //Setting the bad ending
 function closed() {
   image(failure.image, windowWidth, windowHeight);
+  background(failure.image);
   push();
   textSize(65);
   fill(100, 100, 200);
@@ -300,6 +321,7 @@ function simulation() {
     constraining();
     display();
   }
+  displaydonebutton();
   erasing();
   drawing();
 }
@@ -338,7 +360,7 @@ function display() {
   displayhandle();
   displaymug();
   displaycoffee();
-  displaydonebutton();
+  sun();
 }
 function displayplate() {
   //Display coffee cup
@@ -383,10 +405,11 @@ function displaycoffee() {
 }
 function displaydonebutton() {
   push();
+  noStroke();
   fill(0, 255, 0);
-  circle(width, height, donebutton.size);
+  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
+  pop();
 }
-function guideline() {}
 function sun() {
   push();
   noFill();
@@ -404,6 +427,7 @@ function smiley() {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
+function love() {}
 function cat() {
   push();
   noFill();
@@ -423,6 +447,10 @@ function bear() {
 function umbrella() {}
 
 function leaf() {}
+function bird() {}
+function dog() {}
+function grape() {}
+function flower() {}
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
@@ -440,7 +468,7 @@ function keyPressed() {
   if (state === "title" && keyCode === 32) {
     state = "welcome";
   } else if (state === "welcome") {
-    state = "simulation";
+    state = "level1";
   }
 }
 //Setting mouse pressed use
@@ -463,7 +491,7 @@ function letterPressed() {
   }
 }
 function erasing() {
-  if (letterIsPressed === true) {
+  if (letterPressed === true) {
     erase();
   }
 }
