@@ -198,31 +198,7 @@ function welcome() {
   text(instructions, 10, 50, windowWidth, windowHeight);
   pop();
 }
-//Setting the good ending
-function open() {
-  push();
-  image(success.image, windowWidth, windowHeight);
-  background(success.image);
-  textSize(65);
-  fill(200, 100, 100);
-  textAlign(CENTER, CENTER);
-  text("Congratulations!", width / 2, height / 2);
-  text("Customers ADORE your latte!", width / 2, 350);
-  pop();
-}
-//Setting the bad ending
-function closed() {
-  image(failure.image, windowWidth, windowHeight);
-  background(failure.image);
-  push();
-  textSize(65);
-  fill(100, 100, 200);
-  textAlign(CENTER, CENTER);
-  text("OH NO!", width / 2, height / 2);
-  text("Coffeeccino is closing!", width / 2, 350);
-  text("You will have to find another job...", width / 2, 450);
-  pop();
-}
+//Setting level1
 function level1() {
   simulation();
   if (drawing() === sun()) {
@@ -231,6 +207,7 @@ function level1() {
     closed();
   }
 }
+//Setting level2
 function level2() {
   simulation();
   if (drawing() === smiley()) {
@@ -239,6 +216,7 @@ function level2() {
     closed();
   }
 }
+//Setting level3
 function level3() {
   simulation();
   if (drawing() === love()) {
@@ -247,6 +225,7 @@ function level3() {
     closed();
   }
 }
+//Setting level4
 function level4() {
   simulation();
   if (drawing() === cat()) {
@@ -255,6 +234,7 @@ function level4() {
     closed();
   }
 }
+//Setting level5
 function level5() {
   simulation();
   if (drawing() === bear()) {
@@ -263,6 +243,7 @@ function level5() {
     closed();
   }
 }
+//Setting level6
 function level6() {
   simulation();
   if (drawing() === leaf()) {
@@ -271,6 +252,7 @@ function level6() {
     closed();
   }
 }
+//Setting level7
 function level7() {
   simulation();
   if (drawing() === umbrella()) {
@@ -279,6 +261,7 @@ function level7() {
     closed();
   }
 }
+//Setting level8
 function level8() {
   simulation();
   if (drawing() === bird()) {
@@ -287,6 +270,7 @@ function level8() {
     closed();
   }
 }
+//Setting level9
 function level9() {
   simulation();
   if (drawing() === dog()) {
@@ -295,6 +279,7 @@ function level9() {
     closed();
   }
 }
+//Setting level10
 function level10() {
   simulation();
   if (drawing() === grape()) {
@@ -303,17 +288,8 @@ function level10() {
     closed();
   }
 }
-function level6() {
-  simulation();
-  if (drawing() === flower()) {
-    level7();
-  } else {
-    closed();
-  }
-}
 //Setting simulation
 function simulation() {
-  // prevent re-drawing the background, mug and coffee once they reach the middle
   if (mug.x < width / 2) {
     displaytable();
     move();
@@ -344,6 +320,8 @@ function move() {
   mug.y += mug.vy;
   coffee.x += coffee.vx;
   coffee.y += coffee.vy;
+  circle.x += circle.vx;
+  circle.y += circle.vy;
 }
 //Setting cup speed
 function acceleration() {
@@ -352,6 +330,7 @@ function acceleration() {
   handle.x += handle.speed;
   mug.x += mug.speed;
   coffee.x += coffee.speed;
+  circle.x += circle.speed;
 }
 //Diplaying the images
 function display() {
@@ -403,13 +382,7 @@ function displaycoffee() {
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
 }
-function displaydonebutton() {
-  push();
-  noStroke();
-  fill(0, 255, 0);
-  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
-  pop();
-}
+//Display sun drawing
 function sun() {
   push();
   noFill();
@@ -419,6 +392,15 @@ function sun() {
   line();
   pop();
 }
+//Display done button
+function displaydonebutton() {
+  push();
+  noStroke();
+  fill(0, 255, 0);
+  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
+  pop();
+}
+//Display smiley drawing
 function smiley() {
   push();
   noFill();
@@ -427,7 +409,9 @@ function smiley() {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
+//Display heart drawing
 function love() {}
+//Display cat drawing
 function cat() {
   push();
   noFill();
@@ -436,6 +420,7 @@ function cat() {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
+//Display bear drawing
 function bear() {
   push();
   noFill();
@@ -444,13 +429,16 @@ function bear() {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
+//Display umbrella drawing
 function umbrella() {}
-
+//Display leaf drawing
 function leaf() {}
+//Display bird drawing
 function bird() {}
+//Display dog drawing
 function dog() {}
+//Display grape drawing
 function grape() {}
-function flower() {}
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
@@ -462,6 +450,34 @@ function constraining() {
   mug.x = constrain(mug.x, 0, width / 2);
 
   coffee.x = constrain(coffee.x, 0, width / 2);
+}
+//Setting the good ending
+function open() {
+  push();
+  image(success.image, windowWidth, windowHeight);
+  background(success.image);
+  textSize(65);
+  fill(200, 100, 100);
+  textAlign(CENTER, CENTER);
+  text("Congratulations!", width / 2, height / 2);
+  push();
+  textSize(35);
+  text("Customers ADORE your coffees!", width / 2, 450);
+  pop();
+  pop();
+}
+//Setting the bad ending
+function closed() {
+  image(failure.image, windowWidth, windowHeight);
+  background(failure.image);
+  push();
+  textSize(65);
+  fill(100, 100, 200);
+  textAlign(CENTER, CENTER);
+  text("OH NO!", width / 2, height / 2);
+  text("Coffeeccino is closing!", width / 2, 350);
+  text("You will have to find another job...", width / 2, 450);
+  pop();
 }
 //Setting keys to change states
 function keyPressed() {
@@ -485,6 +501,7 @@ function drawing() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
+//Setting erasing function
 function letterPressed() {
   if (state === "simulation" && keyCode === 90) {
     erasing();
