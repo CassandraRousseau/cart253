@@ -83,6 +83,21 @@ let handle = {
     b: 255,
   },
 };
+let circle = {
+  x: 0,
+  y: 0,
+  w: 100,
+  h: 100,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let cafe = {
   image: undefined,
 };
@@ -159,19 +174,6 @@ function welcome() {
   text(instructions, 10, 50, windowWidth, windowHeight);
   pop();
 }
-//Setting simulation
-function simulation() {
-  // prevent re-drawing the background, mug and coffee once they reach the middle
-  if (mug.x < width / 2) {
-    displaytable();
-    move();
-    acceleration();
-    constraining();
-    display();
-  }
-  erasing();
-  drawing();
-}
 //Setting the good ending
 function open() {
   push();
@@ -194,6 +196,55 @@ function closed() {
   text("Coffeeccino is closing!", width / 2, 350);
   text("You will have to find another job...", width / 2, 450);
   pop();
+}
+function level1() {
+  simulation();
+  if (drawing() === sun()) {
+    level2();
+  }
+}
+function level2() {
+  simulation();
+  if (drawing() === smiley()) {
+    level3();
+  }
+}
+function level3() {
+  simulation();
+  if (drawing() === sun()) {
+    level4();
+  }
+}
+function level4() {
+  simulation();
+  if (drawing() === sun()) {
+    level5();
+  }
+}
+function level5() {
+  simulation();
+  if (drawing() === sun()) {
+    level6();
+  }
+}
+function level6() {
+  simulation();
+  if (drawing() === sun()) {
+    level7();
+  }
+}
+//Setting simulation
+function simulation() {
+  // prevent re-drawing the background, mug and coffee once they reach the middle
+  if (mug.x < width / 2) {
+    displaytable();
+    move();
+    acceleration();
+    constraining();
+    display();
+  }
+  erasing();
+  drawing();
 }
 function displaytable() {
   push();
@@ -272,7 +323,43 @@ function displaycoffee() {
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
 }
+function guideline() {}
+function sun() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  line();
+  pop();
+}
+function smiley() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  pop();
+}
+function cat() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  pop();
+}
+function bear() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  pop();
+}
+function umbrella() {}
 
+function leaf() {}
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
