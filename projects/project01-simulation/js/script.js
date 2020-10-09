@@ -75,6 +75,8 @@ let handle = {
   vx: 0,
   vy: 0,
   speed: 2,
+  stroke: 127,
+  strokeWeight: 3,
   fill: {
     r: 255,
     g: 255,
@@ -252,6 +254,8 @@ function displayshadow() {
 function displayhandle() {
   push();
   fill(handle.fill.r, handle.fill.g, handle.fill.b);
+  stroke(handle.stroke);
+  strokeWeight(handle.strokeWeight);
   rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
   pop();
 }
