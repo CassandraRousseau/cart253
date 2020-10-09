@@ -46,11 +46,6 @@ let shadow = {
   vx: 0,
   vy: 0,
   speed: 2,
-  fill: {
-    r: 0,
-    g: 0,
-    b: 0,
-  },
 };
 
 let mug = {
