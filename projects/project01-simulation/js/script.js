@@ -98,6 +98,11 @@ let circle = {
     b: 0,
   },
 };
+let donebutton = {
+  x: 0,
+  y: 0,
+  size: 100,
+};
 let cafe = {
   image: undefined,
 };
@@ -201,36 +206,88 @@ function level1() {
   simulation();
   if (drawing() === sun()) {
     level2();
+  } else {
+    closed();
   }
 }
 function level2() {
   simulation();
   if (drawing() === smiley()) {
     level3();
+  } else {
+    closed();
   }
 }
 function level3() {
   simulation();
-  if (drawing() === sun()) {
+  if (drawing() === love()) {
     level4();
+  } else {
+    closed();
   }
 }
 function level4() {
   simulation();
-  if (drawing() === sun()) {
+  if (drawing() === cat()) {
     level5();
+  } else {
+    closed();
   }
 }
 function level5() {
   simulation();
-  if (drawing() === sun()) {
+  if (drawing() === bear()) {
     level6();
+  } else {
+    closed();
   }
 }
 function level6() {
   simulation();
-  if (drawing() === sun()) {
+  if (drawing() === leaf()) {
     level7();
+  } else {
+    closed();
+  }
+}
+function level7() {
+  simulation();
+  if (drawing() === umbrella()) {
+    level8();
+  } else {
+    closed();
+  }
+}
+function level8() {
+  simulation();
+  if (drawing() === bird()) {
+    level9();
+  } else {
+    closed();
+  }
+}
+function level9() {
+  simulation();
+  if (drawing() === dog()) {
+    level10();
+  } else {
+    closed();
+  }
+}
+function level10() {
+  simulation();
+  if (drawing() === grape()) {
+    open();
+  } else {
+    closed();
+  }
+}
+function level6() {
+  simulation();
+  if (drawing() === flower()) {
+    level7();
+  } else {
+    closed();
   }
 }
 //Setting simulation
@@ -281,6 +338,7 @@ function display() {
   displayhandle();
   displaymug();
   displaycoffee();
+  displaydonebutton();
 }
 function displayplate() {
   //Display coffee cup
@@ -322,6 +380,11 @@ function displaycoffee() {
   fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
+}
+function displaydonebutton() {
+  push();
+  fill(0, 255, 0);
+  circle(width, height, donebutton.size);
 }
 function guideline() {}
 function sun() {
@@ -394,7 +457,7 @@ function drawing() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
-function letterIsPressed() {
+function letterPressed() {
   if (state === "simulation" && keyCode === 90) {
     erasing();
   }
