@@ -244,11 +244,9 @@ function displayplate() {
 }
 function displayshadow() {
   push();
-  noFill();
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
   ellipse(shadow.x, height / 2, shadow.w, shadow.h);
-  console.log("shadow");
   pop();
 }
 function displayhandle() {
