@@ -13,6 +13,8 @@ let plate = {
   y: 0,
   w: 500,
   h: 500,
+  vx: 0,
+  vy: 0,
   fill: {
     r: 255,
     g: 255,
@@ -56,6 +58,8 @@ let mug = {
   y: 0,
   w: 400,
   h: 400,
+  vx: 0,
+  vy: 0,
   stroke: 127,
   strokeWeight: 3,
   speed: 2,
@@ -221,34 +225,57 @@ function acceleration() {
 }
 //Diplaying the images
 function display() {
+  displaytable();
+  displayplate();
+  displayshadow();
+  displayhandle();
+  displaymug();
+  displaycoffee();
+  displayhand();
+}
+function displaytable() {
   push();
   //Display table image
   image(table.image, windowWidth, windowHeight);
   background(table.image);
+  pop();
+}
+function displayplate() {
   //Display coffee cup
+  push();
   fill(plate.fill.r, plate.fill.g, plate.fill.b);
   ellipse(plate.x, height / 2, plate.w, plate.h);
   pop();
+}
+function diplayshadow() {
   push();
   noFill();
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
   ellipse(shadow.x, height / 2, shadow.w, shadow.h);
   pop();
+}
+function displayhandle() {
   push();
   fill(handle.fill.r, handle.fill.g, handle.fill.b);
   rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
   pop();
+}
+function displaymug() {
   push();
   fill(mug.fill.r, mug.fill.g, mug.fill.b);
   stroke(mug.stroke);
   strokeWeight(mug.strokeWeight);
   ellipse(mug.x, height / 2, mug.w, mug.h);
   pop();
+}
+function displaycoffee() {
   push();
   fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
+}
+function displayhand() {
   //Display hand image
   push();
   imageMode(CENTER);
