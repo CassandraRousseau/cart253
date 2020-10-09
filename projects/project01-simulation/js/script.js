@@ -68,8 +68,8 @@ let mug = {
 let handle = {
   x: 0,
   y: 0,
-  w: 50,
-  h: 100,
+  w: 200,
+  h: 300,
   tl: 5,
   tr: 5,
   vx: 0,
