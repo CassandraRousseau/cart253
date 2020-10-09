@@ -11,7 +11,8 @@ let instructions =
 let plate = {
   x: 0,
   y: 0,
-  size: 500,
+  w: 500,
+  h: 500,
   fill: {
     r: 255,
     g: 255,
@@ -22,7 +23,8 @@ let plate = {
 let coffee = {
   x: 0,
   y: 0,
-  size: 250,
+  w: 250,
+  h: 250,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -35,7 +37,8 @@ let coffee = {
 let shadow = {
   x: 0,
   y: 0,
-  size: 450,
+  w: 450,
+  h: 450,
   stroke: 127,
   strokeWeight: 3,
   vx: 0,
@@ -51,7 +54,8 @@ let shadow = {
 let mug = {
   x: 0,
   y: 0,
-  size: 400,
+  w: 400,
+  h: 400,
   stroke: 127,
   strokeWeight: 3,
   speed: 2,
@@ -223,13 +227,13 @@ function display() {
   background(table.image);
   //Display coffee cup
   fill(plate.fill.r, plate.fill.g, plate.fill.b);
-  circle(plate.x, height / 2, plate.size);
+  ellipse(plate.x, height / 2, plate.w, plate.h);
   pop();
   push();
   noFill();
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
-  circle(shadow.x, height / 2, shadow.size);
+  ellipse(shadow.x, height / 2, shadow.w, shadow.h);
   pop();
   push();
   fill(handle.fill.r, handle.fill.g, handle.fill.b);
@@ -239,11 +243,11 @@ function display() {
   fill(mug.fill.r, mug.fill.g, mug.fill.b);
   stroke(mug.stroke);
   strokeWeight(mug.strokeWeight);
-  circle(mug.x, height / 2, mug.size);
+  ellipse(mug.x, height / 2, mug.w, mug.h);
   pop();
   push();
   fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
-  circle(coffee.x, height / 2, coffee.size);
+  ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
   //Display hand image
   push();
