@@ -12,8 +12,12 @@ let plate = {
   x: 0,
   y: 0,
   size: 500,
-  fill: 255,
-  speed: 2,
+  fill: {
+    r: 255,
+    g: 255,
+    b: 255,
+    speed: 2,
+  },
 };
 let coffee = {
   x: 0,
@@ -37,6 +41,11 @@ let shadow = {
   vx: 0,
   vy: 0,
   speed: 2,
+  fill: {
+    r: 0,
+    g: 0,
+    b: 0,
+  },
 };
 
 let mug = {
@@ -45,8 +54,12 @@ let mug = {
   size: 400,
   stroke: 127,
   strokeWeight: 3,
-  fill: 255,
   speed: 2,
+  fill: {
+    r: 255,
+    g: 255,
+    b: 255,
+  },
 };
 
 let handle = {
@@ -56,10 +69,14 @@ let handle = {
   h: 100,
   tl: 5,
   tr: 5,
-  fill: 255,
   vx: 0,
   vy: 0,
   speed: 2,
+  fill: {
+    r: 255,
+    g: 255,
+    b: 255,
+  },
 };
 let cafe = {
   image: undefined,
@@ -205,7 +222,7 @@ function display() {
   image(table.image, windowWidth, windowHeight);
   background(table.image);
   //Display coffee cup
-  fill(plate.fill);
+  fill(plate.fill.r, plate.fill.g, plate.fill.b);
   circle(plate.x, height / 2, plate.size);
   pop();
   push();
@@ -215,11 +232,11 @@ function display() {
   circle(shadow.x, height / 2, shadow.size);
   pop();
   push();
-  fill(handle.fill);
+  fill(handle.fill.r, handle.fill.g, handle.fill.b);
   rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
   pop();
   push();
-  fill(mug.fill);
+  fill(mug.fill.r, mug.fill.g, mug.fill.b);
   stroke(mug.stroke);
   strokeWeight(mug.strokeWeight);
   circle(mug.x, height / 2, mug.size);
