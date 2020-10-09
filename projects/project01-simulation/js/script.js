@@ -120,6 +120,7 @@ function setup() {
 }
 //Setting the states of the game
 function draw() {
+  background(257, 255, 196);
   if (state === "title") {
     title();
   } else if (state === "welcome") {
@@ -137,7 +138,6 @@ function title() {
   push();
   //Display cafe background
   image(cafe.image, windowWidth, windowHeight);
-  background(cafe.image);
   //Display title
   textFont("CCSignLanguage");
   textSize(125);
@@ -160,7 +160,6 @@ function title() {
 //Setting the instructions
 function welcome() {
   push();
-  background(257, 255, 196);
   textSize(35);
   fill(112, 26, 0);
   textFont("Blambot Pro BB");
@@ -170,17 +169,20 @@ function welcome() {
 }
 //Setting simulation
 function simulation() {
-  displaytable();
-  move();
-  acceleration();
-  constraining();
-  display();
+  // prevent re-drawing the background, mug and coffee once they reach the middle
+  if (mug.x < width / 2) {
+    displaytable();
+    move();
+    acceleration();
+    constraining();
+    display();
+  }
   drawing();
 }
 //Setting the good ending
 function open() {
   push();
-  iamge(success.image, windowWidth, windowHeight);
+  image(success.image, windowWidth, windowHeight);
   textSize(65);
   fill(200, 100, 100);
   textAlign(CENTER, CENTER);
@@ -204,7 +206,6 @@ function displaytable() {
   push();
   //Display table image
   image(table.image, windowWidth, windowHeight);
-  background(table.image);
   pop();
 }
 //Setting coffee cup movement
