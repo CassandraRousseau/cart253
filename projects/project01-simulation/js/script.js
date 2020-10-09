@@ -68,8 +68,8 @@ let mug = {
 let handle = {
   x: 0,
   y: 0,
-  w: 200,
-  h: 300,
+  w: 50,
+  h: 200,
   tl: 5,
   tr: 5,
   vx: 0,
@@ -92,8 +92,8 @@ let table = {
 let hand = {
   x: 0,
   y: 0,
-  w: 400,
-  h: 400,
+  w: 500,
+  h: 500,
   image: undefined,
 };
 let failure = {
@@ -256,6 +256,7 @@ function displayhandle() {
   fill(handle.fill.r, handle.fill.g, handle.fill.b);
   stroke(handle.stroke);
   strokeWeight(handle.strokeWeight);
+  rectMode(CORNER);
   rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
   pop();
 }
