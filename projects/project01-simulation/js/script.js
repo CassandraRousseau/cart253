@@ -11,8 +11,8 @@ let instructions =
 let plate = {
   x: 0,
   y: 0,
-  w: 500,
-  h: 500,
+  w: 550,
+  h: 550,
   vx: 0,
   vy: 0,
   fill: {
@@ -25,8 +25,8 @@ let plate = {
 let coffee = {
   x: 0,
   y: 0,
-  w: 250,
-  h: 250,
+  w: 225,
+  h: 225,
   vx: 0,
   vy: 0,
   speed: 2,
@@ -51,8 +51,8 @@ let shadow = {
 let mug = {
   x: 0,
   y: 0,
-  w: 350,
-  h: 350,
+  w: 300,
+  h: 300,
   vx: 0,
   vy: 0,
   stroke: 127,
