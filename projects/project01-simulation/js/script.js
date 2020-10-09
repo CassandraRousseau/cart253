@@ -39,8 +39,8 @@ let coffee = {
 let shadow = {
   x: 0,
   y: 0,
-  w: 450,
-  h: 450,
+  w: 400,
+  h: 400,
   stroke: 127,
   strokeWeight: 3,
   vx: 0,
@@ -51,8 +51,8 @@ let shadow = {
 let mug = {
   x: 0,
   y: 0,
-  w: 400,
-  h: 400,
+  w: 350,
+  h: 350,
   vx: 0,
   vy: 0,
   stroke: 127,
