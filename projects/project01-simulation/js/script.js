@@ -19,7 +19,7 @@ let plate = {
     r: 255,
     g: 255,
     b: 255,
-    speed: 2,
+    speed: 3,
   },
 };
 let coffee = {
@@ -29,7 +29,7 @@ let coffee = {
   h: 225,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 3,
   fill: {
     r: 143,
     g: 60,
@@ -45,7 +45,7 @@ let shadow = {
   strokeWeight: 3,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 3,
 };
 
 let mug = {
@@ -57,7 +57,7 @@ let mug = {
   vy: 0,
   stroke: 127,
   strokeWeight: 3,
-  speed: 2,
+  speed: 3,
   fill: {
     r: 255,
     g: 255,
@@ -74,7 +74,7 @@ let handle = {
   tr: 5,
   vx: 0,
   vy: 0,
-  speed: 2,
+  speed: 3,
   stroke: 127,
   strokeWeight: 3,
   fill: {
