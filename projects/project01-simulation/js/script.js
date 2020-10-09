@@ -135,10 +135,10 @@ function draw() {
 //Setting the title
 function title() {
   push();
-  //Display coffeeshop background
+  //Display cafe background
   image(cafe.image, windowWidth, windowHeight);
   background(cafe.image);
-  //Display text
+  //Display title
   textFont("CCSignLanguage");
   textSize(125);
   fill(255);
@@ -170,6 +170,7 @@ function welcome() {
 }
 //Setting simulation
 function simulation() {
+  displaytable();
   move();
   acceleration();
   constraining();
@@ -199,6 +200,13 @@ function closed() {
   text("You will have to find another job...", width / 2, 450);
   pop();
 }
+function displaytable() {
+  push();
+  //Display table image
+  image(table.image, windowWidth, windowHeight);
+  background(table.image);
+  pop();
+}
 //Setting coffee cup movement
 function move() {
   plate.x += plate.vx;
@@ -222,20 +230,12 @@ function acceleration() {
 }
 //Diplaying the images
 function display() {
-  displaytable();
   displayplate();
   displayshadow();
   displayhandle();
   displaymug();
   displaycoffee();
   displayhand();
-}
-function displaytable() {
-  push();
-  //Display table image
-  image(table.image, windowWidth, windowHeight);
-  background(table.image);
-  pop();
 }
 function displayplate() {
   //Display coffee cup
@@ -245,6 +245,7 @@ function displayplate() {
   pop();
 }
 function displayshadow() {
+  //Display shadow
   push();
   stroke(shadow.stroke);
   strokeWeight(shadow.strokeWeight);
@@ -252,6 +253,7 @@ function displayshadow() {
   pop();
 }
 function displayhandle() {
+  //Display handle
   push();
   fill(handle.fill.r, handle.fill.g, handle.fill.b);
   stroke(handle.stroke);
@@ -261,6 +263,7 @@ function displayhandle() {
   pop();
 }
 function displaymug() {
+  //Display mug
   push();
   fill(mug.fill.r, mug.fill.g, mug.fill.b);
   stroke(mug.stroke);
@@ -269,6 +272,7 @@ function displaymug() {
   pop();
 }
 function displaycoffee() {
+  //Display coffee
   push();
   fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
@@ -301,7 +305,8 @@ function keyPressed() {
     state = "simulation";
   }
 }
-function mousePressed() {
+//Setting mouse pressed use
+function mouseIsPressed() {
   if (state === "simulation") {
     drawing();
   }
@@ -312,7 +317,7 @@ function drawing() {
   hand.y = mouseY;
   stroke(255);
   strokeWeight(10);
-  if (mousePressed === true) {
+  if (mouseIsPressed === true) {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
