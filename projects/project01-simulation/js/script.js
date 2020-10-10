@@ -83,11 +83,11 @@ let handle = {
     b: 255,
   },
 };
-let circle = {
+let circle1 = {
   x: 0,
   y: 0,
-  w: 100,
-  h: 100,
+  w: 145,
+  h: 145,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -99,13 +99,189 @@ let circle = {
     b: 0,
   },
 };
-let triangletemplate = {
+let circle2 = {
+  x: 28,
+  y: 300,
+  w: 35,
+  h: 35,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let circle3 = {
+  x: -28,
+  y: 300,
+  w: 35,
+  h: 35,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let circle4 = {
+  x: 0,
+  y: 325,
+  w: 30,
+  h: 10,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let smile = {
+  x1: -100,
+  y1: 250,
+  x2: -30,
+  y2: 350,
+  x3: 30,
+  y3: 350,
+  x4: 100,
+  y4: 250,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let ray1 = {
+  x1: 250,
+  y1: 250,
+  x2: 250,
+  y2: 220,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let mouth = {
+  x1: 0,
+  y1: 340,
+  x2: 20,
+  y2: 370,
+  x3: -20,
+  y3: 370,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let earleft = {
+  x1: -55,
+  y1: 225,
+  x2: -60,
+  y2: 270,
+  x3: -30,
+  y3: 245,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let earright = {
+  x1: 55,
+  y1: 225,
+  x2: 60,
+  y2: 270,
+  x3: 30,
+  y3: 245,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let whisker1 = {
+  x1: -20,
+  y1: 330,
+  x2: -80,
+  y2: 345,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let whisker2 = {
+  x1: -20,
+  y1: 350,
+  x2: -80,
+  y2: 375,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let whisker3 = {
   x1: 20,
-  y1: 0,
-  x2: 30,
-  y2: 20,
-  x3: 10,
-  y3: 20,
+  y1: 330,
+  x2: 80,
+  y2: 345,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let whisker4 = {
+  x1: 20,
+  y1: 350,
+  x2: 80,
+  y2: 375,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -221,8 +397,6 @@ function level1() {
   simulation();
   if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level2();
-  } else {
-    closed();
   }
 }
 //Setting level2
@@ -335,12 +509,38 @@ function level10() {
 }
 //Setting simulation
 function simulation() {
+  simulation1();
+}
+function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
     move();
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    mouthmove();
+    earmove(earleft);
+    earmove(earright);
+    whiskermove(whisker1);
+    whiskermove(whisker2);
+    whiskermove(whisker3);
+    whiskermove(whisker4);
     acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    mouthacceleration();
+    earacceleration(earleft);
+    earacceleration(earright);
+    whiskeracceleration(whisker1);
+    whiskeracceleration(whisker2);
+    whiskeracceleration(whisker3);
+    whiskeracceleration(whisker4);
     constraining();
     display();
+    cat();
   }
   displaydonebutton();
   erasing();
@@ -365,8 +565,48 @@ function move() {
   mug.y += mug.vy;
   coffee.x += coffee.vx;
   coffee.y += coffee.vy;
+}
+function circlemove(circle) {
   circle.x += circle.vx;
   circle.y += circle.vy;
+}
+function raymove(ray) {
+  ray.x1 += ray.vx;
+  ray.y1 += ray.vy;
+  ray.y2 += ray.vy;
+  ray.x2 += ray.vx;
+}
+function mouthmove() {
+  mouth.x1 += mouth.vx;
+  mouth.y1 += mouth.vy;
+  mouth.y2 += mouth.vy;
+  mouth.x2 += mouth.vx;
+  mouth.y3 += mouth.vy;
+  mouth.x3 += mouth.vx;
+}
+function earmove(ear) {
+  ear.x1 += ear.vx;
+  ear.y1 += ear.vy;
+  ear.y2 += ear.vy;
+  ear.x2 += ear.vx;
+  ear.y3 += ear.vy;
+  ear.x3 += ear.vx;
+}
+function whiskermove(whisker) {
+  whisker.x1 += whisker.vx;
+  whisker.y1 += whisker.vy;
+  whisker.y2 += whisker.vy;
+  whisker.x2 += whisker.vx;
+}
+function smilemove() {
+  smile.x1 += smile.vx;
+  smile.y1 += smile.vy;
+  smile.x2 += smile.vx;
+  smile.y2 += smile.vy;
+  smile.x3 += smile.vx;
+  smile.y3 += smile.vy;
+  smile.x4 += smile.vx;
+  smile.y4 += smile.vy;
 }
 //Setting cup speed
 function acceleration() {
@@ -375,7 +615,33 @@ function acceleration() {
   handle.x += handle.speed;
   mug.x += mug.speed;
   coffee.x += coffee.speed;
+}
+function circleacceleration(circle) {
   circle.x += circle.speed;
+}
+function smileacceleration() {
+  smile.x1 += smile.speed;
+  smile.x2 += smile.speed;
+  smile.x3 += smile.speed;
+  smile.x4 += smile.speed;
+}
+function mouthacceleration() {
+  mouth.x1 += mouth.speed;
+  mouth.x2 += mouth.speed;
+  mouth.x3 += mouth.speed;
+}
+function earacceleration(ear) {
+  ear.x1 += ear.speed;
+  ear.x2 += ear.speed;
+  ear.x3 += ear.speed;
+}
+function whiskeracceleration(whisker) {
+  whisker.x1 += whisker.speed;
+  whisker.x2 += whisker.speed;
+}
+function rayacceleration(ray) {
+  ray.x1 += ray.speed;
+  ray.x2 += ray.speed;
 }
 //Diplaying the images
 function display() {
@@ -384,7 +650,6 @@ function display() {
   displayhandle();
   displaymug();
   displaycoffee();
-  sun();
 }
 function displayplate() {
   //Display coffee cup
@@ -441,19 +706,35 @@ function sun() {
   noFill();
   stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
   strokeWeight(circle.strokeWeight);
-  ellipse(circle.x, circle.y, circle.w, circle.h);
-  line();
+  ellipse(circle.x, height / 2, circle.w, circle.h);
+  rays(ray1);
   pop();
+}
+function rays(ray) {
+  line(ray.x1, ray.y1, ray.x2, ray.y2);
 }
 //Display smiley drawing
-function smiley() {
+function face() {
+  displaycirclecenter();
+  displaycircle(circle2);
+  displaycircle(circle3);
   push();
   noFill();
-  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
-  strokeWeight(circle.strokeWeight);
-  ellipse(circle.x, circle.y, circle.w, circle.h);
+  stroke(smile.stroke.r, smile.stroke.g, smile.stroke.b);
+  strokeWeight(smile.strokeWeight);
+  curve(
+    smile.x1,
+    smile.y1,
+    smile.x2,
+    smile.y2,
+    smile.x3,
+    smile.y3,
+    smile.x4,
+    smile.y4
+  );
   pop();
 }
+
 //Display heart drawing
 function love() {
   push();
@@ -463,10 +744,17 @@ function love() {
 //Display cat drawing
 function cat() {
   push();
-  noFill();
-  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
-  strokeWeight(circle.strokeWeight);
-  ellipse(circle.x, circle.y, circle.w, circle.h);
+  displaycirclecenter();
+  displaycircle(circle2);
+  displaycircle(circle3);
+  displaycircle(circle4);
+  displaymouth();
+  displayear(earleft);
+  displayear(earright);
+  displaywhisker(whisker1);
+  displaywhisker(whisker2);
+  displaywhisker(whisker3);
+  displaywhisker(whisker4);
   pop();
 }
 //Display bear drawing
@@ -548,6 +836,46 @@ function grape() {
   noFill();
   pop();
 }
+function displaycirclecenter() {
+  push();
+  noFill();
+  stroke(circle1.stroke.r, circle1.stroke.g, circle1.stroke.b);
+  strokeWeight(circle1.strokeWeight);
+  ellipse(circle1.x, height / 2, circle1.w, circle1.h);
+  pop();
+}
+function displaycircle(circle) {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  pop();
+}
+function displaymouth() {
+  push();
+  noFill();
+  stroke(mouth.stroke.r, mouth.stroke.g, mouth.stroke.b);
+  strokeWeight(mouth.strokeWeight);
+  triangle(mouth.x1, mouth.y1, mouth.x2, mouth.y2, mouth.x3, mouth.y3);
+  pop();
+}
+function displayear(ear) {
+  push();
+  noFill();
+  stroke(ear.stroke.r, ear.stroke.g, ear.stroke.b);
+  strokeWeight(ear.strokeWeight);
+  triangle(ear.x1, ear.y1, ear.x2, ear.y2, ear.x3, ear.y3);
+  pop();
+}
+function displaywhisker(whisker) {
+  push();
+  noFill();
+  stroke(whisker.stroke.r, whisker.stroke.g, whisker.stroke.b);
+  strokeWeight(whisker.strokeWeight);
+  line(whisker.x1, whisker.y1, whisker.x2, whisker.y2);
+  pop();
+}
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
@@ -602,8 +930,8 @@ function keyPressed() {
 //Setting mouse pressed use
 function mouseIsPressed() {
   let d = dist(mouseX, mouseY, circle.x, circle.y);
-  if (d < circle.w / 2) {
-    circle.drawing = true;
+  if (d < circle.w / 2 + circle.h / 2) {
+    circle.dragging = true;
   } else if (state === "simulation") {
     drawing();
   }
@@ -621,7 +949,7 @@ function mouseDragged() {
 //Setting the drawing function
 function drawing() {
   stroke(255);
-  strokeWeight(10);
+  strokeWeight(3);
   if (mouseIsPressed === true) {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
