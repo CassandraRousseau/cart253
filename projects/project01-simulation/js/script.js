@@ -98,6 +98,23 @@ let circle = {
     b: 0,
   },
 };
+let triangle = {
+  x1: 20,
+  y1: 0,
+  x2: 30,
+  y2: 20,
+  x3: 10,
+  y3: 20,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let donebutton = {
   x: 0,
   y: 0,
@@ -382,6 +399,14 @@ function displaycoffee() {
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
 }
+//Display done button
+function displaydonebutton() {
+  push();
+  noStroke();
+  fill(0, 255, 0);
+  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
+  pop();
+}
 //Display sun drawing
 function sun() {
   push();
@@ -390,14 +415,6 @@ function sun() {
   strokeWeight(circle.strokeWeight);
   ellipse(circle.x, circle.y, circle.w, circle.h);
   line();
-  pop();
-}
-//Display done button
-function displaydonebutton() {
-  push();
-  noStroke();
-  fill(0, 255, 0);
-  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
   pop();
 }
 //Display smiley drawing
@@ -410,7 +427,11 @@ function smiley() {
   pop();
 }
 //Display heart drawing
-function love() {}
+function love() {
+  push();
+  noFill();
+  pop();
+}
 //Display cat drawing
 function cat() {
   push();
@@ -430,15 +451,71 @@ function bear() {
   pop();
 }
 //Display umbrella drawing
-function umbrella() {}
+function umbrella() {
+  push();
+  noFill();
+  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
+  strokeWeight(triangle.strokeWeight);
+  triangle(
+    triangle.x1,
+    triangle.y1,
+    triangle.x2,
+    triangle.y2,
+    triangle.x3,
+    triangle.y3
+  );
+  pop();
+}
 //Display leaf drawing
-function leaf() {}
+function leaf() {
+  push();
+  noFill();
+  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
+  strokeWeight(triangle.strokeWeight);
+  triangle(
+    triangle.x1,
+    triangle.y1,
+    triangle.x2,
+    triangle.y2,
+    triangle.x3,
+    triangle.y3
+  );
+  pop();
+}
 //Display bird drawing
-function bird() {}
+function bird() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
+  strokeWeight(triangle.strokeWeight);
+  triangle(
+    triangle.x1,
+    triangle.y1,
+    triangle.x2,
+    triangle.y2,
+    triangle.x3,
+    triangle.y3
+  );
+  pop();
+}
 //Display dog drawing
-function dog() {}
+function dog() {
+  push();
+  noFill();
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
+  pop();
+}
 //Display grape drawing
-function grape() {}
+function grape() {
+  push();
+  noFill();
+  pop();
+}
 //Stoping cup movement
 function constraining() {
   plate.x = constrain(plate.x, 0, width / 2);
