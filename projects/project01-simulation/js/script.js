@@ -812,7 +812,7 @@ function bearearmove(bearear) {
   bearear.x += bearear.vx;
   bearear.y += bearear.vy;
 }
-function smilemove() {
+function smilemove(smile) {
   smile.x1 += smile.vx;
   smile.y1 += smile.vy;
   smile.x2 += smile.vx;
@@ -833,7 +833,7 @@ function acceleration() {
 function circleacceleration(circle) {
   circle.x += circle.speed;
 }
-function smileacceleration() {
+function smileacceleration(smile) {
   smile.x1 += smile.speed;
   smile.x2 += smile.speed;
   smile.x3 += smile.speed;
@@ -936,7 +936,7 @@ function face() {
   displaycirclecenter();
   displaycircle(circle2);
   displaycircle(circle3);
-  displaycurve();
+  displaycurve(smile1);
   pop();
 }
 
@@ -987,7 +987,7 @@ function umbrella() {
 //Display leaf drawing
 function leaf() {
   push();
-  displaycurve();
+  displaycurve(smile2);
   displaytrait(traitleftsideleaf);
   displaytrait(traitrightsideleaf);
   pop();
@@ -1069,7 +1069,7 @@ function displaytri(tri) {
   triangle(tri.x1, tri.y1, tri.x2, tri.y2, tri.x3, tri.y3);
   pop();
 }
-function displaycurve() {
+function displaycurve(smile) {
   push();
   noFill();
   stroke(smile.stroke.r, smile.stroke.g, smile.stroke.b);
