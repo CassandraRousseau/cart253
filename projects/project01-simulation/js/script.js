@@ -92,13 +92,14 @@ let circle = {
   vy: 0,
   speed: 3,
   strokeWeight: 3,
+  dragging: false,
   stroke: {
     r: 0,
     g: 255,
     b: 0,
   },
 };
-let triangle = {
+let triangletemplate = {
   x1: 20,
   y1: 0,
   x2: 30,
@@ -218,7 +219,7 @@ function welcome() {
 //Setting level1
 function level1() {
   simulation();
-  if (drawing() === sun()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level2();
   } else {
     closed();
@@ -227,7 +228,7 @@ function level1() {
 //Setting level2
 function level2() {
   simulation();
-  if (drawing() === smiley()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level3();
   } else {
     closed();
@@ -236,7 +237,16 @@ function level2() {
 //Setting level3
 function level3() {
   simulation();
-  if (drawing() === love()) {
+  if (
+    isMouseInside(
+      triangletemplate.x1,
+      triangletemplate.y1,
+      triangletemplate.x2,
+      triangletemplate.y2,
+      triangletemplate.x3,
+      triangletemplate.y3
+    )
+  ) {
     level4();
   } else {
     closed();
@@ -245,7 +255,7 @@ function level3() {
 //Setting level4
 function level4() {
   simulation();
-  if (drawing() === cat()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level5();
   } else {
     closed();
@@ -254,7 +264,7 @@ function level4() {
 //Setting level5
 function level5() {
   simulation();
-  if (drawing() === bear()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level6();
   } else {
     closed();
@@ -263,7 +273,16 @@ function level5() {
 //Setting level6
 function level6() {
   simulation();
-  if (drawing() === leaf()) {
+  if (
+    isMouseInside(
+      triangletemplate.x1,
+      triangletemplate.y1,
+      triangletemplate.x2,
+      triangletemplate.y2,
+      triangletemplate.x3,
+      triangletemplate.y3
+    )
+  ) {
     level7();
   } else {
     closed();
@@ -272,7 +291,16 @@ function level6() {
 //Setting level7
 function level7() {
   simulation();
-  if (drawing() === umbrella()) {
+  if (
+    isMouseInside(
+      triangletemplate.x1,
+      triangletemplate.y1,
+      triangletemplate.x2,
+      triangletemplate.y2,
+      triangletemplate.x3,
+      triangletemplate.y3
+    )
+  ) {
     level8();
   } else {
     closed();
@@ -281,7 +309,7 @@ function level7() {
 //Setting level8
 function level8() {
   simulation();
-  if (drawing() === bird()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level9();
   } else {
     closed();
@@ -290,7 +318,7 @@ function level8() {
 //Setting level9
 function level9() {
   simulation();
-  if (drawing() === dog()) {
+  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
     level10();
   } else {
     closed();
@@ -299,7 +327,7 @@ function level9() {
 //Setting level10
 function level10() {
   simulation();
-  if (drawing() === grape()) {
+  if (isMouseInside()) {
     open();
   } else {
     closed();
@@ -454,15 +482,15 @@ function bear() {
 function umbrella() {
   push();
   noFill();
-  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
-  strokeWeight(triangle.strokeWeight);
+  stroke(triangletemplate.stroke.r, triangle.stroke.g, triangle.stroke.b);
+  strokeWeight(triangletemplate.strokeWeight);
   triangle(
-    triangle.x1,
-    triangle.y1,
-    triangle.x2,
-    triangle.y2,
-    triangle.x3,
-    triangle.y3
+    triangletemplate.x1,
+    triangletemplate.y1,
+    triangletemplate.x2,
+    triangletemplate.y2,
+    triangletemplate.x3,
+    triangletemplate.y3
   );
   pop();
 }
@@ -470,15 +498,15 @@ function umbrella() {
 function leaf() {
   push();
   noFill();
-  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
-  strokeWeight(triangle.strokeWeight);
+  stroke(triangletemplate.stroke.r, triangle.stroke.g, triangle.stroke.b);
+  strokeWeight(triangletemplate.strokeWeight);
   triangle(
-    triangle.x1,
-    triangle.y1,
-    triangle.x2,
-    triangle.y2,
-    triangle.x3,
-    triangle.y3
+    triangletemplate.x1,
+    triangletemplate.y1,
+    triangletemplate.x2,
+    triangletemplate.y2,
+    triangletemplate.x3,
+    triangletemplate.y3
   );
   pop();
 }
@@ -489,15 +517,19 @@ function bird() {
   stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
   strokeWeight(circle.strokeWeight);
   ellipse(circle.x, circle.y, circle.w, circle.h);
-  stroke(triangle.stroke.r, triangle.stroke.g, triangle.stroke.b);
-  strokeWeight(triangle.strokeWeight);
+  stroke(
+    triangletemplate.stroke.r,
+    triangletemplate.stroke.g,
+    triangletemplate.stroke.b
+  );
+  strokeWeight(triangletemplate.strokeWeight);
   triangle(
-    triangle.x1,
-    triangle.y1,
-    triangle.x2,
-    triangle.y2,
-    triangle.x3,
-    triangle.y3
+    triangletemplate.x1,
+    triangletemplate.y1,
+    triangletemplate.x2,
+    triangletemplate.y2,
+    triangletemplate.x3,
+    triangletemplate.y3
   );
   pop();
 }
@@ -551,9 +583,12 @@ function closed() {
   textSize(65);
   fill(100, 100, 200);
   textAlign(CENTER, CENTER);
-  text("OH NO!", width / 2, height / 2);
-  text("Coffeeccino is closing!", width / 2, 350);
-  text("You will have to find another job...", width / 2, 450);
+  text("OH NO!", width / 2, 500);
+  push();
+  textSize(25);
+  text("Coffeeccino is closing!", width / 2, 550);
+  text("You will have to find another job...", width / 2, 600);
+  pop();
   pop();
 }
 //Setting keys to change states
@@ -566,10 +601,23 @@ function keyPressed() {
 }
 //Setting mouse pressed use
 function mouseIsPressed() {
-  if (state === "simulation") {
+  let d = dist(mouseX, mouseY, circle.x, circle.y);
+  if (d < circle.w / 2) {
+    circle.drawing = true;
+  } else if (state === "simulation") {
     drawing();
   }
 }
+function mouseReleased() {
+  circle.dragging = false;
+}
+function mouseDragged() {
+  if (circle.dragging) {
+    circle.x = mouseX;
+    circle.y = mouseY;
+  }
+}
+
 //Setting the drawing function
 function drawing() {
   stroke(255);
@@ -587,5 +635,12 @@ function letterPressed() {
 function erasing() {
   if (letterPressed === true) {
     erase();
+  }
+}
+function isMouseInside(x, y, w, h) {
+  if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
+    return true;
+  } else {
+    return false;
   }
 }
