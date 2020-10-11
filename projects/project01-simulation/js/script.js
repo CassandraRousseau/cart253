@@ -730,34 +730,34 @@ function welcome() {
 }
 //Setting level1
 function level1() {
-  simulation();
+  simulation1();
 }
 //Setting level2
 function level2() {
-  simulation();
+  simulation2();
 }
 //Setting level3
 function level3() {
-  simulation();
+  simulation3();
 }
 //Setting level4
 function level4() {
-  simulation();
+  simulation4();
 }
 //Setting level5
 function level5() {
-  simulation();
+  simulation5();
 }
 //Setting level6
 function level6() {
-  simulation();
+  simulation6();
 }
 //Setting level7
 function level7() {
-  simulation();
+  simulation7();
 }
 //Setting simulation
-function simulation() {
+function simulation(simulation) {
   if (state === "level1") {
     state = "simulation1";
   } else if (state === "level2") {
