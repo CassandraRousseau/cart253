@@ -722,14 +722,16 @@ function welcome() {
 //Setting level1
 function level1() {
   simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
+  if (isMouseInsidetri(tri3)&&ifMouseInsidetrait(traitstick)) {
     level2();
+  }else {
+    closed();
   }
 }
 //Setting level2
 function level2() {
   simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
+  if (isMouseInsidecircle(circle0)&&isMouseInsidetrait(traitray1)&&isMouseInsidetrait(traitray2)&&isMouseInsidetrait(traitray3)&&isMouseInsidetrait(traitray4)&&isMouseInsidetrait(traitray5)&&isMouseInsidetrait(traitray6)&&isMouseInsidetrait(traitray7)&&isMouseInsidetrait(traitray8)) {
     level3();
   } else {
     closed();
@@ -739,14 +741,7 @@ function level2() {
 function level3() {
   simulation();
   if (
-    isMouseInside(
-      triangletemplate.x1,
-      triangletemplate.y1,
-      triangletemplate.x2,
-      triangletemplate.y2,
-      triangletemplate.x3,
-      triangletemplate.y3
-    )
+    isMouseInsidecircle(circle1)&&  isMouseInsidecircle(circle2)&&  isMouseInsidecircle(circle3)&&isMouseInsidecurve(smile1)
   ) {
     level4();
   } else {
@@ -756,7 +751,7 @@ function level3() {
 //Setting level4
 function level4() {
   simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
+  if (isMouseInsidecircle(circle1)&&isMouseInsidecircle(circle10)&&isMouseInsidecircle(circle11)&&isMouseInsidetri(tri2)) {
     level5();
   } else {
     closed();
@@ -765,7 +760,7 @@ function level4() {
 //Setting level5
 function level5() {
   simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
+  if (isMouseInsidecircle(circle1)&&isMouseInsidecircle(circle2)&&isMouseInsidecircle(circle3)&&isMouseInsidecircle(circle4)&&isMouseInsidecircle(circle5)&&isMouseInsidebearear(bearearleft)&&isMouseInsidebearear(bearearright)) {
     level6();
   } else {
     closed();
@@ -774,15 +769,7 @@ function level5() {
 //Setting level6
 function level6() {
   simulation();
-  if (
-    isMouseInside(
-      triangletemplate.x1,
-      triangletemplate.y1,
-      triangletemplate.x2,
-      triangletemplate.y2,
-      triangletemplate.x3,
-      triangletemplate.y3
-    )
+  if (isMouseInsidecircle(circle1)&&isMouseInsidecircle(circle2)&&isMouseInsidecircle(circle3)&&isMouseInsidecircle(circle4)&&isMouseInsidetri(tri1)&&isMouseInsidetri(tri4)&&isMouseInsidetri(tri5)&&isMouseInsidetrait(traitwhisker1)&&isMouseInsidetrait(traitwhisker2)&&isMouseInsidetrait(traitwhisker3)&&isMouseInsidetrait(traitwhisker4)
   ) {
     level7();
   } else {
@@ -792,15 +779,7 @@ function level6() {
 //Setting level7
 function level7() {
   simulation();
-  if (
-    isMouseInside(
-      triangletemplate.x1,
-      triangletemplate.y1,
-      triangletemplate.x2,
-      triangletemplate.y2,
-      triangletemplate.x3,
-      triangletemplate.y3
-    )
+  if (isMouseInsidecircle(circle1)&&isMouseInsidecircle(circle2)&&isMouseInsidecircle(circle3)&&isMouseInsidecircle(circle4)&&isMouseInsidecircle(circle6)&&isMouseInsidecircle(circle7)&&isMouseInsidecircle(circle8)&&isMouseInsidecircle(circle9)
   ) {
     open();
   } else {
@@ -1363,22 +1342,8 @@ function keyPressed() {
 }
 //Setting mouse pressed use
 function mouseIsPressed() {
-  let d = dist(mouseX, mouseY, circle.x, circle.y);
-  if (d < circle.w / 2 + circle.h / 2) {
-    circle.dragging = true;
-  } else if (state === "simulation") {
+  if (state === "simulation") {
     drawing();
-  }
-}
-//Setting functions when mouse is released
-function mouseReleased() {
-  circle.dragging = false;
-}
-//Setting functions when mouse is dragged
-function mouseDragged() {
-  if (circle.dragging) {
-    circle.x = mouseX;
-    circle.y = mouseY;
   }
 }
 
@@ -1402,10 +1367,56 @@ function erasing() {
   }
 }
 //Checking if drawings follow the templates
-function isMouseInside(x, y, w, h) {
-  if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
+function isMouseInsidecircle(circle) {
+  if (mouseX > circle.x && mouseX < circle.x + circle.w && mouseY > circle.y && mouseY < circle.y + circle.h) {
     return true;
   } else {
     return false;
   }
 }
+function isMouseInsidebearear(bearear) {
+  if (mouseX > bearaear.x && mouseX < bearaear.x + bearaear.w && mouseY > bearaear.y && mouseY < bearaear.y + bearaear.h) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the templates
+function isMouseInsidetrait(trait) {
+  if (mouseX > trait.x1 && mouseX < trait.x1 && mouseY > trait.y1 && mouseY < trait.y1 && mouseX > trait.x2 && mouseX < trait.x2 && mouseY > trait.y2 && mouseY < trait.y2 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the templates
+function isMouseInsidetri(tri) {
+  if (mouseX > tri.x1 && mouseX < tri.x1 && mouseY > tri.y1 && mouseY < tri.y1&&mouseX > tri.x2 && mouseX < tri.x2 && mouseY > tri.y2 && mouseY < tri.y2&&mouseX > tri.x3 && mouseX < tri.x3 && mouseY > tri.y3 && mouseY < tri.y3) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the templates
+function isMouseInsidecurve(smile) {
+  if (mouseX > smile.x1 && mouseX < smile.x1 && mouseY > smile.y1 && mouseY < smile.y1&&mouseX > smile.x2 && mouseX < smile.x2 && mouseY > smile.y2 && mouseY < smile.y2&&mouseX > smile.x3 && mouseX < smile.x3 && mouseY > smile.y3 && mouseY < smile.y3&&mouseX > smile.x4 && mouseX < smile.x4 && mouseY > smile.y4 && mouseY < smile.y4) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function checkheartbreakEliminated() {
+  isheartbreakEliminated(heartbreak1);
+  isheartbreakEliminated(heartbreak2);
+  isheartbreakEliminated(heartbreak3);
+  isheartbreakEliminated(heartbreak4);
+  isheartbreakEliminated(heartbreak5);
+  if (
+    !heartbreak1.active &&
+    !heartbreak2.active &&
+    !heartbreak3.active &&
+    !heartbreak4.active &&
+    !heartbreak5.active
+  ) {
+    state = "love";
+  }
