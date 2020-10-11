@@ -1372,7 +1372,7 @@ function closed() {
   text("OH NO!", width / 2, 500);
   push();
   textSize(25);
-  text("Coffeeccino is closing!", width / 2, 550);
+  text("Coffeeccino goes bankrupt!", width / 2, 550);
   text("You will have to find another job...", width / 2, 600);
   pop();
   pop();
