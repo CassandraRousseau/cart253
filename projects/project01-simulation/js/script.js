@@ -731,77 +731,30 @@ function welcome() {
 //Setting level1
 function level1() {
   simulation();
-  if () {
-    state = "level2";
-  } else if () {
-    state = "closed";
-  }
 }
 //Setting level2
 function level2() {
   simulation();
-  if (
-
-  ) {
-    state = "level3";
-  } else {
-    state = "closed";
-  }
 }
 //Setting level3
 function level3() {
   simulation();
-  if (
-
-  ) {
-    state = "level4";
-  } else {
-    state = "closed";
-  }
 }
 //Setting level4
 function level4() {
   simulation();
-  if (
-
-  ) {
-    state = "level5";
-  } else {
-    state = "closed";
-  }
 }
 //Setting level5
 function level5() {
   simulation();
-  if (
-
-  ) {
-    state = "level6";
-  } else {
-    state = "closed";
-  }
 }
 //Setting level6
 function level6() {
   simulation();
-  if (
-
-  ) {
-    state = "level7";
-  } else {
-    state = "closed";
-  }
 }
 //Setting level7
 function level7() {
   simulation();
-  if (
-
-  ) {
-    state = "open";
-  } else {
-    state = "closed";
-  }
 }
 //Setting simulation
 function simulation() {
@@ -837,6 +790,8 @@ function simulation1() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel1();
+  checkisMouseIntsidelevel1();
 }
 //Setting simulation for level2
 function simulation2() {
@@ -869,6 +824,8 @@ function simulation2() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel2();
+  checkisMouseIntsidelevel2();
 }
 //Setting simulation for level3
 function simulation3() {
@@ -890,6 +847,8 @@ function simulation3() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel3();
+  checkisMouseIntsidelevel3();
 }
 //Setting simulation for level4
 function simulation4() {
@@ -911,6 +870,8 @@ function simulation4() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel4();
+  checkisMouseIntsidelevel4();
 }
 //Setting simulation for level5
 function simulation5() {
@@ -938,6 +899,8 @@ function simulation5() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel5();
+  checkisMouseIntsidelevel5();
 }
 //Setting simulation for level6
 function simulation6() {
@@ -973,6 +936,8 @@ function simulation6() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel6();
+  checkisMouseIntsidelevel6();
 }
 //Setting simulation for level7
 function simulation7() {
@@ -1002,6 +967,8 @@ function simulation7() {
   }
   displaydonebutton();
   erasing();
+  checkisMouseOutsidelevel7();
+  checkisMouseIntsidelevel7();
 }
 
 function displaytable() {
@@ -1391,130 +1358,174 @@ function erasing() {
 }
 //Checking if heartbreaks are all eliminated
 function checkisMouseInsidelevel1() {
-isMouseInsidetri(tri3);
-isMouseInsidetrait(traitstick);
-  if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
-  ) {
-    state = "love";
+  if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
+    state = "level2";
   }
 }
 function checkisMouseInsidelevel2() {
-  isMouseInsidecircle(circle0);
-  isMouseInsidetrait(traitray1);
-  isMouseInsidetrait(traitray2);
-  isMouseInsidetrait(traitray3);
-  isMouseInsidetrait(traitray4);
-  isMouseInsidetrait(traitray5);
-  isMouseInsidetrait(traitray6);
-  isMouseInsidetrait(traitray7);
-  isMouseInsidetrait(traitray8);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle0) &&
+    isMouseInsidetrait(traitray1) &&
+    isMouseInsidetrait(traitray2) &&
+    isMouseInsidetrait(traitray3) &&
+    isMouseInsidetrait(traitray4) &&
+    isMouseInsidetrait(traitray5) &&
+    isMouseInsidetrait(traitray6) &&
+    isMouseInsidetrait(traitray7) &&
+    isMouseInsidetrait(traitray8)
   ) {
-    state = "love";
+    state = "level3";
   }
 }
 function checkisMouseInsidelevel3() {
-  isMouseInsidecircle(circle1);
-  isMouseInsidecircle(circle2);
-  isMouseInsidecircle(circle3);
-  isMouseInsidecurve(smile1);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle1) &&
+    isMouseInsidecircle(circle2) &&
+    isMouseInsidecircle(circle3) &&
+    isMouseInsidecurve(smile1)
   ) {
-    state = "love";
+    state = "level4";
   }
 }
 function checkisMouseInsidelevel4() {
-  isMouseInsidecircle(circle1);
-  isMouseInsidecircle(circle10);
-  isMouseInsidecircle(circle11);
-  isMouseInsidetri(tri2);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle1) &&
+    isMouseInsidecircle(circle10) &&
+    isMouseInsidecircle(circle11) &&
+    isMouseInsidetri(tri2)
   ) {
-    state = "love";
+    state = "level5";
   }
 }
 function checkisMouseInsidelevel5() {
-  isMouseInsidecircle(circle1);
-  isMouseInsidecircle(circle2);
-  isMouseInsidecircle(circle3);
-  isMouseInsidecircle(circle4);
-  isMouseInsidecircle(circle5);
-  isMouseInsidebearear(bearearleft);
-  isMouseInsidebearear(bearearright);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle1) &&
+    isMouseInsidecircle(circle2) &&
+    isMouseInsidecircle(circle3) &&
+    isMouseInsidecircle(circle4) &&
+    isMouseInsidecircle(circle5) &&
+    isMouseInsidebearear(bearearleft) &&
+    isMouseInsidebearear(bearearright)
   ) {
-    state = "love";
+    state = "level6";
   }
 }
 function checkisMouseInsidelevel6() {
-  isMouseInsidecircle(circle1);
-  isMouseInsidecircle(circle2) ;
-  isMouseInsidecircle(circle3) ;
-  isMouseInsidecircle(circle4) ;
-  isMouseInsidetri(tri1) ;
-  isMouseInsidetri(tri4) ;
-  isMouseInsidetri(tri5) ;
-  isMouseInsidetrait(traitwhisker1) ;
-  isMouseInsidetrait(traitwhisker2) ;
-  isMouseInsidetrait(traitwhisker3) ;
-  isMouseInsidetrait(traitwhisker4);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle1) &&
+    isMouseInsidecircle(circle2) &&
+    isMouseInsidecircle(circle3) &&
+    isMouseInsidecircle(circle4) &&
+    isMouseInsidetri(tri1) &&
+    isMouseInsidetri(tri4) &&
+    isMouseInsidetri(tri5) &&
+    isMouseInsidetrait(traitwhisker1) &&
+    isMouseInsidetrait(traitwhisker2) &&
+    isMouseInsidetrait(traitwhisker3) &&
+    isMouseInsidetrait(traitwhisker4)
   ) {
-    state = "love";
+    state = "level7";
   }
 }
 function checkisMouseInsidelevel7() {
-  isMouseInsidecircle(circle1) ;
-  isMouseInsidecircle(circle2) ;
-  isMouseInsidecircle(circle3) ;
-  isMouseInsidecircle(circle4) ;
-  isMouseInsidecircle(circle6);
-  isMouseInsidecircle(circle7) ;
-  isMouseInsidecircle(circle8) ;
-  isMouseInsidecircle(circle9);
   if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
+    isMouseInsidecircle(circle1) &&
+    isMouseInsidecircle(circle2) &&
+    isMouseInsidecircle(circle3) &&
+    isMouseInsidecircle(circle4) &&
+    isMouseInsidecircle(circle6) &&
+    isMouseInsidecircle(circle7) &&
+    isMouseInsidecircle(circle8) &&
+    isMouseInsidecircle(circle9)
   ) {
-    state = "love";
+    state = "open";
   }
 }
-
-
-
+//Checking if heartbreaks are all eliminated
+function checkisMouseOutsidelevel1() {
+  if (isMouseOutsidetri(tri3) && isMouseOutsidetrait(traitstick)) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel2() {
+  if (
+    isMouseOutsidecircle(circle0) &&
+    isMouseOutsidetrait(traitray1) &&
+    isMouseOutsidetrait(traitray2) &&
+    isMouseOutsidetrait(traitray3) &&
+    isMouseOutsidetrait(traitray4) &&
+    isMouseOutsidetrait(traitray5) &&
+    isMouseOutsidetrait(traitray6) &&
+    isMouseOutsidetrait(traitray7) &&
+    isMouseOutsidetrait(traitray8)
+  ) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel3() {
+  if (
+    isMouseOutsidecircle(circle1) &&
+    isMouseOutsidecircle(circle2) &&
+    isMouseOutsidecircle(circle3) &&
+    isMouseOutsidecurve(smile1)
+  ) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel4() {
+  if (
+    isMouseOutsidecircle(circle1) &&
+    isMouseOutsidecircle(circle10) &&
+    isMouseOutsidecircle(circle11) &&
+    isMouseOutsidetri(tri2)
+  ) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel5() {
+  if (
+    isMouseOutsidecircle(circle1) &&
+    isMouseOutsidecircle(circle2) &&
+    isMouseOutsidecircle(circle3) &&
+    isMouseOutsidecircle(circle4) &&
+    isMouseOutsidecircle(circle5) &&
+    isMouseOutsidebearear(bearearleft) &&
+    isMouseOutsidebearear(bearearright)
+  ) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel6() {
+  if (
+    isMouseOutsidecircle(circle1) &&
+    isMouseOutsidecircle(circle2) &&
+    isMouseOutsidecircle(circle3) &&
+    isMouseOutsidecircle(circle4) &&
+    isMouseOutsidetri(tri1) &&
+    isMouseOutsidetri(tri4) &&
+    isMouseOutsidetri(tri5) &&
+    isMouseOutsidetrait(traitwhisker1) &&
+    isMouseOutsidetrait(traitwhisker2) &&
+    isMouseOutsidetrait(traitwhisker3) &&
+    isMouseOutsidetrait(traitwhisker4)
+  ) {
+    state = "closed";
+  }
+}
+function checkisMouseOutsidelevel7() {
+  if (
+    isMouseOutsidecircle(circle1) &&
+    isMouseOutsidecircle(circle2) &&
+    isMouseOutsidecircle(circle3) &&
+    isMouseOutsidecircle(circle4) &&
+    isMouseOutsidecircle(circle6) &&
+    isMouseOutsidecircle(circle7) &&
+    isMouseOutsidecircle(circle8) &&
+    isMouseOutsidecircle(circle9)
+  ) {
+    state = "closed";
+  }
+}
 //Checking if drawings follow the circles templates
 function isMouseInsidecircle(circle) {
   if (
@@ -1574,6 +1585,71 @@ function isMouseInsidecurve(smile) {
     mouseX < smile.x1 + smile.x2 + smile.x3 + smile.x4 &&
     mouseY > smile.y1 &&
     mouseY < smile.y1 + smile.y2 + smile.y3 + smile.y4
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the circles templates
+function isMouseOutsidecircle(circle) {
+  if (
+    mouseX < circle.x &&
+    mouseX > circle.x + circle.w &&
+    mouseY < circle.y &&
+    mouseY > circle.y + circle.h
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the bear ears templates
+function isMouseOutsidebearear(bearear) {
+  if (
+    mouseX < bearaear.x &&
+    mouseX > bearaear.x + bearaear.w &&
+    mouseY < bearaear.y &&
+    mouseY > bearaear.y + bearaear.h
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the lines templates
+function isMouseOutsidetrait(trait) {
+  if (
+    mouseX < trait.x1 &&
+    mouseX > trait.x1 + trait.x2 &&
+    mouseY < trait.y1 &&
+    mouseY > trait.y1 + trait.y2
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the triangles templates
+function isMouseOutsidetri(tri) {
+  if (
+    mouseX < tri.x1 &&
+    mouseX > tri.x1 + tri.x2 + tri.x3 &&
+    mouseY < tri.y1 &&
+    mouseY > tri.y1 + tri.y2 + tri.y3
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+//Checking if drawings follow the curves templates
+function isMouseOutsidecurve(smile) {
+  if (
+    mouseX < smile.x1 &&
+    mouseX > smile.x1 + smile.x2 + smile.x3 + smile.x4 &&
+    mouseY < smile.y1 &&
+    mouseY > smile.y1 + smile.y2 + smile.y3 + smile.y4
   ) {
     return true;
   } else {
