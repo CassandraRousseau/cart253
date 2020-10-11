@@ -83,6 +83,22 @@ let handle = {
     b: 255,
   },
 };
+let circle0 = {
+  x: 0,
+  y: 0,
+  w: 125,
+  h: 125,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let circle1 = {
   x: 0,
   y: 0,
@@ -389,7 +405,66 @@ let traitray4 = {
     b: 0,
   },
 };
-
+let traitray5 = {
+  x1: -70,
+  y1: 235,
+  x2: -50,
+  y2: 260,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray6 = {
+  x1: 70,
+  y1: 235,
+  x2: 50,
+  y2: 260,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray7 = {
+  x1: -70,
+  y1: 380,
+  x2: -50,
+  y2: 365,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray8 = {
+  x1: 70,
+  y1: 380,
+  x2: 50,
+  y2: 365,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let traitstick = {
   x1: 0,
   y1: 300,
@@ -767,23 +842,51 @@ function level10() {
 }
 //Setting simulation
 function simulation() {
-  simulation1();
+  if (state === "level1") {
+    simulation1();
+  } else if (state === "level2") {
+    simulation2();
+  } else if (state === "level3") {
+    simulation3();
+  } else if (state === "level4") {
+    simulation4();
+  } else if (state === "level5") {
+    simulation5();
+  } else if (state === "level6") {
+    simulation6();
+  } else if (state === "level7") {
+    simulation7();
+  } else if (state === "level8") {
+    simulation8();
+  } else if (state === "level9") {
+    simulation9();
+  } else if (state === "level10") {
+    simulation10();
+  }
 }
 function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
     move();
-    circlemove(circle1);
+    circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
     traitmove(traitray3);
     traitmove(traitray4);
+    traitmove(traitray5);
+    traitmove(traitray6);
+    traitmove(traitray7);
+    traitmove(traitray8);
     acceleration();
-    circleacceleration(circle1);
+    circleacceleration(circle0);
     traitacceleration(traitray1);
     traitacceleration(traitray2);
     traitacceleration(traitray3);
     traitacceleration(traitray4);
+    traitacceleration(traitray5);
+    traitacceleration(traitray6);
+    traitacceleration(traitray7);
+    traitacceleration(traitray8);
     constraining();
     display();
     sun();
@@ -956,17 +1059,21 @@ function displaydonebutton() {
 //Display sun drawing
 function sun() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle0);
   displaytrait(traitray1);
   displaytrait(traitray2);
   displaytrait(traitray3);
   displaytrait(traitray4);
+  displaytrait(traitray5);
+  displaytrait(traitray6);
+  displaytrait(traitray7);
+  displaytrait(traitray8);
   pop();
 }
 //Display smiley drawing
 function face() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle1);
   displaycircle(circle2);
   displaycircle(circle3);
   displaycurve(smile1);
@@ -975,7 +1082,7 @@ function face() {
 //Display cat drawing
 function cat() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle1);
   displaycircle(circle2);
   displaycircle(circle3);
   displaycircle(circle4);
@@ -991,7 +1098,7 @@ function cat() {
 //Display bear drawing
 function bear() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle1);
   displaycircle(circle2);
   displaycircle(circle3);
   displaycircle(circle4);
@@ -1013,7 +1120,7 @@ function umbrella() {
 //Display bird drawing
 function bird() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle1);
   displaycircle(circle10);
   displaycircle(circle11);
   displaytri(tri2);
@@ -1022,7 +1129,7 @@ function bird() {
 //Display dog drawing
 function dog() {
   push();
-  displaycirclecenter();
+  displaycirclecenter(circle1);
   displaycircle(circle2);
   displaycircle(circle3);
   displaycircle(circle4);
@@ -1032,12 +1139,12 @@ function dog() {
   displaycircle(circle9);
   pop();
 }
-function displaycirclecenter() {
+function displaycirclecenter(circle) {
   push();
   noFill();
-  stroke(circle1.stroke.r, circle1.stroke.g, circle1.stroke.b);
-  strokeWeight(circle1.strokeWeight);
-  ellipse(circle1.x, height / 2, circle1.w, circle1.h);
+  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
+  strokeWeight(circle.strokeWeight);
+  ellipse(circle.x, height / 2, circle.w, circle.h);
   pop();
 }
 function displaycircle(circle) {
