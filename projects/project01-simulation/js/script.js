@@ -677,15 +677,9 @@ function draw() {
     level6();
   } else if (state === "level7") {
     level7();
-  } else if (state === "level8") {
-    level8();
-  } else if (state === "level9") {
-    level9();
-  } else if (state === "level10") {
-    level10();
-  } else if (state === "success") {
+  } else if (state === "open") {
     open();
-  } else if (state === "failure") {
+  } else if (state === "closed") {
     closed();
   }
 }
@@ -808,33 +802,6 @@ function level7() {
       triangletemplate.y3
     )
   ) {
-    level8();
-  } else {
-    closed();
-  }
-}
-//Setting level8
-function level8() {
-  simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
-    level9();
-  } else {
-    closed();
-  }
-}
-//Setting level9
-function level9() {
-  simulation();
-  if (isMouseInside(circle.x, circle.y, circle.w, circle.h)) {
-    level10();
-  } else {
-    closed();
-  }
-}
-//Setting level10
-function level10() {
-  simulation();
-  if (isMouseInside()) {
     open();
   } else {
     closed();
@@ -856,14 +823,9 @@ function simulation() {
     simulation6();
   } else if (state === "level7") {
     simulation7();
-  } else if (state === "level8") {
-    simulation8();
-  } else if (state === "level9") {
-    simulation9();
-  } else if (state === "level10") {
-    simulation10();
   }
 }
+//Setting simulation for level1
 function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
@@ -881,6 +843,7 @@ function simulation1() {
   erasing();
   drawing();
 }
+//Setting simulation for level2
 function simulation2() {
   if (mug.x < width / 2) {
     displaytable();
@@ -913,6 +876,7 @@ function simulation2() {
   erasing();
   drawing();
 }
+//Setting simulation for level3
 function simulation3() {
   if (mug.x < width / 2) {
     displaytable();
@@ -934,6 +898,7 @@ function simulation3() {
   erasing();
   drawing();
 }
+//Setting simulation for level4
 function simulation4() {
   if (mug.x < width / 2) {
     displaytable();
@@ -955,6 +920,7 @@ function simulation4() {
   erasing();
   drawing();
 }
+//Setting simulation for level5
 function simulation5() {
   if (mug.x < width / 2) {
     displaytable();
@@ -982,6 +948,7 @@ function simulation5() {
   erasing();
   drawing();
 }
+//Setting simulation for level6
 function simulation6() {
   if (mug.x < width / 2) {
     displaytable();
@@ -1017,6 +984,7 @@ function simulation6() {
   erasing();
   drawing();
 }
+//Setting simulation for level7
 function simulation7() {
   if (mug.x < width / 2) {
     displaytable();
@@ -1067,16 +1035,19 @@ function move() {
   coffee.x += coffee.vx;
   coffee.y += coffee.vy;
 }
+//Setting template circles movements
 function circlemove(circle) {
   circle.x += circle.vx;
   circle.y += circle.vy;
 }
+//Setting template lines movements
 function traitmove(trait) {
   trait.x1 += trait.vx;
   trait.y1 += trait.vy;
   trait.y2 += trait.vy;
   trait.x2 += trait.vx;
 }
+//Setting template triangles movements
 function trimove(tri) {
   tri.x1 += tri.vx;
   tri.y1 += tri.vy;
@@ -1085,10 +1056,12 @@ function trimove(tri) {
   tri.y3 += tri.vy;
   tri.x3 += tri.vx;
 }
+//Setting template bear ears movements
 function bearearmove(bearear) {
   bearear.x += bearear.vx;
   bearear.y += bearear.vy;
 }
+//Setting template curves movements
 function smilemove(smile) {
   smile.x1 += smile.vx;
   smile.y1 += smile.vy;
@@ -1107,23 +1080,28 @@ function acceleration() {
   mug.x += mug.speed;
   coffee.x += coffee.speed;
 }
+//Setting template circles speed
 function circleacceleration(circle) {
   circle.x += circle.speed;
 }
+//Setting template curves speed
 function smileacceleration(smile) {
   smile.x1 += smile.speed;
   smile.x2 += smile.speed;
   smile.x3 += smile.speed;
   smile.x4 += smile.speed;
 }
+//Setting template triangles speed
 function triacceleration(tri) {
   tri.x1 += tri.speed;
   tri.x2 += tri.speed;
   tri.x3 += tri.speed;
 }
+//Setting template bear ears speed
 function bearearacceleration(bearear) {
   bearear.x += bearear.speed;
 }
+//Setting template lines speed
 function traitacceleration(trait) {
   trait.x1 += trait.speed;
   trait.x2 += trait.speed;
@@ -1268,6 +1246,7 @@ function dog() {
   displaycircle(circle9);
   pop();
 }
+//Display circle in the center of templates
 function displaycirclecenter(circle) {
   push();
   noFill();
@@ -1276,6 +1255,7 @@ function displaycirclecenter(circle) {
   ellipse(circle.x, height / 2, circle.w, circle.h);
   pop();
 }
+//Display template circles
 function displaycircle(circle) {
   push();
   noFill();
@@ -1284,6 +1264,7 @@ function displaycircle(circle) {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
+//Display template bear ears
 function displaybearear(bearear) {
   push();
   noFill();
@@ -1293,6 +1274,7 @@ function displaybearear(bearear) {
   arc(bearear.x, bearear.y, bearear.w, bearear.h, PI + QUARTER_PI, TWO_PI);
   pop();
 }
+//Display template triangles
 function displaytri(tri) {
   push();
   noFill();
@@ -1301,6 +1283,7 @@ function displaytri(tri) {
   triangle(tri.x1, tri.y1, tri.x2, tri.y2, tri.x3, tri.y3);
   pop();
 }
+//Display template curves
 function displaycurve(smile) {
   push();
   noFill();
@@ -1318,6 +1301,7 @@ function displaycurve(smile) {
   );
   pop();
 }
+//Display template lines
 function displaytrait(trait) {
   push();
   noFill();
@@ -1386,9 +1370,11 @@ function mouseIsPressed() {
     drawing();
   }
 }
+//Setting functions when mouse is released
 function mouseReleased() {
   circle.dragging = false;
 }
+//Setting functions when mouse is dragged
 function mouseDragged() {
   if (circle.dragging) {
     circle.x = mouseX;
@@ -1415,6 +1401,7 @@ function erasing() {
     erase();
   }
 }
+//Checking if drawings follow the templates
 function isMouseInside(x, y, w, h) {
   if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
     return true;
