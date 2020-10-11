@@ -722,7 +722,7 @@ function welcome() {
 //Setting level1
 function level1() {
   simulation();
-  if (isMouseInsidetri(tri3) && ifMouseInsidetrait(traitstick)) {
+  if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
     level2();
   } else {
     closed();
@@ -1441,13 +1441,9 @@ function isMouseInsidebearear(bearear) {
 function isMouseInsidetrait(trait) {
   if (
     mouseX > trait.x1 &&
-    mouseX < trait.x1 &&
+    mouseX < trait.x1 + trait.x2 &&
     mouseY > trait.y1 &&
-    mouseY < trait.y1 &&
-    mouseX > trait.x2 &&
-    mouseX < trait.x2 &&
-    mouseY > trait.y2 &&
-    mouseY < trait.y2
+    mouseY < trait.y1 + trait.y2
   ) {
     return true;
   } else {
@@ -1458,17 +1454,9 @@ function isMouseInsidetrait(trait) {
 function isMouseInsidetri(tri) {
   if (
     mouseX > tri.x1 &&
-    mouseX < tri.x1 &&
+    mouseX < tri.x1 + tri.x2 + tri.x3 &&
     mouseY > tri.y1 &&
-    mouseY < tri.y1 &&
-    mouseX > tri.x2 &&
-    mouseX < tri.x2 &&
-    mouseY > tri.y2 &&
-    mouseY < tri.y2 &&
-    mouseX > tri.x3 &&
-    mouseX < tri.x3 &&
-    mouseY > tri.y3 &&
-    mouseY < tri.y3
+    mouseY < tri.y1 + tri.y2 + tri.y3
   ) {
     return true;
   } else {
@@ -1479,21 +1467,9 @@ function isMouseInsidetri(tri) {
 function isMouseInsidecurve(smile) {
   if (
     mouseX > smile.x1 &&
-    mouseX < smile.x1 &&
+    mouseX < smile.x1 + smile.x2 + smile.x3 + smile.x4 &&
     mouseY > smile.y1 &&
-    mouseY < smile.y1 &&
-    mouseX > smile.x2 &&
-    mouseX < smile.x2 &&
-    mouseY > smile.y2 &&
-    mouseY < smile.y2 &&
-    mouseX > smile.x3 &&
-    mouseX < smile.x3 &&
-    mouseY > smile.y3 &&
-    mouseY < smile.y3 &&
-    mouseX > smile.x4 &&
-    mouseX < smile.x4 &&
-    mouseY > smile.y4 &&
-    mouseY < smile.y4
+    mouseY < smile.y1 + smile.y2 + smile.y3 + smile.y4
   ) {
     return true;
   } else {
