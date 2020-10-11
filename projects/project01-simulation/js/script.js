@@ -291,7 +291,7 @@ let bearearright = {
     b: 0,
   },
 };
-let smile = {
+let smile1 = {
   x1: -100,
   y1: 250,
   x2: -30,
@@ -310,11 +310,75 @@ let smile = {
     b: 0,
   },
 };
+let smile2 = {
+  x1: -175,
+  y1: 275,
+  x2: -40,
+  y2: 375,
+  x3: 40,
+  y3: 375,
+  x4: 175,
+  y4: 275,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let traitray1 = {
-  x1: 250,
-  y1: 250,
-  x2: 250,
-  y2: 220,
+  x1: 0,
+  y1: 210,
+  x2: 0,
+  y2: 240,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray2 = {
+  x1: 0,
+  y1: 385,
+  x2: 0,
+  y2: 415,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray3 = {
+  x1: 73,
+  y1: 315,
+  x2: 100,
+  y2: 315,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let traitray4 = {
+  x1: -73,
+  y1: 315,
+  x2: -100,
+  y2: 315,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -331,36 +395,6 @@ let traitstick = {
   y1: 300,
   x2: 0,
   y2: 400,
-  vx: 0,
-  vy: 0,
-  speed: 3,
-  strokeWeight: 3,
-  stroke: {
-    r: 0,
-    g: 255,
-    b: 0,
-  },
-};
-let traitleftsideleaf = {
-  x1: 0,
-  y1: 250,
-  x2: -30,
-  y2: 350,
-  vx: 0,
-  vy: 0,
-  speed: 3,
-  strokeWeight: 3,
-  stroke: {
-    r: 0,
-    g: 255,
-    b: 0,
-  },
-};
-let traitrightsideleaf = {
-  x1: 0,
-  y1: 250,
-  x2: 30,
-  y2: 350,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -739,18 +773,20 @@ function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
     move();
-    trimove(tri3);
-    traitmove(traitleftsideleaf);
-    traitmove(traitrightsideleaf);
-    smilemove();
+    circlemove(circle1);
+    traitmove(traitray1);
+    traitmove(traitray2);
+    traitmove(traitray3);
+    traitmove(traitray4);
     acceleration();
-    smileacceleration();
-    triacceleration(tri3);
-    traitacceleration(traitleftsideleaf);
-    traitacceleration(traitrightsideleaf);
+    circleacceleration(circle1);
+    traitacceleration(traitray1);
+    traitacceleration(traitray2);
+    traitacceleration(traitray3);
+    traitacceleration(traitray4);
     constraining();
     display();
-    leaf();
+    sun();
   }
   displaydonebutton();
   erasing();
@@ -920,15 +956,12 @@ function displaydonebutton() {
 //Display sun drawing
 function sun() {
   push();
-  noFill();
-  stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
-  strokeWeight(circle.strokeWeight);
-  ellipse(circle.x, height / 2, circle.w, circle.h);
-  rays(ray1);
+  displaycirclecenter();
+  displaytrait(traitray1);
+  displaytrait(traitray2);
+  displaytrait(traitray3);
+  displaytrait(traitray4);
   pop();
-}
-function rays(ray) {
-  line(ray.x1, ray.y1, ray.x2, ray.y2);
 }
 //Display smiley drawing
 function face() {
@@ -937,13 +970,6 @@ function face() {
   displaycircle(circle2);
   displaycircle(circle3);
   displaycurve(smile1);
-  pop();
-}
-
-//Display heart drawing
-function love() {
-  push();
-  noFill();
   pop();
 }
 //Display cat drawing
@@ -984,14 +1010,6 @@ function umbrella() {
   line(traitstick.x1, traitstick.y1, traitstick.x2, traitstick.y2);
   pop();
 }
-//Display leaf drawing
-function leaf() {
-  push();
-  displaycurve(smile2);
-  displaytrait(traitleftsideleaf);
-  displaytrait(traitrightsideleaf);
-  pop();
-}
 //Display bird drawing
 function bird() {
   push();
@@ -1012,12 +1030,6 @@ function dog() {
   displaycircle(circle7);
   displaycircle(circle8);
   displaycircle(circle9);
-  pop();
-}
-//Display grape drawing
-function grape() {
-  push();
-  noFill();
   pop();
 }
 function displaycirclecenter() {
