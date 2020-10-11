@@ -725,9 +725,9 @@ function welcome() {
 function level1() {
   simulation();
   if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
-    level2();
-  } else {
-    closed();
+    state = "level2";
+  } else if{!isMouseInsidetri(tri3) && !isMouseInsidetrait(traitstick)
+    state = "closed";
   }
 }
 //Setting level2
@@ -744,9 +744,9 @@ function level2() {
     isMouseInsidetrait(traitray7) &&
     isMouseInsidetrait(traitray8)
   ) {
-    level3();
+    state = "level3";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting level3
@@ -758,9 +758,9 @@ function level3() {
     isMouseInsidecircle(circle3) &&
     isMouseInsidecurve(smile1)
   ) {
-    level4();
+    state = "level4";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting level4
@@ -772,9 +772,9 @@ function level4() {
     isMouseInsidecircle(circle11) &&
     isMouseInsidetri(tri2)
   ) {
-    level5();
+    state = "level5";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting level5
@@ -789,9 +789,9 @@ function level5() {
     isMouseInsidebearear(bearearleft) &&
     isMouseInsidebearear(bearearright)
   ) {
-    level6();
+    state = "level6";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting level6
@@ -810,9 +810,9 @@ function level6() {
     isMouseInsidetrait(traitwhisker3) &&
     isMouseInsidetrait(traitwhisker4)
   ) {
-    level7();
+    state = "level7";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting level7
@@ -828,9 +828,9 @@ function level7() {
     isMouseInsidecircle(circle8) &&
     isMouseInsidecircle(circle9)
   ) {
-    open();
+    state = "open";
   } else {
-    closed();
+    state = "closed";
   }
 }
 //Setting simulation
@@ -1413,6 +1413,7 @@ function erasing() {
     erase();
   }
 }
+
 //Checking if drawings follow the circles templates
 function isMouseInsidecircle(circle) {
   if (
