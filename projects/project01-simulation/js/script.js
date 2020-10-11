@@ -774,7 +774,7 @@ function simulation() {
     state = "simulation7";
   }
 }
-//Setting simulation for level1
+//Setting simul ation for level1
 function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
@@ -789,9 +789,6 @@ function simulation1() {
     umbrella();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel1();
-  checkisMouseIntsidelevel1();
 }
 //Setting simulation for level2
 function simulation2() {
@@ -823,9 +820,6 @@ function simulation2() {
     sun();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel2();
-  checkisMouseIntsidelevel2();
 }
 //Setting simulation for level3
 function simulation3() {
@@ -846,9 +840,6 @@ function simulation3() {
     face();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel3();
-  checkisMouseIntsidelevel3();
 }
 //Setting simulation for level4
 function simulation4() {
@@ -869,9 +860,6 @@ function simulation4() {
     bird();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel4();
-  checkisMouseIntsidelevel4();
 }
 //Setting simulation for level5
 function simulation5() {
@@ -898,9 +886,6 @@ function simulation5() {
     bear();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel5();
-  checkisMouseIntsidelevel5();
 }
 //Setting simulation for level6
 function simulation6() {
@@ -935,9 +920,6 @@ function simulation6() {
     cat();
   }
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel6();
-  checkisMouseIntsidelevel6();
 }
 //Setting simulation for level7
 function simulation7() {
@@ -965,10 +947,8 @@ function simulation7() {
     display();
     dog();
   }
+
   displaydonebutton();
-  erasing();
-  checkisMouseOutsidelevel7();
-  checkisMouseIntsidelevel7();
 }
 
 function displaytable() {
@@ -1317,6 +1297,52 @@ function keyPressed() {
     state = "level1";
   }
 }
+function letterPressed() {
+  if (state === "level1" && keyCode === 13) {
+    verification1();
+  } else if (state === "level2") {
+    verification2();
+  } else if (state === "level3") {
+    verification3();
+  } else if (state === "level4") {
+    verification4();
+  } else if (state === "level5") {
+    verification5();
+  } else if (state === "level6") {
+    verification6();
+  } else if (state === "level7") {
+    verification7();
+  }
+}
+function verification1() {
+  checkisMouseOutsidelevel1();
+  checkisMouseIntsidelevel1();
+}
+function verification2() {
+  checkisMouseOutsidelevel2();
+  checkisMouseIntsidelevel2();
+}
+function verification3() {
+  checkisMouseOutsidelevel3();
+  checkisMouseIntsidelevel3();
+}
+function verification4() {
+  checkisMouseOutsidelevel4();
+  checkisMouseIntsidelevel4();
+}
+function verification5() {
+  checkisMouseOutsidelevel5();
+  checkisMouseIntsidelevel5();
+}
+function verification6() {
+  checkisMouseOutsidelevel6();
+  checkisMouseIntsidelevel6();
+}
+function verification7() {
+  checkisMouseOutsidelevel7();
+  checkisMouseIntsidelevel7();
+}
+
 //Setting mouse pressed use
 function mouseIsPressed() {
   if (state === "simulation") {
@@ -1345,25 +1371,19 @@ function mouseDragged() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
-//Setting erasing function
-function letterPressed() {
-  if (state === "simulation" && keyCode === 90) {
-    erasing();
-  }
-}
-function erasing() {
-  if (letterPressed === true) {
-    erase();
-  }
-}
 //Checking if heartbreaks are all eliminated
 function checkisMouseInsidelevel1() {
-  if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
+  if (
+    mouseReleased() &&
+    isMouseInsidetri(tri3) &&
+    isMouseInsidetrait(traitstick)
+  ) {
     state = "level2";
   }
 }
 function checkisMouseInsidelevel2() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle0) &&
     isMouseInsidetrait(traitray1) &&
     isMouseInsidetrait(traitray2) &&
@@ -1379,6 +1399,7 @@ function checkisMouseInsidelevel2() {
 }
 function checkisMouseInsidelevel3() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1389,6 +1410,7 @@ function checkisMouseInsidelevel3() {
 }
 function checkisMouseInsidelevel4() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle10) &&
     isMouseInsidecircle(circle11) &&
@@ -1399,6 +1421,7 @@ function checkisMouseInsidelevel4() {
 }
 function checkisMouseInsidelevel5() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1412,6 +1435,7 @@ function checkisMouseInsidelevel5() {
 }
 function checkisMouseInsidelevel6() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1429,6 +1453,7 @@ function checkisMouseInsidelevel6() {
 }
 function checkisMouseInsidelevel7() {
   if (
+    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1449,6 +1474,7 @@ function checkisMouseOutsidelevel1() {
 }
 function checkisMouseOutsidelevel2() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle0) &&
     isMouseOutsidetrait(traitray1) &&
     isMouseOutsidetrait(traitray2) &&
@@ -1464,6 +1490,7 @@ function checkisMouseOutsidelevel2() {
 }
 function checkisMouseOutsidelevel3() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1474,6 +1501,7 @@ function checkisMouseOutsidelevel3() {
 }
 function checkisMouseOutsidelevel4() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle10) &&
     isMouseOutsidecircle(circle11) &&
@@ -1484,6 +1512,7 @@ function checkisMouseOutsidelevel4() {
 }
 function checkisMouseOutsidelevel5() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1497,6 +1526,7 @@ function checkisMouseOutsidelevel5() {
 }
 function checkisMouseOutsidelevel6() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1514,6 +1544,7 @@ function checkisMouseOutsidelevel6() {
 }
 function checkisMouseOutsidelevel7() {
   if (
+    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
