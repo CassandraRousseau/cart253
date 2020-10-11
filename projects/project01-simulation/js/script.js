@@ -759,19 +759,19 @@ function level7() {
 //Setting simulation
 function simulation(simulation) {
   if (state === "level1") {
-    state = "simulation1";
+    simulation1();
   } else if (state === "level2") {
-    state = "simulation2";
+    simulation2();
   } else if (state === "level3") {
-    state = "simulation3";
+    simulation3();
   } else if (state === "level4") {
-    state = "simulation4";
+    simualtion4();
   } else if (state === "level5") {
-    state = "simulation5";
+    simulation5();
   } else if (state === "level6") {
-    state = "simulation6";
+    simulation6();
   } else if (state === "level7") {
-    state = "simulation7";
+    simulation7();
   }
 }
 //Setting simul ation for level1
@@ -1622,7 +1622,7 @@ function isMouseInsidecurve(smile) {
     return false;
   }
 }
-//Checking if drawings follow the circles templates
+//Checking if drawings don't follow the circles templates
 function isMouseOutsidecircle(circle) {
   if (
     mouseX < circle.x &&
@@ -1635,7 +1635,7 @@ function isMouseOutsidecircle(circle) {
     return false;
   }
 }
-//Checking if drawings follow the bear ears templates
+//Checking if drawings don't follow the bear ears templates
 function isMouseOutsidebearear(bearear) {
   if (
     mouseX < bearaear.x &&
@@ -1648,7 +1648,7 @@ function isMouseOutsidebearear(bearear) {
     return false;
   }
 }
-//Checking if drawings follow the lines templates
+//Checking if drawings don't follow the lines templates
 function isMouseOutsidetrait(trait) {
   if (
     mouseX < trait.x1 &&
@@ -1661,7 +1661,7 @@ function isMouseOutsidetrait(trait) {
     return false;
   }
 }
-//Checking if drawings follow the triangles templates
+//Checking if drawings don't follow the triangles templates
 function isMouseOutsidetri(tri) {
   if (
     mouseX < tri.x1 &&
@@ -1674,7 +1674,7 @@ function isMouseOutsidetri(tri) {
     return false;
   }
 }
-//Checking if drawings follow the curves templates
+//Checking if drawings don't follow the curves templates
 function isMouseOutsidecurve(smile) {
   if (
     mouseX < smile.x1 &&
