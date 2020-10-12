@@ -784,11 +784,20 @@ function simulation1() {
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
-    constraining();
+    display();
+    umbrella();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    trimove(tri3);
+    traitmove(traitstick);
+    acceleration();
+    triacceleration(tri3);
+    traitacceleration(traitstick);
     display();
     umbrella();
   }
-  displaydonebutton();
+  verification1();
 }
 //Setting simulation for level2
 function simulation2() {
@@ -818,8 +827,34 @@ function simulation2() {
     constraining();
     display();
     sun();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle0);
+    traitmove(traitray1);
+    traitmove(traitray2);
+    traitmove(traitray2);
+    traitmove(traitray3);
+    traitmove(traitray4);
+    traitmove(traitray5);
+    traitmove(traitray6);
+    traitmove(traitray7);
+    traitmove(traitray8);
+    acceleration();
+    circleacceleration(circle0);
+    traitacceleration(traitray1);
+    traitacceleration(traitray2);
+    traitacceleration(traitray3);
+    traitacceleration(traitray4);
+    traitacceleration(traitray5);
+    traitacceleration(traitray6);
+    traitacceleration(traitray7);
+    traitacceleration(traitray8);
+    constraining();
+    display();
+    sun();
   }
-  displaydonebutton();
+  verification2();
 }
 //Setting simulation for level3
 function simulation3() {
@@ -838,8 +873,23 @@ function simulation3() {
     constraining();
     display();
     face();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    smilemove(smile1);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    smileacceleration(smile1);
+    constraining();
+    display();
+    face();
   }
-  displaydonebutton();
+  verification3();
 }
 //Setting simulation for level4
 function simulation4() {
@@ -858,8 +908,23 @@ function simulation4() {
     constraining();
     display();
     bird();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle1);
+    circlemove(circle10);
+    circlemove(circle11);
+    trimove(tri2);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle10);
+    circleacceleration(circle11);
+    triacceleration(tri2);
+    constraining();
+    display();
+    bird();
   }
-  displaydonebutton();
+  verification4();
 }
 //Setting simulation for level5
 function simulation5() {
@@ -884,8 +949,29 @@ function simulation5() {
     constraining();
     display();
     bear();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    circlemove(circle5);
+    bearearmove(bearearleft);
+    bearearmove(bearearright);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    circleacceleration(circle5);
+    bearearacceleration(bearearleft);
+    bearearacceleration(bearearright);
+    constraining();
+    display();
+    bear();
   }
-  displaydonebutton();
+  verification5();
 }
 //Setting simulation for level6
 function simulation6() {
@@ -918,8 +1004,37 @@ function simulation6() {
     constraining();
     display();
     cat();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    trimove(tri1);
+    trimove(tri4);
+    trimove(tri5);
+    traitmove(traitwhisker1);
+    traitmove(traitwhisker2);
+    traitmove(traitwhisker3);
+    traitmove(traitwhisker4);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    triacceleration(tri1);
+    triacceleration(tri4);
+    triacceleration(tri5);
+    traitacceleration(traitwhisker1);
+    traitacceleration(traitwhisker2);
+    traitacceleration(traitwhisker3);
+    traitacceleration(traitwhisker4);
+    constraining();
+    display();
+    cat();
   }
-  displaydonebutton();
+  verification6();
 }
 //Setting simulation for level7
 function simulation7() {
@@ -946,9 +1061,31 @@ function simulation7() {
     constraining();
     display();
     dog();
+  } else if (letterPressed()) {
+    displaytable();
+    move();
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    circlemove(circle6);
+    circlemove(circle7);
+    circlemove(circle8);
+    circlemove(circle9);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    circleacceleration(circle6);
+    circleacceleration(circle7);
+    circleacceleration(circle8);
+    circleacceleration(circle9);
+    constraining();
+    display();
+    dog();
   }
-
-  displaydonebutton();
+  verification7();
 }
 
 function displaytable() {
@@ -1091,14 +1228,7 @@ function displaycoffee() {
   ellipse(coffee.x, height / 2, coffee.w, coffee.h);
   pop();
 }
-//Display done button
-function displaydonebutton() {
-  push();
-  noStroke();
-  fill(0, 255, 0);
-  ellipse((2 * width) / 2, (2 * height) / 2, donebutton.w, donebutton.h);
-  pop();
-}
+
 //Display umbrella drawing
 function umbrella() {
   push();
@@ -1246,18 +1376,7 @@ function displaytrait(trait) {
   line(trait.x1, trait.y1, trait.x2, trait.y2);
   pop();
 }
-//Stoping cup movement
-function constraining() {
-  plate.x = constrain(plate.x, 0, width / 2);
 
-  shadow.x = constrain(shadow.x, 0, width / 2);
-
-  handle.x = constrain(handle.x, 0, width / 2);
-
-  mug.x = constrain(mug.x, 0, width / 2);
-
-  coffee.x = constrain(coffee.x, 0, width / 2);
-}
 //Setting the good ending
 function open() {
   push();
@@ -1299,48 +1418,62 @@ function keyPressed() {
 }
 function letterPressed() {
   if (state === "level1" && keyCode === 13) {
-    verification1();
+    mug.x > width / 2;
   } else if (state === "level2") {
-    verification2();
+    mug.x > width / 2;
   } else if (state === "level3") {
-    verification3();
+    mug.x > width / 2;
   } else if (state === "level4") {
-    verification4();
+    mug.x > width / 2;
   } else if (state === "level5") {
-    verification5();
+    mug.x > width / 2;
   } else if (state === "level6") {
-    verification6();
+    mug.x > width / 2;
   } else if (state === "level7") {
-    verification7();
+    mug.x > width / 2;
   }
 }
 function verification1() {
-  checkisMouseOutsidelevel1();
-  checkisMouseIntsidelevel1();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel1();
+    checkisMouseIntsidelevel1();
+  }
 }
 function verification2() {
-  checkisMouseOutsidelevel2();
-  checkisMouseIntsidelevel2();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel2();
+    checkisMouseIntsidelevel2();
+  }
 }
 function verification3() {
-  checkisMouseOutsidelevel3();
-  checkisMouseIntsidelevel3();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel3();
+    checkisMouseIntsidelevel3();
+  }
 }
 function verification4() {
-  checkisMouseOutsidelevel4();
-  checkisMouseIntsidelevel4();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel4();
+    checkisMouseIntsidelevel4();
+  }
 }
 function verification5() {
-  checkisMouseOutsidelevel5();
-  checkisMouseIntsidelevel5();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel5();
+    checkisMouseIntsidelevel5();
+  }
 }
 function verification6() {
-  checkisMouseOutsidelevel6();
-  checkisMouseIntsidelevel6();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel6();
+    checkisMouseIntsidelevel6();
+  }
 }
 function verification7() {
-  checkisMouseOutsidelevel7();
-  checkisMouseIntsidelevel7();
+  if (mug.x > windowWidth) {
+    checkisMouseOutsidelevel7();
+    checkisMouseIntsidelevel7();
+  }
 }
 
 //Setting mouse pressed use
