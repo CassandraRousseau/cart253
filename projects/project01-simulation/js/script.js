@@ -795,7 +795,7 @@ function simulation1() {
       mug.speed = 0;
       verification1();
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     trimove(tri3);
@@ -845,7 +845,7 @@ function simulation2() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle0);
@@ -900,7 +900,7 @@ function simulation3() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle1);
@@ -945,7 +945,7 @@ function simulation4() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle1);
@@ -996,7 +996,7 @@ function simulation5() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle1);
@@ -1060,7 +1060,7 @@ function simulation6() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle1);
@@ -1126,7 +1126,7 @@ function simulation7() {
       mug.state = "center";
       mug.speed = 0;
     }
-  } else if (mug.state === "leaveing") {
+  } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
     circlemove(circle1);
