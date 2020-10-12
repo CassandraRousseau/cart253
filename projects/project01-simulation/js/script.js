@@ -774,7 +774,7 @@ function simulation(simulation) {
     simulation7();
   }
 }
-//Setting simul ation for level1
+//Setting simulation for level1
 function simulation1() {
   if (mug.x < width / 2) {
     displaytable();
@@ -1416,6 +1416,7 @@ function keyPressed() {
     state = "level1";
   }
 }
+//Setting key to make mug moving
 function letterPressed() {
   if (state === "level1" && keyCode === 13) {
     mug.x > width / 2;
@@ -1433,42 +1434,49 @@ function letterPressed() {
     mug.x > width / 2;
   }
 }
+//Setting when checking is drawing is made correctly in level1
 function verification1() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel1();
     checkisMouseInsidelevel1();
   }
 }
+//Setting when checking is drawing is made correctly in level2
 function verification2() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel2();
     checkisMouseInsidelevel2();
   }
 }
+//Setting when checking is drawing is made correctly in level3
 function verification3() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel3();
     checkisMouseInsidelevel3();
   }
 }
+//Setting when checking is drawing is made correctly in level4
 function verification4() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel4();
     checkisMouseInsidelevel4();
   }
 }
+//Setting when checking is drawing is made correctly in level5
 function verification5() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel5();
     checkisMouseInsidelevel5();
   }
 }
+//Setting when checking is drawing is made correctly in level6
 function verification6() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel6();
     checkisMouseInsidelevel6();
   }
 }
+//Setting when checking is drawing is made correctly in level7
 function verification7() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel7();
@@ -1504,12 +1512,13 @@ function mouseDragged() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
-//Checking if heartbreaks are all eliminated
+//Checking if drawing is inside template in level1
 function checkisMouseInsidelevel1() {
   if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
     state = "level2";
   }
 }
+//Checking if drawing is inside template in level2
 function checkisMouseInsidelevel2() {
   if (
     isMouseInsidecircle(circle0) &&
@@ -1525,6 +1534,7 @@ function checkisMouseInsidelevel2() {
     state = "level3";
   }
 }
+//Checking if drawing is inside template in level3
 function checkisMouseInsidelevel3() {
   if (
     isMouseInsidecircle(circle1) &&
@@ -1535,6 +1545,7 @@ function checkisMouseInsidelevel3() {
     state = "level4";
   }
 }
+//Checking if drawing is inside template in level4
 function checkisMouseInsidelevel4() {
   if (
     isMouseInsidecircle(circle1) &&
@@ -1545,6 +1556,7 @@ function checkisMouseInsidelevel4() {
     state = "level5";
   }
 }
+//Checking if drawing is inside template in level5
 function checkisMouseInsidelevel5() {
   if (
     isMouseInsidecircle(circle1) &&
@@ -1558,6 +1570,7 @@ function checkisMouseInsidelevel5() {
     state = "level6";
   }
 }
+//Checking if drawing is inside template in level6
 function checkisMouseInsidelevel6() {
   if (
     isMouseInsidecircle(circle1) &&
@@ -1575,6 +1588,7 @@ function checkisMouseInsidelevel6() {
     state = "level7";
   }
 }
+//Checking if drawing is inside template in level7
 function checkisMouseInsidelevel7() {
   if (
     isMouseInsidecircle(circle1) &&
@@ -1589,12 +1603,13 @@ function checkisMouseInsidelevel7() {
     state = "open";
   }
 }
-//Checking if heartbreaks are all eliminated
+//Checking if drawing is outside template in level1
 function checkisMouseOutsidelevel1() {
   if (isMouseOutsidetri(tri3) && isMouseOutsidetrait(traitstick)) {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level2
 function checkisMouseOutsidelevel2() {
   if (
     isMouseOutsidecircle(circle0) &&
@@ -1610,6 +1625,7 @@ function checkisMouseOutsidelevel2() {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level3
 function checkisMouseOutsidelevel3() {
   if (
     isMouseOutsidecircle(circle1) &&
@@ -1620,6 +1636,7 @@ function checkisMouseOutsidelevel3() {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level4
 function checkisMouseOutsidelevel4() {
   if (
     isMouseOutsidecircle(circle1) &&
@@ -1630,6 +1647,7 @@ function checkisMouseOutsidelevel4() {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level5
 function checkisMouseOutsidelevel5() {
   if (
     isMouseOutsidecircle(circle1) &&
@@ -1643,6 +1661,7 @@ function checkisMouseOutsidelevel5() {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level6
 function checkisMouseOutsidelevel6() {
   if (
     isMouseOutsidecircle(circle1) &&
@@ -1660,6 +1679,7 @@ function checkisMouseOutsidelevel6() {
     state = "closed";
   }
 }
+//Checking if drawing is outside template in level7
 function checkisMouseOutsidelevel7() {
   if (
     isMouseOutsidecircle(circle1) &&
