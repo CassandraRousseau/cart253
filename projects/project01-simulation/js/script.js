@@ -654,9 +654,11 @@ let failure = {
 let success = {
   image: undefined,
 };
+let smoothjazz;
 let state = "title";
 //Loading images for simulation.
 function preload() {
+  smoothjazz = loadSound("assets/sounds/");
   cafe.image = loadImage("assets/images/cafe.png");
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
