@@ -824,7 +824,7 @@ function simulation2() {
     traitacceleration(traitray6);
     traitacceleration(traitray7);
     traitacceleration(traitray8);
-    constraining();
+
     display();
     sun();
   } else if (letterPressed()) {
@@ -850,7 +850,7 @@ function simulation2() {
     traitacceleration(traitray6);
     traitacceleration(traitray7);
     traitacceleration(traitray8);
-    constraining();
+
     display();
     sun();
   }
@@ -870,7 +870,7 @@ function simulation3() {
     circleacceleration(circle2);
     circleacceleration(circle3);
     smileacceleration(smile1);
-    constraining();
+
     display();
     face();
   } else if (letterPressed()) {
@@ -885,7 +885,7 @@ function simulation3() {
     circleacceleration(circle2);
     circleacceleration(circle3);
     smileacceleration(smile1);
-    constraining();
+
     display();
     face();
   }
@@ -905,7 +905,7 @@ function simulation4() {
     circleacceleration(circle10);
     circleacceleration(circle11);
     triacceleration(tri2);
-    constraining();
+
     display();
     bird();
   } else if (letterPressed()) {
@@ -920,7 +920,7 @@ function simulation4() {
     circleacceleration(circle10);
     circleacceleration(circle11);
     triacceleration(tri2);
-    constraining();
+
     display();
     bird();
   }
@@ -946,7 +946,7 @@ function simulation5() {
     circleacceleration(circle5);
     bearearacceleration(bearearleft);
     bearearacceleration(bearearright);
-    constraining();
+
     display();
     bear();
   } else if (letterPressed()) {
@@ -967,7 +967,7 @@ function simulation5() {
     circleacceleration(circle5);
     bearearacceleration(bearearleft);
     bearearacceleration(bearearright);
-    constraining();
+
     display();
     bear();
   }
@@ -1001,7 +1001,7 @@ function simulation6() {
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
     traitacceleration(traitwhisker4);
-    constraining();
+
     display();
     cat();
   } else if (letterPressed()) {
@@ -1030,7 +1030,7 @@ function simulation6() {
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
     traitacceleration(traitwhisker4);
-    constraining();
+
     display();
     cat();
   }
@@ -1058,7 +1058,7 @@ function simulation7() {
     circleacceleration(circle7);
     circleacceleration(circle8);
     circleacceleration(circle9);
-    constraining();
+
     display();
     dog();
   } else if (letterPressed()) {
@@ -1081,7 +1081,7 @@ function simulation7() {
     circleacceleration(circle7);
     circleacceleration(circle8);
     circleacceleration(circle9);
-    constraining();
+
     display();
     dog();
   }
@@ -1436,43 +1436,43 @@ function letterPressed() {
 function verification1() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel1();
-    checkisMouseIntsidelevel1();
+    checkisMouseInsidelevel1();
   }
 }
 function verification2() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel2();
-    checkisMouseIntsidelevel2();
+    checkisMouseInsidelevel2();
   }
 }
 function verification3() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel3();
-    checkisMouseIntsidelevel3();
+    checkisMouseInsidelevel3();
   }
 }
 function verification4() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel4();
-    checkisMouseIntsidelevel4();
+    checkisMouseInsidelevel4();
   }
 }
 function verification5() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel5();
-    checkisMouseIntsidelevel5();
+    checkisMouseInsidelevel5();
   }
 }
 function verification6() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel6();
-    checkisMouseIntsidelevel6();
+    checkisMouseInsidelevel6();
   }
 }
 function verification7() {
   if (mug.x > windowWidth) {
     checkisMouseOutsidelevel7();
-    checkisMouseIntsidelevel7();
+    checkisMouseInsidelevel7();
   }
 }
 
@@ -1506,17 +1506,12 @@ function mouseDragged() {
 }
 //Checking if heartbreaks are all eliminated
 function checkisMouseInsidelevel1() {
-  if (
-    mouseReleased() &&
-    isMouseInsidetri(tri3) &&
-    isMouseInsidetrait(traitstick)
-  ) {
+  if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
     state = "level2";
   }
 }
 function checkisMouseInsidelevel2() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle0) &&
     isMouseInsidetrait(traitray1) &&
     isMouseInsidetrait(traitray2) &&
@@ -1532,7 +1527,6 @@ function checkisMouseInsidelevel2() {
 }
 function checkisMouseInsidelevel3() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1543,7 +1537,6 @@ function checkisMouseInsidelevel3() {
 }
 function checkisMouseInsidelevel4() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle10) &&
     isMouseInsidecircle(circle11) &&
@@ -1554,7 +1547,6 @@ function checkisMouseInsidelevel4() {
 }
 function checkisMouseInsidelevel5() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1568,7 +1560,6 @@ function checkisMouseInsidelevel5() {
 }
 function checkisMouseInsidelevel6() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1586,7 +1577,6 @@ function checkisMouseInsidelevel6() {
 }
 function checkisMouseInsidelevel7() {
   if (
-    mouseReleased() &&
     isMouseInsidecircle(circle1) &&
     isMouseInsidecircle(circle2) &&
     isMouseInsidecircle(circle3) &&
@@ -1607,7 +1597,6 @@ function checkisMouseOutsidelevel1() {
 }
 function checkisMouseOutsidelevel2() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle0) &&
     isMouseOutsidetrait(traitray1) &&
     isMouseOutsidetrait(traitray2) &&
@@ -1623,7 +1612,6 @@ function checkisMouseOutsidelevel2() {
 }
 function checkisMouseOutsidelevel3() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1634,7 +1622,6 @@ function checkisMouseOutsidelevel3() {
 }
 function checkisMouseOutsidelevel4() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle10) &&
     isMouseOutsidecircle(circle11) &&
@@ -1645,7 +1632,6 @@ function checkisMouseOutsidelevel4() {
 }
 function checkisMouseOutsidelevel5() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1659,7 +1645,6 @@ function checkisMouseOutsidelevel5() {
 }
 function checkisMouseOutsidelevel6() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
@@ -1677,7 +1662,6 @@ function checkisMouseOutsidelevel6() {
 }
 function checkisMouseOutsidelevel7() {
   if (
-    mouseReleased() &&
     isMouseOutsidecircle(circle1) &&
     isMouseOutsidecircle(circle2) &&
     isMouseOutsidecircle(circle3) &&
