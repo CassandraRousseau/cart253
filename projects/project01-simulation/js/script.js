@@ -787,7 +787,7 @@ function simulation1() {
     traitacceleration(traitstick);
     display();
     umbrella();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     trimove(tri3);
@@ -828,7 +828,7 @@ function simulation2() {
 
     display();
     sun();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle0);
@@ -874,7 +874,7 @@ function simulation3() {
 
     display();
     face();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle1);
@@ -909,7 +909,7 @@ function simulation4() {
 
     display();
     bird();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle1);
@@ -950,7 +950,7 @@ function simulation5() {
 
     display();
     bear();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle1);
@@ -1005,7 +1005,7 @@ function simulation6() {
 
     display();
     cat();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle1);
@@ -1062,7 +1062,7 @@ function simulation7() {
 
     display();
     dog();
-  } else if (letterPressed()) {
+  } else if (keyPressed("ENTER")) {
     displaytable();
     move();
     circlemove(circle1);
@@ -1415,24 +1415,34 @@ function keyPressed() {
     state = "welcome";
   } else if (state === "welcome") {
     state = "level1";
-  }
-}
-//Setting key to make mug moving
-function letterPressed() {
-  if (state === "level1" && keyCode === 13) {
-    mug.x > width / 2;
+  } else if (state === "level1") {
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level2") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level3") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level4") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level5") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level6") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   } else if (state === "level7") {
-    mug.x > width / 2;
+    if (keyCode === ENTER) {
+      mug.speed = 3;
+    }
   }
 }
 //Setting when checking is drawing is made correctly in level1
@@ -1486,12 +1496,6 @@ function verification7() {
 }
 
 //Setting mouse pressed use
-function mouseIsPressed() {
-  if (state === "simulation") {
-    drawing();
-  }
-}
-
 function mouseIsPressed() {
   let d = dist(mouseX, mouseY, user.x, user.y);
   if (d < user.size / 2) {
