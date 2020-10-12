@@ -16,6 +16,7 @@ let user = {
   size: 10,
   stroke: 255,
   strokeWeight: 3,
+  drawing: false,
 };
 let plate = {
   x: 0,
@@ -1494,7 +1495,7 @@ function mouseIsPressed() {
 function mouseIsPressed() {
   let d = dist(mouseX, mouseY, user.x, user.y);
   if (d < user.size / 2) {
-    circle.drawing = true;
+    user.drawing = true;
   }
 }
 function mouseReleased() {
