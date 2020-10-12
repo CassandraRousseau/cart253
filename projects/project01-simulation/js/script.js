@@ -1482,32 +1482,20 @@ function keyPressed() {
     state = "welcome";
   } else if (state === "welcome") {
     state = "level1";
-  } else if (state === "level1" && keyCode === 13) {
+  } else if (state === "level1") {
     mug.speed = 3;
   } else if (state === "level2") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   } else if (state === "level3") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   } else if (state === "level4") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   } else if (state === "level5") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   } else if (state === "level6") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   } else if (state === "level7") {
-    if (keyCode === 13) {
-      mug.speed = 3;
-    }
+    mug.speed = 3;
   }
 }
 //Setting when checking is drawing is made correctly in level1
