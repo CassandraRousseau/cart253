@@ -73,6 +73,7 @@ let mug = {
     g: 255,
     b: 255,
   },
+  state: "entering", //3 POSSIBLE STATE 'entering' 'center' 'leaving' 'left'//
 };
 
 let handle = {
@@ -777,33 +778,44 @@ function simulation(simulation) {
 }
 //Setting simulation for level1
 function simulation1() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
+    displaytable();
     display();
     umbrella();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+      verification1();
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
+    displaytable();
     display();
     umbrella();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+    }
   }
-  verification1();
 }
 //Setting simulation for level2
 function simulation2() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle0);
     traitmove(traitray1);
@@ -825,11 +837,16 @@ function simulation2() {
     traitacceleration(traitray6);
     traitacceleration(traitray7);
     traitacceleration(traitray8);
-
+    displaytable();
     display();
     sun();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle0);
     traitmove(traitray1);
@@ -851,16 +868,20 @@ function simulation2() {
     traitacceleration(traitray6);
     traitacceleration(traitray7);
     traitacceleration(traitray8);
-
+    displaytable();
     display();
     sun();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification2();
+    }
   }
-  verification2();
 }
 //Setting simulation for level3
 function simulation3() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -871,11 +892,16 @@ function simulation3() {
     circleacceleration(circle2);
     circleacceleration(circle3);
     smileacceleration(smile1);
-
+    displaytable();
     display();
     face();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -886,16 +912,21 @@ function simulation3() {
     circleacceleration(circle2);
     circleacceleration(circle3);
     smileacceleration(smile1);
-
+    displaytable();
     display();
     face();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification3();
+    }
   }
-  verification3();
 }
+
 //Setting simulation for level4
 function simulation4() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle10);
@@ -906,11 +937,16 @@ function simulation4() {
     circleacceleration(circle10);
     circleacceleration(circle11);
     triacceleration(tri2);
-
+    displaytable();
     display();
     bird();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle10);
@@ -921,16 +957,21 @@ function simulation4() {
     circleacceleration(circle10);
     circleacceleration(circle11);
     triacceleration(tri2);
-
+    displaytable();
     display();
     bird();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification4();
+    }
   }
-  verification4();
 }
+
 //Setting simulation for level5
 function simulation5() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -947,11 +988,16 @@ function simulation5() {
     circleacceleration(circle5);
     bearearacceleration(bearearleft);
     bearearacceleration(bearearright);
-
+    displaytable();
     display();
     bear();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -968,16 +1014,20 @@ function simulation5() {
     circleacceleration(circle5);
     bearearacceleration(bearearleft);
     bearearacceleration(bearearright);
-
+    displaytable();
     display();
     bear();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification5();
+    }
   }
-  verification5();
 }
 //Setting simulation for level6
 function simulation6() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -1002,11 +1052,16 @@ function simulation6() {
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
     traitacceleration(traitwhisker4);
-
+    displaytable();
     display();
     cat();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -1031,16 +1086,20 @@ function simulation6() {
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
     traitacceleration(traitwhisker4);
-
+    displaytable();
     display();
     cat();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification6();
+    }
   }
-  verification6();
 }
 //Setting simulation for level7
 function simulation7() {
-  if (mug.x < width / 2) {
-    displaytable();
+  if (mug.state === "entering") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -1059,11 +1118,16 @@ function simulation7() {
     circleacceleration(circle7);
     circleacceleration(circle8);
     circleacceleration(circle9);
-
+    displaytable();
     display();
     dog();
-  } else if (keyPressed("ENTER")) {
-    displaytable();
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+  } else if (mug.state === "leaveing") {
+    mug.speed = 3;
     move();
     circlemove(circle1);
     circlemove(circle2);
@@ -1082,13 +1146,16 @@ function simulation7() {
     circleacceleration(circle7);
     circleacceleration(circle8);
     circleacceleration(circle9);
-
+    displaytable();
     display();
     dog();
+    if (mug.x > windowWidth) {
+      //LEAVE LEVEL OR...//
+      mug.state = "left";
+      verification7();
+    }
   }
-  verification7();
 }
-
 function displaytable() {
   push();
   //Display table image
@@ -1415,32 +1482,30 @@ function keyPressed() {
     state = "welcome";
   } else if (state === "welcome") {
     state = "level1";
-  } else if (state === "level1") {
-    if (keyCode === ENTER) {
-      mug.speed = 3;
-    }
+  } else if (state === "level1" && keyCode === 13) {
+    mug.speed = 3;
   } else if (state === "level2") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   } else if (state === "level3") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   } else if (state === "level4") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   } else if (state === "level5") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   } else if (state === "level6") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   } else if (state === "level7") {
-    if (keyCode === ENTER) {
+    if (keyCode === 13) {
       mug.speed = 3;
     }
   }
