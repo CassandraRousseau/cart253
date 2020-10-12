@@ -8,7 +8,7 @@ However,if the user miss one of them in a level, the cafe goes bankrupt and it's
 **************************************************/
 "use strict";
 let instructions =
-  "Hello new employee!\n Welcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nBe artsy, have fun and good luck!";
+  "Hello new employee!\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nOnce your done, press the spacebar to give the order to the customer.\nBe artsy, have fun and good luck!";
 
 let user = {
   x: 0,
@@ -793,7 +793,6 @@ function simulation1() {
       mug.x = width / 2;
       mug.state = "center";
       mug.speed = 0;
-      verification1();
     }
   } else if (mug.state === "leaving") {
     mug.speed = 3;
@@ -809,6 +808,7 @@ function simulation1() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
+      verification1();
     }
   }
 }
