@@ -782,7 +782,7 @@ function simulation(simulation) {
 function simulation1() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move1();
+    //    move();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
@@ -799,7 +799,7 @@ function simulation1() {
     simulationmessage1();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move1();
+    //  move();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
@@ -808,17 +808,24 @@ function simulation1() {
     displaytable();
     display();
     umbrella();
+
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level2";
+      // and reset mug position
+      resetMug();
+      resetUmbrella();
     }
   }
 }
+
 //Setting simulation for level2
 function simulation2() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move2();
+    //  move();
     circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
@@ -850,7 +857,7 @@ function simulation2() {
     simulationmessage2();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move2();
+    //  move();
     circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
@@ -874,9 +881,14 @@ function simulation2() {
     displaytable();
     display();
     sun();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level3";
+      // and reset mug position
+      resetMug();
+      resetSun();
     }
   }
 }
@@ -884,7 +896,7 @@ function simulation2() {
 function simulation3() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move3();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -905,7 +917,7 @@ function simulation3() {
     simulationmessage3();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -918,9 +930,14 @@ function simulation3() {
     displaytable();
     display();
     face();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level4";
+      // and reset mug position
+      resetMug();
+      resetFace();
     }
   }
 }
@@ -929,7 +946,7 @@ function simulation3() {
 function simulation4() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle10);
     circlemove(circle11);
@@ -950,7 +967,7 @@ function simulation4() {
     simulationmessage4();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move3();
+    //move();
     circlemove(circle1);
     circlemove(circle10);
     circlemove(circle11);
@@ -963,9 +980,14 @@ function simulation4() {
     displaytable();
     display();
     bird();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level5";
+      // and reset mug position
+      resetMug();
+      resetBird();
     }
   }
 }
@@ -974,7 +996,7 @@ function simulation4() {
 function simulation5() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move4();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1001,7 +1023,7 @@ function simulation5() {
     simulationmessage5();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1020,9 +1042,14 @@ function simulation5() {
     displaytable();
     display();
     bear();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level6";
+      // and reset mug position
+      resetMug();
+      resetBear();
     }
   }
 }
@@ -1030,7 +1057,7 @@ function simulation5() {
 function simulation6() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1065,7 +1092,7 @@ function simulation6() {
     simulationmessage6();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1092,9 +1119,14 @@ function simulation6() {
     displaytable();
     display();
     cat();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "level7";
+      // and reset mug position
+      resetMug();
+      resetCat();
     }
   }
 }
@@ -1102,7 +1134,7 @@ function simulation6() {
 function simulation7() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1131,7 +1163,7 @@ function simulation7() {
     simulationmessage7();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1152,11 +1184,112 @@ function simulation7() {
     displaytable();
     display();
     dog();
+    // CHANGED (SAM)
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
-      mug.state = "left";
+      // when mug is gone, continue to next level
+      state = "open";
+      // and reset mug position
+      resetMug();
+      resetDog();
     }
   }
+}
+
+// CHANGED (SAM)
+function resetMug() {
+  mug.x = 0;
+  plate.x = 0;
+  shadow.x = 0;
+  handle.x = 0;
+  coffee.x = 0;
+
+  mug.state = "entering";
+}
+function resetUmbrella() {
+  traitstick.x1 = 0;
+  traitstick.x2 = 0;
+  tri3.x1 = 0;
+  tri3.x2 = 0;
+  tri3.x3 = 0;
+}
+function resetSun() {
+  circle0.x = 0;
+  traitray1.x1 = 0;
+  traitray1.x2 = 0;
+  traitray2.x1 = 0;
+  traitray2.x2 = 0;
+  traitray3.x1 = 0;
+  traitray3.x2 = 0;
+  traitray4.x1 = 0;
+  traitray4.x2 = 0;
+  traitray5.x1 = 0;
+  traitray5.x2 = 0;
+  traitray6.x1 = 0;
+  traitray6.x2 = 0;
+  traitray7.x1 = 0;
+  traitray7.x2 = 0;
+  traitray8.x1 = 0;
+  traitray8.x2 = 0;
+}
+function resetFace() {
+  circle1.x = 0;
+  circle2.x = 28;
+  circle3.x = -28;
+  smile1.x1 = 0;
+  smile1.x2 = 0;
+  smile1.x3 = 0;
+  smile1.x4 = 0;
+}
+function resetBird() {
+  circle1.x = 0;
+  circle10.x = 0;
+  circle11.x = 0;
+  tri2.x1 = 0;
+  tri2.x2 = 0;
+  tri2.x3 = 0;
+}
+function resetBear() {
+  circle1.x = 0;
+  circle2.x = 28;
+  circle3.x = -28;
+  circle4.x = 0;
+  circle5.x = 0;
+  bearearleft.x = 0;
+  bearearright.x = 0;
+}
+function resetCat() {
+  circle1.x = 0;
+  circle2.x = 28;
+  circle3.x = -28;
+  circle4.x = 0;
+  tri1.x1 = 0;
+  tri1.x2 = 0;
+  tri1.x3 = 0;
+  tri4.x1 = 0;
+  tri4.x2 = 0;
+  tri4.x3 = 0;
+  tri5.x1 = 0;
+  tri5.x2 = 0;
+  tri5.x1 = 0;
+  traitwhisker1.x1 = 0;
+  traitwhisker1.x2 = 0;
+  traitwhisker2.x1 = 0;
+  traitwhisker2.x2 = 0;
+  traitwhisker3.x1 = 0;
+  traitwhisker3.x2 = 0;
+  traitwhisker4.x1 = 0;
+  traitwhisker4.x2 = 0;
+}
+function resetDog() {
+  circle1.x = 0;
+  circle2.x = 28;
+  circle3.x = -28;
+  circle4.x = 0;
+  circle6.x = 0;
+  circle7.x = 0;
+  circle8.x = 0;
+  circle9.x = 0;
 }
 function simulationmessage1() {
   push();
@@ -1247,7 +1380,8 @@ function displaytable() {
   pop();
 }
 //Setting coffee cup movement
-function move0() {
+
+function move() {
   plate.x += plate.vx;
   plate.y += plate.vy;
   shadow.x += shadow.vx;
@@ -1259,90 +1393,7 @@ function move0() {
   coffee.x += coffee.vx;
   coffee.y += coffee.vy;
 }
-function move(plate, shadow, handle, mug, coffee) {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move2() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move3() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move4() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move5() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move6() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
-function move7() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
-}
+
 //Setting template circles movements
 function circlemove(circle) {
   circle.x += circle.vx;
@@ -1655,42 +1706,54 @@ function closed() {
 function keyPressed() {
   push();
   tryMusic();
-  if (state === "title" && keyCode === 32) {
-    state = "welcome";
-  } else if (state === "welcome") {
-    state = "level1";
-  } else if (state === "level1") {
-    giveFeedback1();
-  } else if (state === "level2") {
-    giveFeedback2();
-  } else if (state === "level3") {
-    giveFeedback3();
-  } else if (state === "level4") {
-    giveFeedback4();
-  } else if (state === "level5") {
-    giveFeedback5();
-  } else if (state === "level6") {
-    giveFeedback6();
-  } else if (state === "level7") {
-    giveFeedback7();
+
+  // CHANGED (SAM)
+  // space is pressed
+  if (keyCode === 32) {
+    if (state === "title") {
+      state = "welcome";
+    } else if (state === "welcome") {
+      state = "level1";
+    } else if (state === "level1") {
+      giveFeedback1();
+    } else if (state === "level2") {
+      giveFeedback2();
+    } else if (state === "level3") {
+      giveFeedback3();
+    } else if (state === "level4") {
+      giveFeedback4();
+    } else if (state === "level5") {
+      giveFeedback5();
+    } else if (state === "level6") {
+      giveFeedback6();
+    } else if (state === "level7") {
+      giveFeedback7();
+    }
   }
+
   pop();
   push();
-  if (state === "level1" && keyCode === 13) {
-    mug.state = "entering";
-  } else if (state === "level2") {
-    mug.state = "entering";
-  } else if (state === "level3") {
-    mug.state = "entering";
-  } else if (state === "level4") {
-    mug.state = "entering";
-  } else if (state === "level5") {
-    mug.state = "entering";
-  } else if (state === "level6") {
-    mug.state = "entering";
-  } else if (state === "level7") {
-    mug.state = "entering";
+
+  // CHANGED (SAM)
+  // enter is pressed
+  if (keyCode === 13) {
+    if (state === "level1") {
+      mug.state = "entering";
+    } else if (state === "level2") {
+      mug.state = "entering";
+    } else if (state === "level3") {
+      mug.state = "entering";
+    } else if (state === "level4") {
+      mug.state = "entering";
+    } else if (state === "level5") {
+      mug.state = "entering";
+    } else if (state === "level6") {
+      mug.state = "entering";
+    } else if (state === "level7") {
+      mug.state = "entering";
+    }
   }
+
   pop();
 }
 function tryMusic() {
@@ -1700,7 +1763,7 @@ function tryMusic() {
   }
 }
 //Setting mouse pressed use
-function mouseIsPressed() {
+function mousePressed() {
   let d = dist(mouseX, mouseY, user.x, user.y);
   if (d < user.size / 2) {
     user.drawing = true;
@@ -1721,21 +1784,32 @@ function mouseDragged() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
+
+// CHANGED (SAM)
+
+function mugLeave() {
+  mug.state = "leaving";
+}
+
+// CHANGED (SAM)
+
 function giveFeedback1() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level2";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
   // Or return feedback;
 }
+
+//
 function giveFeedback2() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level3";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
@@ -1744,8 +1818,8 @@ function giveFeedback2() {
 function giveFeedback3() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level4";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
@@ -1754,8 +1828,8 @@ function giveFeedback3() {
 function giveFeedback4() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level5";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
@@ -1764,8 +1838,8 @@ function giveFeedback4() {
 function giveFeedback5() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level6";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
@@ -1774,8 +1848,8 @@ function giveFeedback5() {
 function giveFeedback6() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "level7";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
@@ -1784,8 +1858,8 @@ function giveFeedback6() {
 function giveFeedback7() {
   let r = random();
 
-  if (r < 0.5) {
-    state = "open";
+  if (r < 1) {
+    mug.state = "leaving";
   } else {
     state = "closed";
   }
