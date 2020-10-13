@@ -1555,9 +1555,10 @@ function open() {
 }
 //Setting the bad ending
 function closed() {
+  push();
+  pause();
   image(failure.image, windowWidth, windowHeight);
   background(failure.image);
-  push();
   textFont("Abolition Soft");
   stroke(0);
   strokeWeight(5);
