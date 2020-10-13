@@ -1540,8 +1540,11 @@ function open() {
   push();
   image(success.image, windowWidth, windowHeight);
   background(success.image);
+  textFont("CCSignLanguage");
   textSize(65);
-  fill(200, 100, 100);
+  stroke(0);
+  strokeWeight(5);
+  fill(255);
   textAlign(CENTER, CENTER);
   text("Congratulations!", width / 2, height / 2);
   push();
@@ -1555,8 +1558,11 @@ function closed() {
   image(failure.image, windowWidth, windowHeight);
   background(failure.image);
   push();
+  textFont("Abolition Soft");
+  stroke(0);
+  strokeWeight(5);
   textSize(65);
-  fill(100, 100, 200);
+  fill(255);
   textAlign(CENTER, CENTER);
   text("OH NO!", width / 2, 500);
   push();
@@ -1598,49 +1604,49 @@ function tryMusic() {
 }
 //Setting when checking is drawing is made correctly in level1
 function verification1() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel1();
     checkisMouseInsidelevel1();
   }
 }
 //Setting when checking is drawing is made correctly in level2
 function verification2() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel2();
     checkisMouseInsidelevel2();
   }
 }
 //Setting when checking is drawing is made correctly in level3
 function verification3() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel3();
     checkisMouseInsidelevel3();
   }
 }
 //Setting when checking is drawing is made correctly in level4
 function verification4() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel4();
     checkisMouseInsidelevel4();
   }
 }
 //Setting when checking is drawing is made correctly in level5
 function verification5() {
-  if (mug.x > windowWidth) {
+  if (mmug.state === "left") {
     checkisMouseOutsidelevel5();
     checkisMouseInsidelevel5();
   }
 }
 //Setting when checking is drawing is made correctly in level6
 function verification6() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel6();
     checkisMouseInsidelevel6();
   }
 }
 //Setting when checking is drawing is made correctly in level7
 function verification7() {
-  if (mug.x > windowWidth) {
+  if (mug.state === "left") {
     checkisMouseOutsidelevel7();
     checkisMouseInsidelevel7();
   }
