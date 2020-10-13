@@ -654,11 +654,11 @@ let failure = {
 let success = {
   image: undefined,
 };
-let smoothjazz;
+let music;
 let state = "title";
 //Loading images for simulation.
 function preload() {
-  smoothjazz = loadSound("assets/sounds/");
+  music = loadSound("assets/sounds/volare.mp3");
   cafe.image = loadImage("assets/images/cafe.png");
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
@@ -1478,8 +1478,10 @@ function closed() {
   pop();
   pop();
 }
+
 //Setting keys to change states
 function keyPressed() {
+  tryMusic();
   if (state === "title" && keyCode === 32) {
     state = "welcome";
   } else if (state === "welcome") {
@@ -1498,6 +1500,12 @@ function keyPressed() {
     mug.speed = 3;
   } else if (state === "level7") {
     mug.speed = 3;
+  }
+}
+function tryMusic() {
+  // Play music if this is the first interaction
+  if (!music.isPlaying()) {
+    music.loop();
   }
 }
 //Setting when checking is drawing is made correctly in level1
