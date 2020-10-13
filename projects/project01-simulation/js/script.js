@@ -769,7 +769,7 @@ function simulation(simulation) {
   } else if (state === "level3") {
     simulation3();
   } else if (state === "level4") {
-    simualtion4();
+    simulation4();
   } else if (state === "level5") {
     simulation5();
   } else if (state === "level6") {
@@ -782,7 +782,7 @@ function simulation(simulation) {
 function simulation1() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    move1();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
@@ -799,7 +799,7 @@ function simulation1() {
     simulationmessage1();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    move1();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
@@ -811,7 +811,6 @@ function simulation1() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification1();
     }
   }
 }
@@ -819,7 +818,7 @@ function simulation1() {
 function simulation2() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    move2();
     circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
@@ -851,7 +850,7 @@ function simulation2() {
     simulationmessage2();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    move2();
     circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
@@ -878,7 +877,6 @@ function simulation2() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification2();
     }
   }
 }
@@ -886,7 +884,7 @@ function simulation2() {
 function simulation3() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    move3();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -923,7 +921,6 @@ function simulation3() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification3();
     }
   }
 }
@@ -953,7 +950,7 @@ function simulation4() {
     simulationmessage4();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
-    move();
+    move3();
     circlemove(circle1);
     circlemove(circle10);
     circlemove(circle11);
@@ -969,7 +966,6 @@ function simulation4() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification4();
     }
   }
 }
@@ -978,7 +974,7 @@ function simulation4() {
 function simulation5() {
   if (mug.state === "entering") {
     mug.speed = 3;
-    move();
+    move4();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1027,7 +1023,6 @@ function simulation5() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification5();
     }
   }
 }
@@ -1100,7 +1095,6 @@ function simulation6() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification6();
     }
   }
 }
@@ -1161,7 +1155,6 @@ function simulation7() {
     if (mug.x > windowWidth) {
       //LEAVE LEVEL OR...//
       mug.state = "left";
-      verification7();
     }
   }
 }
@@ -1254,7 +1247,91 @@ function displaytable() {
   pop();
 }
 //Setting coffee cup movement
-function move() {
+function move0() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move(plate, shadow, handle, mug, coffee) {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move2() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move3() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move4() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move5() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move6() {
+  plate.x += plate.vx;
+  plate.y += plate.vy;
+  shadow.x += shadow.vx;
+  shadow.y += shadow.vy;
+  handle.x += handle.vx;
+  handle.y += handle.vy;
+  mug.x += mug.vx;
+  mug.y += mug.vy;
+  coffee.x += coffee.vx;
+  coffee.y += coffee.vy;
+}
+function move7() {
   plate.x += plate.vx;
   plate.y += plate.vy;
   shadow.x += shadow.vx;
@@ -1556,7 +1633,7 @@ function open() {
 //Setting the bad ending
 function closed() {
   push();
-  pause();
+  music.pause;
   image(failure.image, windowWidth, windowHeight);
   background(failure.image);
   textFont("Abolition Soft");
@@ -1576,26 +1653,45 @@ function closed() {
 
 //Setting keys to change states
 function keyPressed() {
+  push();
   tryMusic();
   if (state === "title" && keyCode === 32) {
     state = "welcome";
   } else if (state === "welcome") {
     state = "level1";
   } else if (state === "level1") {
-    mug.state = "leaving";
+    giveFeedback1();
   } else if (state === "level2") {
-    mug.state = "leaving";
+    giveFeedback2();
   } else if (state === "level3") {
-    mug.state = "leaving";
+    giveFeedback3();
   } else if (state === "level4") {
-    mug.state = "leaving";
+    giveFeedback4();
   } else if (state === "level5") {
-    mug.state = "leaving";
+    giveFeedback5();
   } else if (state === "level6") {
-    mug.state = "leaving";
+    giveFeedback6();
   } else if (state === "level7") {
-    mug.state = "leaving";
+    giveFeedback7();
   }
+  pop();
+  push();
+  if (state === "level1" && keyCode === 13) {
+    mug.state = "entering";
+  } else if (state === "level2") {
+    mug.state = "entering";
+  } else if (state === "level3") {
+    mug.state = "entering";
+  } else if (state === "level4") {
+    mug.state = "entering";
+  } else if (state === "level5") {
+    mug.state = "entering";
+  } else if (state === "level6") {
+    mug.state = "entering";
+  } else if (state === "level7") {
+    mug.state = "entering";
+  }
+  pop();
 }
 function tryMusic() {
   // Play music if this is the first interaction
@@ -1603,56 +1699,6 @@ function tryMusic() {
     music.loop();
   }
 }
-//Setting when checking is drawing is made correctly in level1
-function verification1() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel1();
-    checkisMouseInsidelevel1();
-  }
-}
-//Setting when checking is drawing is made correctly in level2
-function verification2() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel2();
-    checkisMouseInsidelevel2();
-  }
-}
-//Setting when checking is drawing is made correctly in level3
-function verification3() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel3();
-    checkisMouseInsidelevel3();
-  }
-}
-//Setting when checking is drawing is made correctly in level4
-function verification4() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel4();
-    checkisMouseInsidelevel4();
-  }
-}
-//Setting when checking is drawing is made correctly in level5
-function verification5() {
-  if (mmug.state === "left") {
-    checkisMouseOutsidelevel5();
-    checkisMouseInsidelevel5();
-  }
-}
-//Setting when checking is drawing is made correctly in level6
-function verification6() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel6();
-    checkisMouseInsidelevel6();
-  }
-}
-//Setting when checking is drawing is made correctly in level7
-function verification7() {
-  if (mug.state === "left") {
-    checkisMouseOutsidelevel7();
-    checkisMouseInsidelevel7();
-  }
-}
-
 //Setting mouse pressed use
 function mouseIsPressed() {
   let d = dist(mouseX, mouseY, user.x, user.y);
@@ -1675,315 +1721,73 @@ function mouseDragged() {
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
-//Checking if drawing is inside template in level1
-function checkisMouseInsidelevel1() {
-  if (isMouseInsidetri(tri3) && isMouseInsidetrait(traitstick)) {
+function giveFeedback1() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level2";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level2
-function checkisMouseInsidelevel2() {
-  if (
-    isMouseInsidecircle(circle0) &&
-    isMouseInsidetrait(traitray1) &&
-    isMouseInsidetrait(traitray2) &&
-    isMouseInsidetrait(traitray3) &&
-    isMouseInsidetrait(traitray4) &&
-    isMouseInsidetrait(traitray5) &&
-    isMouseInsidetrait(traitray6) &&
-    isMouseInsidetrait(traitray7) &&
-    isMouseInsidetrait(traitray8)
-  ) {
+function giveFeedback2() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level3";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level3
-function checkisMouseInsidelevel3() {
-  if (
-    isMouseInsidecircle(circle1) &&
-    isMouseInsidecircle(circle2) &&
-    isMouseInsidecircle(circle3) &&
-    isMouseInsidecurve(smile1)
-  ) {
+function giveFeedback3() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level4";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level4
-function checkisMouseInsidelevel4() {
-  if (
-    isMouseInsidecircle(circle1) &&
-    isMouseInsidecircle(circle10) &&
-    isMouseInsidecircle(circle11) &&
-    isMouseInsidetri(tri2)
-  ) {
+function giveFeedback4() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level5";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level5
-function checkisMouseInsidelevel5() {
-  if (
-    isMouseInsidecircle(circle1) &&
-    isMouseInsidecircle(circle2) &&
-    isMouseInsidecircle(circle3) &&
-    isMouseInsidecircle(circle4) &&
-    isMouseInsidecircle(circle5) &&
-    isMouseInsidebearear(bearearleft) &&
-    isMouseInsidebearear(bearearright)
-  ) {
+function giveFeedback5() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level6";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level6
-function checkisMouseInsidelevel6() {
-  if (
-    isMouseInsidecircle(circle1) &&
-    isMouseInsidecircle(circle2) &&
-    isMouseInsidecircle(circle3) &&
-    isMouseInsidecircle(circle4) &&
-    isMouseInsidetri(tri1) &&
-    isMouseInsidetri(tri4) &&
-    isMouseInsidetri(tri5) &&
-    isMouseInsidetrait(traitwhisker1) &&
-    isMouseInsidetrait(traitwhisker2) &&
-    isMouseInsidetrait(traitwhisker3) &&
-    isMouseInsidetrait(traitwhisker4)
-  ) {
+function giveFeedback6() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "level7";
+  } else {
+    state = "closed";
   }
+  // Or return feedback;
 }
-//Checking if drawing is inside template in level7
-function checkisMouseInsidelevel7() {
-  if (
-    isMouseInsidecircle(circle1) &&
-    isMouseInsidecircle(circle2) &&
-    isMouseInsidecircle(circle3) &&
-    isMouseInsidecircle(circle4) &&
-    isMouseInsidecircle(circle6) &&
-    isMouseInsidecircle(circle7) &&
-    isMouseInsidecircle(circle8) &&
-    isMouseInsidecircle(circle9)
-  ) {
+function giveFeedback7() {
+  let r = random();
+
+  if (r < 0.5) {
     state = "open";
-  }
-}
-//Checking if drawing is outside template in level1
-function checkisMouseOutsidelevel1() {
-  if (isMouseOutsidetri(tri3) && isMouseOutsidetrait(traitstick)) {
+  } else {
     state = "closed";
   }
-}
-//Checking if drawing is outside template in level2
-function checkisMouseOutsidelevel2() {
-  if (
-    isMouseOutsidecircle(circle0) &&
-    isMouseOutsidetrait(traitray1) &&
-    isMouseOutsidetrait(traitray2) &&
-    isMouseOutsidetrait(traitray3) &&
-    isMouseOutsidetrait(traitray4) &&
-    isMouseOutsidetrait(traitray5) &&
-    isMouseOutsidetrait(traitray6) &&
-    isMouseOutsidetrait(traitray7) &&
-    isMouseOutsidetrait(traitray8)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawing is outside template in level3
-function checkisMouseOutsidelevel3() {
-  if (
-    isMouseOutsidecircle(circle1) &&
-    isMouseOutsidecircle(circle2) &&
-    isMouseOutsidecircle(circle3) &&
-    isMouseOutsidecurve(smile1)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawing is outside template in level4
-function checkisMouseOutsidelevel4() {
-  if (
-    isMouseOutsidecircle(circle1) &&
-    isMouseOutsidecircle(circle10) &&
-    isMouseOutsidecircle(circle11) &&
-    isMouseOutsidetri(tri2)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawing is outside template in level5
-function checkisMouseOutsidelevel5() {
-  if (
-    isMouseOutsidecircle(circle1) &&
-    isMouseOutsidecircle(circle2) &&
-    isMouseOutsidecircle(circle3) &&
-    isMouseOutsidecircle(circle4) &&
-    isMouseOutsidecircle(circle5) &&
-    isMouseOutsidebearear(bearearleft) &&
-    isMouseOutsidebearear(bearearright)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawing is outside template in level6
-function checkisMouseOutsidelevel6() {
-  if (
-    isMouseOutsidecircle(circle1) &&
-    isMouseOutsidecircle(circle2) &&
-    isMouseOutsidecircle(circle3) &&
-    isMouseOutsidecircle(circle4) &&
-    isMouseOutsidetri(tri1) &&
-    isMouseOutsidetri(tri4) &&
-    isMouseOutsidetri(tri5) &&
-    isMouseOutsidetrait(traitwhisker1) &&
-    isMouseOutsidetrait(traitwhisker2) &&
-    isMouseOutsidetrait(traitwhisker3) &&
-    isMouseOutsidetrait(traitwhisker4)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawing is outside template in level7
-function checkisMouseOutsidelevel7() {
-  if (
-    isMouseOutsidecircle(circle1) &&
-    isMouseOutsidecircle(circle2) &&
-    isMouseOutsidecircle(circle3) &&
-    isMouseOutsidecircle(circle4) &&
-    isMouseOutsidecircle(circle6) &&
-    isMouseOutsidecircle(circle7) &&
-    isMouseOutsidecircle(circle8) &&
-    isMouseOutsidecircle(circle9)
-  ) {
-    state = "closed";
-  }
-}
-//Checking if drawings follow the circles templates
-function isMouseInsidecircle(circle) {
-  if (
-    mouseX > circle.x &&
-    mouseX < circle.x + circle.w &&
-    mouseY > circle.y &&
-    mouseY < circle.y + circle.h
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings follow the bear ears templates
-function isMouseInsidebearear(bearear) {
-  if (
-    mouseX > bearaear.x &&
-    mouseX < bearaear.x + bearaear.w &&
-    mouseY > bearaear.y &&
-    mouseY < bearaear.y + bearaear.h
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings follow the lines templates
-function isMouseInsidetrait(trait) {
-  if (
-    mouseX > trait.x1 &&
-    mouseX < trait.x1 + trait.x2 &&
-    mouseY > trait.y1 &&
-    mouseY < trait.y1 + trait.y2
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings follow the triangles templates
-function isMouseInsidetri(tri) {
-  if (
-    mouseX > tri.x1 &&
-    mouseX < tri.x1 + tri.x2 + tri.x3 &&
-    mouseY > tri.y1 &&
-    mouseY < tri.y1 + tri.y2 + tri.y3
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings follow the curves templates
-function isMouseInsidecurve(smile) {
-  if (
-    mouseX > smile.x1 &&
-    mouseX < smile.x1 + smile.x2 + smile.x3 + smile.x4 &&
-    mouseY > smile.y1 &&
-    mouseY < smile.y1 + smile.y2 + smile.y3 + smile.y4
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings don't follow the circles templates
-function isMouseOutsidecircle(circle) {
-  if (
-    mouseX < circle.x &&
-    mouseX > circle.x + circle.w &&
-    mouseY < circle.y &&
-    mouseY > circle.y + circle.h
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings don't follow the bear ears templates
-function isMouseOutsidebearear(bearear) {
-  if (
-    mouseX < bearaear.x &&
-    mouseX > bearaear.x + bearaear.w &&
-    mouseY < bearaear.y &&
-    mouseY > bearaear.y + bearaear.h
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings don't follow the lines templates
-function isMouseOutsidetrait(trait) {
-  if (
-    mouseX < trait.x1 &&
-    mouseX > trait.x1 + trait.x2 &&
-    mouseY < trait.y1 &&
-    mouseY > trait.y1 + trait.y2
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings don't follow the triangles templates
-function isMouseOutsidetri(tri) {
-  if (
-    mouseX < tri.x1 &&
-    mouseX > tri.x1 + tri.x2 + tri.x3 &&
-    mouseY < tri.y1 &&
-    mouseY > tri.y1 + tri.y2 + tri.y3
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Checking if drawings don't follow the curves templates
-function isMouseOutsidecurve(smile) {
-  if (
-    mouseX < smile.x1 &&
-    mouseX > smile.x1 + smile.x2 + smile.x3 + smile.x4 &&
-    mouseY < smile.y1 &&
-    mouseY > smile.y1 + smile.y2 + smile.y3 + smile.y4
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  // Or return feedback;
 }
