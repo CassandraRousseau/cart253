@@ -796,6 +796,7 @@ function simulation1() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage1();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -847,6 +848,7 @@ function simulation2() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage2();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -902,6 +904,7 @@ function simulation3() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage3();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -947,6 +950,7 @@ function simulation4() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage4();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -998,6 +1002,7 @@ function simulation5() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage5();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -1062,6 +1067,7 @@ function simulation6() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage6();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -1128,6 +1134,7 @@ function simulation7() {
       mug.state = "center";
       mug.speed = 0;
     }
+    simulationmessage7();
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     move();
@@ -1157,6 +1164,87 @@ function simulation7() {
       verification7();
     }
   }
+}
+function simulationmessage1() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Let's start with an umbrella drawing!", width / 2, 550);
+  pop();
+}
+function simulationmessage2() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Good job! Now, try to draw a sun!", width / 2, 550);
+  pop();
+}
+function simulationmessage3() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Great! Make people smile!", width / 2, 550);
+  pop();
+}
+function simulationmessage4() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Be friend with nature!", width / 2, 550);
+  pop();
+}
+function simulationmessage5() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("I'm sure you can't resist to this adorable bear!", width / 2, 550);
+  pop();
+}
+function simulationmessage6() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Let's do something a little more complex...", width / 2, 550);
+  pop();
+}
+function simulationmessage7() {
+  push();
+  textFont("CCSignLanguage");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text(
+    "Your shift is almost done! Give the best that you can!",
+    width / 2,
+    550
+  );
+  pop();
 }
 function displaytable() {
   push();
