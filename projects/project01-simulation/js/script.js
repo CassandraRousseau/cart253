@@ -658,6 +658,8 @@ let failure = {
 let success = {
   image: undefined,
 };
+let sansitafont;
+let crafterfont;
 let music;
 let state = "title";
 //Loading images for simulation.
@@ -667,6 +669,8 @@ function preload() {
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
+  crafterfont = loadFont(`assets/fonts/Hello Crafter-Personal Use.ttf`);
+  sansitafont = loadFont(`assets/fonts/SansitaSwashed-VariableFont_wght.ttf`);
 }
 // setup()
 //
@@ -707,7 +711,7 @@ function title() {
   image(cafe.image, windowWidth, windowHeight);
   background(cafe.image);
   //Display title
-  textFont("CCSignLanguage");
+  textFont(sansitafont);
   textSize(125);
   fill(255);
   stroke(0);
