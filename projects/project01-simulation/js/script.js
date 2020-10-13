@@ -14,9 +14,13 @@ let user = {
   x: 0,
   y: 0,
   size: 10,
-  stroke: 255,
-  strokeWeight: 3,
+  strokeWeight: 6,
   drawing: false,
+  stroke: {
+    r: 255,
+    g: 255,
+    b: 255,
+  },
 };
 let plate = {
   x: 0,
@@ -1732,29 +1736,6 @@ function keyPressed() {
   }
 
   pop();
-  push();
-
-  // CHANGED (SAM)
-  // enter is pressed
-  if (keyCode === 13) {
-    if (state === "level1") {
-      mug.state = "entering";
-    } else if (state === "level2") {
-      mug.state = "entering";
-    } else if (state === "level3") {
-      mug.state = "entering";
-    } else if (state === "level4") {
-      mug.state = "entering";
-    } else if (state === "level5") {
-      mug.state = "entering";
-    } else if (state === "level6") {
-      mug.state = "entering";
-    } else if (state === "level7") {
-      mug.state = "entering";
-    }
-  }
-
-  pop();
 }
 function tryMusic() {
   // Play music if this is the first interaction
@@ -1776,12 +1757,12 @@ function mouseReleased() {
 //Setting the drawing function
 function mouseDragged() {
   if (user.drawing) {
-    stroke(user.stroke);
-    strokeWeight(user.strokeWeight);
     user.x = mouseX;
     user.y = mouseY;
+    stroke(user.stroke.r, user.stroke.g, user.stroke.b);
+    strokeWeight(user.strokeWeight);
   } else if (mouseIsPressed === true) {
-    line(mouseX, mouseY, pmouseX, pmouseY);
+    line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
 
