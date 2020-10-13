@@ -1581,19 +1581,19 @@ function keyPressed() {
   } else if (state === "welcome") {
     state = "level1";
   } else if (state === "level1") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level2") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level3") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level4") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level5") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level6") {
-    mug.speed = 3;
+    mug.state = "leaving";
   } else if (state === "level7") {
-    mug.speed = 3;
+    mug.state = "leaving";
   }
 }
 function tryMusic() {
