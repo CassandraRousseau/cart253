@@ -813,12 +813,9 @@ function simulation1() {
     display();
     umbrella();
 
-    // CHANGED (SAM)
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level2";
-      // and reset mug position
+
       resetMug();
       resetUmbrella();
     }
@@ -885,12 +882,10 @@ function simulation2() {
     displaytable();
     display();
     sun();
-    // CHANGED (SAM)
+
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level3";
-      // and reset mug position
+
       resetMug();
       resetSun();
     }
@@ -934,12 +929,10 @@ function simulation3() {
     displaytable();
     display();
     face();
-    // CHANGED (SAM)
+
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level4";
-      // and reset mug position
+
       resetMug();
       resetFace();
     }
@@ -984,12 +977,10 @@ function simulation4() {
     displaytable();
     display();
     bird();
-    // CHANGED (SAM)
+
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level5";
-      // and reset mug position
+
       resetMug();
       resetBird();
     }
@@ -1046,12 +1037,10 @@ function simulation5() {
     displaytable();
     display();
     bear();
-    // CHANGED (SAM)
+
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level6";
-      // and reset mug position
+
       resetMug();
       resetBear();
     }
@@ -1123,12 +1112,10 @@ function simulation6() {
     displaytable();
     display();
     cat();
-    // CHANGED (SAM)
+
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "level7";
-      // and reset mug position
+
       resetMug();
       resetCat();
     }
@@ -1188,19 +1175,15 @@ function simulation7() {
     displaytable();
     display();
     dog();
-    // CHANGED (SAM)
     if (mug.x > windowWidth) {
-      //LEAVE LEVEL OR...//
-      // when mug is gone, continue to next level
       state = "open";
-      // and reset mug position
       resetMug();
       resetDog();
     }
   }
 }
 
-// CHANGED (SAM)
+//Setting reset function for the mug
 function resetMug() {
   mug.x = 0;
   plate.x = 0;
@@ -1210,6 +1193,7 @@ function resetMug() {
 
   mug.state = "entering";
 }
+//Setting reset function for umbrella template
 function resetUmbrella() {
   traitstick.x1 = 0;
   traitstick.x2 = 0;
@@ -1217,6 +1201,7 @@ function resetUmbrella() {
   tri3.x2 = 0;
   tri3.x3 = 0;
 }
+//Setting reset function for sun template
 function resetSun() {
   circle0.x = 0;
   traitray1.x1 = 0;
@@ -1236,6 +1221,7 @@ function resetSun() {
   traitray8.x1 = 0;
   traitray8.x2 = 0;
 }
+//Setting reset function for face template
 function resetFace() {
   circle1.x = 0;
   circle2.x = 28;
@@ -1245,6 +1231,7 @@ function resetFace() {
   smile1.x3 = 0;
   smile1.x4 = 0;
 }
+//Setting reset function for bird template
 function resetBird() {
   circle1.x = 0;
   circle10.x = 0;
@@ -1253,6 +1240,7 @@ function resetBird() {
   tri2.x2 = 0;
   tri2.x3 = 0;
 }
+//Setting reset function for bear template
 function resetBear() {
   circle1.x = 0;
   circle2.x = 28;
@@ -1262,6 +1250,7 @@ function resetBear() {
   bearearleft.x = 0;
   bearearright.x = 0;
 }
+//Setting reset function for cat template
 function resetCat() {
   circle1.x = 0;
   circle2.x = 28;
@@ -1285,6 +1274,7 @@ function resetCat() {
   traitwhisker4.x1 = 0;
   traitwhisker4.x2 = 0;
 }
+//Setting reset function for dog template
 function resetDog() {
   circle1.x = 0;
   circle2.x = 28;
@@ -1295,6 +1285,7 @@ function resetDog() {
   circle8.x = 0;
   circle9.x = 0;
 }
+//Setting comment in level1
 function simulationmessage1() {
   push();
   textFont("CCSignLanguage");
@@ -1306,6 +1297,7 @@ function simulationmessage1() {
   text("Let's start with an umbrella drawing!", width / 2, 550);
   pop();
 }
+//Setting comment in level2
 function simulationmessage2() {
   push();
   textFont("CCSignLanguage");
@@ -1317,6 +1309,7 @@ function simulationmessage2() {
   text("Good job! Now, try to draw a sun!", width / 2, 550);
   pop();
 }
+//Setting comment in level3
 function simulationmessage3() {
   push();
   textFont("CCSignLanguage");
@@ -1328,6 +1321,7 @@ function simulationmessage3() {
   text("Great! Make people smile!", width / 2, 550);
   pop();
 }
+//Setting comment in level4
 function simulationmessage4() {
   push();
   textFont("CCSignLanguage");
@@ -1339,6 +1333,7 @@ function simulationmessage4() {
   text("Be friend with nature!", width / 2, 550);
   pop();
 }
+//Setting comment in level5
 function simulationmessage5() {
   push();
   textFont("CCSignLanguage");
@@ -1350,6 +1345,7 @@ function simulationmessage5() {
   text("I'm sure you can't resist to this adorable bear!", width / 2, 550);
   pop();
 }
+//Setting comment in level6
 function simulationmessage6() {
   push();
   textFont("CCSignLanguage");
@@ -1361,6 +1357,7 @@ function simulationmessage6() {
   text("Let's do something a little more complex...", width / 2, 550);
   pop();
 }
+//Setting comment in level7
 function simulationmessage7() {
   push();
   textFont("CCSignLanguage");
@@ -1710,9 +1707,7 @@ function closed() {
 function keyPressed() {
   push();
   tryMusic();
-
-  // CHANGED (SAM)
-  // space is pressed
+  // Settins when space is pressed
   if (keyCode === 32) {
     if (state === "title") {
       state = "welcome";
@@ -1737,8 +1732,8 @@ function keyPressed() {
 
   pop();
 }
+//Setting when to check if music is playing
 function tryMusic() {
-  // Play music if this is the first interaction
   if (!music.isPlaying()) {
     music.loop();
   }
@@ -1766,14 +1761,12 @@ function mouseDragged() {
   }
 }
 
-// CHANGED (SAM)
-
+//Setting when mug is going off the screen
 function mugLeave() {
   mug.state = "leaving";
 }
 
-// CHANGED (SAM)
-
+//Setting randomly if user succeed or not level1
 function giveFeedback1() {
   let r = random();
 
@@ -1782,10 +1775,10 @@ function giveFeedback1() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
 
 //
+//Setting randomly if user succeed or not level2
 function giveFeedback2() {
   let r = random();
 
@@ -1794,8 +1787,8 @@ function giveFeedback2() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
+//Setting randomly if user succeed or not level3
 function giveFeedback3() {
   let r = random();
 
@@ -1804,8 +1797,8 @@ function giveFeedback3() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
+//Setting randomly if user succeed or not level4
 function giveFeedback4() {
   let r = random();
 
@@ -1814,8 +1807,8 @@ function giveFeedback4() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
+//Setting randomly if user succeed or not level5
 function giveFeedback5() {
   let r = random();
 
@@ -1824,8 +1817,8 @@ function giveFeedback5() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
+//Setting randomly if user succeed or not level6
 function giveFeedback6() {
   let r = random();
 
@@ -1834,8 +1827,8 @@ function giveFeedback6() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
+//Setting randomly if user succeed or not level7
 function giveFeedback7() {
   let r = random();
 
@@ -1844,5 +1837,4 @@ function giveFeedback7() {
   } else {
     state = "closed";
   }
-  // Or return feedback;
 }
