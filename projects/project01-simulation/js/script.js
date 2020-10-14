@@ -1996,9 +1996,9 @@ function displaytrait(trait) {
 //Setting keys to change states
 function keyPressed() {
   push();
-  tryMusic();
   // Settins when space is pressed
   if (keyCode === 32) {
+    tryMusic();
     if (state === "title") {
       state = "welcome";
     } else if (state === "welcome") {
@@ -2053,7 +2053,7 @@ function mouseDragged() {
 //Setting when to check if music is playing
 function tryMusic() {
   if (!music.isPlaying()) {
-    music.loop();
+    music.play();
   }
 }
 //Music source: Johnson trio,Ellie.Volare.June 14,2020.Digital single.
