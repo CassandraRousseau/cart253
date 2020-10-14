@@ -1799,7 +1799,7 @@ function tryMusic() {
   }
 }
 //Setting mouse pressed use
-function mousePressed() {
+function mouseIsPressed() {
   let d = dist(mouseX, mouseY, user.x, user.y);
   if (d < user.size / 2) {
     user.drawing = true;
@@ -1814,9 +1814,9 @@ function mouseDragged() {
   if (user.drawing) {
     user.x = mouseX;
     user.y = mouseY;
+  } else if (mouseIsPressed === true) {
     stroke(user.stroke.r, user.stroke.g, user.stroke.b);
     strokeWeight(user.strokeWeight);
-  } else if (mouseIsPressed === true) {
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
