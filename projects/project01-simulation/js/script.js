@@ -14,7 +14,7 @@ let user = {
   x: 0,
   y: 0,
   size: 10,
-  strokeWeight: 6,
+  strokeWeight: 10,
   drawing: false,
   stroke: {
     r: 255,
@@ -730,7 +730,7 @@ function title() {
   image(cafe.image, windowWidth, windowHeight);
   background(cafe.image);
   //Display title
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(125);
   fill(255);
   stroke(0);
@@ -739,7 +739,7 @@ function title() {
   text("Coffeeccino", width / 2, height / 2);
   pop();
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -754,7 +754,7 @@ function welcome() {
   background(257, 255, 196);
   textSize(35);
   fill(112, 26, 0);
-  textFont("Blambot Pro BB");
+  textFont("Lobster");
   textAlign(LEFT, TOP);
   text(instructions, 10, 50, windowWidth, windowHeight);
   pop();
@@ -1342,7 +1342,7 @@ function resetDog() {
 //Setting comment in level1
 function simulationmessage1() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1354,7 +1354,7 @@ function simulationmessage1() {
 //Setting comment in level2
 function simulationmessage2() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1366,7 +1366,7 @@ function simulationmessage2() {
 //Setting comment in level3
 function simulationmessage3() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1378,7 +1378,7 @@ function simulationmessage3() {
 //Setting comment in level4
 function simulationmessage4() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1390,7 +1390,7 @@ function simulationmessage4() {
 //Setting comment in level5
 function simulationmessage5() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1402,7 +1402,7 @@ function simulationmessage5() {
 //Setting comment in level6
 function simulationmessage6() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1414,7 +1414,7 @@ function simulationmessage6() {
 //Setting comment in level7
 function simulationmessage7() {
   push();
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(35);
   fill(255);
   stroke(0);
@@ -1729,7 +1729,7 @@ function open() {
   push();
   image(success.image, windowWidth, windowHeight);
   background(success.image);
-  textFont("CCSignLanguage");
+  textFont("Sansita Swashed");
   textSize(65);
   stroke(0);
   strokeWeight(5);
@@ -1748,7 +1748,7 @@ function closed() {
   music.pause;
   image(failure.image, windowWidth, windowHeight);
   background(failure.image);
-  textFont("Abolition Soft");
+  textFont("Bebas Neue");
   stroke(0);
   strokeWeight(5);
   textSize(65);
@@ -1830,7 +1830,7 @@ function mugLeave() {
 function giveFeedback1() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0) {
     mug.state = "leaving";
   } else {
     state = "closed";
