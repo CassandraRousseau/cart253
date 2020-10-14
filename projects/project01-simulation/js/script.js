@@ -194,11 +194,28 @@ let circle5 = {
     b: 0,
   },
 };
-let circle6 = {
+
+let rectangle1 = {
   x: 0,
-  y: 360,
-  w: 45,
-  h: 45,
+  y: 355,
+  w: 25,
+  h: 30,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let circle6 = {
+  x: -40,
+  y: 244,
+  w: 15,
+  h: 30,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -211,10 +228,10 @@ let circle6 = {
   },
 };
 let circle7 = {
-  x: 0,
-  y: 380,
-  w: 30,
-  h: 55,
+  x: 40,
+  y: 244,
+  w: 15,
+  h: 30,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -227,10 +244,10 @@ let circle7 = {
   },
 };
 let circle8 = {
-  x: -75,
-  y: 275,
-  w: 40,
-  h: 95,
+  x: -40,
+  y: 235,
+  w: 35,
+  h: 50,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -243,10 +260,10 @@ let circle8 = {
   },
 };
 let circle9 = {
-  x: 75,
-  y: 275,
-  w: 40,
-  h: 95,
+  x: 40,
+  y: 235,
+  w: 35,
+  h: 50,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -259,10 +276,10 @@ let circle9 = {
   },
 };
 let circle10 = {
-  x: 30,
+  x: 33,
   y: 300,
   w: 40,
-  h: 25,
+  h: 15,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -275,10 +292,10 @@ let circle10 = {
   },
 };
 let circle11 = {
-  x: -30,
+  x: -33,
   y: 300,
   w: 40,
-  h: 25,
+  h: 15,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -290,11 +307,11 @@ let circle11 = {
     b: 0,
   },
 };
-let bearearleft = {
-  x: -52,
-  y: 275,
-  w: 75,
-  h: 75,
+let circle12 = {
+  x: 64,
+  y: 250,
+  w: 35,
+  h: 35,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -306,11 +323,27 @@ let bearearleft = {
     b: 0,
   },
 };
-let bearearright = {
-  x: 52,
-  y: 275,
-  w: 75,
-  h: 75,
+let circle13 = {
+  x: -64,
+  y: 250,
+  w: 35,
+  h: 35,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
+let circle14 = {
+  x: 0,
+  y: 0,
+  w: 130,
+  h: 130,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -331,25 +364,6 @@ let smile1 = {
   y3: 350,
   x4: 100,
   y4: 250,
-  vx: 0,
-  vy: 0,
-  speed: 3,
-  strokeWeight: 3,
-  stroke: {
-    r: 0,
-    g: 255,
-    b: 0,
-  },
-};
-let smile2 = {
-  x1: -175,
-  y1: 275,
-  x2: -40,
-  y2: 375,
-  x3: 40,
-  y3: 375,
-  x4: 175,
-  y4: 275,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -495,6 +509,21 @@ let traitstick = {
     b: 0,
   },
 };
+let traitteeth = {
+  x1: 0,
+  y1: 341,
+  x2: 0,
+  y2: 369,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 let tri1 = {
   x1: 0,
   y1: 340,
@@ -513,9 +542,9 @@ let tri1 = {
   },
 };
 let tri2 = {
-  x1: -20,
+  x1: -25,
   y1: 330,
-  x2: 20,
+  x2: 25,
   y2: 330,
   x3: 0,
   y3: 370,
@@ -640,12 +669,6 @@ let traitwhisker4 = {
     b: 0,
   },
 };
-let donebutton = {
-  x: 0,
-  y: 0,
-  w: 100,
-  h: 100,
-};
 let cafe = {
   image: undefined,
 };
@@ -658,8 +681,6 @@ let failure = {
 let success = {
   image: undefined,
 };
-let sansitafont;
-let crafterfont;
 let music;
 let state = "title";
 //Loading images for simulation.
@@ -669,8 +690,6 @@ function preload() {
   failure.image = loadImage("assets/images/failure.png");
   success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
-  crafterfont = loadFont(`assets/fonts/Hello Crafter-Personal Use.ttf`);
-  sansitafont = loadFont(`assets/fonts/SansitaSwashed-VariableFont_wght.ttf`);
 }
 // setup()
 //
@@ -711,7 +730,7 @@ function title() {
   image(cafe.image, windowWidth, windowHeight);
   background(cafe.image);
   //Display title
-  textFont(sansitafont);
+  textFont("CCSignLanguage");
   textSize(125);
   fill(255);
   stroke(0);
@@ -1001,16 +1020,16 @@ function simulation5() {
     circlemove(circle3);
     circlemove(circle4);
     circlemove(circle5);
-    bearearmove(bearearleft);
-    bearearmove(bearearright);
+    circlemove(circle12);
+    circlemove(circle13);
     acceleration();
     circleacceleration(circle1);
     circleacceleration(circle2);
     circleacceleration(circle3);
     circleacceleration(circle4);
     circleacceleration(circle5);
-    bearearacceleration(bearearleft);
-    bearearacceleration(bearearright);
+    circleacceleration(circle12);
+    circleacceleration(circle13);
     displaytable();
     display();
     bear();
@@ -1028,16 +1047,16 @@ function simulation5() {
     circlemove(circle3);
     circlemove(circle4);
     circlemove(circle5);
-    bearearmove(bearearleft);
-    bearearmove(bearearright);
+    circlemove(circle12);
+    circlemove(circle13);
     acceleration();
     circleacceleration(circle1);
     circleacceleration(circle2);
     circleacceleration(circle3);
     circleacceleration(circle4);
     circleacceleration(circle5);
-    bearearacceleration(bearearleft);
-    bearearacceleration(bearearright);
+    circleacceleration(circle12);
+    circleacceleration(circle13);
     displaytable();
     display();
     bear();
@@ -1130,23 +1149,35 @@ function simulation7() {
   if (mug.state === "entering") {
     mug.speed = 3;
     //move();
-    circlemove(circle1);
+    circlemove(circle14);
     circlemove(circle2);
     circlemove(circle3);
     circlemove(circle4);
     circlemove(circle6);
     circlemove(circle7);
+    traitmove(traitteeth);
     circlemove(circle8);
     circlemove(circle9);
+    traitmove(traitwhisker1);
+    traitmove(traitwhisker2);
+    traitmove(traitwhisker3);
+    traitmove(traitwhisker4);
+    rectanglemove(rectangle1);
     acceleration();
-    circleacceleration(circle1);
+    circleacceleration(circle14);
     circleacceleration(circle2);
     circleacceleration(circle3);
     circleacceleration(circle4);
     circleacceleration(circle6);
     circleacceleration(circle7);
+    traitacceleration(traitteeth);
     circleacceleration(circle8);
     circleacceleration(circle9);
+    traitacceleration(traitwhisker1);
+    traitacceleration(traitwhisker2);
+    traitacceleration(traitwhisker3);
+    traitacceleration(traitwhisker4);
+    rectangleacceleration(rectangle1);
     displaytable();
     display();
     dog();
@@ -1159,7 +1190,7 @@ function simulation7() {
   } else if (mug.state === "leaving") {
     mug.speed = 3;
     //move();
-    circlemove(circle1);
+    circlemove(circle14);
     circlemove(circle2);
     circlemove(circle3);
     circlemove(circle4);
@@ -1167,8 +1198,13 @@ function simulation7() {
     circlemove(circle7);
     circlemove(circle8);
     circlemove(circle9);
+    traitmove(traitwhisker1);
+    traitmove(traitwhisker2);
+    traitmove(traitwhisker3);
+    traitmove(traitwhisker4);
+    rectanglemove(rectangle1);
     acceleration();
-    circleacceleration(circle1);
+    circleacceleration(circle14);
     circleacceleration(circle2);
     circleacceleration(circle3);
     circleacceleration(circle4);
@@ -1176,6 +1212,11 @@ function simulation7() {
     circleacceleration(circle7);
     circleacceleration(circle8);
     circleacceleration(circle9);
+    traitacceleration(traitwhisker1);
+    traitacceleration(traitwhisker2);
+    traitacceleration(traitwhisker3);
+    traitacceleration(traitwhisker4);
+    rectangleacceleration(rectangle1);
     displaytable();
     display();
     dog();
@@ -1251,8 +1292,8 @@ function resetBear() {
   circle3.x = -28;
   circle4.x = 0;
   circle5.x = 0;
-  bearearleft.x = 0;
-  bearearright.x = 0;
+  circle12.x = 0;
+  circle13.x = 0;
 }
 //Setting reset function for cat template
 function resetCat() {
@@ -1269,25 +1310,34 @@ function resetCat() {
   tri5.x1 = 0;
   tri5.x2 = 0;
   tri5.x1 = 0;
-  traitwhisker1.x1 = 0;
-  traitwhisker1.x2 = 0;
-  traitwhisker2.x1 = 0;
-  traitwhisker2.x2 = 0;
-  traitwhisker3.x1 = 0;
-  traitwhisker3.x2 = 0;
-  traitwhisker4.x1 = 0;
-  traitwhisker4.x2 = 0;
+  traitwhisker1.x1 = -20;
+  traitwhisker1.x2 = -85;
+  traitwhisker2.x1 = -20;
+  traitwhisker2.x2 = -80;
+  traitwhisker3.x1 = 20;
+  traitwhisker3.x2 = 85;
+  traitwhisker4.x1 = 20;
+  traitwhisker4.x2 = 80;
 }
 //Setting reset function for dog template
 function resetDog() {
-  circle1.x = 0;
+  circle14.x = 0;
   circle2.x = 28;
   circle3.x = -28;
   circle4.x = 0;
-  circle6.x = 0;
-  circle7.x = 0;
   circle8.x = 0;
   circle9.x = 0;
+  traitteeth.x1 = 0;
+  traitteeth.x2 = 0;
+  traitwhisker1.x1 = -20;
+  traitwhisker1.x2 = -85;
+  traitwhisker2.x1 = -20;
+  traitwhisker2.x2 = -80;
+  traitwhisker3.x1 = 20;
+  traitwhisker3.x2 = 85;
+  traitwhisker4.x1 = 20;
+  traitwhisker4.x2 = 80;
+  rectangle1.x = 0;
 }
 //Setting comment in level1
 function simulationmessage1() {
@@ -1404,6 +1454,11 @@ function circlemove(circle) {
   circle.x += circle.vx;
   circle.y += circle.vy;
 }
+//Setting template circles movements
+function rectanglemove(rectangle) {
+  rectangle.x += rectangle.vx;
+  rectangle.y += rectangle.vy;
+}
 //Setting template lines movements
 function traitmove(trait) {
   trait.x1 += trait.vx;
@@ -1419,11 +1474,6 @@ function trimove(tri) {
   tri.x2 += tri.vx;
   tri.y3 += tri.vy;
   tri.x3 += tri.vx;
-}
-//Setting template bear ears movements
-function bearearmove(bearear) {
-  bearear.x += bearear.vx;
-  bearear.y += bearear.vy;
 }
 //Setting template curves movements
 function smilemove(smile) {
@@ -1448,6 +1498,10 @@ function acceleration() {
 function circleacceleration(circle) {
   circle.x += circle.speed;
 }
+//Setting template circles speed
+function rectangleacceleration(rectangle) {
+  rectangle.x += rectangle.speed;
+}
 //Setting template curves speed
 function smileacceleration(smile) {
   smile.x1 += smile.speed;
@@ -1460,10 +1514,6 @@ function triacceleration(tri) {
   tri.x1 += tri.speed;
   tri.x2 += tri.speed;
   tri.x3 += tri.speed;
-}
-//Setting template bear ears speed
-function bearearacceleration(bearear) {
-  bearear.x += bearear.speed;
 }
 //Setting template lines speed
 function traitacceleration(trait) {
@@ -1570,8 +1620,8 @@ function bear() {
   displaycircle(circle3);
   displaycircle(circle4);
   displaycircle(circle5);
-  displaybearear(bearearleft);
-  displaybearear(bearearright);
+  displaycircle(circle12);
+  displaycircle(circle13);
   pop();
 }
 //Display cat drawing
@@ -1593,7 +1643,7 @@ function cat() {
 //Display dog drawing
 function dog() {
   push();
-  displaycirclecenter(circle1);
+  displaycirclecenter(circle14);
   displaycircle(circle2);
   displaycircle(circle3);
   displaycircle(circle4);
@@ -1601,6 +1651,12 @@ function dog() {
   displaycircle(circle7);
   displaycircle(circle8);
   displaycircle(circle9);
+  displaytrait(traitwhisker1);
+  displaytrait(traitwhisker2);
+  displaytrait(traitwhisker3);
+  displaytrait(traitwhisker4);
+  displayrectangle(rectangle1);
+  displaytrait(traitteeth);
   pop();
 }
 //Display circle in the center of templates
@@ -1621,14 +1677,14 @@ function displaycircle(circle) {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
-//Display template bear ears
-function displaybearear(bearear) {
+//Display template circles
+function displayrectangle(rectangle) {
   push();
   noFill();
-  stroke(bearear.stroke.r, bearear.stroke.g, bearear.stroke.b);
-  strokeWeight(bearear.strokeWeight);
-  rotate(PI / 4);
-  arc(bearear.x, bearear.y, bearear.w, bearear.h, PI + QUARTER_PI, TWO_PI);
+  stroke(rectangle.stroke.r, rectangle.stroke.g, rectangle.stroke.b);
+  strokeWeight(rectangle.strokeWeight);
+  rectMode(CENTER);
+  rect(rectangle.x, rectangle.y, rectangle.w, rectangle.h);
   pop();
 }
 //Display template triangles
