@@ -11,6 +11,9 @@ However,if the user miss one of them in a level, the cafe goes bankrupt and it's
 let instructions =
   "Hello new employee!\n\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to create succulent lattes!\n\nPress your mouse and drag it to make drawings on latte\nFollow the templates to create beautiful artworks!\nOnce you're done, press the spacebar to give the order to the customer.\n\nBe artsy, have fun and good luck!";
 
+let bankrupt =
+  "Coffeeccino goes bankrupt!\nYou will have to find another job...\nPress Spacebar to restart";
+
 let user = {
   x: 2500,
   y: 250,
@@ -848,7 +851,7 @@ function title() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Press Spacebar to start", width / 2, 450);
+  text("Press Spacebar to start", width / 2, (3 * height) / 4);
   pop();
 }
 
@@ -879,7 +882,7 @@ function open() {
   text("Congratulations!", width / 2, height / 2);
   push();
   textSize(35);
-  text("Customers ADORE your coffees!", width / 2, 450);
+  text("Customers ADORE your coffees!", width / 2, (3 * height) / 4);
   pop();
   pop();
 }
@@ -896,12 +899,10 @@ function closed() {
   textSize(105);
   fill(255);
   textAlign(CENTER, CENTER);
-  text("OH NO!", width / 2, 400);
+  text("OH NO!", width / 2, (2 * height) / 3);
   push();
   textSize(30);
-  text("Coffeeccino goes bankrupt!", width / 2, 500);
-  text("You will have to find another job...", width / 2, 550);
-  text("Press Spacebar to restart", width / 2, 600);
+  text(bankrupt, width / 2, (6 * height) / 7);
   pop();
   pop();
 }
@@ -1386,7 +1387,7 @@ function simulationmessage1() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Let's start with an umbrella drawing!", width / 2, 550);
+  text("Let's start with an umbrella drawing!", width / 2, (6 * height) / 7);
   pop();
 }
 
@@ -1399,7 +1400,7 @@ function simulationmessage2() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Good job! Now, try to draw a sun!", width / 2, 550);
+  text("Good job! Now, try to draw a sun!", width / 2, (6 * height) / 7);
   pop();
 }
 
@@ -1412,7 +1413,7 @@ function simulationmessage3() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Great! Make people smile!", width / 2, 550);
+  text("Great! Make people smile!", width / 2, (6 * height) / 7);
   pop();
 }
 
@@ -1425,7 +1426,7 @@ function simulationmessage4() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Let's be friends with nature!", width / 2, 550);
+  text("Let's be friends with nature!", width / 2, (6 * height) / 7);
   pop();
 }
 
@@ -1438,7 +1439,11 @@ function simulationmessage5() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("I'm sure you can't resist to this adorable bear!", width / 2, 550);
+  text(
+    "I'm sure you can't resist to this adorable bear!",
+    width / 2,
+    (6 * height) / 7
+  );
   pop();
 }
 
@@ -1451,7 +1456,11 @@ function simulationmessage6() {
   stroke(0);
   strokeWeight(5);
   textAlign(CENTER, CENTER);
-  text("Let's do something a little more complex...", width / 2, 550);
+  text(
+    "Let's do something a little more complex...",
+    width / 2,
+    (6 * height) / 7
+  );
   pop();
 }
 
@@ -1467,7 +1476,7 @@ function simulationmessage7() {
   text(
     "Your shift is almost done! Give the best that you can!",
     width / 2,
-    550
+    (6 * height) / 7
   );
   pop();
 }
@@ -1558,7 +1567,7 @@ function traitacceleration(trait) {
 function giveFeedback1() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1569,7 +1578,7 @@ function giveFeedback1() {
 function giveFeedback2() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1580,7 +1589,7 @@ function giveFeedback2() {
 function giveFeedback3() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1591,7 +1600,7 @@ function giveFeedback3() {
 function giveFeedback4() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1602,7 +1611,7 @@ function giveFeedback4() {
 function giveFeedback5() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1613,7 +1622,7 @@ function giveFeedback5() {
 function giveFeedback6() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1624,7 +1633,7 @@ function giveFeedback6() {
 function giveFeedback7() {
   let r = random();
 
-  if (r < 0.7) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";
