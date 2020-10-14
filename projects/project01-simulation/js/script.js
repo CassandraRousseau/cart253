@@ -744,7 +744,7 @@ function preload() {
 
 // Creating the canvas.
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
 }
 
 //Setting the states of the game
