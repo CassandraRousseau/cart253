@@ -2,9 +2,10 @@
 Project 01: Simulation
 Cassandra Rousseau
 Creating a barista simulation.The game opens with a cafe background and the title.
-It's followed with the instructions state. Th goal of the user is to redraw the drawing of the template over the latte.
+It's followed with the instructions state. The goal of the user is to redraw the drawing of the template over the latte.
 If the player do all the drawings correctly after each level, he's an accomplished barista!
 However,if the user miss one of them in a level, the cafe goes bankrupt and it's game over...
+The user will win or lose randomly after each of his drawing.
 **************************************************/
 "use strict";
 
