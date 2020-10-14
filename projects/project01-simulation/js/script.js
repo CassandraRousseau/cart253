@@ -7,13 +7,14 @@ If the player do all the drawings correctly after each level, he's an accomplish
 However,if the user miss one of them in a level, the cafe goes bankrupt and it's game over...
 **************************************************/
 "use strict";
+
 let instructions =
-  "Hello new employee!\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the guidelines to create beautiful artworks!\nOnce your done, press the spacebar to give the order to the customer.\nBe artsy, have fun and good luck!";
+  "Hello new employee!\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the templates to create beautiful artworks!\nOnce you're done, press the spacebar to give the order to the customer.\nBe artsy, have fun and good luck!";
 
 let user = {
-  x: 0,
-  y: 0,
-  size: 10,
+  x: 2500,
+  y: 250,
+  size: 225,
   strokeWeight: 10,
   drawing: false,
   stroke: {
@@ -22,6 +23,7 @@ let user = {
     b: 255,
   },
 };
+
 let plate = {
   x: 0,
   y: 0,
@@ -36,6 +38,7 @@ let plate = {
     speed: 3,
   },
 };
+
 let coffee = {
   x: 0,
   y: 0,
@@ -50,6 +53,7 @@ let coffee = {
     b: 0,
   },
 };
+
 let shadow = {
   x: 0,
   y: 0,
@@ -77,7 +81,7 @@ let mug = {
     g: 255,
     b: 255,
   },
-  state: "entering", //3 POSSIBLE STATE 'entering' 'center' 'leaving' 'left'//
+  state: "entering",
 };
 
 let handle = {
@@ -98,6 +102,7 @@ let handle = {
     b: 255,
   },
 };
+
 let circle0 = {
   x: 0,
   y: 0,
@@ -114,6 +119,7 @@ let circle0 = {
     b: 0,
   },
 };
+
 let circle1 = {
   x: 0,
   y: 0,
@@ -130,6 +136,7 @@ let circle1 = {
     b: 0,
   },
 };
+
 let circle2 = {
   x: 28,
   y: 300,
@@ -146,6 +153,7 @@ let circle2 = {
     b: 0,
   },
 };
+
 let circle3 = {
   x: -28,
   y: 300,
@@ -162,6 +170,7 @@ let circle3 = {
     b: 0,
   },
 };
+
 let circle4 = {
   x: 0,
   y: 325,
@@ -178,6 +187,7 @@ let circle4 = {
     b: 0,
   },
 };
+
 let circle5 = {
   x: 0,
   y: 335,
@@ -211,6 +221,7 @@ let rectangle1 = {
     b: 0,
   },
 };
+
 let circle6 = {
   x: -40,
   y: 244,
@@ -227,6 +238,7 @@ let circle6 = {
     b: 0,
   },
 };
+
 let circle7 = {
   x: 40,
   y: 244,
@@ -243,11 +255,12 @@ let circle7 = {
     b: 0,
   },
 };
+
 let circle8 = {
   x: -40,
   y: 235,
   w: 35,
-  h: 50,
+  h: 45,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -259,11 +272,12 @@ let circle8 = {
     b: 0,
   },
 };
+
 let circle9 = {
   x: 40,
   y: 235,
   w: 35,
-  h: 50,
+  h: 45,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -275,6 +289,7 @@ let circle9 = {
     b: 0,
   },
 };
+
 let circle10 = {
   x: 33,
   y: 300,
@@ -291,6 +306,7 @@ let circle10 = {
     b: 0,
   },
 };
+
 let circle11 = {
   x: -33,
   y: 300,
@@ -307,6 +323,7 @@ let circle11 = {
     b: 0,
   },
 };
+
 let circle12 = {
   x: 64,
   y: 250,
@@ -323,6 +340,7 @@ let circle12 = {
     b: 0,
   },
 };
+
 let circle13 = {
   x: -64,
   y: 250,
@@ -339,6 +357,7 @@ let circle13 = {
     b: 0,
   },
 };
+
 let circle14 = {
   x: 0,
   y: 0,
@@ -355,6 +374,7 @@ let circle14 = {
     b: 0,
   },
 };
+
 let smile1 = {
   x1: -100,
   y1: 250,
@@ -374,6 +394,7 @@ let smile1 = {
     b: 0,
   },
 };
+
 let traitray1 = {
   x1: 0,
   y1: 210,
@@ -389,6 +410,7 @@ let traitray1 = {
     b: 0,
   },
 };
+
 let traitray2 = {
   x1: 0,
   y1: 385,
@@ -404,6 +426,7 @@ let traitray2 = {
     b: 0,
   },
 };
+
 let traitray3 = {
   x1: 73,
   y1: 315,
@@ -419,6 +442,7 @@ let traitray3 = {
     b: 0,
   },
 };
+
 let traitray4 = {
   x1: -73,
   y1: 315,
@@ -434,6 +458,7 @@ let traitray4 = {
     b: 0,
   },
 };
+
 let traitray5 = {
   x1: -70,
   y1: 235,
@@ -449,6 +474,7 @@ let traitray5 = {
     b: 0,
   },
 };
+
 let traitray6 = {
   x1: 70,
   y1: 235,
@@ -464,6 +490,7 @@ let traitray6 = {
     b: 0,
   },
 };
+
 let traitray7 = {
   x1: -70,
   y1: 380,
@@ -479,6 +506,7 @@ let traitray7 = {
     b: 0,
   },
 };
+
 let traitray8 = {
   x1: 70,
   y1: 380,
@@ -494,6 +522,7 @@ let traitray8 = {
     b: 0,
   },
 };
+
 let traitstick = {
   x1: 0,
   y1: 300,
@@ -509,6 +538,7 @@ let traitstick = {
     b: 0,
   },
 };
+
 let traitteeth = {
   x1: 0,
   y1: 341,
@@ -524,6 +554,7 @@ let traitteeth = {
     b: 0,
   },
 };
+
 let tri1 = {
   x1: 0,
   y1: 340,
@@ -541,6 +572,7 @@ let tri1 = {
     b: 0,
   },
 };
+
 let tri2 = {
   x1: -25,
   y1: 330,
@@ -558,6 +590,7 @@ let tri2 = {
     b: 0,
   },
 };
+
 let tri3 = {
   x1: 0,
   y1: 230,
@@ -575,6 +608,7 @@ let tri3 = {
     b: 0,
   },
 };
+
 let tri4 = {
   x1: -55,
   y1: 225,
@@ -592,6 +626,7 @@ let tri4 = {
     b: 0,
   },
 };
+
 let tri5 = {
   x1: 55,
   y1: 225,
@@ -609,6 +644,7 @@ let tri5 = {
     b: 0,
   },
 };
+
 let traitwhisker1 = {
   x1: -20,
   y1: 330,
@@ -624,6 +660,7 @@ let traitwhisker1 = {
     b: 0,
   },
 };
+
 let traitwhisker2 = {
   x1: -20,
   y1: 340,
@@ -639,6 +676,7 @@ let traitwhisker2 = {
     b: 0,
   },
 };
+
 let traitwhisker3 = {
   x1: 20,
   y1: 330,
@@ -654,6 +692,7 @@ let traitwhisker3 = {
     b: 0,
   },
 };
+
 let traitwhisker4 = {
   x1: 20,
   y1: 340,
@@ -669,20 +708,27 @@ let traitwhisker4 = {
     b: 0,
   },
 };
+
 let cafe = {
   image: undefined,
 };
+
 let table = {
   image: undefined,
 };
+
 let failure = {
   image: undefined,
 };
+
 let success = {
   image: undefined,
 };
+
 let music;
+
 let state = "title";
+
 //Loading images for simulation.
 function preload() {
   music = loadSound("assets/sounds/volare.mp3");
@@ -691,12 +737,12 @@ function preload() {
   success.image = loadImage("assets/images/success.png");
   table.image = loadImage("assets/images/table.png");
 }
-// setup()
-//
+
 // Creating the canvas.
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
+
 //Setting the states of the game
 function draw() {
   if (state === "title") {
@@ -723,12 +769,69 @@ function draw() {
     closed();
   }
 }
+
+//Setting level1
+function level1() {
+  simulation1();
+}
+
+//Setting level2
+function level2() {
+  simulation2();
+}
+
+//Setting level3
+function level3() {
+  simulation3();
+}
+
+//Setting level4
+function level4() {
+  simulation4();
+}
+
+//Setting level5
+function level5() {
+  simulation5();
+}
+
+//Setting level6
+function level6() {
+  simulation6();
+}
+
+//Setting level7
+function level7() {
+  simulation7();
+}
+
+//Setting simulation
+function simulation(simulation) {
+  if (state === "level1") {
+    simulation1();
+  } else if (state === "level2") {
+    simulation2();
+  } else if (state === "level3") {
+    simulation3();
+  } else if (state === "level4") {
+    simulation4();
+  } else if (state === "level5") {
+    simulation5();
+  } else if (state === "level6") {
+    simulation6();
+  } else if (state === "level7") {
+    simulation7();
+  }
+}
+
 //Setting the title
 function title() {
   push();
+
   //Display cafe background
   image(cafe.image, windowWidth, windowHeight);
   background(cafe.image);
+
   //Display title
   textFont("Sansita Swashed");
   textSize(125);
@@ -748,85 +851,65 @@ function title() {
   text("Press Spacebar to start", width / 2, 450);
   pop();
 }
+
 //Setting the instructions
 function welcome() {
   push();
   background(257, 255, 196);
   textSize(35);
+  noStroke();
   fill(112, 26, 0);
   textFont("Lobster");
   textAlign(LEFT, TOP);
   text(instructions, 10, 50, windowWidth, windowHeight);
   pop();
 }
-//Setting level1
-function level1() {
-  simulation1();
+
+//Setting the good ending
+function open() {
+  push();
+  image(success.image, windowWidth, windowHeight);
+  background(success.image);
+  textFont("Sansita Swashed");
+  textSize(85);
+  stroke(0);
+  strokeWeight(5);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text("Congratulations!", width / 2, height / 2);
+  push();
+  textSize(35);
+  text("Customers ADORE your coffees!", width / 2, 450);
+  pop();
+  pop();
 }
-//Setting level2
-function level2() {
-  simulation2();
+
+//Setting the bad ending
+function closed() {
+  push();
+  music.pause;
+  image(failure.image, windowWidth, windowHeight);
+  background(failure.image);
+  textFont("Bebas Neue");
+  stroke(0);
+  strokeWeight(5);
+  textSize(65);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text("OH NO!", width / 2, 500);
+  push();
+  textSize(25);
+  text("Coffeeccino goes bankrupt!", width / 2, 550);
+  text("You will have to find another job...", width / 2, 600);
+  pop();
+  pop();
 }
-//Setting level3
-function level3() {
-  simulation3();
-}
-//Setting level4
-function level4() {
-  simulation4();
-}
-//Setting level5
-function level5() {
-  simulation5();
-}
-//Setting level6
-function level6() {
-  simulation6();
-}
-//Setting level7
-function level7() {
-  simulation7();
-}
-//Setting simulation
-function simulation(simulation) {
-  if (state === "level1") {
-    simulation1();
-  } else if (state === "level2") {
-    simulation2();
-  } else if (state === "level3") {
-    simulation3();
-  } else if (state === "level4") {
-    simulation4();
-  } else if (state === "level5") {
-    simulation5();
-  } else if (state === "level6") {
-    simulation6();
-  } else if (state === "level7") {
-    simulation7();
-  }
-}
+
 //Setting simulation for level1
 function simulation1() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //    move();
-    trimove(tri3);
-    traitmove(traitstick);
-    acceleration();
-    triacceleration(tri3);
-    traitacceleration(traitstick);
-    displaytable();
-    display();
-    umbrella();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage1();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //  move();
     trimove(tri3);
     traitmove(traitstick);
     acceleration();
@@ -836,6 +919,29 @@ function simulation1() {
     display();
     umbrella();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage1();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+    trimove(tri3);
+    traitmove(traitstick);
+    acceleration();
+    triacceleration(tri3);
+    traitacceleration(traitstick);
+    displaytable();
+    display();
+    umbrella();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level2";
 
@@ -847,41 +953,9 @@ function simulation1() {
 
 //Setting simulation for level2
 function simulation2() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //  move();
-    circlemove(circle0);
-    traitmove(traitray1);
-    traitmove(traitray2);
-    traitmove(traitray2);
-    traitmove(traitray3);
-    traitmove(traitray4);
-    traitmove(traitray5);
-    traitmove(traitray6);
-    traitmove(traitray7);
-    traitmove(traitray8);
-    acceleration();
-    circleacceleration(circle0);
-    traitacceleration(traitray1);
-    traitacceleration(traitray2);
-    traitacceleration(traitray3);
-    traitacceleration(traitray4);
-    traitacceleration(traitray5);
-    traitacceleration(traitray6);
-    traitacceleration(traitray7);
-    traitacceleration(traitray8);
-    displaytable();
-    display();
-    sun();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage2();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //  move();
     circlemove(circle0);
     traitmove(traitray1);
     traitmove(traitray2);
@@ -906,6 +980,44 @@ function simulation2() {
     display();
     sun();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage2();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+    circlemove(circle0);
+    traitmove(traitray1);
+    traitmove(traitray2);
+    traitmove(traitray2);
+    traitmove(traitray3);
+    traitmove(traitray4);
+    traitmove(traitray5);
+    traitmove(traitray6);
+    traitmove(traitray7);
+    traitmove(traitray8);
+    acceleration();
+    circleacceleration(circle0);
+    traitacceleration(traitray1);
+    traitacceleration(traitray2);
+    traitacceleration(traitray3);
+    traitacceleration(traitray4);
+    traitacceleration(traitray5);
+    traitacceleration(traitray6);
+    traitacceleration(traitray7);
+    traitacceleration(traitray8);
+    displaytable();
+    display();
+    sun();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level3";
 
@@ -914,32 +1026,12 @@ function simulation2() {
     }
   }
 }
+
 //Setting simulation for level3
 function simulation3() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //move();
-    circlemove(circle1);
-    circlemove(circle2);
-    circlemove(circle3);
-    smilemove(smile1);
-    acceleration();
-    circleacceleration(circle1);
-    circleacceleration(circle2);
-    circleacceleration(circle3);
-    smileacceleration(smile1);
-    displaytable();
-    display();
-    face();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage3();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -953,6 +1045,33 @@ function simulation3() {
     display();
     face();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage3();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    smilemove(smile1);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    smileacceleration(smile1);
+    displaytable();
+    display();
+    face();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level4";
 
@@ -964,30 +1083,9 @@ function simulation3() {
 
 //Setting simulation for level4
 function simulation4() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //move();
-    circlemove(circle1);
-    circlemove(circle10);
-    circlemove(circle11);
-    trimove(tri2);
-    acceleration();
-    circleacceleration(circle1);
-    circleacceleration(circle10);
-    circleacceleration(circle11);
-    triacceleration(tri2);
-    displaytable();
-    display();
-    bird();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage4();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //move();
     circlemove(circle1);
     circlemove(circle10);
     circlemove(circle11);
@@ -1001,6 +1099,33 @@ function simulation4() {
     display();
     bird();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage4();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+    circlemove(circle1);
+    circlemove(circle10);
+    circlemove(circle11);
+    trimove(tri2);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle10);
+    circleacceleration(circle11);
+    triacceleration(tri2);
+    displaytable();
+    display();
+    bird();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level5";
 
@@ -1012,36 +1137,9 @@ function simulation4() {
 
 //Setting simulation for level5
 function simulation5() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //move();
-    circlemove(circle1);
-    circlemove(circle2);
-    circlemove(circle3);
-    circlemove(circle4);
-    circlemove(circle5);
-    circlemove(circle12);
-    circlemove(circle13);
-    acceleration();
-    circleacceleration(circle1);
-    circleacceleration(circle2);
-    circleacceleration(circle3);
-    circleacceleration(circle4);
-    circleacceleration(circle5);
-    circleacceleration(circle12);
-    circleacceleration(circle13);
-    displaytable();
-    display();
-    bear();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage5();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1061,6 +1159,39 @@ function simulation5() {
     display();
     bear();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage5();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    circlemove(circle5);
+    circlemove(circle12);
+    circlemove(circle13);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    circleacceleration(circle5);
+    circleacceleration(circle12);
+    circleacceleration(circle13);
+    displaytable();
+    display();
+    bear();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level6";
 
@@ -1069,46 +1200,12 @@ function simulation5() {
     }
   }
 }
+
 //Setting simulation for level6
 function simulation6() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //move();
-    circlemove(circle1);
-    circlemove(circle2);
-    circlemove(circle3);
-    circlemove(circle4);
-    trimove(tri1);
-    trimove(tri4);
-    trimove(tri5);
-    traitmove(traitwhisker1);
-    traitmove(traitwhisker2);
-    traitmove(traitwhisker3);
-    traitmove(traitwhisker4);
-    acceleration();
-    circleacceleration(circle1);
-    circleacceleration(circle2);
-    circleacceleration(circle3);
-    circleacceleration(circle4);
-    triacceleration(tri1);
-    triacceleration(tri4);
-    triacceleration(tri5);
-    traitacceleration(traitwhisker1);
-    traitacceleration(traitwhisker2);
-    traitacceleration(traitwhisker3);
-    traitacceleration(traitwhisker4);
-    displaytable();
-    display();
-    cat();
-    if (mug.x >= width / 2) {
-      mug.x = width / 2;
-      mug.state = "center";
-      mug.speed = 0;
-    }
-    simulationmessage6();
-  } else if (mug.state === "leaving") {
-    mug.speed = 3;
-    //move();
     circlemove(circle1);
     circlemove(circle2);
     circlemove(circle3);
@@ -1136,6 +1233,48 @@ function simulation6() {
     display();
     cat();
 
+    //When mug stops
+    if (mug.x >= width / 2) {
+      mug.x = width / 2;
+      mug.state = "center";
+      mug.speed = 0;
+    }
+
+    simulationmessage6();
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
+    mug.speed = 3;
+
+    circlemove(circle1);
+    circlemove(circle2);
+    circlemove(circle3);
+    circlemove(circle4);
+    trimove(tri1);
+    trimove(tri4);
+    trimove(tri5);
+    traitmove(traitwhisker1);
+    traitmove(traitwhisker2);
+    traitmove(traitwhisker3);
+    traitmove(traitwhisker4);
+    acceleration();
+    circleacceleration(circle1);
+    circleacceleration(circle2);
+    circleacceleration(circle3);
+    circleacceleration(circle4);
+    triacceleration(tri1);
+    triacceleration(tri4);
+    triacceleration(tri5);
+    traitacceleration(traitwhisker1);
+    traitacceleration(traitwhisker2);
+    traitacceleration(traitwhisker3);
+    traitacceleration(traitwhisker4);
+    displaytable();
+    display();
+    cat();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "level7";
 
@@ -1146,18 +1285,18 @@ function simulation6() {
 }
 //Setting simulation for level7
 function simulation7() {
+  //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    //move();
     circlemove(circle14);
     circlemove(circle2);
     circlemove(circle3);
     circlemove(circle4);
     circlemove(circle6);
     circlemove(circle7);
-    traitmove(traitteeth);
     circlemove(circle8);
     circlemove(circle9);
+    traitmove(traitteeth);
     traitmove(traitwhisker1);
     traitmove(traitwhisker2);
     traitmove(traitwhisker3);
@@ -1170,9 +1309,9 @@ function simulation7() {
     circleacceleration(circle4);
     circleacceleration(circle6);
     circleacceleration(circle7);
-    traitacceleration(traitteeth);
     circleacceleration(circle8);
     circleacceleration(circle9);
+    traitacceleration(traitteeth);
     traitacceleration(traitwhisker1);
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
@@ -1180,16 +1319,21 @@ function simulation7() {
     rectangleacceleration(rectangle1);
     displaytable();
     display();
-    dog();
+    rabbit();
+
+    //When mug stops
     if (mug.x >= width / 2) {
       mug.x = width / 2;
       mug.state = "center";
       mug.speed = 0;
     }
+
     simulationmessage7();
-  } else if (mug.state === "leaving") {
+  }
+
+  //When mug leaves the screen
+  else if (mug.state === "leaving") {
     mug.speed = 3;
-    //move();
     circlemove(circle14);
     circlemove(circle2);
     circlemove(circle3);
@@ -1202,6 +1346,7 @@ function simulation7() {
     traitmove(traitwhisker2);
     traitmove(traitwhisker3);
     traitmove(traitwhisker4);
+    traitmove(traitteeth);
     rectanglemove(rectangle1);
     acceleration();
     circleacceleration(circle14);
@@ -1216,15 +1361,272 @@ function simulation7() {
     traitacceleration(traitwhisker2);
     traitacceleration(traitwhisker3);
     traitacceleration(traitwhisker4);
+    traitacceleration(traitteeth);
     rectangleacceleration(rectangle1);
     displaytable();
     display();
-    dog();
+    rabbit();
+
+    //When mug left the screen
     if (mug.x > windowWidth) {
       state = "open";
       resetMug();
-      resetDog();
+      resetRabbit();
     }
+  }
+}
+
+//Setting comment in level1
+function simulationmessage1() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Let's start with an umbrella drawing!", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level2
+function simulationmessage2() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Good job! Now, try to draw a sun!", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level3
+function simulationmessage3() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Great! Make people smile!", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level4
+function simulationmessage4() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Let's be friends with nature!", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level5
+function simulationmessage5() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("I'm sure you can't resist to this adorable bear!", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level6
+function simulationmessage6() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text("Let's do something a little more complex...", width / 2, 550);
+  pop();
+}
+
+//Setting comment in level7
+function simulationmessage7() {
+  push();
+  textFont("Sansita Swashed");
+  textSize(35);
+  fill(255);
+  stroke(0);
+  strokeWeight(5);
+  textAlign(CENTER, CENTER);
+  text(
+    "Your shift is almost done! Give the best that you can!",
+    width / 2,
+    550
+  );
+  pop();
+}
+
+//Setting template circles movements
+function circlemove(circle) {
+  circle.x += circle.vx;
+  circle.y += circle.vy;
+}
+
+//Setting template circles movements
+function rectanglemove(rectangle) {
+  rectangle.x += rectangle.vx;
+  rectangle.y += rectangle.vy;
+}
+
+//Setting template lines movements
+function traitmove(trait) {
+  trait.x1 += trait.vx;
+  trait.y1 += trait.vy;
+  trait.y2 += trait.vy;
+  trait.x2 += trait.vx;
+}
+
+//Setting template triangles movements
+function trimove(tri) {
+  tri.x1 += tri.vx;
+  tri.y1 += tri.vy;
+  tri.y2 += tri.vy;
+  tri.x2 += tri.vx;
+  tri.y3 += tri.vy;
+  tri.x3 += tri.vx;
+}
+
+//Setting template curves movements
+function smilemove(smile) {
+  smile.x1 += smile.vx;
+  smile.y1 += smile.vy;
+  smile.x2 += smile.vx;
+  smile.y2 += smile.vy;
+  smile.x3 += smile.vx;
+  smile.y3 += smile.vy;
+  smile.x4 += smile.vx;
+  smile.y4 += smile.vy;
+}
+
+//Setting cup speed
+function acceleration() {
+  plate.x += plate.speed;
+  shadow.x += shadow.speed;
+  handle.x += handle.speed;
+  mug.x += mug.speed;
+  coffee.x += coffee.speed;
+}
+
+//Setting template circles speed
+function circleacceleration(circle) {
+  circle.x += circle.speed;
+}
+
+//Setting template circles speed
+function rectangleacceleration(rectangle) {
+  rectangle.x += rectangle.speed;
+}
+
+//Setting template curves speed
+function smileacceleration(smile) {
+  smile.x1 += smile.speed;
+  smile.x2 += smile.speed;
+  smile.x3 += smile.speed;
+  smile.x4 += smile.speed;
+}
+
+//Setting template triangles speed
+function triacceleration(tri) {
+  tri.x1 += tri.speed;
+  tri.x2 += tri.speed;
+  tri.x3 += tri.speed;
+}
+
+//Setting template lines speed
+function traitacceleration(trait) {
+  trait.x1 += trait.speed;
+  trait.x2 += trait.speed;
+}
+
+//Setting randomly if user succeed or not level1
+function giveFeedback1() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level2
+function giveFeedback2() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level3
+function giveFeedback3() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level4
+function giveFeedback4() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level5
+function giveFeedback5() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level6
+function giveFeedback6() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
+  }
+}
+
+//Setting randomly if user succeed or not level7
+function giveFeedback7() {
+  let r = random();
+
+  if (r < 1) {
+    mug.state = "leaving";
+  } else {
+    state = "closed";
   }
 }
 
@@ -1238,6 +1640,7 @@ function resetMug() {
 
   mug.state = "entering";
 }
+
 //Setting reset function for umbrella template
 function resetUmbrella() {
   traitstick.x1 = 0;
@@ -1246,6 +1649,7 @@ function resetUmbrella() {
   tri3.x2 = 0;
   tri3.x3 = 0;
 }
+
 //Setting reset function for sun template
 function resetSun() {
   circle0.x = 0;
@@ -1266,6 +1670,7 @@ function resetSun() {
   traitray8.x1 = 0;
   traitray8.x2 = 0;
 }
+
 //Setting reset function for face template
 function resetFace() {
   circle1.x = 0;
@@ -1276,6 +1681,7 @@ function resetFace() {
   smile1.x3 = 0;
   smile1.x4 = 0;
 }
+
 //Setting reset function for bird template
 function resetBird() {
   circle1.x = 0;
@@ -1285,6 +1691,7 @@ function resetBird() {
   tri2.x2 = 0;
   tri2.x3 = 0;
 }
+
 //Setting reset function for bear template
 function resetBear() {
   circle1.x = 0;
@@ -1295,6 +1702,7 @@ function resetBear() {
   circle12.x = 0;
   circle13.x = 0;
 }
+
 //Setting reset function for cat template
 function resetCat() {
   circle1.x = 0;
@@ -1319,8 +1727,9 @@ function resetCat() {
   traitwhisker4.x1 = 20;
   traitwhisker4.x2 = 80;
 }
-//Setting reset function for dog template
-function resetDog() {
+
+//Setting reset function for rabbit template
+function resetRabbit() {
   circle14.x = 0;
   circle2.x = 28;
   circle3.x = -28;
@@ -1339,187 +1748,12 @@ function resetDog() {
   traitwhisker4.x2 = 80;
   rectangle1.x = 0;
 }
-//Setting comment in level1
-function simulationmessage1() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("Let's start with an umbrella drawing!", width / 2, 550);
-  pop();
-}
-//Setting comment in level2
-function simulationmessage2() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("Good job! Now, try to draw a sun!", width / 2, 550);
-  pop();
-}
-//Setting comment in level3
-function simulationmessage3() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("Great! Make people smile!", width / 2, 550);
-  pop();
-}
-//Setting comment in level4
-function simulationmessage4() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("Be friend with nature!", width / 2, 550);
-  pop();
-}
-//Setting comment in level5
-function simulationmessage5() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("I'm sure you can't resist to this adorable bear!", width / 2, 550);
-  pop();
-}
-//Setting comment in level6
-function simulationmessage6() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text("Let's do something a little more complex...", width / 2, 550);
-  pop();
-}
-//Setting comment in level7
-function simulationmessage7() {
-  push();
-  textFont("Sansita Swashed");
-  textSize(35);
-  fill(255);
-  stroke(0);
-  strokeWeight(5);
-  textAlign(CENTER, CENTER);
-  text(
-    "Your shift is almost done! Give the best that you can!",
-    width / 2,
-    550
-  );
-  pop();
-}
-function displaytable() {
-  push();
-  //Display table image
-  image(table.image, windowWidth, windowHeight);
-  background(table.image);
-  pop();
-}
-//Setting coffee cup movement
 
-function move() {
-  plate.x += plate.vx;
-  plate.y += plate.vy;
-  shadow.x += shadow.vx;
-  shadow.y += shadow.vy;
-  handle.x += handle.vx;
-  handle.y += handle.vy;
-  mug.x += mug.vx;
-  mug.y += mug.vy;
-  coffee.x += coffee.vx;
-  coffee.y += coffee.vy;
+//Setting when mug is going off the screen
+function mugLeave() {
+  mug.state = "leaving";
 }
 
-//Setting template circles movements
-function circlemove(circle) {
-  circle.x += circle.vx;
-  circle.y += circle.vy;
-}
-//Setting template circles movements
-function rectanglemove(rectangle) {
-  rectangle.x += rectangle.vx;
-  rectangle.y += rectangle.vy;
-}
-//Setting template lines movements
-function traitmove(trait) {
-  trait.x1 += trait.vx;
-  trait.y1 += trait.vy;
-  trait.y2 += trait.vy;
-  trait.x2 += trait.vx;
-}
-//Setting template triangles movements
-function trimove(tri) {
-  tri.x1 += tri.vx;
-  tri.y1 += tri.vy;
-  tri.y2 += tri.vy;
-  tri.x2 += tri.vx;
-  tri.y3 += tri.vy;
-  tri.x3 += tri.vx;
-}
-//Setting template curves movements
-function smilemove(smile) {
-  smile.x1 += smile.vx;
-  smile.y1 += smile.vy;
-  smile.x2 += smile.vx;
-  smile.y2 += smile.vy;
-  smile.x3 += smile.vx;
-  smile.y3 += smile.vy;
-  smile.x4 += smile.vx;
-  smile.y4 += smile.vy;
-}
-//Setting cup speed
-function acceleration() {
-  plate.x += plate.speed;
-  shadow.x += shadow.speed;
-  handle.x += handle.speed;
-  mug.x += mug.speed;
-  coffee.x += coffee.speed;
-}
-//Setting template circles speed
-function circleacceleration(circle) {
-  circle.x += circle.speed;
-}
-//Setting template circles speed
-function rectangleacceleration(rectangle) {
-  rectangle.x += rectangle.speed;
-}
-//Setting template curves speed
-function smileacceleration(smile) {
-  smile.x1 += smile.speed;
-  smile.x2 += smile.speed;
-  smile.x3 += smile.speed;
-  smile.x4 += smile.speed;
-}
-//Setting template triangles speed
-function triacceleration(tri) {
-  tri.x1 += tri.speed;
-  tri.x2 += tri.speed;
-  tri.x3 += tri.speed;
-}
-//Setting template lines speed
-function traitacceleration(trait) {
-  trait.x1 += trait.speed;
-  trait.x2 += trait.speed;
-}
 //Diplaying the images
 function display() {
   displayplate();
@@ -1527,47 +1761,6 @@ function display() {
   displayhandle();
   displaymug();
   displaycoffee();
-}
-function displayplate() {
-  //Display coffee cup
-  push();
-  fill(plate.fill.r, plate.fill.g, plate.fill.b);
-  ellipse(plate.x, height / 2, plate.w, plate.h);
-  pop();
-}
-function displayshadow() {
-  //Display shadow
-  push();
-  stroke(shadow.stroke);
-  strokeWeight(shadow.strokeWeight);
-  ellipse(shadow.x, height / 2, shadow.w, shadow.h);
-  pop();
-}
-function displayhandle() {
-  //Display handle
-  push();
-  fill(handle.fill.r, handle.fill.g, handle.fill.b);
-  stroke(handle.stroke);
-  strokeWeight(handle.strokeWeight);
-  rectMode(CORNER);
-  rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
-  pop();
-}
-function displaymug() {
-  //Display mug
-  push();
-  fill(mug.fill.r, mug.fill.g, mug.fill.b);
-  stroke(mug.stroke);
-  strokeWeight(mug.strokeWeight);
-  ellipse(mug.x, height / 2, mug.w, mug.h);
-  pop();
-}
-function displaycoffee() {
-  //Display coffee
-  push();
-  fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
-  ellipse(coffee.x, height / 2, coffee.w, coffee.h);
-  pop();
 }
 
 //Display umbrella drawing
@@ -1580,6 +1773,7 @@ function umbrella() {
   line(traitstick.x1, traitstick.y1, traitstick.x2, traitstick.y2);
   pop();
 }
+
 //Display sun drawing
 function sun() {
   push();
@@ -1594,7 +1788,8 @@ function sun() {
   displaytrait(traitray8);
   pop();
 }
-//Display smiley drawing
+
+//Display face drawing
 function face() {
   push();
   displaycirclecenter(circle1);
@@ -1603,6 +1798,7 @@ function face() {
   displaycurve(smile1);
   pop();
 }
+
 //Display bird drawing
 function bird() {
   push();
@@ -1612,6 +1808,7 @@ function bird() {
   displaytri(tri2);
   pop();
 }
+
 //Display bear drawing
 function bear() {
   push();
@@ -1624,6 +1821,7 @@ function bear() {
   displaycircle(circle13);
   pop();
 }
+
 //Display cat drawing
 function cat() {
   push();
@@ -1640,8 +1838,9 @@ function cat() {
   displaytrait(traitwhisker4);
   pop();
 }
-//Display dog drawing
-function dog() {
+
+//Display rabbit drawing
+function rabbit() {
   push();
   displaycirclecenter(circle14);
   displaycircle(circle2);
@@ -1659,6 +1858,61 @@ function dog() {
   displaytrait(traitteeth);
   pop();
 }
+
+//Display table image
+function displaytable() {
+  push();
+  image(table.image, windowWidth, windowHeight);
+  background(table.image);
+  pop();
+}
+
+//Display coffee cup
+function displayplate() {
+  push();
+  fill(plate.fill.r, plate.fill.g, plate.fill.b);
+  ellipse(plate.x, height / 2, plate.w, plate.h);
+  pop();
+}
+
+//Display shadow
+function displayshadow() {
+  push();
+  stroke(shadow.stroke);
+  strokeWeight(shadow.strokeWeight);
+  ellipse(shadow.x, height / 2, shadow.w, shadow.h);
+  pop();
+}
+
+//Display handle
+function displayhandle() {
+  push();
+  fill(handle.fill.r, handle.fill.g, handle.fill.b);
+  stroke(handle.stroke);
+  strokeWeight(handle.strokeWeight);
+  rectMode(CORNER);
+  rect(handle.x, height / 2, handle.w, handle.h, handle.tl, handle.tr);
+  pop();
+}
+
+//Display mug
+function displaymug() {
+  push();
+  fill(mug.fill.r, mug.fill.g, mug.fill.b);
+  stroke(mug.stroke);
+  strokeWeight(mug.strokeWeight);
+  ellipse(mug.x, height / 2, mug.w, mug.h);
+  pop();
+}
+
+//Display coffee
+function displaycoffee() {
+  push();
+  fill(coffee.fill.r, coffee.fill.g, coffee.fill.b);
+  ellipse(coffee.x, height / 2, coffee.w, coffee.h);
+  pop();
+}
+
 //Display circle in the center of templates
 function displaycirclecenter(circle) {
   push();
@@ -1668,6 +1922,7 @@ function displaycirclecenter(circle) {
   ellipse(circle.x, height / 2, circle.w, circle.h);
   pop();
 }
+
 //Display template circles
 function displaycircle(circle) {
   push();
@@ -1677,7 +1932,8 @@ function displaycircle(circle) {
   ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
-//Display template circles
+
+//Display template rectangles
 function displayrectangle(rectangle) {
   push();
   noFill();
@@ -1687,6 +1943,7 @@ function displayrectangle(rectangle) {
   rect(rectangle.x, rectangle.y, rectangle.w, rectangle.h);
   pop();
 }
+
 //Display template triangles
 function displaytri(tri) {
   push();
@@ -1696,6 +1953,7 @@ function displaytri(tri) {
   triangle(tri.x1, tri.y1, tri.x2, tri.y2, tri.x3, tri.y3);
   pop();
 }
+
 //Display template curves
 function displaycurve(smile) {
   push();
@@ -1714,6 +1972,7 @@ function displaycurve(smile) {
   );
   pop();
 }
+
 //Display template lines
 function displaytrait(trait) {
   push();
@@ -1721,45 +1980,6 @@ function displaytrait(trait) {
   stroke(trait.stroke.r, trait.stroke.g, trait.stroke.b);
   strokeWeight(trait.strokeWeight);
   line(trait.x1, trait.y1, trait.x2, trait.y2);
-  pop();
-}
-
-//Setting the good ending
-function open() {
-  push();
-  image(success.image, windowWidth, windowHeight);
-  background(success.image);
-  textFont("Sansita Swashed");
-  textSize(65);
-  stroke(0);
-  strokeWeight(5);
-  fill(255);
-  textAlign(CENTER, CENTER);
-  text("Congratulations!", width / 2, height / 2);
-  push();
-  textSize(35);
-  text("Customers ADORE your coffees!", width / 2, 450);
-  pop();
-  pop();
-}
-//Setting the bad ending
-function closed() {
-  push();
-  music.pause;
-  image(failure.image, windowWidth, windowHeight);
-  background(failure.image);
-  textFont("Bebas Neue");
-  stroke(0);
-  strokeWeight(5);
-  textSize(65);
-  fill(255);
-  textAlign(CENTER, CENTER);
-  text("OH NO!", width / 2, 500);
-  push();
-  textSize(25);
-  text("Coffeeccino goes bankrupt!", width / 2, 550);
-  text("You will have to find another job...", width / 2, 600);
-  pop();
   pop();
 }
 
@@ -1792,19 +2012,16 @@ function keyPressed() {
 
   pop();
 }
-//Setting when to check if music is playing
-function tryMusic() {
-  if (!music.isPlaying()) {
-    music.loop();
-  }
-}
+
 //Setting mouse pressed use
 function mouseIsPressed() {
-  let d = dist(mouseX, mouseY, user.x, user.y);
+  let d = dist(mouseX, mouseY, windowWidth, windowHeight);
   if (d < user.size / 2) {
     user.drawing = true;
   }
 }
+
+//Setting mouse released use
 function mouseReleased() {
   user.drawing = false;
 }
@@ -1821,80 +2038,9 @@ function mouseDragged() {
   }
 }
 
-//Setting when mug is going off the screen
-function mugLeave() {
-  mug.state = "leaving";
-}
-
-//Setting randomly if user succeed or not level1
-function giveFeedback1() {
-  let r = random();
-
-  if (r < 0) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-
-//
-//Setting randomly if user succeed or not level2
-function giveFeedback2() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-//Setting randomly if user succeed or not level3
-function giveFeedback3() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-//Setting randomly if user succeed or not level4
-function giveFeedback4() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-//Setting randomly if user succeed or not level5
-function giveFeedback5() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-//Setting randomly if user succeed or not level6
-function giveFeedback6() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
-  }
-}
-//Setting randomly if user succeed or not level7
-function giveFeedback7() {
-  let r = random();
-
-  if (r < 1) {
-    mug.state = "leaving";
-  } else {
-    state = "closed";
+//Setting when to check if music is playing
+function tryMusic() {
+  if (!music.isPlaying()) {
+    music.loop();
   }
 }
