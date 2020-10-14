@@ -9,7 +9,7 @@ However,if the user miss one of them in a level, the cafe goes bankrupt and it's
 "use strict";
 
 let instructions =
-  "Hello new employee!\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to \ncreate succulent lattes!\nPress your mouse and drag it to make drawings on \nlatte\nFollow the templates to create beautiful artworks!\nOnce you're done, press the spacebar to give the order to the customer.\nBe artsy, have fun and good luck!";
+  "Hello new employee!\n\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to create succulent lattes!\n\nPress your mouse and drag it to make drawings on latte\nFollow the templates to create beautiful artworks!\nOnce you're done, press the spacebar to give the order to the customer.\n\nBe artsy, have fun and good luck!";
 
 let user = {
   x: 2500,
