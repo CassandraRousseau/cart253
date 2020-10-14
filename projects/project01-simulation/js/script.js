@@ -1557,7 +1557,7 @@ function traitacceleration(trait) {
 function giveFeedback1() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1568,7 +1568,7 @@ function giveFeedback1() {
 function giveFeedback2() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1579,7 +1579,7 @@ function giveFeedback2() {
 function giveFeedback3() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1590,7 +1590,7 @@ function giveFeedback3() {
 function giveFeedback4() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1601,7 +1601,7 @@ function giveFeedback4() {
 function giveFeedback5() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1612,7 +1612,7 @@ function giveFeedback5() {
 function giveFeedback6() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1623,7 +1623,7 @@ function giveFeedback6() {
 function giveFeedback7() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.7) {
     mug.state = "leaving";
   } else {
     state = "closed";
