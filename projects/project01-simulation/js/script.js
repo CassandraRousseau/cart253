@@ -744,7 +744,7 @@ function preload() {
 
 // Creating the canvas.
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600, 600);
 }
 
 //Setting the states of the game
@@ -913,8 +913,6 @@ function simulation1() {
   //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
-    trimove(tri3);
-    traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
@@ -935,8 +933,6 @@ function simulation1() {
   //When mug leaves the screen
   else if (mug.state === "leaving") {
     mug.speed = 3;
-    trimove(tri3);
-    traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
@@ -1940,7 +1936,7 @@ function displaycircle(circle) {
   noFill();
   stroke(circle.stroke.r, circle.stroke.g, circle.stroke.b);
   strokeWeight(circle.strokeWeight);
-  ellipse(circle.x, height / 2, circle.w, circle.h);
+  ellipse(circle.x, circle.y, circle.w, circle.h);
   pop();
 }
 
@@ -1951,7 +1947,7 @@ function displayrectangle(rectangle) {
   stroke(rectangle.stroke.r, rectangle.stroke.g, rectangle.stroke.b);
   strokeWeight(rectangle.strokeWeight);
   rectMode(CENTER);
-  rect(rectangle.x, height / 2, rectangle.w, rectangle.h);
+  rect(rectangle.x, rectangle.y, rectangle.w, rectangle.h);
   pop();
 }
 
@@ -1961,7 +1957,7 @@ function displaytri(tri) {
   noFill();
   stroke(tri.stroke.r, tri.stroke.g, tri.stroke.b);
   strokeWeight(tri.strokeWeight);
-  triangle(height / 2, tri.y1, height / 2, tri.y2, height / 2, tri.y3);
+  triangle(tri.x1, tri.y1, tri.x2, tri.y2, tri.x3, tri.y3);
   pop();
 }
 
@@ -1972,14 +1968,14 @@ function displaycurve(smile) {
   stroke(smile.stroke.r, smile.stroke.g, smile.stroke.b);
   strokeWeight(smile.strokeWeight);
   curve(
-    height / 2,
+    smile.x1,
     smile.y1,
-    height / 2,
+    smile.x2,
     smile.y2,
-    height / 2,
+    smile.x3,
     smile.y3,
     smile.x4,
-    height / 2
+    smile.y4
   );
   pop();
 }
@@ -1990,7 +1986,7 @@ function displaytrait(trait) {
   noFill();
   stroke(trait.stroke.r, trait.stroke.g, trait.stroke.b);
   strokeWeight(trait.strokeWeight);
-  line(trait.x1, height / 2, trait.x2, height / 2);
+  line(trait.x1, trait.y1, trait.x2, trait.y2);
   pop();
 }
 
