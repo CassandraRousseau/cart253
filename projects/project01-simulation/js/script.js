@@ -913,6 +913,8 @@ function simulation1() {
   //When mug enters the screen
   if (mug.state === "entering") {
     mug.speed = 3;
+    trimove(tri3);
+    traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
@@ -933,6 +935,8 @@ function simulation1() {
   //When mug leaves the screen
   else if (mug.state === "leaving") {
     mug.speed = 3;
+    trimove(tri3);
+    traitmove(traitstick);
     acceleration();
     triacceleration(tri3);
     traitacceleration(traitstick);
