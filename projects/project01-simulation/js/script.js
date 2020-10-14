@@ -890,7 +890,7 @@ function open() {
 //Setting the bad ending
 function closed() {
   push();
-  music.pause;
+  music.pause();
   image(failure.image, windowWidth, windowHeight);
   background(failure.image);
   textFont("Bebas Neue");
