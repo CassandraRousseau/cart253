@@ -893,14 +893,15 @@ function closed() {
   textFont("Bebas Neue");
   stroke(0);
   strokeWeight(5);
-  textSize(65);
+  textSize(105);
   fill(255);
   textAlign(CENTER, CENTER);
-  text("OH NO!", width / 2, 500);
+  text("OH NO!", width / 2, 400);
   push();
-  textSize(25);
-  text("Coffeeccino goes bankrupt!", width / 2, 550);
-  text("You will have to find another job...", width / 2, 600);
+  textSize(30);
+  text("Coffeeccino goes bankrupt!", width / 2, 500);
+  text("You will have to find another job...", width / 2, 550);
+  text("Press Spacebar to restart", width / 2, 600);
   pop();
   pop();
 }
@@ -2007,6 +2008,8 @@ function keyPressed() {
       giveFeedback6();
     } else if (state === "level7") {
       giveFeedback7();
+    } else if (state === "closed") {
+      location.reload();
     }
   }
 
