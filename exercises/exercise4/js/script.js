@@ -1,6 +1,6 @@
 /**************************************************
-Template p5 project
-Pippin Barr
+Exercise 4:The Age of Aquariums
+Cassandra Rousseau
 
 Here is a description of this template p5 project.
 **************************************************/
