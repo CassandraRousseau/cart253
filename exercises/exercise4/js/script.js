@@ -8,8 +8,8 @@ Here is a description of this template p5 project.
 let hand = {
   x: 0,
   y: 0,
-  w: 100,
-  h: 100,
+  w: 250,
+  h: 250,
   image: undefined,
 };
 let garden = [];
@@ -19,7 +19,9 @@ let state = "title";
 //
 // Description of setup() goes here.
 
-function preload() {}
+function preload() {
+  hand.image = loadImage("assets/images/hand.png");
+}
 function setup() {
   createCanvas(600, 600);
 
@@ -203,7 +205,12 @@ function displayFish(fish) {
   ellipse(fish.x, fish.y, fish.size);
   pop();
 }
-
+function displayHand() {
+  push();
+  imageMode(CENTER);
+  image(hand.image, mouseX, mouseY, hand.w, hand.h);
+  pop();
+}
 function mousePressed() {
   let fish = createFish(mouseX, mouseY);
   school.push(fish);
