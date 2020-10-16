@@ -13,6 +13,7 @@ let hand = {
   image: undefined,
 };
 let garden = [];
+let displayGarden;
 let gardenSize = 30;
 let state = "title";
 // setup()
@@ -21,6 +22,11 @@ let state = "title";
 
 function preload() {
   hand.image = loadImage("assets/images/hand.png");
+  garden[0] = loadImage(`assets/images/flower-0.png`);
+  garden[1] = loadImage(`assets/images/flower-1.png`);
+  garden[2] = loadImage(`assets/images/flower-2.png`);
+  garden[3] = loadImage(`assets/images/flower-3.png`);
+  garden[4] = loadImage(`assets/images/flower-4.png`);
 }
 function setup() {
   createCanvas(600, 600);
