@@ -6,9 +6,28 @@ Here is a description of this template p5 project.
 **************************************************/
 "use strict";
 let intro="Hello kids!",
- know you like pretty things right? Why not picking some beautiful flowers?"
-let right=""
-let wrong=""
+ "You like pretty things right?",
+ "Why not picking some beautiful flowers?",
+ "Pick all the flowers surronding in the garden!",
+ "Press your mouse to pick a flower!",
+ "Look at the countdown!If time is out, you will not be able to make a bouquet! ",
+ "Have fun!"
+
+let right="Congrats!",
+"You made the right choice!",
+"Sounds pretty confusing right?",
+"Well, by not picking flowers, your showing that you are taking care of nature.",
+"Taking care of your ecosystem is a good quality!",
+"Take care of yourself and your surroundings. ",
+"Take care of the planet, we only have one!"
+
+let wrong="Why did you pick flowers?",
+"By doing this, you destroyed your ecosystem!",
+"Plants have to be nurture correctly!",
+"Not everything is just about fun and your own desires!",
+"Take care of yourself and your surroundings. ",
+"Take care of the planet, we only have one!"
+
 let hand = {
   x: 0,
   y: 0,
@@ -105,11 +124,7 @@ function goodEnding() {
   fill(225, 125, 125);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
-  text("Congratulations!", width / 2, height / 2);
-  push();
-  textSize(45);
-  text("Love is spread!", width / 2, 400);
-  pop();
+  text(right, 10, 50, windowWidth, windowHeight);
   pop();
 }
 function badEnding() {
@@ -118,11 +133,7 @@ function badEnding() {
   fill(0);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
-  text("Game Over", width / 2, height / 2);
-  push();
-  textSize(40);
-  text("Sadness conquered the world :'(", width / 2, 400);
-  pop();
+  text(wrong, 10, 50, windowWidth, windowHeight);
   pop();
 }
 function moveFlower(flower) {
