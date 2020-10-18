@@ -5,28 +5,33 @@ Cassandra Rousseau
 Here is a description of this template p5 project.
 **************************************************/
 "use strict";
-let intro="Hello kids!",
- "You like pretty things right?",
- "Why not picking some beautiful flowers?",
- "Pick all the flowers surronding in the garden!",
- "Press your mouse to pick a flower!",
- "Look at the countdown!If time is out, you will not be able to make a bouquet! ",
- "Have fun!"
+let intro = [
+  "Hello kids!",
+  "You like pretty things right?",
+  "Why not picking some beautiful flowers?",
+  "Pick all the flowers surronding in the garden!",
+  "Press your mouse to pick a flower!",
+  "Look at the countdown!If time is out, you will not be able to make a bouquet! ",
+  "Have fun!",
+];
+let right = [
+  "Congrats!",
+  "You made the right choice!",
+  "Sounds pretty confusing right?",
+  "Well, by not picking flowers, your showing that you are taking care of nature.",
+  "Taking care of your ecosystem is a good quality!",
+  "Take care of yourself and your surroundings. ",
+  "Take care of the planet, we only have one!",
+];
 
-let right="Congrats!",
-"You made the right choice!",
-"Sounds pretty confusing right?",
-"Well, by not picking flowers, your showing that you are taking care of nature.",
-"Taking care of your ecosystem is a good quality!",
-"Take care of yourself and your surroundings. ",
-"Take care of the planet, we only have one!"
-
-let wrong="Why did you pick flowers?",
-"By doing this, you destroyed your ecosystem!",
-"Plants have to be nurture correctly!",
-"Not everything is just about fun and your own desires!",
-"Take care of yourself and your surroundings. ",
-"Take care of the planet, we only have one!"
+let wrong = [
+  "Why did you pick flowers?",
+  "By doing this, you destroyed your ecosystem!",
+  "Plants have to be nurture correctly!",
+  "Not everything is just about fun and your own desires!",
+  "Take care of yourself and your surroundings. ",
+  "Take care of the planet, we only have one!",
+];
 
 let hand = {
   x: 0,
@@ -38,6 +43,7 @@ let hand = {
 let garden = [];
 let displayGarden;
 let gardenSize = 30;
+let currentLine = 0;
 let state = "title";
 // setup()
 //
@@ -52,9 +58,8 @@ function preload() {
   garden[4] = loadImage(`assets/images/flower-4.png`);
 }
 function setup() {
-  createCanvas(600, 600);
-
-  for (let i = 0; i < schoolSize; i++) {
+  createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < gardenSize; i++) {
     let fish = createFlower(random(0, width), random(0, height));
     garden.push(flower);
   }
@@ -64,7 +69,8 @@ function createFlower(x, y) {
   let flower = {
     x: x,
     y: y,
-    size: 150,
+    w: 150,
+    h: 150,
     vx: 0,
     vy: 0,
     speed: 2,
@@ -75,7 +81,6 @@ function createFlower(x, y) {
 //
 // Description of draw() goes here.
 function draw() {
-  background(0);
   background(100, 245, 90);
   //Making the order of the simulation
   if (state === "title") {
@@ -115,7 +120,8 @@ function instructions() {
   fill(255);
   textAlign(LEFT, TOP);
   textFont("CCSignLanguage");
-  text(intro, 10, 50, windowWidth, windowHeight);
+  let dialog1 = intro[currentLine];
+  text(dialog1, 10, 50, windowWidth, windowHeight);
   pop();
 }
 function goodEnding() {
@@ -124,7 +130,8 @@ function goodEnding() {
   fill(225, 125, 125);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
-  text(right, 10, 50, windowWidth, windowHeight);
+  let dialog2 = right[currentLine];
+  text(dialog2, 10, 50, windowWidth, windowHeight);
   pop();
 }
 function badEnding() {
@@ -133,7 +140,8 @@ function badEnding() {
   fill(0);
   textFont("CCSignLanguage");
   textAlign(CENTER, CENTER);
-  text(wrong, 10, 50, windowWidth, windowHeight);
+  let dialog3 = wrong[currentLine];
+  text(dialog3, 10, 50, windowWidth, windowHeight);
   pop();
 }
 function moveFlower(flower) {
@@ -223,7 +231,7 @@ function displayFlower(flower) {
   push();
   fill(200, 100, 100);
   noStroke();
-  ellipse(flower.x, flower.y, flower.size);
+  ellipse(flower.x, flower.y, flower.w, flower.h);
   pop();
 }
 function displayHand() {
@@ -235,4 +243,16 @@ function displayHand() {
 function mousePressed() {
   let fish = createFish(mouseX, mouseY);
   garden.push(flower);
+}
+function keyPressed() {
+  if (keyCode === 32) {
+    currentLine = currentLine + 1;
+    if (currentLine === intro.length) {
+      currentLine = intro.length - 1;
+    } else if (currentLine === right.length) {
+      currentLine = right.length - 1;
+    } else if (currentLine === wrong.length) {
+      currentLine = wrong.length - 1;
+    }
+  }
 }
