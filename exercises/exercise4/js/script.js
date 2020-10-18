@@ -2,7 +2,10 @@
 Exercise 4:The Age of Aquariums
 Cassandra Rousseau
 
-Here is a description of this template p5 project.
+Picking flowers simulation. It starts with a title screen, followed by an instruction screen.
+The goal is to pick (or not?) flowers in the garden. The player have to choose to pick all the flowers
+(or not) before the end of the countdown. When time is out, a surprising ending will be revealed to the player depending
+of his choice during the simulation...
 **************************************************/
 "use strict";
 let intro = [
@@ -40,6 +43,7 @@ let hand = {
   h: 250,
   image: undefined,
 };
+let checkFlowerEliminated = [];
 let garden = [];
 let displayGarden;
 let gardenSize = 30;
@@ -97,8 +101,9 @@ function draw() {
 }
 function simulation() {
   for (let i = 0; i < garden.length; i++) {
-    moveFish(garden[i]);
-    displayFish(garden[i]);
+    moveFlower(garden[i]);
+    displayFlower(garden[i]);
+    displayFlower = random(garden[i]);
   }
 }
 function title() {
@@ -241,13 +246,23 @@ function displayHand() {
   pop();
 }
 function mousePressed() {
-  let fish = createFish(mouseX, mouseY);
-  garden.push(flower);
+  for (let i = 0; i < garden.length; i++) {
+    let flower = garden[i];
+    let d = dist(mouseX, mouseY, flower.x, flower.y);
+    if (d < flower.w / 2 + flower.h / 2) {
+      garden.splice(i, 1);
+      break;
+    }
+  }
 }
 function keyPressed() {
   if (keyCode === 32) {
     currentLine = currentLine + 1;
-    if (currentLine === intro.length) {
+    if (state === title) {
+      state = instructions;
+    } else if (state === instructions) {
+      state = simulation;
+    } else if (currentLine === intro.length) {
       currentLine = intro.length - 1;
     } else if (currentLine === right.length) {
       currentLine = right.length - 1;
