@@ -5,6 +5,10 @@ Cassandra Rousseau
 Here is a description of this template p5 project.
 **************************************************/
 "use strict";
+let intro="Hello kids!",
+ know you like pretty things right? Why not picking some beautiful flowers?"
+let right=""
+let wrong=""
 let hand = {
   x: 0,
   y: 0,
@@ -32,21 +36,21 @@ function setup() {
   createCanvas(600, 600);
 
   for (let i = 0; i < schoolSize; i++) {
-    let fish = createFish(random(0, width), random(0, height));
-    school.push(fish);
+    let fish = createFlower(random(0, width), random(0, height));
+    garden.push(flower);
   }
 }
 
-function createFish(x, y) {
-  let fish = {
+function createFlower(x, y) {
+  let flower = {
     x: x,
     y: y,
-    size: 50,
+    size: 150,
     vx: 0,
     vy: 0,
     speed: 2,
   };
-  return fish;
+  return flower;
 }
 // draw()
 //
@@ -68,9 +72,9 @@ function draw() {
   }
 }
 function simulation() {
-  for (let i = 0; i < school.length; i++) {
-    moveFish(school[i]);
-    displayFish(school[i]);
+  for (let i = 0; i < garden.length; i++) {
+    moveFish(garden[i]);
+    displayFish(garden[i]);
   }
 }
 function title() {
@@ -121,16 +125,16 @@ function badEnding() {
   pop();
   pop();
 }
-function moveFish(fish) {
+function moveFlower(flower) {
   let change = random(0, 1);
   if (change < 0.05) {
-    fish.vx = random(-fish.speed, fish.speed);
-    fish.vy = random(-fish.speed, fish.speed);
+    flower.vx = random(-flower.speed, flower.speed);
+    flower.vy = random(-flower.speed, flower.speed);
   }
-  fish.x += fish.vx;
-  fish.y += fish.vy;
-  fish.x = constrain(fish.x, 0, width);
-  fish.y = constrain(fish.y, 0, height);
+  flower.x += flower.vx;
+  flower.y += flower.vy;
+  flower.x = constrain(flower.x, 0, width);
+  flower.y = constrain(flower.y, 0, height);
 }
 function checkheartbreakEliminated() {
   isheartbreakEliminated(heartbreak1);
@@ -204,11 +208,11 @@ function invisibleheartTouched() {
   }
 }
 
-function displayFish(fish) {
+function displayFlower(flower) {
   push();
   fill(200, 100, 100);
   noStroke();
-  ellipse(fish.x, fish.y, fish.size);
+  ellipse(flower.x, flower.y, flower.size);
   pop();
 }
 function displayHand() {
@@ -219,5 +223,5 @@ function displayHand() {
 }
 function mousePressed() {
   let fish = createFish(mouseX, mouseY);
-  school.push(fish);
+  garden.push(flower);
 }
