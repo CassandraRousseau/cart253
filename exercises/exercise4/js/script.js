@@ -106,8 +106,8 @@ function draw() {
 function simulation() {
   for (let i = 0; i < garden.length; i++) {
     moveFlower(garden[i]);
-    checkFlowerEliminated();
     displayFlower(garden[i]);
+    timeCheck();
     displayFlower = random(garden[i]);
     displayImage = random(images);
   }
@@ -166,9 +166,12 @@ function moveFlower(flower) {
   flower.x = constrain(flower.x, 0, width);
   flower.y = constrain(flower.y, 0, height);
 }
-function checkFlowerEliminated() {
-  if (!flower.active) {
+
+function timeCheck() {
+  if (frameCount > 300 && !flower.active) {
     state = "wrong";
+  } else {
+    state = "right";
   }
 }
 function displayFlower(flower) {
