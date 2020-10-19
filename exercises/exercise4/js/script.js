@@ -9,13 +9,14 @@ of his choice during the simulation...
 **************************************************/
 "use strict";
 let intro = [
+  "Each time you want to read the text, press Spacebar",
   "Hello kids!",
   "You like pretty things right?",
   "Why not picking some beautiful flowers?",
   "Pick all the flowers surronding in the garden!",
   "Press your mouse to pick a flower!",
   "Look at the countdown!If time is out, you will not be able to make a bouquet! ",
-  "Have fun!",
+  "Have fun!(Press Enter once you finish to read)",
 ];
 let right = [
   "Congrats!",
@@ -44,9 +45,6 @@ let hand = {
   image: undefined,
 };
 let isFlowerEliminated;
-let garden = [];
-let displayGarden;
-let gardenSize = 30;
 let currentLine = 0;
 let state = "title";
 let images = [];
@@ -66,10 +64,7 @@ function preload() {
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for (let i = 0; i < gardenSize; i++) {
-    let flower = createFlower(random(0, width), random(0, height));
-    garden.push(flower);
-  }
+  noCursor();
 }
 
 function createFlower(x, y) {
@@ -80,7 +75,7 @@ function createFlower(x, y) {
     h: 150,
     vx: 0,
     vy: 0,
-    speed: 2,
+    speed: 1,
   };
   return flower;
 }
@@ -104,12 +99,13 @@ function draw() {
   }
 }
 function simulation() {
-  for (let i = 0; i < garden.length; i++) {
-    moveFlower(garden[i]);
-    displayFlower(garden[i]);
-    timeCheck();
-    displayFlower = random(garden[i]);
+  for (let i = 0; i < images.length; i++) {
+    let flower = images[i];
+    images.push(flower);
     displayImage = random(images);
+    displayFlower(images[i]);
+    displayHand();
+    moveFlower(images[i]);
   }
 }
 function title() {
@@ -121,7 +117,7 @@ function title() {
   text("Pick the Flowers!", width / 2, height / 2);
   push();
   textSize(35);
-  text("Presse Spacebar to start", width / 2, (2 * height) / 3);
+  text("Presse Enter to start", width / 2, (2 * height) / 3);
   pop();
   pop();
 }
@@ -132,7 +128,7 @@ function instructions() {
   textAlign(LEFT, TOP);
   textFont("Lemonada");
   let dialog1 = intro[currentLine];
-  text(dialog1, 10, 50, windowWidth, windowHeight);
+  text(dialog1, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
 function goodEnding() {
@@ -142,62 +138,63 @@ function goodEnding() {
   textFont("Lemonada");
   textAlign(CENTER, CENTER);
   let dialog2 = right[currentLine];
-  text(dialog2, 10, 50, windowWidth, windowHeight);
+  text(dialog2, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
 function badEnding() {
   push();
+  background(0);
   textSize(90);
   fill(0);
   textFont("Lemonada");
   textAlign(CENTER, CENTER);
   let dialog3 = wrong[currentLine];
-  text(dialog3, 10, 50, windowWidth, windowHeight);
+  text(dialog3, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
 function moveFlower(flower) {
-  let change = random(0, 1);
-  if (change < 0.05) {
-    flower.vx = random(-flower.speed, flower.speed);
-    flower.vy = random(-flower.speed, flower.speed);
-  }
   flower.x += flower.vx;
   flower.y += flower.vy;
-  flower.x = constrain(flower.x, 0, width);
-  flower.y = constrain(flower.y, 0, height);
 }
 
-function timeCheck() {
-  if (frameCount > 300 && !flower.active) {
-    state = "wrong";
-  } else {
-    state = "right";
-  }
-}
-function displayFlower(flower) {
-  push();
-  fill(200, 100, 100);
-  noStroke();
-  ellipse(flower.x, flower.y, flower.w, flower.h);
-  pop();
-}
+//function timeCheck() {
+//  if (frameCount > 300 && !flower.active) {
+//    state = "wrong";
+//  } else {
+//    state = "right";
+//  }
+//}
+
 function displayHand() {
   push();
   imageMode(CENTER);
   image(hand.image, mouseX, mouseY, hand.w, hand.h);
   pop();
 }
+function displayFlower(flower) {
+  push();
+  imageMode(CENTER);
+  image(displayImage, random(0, width), random(0, height));
+  pop();
+}
 function mousePressed() {
-  for (let i = 0; i < garden.length; i++) {
-    let flower = garden[i];
+  for (let i = 0; i < images.length; i++) {
+    let flower = images[i];
     let d = dist(mouseX, mouseY, flower.x, flower.y);
     if (d < flower.w / 2 + flower.h / 2) {
-      garden.splice(i, 1);
+      images.splice(i, 1);
       break;
     }
   }
 }
 function keyPressed() {
+  if (keyCode === 13) {
+    if (state === "title") {
+      state = "instructions";
+    } else if (state === "instructions") {
+      state = "simulation";
+    }
+  }
   if (keyCode === 32) {
     currentLine = currentLine + 1;
     if (currentLine === intro.length) {
@@ -206,12 +203,6 @@ function keyPressed() {
       currentLine = right.length - 1;
     } else if (currentLine === wrong.length) {
       currentLine = wrong.length - 1;
-    }
-  } else if (keyCode === 13) {
-    if (state === "title") {
-      state = "instructions";
-    } else if (state === "instructions") {
-      state = "simulation";
     }
   }
 }
