@@ -15,14 +15,17 @@ let intro = [
   "Why not picking some beautiful flowers?",
   "Pick all the flowers surronding in the garden!",
   "Press your mouse to pick a flower!",
-  "Look at the countdown!If time is out, you will not be able to make a bouquet! ",
+  "Look at the countdown!",
+  "If time is out,",
+  "you will not be able to make a bouquet! ",
   "Have fun!(Press Enter once you finish to read)",
 ];
 let right = [
   "Congrats!",
   "You made the right choice!",
   "Sounds pretty confusing right?",
-  "Well, by not picking flowers, your showing that you are taking care of nature.",
+  "Well, by not picking flowers,",
+  "your showing that you are taking care of nature.",
   "Taking care of your ecosystem is a good quality!",
   "Take care of yourself and your surroundings. ",
   "Take care of the planet, we only have one!",
@@ -48,7 +51,9 @@ let isFlowerEliminated;
 let currentLine = 0;
 let state = "title";
 let images = [];
+let flowers = [];
 let numImages = 5;
+let numFlowers = 20;
 let displayImage;
 
 // setup()
@@ -64,18 +69,27 @@ function preload() {
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < numFlowers; i++) {
+    let flower = createFlower(
+      random(0, width),
+      random(0, height),
+      random(images)
+    );
+    flowers.push(flower);
+  }
   noCursor();
 }
 
-function createFlower(x, y) {
+function createFlower(x, y, flowerImage) {
   let flower = {
     x: x,
     y: y,
-    w: 150,
-    h: 150,
+    w: 100,
+    h: 100,
     vx: 0,
     vy: 0,
     speed: 1,
+    image: flowerImage,
   };
   return flower;
 }
@@ -93,19 +107,19 @@ function draw() {
   } else if (state === "simulation") {
     simulation();
   } else if (state === "goodEnding") {
-    love();
+    goodEnding();
   } else if (state === "badEnding") {
-    sadness();
+    badEnding();
   }
 }
 function simulation() {
-  for (let i = 0; i < images.length; i++) {
-    let flower = images[i];
-    moveFlower(images[i]);
-    displayImage = random(images);
-    displayFlower(images[i]);
+  for (let i = 0; i < flowers.length; i++) {
+    let flower = flowers[i];
+    moveFlower(flower);
+    displayFlower(flower);
     displayHand();
   }
+  //timeCheck();
 }
 function title() {
   push();
@@ -122,8 +136,8 @@ function title() {
 }
 function instructions() {
   push();
-  textSize(45);
-  fill(255);
+  textSize(85);
+  fill(225, 125, 125);
   textAlign(LEFT, TOP);
   textFont("Lemonada");
   let dialog1 = intro[currentLine];
@@ -135,7 +149,7 @@ function goodEnding() {
   textSize(85);
   fill(225, 125, 125);
   textFont("Lemonada");
-  textAlign(CENTER, CENTER);
+  textAlign(LEFT, TOP);
   let dialog2 = right[currentLine];
   text(dialog2, 10, height / 2, windowWidth, windowHeight);
   pop();
@@ -143,25 +157,42 @@ function goodEnding() {
 function badEnding() {
   push();
   background(0);
-  textSize(90);
-  fill(0);
+  textSize(85);
+  fill(225, 125, 125);
   textFont("Lemonada");
-  textAlign(CENTER, CENTER);
+  textAlign(LEFT, TOP);
   let dialog3 = wrong[currentLine];
   text(dialog3, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
 function moveFlower(flower) {
+  let dx = flower.x - mouseX;
+  let dy = flower.y - mouseY;
+  if (dx < 0) {
+    flower.vx = -flower.speed;
+  } else if (dx > 0) {
+    flower.vx = flower.speed;
+  }
+
+  if (dy < 0) {
+    flower.vy = -flower.speed;
+  } else if (dy > 0) {
+    flower.vy = flower.speed;
+  }
   flower.x += flower.vx;
   flower.y += flower.vy;
+  flower.x = constrain(flower.x, 0, width);
+  flower.y = constrain(flower.y, 0, height);
 }
 
 //function timeCheck() {
-//  if (frameCount > 300 && !flower.active) {
-//    state = "wrong";
-//  } else {
-//    state = "right";
-//  }
+//if (frameCount > 14400 && flowers.length === 0) {
+//  state = "badEnding";
+//  currentLine = 0;
+//} else {
+//  state = "goodEnding";
+//  currentLine = 0;
+//}
 //}
 
 function displayHand() {
@@ -170,18 +201,18 @@ function displayHand() {
   image(hand.image, mouseX, mouseY, hand.w, hand.h);
   pop();
 }
-function displayFlower() {
+function displayFlower(flower) {
   push();
   imageMode(CENTER);
-  image(displayImage, random(0, width), random(0, height));
+  image(flower.image, flower.x, flower.y);
   pop();
 }
 function mousePressed() {
-  for (let i = 0; i < images.length; i++) {
-    let flower = images[i];
+  for (let i = 0; i < flowers.length; i++) {
+    let flower = flowers[i];
     let d = dist(mouseX, mouseY, flower.x, flower.y);
     if (d < flower.w / 2 + flower.h / 2) {
-      images.splice(i, 1);
+      flowers.splice(i, 1);
       break;
     }
   }
@@ -196,11 +227,11 @@ function keyPressed() {
   }
   if (keyCode === 32) {
     currentLine = currentLine + 1;
-    if (currentLine === intro.length) {
+    if (currentLine === intro.length && state === "instructions") {
       currentLine = intro.length - 1;
-    } else if (currentLine === right.length) {
+    } else if (currentLine === right.length && state === "goodEnding") {
       currentLine = right.length - 1;
-    } else if (currentLine === wrong.length) {
+    } else if (currentLine === wrong.length && state === "badEnding") {
       currentLine = wrong.length - 1;
     }
   }
