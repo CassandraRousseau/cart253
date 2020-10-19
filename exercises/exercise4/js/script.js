@@ -101,11 +101,10 @@ function draw() {
 function simulation() {
   for (let i = 0; i < images.length; i++) {
     let flower = images[i];
-    images.push(flower);
+    moveFlower(images[i]);
     displayImage = random(images);
     displayFlower(images[i]);
     displayHand();
-    moveFlower(images[i]);
   }
 }
 function title() {
@@ -171,7 +170,7 @@ function displayHand() {
   image(hand.image, mouseX, mouseY, hand.w, hand.h);
   pop();
 }
-function displayFlower(flower) {
+function displayFlower() {
   push();
   imageMode(CENTER);
   image(displayImage, random(0, width), random(0, height));
