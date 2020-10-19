@@ -43,28 +43,31 @@ let hand = {
   h: 250,
   image: undefined,
 };
-let checkFlowerEliminated = [];
+let isFlowerEliminated;
 let garden = [];
 let displayGarden;
 let gardenSize = 30;
 let currentLine = 0;
 let state = "title";
+let images = [];
+let numImages = 5;
+let displayImage;
+
 // setup()
 //
 // Description of setup() goes here.
 
 function preload() {
   hand.image = loadImage("assets/images/hand.png");
-  garden[0] = loadImage(`assets/images/flower-0.png`);
-  garden[1] = loadImage(`assets/images/flower-1.png`);
-  garden[2] = loadImage(`assets/images/flower-2.png`);
-  garden[3] = loadImage(`assets/images/flower-3.png`);
-  garden[4] = loadImage(`assets/images/flower-4.png`);
+  for (let i = 0; i < numImages; i++) {
+    let loadedImage = loadImage(`assets/images/flower-${i}.png`);
+    images.push(loadedImage);
+  }
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < gardenSize; i++) {
-    let fish = createFlower(random(0, width), random(0, height));
+    let flower = createFlower(random(0, width), random(0, height));
     garden.push(flower);
   }
 }
@@ -83,6 +86,7 @@ function createFlower(x, y) {
 }
 // draw()
 //
+
 // Description of draw() goes here.
 function draw() {
   background(100, 245, 90);
@@ -102,8 +106,10 @@ function draw() {
 function simulation() {
   for (let i = 0; i < garden.length; i++) {
     moveFlower(garden[i]);
+    checkFlowerEliminated();
     displayFlower(garden[i]);
     displayFlower = random(garden[i]);
+    displayImage = random(images);
   }
 }
 function title() {
@@ -111,11 +117,11 @@ function title() {
   textSize(105);
   fill(255);
   textAlign(CENTER, CENTER);
-  textFont("CCSignLanguage");
+  textFont("Lemonada");
   text("Pick the Flowers!", width / 2, height / 2);
   push();
   textSize(35);
-  text("Click your mouse to start", width / 2, (2 * height) / 3);
+  text("Presse Spacebar to start", width / 2, (2 * height) / 3);
   pop();
   pop();
 }
@@ -124,7 +130,7 @@ function instructions() {
   textSize(45);
   fill(255);
   textAlign(LEFT, TOP);
-  textFont("CCSignLanguage");
+  textFont("Lemonada");
   let dialog1 = intro[currentLine];
   text(dialog1, 10, 50, windowWidth, windowHeight);
   pop();
@@ -133,7 +139,7 @@ function goodEnding() {
   push();
   textSize(85);
   fill(225, 125, 125);
-  textFont("CCSignLanguage");
+  textFont("Lemonada");
   textAlign(CENTER, CENTER);
   let dialog2 = right[currentLine];
   text(dialog2, 10, 50, windowWidth, windowHeight);
@@ -143,7 +149,7 @@ function badEnding() {
   push();
   textSize(90);
   fill(0);
-  textFont("CCSignLanguage");
+  textFont("Lemonada");
   textAlign(CENTER, CENTER);
   let dialog3 = wrong[currentLine];
   text(dialog3, 10, 50, windowWidth, windowHeight);
@@ -160,78 +166,11 @@ function moveFlower(flower) {
   flower.x = constrain(flower.x, 0, width);
   flower.y = constrain(flower.y, 0, height);
 }
-function checkheartbreakEliminated() {
-  isheartbreakEliminated(heartbreak1);
-  isheartbreakEliminated(heartbreak2);
-  isheartbreakEliminated(heartbreak3);
-  isheartbreakEliminated(heartbreak4);
-  isheartbreakEliminated(heartbreak5);
-  if (
-    !heartbreak1.active &&
-    !heartbreak2.active &&
-    !heartbreak3.active &&
-    !heartbreak4.active &&
-    !heartbreak5.active
-  ) {
-    state = "love";
+function checkFlowerEliminated() {
+  if (!flower.active) {
+    state = "wrong";
   }
 }
-//Setting the shooting effect for heartbreaks
-function isheartbreakEliminated(heartbreak) {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, heartbreak.x, heartbreak.y);
-  if (
-    arrow.shooted &&
-    heartbreak.active &&
-    d < arrow.w / 2 + heartbreak.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Eliminated heartbreak1
-    heartbreak.active = false;
-  }
-}
-//
-//Checking if heartbreaks go outside the canvas.
-function checkHeartbreakoverwhelm() {
-  if (
-    isHeartbreakoverwhelm(heartbreak1) ||
-    isHeartbreakoverwhelm(heartbreak2) ||
-    isHeartbreakoverwhelm(heartbreak3) ||
-    isHeartbreakoverwhelm(heartbreak4) ||
-    isHeartbreakoverwhelm(heartbreak5)
-  ) {
-    state = "sadness";
-  }
-}
-//Setting when checking if heartbreaks go outside the canvas
-function isHeartbreakoverwhelm(heartbreak) {
-  if (heartbreak.w === width && heartbreak.h === height) {
-    return true;
-  } else {
-    return false;
-  }
-}
-//Setting shooting on invisible heart
-function invisibleheartTouched() {
-  if (arrow.x > width) {
-    arrow.shooted = false;
-  }
-  let d = dist(arrow.x, arrow.y, invisibleheart.x, invisibleheart.y);
-  if (
-    arrow.shooted & invisibleheart.active &&
-    d < arrow.w / 2 + invisibleheart.w / 2
-  ) {
-    // Stop the arrow
-    arrow.shooted = false;
-    // Touched invisibleheart
-    invisibleheart.active = false;
-    state = "unknown";
-  }
-}
-
 function displayFlower(flower) {
   push();
   fill(200, 100, 100);
@@ -258,35 +197,18 @@ function mousePressed() {
 function keyPressed() {
   if (keyCode === 32) {
     currentLine = currentLine + 1;
-    if (state === title) {
-      state = instructions;
-    } else if (state === instructions) {
-      state = simulation;
-    } else if (currentLine === intro.length) {
+    if (currentLine === intro.length) {
       currentLine = intro.length - 1;
     } else if (currentLine === right.length) {
       currentLine = right.length - 1;
     } else if (currentLine === wrong.length) {
       currentLine = wrong.length - 1;
     }
-  }
-}
-// An array to store our images
-let images = [];
-// A variable storing the number of images to load
-let numImages = 10;
-// A variable to store the image we want to display
-let displayImage;
-
-// preload() loads 10 images
-function preload() {
-  // Use a for loop to count from 0 up to 9
-  for (let i = 0; i < numImages; i++) {
-    // Load the image into a variable
-    // Note that we use i to specify the number in the filename!
-    // Note how nice this is with a template literal string
-    let loadedImage = loadImage(`assets/images/clown-${i}.png`);
-    // Add the loaded image to the images array
-    images.push(loadedImage);
+  } else if (keyCode === 13) {
+    if (state === "title") {
+      state = "instructions";
+    } else if (state === "instructions") {
+      state = "simulation";
+    }
   }
 }
