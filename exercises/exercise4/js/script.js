@@ -20,6 +20,7 @@ let intro = [
   "you will not be able to make a bouquet! ",
   "Have fun!(Press Enter once you finish to read)",
 ];
+
 let right = [
   "Congrats!",
   "You made the right choice!",
@@ -47,39 +48,54 @@ let hand = {
   h: 250,
   image: undefined,
 };
+
 let isFlowerEliminated;
+
 let currentLine = 0;
+
 let state = "title";
+
 let images = [];
+
 let flowers = [];
+
 let numImages = 5;
+
 let numFlowers = 20;
+
 let displayImage;
 
-// setup()
-//
-// Description of setup() goes here.
+let timer = 150000;
 
+//Loading images for simulation(flowers and user's hand)
 function preload() {
   hand.image = loadImage("assets/images/hand.png");
+
   for (let i = 0; i < numImages; i++) {
     let loadedImage = loadImage(`assets/images/flower-${i}.png`);
+
     images.push(loadedImage);
   }
 }
+
+//Setting flowers in simulation;creating the canvas
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
   for (let i = 0; i < numFlowers; i++) {
     let flower = createFlower(
       random(0, width),
       random(0, height),
       random(images)
     );
+
     flowers.push(flower);
   }
+
   noCursor();
 }
 
+//Setting flowers javascript object
 function createFlower(x, y, flowerImage) {
   let flower = {
     x: x,
@@ -90,16 +106,20 @@ function createFlower(x, y, flowerImage) {
     vy: 0,
     speed: 1,
     image: flowerImage,
+    tint: {
+      r: 200,
+      g: 200,
+      b: 200,
+    },
   };
+
   return flower;
 }
-// draw()
-//
 
-// Description of draw() goes here.
+//Making the order of the simulation
 function draw() {
   background(100, 245, 90);
-  //Making the order of the simulation
+
   if (state === "title") {
     title();
   } else if (state === "instructions") {
@@ -110,17 +130,25 @@ function draw() {
     goodEnding();
   } else if (state === "badEnding") {
     badEnding();
+  } else if (state === "timeOut") {
+    timeOut();
   }
 }
+
+//Setting simulation
 function simulation() {
   for (let i = 0; i < flowers.length; i++) {
     let flower = flowers[i];
     moveFlower(flower);
+    colorFlower(flower);
     displayFlower(flower);
     displayHand();
   }
-  //timeCheck();
+
+  timeCheck();
 }
+
+//Setting the title screen
 function title() {
   push();
   textSize(105);
@@ -134,26 +162,44 @@ function title() {
   pop();
   pop();
 }
+
+//Setting instruction screen
 function instructions() {
   push();
   textSize(85);
   fill(225, 125, 125);
   textAlign(LEFT, TOP);
   textFont("Lemonada");
+
   let dialog1 = intro[currentLine];
   text(dialog1, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
+
+//Setting good ending screen
 function goodEnding() {
   push();
   textSize(85);
   fill(225, 125, 125);
   textFont("Lemonada");
   textAlign(LEFT, TOP);
+
   let dialog2 = right[currentLine];
   text(dialog2, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
+//Setting good ending screen
+function timeOut() {
+  push();
+  textSize(85);
+  fill(225, 125, 125);
+  textFont("Lemonada");
+  textAlign(LEFT, TOP);
+  text("Time is out!", 10, height / 2, windowWidth, windowHeight);
+  pop();
+}
+
+//Setting bad ending screen
 function badEnding() {
   push();
   background(0);
@@ -161,13 +207,18 @@ function badEnding() {
   fill(225, 125, 125);
   textFont("Lemonada");
   textAlign(LEFT, TOP);
+
   let dialog3 = wrong[currentLine];
   text(dialog3, 10, height / 2, windowWidth, windowHeight);
   pop();
 }
+
+//Setting flowers movements
 function moveFlower(flower) {
   let dx = flower.x - mouseX;
+
   let dy = flower.y - mouseY;
+
   if (dx < 0) {
     flower.vx = -flower.speed;
   } else if (dx > 0) {
@@ -179,44 +230,67 @@ function moveFlower(flower) {
   } else if (dy > 0) {
     flower.vy = flower.speed;
   }
+
   flower.x += flower.vx;
   flower.y += flower.vy;
+
   flower.x = constrain(flower.x, 0, width);
   flower.y = constrain(flower.y, 0, height);
 }
 
-//function timeCheck() {
-//if (frameCount > 14400 && flowers.length === 0) {
-//  state = "badEnding";
-//  currentLine = 0;
-//} else {
-//  state = "goodEnding";
-//  currentLine = 0;
-//}
-//}
+//Setting when flowers change colors
+function colorFlower(flower) {
+  flower.tint.r = map(flower.x, 0, width, random(125, 255), random(125, 255));
+  flower.tint.g = map(flower.y, 0, height, random(125, 255), random(125, 255));
+  flower.tint.b = map(flower.x, 0, width, random(125, 255), random(125, 255));
+}
 
+//Setting timer in simulation
+function timeCheck() {
+  if (frameCount > timer && flowers.length === 0) {
+    state = "badEnding";
+    currentLine = 0;
+  } else if (frameCount > timer && flowers.length > 0) {
+    state = "timeOut";
+    currentLine = 0;
+  } else if (frameCount > timer && flowers.length === 20) {
+    state = "goodEnding";
+    currentLine = 0;
+  }
+}
+
+//Displaying user hand
 function displayHand() {
   push();
   imageMode(CENTER);
   image(hand.image, mouseX, mouseY, hand.w, hand.h);
   pop();
 }
+
+//Displaying flowers
 function displayFlower(flower) {
   push();
   imageMode(CENTER);
+  tint(flower.tint.r, flower.tint.g, flower.tint.b);
   image(flower.image, flower.x, flower.y);
   pop();
 }
+
+//Setting mouse pressed function; make flowers disappear
 function mousePressed() {
   for (let i = 0; i < flowers.length; i++) {
     let flower = flowers[i];
+
     let d = dist(mouseX, mouseY, flower.x, flower.y);
+
     if (d < flower.w / 2 + flower.h / 2) {
       flowers.splice(i, 1);
       break;
     }
   }
 }
+
+//Setting key functions ; changing states and dialog lines
 function keyPressed() {
   if (keyCode === 13) {
     if (state === "title") {
@@ -225,8 +299,10 @@ function keyPressed() {
       state = "simulation";
     }
   }
+
   if (keyCode === 32) {
     currentLine = currentLine + 1;
+
     if (currentLine === intro.length && state === "instructions") {
       currentLine = intro.length - 1;
     } else if (currentLine === right.length && state === "goodEnding") {
