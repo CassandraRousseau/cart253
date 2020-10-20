@@ -51,6 +51,10 @@ let hand = {
   image: undefined,
 };
 
+let grass = {
+  image: undefined,
+};
+
 let isFlowerEliminated;
 
 let currentLine = 0;
@@ -72,6 +76,7 @@ let timer = 1000;
 //Loading images for simulation(flowers and user's hand)
 function preload() {
   hand.image = loadImage("assets/images/hand.png");
+  grass.image = loadImage("assets/images/grass.png");
 
   for (let i = 0; i < numImages; i++) {
     let loadedImage = loadImage(`assets/images/flower-${i}.png`);
@@ -140,6 +145,7 @@ function draw() {
 
 //Setting simulation
 function simulation() {
+  displayGrass();
   for (let i = 0; i < flowers.length; i++) {
     let flower = flowers[i];
     moveFlower(flower);
@@ -282,6 +288,13 @@ function colorFlower(flower) {
   flower.tint.b = map(flower.x, 0, width, random(125, 255), random(125, 255));
 }
 
+//Displaying grass background
+function displayGrass() {
+  push();
+  image(grass.image, windowWidth, windowHeight);
+  background(grass.image);
+  pop();
+}
 //Displaying user hand
 function displayHand() {
   push();
