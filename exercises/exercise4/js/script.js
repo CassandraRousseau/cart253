@@ -30,6 +30,7 @@ let right = [
   "Taking care of environment is a good quality!",
   "Take care of yourself and your surroundings. ",
   "Take care of the planet, we only have one!",
+  "Press Enter to restart",
 ];
 
 let wrong = [
@@ -39,6 +40,7 @@ let wrong = [
   "Not everything is about our own desires!",
   "Take care of yourself and your surroundings. ",
   "Take care of the planet, we only have one!",
+  "Press Enter to restart",
 ];
 
 let hand = {
@@ -110,6 +112,7 @@ function createFlower(x, y, flowerImage) {
       r: 200,
       g: 200,
       b: 200,
+      alpha: 255,
     },
   };
 
@@ -140,6 +143,7 @@ function simulation() {
   for (let i = 0; i < flowers.length; i++) {
     let flower = flowers[i];
     moveFlower(flower);
+    hiddenFlower(flower);
     colorFlower(flower);
     displayFlower(flower);
     displayHand();
@@ -158,7 +162,7 @@ function title() {
   text("Pick the Flowers!", width / 2, height / 2);
   push();
   textSize(35);
-  text("Presse Enter to start", width / 2, (2 * height) / 3);
+  text("Press Enter to start", width / 2, (2 * height) / 3);
   pop();
   pop();
 }
@@ -176,6 +180,21 @@ function instructions() {
   pop();
 }
 
+//Setting time out screen
+function timeOut() {
+  push();
+  textSize(85);
+  fill(225, 125, 125);
+  textFont("Lemonada");
+  textAlign(LEFT, TOP);
+  text("Time is out!", 10, height / 2, windowWidth, windowHeight);
+  push();
+  textSize(35);
+  text("Press Enter to restart", 10, (2 * height) / 3);
+  pop();
+  pop();
+}
+
 //Setting good ending screen
 function goodEnding() {
   push();
@@ -186,16 +205,6 @@ function goodEnding() {
 
   let dialog2 = right[currentLine];
   text(dialog2, 10, height / 2, windowWidth, windowHeight);
-  pop();
-}
-//Setting good ending screen
-function timeOut() {
-  push();
-  textSize(85);
-  fill(225, 125, 125);
-  textFont("Lemonada");
-  textAlign(LEFT, TOP);
-  text("Time is out!", 10, height / 2, windowWidth, windowHeight);
   pop();
 }
 
@@ -238,13 +247,6 @@ function moveFlower(flower) {
   flower.y = constrain(flower.y, 0, height);
 }
 
-//Setting when flowers change colors
-function colorFlower(flower) {
-  flower.tint.r = map(flower.x, 0, width, random(125, 255), random(125, 255));
-  flower.tint.g = map(flower.y, 0, height, random(125, 255), random(125, 255));
-  flower.tint.b = map(flower.x, 0, width, random(125, 255), random(125, 255));
-}
-
 //Setting timer in simulation
 function timeCheck() {
   if (frameCount > timer && flowers.length === 0) {
@@ -257,6 +259,27 @@ function timeCheck() {
     state = "goodEnding";
     currentLine = 0;
   }
+}
+//Modifying flowers tints and opacity
+function hiddenFlower(flower) {
+  if (flower.y > height / 2) {
+    flower.tint.r = 255;
+    flower.tint.g = 255;
+    flower.tint.b = 255;
+    flower.tint.alpha = 255;
+  } else {
+    flower.tint.r = 100;
+    flower.tint.g = 100;
+    flower.tint.b = 100;
+    flower.tint.alpha = 10;
+  }
+}
+
+//Setting when flowers change colors
+function colorFlower(flower) {
+  flower.tint.r = map(flower.x, 0, width, random(125, 255), random(125, 255));
+  flower.tint.g = map(flower.y, 0, height, random(125, 255), random(125, 255));
+  flower.tint.b = map(flower.x, 0, width, random(125, 255), random(125, 255));
 }
 
 //Displaying user hand
@@ -271,7 +294,7 @@ function displayHand() {
 function displayFlower(flower) {
   push();
   imageMode(CENTER);
-  tint(flower.tint.r, flower.tint.g, flower.tint.b);
+  tint(flower.tint.r, flower.tint.g, flower.tint.b, flower.tint.alpha);
   image(flower.image, flower.x, flower.y, flower.w, flower.h);
   pop();
 }
@@ -297,6 +320,12 @@ function keyPressed() {
       state = "instructions";
     } else if (state === "instructions") {
       state = "simulation";
+    } else if (state === "timeOut") {
+      location.reload();
+    } else if (state === "goodEnding") {
+      location.reload();
+    } else if (state === "badEnding") {
+      location.reload();
     }
   }
 
