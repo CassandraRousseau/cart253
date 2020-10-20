@@ -27,16 +27,16 @@ let right = [
   "Sounds pretty confusing right?",
   "Well, by not picking flowers,",
   "your showing that you are taking care of nature.",
-  "Taking care of your ecosystem is a good quality!",
+  "Taking care of environment is a good quality!",
   "Take care of yourself and your surroundings. ",
   "Take care of the planet, we only have one!",
 ];
 
 let wrong = [
   "Why did you pick flowers?",
-  "By doing this, you destroyed your ecosystem!",
-  "Plants have to be nurture correctly!",
-  "Not everything is just about fun and your own desires!",
+  "By doing this, you destroy your ecosystem!",
+  "Plants have to be nurture carefully!",
+  "Not everything is about our own desires!",
   "Take care of yourself and your surroundings. ",
   "Take care of the planet, we only have one!",
 ];
@@ -44,8 +44,8 @@ let wrong = [
 let hand = {
   x: 0,
   y: 0,
-  w: 250,
-  h: 250,
+  w: 350,
+  h: 350,
   image: undefined,
 };
 
@@ -65,7 +65,7 @@ let numFlowers = 20;
 
 let displayImage;
 
-let timer = 150000;
+let timer = 1000;
 
 //Loading images for simulation(flowers and user's hand)
 function preload() {
@@ -100,11 +100,11 @@ function createFlower(x, y, flowerImage) {
   let flower = {
     x: x,
     y: y,
-    w: 100,
-    h: 100,
+    w: 150,
+    h: 150,
     vx: 0,
     vy: 0,
-    speed: 1,
+    speed: 4,
     image: flowerImage,
     tint: {
       r: 200,
@@ -250,7 +250,7 @@ function timeCheck() {
   if (frameCount > timer && flowers.length === 0) {
     state = "badEnding";
     currentLine = 0;
-  } else if (frameCount > timer && flowers.length > 0) {
+  } else if (frameCount > timer && flowers.length <= 19) {
     state = "timeOut";
     currentLine = 0;
   } else if (frameCount > timer && flowers.length === 20) {
@@ -272,7 +272,7 @@ function displayFlower(flower) {
   push();
   imageMode(CENTER);
   tint(flower.tint.r, flower.tint.g, flower.tint.b);
-  image(flower.image, flower.x, flower.y);
+  image(flower.image, flower.x, flower.y, flower.w, flower.h);
   pop();
 }
 
