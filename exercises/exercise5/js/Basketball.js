@@ -2,13 +2,18 @@ class Basketball {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+    this.w = 250;
+    this.h = 250;
     this.vx = 0;
     this.vy = 0;
     this.ax = 0;
     this.ay = 0;
     this.maxSpeed = 10;
-    this.size = 50;
     this.active = true;
+    this.image = undefined;
+  }
+  preload() {
+    this.image = loadImage("assets/images/basketball.png");
   }
   gravity(force) {
     this.ay += force;
@@ -25,15 +30,15 @@ class Basketball {
     }
   }
 
-  bounce(paddle) {
+  bounce(knee) {
     if (
-      this.x > paddle.x - paddle.width / 2 &&
-      this.x < paddle.x + paddle.width / 2 &&
-      this.y + this.size / 2 > paddle.y - paddle.height / 2 &&
-      this.y - this.size / 2 < paddle.y + paddle.height / 2
+      this.x > knee.x - knee.width / 2 &&
+      this.x < knee.x + knee.width / 2 &&
+      this.y + this.size / 2 > knee.y - knee.height / 2 &&
+      this.y - this.size / 2 < knee.y + knee.height / 2
     ) {
-      let dx = this.x - paddle.x;
-      this.vx += map(dx, -paddle.width / 2, paddle.width / 2, -2, 2);
+      let dx = this.x - knee.x;
+      this.vx += map(dx, -knee.width / 2, knee.width / 2, -2, 2);
       this.vy = -this.vy;
       this.ay = 0;
     }
@@ -42,7 +47,7 @@ class Basketball {
     push();
     fill(255, 50, 50);
     stroke(0);
-    ellipse(this.x, this.y, this.size);
+    image(this.image, this.x, this.y, this.w, this.h);
     pop();
   }
 }

@@ -4,9 +4,11 @@ class Knee {
     this.height = h;
     this.x = 0;
     this.y = height - this.height / 2;
-    image = undefined;
+    this.image = undefined;
   }
-  preload() {}
+  preload() {
+    this.image = loadImage("assets/images/knee.png");
+  }
   move() {
     this.x = mouseX;
   }
