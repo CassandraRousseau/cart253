@@ -28,7 +28,7 @@ function setup() {
 //
 // Description of draw() goes here.
 function draw() {
-  background(0);
+  background(100, 200, 255);
   paddle.move();
   paddle.display();
   for (let i = 0; i < balls.length; i++) {
