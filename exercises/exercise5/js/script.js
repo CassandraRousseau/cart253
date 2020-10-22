@@ -1,5 +1,5 @@
 /**************************************************
-Template p5 project
+Exercise 5: Juggle Garden
 Cassandra Rousseau
 
 Here is a description of this template p5 project.
