@@ -26,6 +26,7 @@ class Dribble extends State {
   }
   //Setting action of keyPressed after bad ending(touching basketball ball) screen
   keyPressed() {
+    super.keyPressed();
     if (keyCode === 13) {
       location.reload();
     }

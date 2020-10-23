@@ -1,4 +1,4 @@
-class Basketball extends State {
+class Basketball {
   //Creating the basketball balls
   constructor(x, y) {
     this.x = x;

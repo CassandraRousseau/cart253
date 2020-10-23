@@ -26,6 +26,7 @@ class BallsFalling extends State {
   }
   //Setting keyPressed action after bad ending(all soccer balls are falling)screen
   keyPressed() {
+    super.keyPressed();
     if (keyCode === 13) {
       location.reload();
     }

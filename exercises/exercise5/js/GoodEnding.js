@@ -25,6 +25,7 @@ class GoodEnding extends State {
   }
   //Setting keyPressed after good ending screen
   keyPressed() {
+    super.keyPressed();
     if (keyCode === 13) {
       location.reload();
     }

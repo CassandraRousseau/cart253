@@ -25,12 +25,14 @@ class Simulation extends State {
   }
   //Preloading necessary images for simulation
   preload() {
+    super.preload();
     soccer.preload();
     basketball.preload();
     knee.preload();
   }
   //Setting simulation
   draw() {
+    super.draw();
     let timer = new Timer();
     timer.timeCheck();
     timer.gameOver();
