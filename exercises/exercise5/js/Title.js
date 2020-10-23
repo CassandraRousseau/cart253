@@ -24,9 +24,8 @@ class Title extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-        state = "instructions";
-      }
-      currentState= new Instructions();
+      state = "instructions";
     }
+    currentState = new Instructions();
   }
 }
