@@ -4,9 +4,13 @@ Cassandra Rousseau
 
 Kicking a ball simulation.
 **************************************************/
-
 "use strict";
 let gravityForce = 0.0025;
+let title;
+let instructions;
+let goodEnding;
+let badEnding;
+let timer;
 let knee;
 let soccers = [];
 let basketballs = [];
@@ -43,17 +47,15 @@ function setup() {
 function draw() {
   background(100, 200, 255);
   if (state === "title") {
-    let title= new Title;
+    let title = new Title();
   } else if (state === "instructions") {
-    let instructions=new Instructions;
+    let instructions = new Instructions();
   } else if (state === "simulation") {
     simulation();
   } else if (state === "goodEnding") {
-  let goodEnding=new GoodEnding;
+    let goodEnding = new GoodEnding();
   } else if (state === "badEnding") {
-    let badEnding=new BadEnding
-  } else if (state === "timeOut") {
-    timeOut();
+    let badEnding = new BadEnding();
   }
 }
 //Setting simulation
@@ -77,59 +79,12 @@ function simulation() {
       basketball.display();
     }
   }
-  timeCheck();
-}
-
-//Setting time out screen
-function timeOut() {
-  push();
-  textSize(85);
-  fill(225, 125, 125);
-  textFont("Lemonada");
-  textAlign(LEFT, TOP);
-  text("Time is out!", 10, height / 2, windowWidth, windowHeight);
-  push();
-  textSize(35);
-  text("Press Enter to restart", 10, (2 * height) / 3);
-  pop();
-  pop();
-}
-
-
-
-//Setting timer in simulation
-function timeCheck() {
-  if (frameCount > timer && flowers.length === 0) {
-    state = "badEnding";
-    currentLine = 0;
-  } else if (frameCount > timer && flowers.length <= 19) {
-    state = "timeOut";
-    currentLine = 0;
-  } else if (frameCount > timer && flowers.length === 20) {
-    state = "goodEnding";
-    currentLine = 0;
-  }
 }
 //Setting key functions ; changing states and dialog lines
 function keyPressed() {
   knee.keyPressed();
-title.keyPressed();
-instructions.keyPressed();
-goodEnding.keyPressed();
-badEnding.keyPressed();
- if (state === "timeOut") {
-      location.reload();
-    }
-  }
-  if (keyCode === 32) {
-    currentLine = currentLine + 1;
-
-    if (currentLine === intro.length && state === "instructions") {
-      currentLine = intro.length - 1;
-    } else if (currentLine === right.length && state === "goodEnding") {
-      currentLine = right.length - 1;
-    } else if (currentLine === wrong.length && state === "badEnding") {
-      currentLine = wrong.length - 1;
-    }
-  }
+  title.keyPressed();
+  instructions.keyPressed();
+  goodEnding.keyPressed();
+  badEnding.keyPressed();
 }
