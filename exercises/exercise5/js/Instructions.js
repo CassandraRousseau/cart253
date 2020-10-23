@@ -3,7 +3,7 @@ class Instructions extends State {
   constructor() {
     super();
     this.intro =
-      "Good morning player!\nToday for your practice you will kick repeatively the soccer ball!\nCatch the falling balls and kick them to not let them fall apart.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
+      "Good morning player!\nToday for your practice you will kick repetitively the soccer ball!\nCatch the falling soccer balls and kick them constantly.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
   }
   //Setting instructions screen
   draw() {

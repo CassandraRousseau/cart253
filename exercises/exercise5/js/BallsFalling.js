@@ -3,7 +3,7 @@ class BallsFalling extends State {
   constructor() {
     super();
     this.messUp =
-      "What ar    super();e you doing!?!?\nYou have to kick the ball,not let it fall!";
+      "What are you doing!?!?\nYou have to kick the balls,not let them fall!";
   }
   //Setting bad ending(all soccer balls are falling)screen
   draw() {
