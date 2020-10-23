@@ -1,4 +1,11 @@
 class Timer {
+  constructor() {
+    // NEW! A timer to count the number of frames in the game state
+    this.gameOverTimer = 0;
+    // NEW! A variable to store how long our game is (in frames)
+    this.gameLength = 60 * 10;
+    this.state = "simulation"; // game, win, los
+  }
   //Setting timer in simulation
   timeCheck() {
     if (frameCount > timer && flowers.length === 0) {

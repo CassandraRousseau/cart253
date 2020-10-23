@@ -1,4 +1,5 @@
 class Simulation extends State {
+  //Creating simulation elements
   constructor() {
     super();
     let gravityForce = 0.0025;
@@ -22,6 +23,7 @@ class Simulation extends State {
       basketballs.push(basketball);
     }
   }
+  //Preloading necessary images for simulation
   preload() {
     soccer.preload();
     basketball.preload();

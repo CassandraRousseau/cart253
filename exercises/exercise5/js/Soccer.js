@@ -1,4 +1,5 @@
 class Soccer {
+  //Creating the soccer balls
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -12,12 +13,15 @@ class Soccer {
     this.active = true;
     this.image = undefined;
   }
+  //Preloading soccer balls image
   preload() {
     this.image = loadImage("assets/images/soccer.png");
   }
+  //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
   }
+  //Setting balls movements
   move() {
     this.vx += this.ax;
     this.vy += this.ay;
@@ -29,7 +33,7 @@ class Soccer {
       this.active = false;
     }
   }
-
+  //Setting the interaction between the knee and the balls
   bounce(knee) {
     if (
       this.x > knee.x - knee.width / 2 &&
@@ -43,6 +47,7 @@ class Soccer {
       this.ay = 0;
     }
   }
+  //Displaying the soccer balls
   display() {
     push();
     fill(255, 50, 50);

@@ -1,14 +1,16 @@
 class Instructions {
+  //Creating instructions screen
   constructor() {
     super();
     this.intro =
       "Good morning player!\nToday for your practice you will kick repeatively the soccer ball!\nCatch the falling balls and kick them to not let them fall apart.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
   }
+  //Setting instructions screen
   draw() {
     super.draw();
     this.display();
   }
-  //Setting instruction screen
+  //Displaying instructions screen
   display() {
     push();
     textSize(85);
@@ -18,11 +20,11 @@ class Instructions {
     text(intro, 10, height / 2, windowWidth, windowHeight);
     pop();
   }
+  //Setting keyPressed after instructions screen
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      state = "simulation";
+      currentState = new Simulation();
     }
-    currentState = new Simulation();
   }
 }

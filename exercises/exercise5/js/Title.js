@@ -1,13 +1,15 @@
 class Title extends State {
+  //Creating the title screen
   constructor() {
     super();
     this.titleString = "Kick the Ball!";
   }
+  //Setting the title screen
   draw() {
     super.draw();
     this.display();
   }
-  //Setting the title screen
+  //Displaying the title screen
   display() {
     push();
     textSize(105);
@@ -21,11 +23,11 @@ class Title extends State {
     pop();
     pop();
   }
+  //Setting keyPressed action after title screen
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      state = "instructions";
+      currentState = new Instructions();
     }
-    currentState = new Instructions();
   }
 }

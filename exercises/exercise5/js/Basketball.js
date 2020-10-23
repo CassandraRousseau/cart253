@@ -1,4 +1,5 @@
 class Basketball {
+  //Creating the basketball balls
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -12,12 +13,15 @@ class Basketball {
     this.active = true;
     this.image = undefined;
   }
+  //Preloading basketball balls image
   preload() {
     this.image = loadImage("assets/images/basketball.png");
   }
+  //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
   }
+  //Setting balls movements
   move() {
     this.vx += this.ax;
     this.vy += this.ay;
@@ -29,7 +33,7 @@ class Basketball {
       this.active = false;
     }
   }
-
+  //Setting the interaction between the knee and the balls
   bounce(knee) {
     if (
       this.x > knee.x - knee.width / 2 &&
@@ -43,6 +47,7 @@ class Basketball {
       this.ay = 0;
     }
   }
+  //Displaying the basketball balls
   display() {
     push();
     fill(255, 50, 50);
