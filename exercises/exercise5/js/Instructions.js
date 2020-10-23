@@ -6,9 +6,7 @@ class Instructions {
     fill(225, 125, 125);
     textAlign(LEFT, TOP);
     textFont("Lemonada");
-
-    let dialog1 = intro[currentLine];
-    text(dialog1, 10, height / 2, windowWidth, windowHeight);
+    text(intro, 10, height / 2, windowWidth, windowHeight);
     pop();
   }
   keyPressed() {

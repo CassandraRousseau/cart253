@@ -5,6 +5,12 @@ Cassandra Rousseau
 Kicking a ball simulation.
 **************************************************/
 "use strict";
+let intro =
+  "Good morning player!\nToday for your practice you will kick repeatively the soccer ball!\nCatch the falling balls and kick them to not let them fall apart.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
+let goodJob = "Good Job!\nSee you tomorrow player for another practice!";
+let messUp =
+  "What are you doing!?!?\nYou have to kick the ball,not let it fall!";
+let wrongBall = "What are you doing!?!?\nWe are not here to dribble and shoot!";
 let gravityForce = 0.0025;
 let title;
 let instructions;
@@ -45,41 +51,19 @@ function setup() {
 //
 // Description of draw() goes here.
 function draw() {
-  background(100, 200, 255);
   if (state === "title") {
     let title = new Title();
   } else if (state === "instructions") {
     let instructions = new Instructions();
   } else if (state === "simulation") {
-    simulation();
+    let simulation = new Simulation();
   } else if (state === "goodEnding") {
     let goodEnding = new GoodEnding();
   } else if (state === "badEnding") {
     let badEnding = new BadEnding();
   }
 }
-//Setting simulation
-function simulation() {
-  knee.display();
-  for (let i = 0; i < soccers.length; i++) {
-    let soccer = soccers[i];
-    if (soccer.active) {
-      soccer.gravity(gravityForce);
-      soccer.move();
-      soccer.bounce(knee);
-      soccer.display();
-    }
-  }
-  for (let i = 0; i < basketballs.length; i++) {
-    let basketball = basketballs[i];
-    if (basketball.active) {
-      basketball.gravity(gravityForce);
-      basketball.move();
-      basketball.bounce(knee);
-      basketball.display();
-    }
-  }
-}
+
 //Setting key functions ; changing states and dialog lines
 function keyPressed() {
   knee.keyPressed();
