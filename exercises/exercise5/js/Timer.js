@@ -1,22 +1,20 @@
 class Timer {
+  //Creating timer in simulation
   constructor() {
-    // NEW! A timer to count the number of frames in the game state
-    this.gameOverTimer = 0;
-    // NEW! A variable to store how long our game is (in frames)
-    this.gameLength = 60 * 10;
-    this.state = "simulation"; // game, win, los
+    this.gamelength = 60 * 1000;
   }
   //Setting timer in simulation
   timeCheck() {
-    if (frameCount > timer && flowers.length === 0) {
-      state = "badEnding";
-      currentLine = 0;
-    } else if (frameCount > timer && flowers.length <= 19) {
-      state = "timeOut";
-      currentLine = 0;
-    } else if (frameCount > timer && flowers.length === 20) {
-      state = "goodEnding";
-      currentLine = 0;
+    if (state === "simulation") {
+      setTimeOut(this.gameOver, thhis.gameLength);
+    }
+  }
+  //Setting how the user has a game over
+  gameOver() {
+    if (soccers.length === 0) {
+      state = "BallsFalling";
+    } else {
+      state = "GoodEnding";
     }
   }
 }

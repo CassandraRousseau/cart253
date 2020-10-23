@@ -31,6 +31,9 @@ class Simulation extends State {
   }
   //Setting simulation
   draw() {
+    let timer = new Timer();
+    timer.timeCheck();
+    timer.gameOver();
     knee.display();
     for (let i = 0; i < soccers.length; i++) {
       let soccer = soccers[i];
