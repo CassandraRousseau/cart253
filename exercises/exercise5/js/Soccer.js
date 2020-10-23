@@ -1,4 +1,4 @@
-class Soccer {
+class Soccer extends State {
   //Creating the soccer balls
   constructor(x, y) {
     this.x = x;

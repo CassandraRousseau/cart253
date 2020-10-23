@@ -1,4 +1,4 @@
-class Dribble {
+class Dribble extends State {
   //Creating bad ending(touching basketball ball)
   constructor() {
     super();

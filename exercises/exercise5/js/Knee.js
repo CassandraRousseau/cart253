@@ -1,4 +1,4 @@
-class Knee {
+class Knee extends State {
   //Creating the knee
   constructor(w, h) {
     this.width = w;

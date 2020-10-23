@@ -1,4 +1,4 @@
-class Timer {
+class Timer extends State {
   //Creating timer in simulation
   constructor() {
     this.gamelength = 60 * 1000;

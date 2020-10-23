@@ -1,4 +1,4 @@
-class Instructions {
+class Instructions extends State {
   //Creating instructions screen
   constructor() {
     super();

@@ -1,4 +1,4 @@
-class BallsFalling {
+class BallsFalling extends State {
   //Creating bad ending(all soccer balls are falling)screen
   constructor() {
     super();
