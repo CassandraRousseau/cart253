@@ -1,6 +1,6 @@
 class Basketball {
   //Creating the basketball balls
-  constructor(x, y) {
+  constructor(x, y, image) {
     this.x = x;
     this.y = y;
     this.w = 250;
@@ -11,7 +11,7 @@ class Basketball {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = undefined;
+    this.image = image;
   }
   preload() {
     this.image = loadImage("assets/images/basketball.png");

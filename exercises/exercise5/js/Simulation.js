@@ -25,9 +25,9 @@ class Simulation extends State {
   //Preloading necessary images for simulation
   preload() {
     super.preload();
-    soccer.preload();
-    basketball.preload();
-    knee.preload();
+    soccer.image = loadImage("assets/images/soccer.png");
+    basketball.image = loadImage("assets/images/basketball.png");
+    knee.image = loadImage("assets/images/knee.png");
   }
   //Setting simulation
   draw() {

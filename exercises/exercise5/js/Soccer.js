@@ -11,7 +11,7 @@ class Soccer {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = undefined;
+    this.image = image;
   }
   preload() {
     this.image = loadImage("assets/images/soccer.png");
