@@ -1,6 +1,6 @@
 class Soccer {
   //Creating the soccer balls
-  constructor(x, y) {
+  constructor(x, y, image) {
     this.x = x;
     this.y = y;
     this.w = 250;
@@ -11,12 +11,9 @@ class Soccer {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = undefined;
+    this.image = image;
   }
-  //Preloading soccer balls image
-  preload() {
-    this.image = loadImage("assets/images/soccer.png");
-  }
+
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
@@ -50,8 +47,6 @@ class Soccer {
   //Displaying the soccer balls
   display() {
     push();
-    fill(255, 50, 50);
-    stroke(0);
     image(this.image, this.x, this.y, this.w, this.h);
     pop();
   }

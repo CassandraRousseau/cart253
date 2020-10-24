@@ -1,25 +1,18 @@
 class Knee {
   //Creating the knee
-  constructor(w, h) {
+  constructor(w, h, image) {
     this.width = w;
     this.height = h;
     this.x = 0;
     this.y = height - this.height / 2;
     this.vx = 2;
     this.vy = 0;
-    this.image = undefined;
-  }
-  //Preloading image of the knee
-  preload() {
-    this.image = loadImage("assets/images/knee.png");
+    this.image = image;
   }
   //Displaying the knee
   display() {
     push();
-    fill(255);
-    noStroke();
-    rectMode(CENTER);
-    rect(this.x, this.y, this.width, this.height);
+    image(this.image, this.x, this.y, this.width, this.height);
     pop();
   }
   //Added useful key commands to move the knee
