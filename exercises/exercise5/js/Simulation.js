@@ -8,26 +8,29 @@ class Simulation extends State {
     let basketballs = [];
     let numSoccers = 3;
     let numBasketballs = 3;
-    let knee = new Knee();
+    let kneeImage;
+    let soccerImage;
+    let basketballImage;
+    let knee = new Knee(300, 300, kneeImage);
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
       let y = random(-400, -100);
-      let soccer = new Soccer(x, y);
+      let soccer = new Soccer(x, y, soccerImage);
       soccers.push(soccer);
     }
     for (let i = 0; i < numBasketballs; i++) {
       let x = random(0, width);
       let y = random(-400, -100);
-      let basketball = new Basketball(x, y);
+      let basketball = new Basketball(x, y, basketballImage);
       basketballs.push(basketball);
     }
   }
   //Preloading necessary images for simulation
   preload() {
     super.preload();
-    soccer.image = loadImage("assets/images/soccer.png");
-    basketball.image = loadImage("assets/images/basketball.png");
-    knee.image = loadImage("assets/images/knee.png");
+    soccerImage = loadImage("assets/images/soccer.png");
+    basketballImage = loadImage("assets/images/basketball.png");
+    kneeImage = loadImage("assets/images/knee.png");
   }
   //Setting simulation
   draw() {

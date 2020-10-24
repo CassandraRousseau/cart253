@@ -1,14 +1,6 @@
 class Soccer {
-  constructor() {
-    this.soccer;
-    this.soccerImage;
-    this.soccer = createKnee(x, y, soccerImage);
-  }
-  preload() {
-    soccerImage = loadImage("assets/images/soccer.png");
-  }
   //Creating the soccer balls
-  createSoccer(x, y, soccerImage) {
+  constructor(x, y, soccerImage) {
     this.x = x;
     this.y = y;
     this.w = 250;
@@ -20,6 +12,9 @@ class Soccer {
     this.maxSpeed = 10;
     this.active = true;
     this.image = soccerImage;
+  }
+  preload() {
+    this.image = loadImage("assets/images/soccer.png");
   }
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
