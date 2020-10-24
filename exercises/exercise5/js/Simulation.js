@@ -2,12 +2,6 @@ class Simulation extends State {
   //Creating simulation elements
   constructor() {
     super();
-    let gravityForce = 0.0025;
-    let timer;
-    let soccers = [];
-    let basketballs = [];
-    let numSoccers = 3;
-    let numBasketballs = 3;
     let knee = new Knee(300, 300, kneeImage);
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
@@ -21,9 +15,6 @@ class Simulation extends State {
       let basketball = new Basketball(x, y, basketballImage);
       basketballs.push(basketball);
     }
-    let kneeImage;
-    let soccerImage;
-    let basketballImage;
   }
   //Preloading necessary images for simulation
   preload() {
