@@ -7,10 +7,8 @@ class Knee {
     this.y = height - this.height / 2;
     this.vx = 2;
     this.vy = 0;
+    this.speed = 2;
     this.image = kneeImage;
-  }
-  preload() {
-    kneeImage = loadImage("assets/images/knee.png");
   }
   //Displaying the knee
   display() {
@@ -21,10 +19,11 @@ class Knee {
   //Added useful key commands to move the knee
   keyPressed() {
     if (keyCode === 39) {
-      this.x = this.vx;
-    }
-    if (keyCode === 37) {
-      this.x = -this.vx;
+      this.x = this.speed;
+    } else if (keyCode === 37) {
+      this.x = -this.speed;
+    } else {
+      this.vx = 0;
     }
   }
 }

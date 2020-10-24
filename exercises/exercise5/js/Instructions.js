@@ -3,7 +3,7 @@ class Instructions extends State {
   constructor() {
     super();
     this.intro =
-      "Good morning player!\nToday for your practice you will kick repetitively the soccer ball!\nCatch the falling soccer balls and kick them constantly.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
+      "Good morning player!\n\nToday for your practice you will kick repetitively the soccer ball!\nCatch the falling soccer balls and kick them constantly.\nClick on the left and right arrows to move your knee.\n\nDon't forget! You have to keep the ryhthm until time is out!\n\nGood Luck!";
   }
   //Setting instructions screen
   draw() {
@@ -13,11 +13,11 @@ class Instructions extends State {
   //Displaying instructions screen
   display() {
     push();
-    textSize(85);
-    fill(225, 125, 125);
+    textSize(40);
+    fill(255);
     textAlign(LEFT, TOP);
     textFont("Lemonada");
-    text(this.intro, 10, height / 2, windowWidth, windowHeight);
+    text(this.intro, 10, 50, windowWidth, windowHeight);
     pop();
   }
   //Setting keyPressed after instructions screen

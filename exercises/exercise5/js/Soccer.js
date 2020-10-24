@@ -13,9 +13,6 @@ class Soccer {
     this.active = true;
     this.image = soccerImage;
   }
-  preload() {
-    this.image = loadImage("assets/images/soccer.png");
-  }
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;

@@ -8,9 +8,6 @@ class Simulation extends State {
     let basketballs = [];
     let numSoccers = 3;
     let numBasketballs = 3;
-    let kneeImage;
-    let soccerImage;
-    let basketballImage;
     let knee = new Knee(300, 300, kneeImage);
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
@@ -24,6 +21,9 @@ class Simulation extends State {
       let basketball = new Basketball(x, y, basketballImage);
       basketballs.push(basketball);
     }
+    let kneeImage;
+    let soccerImage;
+    let basketballImage;
   }
   //Preloading necessary images for simulation
   preload() {
@@ -32,6 +32,7 @@ class Simulation extends State {
     basketballImage = loadImage("assets/images/basketball.png");
     kneeImage = loadImage("assets/images/knee.png");
   }
+
   //Setting simulation
   draw() {
     super.draw();

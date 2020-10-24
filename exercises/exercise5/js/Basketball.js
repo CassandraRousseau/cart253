@@ -13,9 +13,6 @@ class Basketball {
     this.active = true;
     this.image = basketballImage;
   }
-  preload() {
-    basketballImage = loadImage("assets/images/basketball.png");
-  }
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
