@@ -1,6 +1,6 @@
 class Basketball {
   //Creating the basketball balls
-  constructor(x, y, image) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
     this.w = 250;
@@ -11,7 +11,10 @@ class Basketball {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = image;
+    this.image = undefined;
+  }
+  preload() {
+    this.image = loadImage("assets/images/basketball.png");
   }
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {

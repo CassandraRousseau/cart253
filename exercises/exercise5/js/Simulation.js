@@ -4,12 +4,11 @@ class Simulation extends State {
     super();
     let gravityForce = 0.0025;
     let timer;
-    let knee;
     let soccers = [];
     let basketballs = [];
     let numSoccers = 3;
     let numBasketballs = 3;
-    knee = new Knee(300, 300);
+    let knee = new Knee(300, 300);
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
       let y = random(-400, -100);

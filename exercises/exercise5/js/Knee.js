@@ -1,13 +1,16 @@
 class Knee {
   //Creating the knee
-  constructor(w, h, image) {
+  constructor(w, h) {
     this.width = w;
     this.height = h;
     this.x = 0;
     this.y = height - this.height / 2;
     this.vx = 2;
     this.vy = 0;
-    this.image = image;
+    this.image = undefined;
+  }
+  preload() {
+    this.image = loadImage("assets/images/knee.png");
   }
   //Displaying the knee
   display() {
