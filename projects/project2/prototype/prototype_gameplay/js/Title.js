@@ -2,7 +2,7 @@ class Title extends State {
   //Creating the title screen
   constructor() {
     super();
-    this.titleString = "Kick the Ball!";
+    this.titleString = "Ephemeral";
   }
   //Setting the title screen
   draw() {
@@ -13,7 +13,7 @@ class Title extends State {
   display() {
     push();
     textSize(105);
-    fill(255);
+    fill(0);
     textAlign(CENTER, CENTER);
     textFont("Lemonada");
     text(this.titleString, width / 2, height / 2);

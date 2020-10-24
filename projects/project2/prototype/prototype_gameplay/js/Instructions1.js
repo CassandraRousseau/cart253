@@ -3,7 +3,7 @@ class Instructions1 extends State {
   constructor() {
     super();
     this.intro =
-      "Good morning player!\nToday for your practice you will kick repetitively the soccer ball!\nCatch the falling soccer balls and kick them constantly.\nClick on the left and right arrows to move your knee.\nDon't forget! You have to keep the ryhthm until time is out!\nGood Luck!";
+      "Find the magic petal through the wind.Click on your mouse once you find the petal.\nDon't forget, time is running out!";
   }
   //Setting instructions screen
   draw() {
@@ -14,7 +14,7 @@ class Instructions1 extends State {
   display() {
     push();
     textSize(85);
-    fill(225, 125, 125);
+    fill(0);
     textAlign(LEFT, TOP);
     textFont("Lemonada");
     text(this.intro, 10, height / 2, windowWidth, windowHeight);

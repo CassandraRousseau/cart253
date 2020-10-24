@@ -2,7 +2,7 @@ class GoodEnding extends State {
   //Creating good ending screen
   constructor() {
     super();
-    this.goodJob = "Good Job!\nSee you tomorrow player for another practice!";
+    this.goodJob = "Good Job!\nYou found the first magic petal!";
   }
   //Setting good ending screen
   draw() {
@@ -13,7 +13,7 @@ class GoodEnding extends State {
   display() {
     push();
     textSize(85);
-    fill(225, 125, 125);
+    fill(0);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
     text(this.goodJob, 10, height / 2, windowWidth, windowHeight);

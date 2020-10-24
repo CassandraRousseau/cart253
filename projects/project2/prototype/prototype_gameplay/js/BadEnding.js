@@ -2,8 +2,7 @@ class BallsFalling extends State {
   //Creating bad ending(all soccer balls are falling)screen
   constructor() {
     super();
-    this.messUp =
-      "What are you doing!?!?\nYou have to kick the balls,not let them fall!";
+    this.over = "Game Over";
   }
   //Setting bad ending(all soccer balls are falling)screen
   draw() {
@@ -14,10 +13,10 @@ class BallsFalling extends State {
   display() {
     push();
     textSize(85);
-    fill(225, 125, 125);
+    fill(0);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
-    text(this.messUp, 10, height / 2, windowWidth, windowHeight);
+    text(this.over, 10, height / 2, windowWidth, windowHeight);
     push();
     textSize(35);
     text("Press Enter to restart", 10, (2 * height) / 3);
