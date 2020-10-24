@@ -8,7 +8,7 @@ class Simulation extends State {
     let basketballs = [];
     let numSoccers = 3;
     let numBasketballs = 3;
-    let knee = new Knee(300, 300);
+    let knee = new Knee();
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
       let y = random(-400, -100);
