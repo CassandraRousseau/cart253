@@ -1,12 +1,14 @@
-class Timer {
+class Timer extends Simulation {
   //Creating timer in simulation
   constructor() {
+    super();
     this.gamelength = 60 * 1000;
   }
   //Setting timer in simulation
   timeCheck() {
+    super.draw();
     if (state === "simulation") {
-      setTimeOut(this.gameOver, thhis.gameLength);
+      setTimeOut(gameOver, this.gameLength);
     }
   }
   //Setting how the user has a game over
