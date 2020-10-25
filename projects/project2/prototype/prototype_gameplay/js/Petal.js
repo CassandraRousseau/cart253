@@ -11,7 +11,7 @@ class Petal {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = PetalImage;
+    this.image = petalImage;
   }
   preload() {
     this.image = loadImage("assets/images/petal.png");

@@ -1,8 +1,16 @@
 class GoodEnding extends State {
   //Creating good ending screen
-  constructor() {
+  constructor(w, h, goodEndingImage) {
     super();
+    this.x = 0;
+    this.y = 0;
+    this.w = w;
+    this.h = h;
+    this.image = goodEndingImage;
     this.goodJob = "Good Job!\nYou found the first magic petal!";
+  }
+  preload() {
+    this.image = loadImage("assets/images/ephemeralFoundPetal.png");
   }
   //Setting good ending screen
   draw() {
@@ -12,6 +20,8 @@ class GoodEnding extends State {
   //Displaying good ending screen
   display() {
     push();
+    image(this.image, this.x, this.y, windowWidth, windowHeight);
+    background(this.image);
     textSize(85);
     fill(0);
     textFont("Lemonada");

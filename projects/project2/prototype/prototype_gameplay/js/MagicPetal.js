@@ -11,7 +11,7 @@ class MagicPetal {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = PetalImage;
+    this.image = magicPetalImage;
   }
   preload() {
     this.image = loadImage("assets/images/magicPetal.png");
