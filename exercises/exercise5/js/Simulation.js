@@ -2,6 +2,7 @@ class Simulation extends State {
   //Creating simulation elements
   constructor() {
     super();
+    let timer = new Timer();
     let knee = new Knee(300, 300, kneeImage);
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
@@ -27,7 +28,6 @@ class Simulation extends State {
   //Setting simulation
   draw() {
     super.draw();
-    let timer = new Timer();
     timer.timeCheck();
     timer.gameOver();
     knee.display();

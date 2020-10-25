@@ -13,6 +13,7 @@ class Timer extends Simulation {
   }
   //Setting how the user has a game over
   gameOver() {
+    super.draw();
     if (soccers.length === 0) {
       state = "BallsFalling";
     } else {
