@@ -6,6 +6,15 @@ Here is a description of this template p5 project.
 **************************************************/
 "use strict";
 let currentState;
+let gravityForce = 0.0025;
+let timer;
+let soccers = [];
+let basketballs = [];
+let numSoccers = 3;
+let numBasketballs = 3;
+let kneeImage;
+let soccerImage;
+let basketballImage;
 // setup()
 //
 // Setting all the preloaded images
