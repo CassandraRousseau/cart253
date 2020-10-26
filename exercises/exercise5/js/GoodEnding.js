@@ -12,7 +12,7 @@ class GoodEnding extends State {
   //Displaying good ending screen
   display() {
     push();
-    textSize(85);
+    textSize(40);
     fill(225, 125, 125);
     textFont("Lemonada");
     textAlign(LEFT, TOP);

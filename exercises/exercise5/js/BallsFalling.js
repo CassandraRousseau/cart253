@@ -13,14 +13,14 @@ class BallsFalling extends State {
   //Displaying bad ending(all soccer balls are falling)screen
   display() {
     push();
-    textSize(85);
-    fill(225, 125, 125);
+    textSize(65);
+    fill(255);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
-    text(this.messUp, 10, height / 2, windowWidth, windowHeight);
+    text(this.messUp, 10, height / 3, windowWidth, windowHeight);
     push();
-    textSize(35);
-    text("Press Enter to restart", 10, (2 * height) / 3);
+    textSize(45);
+    text("Press Enter to restart", 10, (3 * height) / 4);
     pop();
     pop();
   }

@@ -7,8 +7,15 @@ class Knee {
     this.y = height - this.height / 2;
     this.vx = 2;
     this.vy = 0;
-    this.speed = 2;
+    this.ax = 2;
+    this.ay = 0;
     this.image = kneeImage;
+  }
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.x = constrain(this.x, 0, width);
+    this.vx = constrain(this.vx, 0, width);
   }
   //Displaying the knee
   display() {
@@ -17,11 +24,11 @@ class Knee {
     pop();
   }
   //Added useful key commands to move the knee
-  keyPressed() {
+  keyIsPressed() {
     if (keyCode === 39) {
-      this.x = this.speed;
+      this.x = this.vx;
     } else if (keyCode === 37) {
-      this.x = -this.speed;
+      this.x = -this.vx;
     } else {
       this.vx = 0;
     }

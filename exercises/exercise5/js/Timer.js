@@ -1,23 +1,20 @@
-class Timer extends Simulation {
+class Timer {
   //Creating timer in simulation
   constructor() {
-    super();
-    this.gamelength = 60 * 1000;
+    this.gamelength = 1000;
   }
   //Setting timer in simulation
-  timeCheck() {
-    super.draw();
+  timeCheck(state, soccers, framecountSim) {
     if (state === "simulation") {
-      setTimeOut(gameOver, this.gameLength);
+      if (frameCount > framecountSim + this.gamelength) {
+        if (soccers.length === 0) {
+          return "BallsFalling";
+        } else if (soccers.length > 0) {
+          return "GoodEnding";
+        }
+      }
     }
-  }
-  //Setting how the user has a game over
-  gameOver() {
-    super.draw();
-    if (soccers.length === 0) {
-      state = "BallsFalling";
-    } else {
-      state = "GoodEnding";
-    }
+
+    return "stillRunning";
   }
 }

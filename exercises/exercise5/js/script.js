@@ -22,6 +22,11 @@ let basketballImage;
 //
 // Setting all the preloaded images
 //Setting all the setups for each state.
+function preload() {
+  soccerImage = loadImage("assets/images/soccer.png");
+  basketballImage = loadImage("assets/images/basketball.png");
+  kneeImage = loadImage("assets/images/knee.png");
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   currentState = new Title();
@@ -33,8 +38,11 @@ function setup() {
 function draw() {
   currentState.draw();
 }
-
 //Setting all key functions for each state.
 function keyPressed() {
   currentState.keyPressed();
+}
+//Setting all key functions for each state.
+function keyIsPressed() {
+  currentState.keyIsPressed();
 }

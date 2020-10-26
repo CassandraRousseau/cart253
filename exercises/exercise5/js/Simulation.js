@@ -2,52 +2,73 @@ class Simulation extends State {
   //Creating simulation elements
   constructor() {
     super();
-    let timer = new Timer();
-    let knee = new Knee(300, 300, kneeImage);
+    this.name = "simulation";
+    this.framecountSim = frameCount;
+    this.timer = new Timer();
+    this.knee = new Knee(300, 300, kneeImage);
+    this.soccers = [];
+    this.basketballs = [];
     for (let i = 0; i < numSoccers; i++) {
       let x = random(0, width);
       let y = random(-400, -100);
       let soccer = new Soccer(x, y, soccerImage);
-      soccers.push(soccer);
+      this.soccers.push(soccer);
     }
     for (let i = 0; i < numBasketballs; i++) {
       let x = random(0, width);
       let y = random(-400, -100);
       let basketball = new Basketball(x, y, basketballImage);
-      basketballs.push(basketball);
+      this.basketballs.push(basketball);
     }
   }
   //Preloading necessary images for simulation
   preload() {
     super.preload();
-    soccerImage = loadImage("assets/images/soccer.png");
-    basketballImage = loadImage("assets/images/basketball.png");
-    kneeImage = loadImage("assets/images/knee.png");
+    this.knee.preload();
+    this.basketballs.preload();
+    this.soccers.preload();
   }
 
   //Setting simulation
   draw() {
     super.draw();
-    timer.timeCheck();
-    timer.gameOver();
-    knee.display();
-    for (let i = 0; i < soccers.length; i++) {
-      let soccer = soccers[i];
+    let timerResult = this.timer.timeCheck(
+      "simulation",
+      this.soccers,
+      this.framecountSim
+    );
+    if (timerResult === "BallsFalling") {
+      currentState = new BallsFalling();
+    } else if (timerResult === "GoodEnding") {
+      currentState = new GoodEnding();
+    }
+    this.knee.display();
+    this.knee.move();
+    for (let i = 0; i < this.soccers.length; i++) {
+      let soccer = this.soccers[i];
       if (soccer.active) {
         soccer.gravity(gravityForce);
         soccer.move();
-        soccer.bounce(knee);
+        soccer.bounce(this.knee);
         soccer.display();
       }
+      if (soccer.y > height) {
+        this.soccers.splice(i, 1);
+        break;
+      }
     }
-    for (let i = 0; i < basketballs.length; i++) {
-      let basketball = basketballs[i];
+    for (let i = 0; i < this.basketballs.length; i++) {
+      let basketball = this.basketballs[i];
       if (basketball.active) {
         basketball.gravity(gravityForce);
         basketball.move();
-        basketball.bounce(knee);
+        basketball.bounce(this.knee);
         basketball.display();
       }
     }
+  }
+  keyIsPressed() {
+    super.keyIsPressed();
+    this.knee.keyIsPressed();
   }
 }
