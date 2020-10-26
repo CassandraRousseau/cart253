@@ -42,7 +42,3 @@ function draw() {
 function keyPressed() {
   currentState.keyPressed();
 }
-//Setting all key functions for each state.
-function keyIsPressed() {
-  currentState.keyIsPressed();
-}

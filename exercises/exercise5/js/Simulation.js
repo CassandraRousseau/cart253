@@ -67,8 +67,8 @@ class Simulation extends State {
       }
     }
   }
-  keyIsPressed() {
-    super.keyIsPressed();
-    this.knee.keyIsPressed();
+  keyPressed() {
+    super.keyPressed();
+    this.knee.keyPressed();
   }
 }

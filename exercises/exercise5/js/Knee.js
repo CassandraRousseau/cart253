@@ -24,10 +24,10 @@ class Knee {
     pop();
   }
   //Added useful key commands to move the knee
-  keyIsPressed() {
-    if (keyCode === 39) {
+  keyPressed() {
+    if (keyIsPressed === RIGHT_ARROW) {
       this.x = this.vx;
-    } else if (keyCode === 37) {
+    } else if (keyIsPressed === LEFT_ARROW) {
       this.x = -this.vx;
     } else {
       this.vx = 0;

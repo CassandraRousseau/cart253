@@ -7,7 +7,5 @@ class State {
     background(100, 200, 255);
   }
   //Setting keyPressed method for each state
-  keyIsPressed() {}
-  //Setting keyPressed method for each state
   keyPressed() {}
 }
