@@ -3,8 +3,8 @@ class Basketball {
   constructor(x, y, basketballImage) {
     this.x = x;
     this.y = y;
-    this.w = 200;
-    this.h = 200;
+    this.w = 150;
+    this.h = 150;
     this.vx = 0;
     this.vy = 0;
     this.ax = 0;

@@ -12,14 +12,14 @@ class GoodEnding extends State {
   //Displaying good ending screen
   display() {
     push();
-    textSize(40);
-    fill(225, 125, 125);
+    textSize(65);
+    fill(255);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
-    text(this.goodJob, 10, height / 2, windowWidth, windowHeight);
+    text(this.goodJob, 10, height / 3, windowWidth, windowHeight);
     push();
-    textSize(35);
-    text("Press Enter to restart", width / 2, (2 * height) / 3);
+    textSize(45);
+    text("Press Enter to restart", width / 2, (3 * height) / 4);
     pop();
     pop();
   }
