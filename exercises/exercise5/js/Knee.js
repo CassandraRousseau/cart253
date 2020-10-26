@@ -24,7 +24,7 @@ class Knee {
     pop();
   }
   //Added useful key commands to move the knee
-  keyPressed() {
+  handleInput() {
     //knee move to the right
     if (keyIsDown(RIGHT_ARROW)) {
       this.vx = this.ax;

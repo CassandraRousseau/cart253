@@ -43,6 +43,7 @@ class Simulation extends State {
       currentState = new GoodEnding();
     }
     this.knee.display();
+    this.knee.handleInput();
     this.knee.move();
     for (let i = 0; i < this.soccers.length; i++) {
       let soccer = this.soccers[i];
@@ -66,10 +67,5 @@ class Simulation extends State {
         basketball.display();
       }
     }
-  }
-  //Setting key commands in simulation
-  keyPressed() {
-    super.keyPressed();
-    this.knee.keyPressed();
   }
 }
