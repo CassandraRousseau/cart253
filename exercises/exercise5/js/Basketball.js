@@ -25,22 +25,26 @@ class Basketball {
     this.vy = constrain(this.vy, -this.maxSpeed, this.maxSpeed);
     this.x += this.vx;
     this.y += this.vy;
-    if (this.y - this.size / 2 > height) {
+    if (this.y - this.h / 2 > height) {
       this.active = false;
     }
   }
   //Setting the interaction between the knee and the balls
-  bounce(knee) {
-    if (
-      this.x > knee.x - knee.width / 2 &&
-      this.x < knee.x + knee.width / 2 &&
-      this.y + this.size / 2 > knee.y - knee.height / 2 &&
-      this.y - this.size / 2 < knee.y + knee.height / 2
-    ) {
-      let dx = this.x - knee.x;
-      this.vx += map(dx, -knee.width / 2, knee.width / 2, -2, 2);
-      this.vy = -this.vy;
-      this.ay = 0;
+  touch(knee) {
+    this.collide = collisionKneeBasket(
+      this.x,
+      this.y,
+      this.w,
+      this.h,
+      knee.x,
+      knee.y,
+      knee.width,
+      knee.height
+    );
+    if (this.collide) {
+      return "Dribble";
+    } else {
+      return "stillRunning";
     }
   }
   //Displaying the basketball balls

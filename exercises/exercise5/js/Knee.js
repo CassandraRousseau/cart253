@@ -5,9 +5,9 @@ class Knee {
     this.height = h;
     this.x = 0;
     this.y = height - this.height / 2;
-    this.vx = 2;
+    this.vx = 5;
     this.vy = 0;
-    this.ax = 2;
+    this.ax = 10;
     this.ay = 0;
     this.image = kneeImage;
   }
@@ -20,6 +20,7 @@ class Knee {
   //Displaying the knee
   display() {
     push();
+    imageMode(CENTER);
     image(this.image, this.x, this.y, this.width, this.height);
     pop();
   }

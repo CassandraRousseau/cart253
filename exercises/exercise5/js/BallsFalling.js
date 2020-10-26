@@ -20,7 +20,7 @@ class BallsFalling extends State {
     text(this.messUp, 10, height / 3, windowWidth, windowHeight);
     push();
     textSize(45);
-    text("Press Enter to restart", 10, (3 * height) / 4);
+    text("Press Enter to restart", width / 2, (3 * height) / 4);
     pop();
     pop();
   }

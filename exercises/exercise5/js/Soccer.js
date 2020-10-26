@@ -25,7 +25,8 @@ class Soccer {
     this.vy = constrain(this.vy, -this.maxSpeed, this.maxSpeed);
     this.x += this.vx;
     this.y += this.vy;
-    if (this.y - this.size / 2 > height) {
+    this.x = constrain(this.x, 0, width);
+    if (this.y - this.h / 2 > height) {
       this.active = false;
     }
   }
@@ -34,8 +35,8 @@ class Soccer {
     if (
       this.x > knee.x - knee.width / 2 &&
       this.x < knee.x + knee.width / 2 &&
-      this.y + this.size / 2 > knee.y - knee.height / 2 &&
-      this.y - this.size / 2 < knee.y + knee.height / 2
+      this.y + this.h / 2 > knee.y - knee.height / 2 &&
+      this.y - this.h / 2 < knee.y + knee.height / 2
     ) {
       let dx = this.x - knee.x;
       this.vx += map(dx, -knee.width / 2, knee.width / 2, -2, 2);
