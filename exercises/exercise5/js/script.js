@@ -21,12 +21,12 @@ let basketballImage;
 // setup()
 //
 // Setting all the preloaded images
-//Setting all the setups for each state.
 function preload() {
   soccerImage = loadImage("assets/images/soccer.png");
   basketballImage = loadImage("assets/images/basketball.png");
   kneeImage = loadImage("assets/images/knee.png");
 }
+//Setting all the setups for each state.
 function setup() {
   createCanvas(windowWidth, windowHeight);
   currentState = new Title();

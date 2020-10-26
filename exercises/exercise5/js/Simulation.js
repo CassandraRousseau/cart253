@@ -67,6 +67,7 @@ class Simulation extends State {
       }
     }
   }
+  //Setting key commands in simulation
   keyPressed() {
     super.keyPressed();
     this.knee.keyPressed();
