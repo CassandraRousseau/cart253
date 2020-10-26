@@ -2,13 +2,16 @@ class GoodEnding extends State {
   //Creating good ending screen
   constructor() {
     super();
+
     this.goodJob = "Good Job!\nSee you tomorrow player for another practice!";
   }
+
   //Setting good ending screen
   draw() {
     super.draw();
     this.display();
   }
+
   //Displaying good ending screen
   display() {
     push();
@@ -23,9 +26,11 @@ class GoodEnding extends State {
     pop();
     pop();
   }
+
   //Setting keyPressed after good ending screen
   keyPressed() {
     super.keyPressed();
+
     if (keyCode === 13) {
       location.reload();
     }

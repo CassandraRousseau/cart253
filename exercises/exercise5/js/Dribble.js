@@ -2,14 +2,17 @@ class Dribble extends State {
   //Creating bad ending(touching basketball ball)
   constructor() {
     super();
+
     this.wrongBall =
       "What are you doing!?!?\nWe are not here to dribble and shoot!";
   }
+
   //Setting bad ending (touching basketball ball) screen
   draw() {
     super.draw();
     this.display();
   }
+
   //Displaying bad ending(touching basketball ball) screen
   display() {
     push();
@@ -24,9 +27,11 @@ class Dribble extends State {
     pop();
     pop();
   }
+
   //Setting action of keyPressed after bad ending(touching basketball ball) screen
   keyPressed() {
     super.keyPressed();
+
     if (keyCode === 13) {
       location.reload();
     }

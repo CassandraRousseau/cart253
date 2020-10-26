@@ -13,10 +13,12 @@ class Basketball {
     this.active = true;
     this.image = basketballImage;
   }
+
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
   }
+
   //Setting balls movements
   move() {
     this.vx += this.ax;
@@ -25,19 +27,23 @@ class Basketball {
     this.vy = constrain(this.vy, -this.maxSpeed, this.maxSpeed);
     this.x += this.vx;
     this.y += this.vy;
+
     if (this.y - this.h / 2 > height) {
       this.active = false;
     }
   }
+
   //Setting the interaction between the knee and the balls
   touch(knee) {
     let d = dist(this.x, this.y, knee.x, knee.y);
+
     if (d < this.h / 2 + knee.height / 2 && d < this.w / 2 + knee.width / 2) {
       return "Dribble";
     } else {
       return "stillRunning";
     }
   }
+
   //Displaying the basketball balls
   display() {
     push();

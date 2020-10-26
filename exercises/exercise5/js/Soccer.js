@@ -13,10 +13,12 @@ class Soccer {
     this.active = true;
     this.image = soccerImage;
   }
+
   //Setting gravity occasioned by the weight of the balls
   gravity(force) {
     this.ay += force;
   }
+
   //Setting balls movements
   move() {
     this.vx += this.ax;
@@ -26,10 +28,12 @@ class Soccer {
     this.x += this.vx;
     this.y += this.vy;
     this.x = constrain(this.x, 0, width);
+
     if (this.y - this.h / 2 > height) {
       this.active = false;
     }
   }
+
   //Setting the interaction between the knee and the balls
   bounce(knee) {
     if (
@@ -44,6 +48,7 @@ class Soccer {
       this.ay = 0;
     }
   }
+
   //Displaying the soccer balls
   display() {
     push();
