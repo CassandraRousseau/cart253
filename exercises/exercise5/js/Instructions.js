@@ -17,7 +17,7 @@ class Instructions extends State {
     fill(255);
     textAlign(LEFT, TOP);
     textFont("Lemonada");
-    text(this.intro, 10, 50, windowWidth, windowHeight);
+    text(this.intro, 20, 50, windowWidth, windowHeight);
     pop();
   }
   //Setting keyPressed after instructions screen

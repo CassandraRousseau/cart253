@@ -31,17 +31,8 @@ class Basketball {
   }
   //Setting the interaction between the knee and the balls
   touch(knee) {
-    this.collide = collisionKneeBasket(
-      this.x,
-      this.y,
-      this.w,
-      this.h,
-      knee.x,
-      knee.y,
-      knee.width,
-      knee.height
-    );
-    if (this.collide) {
+    let d = dist(this.x, this.y, knee.x, knee.y);
+    if (d < this.h / 2 + knee.height / 2 && d < this.w / 2 + knee.width / 2) {
       return "Dribble";
     } else {
       return "stillRunning";

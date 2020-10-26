@@ -17,10 +17,10 @@ class Dribble extends State {
     fill(255);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
-    text(this.wrongBall, 10, height / 3, windowWidth, windowHeight);
+    text(this.wrongBall, 20, height / 3, windowWidth, windowHeight);
     push();
     textSize(45);
-    text("Press Enter to restart", 10, (3 * height) / 4);
+    text("Press Enter to restart", width / 2, (3 * height) / 4);
     pop();
     pop();
   }

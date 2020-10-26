@@ -42,10 +42,6 @@ class Simulation extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding();
     }
-    let basketCollision = this.basketball.touch(this.knee);
-    if (basketCollision === "Dribble") {
-      currentState = new Dribble();
-    }
     this.knee.display();
     this.knee.handleInput();
     this.knee.move();
@@ -67,7 +63,12 @@ class Simulation extends State {
       if (basketball.active) {
         basketball.gravity(gravityForce);
         basketball.move();
+        basketball.touch(this.knee);
         basketball.display();
+        let basketCollision = basketball.touch(this.knee);
+        if (basketCollision === "Dribble") {
+          currentState = new Dribble();
+        }
       }
     }
   }
