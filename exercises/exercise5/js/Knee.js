@@ -26,10 +26,10 @@ class Knee {
   //Added useful key commands to move the knee
   keyPressed() {
     //knee move to the right
-    if (keyIsPressed === RIGHT_ARROW) {
+    if (keyIsDown(RIGHT_ARROW)) {
       this.vx = this.ax;
       //kne moves to the left
-    } else if (keyIsPressed === LEFT_ARROW) {
+    } else if (keyIsDown(LEFT_ARROW)) {
       this.vx = -this.ax;
     } else {
       this.vx = 0;
