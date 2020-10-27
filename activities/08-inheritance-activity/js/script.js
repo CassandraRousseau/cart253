@@ -79,8 +79,9 @@ function simulation() {
     vehicle.move();
     vehicle.wrap();
     vehicle.display();
+    pedestrian.checkHit(vehicle);
   }
-  if (pedestrian.alive === false) {
+  if (!pedestrian.alive) {
     currentState = "dead";
   }
   if (pedestrian.y < 0) {

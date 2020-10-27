@@ -8,6 +8,16 @@ class Pedestrian {
     this.speed = 5;
     this.alive = true;
   }
+  checkHit(vehicle) {
+    if (
+      this.x > vehicle.x - vehicle.width / 2 &&
+      this.x < vehicle.x + vehicle.width / 2 &&
+      this.y > vehicle.y - vehicle.height / 2 &&
+      this.y < vehicle.y + vehicle.height / 2
+    ) {
+      this.alive = false;
+    }
+  }
   handleInput() {
     if (keyIsDown(LEFT_ARROW)) {
       this.vx = -this.speed;
@@ -28,11 +38,7 @@ class Pedestrian {
     this.x += this.vx;
     this.y += this.vy;
   }
-  checkHit(vehicle) {
-    if (this.x === vehicle.width / 2 && this.y === vehicle.height / 2) {
-      this.alive = false;
-    }
-  }
+
   display() {
     push();
     fill(255);
