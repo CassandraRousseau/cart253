@@ -1,6 +1,6 @@
-class Petal {
+class RedPetal extends Petal {
   //Creating the soccer balls
-  constructor(x, y, petalImage) {
+  constructor(x, y, magicPetalImage) {
     this.x = x;
     this.y = y;
     this.w = 250;
@@ -11,10 +11,10 @@ class Petal {
     this.ay = 0;
     this.maxSpeed = 10;
     this.active = true;
-    this.image = petalImage;
+    this.image = magicPetalImage;
   }
   preload() {
-    this.image = loadImage("assets/images/petal.png");
+    this.image = loadImage("assets/images/magicPetal.png");
   }
   //Setting gravity occasioned by the weight of the balls
   wind(force) {
@@ -23,8 +23,6 @@ class Petal {
   }
   //Setting balls movements
   move() {
-    let vx = circle.speed * cos(circle.angle);
-    let vy = circle.speed * sin(circle.angle);
     this.vx += this.ax;
     this.vy += this.ay;
     this.vx = constrain(this.vx, -this.maxSpeed, this.maxSpeed);

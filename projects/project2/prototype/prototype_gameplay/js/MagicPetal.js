@@ -1,10 +1,9 @@
-class MagicPetal {
+class MagicPetal extends Petal {
   //Creating the soccer balls
   constructor(x, y, magicPetalImage) {
+    super();
     this.x = x;
     this.y = y;
-    this.w = 250;
-    this.h = 250;
     this.vx = 0;
     this.vy = 0;
     this.ax = 0;
