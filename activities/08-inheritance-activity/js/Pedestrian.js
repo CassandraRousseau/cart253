@@ -27,9 +27,9 @@ class Pedestrian {
       this.vx = 0;
     }
     if (keyIsDown(UP_ARROW)) {
-      this.vy = -this.speed;
-    } else if (keyIsDown(DOWN_ARROW)) {
       this.vy = this.speed;
+    } else if (keyIsDown(DOWN_ARROW)) {
+      this.vy = -this.speed;
     } else {
       this.vy = 0;
     }

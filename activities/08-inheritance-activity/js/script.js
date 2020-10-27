@@ -38,7 +38,7 @@ function setup() {
     let x = random(0, width);
     let y = random(0, 400);
     let motorcycle = new Motorcycle(x, y);
-    vehicles.push(motorcyle);
+    vehicles.push(motorcycle);
   }
   for (let i = 0; i < vehicles.length; i++) {
     let vehicle = vehicles[i];
@@ -70,7 +70,6 @@ function title() {
   displayText("Pedestrian Palaver");
 }
 function simulation() {
-  displayText();
   pedestrian.handleInput();
   pedestrian.move();
   pedestrian.display();
