@@ -6,6 +6,8 @@ Here is a description of this template p5 project.
 "use strict";
 let currentState;
 let title;
+let instructions1;
+let level1;
 let badEnding;
 let goodEnding;
 let timer;
@@ -32,7 +34,7 @@ function setup() {
   let title = new Title(windowWidth, windowHeight, titleImage);
   let badEnding = new BadEnding(windowWidth, windowHeight, badEndingImage);
   let goodEnding = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
-  currentState = title;
+  currentState = instructions1;
 }
 
 // draw()
