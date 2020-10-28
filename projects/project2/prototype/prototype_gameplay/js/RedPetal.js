@@ -10,6 +10,8 @@ class RedPetal extends Petal {
   display() {
     super.display();
     push();
+    translate(this.x, this.y);
+    rotate(this.angle);
     image(this.image, this.x, this.y, this.w, this.h);
     pop();
   }

@@ -22,7 +22,7 @@ class GoodEnding extends State {
     push();
     image(this.image, this.x, this.y, windowWidth, windowHeight);
     background(this.image);
-    textSize(85);
+    textSize(55);
     fill(0);
     textFont("Lemonada");
     textAlign(LEFT, TOP);

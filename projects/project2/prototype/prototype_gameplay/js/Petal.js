@@ -3,14 +3,12 @@ class Petal {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.w = 250;
-    this.h = 250;
-    this.vx = 0;
-    this.vy = 0;
-    this.ax = 0;
-    this.ay = 0;
-    this.speed = 10;
-    this.angle = 45;
+    this.w = 100;
+    this.h = 100;
+    this.vx = 2;
+    this.vy = 4;
+    this.speed = 8;
+    this.angle = 30;
     this.image = undefined;
   }
   preload() {}
