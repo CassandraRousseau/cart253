@@ -28,7 +28,7 @@ class Knee {
     pop();
   }
 
-  //Added useful key commands to move the knee
+  //Added useful key controls to move the knee
   handleInput() {
     //knee moves to the right
     if (keyIsDown(RIGHT_ARROW)) {
