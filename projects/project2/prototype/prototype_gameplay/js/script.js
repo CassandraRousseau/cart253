@@ -8,18 +8,16 @@ Here is a description of this template p5 project.
 let currentState;
 let gravityForce = 0.0025;
 let timer;
-let soccers = [];
-let basketballs = [];
-let numSoccers = 3;
-let numBasketballs = 3;
-let kneeImage;
-let soccerImage;
-let basketballImage;
+let petals = [];
+let numRedPetals = 20;
+let petalImage;
+let magicPetalImage;
 // setup()
 //
 // Setting all the preloaded images
 function preload() {
-  currentState.preload();
+  magicPetalImage = loadImage("assets/images/magicPetal.png");
+  petalImage = loadImage("assets/images/Petal.png");
 }
 //Setting all the setups for each state.
 function setup() {

@@ -3,7 +3,7 @@ class Instructions1 extends State {
   constructor() {
     super();
     this.intro =
-      "Find the magic petal through the wind.Click on your mouse once you find the petal.\nDon't forget, time is running out!";
+      "Find and catch the magic petal through the wind.Click on your mouse to catch the magic petal.\nDon't forget, time is running out!";
   }
   //Setting instructions screen
   draw() {

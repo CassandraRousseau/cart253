@@ -2,25 +2,23 @@ class Level1 {
   //Creating simulation elements
   constructor() {
     super();
-    let user = new User();
+    this.petals = [];
+    let x = random(0, width);
+    let y = random(0, height);
+    this.magicPetal = new MagicPetal(x, y, magicPetalImage);
+    this.user = new User();
     for (let i = 0; i < numPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let petal = new Petal(x, y, petalImage);
-      petals.push(petal);
+      let redPetal = new RedPetal(x, y, petalImage);
+      petals.push(redPetal);
     }
-    push();
-    let x = random(0, width);
-    let y = random(0, height);
-    let magicPetal = new MagicPetal(x, y, magicPetalImage);
-    pop();
   }
   //Preloading necessary images for simulation
   preload() {
     super.preload();
-    petalImage = loadImage("assets/images/soccer.png");
-    magicPetalImage = loadImage("assets/images/magicPetal.png");
-    kneeImage = loadImage("assets/images/knee.png");
+    petalImage;
+    magicPetalImage;
   }
   //Setting simulation
   draw() {
