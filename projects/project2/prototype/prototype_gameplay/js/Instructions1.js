@@ -25,7 +25,7 @@ class Instructions1 extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      currentState = new Simulation();
+      currentState = new Level1();
     }
   }
 }

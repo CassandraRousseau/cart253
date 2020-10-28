@@ -5,10 +5,13 @@ Here is a description of this template p5 project.
 **************************************************/
 "use strict";
 let currentState;
-let titleImage;
+let title;
+let badEnding;
+let goodEnding;
 let timer;
 let petals = [];
 let numRedPetals = 20;
+let titleImage;
 let petalImage;
 let magicPetalImage;
 let badEndingImage;
@@ -26,7 +29,10 @@ function preload() {
 //Setting all the setups for each state.
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  currentState = new Title();
+  let title = new Title(windowWidth, windowHeight, titleImage);
+  let badEnding = new BadEnding(windowWidth, windowHeight, badEndingImage);
+  let goodEnding = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
+  currentState = title;
 }
 
 // draw()

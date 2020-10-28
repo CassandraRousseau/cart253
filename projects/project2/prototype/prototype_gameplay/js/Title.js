@@ -1,9 +1,11 @@
 class Title extends State {
   //Creating the title screen
-  constructor(titleImage) {
-    super(titleImage);
+  constructor(w, h, titleImage) {
+    super(w, h, titleImage);
     this.x = 0;
     this.y = 0;
+    this.width = w;
+    this.height = h;
     this.image = titleImage;
     this.titleString = "Ephemeral";
   }
@@ -20,7 +22,7 @@ class Title extends State {
   //Displaying the title screen
   display() {
     push();
-    image(this.image, this.x, this.y, windowWidth, windowHeight);
+    image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
     textSize(105);
     fill(0);
@@ -37,7 +39,7 @@ class Title extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      currentState = new Instructions();
+      currentState = new Instructions1();
     }
   }
 }
