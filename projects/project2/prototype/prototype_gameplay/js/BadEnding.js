@@ -1,17 +1,15 @@
 class BadEnding extends State {
   //Creating bad ending(all soccer balls are falling)screen
-  constructor(w, h, badEndingImage) {
-    super();
+  constructor(badEndingImage) {
+    super(badEndingImage);
     this.x = 0;
     this.y = 0;
-    this.w = w;
-    this.h = h;
     this.image = badEndingImage;
     this.over = "Game Over";
   }
   preload() {
     super.preload();
-    this.image = loadImage("assets/images/ephemeralGameOver.png");
+    this.image.preload();
   }
   //Setting bad ending(all soccer balls are falling)screen
   draw() {

@@ -1,17 +1,16 @@
-class Level1 {
+class Level1 extends State {
   //Creating simulation elements
   constructor() {
-    super();
     this.name = "Level1";
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
+    this.user = new User();
     this.petals = [];
     let x = random(0, width);
     let y = random(0, height);
     this.magicPetal = new MagicPetal(x, y, magicPetalImage);
     this.petals.push(magicPetal);
-    this.user = new User();
     for (let i = 0; i < numPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
@@ -20,14 +19,11 @@ class Level1 {
     }
   }
   //Preloading necessary images for simulation
-  preload() {
-    super.preload();
-    petalImage;
-    magicPetalImage;
-  }
+  preload() {}
   //Setting simulation
   draw() {
-    super.draw();
+    push();
+    background(255);
     let timerResult = this.timer.timeCheck(
       "Level1",
       this.petals,
@@ -39,6 +35,7 @@ class Level1 {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding();
     }
+    user.move();
     user.display();
     for (let i = 0; i < petals.length; i++) {
       let petal = this.petals[i];
@@ -48,5 +45,6 @@ class Level1 {
         petal.display();
       }
     }
+    pop();
   }
 }
