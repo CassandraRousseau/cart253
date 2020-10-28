@@ -3,9 +3,7 @@ class State {
   constructor() {}
   preload() {}
   //Setting draw method for each state
-  draw() {
-    background(255);
-  }
+  draw() {}
   //Setting keyPressed method for each state
   keyPressed() {}
 }

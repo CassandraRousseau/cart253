@@ -13,6 +13,7 @@ class Instructions1 extends State {
   //Displaying instructions screen
   display() {
     push();
+    background(255);
     textSize(85);
     fill(0);
     textAlign(LEFT, TOP);

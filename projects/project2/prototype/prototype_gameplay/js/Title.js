@@ -1,17 +1,14 @@
 class Title extends State {
   //Creating the title screen
-  constructor(w, h, titleImage) {
+  constructor(titleImage) {
     super();
     this.x = 0;
     this.y = 0;
-    this.w = w;
-    this.h = h;
     this.image = titleImage;
     this.titleString = "Ephemeral";
   }
   preload() {
     super.preload();
-    this.image = loadImage("assets/images/ephemeralTitle.png");
   }
   //Setting the title screen
   draw() {

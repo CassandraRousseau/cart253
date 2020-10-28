@@ -6,7 +6,6 @@ Here is a description of this template p5 project.
 **************************************************/
 "use strict";
 let currentState;
-let gravityForce = 0.0025;
 let timer;
 let petals = [];
 let numRedPetals = 20;
@@ -16,6 +15,7 @@ let magicPetalImage;
 //
 // Setting all the preloaded images
 function preload() {
+  titleImage = loadImage("assets/images/ephemeralTitle.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   petalImage = loadImage("assets/images/Petal.png");
 }

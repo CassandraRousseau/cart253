@@ -2,16 +2,21 @@ class Level1 {
   //Creating simulation elements
   constructor() {
     super();
+    this.name = "Level1";
+    //Creating timer
+    this.framecountSim = frameCount;
+    this.timer = new Timer();
     this.petals = [];
     let x = random(0, width);
     let y = random(0, height);
     this.magicPetal = new MagicPetal(x, y, magicPetalImage);
+    this.petals.push(magicPetal);
     this.user = new User();
     for (let i = 0; i < numPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
       let redPetal = new RedPetal(x, y, petalImage);
-      petals.push(redPetal);
+      this.petals.push(redPetal);
     }
   }
   //Preloading necessary images for simulation
@@ -23,24 +28,25 @@ class Level1 {
   //Setting simulation
   draw() {
     super.draw();
-    let timer = new Timer();
-    timer.timeCheck();
-    timer.gameOver();
+    let timerResult = this.timer.timeCheck(
+      "Level1",
+      this.petals,
+      this.framecountSim
+    );
+    //Setting which states come after the simulation
+    if (timerResult === "BadEnding") {
+      currentState = new BadEnding();
+    } else if (timerResult === "GoodEnding") {
+      currentState = new GoodEnding();
+    }
     user.display();
     for (let i = 0; i < petals.length; i++) {
-      let petal = petals[i];
+      let petal = this.petals[i];
       if (petal.active) {
-        petal.gravity(gravityForce);
         petal.move();
-        petal.bounce(knee);
+        petal.wrap();
         petal.display();
       }
-    }
-    if (magicPetal.active) {
-      magicPetal.gravity(gravityForce);
-      magicPetal.move();
-      magicPetal.bounce(knee);
-      magicPetal.display();
     }
   }
 }
