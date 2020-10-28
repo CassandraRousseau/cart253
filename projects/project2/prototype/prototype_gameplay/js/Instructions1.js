@@ -8,12 +8,12 @@ class Instructions1 extends State {
   //Setting instructions screen
   draw() {
     super.draw();
+    background(255);
     this.display();
   }
   //Displaying instructions screen
   display() {
     push();
-    background(255);
     textSize(85);
     fill(0);
     textAlign(LEFT, TOP);
