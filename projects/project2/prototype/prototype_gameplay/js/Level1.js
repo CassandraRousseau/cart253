@@ -31,9 +31,9 @@ class Level1 extends State {
     );
     //Setting which states come after the simulation
     if (timerResult === "BadEnding") {
-      currentState = new BadEnding();
+      currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
     } else if (timerResult === "GoodEnding") {
-      currentState = new GoodEnding();
+      currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
     user.move();
     user.display();

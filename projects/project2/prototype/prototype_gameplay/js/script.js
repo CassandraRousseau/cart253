@@ -32,9 +32,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   let title = new Title(windowWidth, windowHeight, titleImage);
-  let badEnding = new BadEnding(windowWidth, windowHeight, badEndingImage);
-  let goodEnding = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
-  currentState = instructions1;
+  currentState = title;
 }
 
 // draw()
