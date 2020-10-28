@@ -13,6 +13,7 @@ let goodEnding;
 let timer;
 let petals = [];
 let numRedPetals = 20;
+let numMagicPetals = 1;
 let titleImage;
 let petalImage;
 let magicPetalImage;
