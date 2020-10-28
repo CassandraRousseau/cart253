@@ -8,12 +8,12 @@ Cars, trucks, and motorcycles will be moving left and right across the canvas.
 If the pedestrian collides with any of the vehicles, they die.
 If they make it to the other side, they succeeded. Just like life!
 **************************************************/
+let currentState = "simulation";
 let pedestrian;
 let vehicles = [];
 let numCars = 10;
 let numTrucks = 10;
 let numMotorcycles = 5;
-let currentState = "title";
 // setup()
 //
 // Description of setup() goes here.
