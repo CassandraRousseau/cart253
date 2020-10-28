@@ -7,18 +7,15 @@ class Level1 extends State {
     this.framecountSim = frameCount;
     this.timer = new Timer();
     this.user = new User();
+    let x = random(0, width);
+    let y = random(0, height);
+    this.magicPetal = new MagicPetal(x, y, magicPetalImage);
     this.petals = [];
     for (let i = 0; i < numRedPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
       let redPetal = new RedPetal(x, y, petalImage);
       this.petals.push(redPetal);
-    }
-    for (let i = 0; i < numMagicPetals; i++) {
-      let x = random(0, width);
-      let y = random(0, height);
-      let magicPetal = new MagicPetal(x, y, magicPetalImage);
-      this.petals.push(magicPetal);
     }
   }
   //Preloading necessary images for simulation
@@ -41,8 +38,10 @@ class Level1 extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
-    user.move();
     user.display();
+    magicPetal.move();
+    magicPetal.wrap();
+    magicPetal.display();
     for (let i = 0; i < petals.length; i++) {
       let petal = this.petals[i];
       if (petal.active) {

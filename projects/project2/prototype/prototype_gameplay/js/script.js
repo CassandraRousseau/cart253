@@ -11,9 +11,9 @@ let level1;
 let badEnding;
 let goodEnding;
 let timer;
+let user;
 let petals = [];
 let numRedPetals = 20;
-let numMagicPetals = 1;
 let titleImage;
 let petalImage;
 let magicPetalImage;
@@ -42,7 +42,6 @@ function setup() {
 function draw() {
   currentState.draw();
 }
-
 //Setting all key functions for each state.
 function keyPressed() {
   currentState.keyPressed();

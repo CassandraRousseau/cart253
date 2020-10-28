@@ -4,17 +4,15 @@ class User {
     this.x = 0;
     this.y = 0;
     this.size = 300;
+    this.fill = 0;
   }
-  move() {
-    this.x = mouseX;
-    this.y = mouseY;
-  }
+
   //Displaying the knee
   display() {
     push();
-    fill(0);
+    fill(this.fill);
     noStroke();
-    ellipse(this.x, this.y, this.size);
+    ellipse(mouseX, mouseY, this.size);
     pop();
   }
 }
