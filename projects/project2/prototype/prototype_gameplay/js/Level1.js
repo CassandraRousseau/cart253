@@ -38,17 +38,15 @@ class Level1 extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
-    user.display();
-    magicPetal.move();
-    magicPetal.wrap();
-    magicPetal.display();
+    this.user.display();
+    this.magicPetal.move();
+    this.magicPetal.wrap();
+    this.magicPetal.display();
     for (let i = 0; i < petals.length; i++) {
       let petal = this.petals[i];
-      if (petal.active) {
-        petal.move();
-        petal.wrap();
-        petal.display();
-      }
+      petal.move();
+      petal.wrap();
+      petal.display();
     }
     pop();
   }

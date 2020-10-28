@@ -26,7 +26,7 @@ class GoodEnding extends State {
     fill(0);
     textFont("Lemonada");
     textAlign(LEFT, TOP);
-    text(this.goodJob, 10, height / 2, windowWidth, windowHeight);
+    text(this.goodJob, 10, 50, windowWidth, windowHeight);
     push();
     textSize(35);
     text("Press Enter to restart", width / 2, (2 * height) / 3);

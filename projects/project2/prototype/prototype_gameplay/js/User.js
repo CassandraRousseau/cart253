@@ -3,7 +3,8 @@ class User {
   constructor() {
     this.x = 0;
     this.y = 0;
-    this.size = 300;
+    this.w = 25;
+    this.h = 25;
     this.fill = 0;
   }
 
@@ -12,7 +13,7 @@ class User {
     push();
     fill(this.fill);
     noStroke();
-    ellipse(mouseX, mouseY, this.size);
+    ellipse(mouseX, mouseY, this.w, this.h);
     pop();
   }
 }

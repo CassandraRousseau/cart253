@@ -12,6 +12,9 @@ let badEnding;
 let goodEnding;
 let timer;
 let user;
+let petal;
+let redPetal;
+let magicPetal;
 let petals = [];
 let numRedPetals = 20;
 let titleImage;
@@ -32,6 +35,7 @@ function preload() {
 //Setting all the setups for each state.
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  noCursor();
   let title = new Title(windowWidth, windowHeight, titleImage);
   currentState = title;
 }
