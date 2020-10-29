@@ -1,5 +1,6 @@
 class BadEnding extends State {
-  //Creating bad ending(all soccer balls are falling)screen
+  //Creating bad ending screen
+
   constructor(badEndingImage) {
     super(badEndingImage);
     this.x = 0;
@@ -7,16 +8,20 @@ class BadEnding extends State {
     this.image = badEndingImage;
     this.over = "Game Over";
   }
+
+  //Preloading background image for bad ending
   preload() {
     super.preload();
     this.image.preload();
   }
-  //Setting bad ending(all soccer balls are falling)screen
+
+  //Setting bad ending screen
   draw() {
     super.draw();
     this.display();
   }
-  //Displaying bad ending(all soccer balls are falling)screen
+
+  //Displaying bad ending screen
   display() {
     push();
     image(this.image, this.x, this.y, windowWidth, windowHeight);
@@ -32,9 +37,11 @@ class BadEnding extends State {
     pop();
     pop();
   }
-  //Setting keyPressed action after bad ending(all soccer balls are falling)screen
+
+  //Setting keyPressed action after bad ending screen
   keyPressed() {
     super.keyPressed();
+
     if (keyCode === 13) {
       location.reload();
     }

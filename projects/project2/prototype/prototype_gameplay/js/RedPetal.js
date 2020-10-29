@@ -1,12 +1,13 @@
 class RedPetal extends Petal {
-  //Creating the soccer balls
+  //Creating the red petals
   constructor(x, y, petalImage) {
     super(x, y, petalImage);
     this.x = x;
     this.y = y;
     this.image = petalImage;
   }
-  //Displaying the soccer balls
+
+  //Displaying the red petals
   display() {
     super.display();
     push();

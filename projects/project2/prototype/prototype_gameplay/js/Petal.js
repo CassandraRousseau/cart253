@@ -1,5 +1,5 @@
 class Petal {
-  //Creating the soccer balls
+  //Creating the petals
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -11,14 +11,21 @@ class Petal {
     this.angle = 30;
     this.image = undefined;
   }
-  preload() {}
-  //Setting balls movements
+
+  //Preloading images of petals
+  preload() {
+    this.image.preload();
+  }
+
+  //Setting petals
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
     this.x += this.vx;
     this.y += this.vy;
   }
+
+  //Bringing the petals once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -32,6 +39,7 @@ class Petal {
       this.y += height;
     }
   }
-  //Displaying the soccer balls
+
+  //Displaying the petals
   display() {}
 }

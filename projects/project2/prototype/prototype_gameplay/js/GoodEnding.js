@@ -9,14 +9,18 @@ class GoodEnding extends State {
     this.image = goodEndingImage;
     this.goodJob = "Good Job!\nYou found the first magic petal!";
   }
+
+  //Preloading background image for good ending
   preload() {
     this.image.preload();
   }
+
   //Setting good ending screen
   draw() {
     super.draw();
     this.display();
   }
+
   //Displaying good ending screen
   display() {
     push();
@@ -33,9 +37,11 @@ class GoodEnding extends State {
     pop();
     pop();
   }
+
   //Setting keyPressed after good ending screen
   keyPressed() {
     super.keyPressed();
+
     if (keyCode === 13) {
       location.reload();
     }

@@ -1,5 +1,5 @@
 class User {
-  //Creating the knee
+  //Creating the user
   constructor() {
     this.x = 0;
     this.y = 0;
@@ -8,7 +8,7 @@ class User {
     this.fill = 0;
   }
 
-  //Displaying the knee
+  //Displaying the user
   display() {
     push();
     fill(this.fill);
