@@ -45,7 +45,7 @@ let goodEndingImage;
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
-  petalImage = loadImage("assets/images/Petal.png");
+  petalImage = loadImage("assets/images/petal.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }

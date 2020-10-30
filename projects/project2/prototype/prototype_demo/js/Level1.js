@@ -15,7 +15,6 @@ class Level1 extends State {
     let x = random(0, width);
     let y = random(0, height);
     this.magicPetal = new MagicPetal(x, y, magicPetalImage);
-    this.petals.push(this.magicPetal);
     pop();
 
     for (let i = 0; i < numRedPetals; i++) {
@@ -42,7 +41,7 @@ class Level1 extends State {
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
-      this.petals,
+      this.magicPetal,
       this.framecountSim
     );
 
@@ -55,7 +54,9 @@ class Level1 extends State {
 
     //Displaying the elements
     this.user.display();
-
+    this.magicPetal.move();
+    this.magicPetal.wrap();
+    this.magicPetal.display();
     for (let i = 0; i < this.petals.length; i++) {
       let petal = this.petals[i];
       petal.move();
