@@ -1,4 +1,4 @@
-class Sky {
+class Sky extends Level1 {
   //Creating good ending screen
   constructor(w, h, skyImage) {
     this.x = 0;
@@ -17,7 +17,6 @@ class Sky {
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
-    background(this.image);
     pop();
   }
 }
