@@ -22,7 +22,7 @@ class Level1 extends State {
       let x = random(0, width);
       let y = random(0, height);
       let redPetal = new RedPetal(x, y, petalImage);
-      this.petals.push(this.redPetal);
+      this.petals.push(redPetal);
     }
   }
 
