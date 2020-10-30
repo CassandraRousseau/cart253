@@ -1,12 +1,14 @@
 class MagicPetal {
   //Creating the magic petal
-  constructor(x, y, magicPetalImage) {
+  constructor(x, y, vx, vy, speed, angle, magicPetalImage) {
     this.x = x;
     this.y = y;
-    this.w = 100;
-    this.h = 100;
-    this.speed = 8;
-    this.angle = 30;
+    this.w = 125;
+    this.h = 125;
+    this.vx = vx;
+    this.vy = vy;
+    this.speed = speed;
+    this.angle = angle;
     this.image = magicPetalImage;
     this.active = true;
   }
@@ -20,7 +22,6 @@ class MagicPetal {
     let vy = this.speed * sin(this.angle);
     this.x += this.vx;
     this.y += this.vy;
-    console.log(this.x);
   }
   //Bringing the petals once they go off the screen
   wrap() {

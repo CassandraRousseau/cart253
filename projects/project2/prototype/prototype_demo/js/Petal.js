@@ -1,12 +1,14 @@
 class Petal {
   //Creating the petals
-  constructor(x, y) {
+  constructor(x, y, vx, vy, speed, angle) {
     this.x = x;
     this.y = y;
-    this.w = 100;
-    this.h = 100;
-    this.speed = 8;
-    this.angle = 30;
+    this.vx = vx;
+    this.vy = vy;
+    this.w = 125;
+    this.h = 125;
+    this.speed = speed;
+    this.angle = angle;
     this.image = undefined;
   }
 

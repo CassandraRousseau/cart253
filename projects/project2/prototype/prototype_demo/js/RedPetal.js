@@ -1,9 +1,13 @@
 class RedPetal extends Petal {
   //Creating the red petals
-  constructor(x, y, petalImage) {
-    super(x, y, petalImage);
+  constructor(x, y, vx, vy, speed, angle, petalImage) {
+    super(x, y, vx, vy, speed, angle, petalImage);
     this.x = x;
     this.y = y;
+    this.vx = vx;
+    this.vy = vy;
+    this.speed = speed;
+    this.angle = angle;
     this.image = petalImage;
   }
 

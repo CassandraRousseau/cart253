@@ -19,6 +19,8 @@ let goodEnding;
 
 let timer;
 
+let sky;
+
 let user;
 
 let redPetal;
@@ -31,6 +33,8 @@ let numRedPetals = 20;
 
 let titleImage;
 
+let skyImage;
+
 let petalImage;
 
 let magicPetalImage;
@@ -42,6 +46,7 @@ let goodEndingImage;
 // Setting all the preloaded images
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
+  skyImage = loadImage("assets/images/ephemeralSky.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   petalImage = loadImage("assets/images/petal.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
