@@ -21,8 +21,6 @@ let timer;
 
 let user;
 
-let petal;
-
 let redPetal;
 
 let magicPetal;
