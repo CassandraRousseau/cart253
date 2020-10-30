@@ -7,7 +7,7 @@ class State {
 
   //Setting draw method for each state
   draw() {}
-
+  mousePressed() {}
   //Setting keyPressed method for each state
   keyPressed() {}
 }

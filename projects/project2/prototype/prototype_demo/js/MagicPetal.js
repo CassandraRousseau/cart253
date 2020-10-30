@@ -8,6 +8,7 @@ class MagicPetal {
     this.speed = 8;
     this.angle = 30;
     this.image = magicPetalImage;
+    this.active = true;
   }
   //Preloading images of petals
   preload() {
@@ -19,6 +20,7 @@ class MagicPetal {
     let vy = this.speed * sin(this.angle);
     this.x += this.vx;
     this.y += this.vy;
+    console.log(this.x);
   }
   //Bringing the petals once they go off the screen
   wrap() {

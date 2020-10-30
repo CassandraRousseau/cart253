@@ -7,7 +7,6 @@ class User {
     this.h = 25;
     this.fill = 0;
   }
-
   //Displaying the user
   display() {
     push();
@@ -15,5 +14,12 @@ class User {
     noStroke();
     ellipse(mouseX, mouseY, this.w, this.h);
     pop();
+  }
+  mousePressed(magicPetal) {
+    let d = dist(mouseX, mouseY, magicPetal.x, magicPetal.y);
+
+    if (magicPetal.active && d < magicPetal.w / 2 + magicPetal.h / 2) {
+      magicPetal.active = false;
+    }
   }
 }

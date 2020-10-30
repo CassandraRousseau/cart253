@@ -62,7 +62,9 @@ function setup() {
 function draw() {
   currentState.draw();
 }
-
+function mousePressed() {
+  currentState.mousePressed();
+}
 //Setting all key functions for each state.
 function keyPressed() {
   currentState.keyPressed();

@@ -65,4 +65,8 @@ class Level1 extends State {
     }
     pop();
   }
+  mousePressed() {
+    super.mousePressed();
+    this.user.mousePressed(magicPetal);
+  }
 }
