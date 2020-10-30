@@ -5,8 +5,6 @@ class Petal {
     this.y = y;
     this.w = 100;
     this.h = 100;
-    this.vx = 2;
-    this.vy = 4;
     this.speed = 8;
     this.angle = 30;
     this.image = undefined;

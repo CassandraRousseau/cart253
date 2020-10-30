@@ -15,14 +15,14 @@ class Level1 extends State {
     let x = random(0, width);
     let y = random(0, height);
     this.magicPetal = new MagicPetal(x, y, magicPetalImage);
-    this.petals.push(magicPetal);
+    this.petals.push(this.magicPetal);
     pop();
 
     for (let i = 0; i < numRedPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
       let redPetal = new RedPetal(x, y, petalImage);
-      this.petals.push(redPetal);
+      this.petals.push(this.redPetal);
     }
   }
 
@@ -56,7 +56,7 @@ class Level1 extends State {
     //Displaying the elements
     this.user.display();
 
-    for (let i = 0; i < petals.length; i++) {
+    for (let i = 0; i < this.petals.length; i++) {
       let petal = this.petals[i];
       petal.move();
       petal.wrap();
