@@ -55,7 +55,7 @@ class Level1 extends State {
     super.draw();
     push();
     this.sky.display();
-    background(this.sky.display);
+    background(this.sky);
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
