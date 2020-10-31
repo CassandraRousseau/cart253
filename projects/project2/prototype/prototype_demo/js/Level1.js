@@ -8,11 +8,7 @@ class Level1 extends State {
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-    push();
-    let x = mouseX;
-    let y = mouseY;
-    this.user = new User(x, y);
-    pop();
+    this.user = new User();
     this.petals = [];
 
     //Creating petals
