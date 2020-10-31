@@ -4,11 +4,15 @@ class Level1 extends State {
     super();
 
     this.name = "Level1";
-    this.sky = new Sky(skyImage);
+    this.sky = new Sky(windowWidth, windowHeight, skyImage);
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-    this.user = new User();
+    push();
+    let x = mouseX;
+    let y = mouseY;
+    this.user = new User(x, y);
+    pop();
     this.petals = [];
 
     //Creating petals
@@ -55,7 +59,6 @@ class Level1 extends State {
     super.draw();
     push();
     this.sky.display();
-    background(this.sky);
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",

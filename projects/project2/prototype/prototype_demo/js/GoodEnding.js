@@ -1,7 +1,7 @@
 class GoodEnding extends State {
   //Creating good ending screen
   constructor(w, h, goodEndingImage) {
-    super(goodEndingImage);
+    super(w, h, goodEndingImage);
     this.x = 0;
     this.y = 0;
     this.w = w;
@@ -24,7 +24,7 @@ class GoodEnding extends State {
   //Displaying good ending screen
   display() {
     push();
-    image(this.image, this.x, this.y, windowWidth, windowHeight);
+    image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
     textSize(55);
     fill(0);

@@ -1,8 +1,10 @@
-class Sky extends Level1 {
+class Sky {
   //Creating sky background for level 1
-  constructor(skyImage) {
+  constructor(w, h, skyImage) {
     this.x = 0;
     this.y = 0;
+    this.width = w;
+    this.height = h;
     this.image = skyImage;
   }
 
@@ -14,7 +16,7 @@ class Sky extends Level1 {
   //Displaying sky background
   display() {
     push();
-    image(skyImage, this.x, this.y);
+    image(skyImage, this.x, this.y, this.width, this.height);
     pop();
   }
 }

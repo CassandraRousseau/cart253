@@ -1,10 +1,12 @@
 class BadEnding extends State {
   //Creating bad ending screen
 
-  constructor(badEndingImage) {
-    super(badEndingImage);
+  constructor(w, h, badEndingImage) {
+    super(w, h, badEndingImage);
     this.x = 0;
     this.y = 0;
+    this.width = w;
+    this.height = h;
     this.image = badEndingImage;
     this.over = "Game Over";
   }
@@ -24,8 +26,7 @@ class BadEnding extends State {
   //Displaying bad ending screen
   display() {
     push();
-    image(this.image, this.x, this.y, windowWidth, windowHeight);
-    background(this.image);
+    image(this.image, this.x, this.y, this.width, this.height);
     textSize(85);
     fill(0);
     textFont("Lemonada");
