@@ -28,7 +28,7 @@ class GoodEnding extends State {
     background(this.image);
     textSize(55);
     fill(0);
-    textFont("Lemonada");
+    textFont("Fredericka the Great");
     textAlign(LEFT, TOP);
     text(this.goodJob, 10, 50, windowWidth, windowHeight);
     push();

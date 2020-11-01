@@ -19,7 +19,7 @@ class Instructions1 extends State {
     textSize(45);
     fill(0);
     textAlign(LEFT, TOP);
-    textFont("Lemonada");
+    textFont("Fredericka the Great");
     text(this.intro, 10, 50, windowWidth, windowHeight);
     pop();
   }

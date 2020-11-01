@@ -32,7 +32,7 @@ class Title extends State {
     textSize(105);
     fill(0);
     textAlign(CENTER, CENTER);
-    textFont("Lemonada");
+    textFont("Fredericka the Great");
     text(this.titleString, width / 2, height / 2);
 
     push();

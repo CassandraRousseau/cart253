@@ -29,12 +29,12 @@ class BadEnding extends State {
     image(this.image, this.x, this.y, this.width, this.height);
     textSize(85);
     fill(0);
-    textFont("Lemonada");
+    textFont("Fredericka the Great");
     textAlign(LEFT, TOP);
-    text(this.over, 10, height / 2, windowWidth, windowHeight);
+    text(this.over, 10, (2 * height) / 6, windowWidth, windowHeight);
     push();
     textSize(35);
-    text("Press Enter to restart", 10, (2 * height) / 3);
+    text("Press Enter to restart", 10, (3 * height) / 6);
     pop();
     pop();
   }
