@@ -9,7 +9,7 @@ class Level1 extends State {
     this.framecountSim = frameCount;
     this.timer = new Timer();
     this.user = new User();
-    this.petals = [];
+    this.plants = [];
 
     //Creating petals
     push();
@@ -24,6 +24,7 @@ class Level1 extends State {
       y,
       vx,
       vy,
+
       speed,
       angle,
       magicPetalImage
@@ -37,8 +38,18 @@ class Level1 extends State {
       let vy = random(5, 15);
       let angle = random(0, 360);
       let speed = random(5, 10);
-      let redPetal = new RedPetal(x, y, vx, vy, speed, angle, petalImage);
-      this.petals.push(redPetal);
+      let redPetal = new RedPetal(x, y, vx, vy, speed, angle, redPetalImage);
+      this.plants.push(redPetal);
+    }
+    for (let i = 0; i < numLeaves; i++) {
+      let x = random(0, width);
+      let y = random(0, height);
+      let vx = random(5, 15);
+      let vy = random(5, 15);
+      let angle = random(0, 360);
+      let speed = random(5, 10);
+      let leaf = new Leaf(x, y, vx, vy, speed, angle, leafImage);
+      this.plants.push(leaf);
     }
   }
 
@@ -48,6 +59,7 @@ class Level1 extends State {
     this.sky.preload();
     this.magicPetal.preload();
     this.redPetal.preload();
+    this.leaf.preload();
   }
 
   //Setting level 1
@@ -74,11 +86,11 @@ class Level1 extends State {
     this.magicPetal.move();
     this.magicPetal.wrap();
     this.magicPetal.display();
-    for (let i = 0; i < this.petals.length; i++) {
-      let petal = this.petals[i];
-      petal.move();
-      petal.wrap();
-      petal.display();
+    for (let i = 0; i < this.plants.length; i++) {
+      let plant = this.plants[i];
+      plant.move();
+      plant.wrap();
+      plant.display();
     }
     pop();
   }

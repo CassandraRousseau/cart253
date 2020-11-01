@@ -23,19 +23,25 @@ let sky;
 
 let user;
 
+let leaf;
+
 let redPetal;
 
 let magicPetal;
 
-let petals = [];
+let plants = [];
 
-let numRedPetals = 20;
+let numRedPetals = 10;
+
+let numLeaves = 10;
 
 let titleImage;
 
 let skyImage;
 
-let petalImage;
+let leafImage;
+
+let redPetalImage;
 
 let magicPetalImage;
 
@@ -48,7 +54,8 @@ function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
-  petalImage = loadImage("assets/images/petal.png");
+  redPetalImage = loadImage("assets/images/redPetal.png");
+  leafImage = loadImage("assets/images/leaf.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }

@@ -1,14 +1,14 @@
-class RedPetal extends Plant {
+class Leaf extends Plant {
   //Creating the red petals
-  constructor(x, y, vx, vy, speed, angle, redPetalImage) {
-    super(x, y, vx, vy, speed, angle, redPetalImage);
+  constructor(x, y, vx, vy, speed, angle, leafImage) {
+    super(x, y, vx, vy, speed, angle, leafImage);
     this.x = x;
     this.y = y;
     this.vx = vx;
     this.vy = vy;
     this.speed = speed;
     this.angle = angle;
-    this.image = redPetalImage;
+    this.image = leafImage;
   }
 
   //Displaying the red petals

@@ -1,4 +1,4 @@
-class Petal {
+class Plant {
   //Creating the petals
   constructor(x, y, vx, vy, speed, angle) {
     this.x = x;
