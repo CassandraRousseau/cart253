@@ -29,15 +29,15 @@ class Title extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(105);
+    textSize(115);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
     text(this.titleString, width / 2, height / 2);
 
     push();
-    textSize(35);
-    text("Press Enter to start", width / 2, (2 * height) / 3);
+    textSize(45);
+    text("Press Enter to start", width / 2, (5 * height) / 6);
     pop();
     pop();
   }

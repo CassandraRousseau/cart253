@@ -17,14 +17,13 @@ class Level1 extends State {
     let y = random(0, height);
     let angle = random(0, 360);
     let speed = random(5, 10);
-    let vx = random(5, 8);
-    let vy = random(5, 8);
+    let vx = random(3, 8);
+    let vy = random(3, 6);
     this.magicPetal = new MagicPetal(
       x,
       y,
       vx,
       vy,
-
       speed,
       angle,
       magicPetalImage
@@ -83,9 +82,12 @@ class Level1 extends State {
 
     //Displaying the elements
     this.user.display();
-    this.magicPetal.move();
-    this.magicPetal.wrap();
-    this.magicPetal.display();
+    if (this.magicPetal.active) {
+      this.magicPetal.move();
+      this.magicPetal.wrap();
+      this.magicPetal.display();
+    }
+
     for (let i = 0; i < this.plants.length; i++) {
       let plant = this.plants[i];
       plant.move();
@@ -96,6 +98,6 @@ class Level1 extends State {
   }
   mousePressed() {
     super.mousePressed();
-    this.user.mousePressed(magicPetal);
+    this.user.mousePressed(this.magicPetal);
   }
 }

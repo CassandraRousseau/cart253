@@ -17,7 +17,7 @@ class User {
     pop();
   }
   mousePressed(magicPetal) {
-    let d = dist(this.x, this.y, magicPetal.x, magicPetal.y);
+    let d = dist(mouseX, mouseY, magicPetal.x, magicPetal.y);
 
     if (magicPetal.active && d < magicPetal.w / 2 + magicPetal.h / 2) {
       magicPetal.active = false;
