@@ -28,15 +28,25 @@ let user;
 
 let leaf;
 
+let leaf2;
+
 let redPetal;
 
+let redPetal2;
+
 let magicPetal;
+
+let magicPetal2;
 
 let plants = [];
 
 let numRedPetals = 10;
 
+let numRedPetals2 = 500;
+
 let numLeaves = 10;
+
+let numLeaves2 = 500;
 
 let titleImage;
 

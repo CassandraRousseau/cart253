@@ -24,7 +24,7 @@ class MagicPetal2 {
   //Displaying the magic petal
   display() {
     push();
-    image(this.image, 0, 0, this.w, this.h);
+    image(magicPetalImage, this.x, this.y, this.w, this.h);
     pop();
   }
 }

@@ -15,42 +15,27 @@ class Level2 extends State {
     push();
     let x = random(0, width);
     let y = random(0, height);
-    let angle = 0;
     let speed = 0;
     let vx = 0;
     let vy = 0;
-    this.magicPetal = new MagicPetal(
-      x,
-      y,
-      vx,
-      vy,
-      speed,
-      angle,
-      magicPetalImage
-    );
+    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
     pop();
 
     //Creating the red petals
-    for (let i = 0; i < numRedPetals; i++) {
+    for (let i = 0; i < numRedPetals2; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let vx = random(5, 15);
-      let vy = random(5, 15);
       let angle = random(0, 360);
-      let speed = random(5, 10);
-      let redPetal = new RedPetal(x, y, vx, vy, speed, angle, redPetalImage);
+      let redPetal = new RedPetal2(x, y, vx, vy, speed, angle, redPetalImage);
       this.plants.push(redPetal);
     }
 
     //Creating the leaves
-    for (let i = 0; i < numLeaves; i++) {
+    for (let i = 0; i < numLeaves2; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let vx = random(5, 15);
-      let vy = random(5, 15);
       let angle = random(0, 360);
-      let speed = random(5, 10);
-      let leaf = new Leaf(x, y, vx, vy, speed, angle, leafImage);
+      let leaf = new Leaf2(x, y, vx, vy, speed, angle, leafImage);
       this.plants.push(leaf);
     }
   }
@@ -67,6 +52,7 @@ class Level2 extends State {
   //Setting level 1
   draw() {
     super.draw();
+    background(75, 35, 25);
     push();
 
     //Setting the timer
@@ -103,6 +89,4 @@ class Level2 extends State {
     super.mousePressed();
     this.user.mousePressed(this.magicPetal);
   }
-}
-
 }

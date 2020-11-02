@@ -20,6 +20,19 @@ class Timer {
       ) {
         return "GoodEnding";
       }
+    } else if (state === "Level2") {
+      //Bad ending when the user didn't catch the magic petal
+      if (magicPetal.active && frameCount > framecountSim + this.gamelength) {
+        return "BadEnding";
+      }
+
+      //Good ending when the user catches the magic petal
+      else if (
+        !magicPetal.active &&
+        frameCount < framecountSim + this.gamelength
+      ) {
+        return "GoodEnding";
+      }
     }
 
     //Game is running between the beginning and the end of the level

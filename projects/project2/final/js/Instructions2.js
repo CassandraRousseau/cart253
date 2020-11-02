@@ -29,7 +29,7 @@ class Instructions2 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Level1();
+      currentState = new Level2();
     }
   }
 }

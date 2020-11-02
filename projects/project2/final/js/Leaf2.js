@@ -4,9 +4,9 @@ class Leaf2 extends Plant {
     super(x, y, vx, vy, speed, angle, leafImage);
     this.x = x;
     this.y = y;
-    this.vx = vx;
-    this.vy = vy;
-    this.speed = speed;
+    this.vx = 2;
+    this.vy = 2;
+    this.speed = 0.75;
     this.angle = angle;
     this.image = leafImage;
   }
