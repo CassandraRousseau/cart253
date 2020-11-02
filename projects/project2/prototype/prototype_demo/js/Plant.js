@@ -1,5 +1,5 @@
 class Plant {
-  //Creating the petals
+  //Creating the plants
   constructor(x, y, vx, vy, speed, angle) {
     this.x = x;
     this.y = y;
@@ -12,12 +12,12 @@ class Plant {
     this.image = undefined;
   }
 
-  //Preloading images of petals
+  //Preloading images of plants
   preload() {
     this.image.preload();
   }
 
-  //Setting petals
+  //Setting plants
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
@@ -25,7 +25,7 @@ class Plant {
     this.y += this.vy;
   }
 
-  //Bringing the petals once they go off the screen
+  //Bringing the plants back once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -40,6 +40,6 @@ class Plant {
     }
   }
 
-  //Displaying the petals
+  //Displaying the plants
   display() {}
 }

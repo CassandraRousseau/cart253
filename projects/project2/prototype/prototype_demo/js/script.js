@@ -1,7 +1,12 @@
 /**************************************************
 Project 02: Anything(Prototype)
+
 Cassandra Rousseau
-Here is a description of this template p5 project.
+
+The prototype starts with the title screen, followed by the game instructions.
+The level (simulation) starts with multiple leaves and petals flying through the air.
+The user's purpose is to catch the magic petal (a white petal) through the wind before the
+timer stops. If the user catches the petal, he won, but if time is out, it's game over...
 **************************************************/
 "use strict";
 
@@ -60,7 +65,7 @@ function preload() {
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }
 
-//Setting all the setups for each state.
+//Setting all the setups for each states.
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -70,14 +75,15 @@ function setup() {
   currentState = title;
 }
 
-// Setting the draw function for each state.
+// Setting the draw function for each states.
 function draw() {
   currentState.draw();
 }
+//Setting all mouse inputs for each states
 function mousePressed() {
   currentState.mousePressed();
 }
-//Setting all key functions for each state.
+//Setting all keyboard inputs for each states.
 function keyPressed() {
   currentState.keyPressed();
 }

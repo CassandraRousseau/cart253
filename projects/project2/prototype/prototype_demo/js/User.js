@@ -16,6 +16,8 @@ class User {
     ellipse(mouseX, mouseY, this.w, this.h);
     pop();
   }
+
+  //Setting how to catch the magic petal by pressing the mouse
   mousePressed(magicPetal) {
     let d = dist(mouseX, mouseY, magicPetal.x, magicPetal.y);
 

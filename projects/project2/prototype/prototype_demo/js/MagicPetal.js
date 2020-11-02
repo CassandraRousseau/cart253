@@ -12,18 +12,18 @@ class MagicPetal {
     this.image = magicPetalImage;
     this.active = true;
   }
-  //Preloading images of petals
+  //Preloading images of thee magic petal
   preload() {
     this.image.preload();
   }
-  //Setting petals
+  //Setting the magic petal
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
     this.x += this.vx;
     this.y += this.vy;
   }
-  //Bringing the petals once they go off the screen
+  //Bringing the petal back once it goes off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;

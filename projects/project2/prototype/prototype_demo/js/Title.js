@@ -12,7 +12,7 @@ class Title extends State {
     this.titleString = "Ephemeral";
   }
 
-  //Preloading necessary images for simulation
+  //Preloading necessary images for title screen
   preload() {
     super.preload();
     this.image.preload();

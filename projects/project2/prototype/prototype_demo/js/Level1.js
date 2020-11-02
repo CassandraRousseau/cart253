@@ -11,7 +11,7 @@ class Level1 extends State {
     this.user = new User();
     this.plants = [];
 
-    //Creating petals
+    //Creating the magic petal
     push();
     let x = random(0, width);
     let y = random(0, height);
@@ -30,6 +30,7 @@ class Level1 extends State {
     );
     pop();
 
+    //Creating the red petals
     for (let i = 0; i < numRedPetals; i++) {
       let x = random(0, width);
       let y = random(0, height);
@@ -40,6 +41,8 @@ class Level1 extends State {
       let redPetal = new RedPetal(x, y, vx, vy, speed, angle, redPetalImage);
       this.plants.push(redPetal);
     }
+
+    //Creating the leaves
     for (let i = 0; i < numLeaves; i++) {
       let x = random(0, width);
       let y = random(0, height);
@@ -52,7 +55,7 @@ class Level1 extends State {
     }
   }
 
-  //Preloading necessary images for level
+  //Preloading necessary images for level 1
   preload() {
     super.preload();
     this.sky.preload();
@@ -96,6 +99,8 @@ class Level1 extends State {
     }
     pop();
   }
+
+  //Setting the mousePressed method for the interactivity in the level
   mousePressed() {
     super.mousePressed();
     this.user.mousePressed(this.magicPetal);
