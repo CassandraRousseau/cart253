@@ -3,7 +3,7 @@ class Level2 extends State {
   constructor() {
     super();
 
-    this.name = "Level1";
+    this.name = "Level2";
     this.sky = new Sky(windowWidth, windowHeight, skyImage);
     //Creating timer
     this.framecountSim = frameCount;

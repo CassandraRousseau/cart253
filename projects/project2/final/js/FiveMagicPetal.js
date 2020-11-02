@@ -1,25 +1,29 @@
-class RedPetal extends Plant {
-  //Creating the red petals
-  constructor(x, y, vx, vy, speed, angle, redPetalImage) {
-    super(x, y, vx, vy, speed, angle, redPetalImage);
+class FiveMagicPetal {
+  //Creating the magic petal
+  constructor(x, y, vx, vy, speed, angle, magicPetalImage) {
     this.x = x;
     this.y = y;
+    this.w = 125;
+    this.h = 125;
     this.vx = vx;
     this.vy = vy;
     this.speed = speed;
     this.angle = angle;
-    this.image = redPetalImage;
+    this.image = magicPetalImage;
+    this.active = true;
   }
-
-  //Setting plants
+  //Preloading images of thee magic petal
+  preload() {
+    this.image.preload();
+  }
+  //Setting the magic petal
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
     this.x += this.vx;
     this.y += this.vy;
   }
-
-  //Bringing the plants back once they go off the screen
+  //Bringing the petal back once it goes off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -33,9 +37,8 @@ class RedPetal extends Plant {
       this.y += height;
     }
   }
-  //Displaying the red petals
+  //Displaying the magic petal
   display() {
-    super.display();
     push();
     translate(this.x, this.y);
     rotate(this.angle);

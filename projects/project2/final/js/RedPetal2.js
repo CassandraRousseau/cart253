@@ -11,27 +11,28 @@ class RedPetal extends Plant {
     this.image = redPetalImage;
   }
 
-  //Setting plants
   move() {
-    let vx = this.speed * cos(this.angle);
-    let vy = this.speed * sin(this.angle);
+    let dx = this.x - mouseX;
+
+    let dy = this.y - mouseY;
+
+    if (dx < 0) {
+      this.vx = -this.speed;
+    } else if (dx > 0) {
+      this.vx = this.speed;
+    }
+
+    if (dy < 0) {
+      this.vy = -this.speed;
+    } else if (dy > 0) {
+      this.vy = this.speed;
+    }
+
     this.x += this.vx;
     this.y += this.vy;
-  }
 
-  //Bringing the plants back once they go off the screen
-  wrap() {
-    if (this.x > width) {
-      this.x -= width;
-    } else if (this.x < 0) {
-      this.x += width;
-    }
-
-    if (this.y > height) {
-      this.y -= height;
-    } else if (this.y < 0) {
-      this.y += height;
-    }
+    this.x = constrain(this.x, 0, width);
+    this.y = constrain(this.y, 0, height);
   }
   //Displaying the red petals
   display() {

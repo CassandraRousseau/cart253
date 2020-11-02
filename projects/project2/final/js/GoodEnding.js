@@ -7,7 +7,7 @@ class GoodEnding extends State {
     this.w = w;
     this.h = h;
     this.image = goodEndingImage;
-    this.goodJob = "Good Job!\nYou found the first magic petal!";
+    this.goodJob = "Good Job!\nYou found the magic petal!";
   }
 
   //Preloading background image for good ending
