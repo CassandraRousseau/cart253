@@ -5,14 +5,23 @@ Cassandra Rousseau
 Here is a description of this template p5 project.
 **************************************************/
 "use strict";
-let synth;
-let notes = ["F2", "G2", "F2", "C3", "C3", "F2", "Eb3", "C3"];
-let currentNote = 0;
-function preload() {}
+let mic;
+let ghost = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  image: undefined,
+};
+function preload() {
+  ghost.image = loadImage("assets/images/clown.png");
+}
 function setup() {
   createCanvas(600, 600);
-  synth = new p5.PolySynth();
-  userStartAudio();
+  ghost.x = width / 2;
+  ghost.y = height / 2;
+  mic = new p5.AudioIn();
+  mic.start();
 }
 
 // draw()
@@ -20,15 +29,20 @@ function setup() {
 // Description of draw() goes here.
 function draw() {
   background(0);
-}
-function keyPressed() {
-  setInterval(playRandomNote, 150);
-}
-function playRandomNote() {
-  let note = notes[currentNote];
-  synth.play(note, 0, 1, 4);
-  currentNote += 1;
-  if (currentNote === notes.length) {
-    currentNote = 0;
+
+  ghost.x += random(-1, 1);
+  ghost.y += random(-1, 1);
+  let level = mic.getLevel();
+  if (level > 0.3) {
+    ghost.vx = 20;
   }
+
+  ghost.x += ghost.vx;
+  ghost.y += ghost.vy;
+  push();
+  imageMode(CENTER);
+  tint(255, 50);
+  image(ghost.image, ghost.x, ghost.y);
+
+  pop();
 }
