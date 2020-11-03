@@ -5,14 +5,14 @@ Cassandra Rousseau
 Here is a description of this template p5 project.
 **************************************************/
 "use strict";
-let oscillator;
-let t = 0;
+let synth;
+let notes = ["F2", "G2", "F2", "C3", "C3", "F2", "Eb3", "C3"];
+let currentNote = 0;
 function preload() {}
 function setup() {
   createCanvas(600, 600);
+  synth = new p5.PolySynth();
   userStartAudio();
-  oscillator = new p5.Oscillator(1, "sine");
-  oscillator.amp(0.1);
 }
 
 // draw()
@@ -20,14 +20,15 @@ function setup() {
 // Description of draw() goes here.
 function draw() {
   background(0);
-  let noiseValue = noise(t);
-  let newFreq = map(noiseValue, 0, 1, 20, 2000);
-  oscillator.freq(newFreq);
-  t = t + 0.05;
 }
-function mousePressed() {
-  oscillator.start();
+function keyPressed() {
+  setInterval(playRandomNote, 150);
 }
-function mouseReleased() {
-  oscillator.stop();
+function playRandomNote() {
+  let note = notes[currentNote];
+  synth.play(note, 0, 1, 4);
+  currentNote += 1;
+  if (currentNote === notes.length) {
+    currentNote = 0;
+  }
 }
