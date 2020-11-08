@@ -22,10 +22,9 @@ class Level1 extends State {
     //Creating the red petals
     for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
-      let y = random(0, height);
       let vx = random(-5, 5);
       let angle = random(0, 360);
-      let rock = new Rock(x, y, vx, angle, rockImage);
+      let rock = new Rock(x, vx, angle, rockImage);
       this.plants.push(rock);
     }
 
@@ -53,7 +52,8 @@ class Level1 extends State {
   draw() {
     super.draw();
     push();
-    backgroud(0);
+    background(0);
+
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
@@ -72,7 +72,6 @@ class Level1 extends State {
     this.user.display();
     if (this.magicPetal.active) {
       this.magicPetal.move();
-      this.magicPetal.wrap();
       this.magicPetal.display();
     }
 

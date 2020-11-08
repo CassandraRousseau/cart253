@@ -36,9 +36,9 @@ let thorn;
 
 let plants = [];
 
-let numRocks = 10;
+let numRocks = 1;
 
-let numThorns = 10;
+let numThorns = 1;
 
 let titleImage;
 

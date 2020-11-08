@@ -5,8 +5,8 @@ class Plant {
     this.y = y;
     this.vx = vx;
     this.vy = 0;
-    this.w = 125;
-    this.h = 125;
+    this.w = 300;
+    this.h = 300;
     this.stopSpeed = 0; // How fast the ghost moves when happy
     this.movingSpeed = 25; // How fast the ghost moves when scared
     this.state = "still"; // How does the ghost feel right now?,

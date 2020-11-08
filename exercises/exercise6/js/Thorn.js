@@ -15,7 +15,7 @@ class Thorn extends Plant {
     push();
     rotate(this.angle);
     tint();
-    image(this.image, 0, 0, this.w, this.h, this.alpha);
+    image(thornImage, this.x, this.y, this.w, this.h, this.alpha);
     pop();
   }
 }

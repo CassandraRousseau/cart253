@@ -14,7 +14,7 @@ class Rock extends Plant {
     super.display();
     push();
     rotate(this.angle);
-    image(this.image, this.x, this.y, this.w, this.h, this.alpha);
+    image(rockImage, this.x, height, this.w, this.h, this.alpha);
     pop();
   }
 }
