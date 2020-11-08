@@ -1,9 +1,9 @@
 /**************************************************
-Project 02: Anything(Prototype)
+Exercise 6:Make Some Noise
 Cassandra Rousseau
 The prototype starts with the title screen, followed by the game instructions.
 The level (simulation) starts with multiple leaves and petals flying through the air.
-The user's purpose is to catch the magic petal (a white petal) through the wind before the
+The user's purpose is to scream until he reaches the magic petal (a white petal) before the
 timer stops. If the user catches the petal, he won, but if time is out, it's game over...
 **************************************************/
 "use strict";
