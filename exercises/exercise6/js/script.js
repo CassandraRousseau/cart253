@@ -26,10 +26,6 @@ let sky;
 
 let user;
 
-let leaf;
-
-let redPetal;
-
 let magicPetal;
 // The microphone
 let mic;
