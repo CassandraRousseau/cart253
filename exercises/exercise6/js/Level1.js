@@ -4,7 +4,8 @@ class Level1 extends State {
     super();
 
     this.name = "Level1";
-    this.sky = new Sky(windowWidth, windowHeight, skyImage);
+    this.mic = new p5.AudioIn();
+    this.mic.start();
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -15,43 +16,27 @@ class Level1 extends State {
     push();
     let x = random(0, width);
     let y = random(0, height);
-    let angle = random(0, 360);
-    let speed = random(5, 10);
-    let vx = random(3, 8);
-    let vy = random(3, 6);
-    this.magicPetal = new MagicPetal(
-      x,
-      y,
-      vx,
-      vy,
-      speed,
-      angle,
-      magicPetalImage
-    );
+    this.magicPetal = new MagicPetal(x, y, magicPetalImage);
     pop();
 
     //Creating the red petals
-    for (let i = 0; i < numRedPetals; i++) {
+    for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let vx = random(5, 15);
-      let vy = random(5, 15);
+      let vx = random(-5, 5);
       let angle = random(0, 360);
-      let speed = random(5, 10);
-      let redPetal = new RedPetal(x, y, vx, vy, speed, angle, redPetalImage);
-      this.plants.push(redPetal);
+      let rock = new Rock(x, y, vx, angle, rockImage);
+      this.plants.push(rock);
     }
 
     //Creating the leaves
-    for (let i = 0; i < numLeaves; i++) {
+    for (let i = 0; i < numThorns; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let vx = random(5, 15);
-      let vy = random(5, 15);
+      let vx = random(-5, 5);
       let angle = random(0, 360);
-      let speed = random(5, 10);
-      let leaf = new Leaf(x, y, vx, vy, speed, angle, leafImage);
-      this.plants.push(leaf);
+      let thorn = new Thorn(x, y, vx, angle, thornImage);
+      this.plants.push(thorn);
     }
   }
 
@@ -60,15 +45,15 @@ class Level1 extends State {
     super.preload();
     this.sky.preload();
     this.magicPetal.preload();
-    this.redPetal.preload();
-    this.leaf.preload();
+    this.rock.preload();
+    this.thorn.preload();
   }
 
   //Setting level 1
   draw() {
     super.draw();
     push();
-    this.sky.display();
+    backgroud(0);
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
@@ -95,6 +80,7 @@ class Level1 extends State {
       let plant = this.plants[i];
       plant.move();
       plant.wrap();
+      plant.transparency();
       plant.display();
     }
     pop();

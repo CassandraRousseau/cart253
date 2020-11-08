@@ -31,20 +31,26 @@ let leaf;
 let redPetal;
 
 let magicPetal;
+// The microphone
+let mic;
+// A ghost
+let rock;
+// A clown image
+let thorn;
 
 let plants = [];
 
-let numRedPetals = 10;
+let numRocks = 10;
 
-let numLeaves = 10;
+let numThorns = 10;
 
 let titleImage;
 
 let skyImage;
 
-let leafImage;
+let rockImage;
 
-let redPetalImage;
+let thornImage;
 
 let magicPetalImage;
 
@@ -57,8 +63,8 @@ function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
-  redPetalImage = loadImage("assets/images/redPetal.png");
-  leafImage = loadImage("assets/images/leaf.png");
+  rockImage = loadImage("assets/images/rock.png");
+  thornImage = loadImage("assets/images/thorn.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }
