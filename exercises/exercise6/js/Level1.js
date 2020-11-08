@@ -14,17 +14,14 @@ class Level1 extends State {
 
     //Creating the magic petal
     push();
-    let x = random(0, width);
-    let y = random(0, height);
-    this.magicPetal = new MagicPetal(x, y, magicPetalImage);
+    this.magicPetal = new MagicPetal(magicPetalImage);
     pop();
 
     //Creating the red petals
     for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
       let vx = random(-5, 5);
-      let angle = random(0, 360);
-      let rock = new Rock(x, vx, angle, rockImage);
+      let rock = new Rock(x, vx, rockImage);
       this.plants.push(rock);
     }
 

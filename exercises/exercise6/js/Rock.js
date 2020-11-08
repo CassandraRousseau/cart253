@@ -1,11 +1,10 @@
 class Rock extends Plant {
   //Creating the red petals
-  constructor(x, y, vx, angle, rockImage) {
-    super(x, y, vx, angle, rockImage);
+  constructor(x, y, vx, rockImage) {
+    super(x, y, vx, rockImage);
     this.x = x;
     this.y = y;
     this.vx = vx;
-    this.angle = angle;
     this.image = rockImage;
   }
 
@@ -13,7 +12,6 @@ class Rock extends Plant {
   display() {
     super.display();
     push();
-    rotate(this.angle);
     image(rockImage, this.x, height, this.w, this.h, this.alpha);
     pop();
   }
