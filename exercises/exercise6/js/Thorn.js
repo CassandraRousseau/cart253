@@ -1,10 +1,9 @@
 class Thorn extends Plant {
   //Creating the red petals
-  constructor(x, y, vx, angle, thornImage) {
-    super(x, y, vx, angle, thornImage);
+  constructor(x, y, angle, thornImage) {
+    super(x, y, angle, thornImage);
     this.x = x;
     this.y = y;
-    this.vx = vx;
     this.angle = angle;
     this.image = thornImage;
   }

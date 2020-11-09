@@ -13,9 +13,8 @@ class Level1 extends State {
     this.plants = [];
 
     //Creating the magic petal
-    push();
+
     this.magicPetal = new MagicPetal(magicPetalImage);
-    pop();
 
     //Creating the red petals
     for (let i = 0; i < numRocks; i++) {

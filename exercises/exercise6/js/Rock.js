@@ -1,10 +1,9 @@
 class Rock extends Plant {
   //Creating the red petals
-  constructor(x, y, vx, rockImage) {
-    super(x, y, vx, rockImage);
+  constructor(x, y, rockImage) {
+    super(x, y, rockImage);
     this.x = x;
     this.y = y;
-    this.vx = vx;
     this.image = rockImage;
   }
 

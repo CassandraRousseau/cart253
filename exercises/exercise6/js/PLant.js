@@ -1,16 +1,15 @@
 class Plant {
   //Creating the plants
-  constructor(x, y, vx, angle) {
+  constructor(x, y, angle) {
     this.x = x;
     this.y = y;
-    this.vx = vx;
+    this.vx = 0;
     this.vy = 0;
     this.w = 300;
     this.h = 300;
-    this.stopSpeed = 0; // How fast the ghost moves when happy
-    this.movingSpeed = 25; // How fast the ghost moves when scared
-    this.state = "still"; // How does the ghost feel right now?,
-    this.movingThreshold = 0.3; // How loud a sound makes the ghost afraid?
+    this.movingSpeed = 25;
+    this.state = "still";
+    this.movingThreshold = 0.3;
     this.angle = angle;
     this.alpha = 255;
     this.image = undefined;
@@ -25,7 +24,6 @@ class Plant {
   move() {
     // Get the current level of sound going into the microphone
     let scream = mic.getLevel();
-
     // Check if the ghost gets scared
     if (scream > this.movingThreshold) {
       this.state = "running";
@@ -33,10 +31,6 @@ class Plant {
       this.vx = this.movingSpeed;
     }
 
-    // Check if the ghost is happy at the moment
-    if (this.state === "still") {
-      this.stopSpeed;
-    }
     this.x += this.vx;
     this.y += this.vy;
   }
