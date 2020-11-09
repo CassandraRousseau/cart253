@@ -1,4 +1,4 @@
-class Thorn extends Plant {
+class Thorn extends Nature {
   //Creating the thorns
   constructor(x, y, angle, thornImage) {
     super(x, y, angle, thornImage);

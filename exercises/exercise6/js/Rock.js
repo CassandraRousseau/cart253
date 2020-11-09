@@ -1,4 +1,4 @@
-class Rock extends Plant {
+class Rock extends Nature {
   //Creating the rocks
   constructor(x, y, rockImage) {
     super(x, y, rockImage);

@@ -1,5 +1,5 @@
-class Plant {
-  //Creating the plants
+class Nature {
+  //Creating nature elements
   constructor(x, y, angle) {
     this.x = x;
     this.y = y;
@@ -15,7 +15,7 @@ class Plant {
     this.image = undefined;
   }
 
-  //Preloading images of plants
+  //Preloading images of nature elements
   preload() {
     this.image.preload();
   }
@@ -24,10 +24,10 @@ class Plant {
   move() {
     // Get the current level of sound going into the microphone
     let scream = mic.getLevel();
-    // Check if the ghost gets scared
+    // Check if elements are moving
     if (scream > this.movingThreshold) {
       this.state = "running";
-      // The ghost should run away to the right
+      // Elements are moving to the right
       this.vx = this.movingSpeed;
     }
 
@@ -35,7 +35,7 @@ class Plant {
     this.y += this.vy;
   }
 
-  //Bringing the plants back once they go off the screen
+  //Bringing the nature elements back once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -49,6 +49,7 @@ class Plant {
       this.y += height;
     }
   }
+  //Changing the opacity in nature elements
   transparency() {
     if (this.x > width) {
       this.alpha = map(this.alpha, 0, width, 255, 0);
@@ -56,6 +57,6 @@ class Plant {
       this.alpha = map(this.alpha, width, 0, 255, 0);
     }
   }
-  //Displaying the plants
+  //Displaying the nature elements
   display() {}
 }

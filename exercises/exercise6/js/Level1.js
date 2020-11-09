@@ -10,7 +10,7 @@ class Level1 extends State {
     this.framecountSim = frameCount;
     this.timer = new Timer();
     this.user = new User();
-    this.plants = [];
+    this.natures = [];
 
     //Creating the magic petal
 
@@ -21,7 +21,7 @@ class Level1 extends State {
       let x = random(0, width);
       let vx = random(-5, 5);
       let rock = new Rock(x, vx, rockImage);
-      this.plants.push(rock);
+      this.natures.push(rock);
     }
 
     //Creating the thorns
@@ -31,14 +31,13 @@ class Level1 extends State {
       let vx = random(-5, 5);
       let angle = random(0, 360);
       let thorn = new Thorn(x, y, vx, angle, thornImage);
-      this.plants.push(thorn);
+      this.natures.push(thorn);
     }
   }
 
   //Preloading necessary images for level 1
   preload() {
     super.preload();
-    this.sky.preload();
     this.magicPetal.preload();
     this.rock.preload();
     this.thorn.preload();
@@ -71,12 +70,12 @@ class Level1 extends State {
       this.magicPetal.display();
     }
 
-    for (let i = 0; i < this.plants.length; i++) {
-      let plant = this.plants[i];
-      plant.move();
-      plant.wrap();
-      plant.transparency();
-      plant.display();
+    for (let i = 0; i < this.natures.length; i++) {
+      let nature = this.natures[i];
+      nature.move();
+      nature.wrap();
+      nature.transparency();
+      nature.display();
     }
     pop();
   }
