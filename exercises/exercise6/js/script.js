@@ -22,16 +22,14 @@ let goodEnding;
 
 let timer;
 
-let sky;
-
 let user;
 
 let magicPetal;
-// The microphone
+
 let mic;
-// A ghost
+
 let rock;
-// A clown image
+
 let thorn;
 
 let plants = [];
