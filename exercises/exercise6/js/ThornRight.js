@@ -1,19 +1,21 @@
-class Rock extends Nature {
-  //Creating the rocks
-  constructor(x, y, rockImage, mic) {
-    super(x, y, rockImage);
+class ThornLeft extends Nature {
+  //Creating the thorns
+  constructor(x, y, angle, thornImage, mic) {
+    super(x, y, angle, thornImage, mic);
     this.x = x;
     this.y = y;
-    this.image = rockImage;
+    this.angle = angle;
+    this.image = thornImage;
     this.mic = mic;
   }
+  //Setting plants
   move() {
     let scream = mic.getLevel();
     // Check if elements are moving
     if (scream > this.movingThreshold) {
       this.state = "running";
       // Elements are moving to the right
-      this.vx += this.movingSpeed;
+      this.vx = this.movingSpeed;
     }
 
     this.x += this.vx;
@@ -33,32 +35,28 @@ class Rock extends Nature {
   //Bringing the nature elements back once they go off the screen
   wrap() {
     if (this.x > width) {
-      this.x = width / 2;
-    } else if (this.x < 0) {
-      this.x = width / 2;
+      this.x -= width;
     }
 
     if (this.y > height) {
-      this.y = height - this.h;
-    } else if (this.y < 0) {
-      this.y = height - this.h;
+      this.y -= height;
     }
   }
   //Changing the opacity in nature elements
   transparency() {
     if (this.x > width) {
       this.alpha = map(this.alpha, 0, width, 255, 0);
-    } else if (this.x < 0) {
-      this.alpha = map(this.alpha, width, 0, 255, 0);
     }
   }
-  //Displaying the rocks
+  //Displaying the thorns
   display() {
     super.display();
     push();
     imageMode(CENTER);
+    translate(this.x, this.y);
+    rotate(this.angle);
     tint(this.alpha);
-    image(rockImage, this.x, height - this.h, this.w, this.h);
+    image(thornImage, 0, 0, this.w, this.h);
     pop();
   }
 }

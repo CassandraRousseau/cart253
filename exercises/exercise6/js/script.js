@@ -67,7 +67,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noCursor();
-  let mic = new p5.AudioIn();
+  mic = new p5.AudioIn();
   mic.start();
   let title = new Title(windowWidth, windowHeight, titleImage);
   currentState = title;

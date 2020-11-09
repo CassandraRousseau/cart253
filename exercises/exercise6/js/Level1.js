@@ -2,9 +2,7 @@ class Level1 extends State {
   //Creating level elements
   constructor() {
     super();
-
     this.name = "Level1";
-
     this.mic = mic;
     //Creating timer
     this.framecountSim = frameCount;
@@ -13,13 +11,12 @@ class Level1 extends State {
     this.natures = [];
 
     //Creating the magic petal
-
     this.magicPetal = new MagicPetal(magicPetalImage);
 
     //Creating the rocks
     for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
-      let vx = random(-5, 5);
+      let vx = 3;
       let rock = new Rock(x, vx, rockImage, this.mic);
       this.natures.push(rock);
     }
@@ -28,7 +25,7 @@ class Level1 extends State {
     for (let i = 0; i < numThorns; i++) {
       let x = random(0, width);
       let y = random(0, height);
-      let vx = random(-5, 5);
+      let vx = 3;
       let angle = random(0, 360);
       let thorn = new Thorn(x, y, vx, angle, thornImage, this.mic);
       this.natures.push(thorn);
@@ -67,6 +64,7 @@ class Level1 extends State {
     this.user.display();
     if (this.magicPetal.active) {
       this.magicPetal.move();
+      this.magicPetal.growing();
       this.magicPetal.display();
     }
 
