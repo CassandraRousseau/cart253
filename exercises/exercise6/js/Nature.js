@@ -7,10 +7,10 @@ class Nature {
     this.vy = 0;
     this.w = 0;
     this.h = 0;
-    this.growth = 0.25;
+    this.growth = 1;
     this.growthThresold = 0.1;
     this.movingThreshold = 0.1;
-    this.movingSpeed = 25;
+    this.movingSpeed = 15;
     this.state = "still";
     this.angle = angle;
     this.alpha = 255;

@@ -16,34 +16,30 @@ class Level1 extends State {
     //Creating the rocks
     for (let i = 0; i < numRocksLeft; i++) {
       let x = random(0, width);
-      let vx = 3;
+      let vx = 0.25;
       let rockLeft = new RockLeft(x, vx, rockImage, this.mic);
       this.natures.push(rockLeft);
     }
     //Creating the rocks
     for (let i = 0; i < numRocksRight; i++) {
       let x = random(0, width);
-      let vx = 3;
+      let vx = 0.25;
       let rockRight = new RockRight(x, vx, rockImage, this.mic);
       this.natures.push(rockRight);
     }
 
     //Creating the thorns
     for (let i = 0; i < numThornsLeft; i++) {
-      let x = random(0, width);
-      let y = random(0, height);
-      let vx = 3;
-      let angle = random(0, 360);
-      let thornLeft = new ThornLeft(x, y, vx, angle, thornImage, this.mic);
+      let vx = 0.25;
+      let thornLeft = new ThornLeft(vx, thornImage, this.mic);
       this.natures.push(thornLeft);
     }
     //Creating the thorns
     for (let i = 0; i < numThornsRight; i++) {
-      let x = random(0, width);
-      let y = random(0, height);
-      let vx = 3;
-      let angle = random(0, 360);
-      let thornRight = new ThornRight(x, y, vx, angle, thornImage, this.mic);
+      let x = width;
+      let y = height / 2;
+      let vx = 0.25;
+      let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
       this.natures.push(thornRight);
     }
   }
@@ -89,6 +85,7 @@ class Level1 extends State {
     for (let i = 0; i < this.natures.length; i++) {
       let nature = this.natures[i];
       nature.move();
+      nature.growing();
       nature.wrap();
       nature.transparency();
       nature.display();

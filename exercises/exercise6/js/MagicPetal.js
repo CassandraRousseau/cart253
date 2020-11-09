@@ -25,20 +25,25 @@ class MagicPetal {
     this.y += this.vy;
   }
   growing() {
+    push();
     let scream = mic.getLevel();
     if (scream > this.growthThreshold) {
-      this.state = "expansion";
+      this.state = "running";
       this.w += this.growth;
       this.h += this.growth;
     }
     this.w = constrain(this.w, 0, 500);
     this.h = constrain(this.h, 0, 500);
+    pop();
   }
   //Displaying the magic petal
   display() {
     push();
-    imageMode(CENTER);
-    image(magicPetalImage, width / 2, height / 2, this.w, this.h);
+    if (this.state === "running") {
+      imageMode(CENTER);
+      image(magicPetalImage, width / 2, height / 2, this.w, this.h);
+    }
+
     pop();
   }
 }

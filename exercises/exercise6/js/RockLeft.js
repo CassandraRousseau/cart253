@@ -1,12 +1,13 @@
 class RockLeft extends Nature {
   //Creating the rocks
-  constructor(x, y, rockImage, mic) {
-    super(x, y, rockImage);
+  constructor(x, rockImage, mic) {
+    super(x, rockImage);
     this.x = x;
-    this.y = y;
+    this.y = (3 * height) / 4;
     this.image = rockImage;
     this.mic = mic;
   }
+  //Setting plants
   move() {
     push();
     let scream = mic.getLevel();
@@ -14,51 +15,49 @@ class RockLeft extends Nature {
     if (scream > this.movingThreshold) {
       this.state = "running";
       // Elements are moving to the right
-      this.vx += this.movingSpeed;
+      this.vx = this.movingSpeed;
+    }
+    if (this.w === 700 && this.h === 700) {
+      this.vx = 0;
     }
 
     this.x -= this.vx;
     this.y -= this.vy;
+
     pop();
   }
   growing() {
     push();
-    let scream = mic.getLevel();
-    if (scream > this.growthThreshold) {
-      this.state = "expansion";
+    if (this.state === "running") {
       this.w += this.growth;
       this.h += this.growth;
     }
-    this.w = constrain(this.w, 0, 500);
-    this.h = constrain(this.h, 0, 500);
+    this.w = constrain(this.w, 0, 700);
+    this.h = constrain(this.h, 0, 700);
     pop();
   }
 
   //Bringing the nature elements back once they go off the screen
   wrap() {
     if (this.x < 0) {
-      this.x = width / 2;
-    }
-
-    if (this.y < 0) {
-      this.y = height - this.h;
+      this.x = width / 3;
     }
   }
   //Changing the opacity in nature elements
   transparency() {
-    if (this.x > width) {
-      this.alpha = map(this.alpha, 0, width, 255, 0);
-    } else if (this.x < 0) {
-      this.alpha = map(this.alpha, width, 0, 255, 0);
+    if (this.state === "running") {
+      this.alpha = map(this.alpha, this.x, 0, 255, 0);
     }
   }
-  //Displaying the rocks
+  //Displaying the thorns
   display() {
     super.display();
     push();
-    imageMode(CENTER);
-    tint(this.alpha);
-    image(rockImage, this.x, height - this.h, this.w, this.h);
+    if (this.state === "running") {
+      imageMode(CENTER);
+      image(rockImage, this.x, this.y, this.w, this.h);
+    }
+
     pop();
   }
 }

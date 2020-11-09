@@ -1,10 +1,10 @@
 class ThornLeft extends Nature {
   //Creating the thorns
-  constructor(x, y, angle, thornImage, mic) {
-    super(x, y, angle, thornImage, mic);
-    this.x = x;
-    this.y = y;
-    this.angle = angle;
+  constructor(thornImage, mic) {
+    super(thornImage, mic);
+    this.x = 0;
+    this.y = 0;
+    this.angle = 275;
     this.image = thornImage;
     this.mic = mic;
   }
@@ -18,49 +18,50 @@ class ThornLeft extends Nature {
       // Elements are moving to the right
       this.vx = this.movingSpeed;
     }
+    if (this.w === 700 && this.h === 700) {
+      this.vx = 0;
+    }
 
     this.x -= this.vx;
     this.y -= this.vy;
+
     pop();
   }
   growing() {
     push();
-    let scream = mic.getLevel();
-    if (scream > this.growthThreshold) {
-      this.state = "expansion";
+    if (this.state === "running") {
       this.w += this.growth;
       this.h += this.growth;
     }
-    this.w = constrain(this.w, 0, 500);
-    this.h = constrain(this.h, 0, 500);
+    this.w = constrain(this.w, 0, 700);
+    this.h = constrain(this.h, 0, 700);
     pop();
   }
 
   //Bringing the nature elements back once they go off the screen
   wrap() {
     if (this.x < 0) {
-      this.x += width;
-    }
-
-    if (this.y < 0) {
-      this.y += height;
+      this.x = width / 3;
     }
   }
   //Changing the opacity in nature elements
   transparency() {
-    if (this.x < 0) {
-      this.alpha = map(this.alpha, width, 0, 255, 0);
+    if (this.state === "running") {
+      this.alpha = map(this.alpha, this.x, 0, 255, 0);
     }
   }
   //Displaying the thorns
   display() {
     super.display();
     push();
-    imageMode(CENTER);
-    translate(this.x, this.y);
-    rotate(this.angle);
-    tint(this.alpha);
-    image(thornImage, 0, 0, this.w, this.h);
+    if (this.state === "running") {
+      imageMode(CENTER);
+      translate(this.x, this.y);
+      rotate(this.angle);
+      tint(this.alpha);
+      image(thornImage, 0, 0, this.w, this.h);
+    }
+
     pop();
   }
 }
