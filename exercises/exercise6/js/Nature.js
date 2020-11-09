@@ -1,6 +1,6 @@
 class Nature {
   //Creating nature elements
-  constructor(x, y, angle) {
+  constructor(x, y, angle, mic) {
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -13,6 +13,7 @@ class Nature {
     this.angle = angle;
     this.alpha = 255;
     this.image = undefined;
+    this.mic = mic;
   }
 
   //Preloading images of nature elements

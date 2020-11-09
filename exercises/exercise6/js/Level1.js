@@ -4,8 +4,8 @@ class Level1 extends State {
     super();
 
     this.name = "Level1";
-    this.mic = new p5.AudioIn();
-    this.mic.start();
+
+    this.mic = mic;
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -20,7 +20,7 @@ class Level1 extends State {
     for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
       let vx = random(-5, 5);
-      let rock = new Rock(x, vx, rockImage);
+      let rock = new Rock(x, vx, rockImage, this.mic);
       this.natures.push(rock);
     }
 
@@ -30,7 +30,7 @@ class Level1 extends State {
       let y = random(0, height);
       let vx = random(-5, 5);
       let angle = random(0, 360);
-      let thorn = new Thorn(x, y, vx, angle, thornImage);
+      let thorn = new Thorn(x, y, vx, angle, thornImage, this.mic);
       this.natures.push(thorn);
     }
   }

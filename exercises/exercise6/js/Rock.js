@@ -1,10 +1,11 @@
 class Rock extends Nature {
   //Creating the rocks
-  constructor(x, y, rockImage) {
+  constructor(x, y, rockImage, mic) {
     super(x, y, rockImage);
     this.x = x;
     this.y = y;
     this.image = rockImage;
+    this.mic = mic;
   }
 
   //Displaying the rocks
