@@ -20,6 +20,7 @@ class RockRight extends Nature {
     this.y += this.vy;
   }
   growing() {
+    push();
     let scream = mic.getLevel();
     if (scream > this.growthThreshold) {
       this.state = "expansion";
@@ -28,19 +29,16 @@ class RockRight extends Nature {
     }
     this.w = constrain(this.w, 0, 500);
     this.h = constrain(this.h, 0, 500);
+    pop();
   }
 
   //Bringing the nature elements back once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x = width / 2;
-    } else if (this.x < 0) {
-      this.x = width / 2;
     }
 
     if (this.y > height) {
-      this.y = height - this.h;
-    } else if (this.y < 0) {
       this.y = height - this.h;
     }
   }

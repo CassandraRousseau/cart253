@@ -28,15 +28,23 @@ let magicPetal;
 
 let mic;
 
-let rock;
+let rockLeft;
 
-let thorn;
+let rockRight;
+
+let thornLeft;
+
+let thornRight;
 
 let plants = [];
 
-let numRocks = 1;
+let numRocksLeft = 1;
 
-let numThorns = 1;
+let numRocksRight = 1;
+
+let numThornsLeft = 1;
+
+let numThornsRight = 1;
 
 let titleImage;
 

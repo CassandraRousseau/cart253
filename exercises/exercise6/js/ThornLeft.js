@@ -10,6 +10,7 @@ class ThornLeft extends Nature {
   }
   //Setting plants
   move() {
+    push();
     let scream = mic.getLevel();
     // Check if elements are moving
     if (scream > this.movingThreshold) {
@@ -20,8 +21,10 @@ class ThornLeft extends Nature {
 
     this.x -= this.vx;
     this.y -= this.vy;
+    pop();
   }
   growing() {
+    push();
     let scream = mic.getLevel();
     if (scream > this.growthThreshold) {
       this.state = "expansion";
@@ -30,6 +33,7 @@ class ThornLeft extends Nature {
     }
     this.w = constrain(this.w, 0, 500);
     this.h = constrain(this.h, 0, 500);
+    pop();
   }
 
   //Bringing the nature elements back once they go off the screen

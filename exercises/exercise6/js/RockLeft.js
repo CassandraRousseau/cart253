@@ -1,4 +1,4 @@
-class Rock extends Nature {
+class RockLeft extends Nature {
   //Creating the rocks
   constructor(x, y, rockImage, mic) {
     super(x, y, rockImage);
@@ -8,6 +8,7 @@ class Rock extends Nature {
     this.mic = mic;
   }
   move() {
+    push();
     let scream = mic.getLevel();
     // Check if elements are moving
     if (scream > this.movingThreshold) {
@@ -16,10 +17,12 @@ class Rock extends Nature {
       this.vx += this.movingSpeed;
     }
 
-    this.x += this.vx;
-    this.y += this.vy;
+    this.x -= this.vx;
+    this.y -= this.vy;
+    pop();
   }
   growing() {
+    push();
     let scream = mic.getLevel();
     if (scream > this.growthThreshold) {
       this.state = "expansion";
@@ -28,19 +31,16 @@ class Rock extends Nature {
     }
     this.w = constrain(this.w, 0, 500);
     this.h = constrain(this.h, 0, 500);
+    pop();
   }
 
   //Bringing the nature elements back once they go off the screen
   wrap() {
-    if (this.x > width) {
-      this.x = width / 2;
-    } else if (this.x < 0) {
+    if (this.x < 0) {
       this.x = width / 2;
     }
 
-    if (this.y > height) {
-      this.y = height - this.h;
-    } else if (this.y < 0) {
+    if (this.y < 0) {
       this.y = height - this.h;
     }
   }
