@@ -16,7 +16,7 @@ class Level1 extends State {
 
     this.magicPetal = new MagicPetal(magicPetalImage);
 
-    //Creating the red petals
+    //Creating the rocks
     for (let i = 0; i < numRocks; i++) {
       let x = random(0, width);
       let vx = random(-5, 5);
@@ -24,7 +24,7 @@ class Level1 extends State {
       this.plants.push(rock);
     }
 
-    //Creating the leaves
+    //Creating the thorns
     for (let i = 0; i < numThorns; i++) {
       let x = random(0, width);
       let y = random(0, height);

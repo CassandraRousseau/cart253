@@ -1,5 +1,5 @@
 class Thorn extends Plant {
-  //Creating the red petals
+  //Creating the thorns
   constructor(x, y, angle, thornImage) {
     super(x, y, angle, thornImage);
     this.x = x;
@@ -8,7 +8,7 @@ class Thorn extends Plant {
     this.image = thornImage;
   }
 
-  //Displaying the red petals
+  //Displaying the thorns
   display() {
     super.display();
     push();

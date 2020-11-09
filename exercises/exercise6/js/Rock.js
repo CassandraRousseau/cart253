@@ -1,5 +1,5 @@
 class Rock extends Plant {
-  //Creating the red petals
+  //Creating the rocks
   constructor(x, y, rockImage) {
     super(x, y, rockImage);
     this.x = x;
@@ -7,7 +7,7 @@ class Rock extends Plant {
     this.image = rockImage;
   }
 
-  //Displaying the red petals
+  //Displaying the rocks
   display() {
     super.display();
     push();
