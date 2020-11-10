@@ -47,14 +47,14 @@ class Nature {
   transparency() {
     push();
     this.alpha = map(
-      this.alpha,
+      this.h,
       this.minHeight,
       this.maxHeight,
       this.minAlpha,
       this.maxAlpha
     );
     this.alpha = map(
-      this.alpha,
+      this.w,
       this.minWidth,
       this.maxWidth,
       this.minAlpha,

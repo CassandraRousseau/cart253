@@ -7,7 +7,6 @@ class ThornLeft extends Nature {
     this.angle = 275;
     this.image = thornImage;
     this.mic = mic;
-    this.alpha = alpha;
   }
   //Moving left side thorn
   move() {

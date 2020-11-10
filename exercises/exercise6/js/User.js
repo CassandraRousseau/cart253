@@ -5,7 +5,7 @@ class User {
     this.y = 0;
     this.w = 25;
     this.h = 25;
-    this.fill = 0;
+    this.fill = 255;
   }
   //Displaying the user
   display() {

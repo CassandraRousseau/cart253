@@ -6,7 +6,6 @@ class RockLeft extends Nature {
     this.y = (3 * height) / 4;
     this.image = rockImage;
     this.mic = mic;
-    this.alpha = alpha;
   }
   //Moving left side rock
   move() {
