@@ -24,6 +24,8 @@ let timer;
 
 let user;
 
+let cave;
+
 let magicPetal;
 
 let mic;
@@ -50,7 +52,7 @@ let numThornsRight = 1;
 
 let titleImage;
 
-let skyImage;
+let caveImage;
 
 let rockImage;
 
@@ -65,7 +67,7 @@ let goodEndingImage;
 // Setting all the preloaded images
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
-  skyImage = loadImage("assets/images/ephemeralSky.png");
+  caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   rockImage = loadImage("assets/images/rock.png");
   thornImage = loadImage("assets/images/thorn.png");

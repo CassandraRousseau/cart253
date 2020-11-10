@@ -7,6 +7,7 @@ class Level1 extends State {
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
+    this.cave = new Cave(windowWidth, windowHeight, caveImage);
     this.user = new User();
     this.natures = [];
 
