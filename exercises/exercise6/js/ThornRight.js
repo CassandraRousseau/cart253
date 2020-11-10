@@ -24,16 +24,8 @@ class ThornRight extends Nature {
     }
     this.x += this.vx;
     this.y += this.vy;
-
+    this.x = constrain(this.vx, this.x, width);
     pop();
-  }
-
-  //Bringing the right side thorn back once it goes off the screen
-  wrap() {
-    super.wrap();
-    if (this.x >= width) {
-      this.x = (2 * width) / 3;
-    }
   }
 
   //Displaying the right side thorn

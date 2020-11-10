@@ -14,7 +14,7 @@ class Nature {
     this.growth = 1;
     this.growthThresold = 0.1;
     this.movingThreshold = 0.1;
-    this.movingSpeed = 15;
+    this.movingSpeed = 0.25;
     this.state = "still";
     this.angle = angle;
     this.alpha = alpha;
@@ -39,10 +39,10 @@ class Nature {
     }
     this.w = constrain(this.w, this.minWidth, this.maxWidth);
     this.h = constrain(this.h, this.minHeight, this.maxHeight);
+
     pop();
   }
-  //Making elements back to the screen once they goes off the screen
-  wrap() {}
+
   //Changing the opacity of thorn
   transparency() {
     push();

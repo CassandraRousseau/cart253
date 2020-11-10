@@ -1,8 +1,8 @@
 class RockLeft extends Nature {
   //Creating the left side rock
-  constructor(x, rockImage, mic, alpha) {
-    super(x, rockImage, alpha);
-    this.x = x;
+  constructor(rockImage, mic, alpha) {
+    super(rockImage, alpha);
+    this.x = width / 3;
     this.y = (3 * height) / 4;
     this.image = rockImage;
     this.mic = mic;
@@ -23,14 +23,8 @@ class RockLeft extends Nature {
     }
     this.x -= this.vx;
     this.y -= this.vy;
+    this.x = constrain(this.vx, this.x, width);
     pop();
-  }
-  //Bringing the left side rock back once it goes off the screen
-  wrap() {
-    super.wrap();
-    if (this.x <= 0) {
-      this.x = width / 3;
-    }
   }
 
   //Displaying the left side rock

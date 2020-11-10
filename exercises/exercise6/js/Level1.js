@@ -17,16 +17,14 @@ class Level1 extends State {
     }
     //Creating the rocks
     for (let i = 0; i < numRocksLeft; i++) {
-      let x = random(0, width);
       let vx = 0.25;
-      let rockLeft = new RockLeft(x, vx, rockImage, this.mic);
+      let rockLeft = new RockLeft(vx, rockImage, this.mic);
       this.natures.push(rockLeft);
     }
     //Creating the rocks
     for (let i = 0; i < numRocksRight; i++) {
-      let x = random(0, width);
       let vx = 0.25;
-      let rockRight = new RockRight(x, vx, rockImage, this.mic);
+      let rockRight = new RockRight(vx, rockImage, this.mic);
       this.natures.push(rockRight);
     }
 
@@ -38,7 +36,7 @@ class Level1 extends State {
     }
     //Creating the thorns
     for (let i = 0; i < numThornsRight; i++) {
-      let x = width;
+      let x = (2 * width) / 3;
       let y = height / 2;
       let vx = 0.25;
       let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
@@ -49,6 +47,7 @@ class Level1 extends State {
   //Preloading necessary images for level 1
   preload() {
     super.preload();
+    this.cave.preload();
     this.magicPetal.preload();
     this.rockLeft.preload();
     this.rockRight.preload();
@@ -60,8 +59,7 @@ class Level1 extends State {
   draw() {
     super.draw();
     push();
-    background(0);
-
+    this.cave.display();
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
@@ -83,7 +81,6 @@ class Level1 extends State {
       if (this.magicPetal.active) {
         nature.move();
         nature.growing();
-        nature.wrap();
         nature.transparency();
         nature.display();
       }
