@@ -58,7 +58,7 @@ class Level1 extends State {
   draw() {
     super.draw();
     push();
-    background(0);
+    background(255);
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(

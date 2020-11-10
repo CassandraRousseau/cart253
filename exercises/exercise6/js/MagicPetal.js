@@ -14,7 +14,7 @@ class MagicPetal {
     this.image = magicPetalImage;
     this.active = true;
   }
-  //Preloading images of thee magic petal
+  //Preloading images of the magic petal
   preload() {
     this.image.preload();
   }
@@ -24,6 +24,7 @@ class MagicPetal {
     this.x += this.vx;
     this.y += this.vy;
   }
+  //Growing my magic petal (making it bigger)
   growing() {
     push();
     let scream = mic.getLevel();

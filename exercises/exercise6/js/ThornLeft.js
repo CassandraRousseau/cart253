@@ -1,56 +1,41 @@
 class ThornLeft extends Nature {
-  //Creating the thorns
-  constructor(thornImage, mic) {
-    super(thornImage, mic);
+  //Creating the left side thorn
+  constructor(thornImage, mic, alpha) {
+    super(thornImage, mic, alpha);
     this.x = 0;
     this.y = 0;
     this.angle = 275;
     this.image = thornImage;
     this.mic = mic;
+    this.alpha = alpha;
   }
-  //Setting plants
+  //Moving left side thorn
   move() {
     push();
     let scream = mic.getLevel();
-    // Check if elements are moving
+    // Check if left side thorn is moving
     if (scream > this.movingThreshold) {
       this.state = "running";
-      // Elements are moving to the right
+      // left side thorn is  moving
       this.vx = this.movingSpeed;
     }
-    if (this.w === 700 && this.h === 700) {
+    if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
-
     this.x -= this.vx;
     this.y -= this.vy;
 
     pop();
   }
-  growing() {
-    push();
-    if (this.state === "running") {
-      this.w += this.growth;
-      this.h += this.growth;
-    }
-    this.w = constrain(this.w, 0, 700);
-    this.h = constrain(this.h, 0, 700);
-    pop();
-  }
 
-  //Bringing the nature elements back once they go off the screen
+  //Bringing the left side thorn back once it goes off the screen
   wrap() {
     if (this.x < 0) {
       this.x = width / 3;
     }
   }
-  //Changing the opacity in nature elements
-  transparency() {
-    if (this.state === "running") {
-      this.alpha = map(this.alpha, this.x, 0, 255, 0);
-    }
-  }
-  //Displaying the thorns
+
+  //Displaying the left side thorn
   display() {
     super.display();
     push();
