@@ -10,6 +10,7 @@ class ThornRight extends Nature {
   }
   //Moving right side thorn
   move() {
+    super.move();
     push();
     let scream = mic.getLevel();
     // Check if rigth side thorn is moving
@@ -29,6 +30,7 @@ class ThornRight extends Nature {
 
   //Bringing the right side thorn back once it goes off the screen
   wrap() {
+    super.wrap();
     if (this.x >= width) {
       this.x = (2 * width) / 3;
     }

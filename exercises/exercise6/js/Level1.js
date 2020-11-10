@@ -79,11 +79,13 @@ class Level1 extends State {
     this.user.display();
     for (let i = 0; i < this.natures.length; i++) {
       let nature = this.natures[i];
-      nature.move();
-      nature.growing();
-      nature.wrap();
-      nature.transparency();
-      nature.display();
+      if (this.magicPetal.active) {
+        nature.move();
+        nature.growing();
+        nature.wrap();
+        nature.transparency();
+        nature.display();
+      }
     }
     pop();
   }

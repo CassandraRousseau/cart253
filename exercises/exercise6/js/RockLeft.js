@@ -9,6 +9,7 @@ class RockLeft extends Nature {
   }
   //Moving left side rock
   move() {
+    super.move();
     push();
     let scream = mic.getLevel();
     // Check if left side rock is moving
@@ -26,6 +27,7 @@ class RockLeft extends Nature {
   }
   //Bringing the left side rock back once it goes off the screen
   wrap() {
+    super.wrap();
     if (this.x <= 0) {
       this.x = width / 3;
     }
