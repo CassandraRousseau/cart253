@@ -7,7 +7,8 @@ class ThornLeft extends Nature {
     this.angle = 275;
     this.maxWidth = 700;
     this.maxHeight = 700;
-    this.growth = 6;
+    this.growthWidth = 6;
+    this.growthHeight = 6;
     this.image = thornImage;
     this.mic = mic;
   }

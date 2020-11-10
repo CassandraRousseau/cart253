@@ -6,7 +6,8 @@ class RockLeft extends Nature {
     this.y = (3 * height) / 4;
     this.maxWidth = 600;
     this.maxHeight = 600;
-    this.growth = 6;
+    this.growthWidth = 6;
+    this.growthHeight = 6;
     this.image = rockImage;
     this.mic = mic;
   }

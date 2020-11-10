@@ -6,7 +6,8 @@ class MagicPetal extends Nature {
     this.y = height / 2;
     this.maxWidth = 300;
     this.maxHeight = 300;
-    this.growth = 2;
+    this.growthWidth = 2;
+    this.growthHeight = 2;
     this.image = magicPetalImage;
     this.mic = mic;
   }

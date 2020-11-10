@@ -6,7 +6,8 @@ class Cave extends Nature {
     this.y = height / 2;
     this.maxWidth = windowWidth;
     this.maxHeight = windowHeight;
-    this.growth = 10;
+    this.growthWidth = 15;
+    this.growthHeight = 10;
     this.image = caveImage;
     this.mic = mic;
   }

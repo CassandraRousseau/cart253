@@ -1,6 +1,16 @@
 class Nature {
   //Creating nature elements
-  constructor(x, y, angle, growth, mic, alpha, maxWidth, maxHeight) {
+  constructor(
+    x,
+    y,
+    angle,
+    growthWidth,
+    growthHeight,
+    mic,
+    alpha,
+    maxWidth,
+    maxHeight
+  ) {
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -11,7 +21,8 @@ class Nature {
     this.maxWidth = maxWidth;
     this.minHeight = 0;
     this.maxHeight = maxHeight;
-    this.growth = growth;
+    this.growthWidth = growthWidth;
+    this.growthHeight = growthHeight;
     this.movingSpeed = 0.25;
     this.state = "still";
     this.angle = angle;
@@ -33,8 +44,8 @@ class Nature {
   growing() {
     push();
     if (this.state === "running") {
-      this.w += this.growth;
-      this.h += this.growth;
+      this.w += this.growthWidth;
+      this.h += this.growthHeight;
     }
     this.w = constrain(this.w, this.minWidth, this.maxWidth);
     this.h = constrain(this.h, this.minHeight, this.maxHeight);
