@@ -11,8 +11,9 @@ class Level1 extends State {
     this.natures = [];
 
     //Creating the magic petal
-    this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
-
+    for (let i = 0; i < numMagicPetals; i++) {
+      this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
+    }
     //Creating the rocks
     for (let i = 0; i < numRocksLeft; i++) {
       let x = random(0, width);

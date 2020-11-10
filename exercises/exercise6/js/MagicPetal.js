@@ -11,8 +11,17 @@ class MagicPetal extends Nature {
   //Setting the magic petal
   move() {
     super.move();
-    this.x += this.vx;
-    this.y += this.vy;
+    let scream = mic.getLevel();
+    // Check if right side rock is  moving
+    if (scream > this.movingThreshold) {
+      this.state = "running";
+      // Right side rock is moving
+      this.x += this.vx;
+      this.y += this.vy;
+    }
+    if (this.w === this.maxWidth && this.h === this.maxHeight) {
+      this.vx = 0;
+    }
   }
 
   //Displaying the magic petal

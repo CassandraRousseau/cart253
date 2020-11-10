@@ -36,7 +36,9 @@ let thornLeft;
 
 let thornRight;
 
-let plants = [];
+let natures = [];
+
+let numMagicPetals = 1;
 
 let numRocksLeft = 1;
 
