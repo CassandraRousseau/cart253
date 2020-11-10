@@ -46,22 +46,20 @@ class Nature {
   //Changing the opacity of thorn
   transparency() {
     push();
-    if (this.state === "running") {
-      this.alpha = map(
-        this.alpha,
-        this.minHeight,
-        this.maxHeight,
-        this.minAlpha,
-        this.maxAlpha
-      );
-      this.alpha = map(
-        this.alpha,
-        this.minWidth,
-        this.maxWidth,
-        this.minAlpha,
-        this.maxAlpha
-      );
-    }
+    this.alpha = map(
+      this.alpha,
+      this.minHeight,
+      this.maxHeight,
+      this.minAlpha,
+      this.maxAlpha
+    );
+    this.alpha = map(
+      this.alpha,
+      this.minWidth,
+      this.maxWidth,
+      this.minAlpha,
+      this.maxAlpha
+    );
     pop();
   }
   //Displaying the nature elements
