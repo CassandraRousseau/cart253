@@ -1,28 +1,35 @@
 class Cave {
-  //Creating sky background for level 1
-  constructor(w, h, caveImage) {
-    this.x = 0;
-    this.y = 0;
+  //Creating nature elements
+  constructor(w, h, caveImage, mic) {
+    this.x = width / 2;
+    this.y = height / 2;
     this.w = w;
     this.h = h;
+    this.opacityThresold = 0.1;
+    this.state = "still";
     this.alpha = alpha;
     this.minAlpha = 0;
     this.maxAlpha = 255;
     this.image = caveImage;
+    this.mic = mic;
   }
-
-  //Preloading background image for level 1
+  //Preloading images of nature elements
   preload() {
     this.image.preload();
   }
+
   //Changing the opacity of thorn
-  transparency(nature) {
+  transparency(framecountSim, timerResult) {
     push();
-    if (nature.move()) {
+    let scream = mic.getLevel();
+    // Check if right side rock is  moving
+    if (scream > this.opacityThreshold) {
+      this.state = "running";
+      // Right side rock is moving
       this.alpha = map(
         this.alpha,
-        this.w,
-        this.h,
+        framecountSim,
+        timerResult,
         this.minAlpha,
         this.maxAlpha
       );
@@ -32,8 +39,10 @@ class Cave {
   }
   //Displaying sky background
   display() {
-    push();
-    image(caveImage, this.x, this.y, this.w, this.h);
-    pop();
+    if (this.state === "running") {
+      imageMode(CENTER);
+      tint(this.alpha);
+      image(caveImage, this.x, this.y, this.w, this.h);
+    }
   }
 }

@@ -7,7 +7,7 @@ class Level1 extends State {
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-    this.cave = new Cave(windowWidth, windowHeight, caveImage);
+    this.cave = new Cave(windowWidth, windowHeight, caveImage, this.mic);
     this.user = new User();
     this.natures = [];
 
@@ -59,7 +59,8 @@ class Level1 extends State {
   draw() {
     super.draw();
     push();
-    this.cave.display();
+    background(0);
+
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
@@ -73,7 +74,8 @@ class Level1 extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
-
+    this.cave.transparency(this.framecountSim, timerResult);
+    this.cave.display();
     //Displaying the elements
     this.user.display();
     for (let i = 0; i < this.natures.length; i++) {
