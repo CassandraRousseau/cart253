@@ -40,6 +40,8 @@ let thornRight;
 
 let natures = [];
 
+let numCaves = 1;
+
 let numMagicPetals = 1;
 
 let numRocksLeft = 1;

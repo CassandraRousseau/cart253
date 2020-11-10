@@ -4,6 +4,9 @@ class MagicPetal extends Nature {
     super(magicPetalImage, mic);
     this.x = width / 2;
     this.y = height / 2;
+    this.maxWidth = 300;
+    this.maxHeight = 300;
+    this.growth = 0.5;
     this.image = magicPetalImage;
     this.mic = mic;
   }
@@ -28,7 +31,7 @@ class MagicPetal extends Nature {
     push();
     if (this.state === "running") {
       imageMode(CENTER);
-      tint(this.alpha);
+      tint(255, 255, 255, this.alpha);
       image(magicPetalImage, this.x, this.y, this.w, this.h);
     }
     pop();

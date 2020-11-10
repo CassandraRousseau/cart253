@@ -4,6 +4,9 @@ class RockRight extends Nature {
     super(rockImage, alpha);
     this.x = (2 * width) / 3;
     this.y = (3 * height) / 4;
+    this.maxWidth = 600;
+    this.maxHeight = 600;
+    this.growth = 4;
     this.image = rockImage;
     this.mic = mic;
   }

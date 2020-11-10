@@ -5,6 +5,9 @@ class ThornRight extends Nature {
     this.x = x;
     this.y = y;
     this.angle = 45;
+    this.maxWidth = 700;
+    this.maxHeight = 700;
+    this.growth = 3;
     this.image = thornImage;
     this.mic = mic;
   }

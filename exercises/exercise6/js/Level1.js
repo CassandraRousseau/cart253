@@ -7,13 +7,14 @@ class Level1 extends State {
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-    this.cave = new Cave(windowWidth, windowHeight, caveImage, this.mic);
+    this.cave = new Cave(caveImage, this.mic);
     this.user = new User();
     this.natures = [];
 
     //Creating the magic petal
     for (let i = 0; i < numMagicPetals; i++) {
       this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
+      this.natures.push(this.magicPetal);
     }
     //Creating the rocks
     for (let i = 0; i < numRocksLeft; i++) {
@@ -74,7 +75,9 @@ class Level1 extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
-    this.cave.transparency(this.framecountSim, timerResult);
+    this.cave.move();
+    this.cave.growing();
+    this.cave.transparency();
     this.cave.display();
     //Displaying the elements
     this.user.display();

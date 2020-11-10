@@ -1,6 +1,6 @@
 class Nature {
   //Creating nature elements
-  constructor(x, y, angle, mic, alpha) {
+  constructor(x, y, angle, growth, mic, alpha, maxWidth, maxHeight) {
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -8,11 +8,10 @@ class Nature {
     this.w = 0;
     this.h = 0;
     this.minWidth = 0;
-    this.maxWidth = 700;
+    this.maxWidth = maxWidth;
     this.minHeight = 0;
-    this.maxHeight = 700;
-    this.growth = 1;
-    this.growthThresold = 0.1;
+    this.maxHeight = maxHeight;
+    this.growth = growth;
     this.movingThreshold = 0.1;
     this.movingSpeed = 0.25;
     this.state = "still";
