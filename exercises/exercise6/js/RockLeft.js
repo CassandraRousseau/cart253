@@ -26,7 +26,7 @@ class RockLeft extends Nature {
   }
   //Bringing the left side rock back once it goes off the screen
   wrap() {
-    if (this.x < 0) {
+    if (this.x <= 0) {
       this.x = width / 3;
     }
   }

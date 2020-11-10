@@ -29,7 +29,7 @@ class ThornRight extends Nature {
 
   //Bringing the right side thorn back once it goes off the screen
   wrap() {
-    if (this.x > width) {
+    if (this.x >= width) {
       this.x = (2 * width) / 3;
     }
   }
