@@ -12,7 +12,6 @@ class Nature {
     this.minHeight = 0;
     this.maxHeight = maxHeight;
     this.growth = growth;
-    this.movingThreshold = 0.1;
     this.movingSpeed = 0.25;
     this.state = "still";
     this.angle = angle;

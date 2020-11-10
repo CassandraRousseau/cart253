@@ -6,23 +6,26 @@ class MagicPetal extends Nature {
     this.y = height / 2;
     this.maxWidth = 300;
     this.maxHeight = 300;
-    this.growth = 0.5;
+    this.growth = 2;
     this.image = magicPetalImage;
     this.mic = mic;
   }
   //Setting the magic petal
   move() {
     super.move();
-    let scream = mic.getLevel();
+    push();
     // Check if magic petal is  moving
-    if (scream > this.movingThreshold) {
+    if (screaming) {
       this.state = "running";
+    } else {
+      this.state = "still";
     }
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
     this.x += this.vx;
     this.y += this.vy;
+    pop();
   }
 
   //Displaying the magic petal

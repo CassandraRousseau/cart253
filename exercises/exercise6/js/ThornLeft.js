@@ -7,7 +7,7 @@ class ThornLeft extends Nature {
     this.angle = 275;
     this.maxWidth = 700;
     this.maxHeight = 700;
-    this.growth = 3;
+    this.growth = 6;
     this.image = thornImage;
     this.mic = mic;
   }
@@ -15,12 +15,12 @@ class ThornLeft extends Nature {
   move() {
     super.move();
     push();
-    let scream = mic.getLevel();
-    // Check if left side thorn is moving
-    if (scream > this.movingThreshold) {
+    // Check if magic petal is  moving
+    if (screaming) {
       this.state = "running";
-      // left side thorn is  moving
       this.vx = this.movingSpeed;
+    } else {
+      this.state = "still";
     }
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
@@ -39,7 +39,7 @@ class ThornLeft extends Nature {
       imageMode(CENTER);
       translate(this.x, this.y);
       rotate(this.angle);
-      tint(this.alpha);
+      tint(255, 255, 255, this.alpha);
       image(thornImage, 0, 0, this.w, this.h);
     }
 

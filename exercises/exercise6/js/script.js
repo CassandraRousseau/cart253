@@ -38,6 +38,12 @@ let thornLeft;
 
 let thornRight;
 
+let scream;
+
+let screaming = false;
+
+let screamThreshold = 0.1;
+
 let natures = [];
 
 let numCaves = 1;
@@ -90,6 +96,12 @@ function setup() {
 // Setting the draw function for each states.
 function draw() {
   currentState.draw();
+  scream = mic.getLevel();
+  if (scream > screamThreshold) {
+    screaming = true;
+  } else {
+    screaming = false;
+  }
 }
 //Setting all mouse inputs for each states
 function mousePressed() {

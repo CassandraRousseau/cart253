@@ -7,10 +7,15 @@ class Level1 extends State {
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-    this.cave = new Cave(caveImage, this.mic);
+
     this.user = new User();
     this.natures = [];
 
+    //Creating the magic petal
+    for (let i = 0; i < numCaves; i++) {
+      this.cave = new Cave(caveImage, this.mic);
+      this.natures.push(this.cave);
+    }
     //Creating the magic petal
     for (let i = 0; i < numMagicPetals; i++) {
       this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
@@ -37,7 +42,7 @@ class Level1 extends State {
     }
     //Creating the thorns
     for (let i = 0; i < numThornsRight; i++) {
-      let x = (2 * width) / 3;
+      let x = (5 * width) / 6;
       let y = height / 2;
       let vx = 0.25;
       let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
@@ -75,10 +80,7 @@ class Level1 extends State {
     } else if (timerResult === "GoodEnding") {
       currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
     }
-    this.cave.move();
-    this.cave.growing();
-    this.cave.transparency();
-    this.cave.display();
+
     //Displaying the elements
     this.user.display();
     for (let i = 0; i < this.natures.length; i++) {

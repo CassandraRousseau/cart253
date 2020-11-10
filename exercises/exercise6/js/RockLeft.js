@@ -6,7 +6,7 @@ class RockLeft extends Nature {
     this.y = (3 * height) / 4;
     this.maxWidth = 600;
     this.maxHeight = 600;
-    this.growth = 4;
+    this.growth = 6;
     this.image = rockImage;
     this.mic = mic;
   }
@@ -14,19 +14,19 @@ class RockLeft extends Nature {
   move() {
     super.move();
     push();
-    let scream = mic.getLevel();
-    // Check if left side rock is moving
-    if (scream > this.movingThreshold) {
+    // Check if magic petal is  moving
+    if (screaming) {
       this.state = "running";
-      // left side rock is moving
       this.vx = this.movingSpeed;
+    } else {
+      this.state = "still";
     }
+
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
     this.x -= this.vx;
     this.y -= this.vy;
-    this.x = constrain(this.vx, this.x, width);
     pop();
   }
 
@@ -36,7 +36,8 @@ class RockLeft extends Nature {
     push();
     if (this.state === "running") {
       imageMode(CENTER);
-      tint(this.alpha);
+      translate(-50, 50);
+      tint(255, 255, 255, this.alpha);
       image(rockImage, this.x, this.y, this.w, this.h);
     }
 
