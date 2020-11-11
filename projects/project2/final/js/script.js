@@ -16,6 +16,10 @@ let instructions1;
 
 let level1;
 
+let level2;
+
+let level3;
+
 let badEnding;
 
 let goodEnding;
@@ -38,7 +42,29 @@ let magicPetal;
 
 let magicPetal2;
 
+let magicPetal3;
+
 let plants = [];
+
+let mic;
+
+let rockLeft;
+
+let rockRight;
+
+let thornLeft;
+
+let thornRight;
+
+let scream;
+
+let screaming = false;
+
+let screamThreshold = 0.1;
+
+let natures = [];
+
+let numCaves = 1;
 
 let numRedPetals = 10;
 
@@ -48,6 +74,14 @@ let numLeaves = 10;
 
 let numLeaves2 = 500;
 
+let numRocksLeft = 1;
+
+let numRocksRight = 1;
+
+let numThornsLeft = 1;
+
+let numThornsRight = 1;
+
 let titleImage;
 
 let skyImage;
@@ -55,6 +89,12 @@ let skyImage;
 let leafImage;
 
 let redPetalImage;
+
+let caveImage;
+
+let rockImage;
+
+let thornImage;
 
 let magicPetalImage;
 
@@ -66,9 +106,12 @@ let goodEndingImage;
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
+  caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   redPetalImage = loadImage("assets/images/redPetal.png");
   leafImage = loadImage("assets/images/leaf.png");
+  rockImage = loadImage("assets/images/rock.png");
+  thornImage = loadImage("assets/images/thorn.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }
@@ -78,7 +121,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   noCursor();
-
+  //Setting the microphone input
+  mic = new p5.AudioIn();
+  mic.start();
   let title = new Title(windowWidth, windowHeight, titleImage);
   currentState = title;
 }
@@ -86,6 +131,14 @@ function setup() {
 // Setting the draw function for each states.
 function draw() {
   currentState.draw();
+  //Setting how loud user's screams have to be during the level
+  scream = mic.getLevel();
+
+  if (scream > screamThreshold) {
+    screaming = true;
+  } else {
+    screaming = false;
+  }
 }
 //Setting all mouse inputs for each states
 function mousePressed() {
