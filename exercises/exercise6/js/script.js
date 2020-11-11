@@ -2,9 +2,9 @@
 Exercise 6:Make Some Noise
 Cassandra Rousseau
 The prototype starts with the title screen, followed by the game instructions.
-The level (simulation) starts with multiple leaves and petals flying through the air.
-The user's purpose is to scream until he reaches the magic petal (a white petal) before the
-timer stops. If the user catches the petal, he won, but if time is out, it's game over...
+The level (simulation) starts in a dark cave.The user's purpose is to scream until he reaches the magic petal
+ (a white petal) before the timer stops.User's screams allow to move the nature elements and the magic petal
+ to appear on the screen If the user catches the petal, he won, but if the time is out, it's game over...
 **************************************************/
 "use strict";
 
@@ -12,9 +12,9 @@ let currentState;
 
 let title;
 
-let instructions1;
+let instructions;
 
-let level1;
+let level;
 
 let badEnding;
 
@@ -86,9 +86,14 @@ function preload() {
 //Setting all the setups for each states.
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
   noCursor();
+
+  //Setting the microphone input
   mic = new p5.AudioIn();
   mic.start();
+
+  //Setting the title screen as the first screen of the game
   let title = new Title(windowWidth, windowHeight, titleImage);
   currentState = title;
 }
@@ -96,7 +101,10 @@ function setup() {
 // Setting the draw function for each states.
 function draw() {
   currentState.draw();
+
+  //Setting how loud user's screams have to be during the level
   scream = mic.getLevel();
+
   if (scream > screamThreshold) {
     screaming = true;
   } else {

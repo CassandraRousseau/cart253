@@ -38,22 +38,27 @@ class Nature {
   preload() {
     this.image.preload();
   }
+
   //Moving the nature elements
   move() {}
-  //Making nature elements bigger
+
+  //Making nature elements bigger based on screams
   growing() {
     push();
+
     if (this.state === "running") {
       this.w += this.growthWidth;
       this.h += this.growthHeight;
     }
+
+    //Setting when nature elements stops growing
     this.w = constrain(this.w, this.minWidth, this.maxWidth);
     this.h = constrain(this.h, this.minHeight, this.maxHeight);
 
     pop();
   }
 
-  //Changing the opacity of thorn
+  //Changing the opacity of nature elements based on screams
   transparency() {
     push();
     this.alpha = map(
@@ -72,6 +77,7 @@ class Nature {
     );
     pop();
   }
+
   //Displaying the nature elements
   display() {}
 }

@@ -12,30 +12,39 @@ class ThornRight extends Nature {
     this.image = thornImage;
     this.mic = mic;
   }
+
   //Moving right side thorn
   move() {
     super.move();
     push();
-    // Check if magic petal is  moving
+
+    // Check if right side thorn is  moving based on screams
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;
     } else {
       this.state = "still";
     }
+
+    //Setting when right side thorn stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
+
+    //Setting right side thorn movements
     this.x += this.vx;
     this.y += this.vy;
+
+    //Setting where right side thorn stops moving
     this.x = constrain(this.vx, this.x, width);
     pop();
   }
 
-  //Displaying the right side thorn
+  //Displaying the right side thorn based on screams
   display() {
     super.display();
     push();
+
     if (this.state === "running") {
       imageMode(CENTER);
       translate(this.x, this.y);

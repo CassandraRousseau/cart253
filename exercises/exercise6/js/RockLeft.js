@@ -11,11 +11,13 @@ class RockLeft extends Nature {
     this.image = rockImage;
     this.mic = mic;
   }
+
   //Moving left side rock
   move() {
     super.move();
     push();
-    // Check if magic petal is  moving
+
+    // Check if left side rock is  moving based on screams
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;
@@ -23,17 +25,24 @@ class RockLeft extends Nature {
       this.state = "still";
     }
 
+    //Setting when left side rock stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
+
+    //Setting left side rock movements
     this.x -= this.vx;
     this.y -= this.vy;
+
+    //Setting where left side rock stops moving
+    this.x = constrain(this.vx, this.x, width);
     pop();
   }
 
-  //Displaying the left side rock
+  //Displaying the left side rock based on screams
   display() {
     super.display();
+
     push();
     if (this.state === "running") {
       imageMode(CENTER);

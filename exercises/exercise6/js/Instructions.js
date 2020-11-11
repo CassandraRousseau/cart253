@@ -1,4 +1,4 @@
-class Instructions1 extends State {
+class Instructions extends State {
   //Creating instructions screen
   constructor() {
     super();
@@ -29,7 +29,7 @@ class Instructions1 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Level1();
+      currentState = new Level();
     }
   }
 }

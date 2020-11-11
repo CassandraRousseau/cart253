@@ -11,28 +11,35 @@ class MagicPetal extends Nature {
     this.image = magicPetalImage;
     this.mic = mic;
   }
+
   //Setting the magic petal
   move() {
     super.move();
     push();
-    // Check if magic petal is  moving
+
+    // Check if magic petal is  moving based on screams
     if (screaming) {
       this.state = "running";
     } else {
       this.state = "still";
     }
+
+    //Setting when magic petal stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
     }
+
+    //Setting magic petal movements
     this.x += this.vx;
     this.y += this.vy;
     pop();
   }
 
-  //Displaying the magic petal
+  //Displaying the magic petal based on screams
   display() {
     super.display();
     push();
+
     if (this.state === "running") {
       imageMode(CENTER);
       tint(255, 255, 255, this.alpha);

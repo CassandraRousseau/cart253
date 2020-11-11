@@ -1,6 +1,5 @@
 class Title extends State {
   //Creating the title screen
-
   constructor(w, h, titleImage) {
     super(w, h, titleImage);
 
@@ -47,7 +46,7 @@ class Title extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Instructions1();
+      currentState = new Instructions();
     }
   }
 }
