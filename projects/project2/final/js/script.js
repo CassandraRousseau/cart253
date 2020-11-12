@@ -84,6 +84,8 @@ let numThornsRight = 1;
 
 let titleImage;
 
+let girlImage;
+
 let skyImage;
 
 let leafImage;
@@ -105,6 +107,7 @@ let goodEndingImage;
 // Setting all the preloaded images
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
+  titleImage = loadImage("assets/images/ephemeralGirl.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");

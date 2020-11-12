@@ -3,7 +3,21 @@ class Prologue extends State {
 
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
-
+    this.name = "Prologue";
+    this.dialog1 = [
+      "To read the book, press Spacebar",
+      "Once upon a time,",
+      "A little girl...",
+      "A little girl... different from other children.",
+      "This little girl was cursed",
+      "A rose replaced her heart.",
+      "If her rose dies...",
+      "If her rose dies...She will die too.",
+      "Unfortunately,",
+      "Her rose started to fade",
+      "Slowly,",
+      "Slowly,surely...",
+    ];
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -22,6 +36,18 @@ class Prologue extends State {
   draw() {
     super.draw();
     this.display();
+    //Setting instruction screen
+    function instructions() {
+      push();
+      textSize(85);
+      fill(225, 125, 125);
+      textAlign(LEFT, TOP);
+      textFont("Lemonada");
+
+      let dialog1 = intro[currentLine];
+      text(dialog1, 10, height / 2, windowWidth, windowHeight);
+      pop();
+    }
   }
 
   //Displaying the title screen
@@ -48,6 +74,14 @@ class Prologue extends State {
 
     if (keyCode === 13) {
       currentState = new Instructions2();
+    }
+
+    if (keyCode === 32) {
+      currentLine = currentLine + 1;
+
+      if (currentLine === this.dialog1.length && state === "Prologue") {
+        currentLine = this.dialog1.length - 1;
+      }
     }
   }
 }
