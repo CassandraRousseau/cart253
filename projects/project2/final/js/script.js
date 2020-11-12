@@ -111,6 +111,10 @@ function preload() {
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
+  magicPetalUpLeftImage = loadImage("assets/images/magicPetalUpLeft.png");
+  magicPetalUpRightImage = loadImage("assets/images/magicPetalUpRight.png");
+  magicPetalDownLeftImage = loadImage("assets/images/magicPetalDownLeft.png");
+  magicPetalDownRightImage = loadImage("assets/images/magicPetalDownRight.png");
   redPetalImage = loadImage("assets/images/redPetal.png");
   leafImage = loadImage("assets/images/leaf.png");
   rockImage = loadImage("assets/images/rock.png");
