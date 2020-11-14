@@ -1,7 +1,7 @@
 class MagicPetalDownLeft extends MagicPetal {
   //Creating the magic petal
-  constructor(magicPetalDownLeftImage, mic) {
-    super(magicPetalDownLeftImage, mic);
+  constructor(magicPetalDownLeftImage, mic,alpha) {
+    super(magicPetalDownLeftImage, mic,alpha);
     this.x = 0;
     this.y = height / 2;
 

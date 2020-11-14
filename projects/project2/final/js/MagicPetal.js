@@ -11,7 +11,7 @@ class MagicPetal {
     this.state = "still";
     this.alpha = alpha;
     this.minAlpha = 0;
-    this.maxAlpha = 255;
+    this.maxAlpha = 200;
     this.image = undefined;
     this.mic = mic;
     this.active = true;
@@ -28,20 +28,23 @@ class MagicPetal {
   //Changing the opacity of nature elements based on screams
   transparency() {
     push();
-    this.alpha = map(
-      this.h,
-      this.minHeight,
-      this.maxHeight,
-      this.minAlpha,
-      this.maxAlpha
-    );
-    this.alpha = map(
-      this.w,
-      this.minWidth,
-      this.maxWidth,
-      this.minAlpha,
-      this.maxAlpha
-    );
+    if (state === "running") {
+      this.alpha = map(
+        this.vx,
+        this.minHeight,
+        this.maxHeight,
+        this.minAlpha,
+        this.maxAlpha
+      );
+      this.alpha = map(
+        this.vy,
+        this.minWidth,
+        this.maxWidth,
+        this.minAlpha,
+        this.maxAlpha
+      );
+    }
+
     pop();
   }
 
