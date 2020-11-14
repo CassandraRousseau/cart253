@@ -1,6 +1,6 @@
 class MagicPetal {
   //Creating nature elements
-  constructor(x, y, angle, mic, alpha) {
+  constructor(x, y, mic, alpha) {
     this.x = x;
     this.y = y;
     this.vx = 0;
@@ -9,7 +9,6 @@ class MagicPetal {
     this.h = 300;
     this.movingSpeed = 0.25;
     this.state = "still";
-    this.angle = angle;
     this.alpha = alpha;
     this.minAlpha = 0;
     this.maxAlpha = 255;

@@ -4,10 +4,7 @@ class MagicPetalUpRight extends MagicPetal {
     super(magicPetalUpRightImage, mic);
     this.x = width;
     this.y = 0;
-    this.maxWidth = 300;
-    this.maxHeight = 300;
-    this.growthWidth = 2;
-    this.growthHeight = 2;
+
     this.image = magicPetalUpRightImage;
     this.mic = mic;
   }
@@ -25,7 +22,7 @@ class MagicPetalUpRight extends MagicPetal {
     }
 
     //Setting when magic petal stops moving
-    if (this.w === this.maxWidth && this.h === this.maxHeight) {
+    if () {
       this.vx = 0;
     }
 

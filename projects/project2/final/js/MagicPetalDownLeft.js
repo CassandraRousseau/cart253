@@ -4,10 +4,7 @@ class MagicPetalDownLeft extends MagicPetal {
     super(magicPetalDownLeftImage, mic);
     this.x = 0;
     this.y = height / 2;
-    this.maxWidth = 300;
-    this.maxHeight = 300;
-    this.growthWidth = 2;
-    this.growthHeight = 2;
+
     this.image = magicPetalDownLeftImage;
     this.mic = mic;
   }
@@ -25,7 +22,7 @@ class MagicPetalDownLeft extends MagicPetal {
     }
 
     //Setting when magic petal stops moving
-    if (this.w === this.maxWidth && this.h === this.maxHeight) {
+    if () {
       this.vx = 0;
     }
 
@@ -42,6 +39,7 @@ class MagicPetalDownLeft extends MagicPetal {
 
     if (this.state === "running") {
       imageMode(CENTER);
+      translate(50, 50);
       tint(255, 255, 255, this.alpha);
       image(magicPetalDownLeftImage, this.x, this.y, this.w, this.h);
     }

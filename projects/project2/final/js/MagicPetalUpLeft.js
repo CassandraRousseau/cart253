@@ -4,10 +4,7 @@ class MagicPetalUpLeft extends MagicPetal {
     super(magicPetalUpLeftImage, mic);
     this.x = 0;
     this.y = 0;
-    this.maxWidth = 300;
-    this.maxHeight = 300;
-    this.growthWidth = 2;
-    this.growthHeight = 2;
+
     this.image = magicPetalUpLeftImage;
     this.mic = mic;
   }
