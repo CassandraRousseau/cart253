@@ -1,13 +1,13 @@
 class MagicPetal {
   //Creating nature elements
-  constructor(x, y, mic, alpha) {
+  constructor(x, y, mic, alpha,movingSpeed) {
     this.x = x;
     this.y = y;
-    this.vx = 0;
-    this.vy = 0;
     this.w = 300;
     this.h = 300;
-    this.movingSpeed = 0.25;
+    this.vx = 0;
+    this.vy = 0;
+    this.movingSpeed = movingSpeed;
     this.state = "still";
     this.alpha = alpha;
     this.minAlpha = 0;
@@ -23,7 +23,25 @@ class MagicPetal {
   }
 
   //Moving the nature elements
-  move() {}
+  move() {
+    push();
+        // Check if magic petal is  moving based on screams
+        if (screaming) {
+          this.state = "running";
+          this.vx += this.movingSpeed;
+          this.vy += this.movingSpeed;
+        } else {
+          this.state = "still";
+        }
+
+        //Setting when magic petal stops moving
+        if (this.x === width / 2 && this.y === height / 2) {
+          this.vx = 0;
+          this.vy = 0;
+        }
+        pop();
+
+  }
 
   //Changing the opacity of nature elements based on screams
   transparency() {
@@ -38,7 +56,7 @@ class MagicPetal {
       );
       this.alpha = map(
         this.vy,
-        this.minWidth,
+        this.,
         this.maxWidth,
         this.minAlpha,
         this.maxAlpha
