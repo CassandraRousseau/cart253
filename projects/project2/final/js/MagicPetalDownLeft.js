@@ -1,14 +1,14 @@
 class MagicPetalDownLeft extends MagicPetal {
   //Creating the magic petal
-  constructor(magicPetalImage, mic) {
-    super(magicPetalImage, mic);
+  constructor(magicPetalDownLeftImage, mic) {
+    super(magicPetalDownLeftImage, mic);
     this.x = width / 2;
     this.y = height / 2;
     this.maxWidth = 300;
     this.maxHeight = 300;
     this.growthWidth = 2;
     this.growthHeight = 2;
-    this.image = magicPetalImage;
+    this.image = magicPetalDownLeftImage;
     this.mic = mic;
   }
 
@@ -43,7 +43,7 @@ class MagicPetalDownLeft extends MagicPetal {
     if (this.state === "running") {
       imageMode(CENTER);
       tint(255, 255, 255, this.alpha);
-      image(magicPetalImage, this.x, this.y, this.w, this.h);
+      image(magicPetalDownLeftImage, this.x, this.y, this.w, this.h);
     }
     pop();
   }

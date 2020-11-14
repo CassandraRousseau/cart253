@@ -1,10 +1,10 @@
-class Level3 extends State {
+class Level4 extends State {
   //Creating level elements
   constructor() {
     super();
 
     //Naming level
-    this.name = "Level";
+    this.name = "Level4";
 
     //Creating microphone
     this.mic = mic;
