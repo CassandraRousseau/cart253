@@ -18,7 +18,7 @@ class Timer {
         !magicPetal.active &&
         frameCount < framecountSim + this.gamelength
       ) {
-        return "GoodEnding";
+        return "GoodEnding1";
       }
     } else if (state === "Level2") {
       //Bad ending when the user didn't catch the magic petal

@@ -79,8 +79,12 @@ class Level1 extends State {
     //Setting which states come after the level
     if (timerResult === "BadEnding") {
       currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
-    } else if (timerResult === "GoodEnding") {
-      currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
+    } else if (timerResult === "GoodEnding1") {
+      currentState = new GoodEnding1(
+        windowWidth,
+        windowHeight,
+        goodEndingImage
+      );
     }
 
     //Displaying the elements

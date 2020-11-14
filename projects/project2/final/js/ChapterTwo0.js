@@ -1,15 +1,11 @@
-class ChapterOne4 extends State {
+class ChapterOne0 extends State {
   //Creating the title screen
   constructor() {
     super();
-    this.name = "ChapterOne4";
-    this.dialog8 = [
-      "I cannot help you to find the petals but I can tell you that the mage lives in the castle at the top of the mountain right here.",
-      "I wish you the best luck to find these precious artifacts!",
-      "Press Enter",
-    ];
+    this.name = "ChapterOne0";
+    this.titleString4 = "Chapter One";
+    this.subtitle3 = ["The Cave", "Press Enter"];
   }
-
   //Setting the title screen
   draw() {
     super.draw();
@@ -24,7 +20,13 @@ class ChapterOne4 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog8, width / 2, height / 2);
+    text(this.titleString3, width / 2, height / 2);
+
+    push();
+    textSize(45);
+    text(this.subtitle2, width / 2, (5 * height) / 6);
+    pop();
+    pop();
   }
 
   //Setting keyPressed action after title screen
@@ -32,15 +34,15 @@ class ChapterOne4 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne5();
+      currentState = new ChapterOne1();
       currentLine = 0;
     }
 
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.dialog8.length && state === "ChapterOne4") {
-        currentLine = this.dialog8.length - 1;
+      if (currentLine === this.subtitle2.length && state === "ChapterOne0") {
+        currentLine = this.subtitle2.length - 1;
       }
     }
   }
