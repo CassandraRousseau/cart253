@@ -7,7 +7,7 @@ class GoodEnding extends State {
     this.w = w;
     this.h = h;
     this.image = goodEndingImage;
-    this.goodJob = "Good Job!\nYou found the magic petal!";
+    this.goodJob = "Good Job!\nYou found the first magic petal!";
   }
 
   //Preloading background image for good ending
@@ -33,7 +33,7 @@ class GoodEnding extends State {
     text(this.goodJob, 10, 50, windowWidth, windowHeight);
     push();
     textSize(35);
-    text("Press Enter to restart", width / 2, (2 * height) / 3);
+    text("Press Enter", width / 2, (2 * height) / 3);
     pop();
     pop();
   }
@@ -41,9 +41,9 @@ class GoodEnding extends State {
   //Setting keyPressed after good ending screen
   keyPressed() {
     super.keyPressed();
-
     if (keyCode === 13) {
-      location.reload();
+      currentState = new ChapterTwo0();
+      currentLine = 0;
     }
   }
 }
