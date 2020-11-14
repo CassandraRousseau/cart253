@@ -1,15 +1,19 @@
-class Title extends State {
+class Prologue2 extends State {
   //Creating the title screen
 
-  constructor(w, h, titleImage) {
-    super(w, h, titleImage);
-
+  constructor(w, h, girlImage) {
+    super(w, h, girlImage);
+    this.name = "Prologue2";
+    this.dialog2 = [
+      "A little girl... different from other children.",
+      "This little girl was cursed",
+      "Press Enter",
+    ];
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
-    this.image = titleImage;
-    this.titleString = "Ephemeral";
+    this.image = girlImage;
   }
 
   //Preloading necessary images for title screen
@@ -33,12 +37,7 @@ class Title extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.titleString, width / 2, height / 2);
-
-    push();
-    textSize(45);
-    text("Press Enter to start", width / 2, (5 * height) / 6);
-    pop();
+    text(this.dialog2, width / 2, height / 2);
     pop();
   }
 
@@ -47,7 +46,16 @@ class Title extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Prologue1();
+      currentState = new Prologue3();
+      currentLine = 0;
+    }
+
+    if (keyCode === 32) {
+      currentLine = currentLine + 1;
+
+      if (currentLine === this.dialog2.length && state === "Prologue2") {
+        currentLine = this.dialog2.length - 1;
+      }
     }
   }
 }

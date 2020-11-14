@@ -10,6 +10,8 @@ timer stops. If the user catches the petal, he won, but if time is out, it's gam
 
 let currentState;
 
+let currentLine = 0;
+
 let title;
 
 let instructions1;
@@ -125,6 +127,7 @@ function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   titleImage = loadImage("assets/images/ephemeralGirl.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
+  skyImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   magicPetalUpLeftImage = loadImage("assets/images/magicPetalUpLeft.png");
