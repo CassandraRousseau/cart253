@@ -19,7 +19,7 @@ class Level1 extends State {
     let speed = random(5, 10);
     let vx = random(3, 8);
     let vy = random(3, 6);
-    this.magicPetal = new MagicPetal(
+    this.magicPetal = new MagicPetal1(
       x,
       y,
       vx,
