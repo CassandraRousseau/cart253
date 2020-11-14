@@ -2,8 +2,8 @@ class MagicPetalUpRight extends MagicPetal {
   //Creating the magic petal
   constructor(magicPetalUpRightImage, mic) {
     super(magicPetalUpRightImage, mic);
-    this.x = width / 2;
-    this.y = height / 2;
+    this.x = width;
+    this.y = 0;
     this.maxWidth = 300;
     this.maxHeight = 300;
     this.growthWidth = 2;

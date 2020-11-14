@@ -11,6 +11,8 @@ class MagicPetal {
     this.state = "still";
     this.angle = angle;
     this.alpha = alpha;
+    this.minAlpha = 0;
+    this.maxAlpha = 255;
     this.image = undefined;
     this.mic = mic;
     this.active = true;
@@ -23,6 +25,26 @@ class MagicPetal {
 
   //Moving the nature elements
   move() {}
+
+  //Changing the opacity of nature elements based on screams
+  transparency() {
+    push();
+    this.alpha = map(
+      this.h,
+      this.minHeight,
+      this.maxHeight,
+      this.minAlpha,
+      this.maxAlpha
+    );
+    this.alpha = map(
+      this.w,
+      this.minWidth,
+      this.maxWidth,
+      this.minAlpha,
+      this.maxAlpha
+    );
+    pop();
+  }
 
   //Displaying the nature elements
   display() {}

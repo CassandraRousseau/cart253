@@ -17,54 +17,65 @@ class Level4 extends State {
     this.user = new User();
 
     //Creating nature elements array
-    this.natures = [];
-
-    //Creating the cave
-    for (let i = 0; i < numCaves; i++) {
-      this.cave = new Cave(caveImage, this.mic);
-      this.natures.push(this.cave);
-    }
+    this.magicPetals = [];
 
     //Creating the magic petal
     for (let i = 0; i < numMagicPetals; i++) {
-      this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
-      this.natures.push(this.magicPetal);
+      this.magicPetal = new MagicPetal3(magicPetalImage, this.mic);
+      this.magicPetals.push(this.magicPetal);
     }
 
     //Creating the left side rock
-    for (let i = 0; i < numRocksLeft; i++) {
+    for (let i = 0; i < numMagicPetalDownLeft; i++) {
       let vx = 0.25;
 
-      let rockLeft = new RockLeft(vx, rockImage, this.mic);
-      this.natures.push(rockLeft);
+      let magicPetalDownLeft = new MagicPetalDownLeft(
+        vx,
+        magicPetalDownLeftImage,
+        this.mic
+      );
+      this.magicPetals.push(magicPetalDownLeft);
     }
 
     //Creating the right side rock
-    for (let i = 0; i < numRocksRight; i++) {
+    for (let i = 0; i < numMagicPetalDownRight; i++) {
       let vx = 0.25;
 
-      let rockRight = new RockRight(vx, rockImage, this.mic);
-      this.natures.push(rockRight);
+      let magicPetalDownRight = new MagicPetalDownRight(
+        vx,
+        magicPetalDownRightImage,
+        this.mic
+      );
+      this.magicPetals.push(magicPetalDownRight);
     }
 
     //Creating the left side thorn
-    for (let i = 0; i < numThornsLeft; i++) {
+    for (let i = 0; i < numMagicPetalUpLeft; i++) {
       let vx = 0.25;
 
-      let thornLeft = new ThornLeft(vx, thornImage, this.mic);
-      this.natures.push(thornLeft);
+      let magicPetalUpLeft = new MagicPetalUpLeft(
+        vx,
+        magicPetalUpLeftImage,
+        this.mic
+      );
+      this.magicPetals.push(magicPetalUpLeft);
     }
 
     //Creating the right side thorn
-    for (let i = 0; i < numThornsRight; i++) {
+    for (let i = 0; i < numMagicPetalUpRight; i++) {
       let x = (5 * width) / 6;
-
       let y = height / 2;
 
       let vx = 0.25;
 
-      let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
-      this.natures.push(thornRight);
+      let magicPetalUpRight = new MagicPetalUpRight(
+        x,
+        y,
+        vx,
+        magicPetalUpRightImage,
+        this.mic
+      );
+      this.magicPetals.push(magicPetalUpRight);
     }
   }
 
@@ -83,7 +94,7 @@ class Level4 extends State {
   draw() {
     super.draw();
     push();
-    background(0);
+    background(100, 50, 200);
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(
@@ -103,15 +114,13 @@ class Level4 extends State {
     this.user.display();
 
     //Displaying nature elements
-    for (let i = 0; i < this.natures.length; i++) {
-      let nature = this.natures[i];
+    for (let i = 0; i < this.magicPetals.length; i++) {
+      let parts = this.magicPetals[i];
 
       //Displaying them only if magicPetal is active
       if (this.magicPetal.active) {
-        nature.move();
-        nature.growing();
-        nature.transparency();
-        nature.display();
+        parts.move();
+        parts.display();
       }
     }
     pop();
