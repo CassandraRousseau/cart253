@@ -20,11 +20,17 @@ let level2;
 
 let level3;
 
+let level4;
+
+let level5;
+
 let badEnding;
 
 let goodEnding;
 
 let timer;
+
+let castle;
 
 let sky;
 
@@ -95,6 +101,8 @@ let titleImage;
 let girlImage;
 
 let skyImage;
+
+let castleImage;
 
 let leafImage;
 
