@@ -127,7 +127,9 @@ function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   girlImage = loadImage("assets/images/ephemeralGirl.png");
   zoomImage = loadImage("assets/images/ephemeralZoom.png");
-  zoomImage = loadImage("assets/images/ephemeralMyth.png");
+  mythImage = loadImage("assets/images/ephemeralMyth.png");
+  pathImage = loadImage("assets/images/ephemeralPath.png");
+  beginningImage = loadImage("assets/images/ephemeralBeginning.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   castleImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
