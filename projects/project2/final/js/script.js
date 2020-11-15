@@ -125,9 +125,11 @@ let goodEndingImage;
 // Setting all the preloaded images
 function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
-  titleImage = loadImage("assets/images/ephemeralGirl.png");
+  girlImage = loadImage("assets/images/ephemeralGirl.png");
+  zoomImage = loadImage("assets/images/ephemeralZoom.png");
+  zoomImage = loadImage("assets/images/ephemeralMyth.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
-  skyImage = loadImage("assets/images/ephemeralCastle.png");
+  castleImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   magicPetalUpLeftImage = loadImage("assets/images/magicPetalUpLeft.png");

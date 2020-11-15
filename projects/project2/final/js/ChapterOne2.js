@@ -14,8 +14,17 @@ class ChapterOne2 extends State {
       "But you have to be prepared, because the process might be risky",
       "Press Enter",
     ];
+    this.x = 0;
+    this.y = 0;
+    this.width = w;
+    this.height = h;
+    this.image = girlImage;
   }
-
+  //Preloading necessary images for title screen
+  preload() {
+    super.preload();
+    this.image.preload();
+  }
   //Setting the title screen
   draw() {
     super.draw();
@@ -25,7 +34,8 @@ class ChapterOne2 extends State {
   //Displaying the title screen
   display() {
     push();
-    background(255);
+    image(this.image, this.x, this.y, this.w, this.h);
+    background(this.image);
     textSize(115);
     fill(0);
     textAlign(CENTER, CENTER);

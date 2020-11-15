@@ -1,10 +1,10 @@
 class ChapterOne3 extends State {
   //Creating the title screen
-  constructor() {
-    super();
+  constructor(w, h, mythImage) {
+    super(w, h, mythImage);
     this.name = "ChapterOne3";
     this.dialog7 = [
-      "A legend tells that five magic petals exist in this forest",
+      "A myth tells that five magic petals exist in this forest",
       "These five magic petals can cure any disease or curse!",
       "You have to collect these five petals and meet the mage of the forest in order that the magic operates.",
       "Press Enter",
@@ -12,8 +12,17 @@ class ChapterOne3 extends State {
       "I wish you the best luck to find these precious artifacts!",
       "And it was a this moment that the little girl started her perilous journey...",
     ];
+    this.x = 0;
+    this.y = 0;
+    this.width = w;
+    this.height = h;
+    this.image = mythImage;
   }
-
+  //Preloading necessary images for title screen
+  preload() {
+    super.preload();
+    this.image.preload();
+  }
   //Setting the title screen
   draw() {
     super.draw();
@@ -23,7 +32,8 @@ class ChapterOne3 extends State {
   //Displaying the title screen
   display() {
     push();
-    background(255);
+    image(this.image, this.x, this.y, this.w, this.h);
+    background(this.image);
     textSize(115);
     fill(0);
     textAlign(CENTER, CENTER);
