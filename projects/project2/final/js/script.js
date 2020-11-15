@@ -130,6 +130,8 @@ function preload() {
   mythImage = loadImage("assets/images/ephemeralMyth.png");
   pathImage = loadImage("assets/images/ephemeralPath.png");
   beginningImage = loadImage("assets/images/ephemeralBeginning.png");
+  lookingImage = loadImage("assets/images/ephemeralLooking.png");
+  holeImage = loadImage("assets/images/ephemeralHole.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   castleImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
