@@ -1,30 +1,50 @@
-class MagicPetal2 {
+class MagicPetal2 extends Nature {
   //Creating the magic petal
-  constructor(x, y, vx, vy, speed, magicPetalImage) {
-    this.x = x;
-    this.y = y;
-    this.w = 125;
-    this.h = 125;
-    this.vx = vx;
-    this.vy = vy;
-    this.speed = speed;
+  constructor(magicPetalImage, mic) {
+    super(magicPetalImage, mic);
+    this.x = width / 2;
+    this.y = height / 2;
+    this.maxWidth = 300;
+    this.maxHeight = 300;
+    this.growthWidth = 2;
+    this.growthHeight = 2;
     this.image = magicPetalImage;
-    this.active = true;
-  }
-  //Preloading images of thee magic petal
-  preload() {
-    this.image.preload();
-  }
-  //Setting the magic petal
-  move() {
-    this.x += this.vx;
-    this.y += this.vy;
+    this.mic = mic;
   }
 
-  //Displaying the magic petal
-  display() {
+  //Setting the magic petal
+  move() {
+    super.move();
     push();
-    image(magicPetalImage, this.x, this.y, this.w, this.h);
+
+    // Check if magic petal is  moving based on screams
+    if (screaming) {
+      this.state = "running";
+    } else {
+      this.state = "still";
+    }
+
+    //Setting when magic petal stops moving
+    if (this.w === this.maxWidth && this.h === this.maxHeight) {
+      this.vx = 0;
+    }
+
+    //Setting magic petal movements
+    this.x += this.vx;
+    this.y += this.vy;
+    pop();
+  }
+
+  //Displaying the magic petal based on screams
+  display() {
+    super.display();
+    push();
+
+    if (this.state === "running") {
+      imageMode(CENTER);
+      tint(255, 255, 255, this.alpha);
+      image(magicPetalImage, this.x, this.y, this.w, this.h);
+    }
     pop();
   }
 }

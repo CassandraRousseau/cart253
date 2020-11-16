@@ -46,7 +46,7 @@ class ChapterOne3 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne4();
+      currentState = new ChapterOne4(windowWidth, windowHeight, pathImage);
       currentLine = 0;
     }
 

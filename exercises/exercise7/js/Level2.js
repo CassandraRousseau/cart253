@@ -27,7 +27,7 @@ class Level2 extends State {
 
     //Creating the magic petal
     for (let i = 0; i < numMagicPetals; i++) {
-      this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
+      this.magicPetal = new MagicPetal2(magicPetalImage, this.mic);
       this.natures.push(this.magicPetal);
     }
 

@@ -43,7 +43,7 @@ class ChapterOne4 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne5();
+      currentState = new ChapterOne5(windowWidth, windowHeight, beginningImage);
       currentLine = 0;
     }
 
