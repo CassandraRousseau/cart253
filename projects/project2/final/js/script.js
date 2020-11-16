@@ -127,6 +127,7 @@ function preload() {
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   girlImage = loadImage("assets/images/ephemeralGirl.png");
   zoomImage = loadImage("assets/images/ephemeralZoom.png");
+  encounterImage = loadImage("assets/images/ephemeralEncounter.png");
   mythImage = loadImage("assets/images/ephemeralMyth.png");
   pathImage = loadImage("assets/images/ephemeralPath.png");
   beginningImage = loadImage("assets/images/ephemeralBeginning.png");
