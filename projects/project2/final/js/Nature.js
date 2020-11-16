@@ -1,5 +1,5 @@
 class Nature {
-  //Creating nature elements
+  //Creating nature elements for level 2
   constructor(
     x,
     y,
@@ -68,6 +68,7 @@ class Nature {
       this.minAlpha,
       this.maxAlpha
     );
+
     this.alpha = map(
       this.w,
       this.minWidth,
@@ -78,6 +79,6 @@ class Nature {
     pop();
   }
 
-  //Displaying the nature elements
+  //Displaying the nature elements for level 2
   display() {}
 }

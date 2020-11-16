@@ -1,5 +1,5 @@
 class ChapterThree0 extends State {
-  //Creating the title screen
+  //Creating the Chapter Three title screen
   constructor() {
     super();
     this.name = "ChapterThree0";
@@ -7,13 +7,13 @@ class ChapterThree0 extends State {
     this.subtitle4 = ["Bunch of leaves", "Press Enter"];
   }
 
-  //Setting the title screen
+  //Setting the Chapter Three title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Chapter Three title screen
   display() {
     push();
     background(255);
@@ -21,21 +21,22 @@ class ChapterThree0 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.titleString3, width / 2, height / 2);
+    text(this.titleString5, width / 2, height / 2);
 
     push();
     textSize(45);
-    text(this.subtitle2, width / 2, (5 * height) / 6);
+    let subtitle = this.subtitle4[currentLine];
+    text(subtitle, width / 2, (5 * height) / 6);
     pop();
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the Chapter Three title screen
   keyPressed() {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterThree1();
+      currentState = new ChapterThree1(windowWidth, windowHeight, bunchImage);
       currentLine = 0;
     }
 

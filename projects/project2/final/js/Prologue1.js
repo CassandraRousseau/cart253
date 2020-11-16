@@ -1,21 +1,22 @@
 class Prologue1 extends State {
-  //Creating the title screen
+  //Creating the first cutscene of Prologue
   constructor() {
     super();
     this.name = "Prologue1";
+
     this.dialog1 = [
       "Once upon a time,(Press Spacebar)",
       "A little girl...(Press Enter)",
     ];
   }
 
-  //Setting the title screen
+  //Setting the first cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the first cutscene of Prologue
   display() {
     push();
     background(255);
@@ -23,10 +24,12 @@ class Prologue1 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog1, width / 2, height / 2);
+
+    let dialog = this.dialog1[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the first cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

@@ -1,5 +1,5 @@
 class Plant {
-  //Creating the plants
+  //Creating the plants for level 1
   constructor(x, y, vx, vy, speed, angle) {
     this.x = x;
     this.y = y;
@@ -17,6 +17,6 @@ class Plant {
     this.image.preload();
   }
 
-  //Displaying the plants
+  //Displaying the plants for level 1
   display() {}
 }

@@ -1,6 +1,5 @@
 class Title extends State {
   //Creating the title screen
-
   constructor(w, h, titleImage) {
     super(w, h, titleImage);
 

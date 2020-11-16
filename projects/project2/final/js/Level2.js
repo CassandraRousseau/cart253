@@ -1,5 +1,5 @@
 class Level2 extends State {
-  //Creating level elements
+  //Creating level 2 elements
   constructor() {
     super();
 
@@ -16,7 +16,7 @@ class Level2 extends State {
     //Creating user circle
     this.user = new User();
 
-    //Creating nature elements array
+    //Creating nature elements' array
     this.natures = [];
 
     //Creating the cave
@@ -27,7 +27,7 @@ class Level2 extends State {
 
     //Creating the magic petal
     for (let i = 0; i < numMagicPetals; i++) {
-      this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
+      this.magicPetal = new MagicPetal2(magicPetalImage, this.mic);
       this.natures.push(this.magicPetal);
     }
 
@@ -36,6 +36,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let rockLeft = new RockLeft(vx, rockImage, this.mic);
+
       this.natures.push(rockLeft);
     }
 
@@ -44,6 +45,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let rockRight = new RockRight(vx, rockImage, this.mic);
+
       this.natures.push(rockRight);
     }
 
@@ -52,6 +54,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let thornLeft = new ThornLeft(vx, thornImage, this.mic);
+
       this.natures.push(thornLeft);
     }
 
@@ -64,11 +67,12 @@ class Level2 extends State {
       let vx = 0.25;
 
       let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
+
       this.natures.push(thornRight);
     }
   }
 
-  //Preloading necessary images for level
+  //Preloading necessary images for level 2
   preload() {
     super.preload();
     this.cave.preload();

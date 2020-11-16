@@ -1,5 +1,5 @@
 class Level3 extends State {
-  //Creating level elements
+  //Creating level 3 elements
   constructor() {
     super();
     this.name = "Level3";
@@ -11,34 +11,48 @@ class Level3 extends State {
 
     //Creating the magic petal
     push();
+
     let x = random(0, width);
+
     let y = random(0, height);
+
     let speed = 0;
+
     let vx = 0;
+
     let vy = 0;
-    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
+
+    this.magicPetal = new MagicPetal3(x, y, vx, vy, speed, magicPetalImage);
     pop();
 
     //Creating the red petals
     for (let i = 0; i < numRedPetals2; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let angle = random(0, 360);
+
       let redPetal = new RedPetal2(x, y, vx, vy, speed, angle, redPetalImage);
+
       this.plants.push(redPetal);
     }
 
     //Creating the leaves
     for (let i = 0; i < numLeaves2; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let angle = random(0, 360);
+
       let leaf = new Leaf2(x, y, vx, vy, speed, angle, leafImage);
+
       this.plants.push(leaf);
     }
   }
 
-  //Preloading necessary images for level 1
+  //Preloading necessary images for level 3
   preload() {
     super.preload();
 
@@ -47,7 +61,7 @@ class Level3 extends State {
     this.leaf.preload();
   }
 
-  //Setting level 1
+  //Setting level 3
   draw() {
     super.draw();
     background(75, 35, 25);
@@ -73,6 +87,7 @@ class Level3 extends State {
 
     //Displaying the elements
     this.user.display();
+
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.display();

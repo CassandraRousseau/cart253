@@ -1,18 +1,19 @@
 class ChapterTwo0 extends State {
-  //Creating the title screen
+  //Creating the Chapter Two title screen
   constructor() {
     super();
     this.name = "ChapterTwo0";
     this.titleString4 = "Chapter Two";
     this.subtitle3 = ["The Cave", "Press Enter"];
   }
-  //Setting the title screen
+
+  //Setting the Chapter Two title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Chapter Two title screen
   display() {
     push();
     background(255);
@@ -20,21 +21,22 @@ class ChapterTwo0 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.titleString3, width / 2, height / 2);
+    text(this.titleString4, width / 2, height / 2);
 
     push();
     textSize(45);
-    text(this.subtitle2, width / 2, (5 * height) / 6);
+    let subtitle = this.subtitle3[currentLine];
+    text(subtitle, width / 2, (5 * height) / 6);
     pop();
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the Chapter Two title screen
   keyPressed() {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterTwo1();
+      currentState = new ChapterTwo1(windowWidth, windowHeight, lookingImage);
       currentLine = 0;
     }
 

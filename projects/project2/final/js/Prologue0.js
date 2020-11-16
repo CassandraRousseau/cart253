@@ -1,21 +1,23 @@
 class Prologue0 extends State {
-  //Creating the title screen
+  //Creating the Prologue title screen
   constructor() {
     super();
     this.name = "Prologue0";
     this.titleString2 = "Prologue";
+
     this.subtitle1 = [
       "To read the text, press Spacebar",
       "To turn a page,press Enter",
     ];
   }
-  //Setting the title screen
+
+  //Setting the Prologue title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Prologue title screen
   display() {
     push();
     background(255);
@@ -27,12 +29,13 @@ class Prologue0 extends State {
 
     push();
     textSize(45);
-    text(this.subtitle1, width / 2, (5 * height) / 6);
+    let subtitle = this.subtitle1[currentLine];
+    text(subtitle, width / 2, (5 * height) / 6);
     pop();
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the Prologue title screen
   keyPressed() {
     super.keyPressed();
 

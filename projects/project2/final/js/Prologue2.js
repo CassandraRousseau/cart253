@@ -1,14 +1,15 @@
 class Prologue2 extends State {
-  //Creating the title screen
-
+  //Creating the second cutscene of Prologue
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
     this.name = "Prologue2";
+
     this.dialog2 = [
       "A little girl... different from other children.",
       "This little girl was cursed",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -16,32 +17,34 @@ class Prologue2 extends State {
     this.image = girlImage;
   }
 
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the second cutscene of Prologue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the title screen
+  //Setting the second cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the second cutscene of Prologue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(115);
+    textSize(45);
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
-    text(this.dialog2, width / 2, height / 2);
+
+    let dialog = this.dialog2[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the second cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

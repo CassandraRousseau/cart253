@@ -1,5 +1,5 @@
 class ThornRight extends Nature {
-  //Creating the right side thorn
+  //Creating the right side thorn for the second level
   constructor(x, y, thornImage, mic, alpha) {
     super(x, y, thornImage, mic, alpha);
     this.x = x;
@@ -13,7 +13,7 @@ class ThornRight extends Nature {
     this.mic = mic;
   }
 
-  //Moving right side thorn
+  //Moving right side thorn for the second level
   move() {
     super.move();
     push();
@@ -43,8 +43,8 @@ class ThornRight extends Nature {
   //Displaying the right side thorn based on screams
   display() {
     super.display();
-    push();
 
+    push();
     if (this.state === "running") {
       imageMode(CENTER);
       translate(this.x, this.y);
@@ -52,7 +52,6 @@ class ThornRight extends Nature {
       tint(255, 255, 255, this.alpha);
       image(thornImage, 0, 0, this.w, this.h);
     }
-
     pop();
   }
 }

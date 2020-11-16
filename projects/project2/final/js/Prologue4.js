@@ -1,8 +1,9 @@
 class Prologue4 extends State {
-  //Creating the title screen
+  //Creating the fourth cutscene of Prologue
   constructor() {
     super();
     this.name = "Prologue4";
+
     this.dialog4 = [
       "She will die too.",
       "Unfortunately,",
@@ -13,24 +14,26 @@ class Prologue4 extends State {
     ];
   }
 
-  //Setting the title screen
+  //Setting the fourth cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the fourth cutscene of Prologue
   display() {
     push();
     background(255);
-    textSize(115);
+    textSize(45);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog4, width / 2, height / 2);
+
+    let dialog = this.dialog4[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the fourth cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

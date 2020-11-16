@@ -1,8 +1,9 @@
 class ChapterOne2 extends State {
-  //Creating the title screen
+  //Creating the psecond cutscene of Chapter One
   constructor(w, h, encounterImage) {
     super(w, h, encounterImage);
     this.name = "ChapterOne2";
+
     this.dialog6 = [
       "One day,",
       "She met an elderly",
@@ -14,42 +15,48 @@ class ChapterOne2 extends State {
       "But you have to be prepared, because the process might be risky",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
     this.image = encounterImage;
   }
-  //Preloading necessary images for title screen
+
+  //Preloading necessary images the second cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
   }
-  //Setting the title screen
+
+  //Setting the second cutscene of Chapter One
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the second cutscene of Chapter One
   display() {
     push();
+    tint(255, 255, 255, 225);
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(115);
+    textSize(45);
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text(this.dialog6, width / 2, height / 2);
+
+    let dialog = this.dialog6[currentLine];
+    text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the second cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne3();
+      currentState = new ChapterOne3(windowWidth, windowHeight, mythImage);
       currentLine = 0;
     }
 

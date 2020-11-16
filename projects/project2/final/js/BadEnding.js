@@ -1,6 +1,5 @@
 class BadEnding extends State {
   //Creating bad ending screen
-
   constructor(w, h, badEndingImage) {
     super(w, h, badEndingImage);
     this.x = 0;

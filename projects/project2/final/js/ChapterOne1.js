@@ -1,8 +1,9 @@
 class ChapterOne1 extends State {
-  //Creating the title screen
+  //Creating the first cutscene of Chapter One
   constructor() {
     super();
     this.name = "ChapterOne1";
+
     this.dialog5 = [
       "The little girl,",
       "Feeling more and more powerless each day,",
@@ -11,29 +12,30 @@ class ChapterOne1 extends State {
     ];
   }
 
-  //Setting the title screen
+  //Setting the  first cutscene of Chapter One
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the  first cutscene of Chapter One
   display() {
     push();
     background(255);
-    textSize(115);
+    textSize(45);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog5, width / 2, height / 2);
+    let dialog = this.dialog5[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the  first cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne2();
+      currentState = new ChapterOne2(windowWidth, windowHeight, encounterImage);
       currentLine = 0;
     }
 
