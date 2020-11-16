@@ -24,7 +24,8 @@ class ChapterOne0 extends State {
 
     push();
     textSize(45);
-    text(this.subtitle2, width / 2, (5 * height) / 6);
+    let subtitle = this.subtitle2[currentLine];
+    text(subtitle, width / 2, (5 * height) / 6);
     pop();
     pop();
   }

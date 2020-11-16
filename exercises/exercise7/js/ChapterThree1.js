@@ -3,12 +3,6 @@ class ChapterThree1 extends State {
   constructor(w, h, bunchImage) {
     super(w, h, bunchImage);
     this.name = "ChapterThree1";
-    this.dialog5 = [
-      "The little girl,",
-      "Feeling more and more powerless each day,",
-      "Searched desesperately a way to heal herself.",
-      "Press Enter",
-    ];
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -31,11 +25,12 @@ class ChapterThree1 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(115);
     fill(0);
+    textSize(45);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog5, width / 2, height / 2);
+    text("Press Enter", width / 2, (5 * height) / 6);
+    pop();
   }
 
   //Setting keyPressed action after title screen

@@ -42,8 +42,7 @@ class GoodEnding3 extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      currentState = new ChapterFour0();
-      currentLine = 0;
+      location.reload();
     }
   }
 }

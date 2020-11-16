@@ -36,11 +36,12 @@ class ChapterOne2 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(115);
+    textSize(45);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog6, width / 2, height / 2);
+    let dialog = this.dialog6[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
     pop();
   }
 

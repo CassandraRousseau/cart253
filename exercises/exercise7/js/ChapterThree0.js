@@ -21,11 +21,12 @@ class ChapterThree0 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.titleString3, width / 2, height / 2);
+    text(this.titleString5, width / 2, height / 2);
 
     push();
     textSize(45);
-    text(this.subtitle2, width / 2, (5 * height) / 6);
+    let subtitle = this.subtitle4[currentLine];
+    text(subtitle, width / 2, (5 * height) / 6);
     pop();
     pop();
   }

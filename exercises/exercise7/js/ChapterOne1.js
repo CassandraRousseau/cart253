@@ -21,11 +21,12 @@ class ChapterOne1 extends State {
   display() {
     push();
     background(255);
-    textSize(115);
+    textSize(45);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog5, width / 2, height / 2);
+    let dialog = this.dialog5[currentLine];
+    text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
   //Setting keyPressed action after title screen
