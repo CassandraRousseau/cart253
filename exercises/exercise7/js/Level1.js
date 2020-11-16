@@ -31,7 +31,7 @@ class Level1 extends State {
     pop();
 
     //Creating the red petals
-    for (let i = 0; i < numRedPetals; i++) {
+    for (let i = 0; i < numRedPetals1; i++) {
       let x = random(0, width);
       let y = random(0, height);
       let vx = random(5, 15);
@@ -43,7 +43,7 @@ class Level1 extends State {
     }
 
     //Creating the leaves
-    for (let i = 0; i < numLeaves; i++) {
+    for (let i = 0; i < numLeaves1; i++) {
       let x = random(0, width);
       let y = random(0, height);
       let vx = random(5, 15);

@@ -22,31 +22,29 @@ let level2;
 
 let level3;
 
-let level4;
-
-let level5;
-
 let badEnding;
 
-let goodEnding;
+let goodEnding1;
+
+let goodEnding2;
+
+let goodEnding3;
 
 let timer;
-
-let castle;
 
 let sky;
 
 let user;
 
-let leaf;
+let leaf1;
 
 let leaf2;
 
-let redPetal;
+let redPetal1;
 
 let redPetal2;
 
-let magicPetal;
+let magicPetal1;
 
 let magicPetal2;
 
@@ -64,14 +62,6 @@ let thornLeft;
 
 let thornRight;
 
-let magicPetalUpLeftImage;
-
-let magicPetalUpRightImage;
-
-let magicPetalDownLeftImage;
-
-let magicPetalDownRightImage;
-
 let scream;
 
 let screaming = false;
@@ -82,11 +72,11 @@ let natures = [];
 
 let numCaves = 1;
 
-let numRedPetals = 10;
+let numRedPetals1 = 10;
 
 let numRedPetals2 = 500;
 
-let numLeaves = 10;
+let numLeaves1 = 10;
 
 let numLeaves2 = 500;
 
@@ -97,14 +87,6 @@ let numRocksRight = 1;
 let numThornsLeft = 1;
 
 let numThornsRight = 1;
-
-let numMagicPetalUpRight = 1;
-
-let numMagicPetalUpLeft = 1;
-
-let numMagicPetalDownRight = 1;
-
-let numMagicPetalDownLeft = 1;
 
 let titleImage;
 
@@ -129,8 +111,6 @@ let bunchImage;
 let curiousImage;
 
 let skyImage;
-
-let castleImage;
 
 let leafImage;
 
@@ -162,13 +142,8 @@ function preload() {
   bunchImage = loadImage("assets/images/ephemeralBunch.png");
   curiousImage = loadImage("assets/images/ephemeralBunch.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
-  castleImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
-  magicPetalUpLeftImage = loadImage("assets/images/magicPetalUpLeft.png");
-  magicPetalUpRightImage = loadImage("assets/images/magicPetalUpRight.png");
-  magicPetalDownLeftImage = loadImage("assets/images/magicPetalDownLeft.png");
-  magicPetalDownRightImage = loadImage("assets/images/magicPetalDownRight.png");
   redPetalImage = loadImage("assets/images/redPetal.png");
   leafImage = loadImage("assets/images/leaf.png");
   rockImage = loadImage("assets/images/rock.png");

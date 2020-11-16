@@ -1,4 +1,4 @@
-class Leaf extends Plant {
+class Leaf1 extends Plant {
   //Creating the red petals
   constructor(x, y, vx, vy, speed, angle, leafImage) {
     super(x, y, vx, vy, speed, angle, leafImage);
