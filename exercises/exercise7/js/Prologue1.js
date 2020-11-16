@@ -25,7 +25,6 @@ class Prologue1 extends State {
     textFont("Fredericka the Great");
     let dialog = this.dialog1[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
-    pop();
   }
 
   //Setting keyPressed action after title screen
@@ -40,7 +39,7 @@ class Prologue1 extends State {
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.dialog.length && state === "Prologue1") {
+      if (currentLine === this.dialog1.length && state === "Prologue1") {
         currentLine = this.dialog1.length - 1;
       }
     }

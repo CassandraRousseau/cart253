@@ -35,7 +35,7 @@ class Prologue2 extends State {
     background(this.image);
     textSize(45);
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
     let dialog = this.dialog2[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);

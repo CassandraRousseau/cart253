@@ -31,8 +31,8 @@ class ChapterOne5 extends State {
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
     textSize(45);
-    fill(0);
-    textAlign(CENTER, CENTER);
+    fill(255);
+    textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
     let dialog = this.dialog9[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
