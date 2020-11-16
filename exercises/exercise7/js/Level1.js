@@ -38,7 +38,7 @@ class Level1 extends State {
       let vy = random(5, 15);
       let angle = random(0, 360);
       let speed = random(5, 10);
-      let redPetal = new RedPetal(x, y, vx, vy, speed, angle, redPetalImage);
+      let redPetal = new RedPetal1(x, y, vx, vy, speed, angle, redPetalImage);
       this.plants.push(redPetal);
     }
 
@@ -50,7 +50,7 @@ class Level1 extends State {
       let vy = random(5, 15);
       let angle = random(0, 360);
       let speed = random(5, 10);
-      let leaf = new Leaf(x, y, vx, vy, speed, angle, leafImage);
+      let leaf = new Leaf1(x, y, vx, vy, speed, angle, leafImage);
       this.plants.push(leaf);
     }
   }

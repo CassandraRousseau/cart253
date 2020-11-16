@@ -1,4 +1,4 @@
-class RedPetal extends Plant {
+class RedPetal1 extends Plant {
   //Creating the red petals
   constructor(x, y, vx, vy, speed, angle, redPetalImage) {
     super(x, y, vx, vy, speed, angle, redPetalImage);
