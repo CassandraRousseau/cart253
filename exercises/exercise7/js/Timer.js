@@ -31,7 +31,7 @@ class Timer {
         !magicPetal.active &&
         frameCount < framecountSim + this.gamelength
       ) {
-        return "GoodEnding";
+        return "GoodEnding2";
       }
     } else if (state === "Level3") {
       //Bad ending when the user didn't catch the magic petal
@@ -44,36 +44,9 @@ class Timer {
         !magicPetal.active &&
         frameCount < framecountSim + this.gamelength
       ) {
-        return "GoodEnding";
-      }
-    } else if (state === "Level4") {
-      //Bad ending when the user didn't catch the magic petal
-      if (magicPetal.active && frameCount > framecountSim + this.gamelength) {
-        return "BadEnding";
-      }
-
-      //Good ending when the user catches the magic petal
-      else if (
-        !magicPetal.active &&
-        frameCount < framecountSim + this.gamelength
-      ) {
-        return "GoodEnding";
-      }
-    } else if (state === "Level5") {
-      //Bad ending when the user didn't catch the magic petal
-      if (magicPetal.active && frameCount > framecountSim + this.gamelength) {
-        return "BadEnding";
-      }
-
-      //Good ending when the user catches the magic petal
-      else if (
-        !magicPetal.active &&
-        frameCount < framecountSim + this.gamelength
-      ) {
-        return "GoodEnding";
+        return "GoodEnding3";
       }
     }
-
     //Game is running between the beginning and the end of the level
     return "stillRunning";
   }
