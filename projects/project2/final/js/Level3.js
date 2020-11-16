@@ -1,93 +1,63 @@
-class Level3 extends State {
+class Level2 extends State {
   //Creating level elements
   constructor() {
     super();
 
-    //Naming level
-    this.name = "Level";
-
-    //Creating microphone
-    this.mic = mic;
-
+    this.name = "Level2";
+    this.sky = new Sky(windowWidth, windowHeight, skyImage);
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
-
-    //Creating user circle
     this.user = new User();
-
-    //Creating nature elements array
-    this.natures = [];
-
-    //Creating the cave
-    for (let i = 0; i < numCaves; i++) {
-      this.cave = new Cave(caveImage, this.mic);
-      this.natures.push(this.cave);
-    }
+    this.plants = [];
 
     //Creating the magic petal
-    for (let i = 0; i < numMagicPetals; i++) {
-      this.magicPetal = new MagicPetal(magicPetalImage, this.mic);
-      this.natures.push(this.magicPetal);
+    push();
+    let x = random(0, width);
+    let y = random(0, height);
+    let speed = 0;
+    let vx = 0;
+    let vy = 0;
+    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
+    pop();
+
+    //Creating the red petals
+    for (let i = 0; i < numRedPetals2; i++) {
+      let x = random(0, width);
+      let y = random(0, height);
+      let angle = random(0, 360);
+      let redPetal = new RedPetal2(x, y, vx, vy, speed, angle, redPetalImage);
+      this.plants.push(redPetal);
     }
 
-    //Creating the left side rock
-    for (let i = 0; i < numRocksLeft; i++) {
-      let vx = 0.25;
-
-      let rockLeft = new RockLeft(vx, rockImage, this.mic);
-      this.natures.push(rockLeft);
-    }
-
-    //Creating the right side rock
-    for (let i = 0; i < numRocksRight; i++) {
-      let vx = 0.25;
-
-      let rockRight = new RockRight(vx, rockImage, this.mic);
-      this.natures.push(rockRight);
-    }
-
-    //Creating the left side thorn
-    for (let i = 0; i < numThornsLeft; i++) {
-      let vx = 0.25;
-
-      let thornLeft = new ThornLeft(vx, thornImage, this.mic);
-      this.natures.push(thornLeft);
-    }
-
-    //Creating the right side thorn
-    for (let i = 0; i < numThornsRight; i++) {
-      let x = (5 * width) / 6;
-
-      let y = height / 2;
-
-      let vx = 0.25;
-
-      let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
-      this.natures.push(thornRight);
+    //Creating the leaves
+    for (let i = 0; i < numLeaves2; i++) {
+      let x = random(0, width);
+      let y = random(0, height);
+      let angle = random(0, 360);
+      let leaf = new Leaf2(x, y, vx, vy, speed, angle, leafImage);
+      this.plants.push(leaf);
     }
   }
 
-  //Preloading necessary images for level
+  //Preloading necessary images for level 1
   preload() {
     super.preload();
-    this.cave.preload();
+
     this.magicPetal.preload();
-    this.rockLeft.preload();
-    this.rockRight.preload();
-    this.thornLeft.preload();
-    this.thornRight.preload();
+    this.redPetal.preload();
+    this.leaf.preload();
   }
 
-  //Setting level
+  //Setting level 1
   draw() {
     super.draw();
+    background(75, 35, 25);
     push();
-    background(0);
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(
-      "Level",
+      "Level2",
       this.magicPetal,
       this.framecountSim
     );
@@ -101,18 +71,15 @@ class Level3 extends State {
 
     //Displaying the elements
     this.user.display();
+    if (this.magicPetal.active) {
+      this.magicPetal.move();
+      this.magicPetal.display();
+    }
 
-    //Displaying nature elements
-    for (let i = 0; i < this.natures.length; i++) {
-      let nature = this.natures[i];
-
-      //Displaying them only if magicPetal is active
-      if (this.magicPetal.active) {
-        nature.move();
-        nature.growing();
-        nature.transparency();
-        nature.display();
-      }
+    for (let i = 0; i < this.plants.length; i++) {
+      let plant = this.plants[i];
+      plant.move();
+      plant.display();
     }
     pop();
   }

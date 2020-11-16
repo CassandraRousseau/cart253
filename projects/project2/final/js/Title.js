@@ -47,7 +47,7 @@ class Title extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Prologue1();
+      currentState = new Prologue0();
     }
   }
 }

@@ -1,7 +1,7 @@
 class ChapterOne2 extends State {
   //Creating the title screen
-  constructor(w, h, encounter) {
-    super(w, h, encounter);
+  constructor(w, h, encounterImage) {
+    super(w, h, encounterImage);
     this.name = "ChapterOne2";
     this.dialog6 = [
       "One day,",

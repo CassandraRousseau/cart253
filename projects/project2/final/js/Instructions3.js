@@ -2,8 +2,8 @@ class Instructions3 extends State {
   //Creating instructions screen
   constructor() {
     super();
-    this.intro =
-      "Scream until you reach the magic petal.\n\nClick with your mouse to catch the magic petal.\n\nDon't forget, time is running out!";
+    this.intro3 =
+      "Search for the magic petal under the bunch of leaves and petals.\n\nPress your mouse once you find the magic petal.\n\nDon't forget, time is running out!";
   }
 
   //Setting instructions screen
@@ -20,7 +20,7 @@ class Instructions3 extends State {
     fill(0);
     textAlign(LEFT, TOP);
     textFont("Fredericka the Great");
-    text(this.intro, 10, 50, windowWidth, windowHeight);
+    text(this.intro3, 10, 50, windowWidth, windowHeight);
     pop();
   }
 

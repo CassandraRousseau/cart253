@@ -3,7 +3,7 @@ class Instructions2 extends State {
   constructor() {
     super();
     this.intro2 =
-      "Search for the magic petal under the bunch of leaves and petals.\n\nPress your mouse once you find the magic petal.\n\nDon't forget, time is running out!";
+      "Scream until you reach the magic petal.\n\nClick with your mouse to catch the magic petal.\n\nDon't forget, time is running out!";
   }
 
   //Setting instructions screen
