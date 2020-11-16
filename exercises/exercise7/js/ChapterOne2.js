@@ -3,6 +3,7 @@ class ChapterOne2 extends State {
   constructor(w, h, encounterImage) {
     super(w, h, encounterImage);
     this.name = "ChapterOne2";
+
     this.dialog6 = [
       "One day,",
       "She met an elderly",
@@ -14,17 +15,20 @@ class ChapterOne2 extends State {
       "But you have to be prepared, because the process might be risky",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
     this.image = encounterImage;
   }
+
   //Preloading necessary images the second cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
   }
+
   //Setting the second cutscene of Chapter One
   draw() {
     super.draw();
@@ -41,6 +45,7 @@ class ChapterOne2 extends State {
     fill(0);
     textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog6[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();

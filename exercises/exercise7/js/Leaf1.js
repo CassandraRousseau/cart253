@@ -33,6 +33,7 @@ class Leaf1 extends Plant {
       this.y += height;
     }
   }
+
   //Displaying t the leaves for the first level
   display() {
     super.display();

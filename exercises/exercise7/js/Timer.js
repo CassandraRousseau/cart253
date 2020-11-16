@@ -47,6 +47,7 @@ class Timer {
         return "GoodEnding3";
       }
     }
+
     //Game is running between the beginning and the end of the level
     return "stillRunning";
   }

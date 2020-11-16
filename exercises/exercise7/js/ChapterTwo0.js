@@ -6,6 +6,7 @@ class ChapterTwo0 extends State {
     this.titleString4 = "Chapter Two";
     this.subtitle3 = ["The Cave", "Press Enter"];
   }
+
   //Setting the Chapter Two title screen
   draw() {
     super.draw();

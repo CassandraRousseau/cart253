@@ -42,15 +42,14 @@ class RockRight extends Nature {
   //Displaying the right side rock based on screams
   display() {
     super.display();
-    push();
 
+    push();
     if (this.state === "running") {
       imageMode(CENTER);
       translate(50, 50);
       tint(255, 255, 255, this.alpha);
       image(rockImage, this.x, this.y, this.w, this.h);
     }
-
     pop();
   }
 }

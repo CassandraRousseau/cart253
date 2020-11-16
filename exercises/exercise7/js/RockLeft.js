@@ -15,8 +15,8 @@ class RockLeft extends Nature {
   //Moving left side rock for the second level
   move() {
     super.move();
-    push();
 
+    push();
     // Check if left side rock is moving based on screams
     if (screaming) {
       this.state = "running";
@@ -50,7 +50,6 @@ class RockLeft extends Nature {
       tint(255, 255, 255, this.alpha);
       image(rockImage, this.x, this.y, this.w, this.h);
     }
-
     pop();
   }
 }

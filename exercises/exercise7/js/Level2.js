@@ -36,6 +36,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let rockLeft = new RockLeft(vx, rockImage, this.mic);
+
       this.natures.push(rockLeft);
     }
 
@@ -44,6 +45,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let rockRight = new RockRight(vx, rockImage, this.mic);
+
       this.natures.push(rockRight);
     }
 
@@ -52,6 +54,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let thornLeft = new ThornLeft(vx, thornImage, this.mic);
+
       this.natures.push(thornLeft);
     }
 
@@ -64,6 +67,7 @@ class Level2 extends State {
       let vx = 0.25;
 
       let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
+
       this.natures.push(thornRight);
     }
   }

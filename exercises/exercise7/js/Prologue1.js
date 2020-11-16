@@ -3,6 +3,7 @@ class Prologue1 extends State {
   constructor() {
     super();
     this.name = "Prologue1";
+
     this.dialog1 = [
       "Once upon a time,(Press Spacebar)",
       "A little girl...(Press Enter)",
@@ -23,6 +24,7 @@ class Prologue1 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog1[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
   }

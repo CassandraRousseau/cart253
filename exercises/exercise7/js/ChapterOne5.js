@@ -3,16 +3,19 @@ class ChapterOne5 extends State {
   constructor(w, h, beginningImage) {
     super(w, h, beginningImage);
     this.name = "ChapterOne5";
+
     this.dialog9 = [
       "And it was a this moment that the little girl started her perilous journey...",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
     this.image = beginningImage;
   }
+
   //Preloading necessary images for the fifth cutscene of Chapter One
   preload() {
     super.preload();
@@ -34,6 +37,7 @@ class ChapterOne5 extends State {
     fill(255);
     textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog9[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
   }

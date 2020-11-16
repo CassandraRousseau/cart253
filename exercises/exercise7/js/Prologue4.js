@@ -3,6 +3,7 @@ class Prologue4 extends State {
   constructor() {
     super();
     this.name = "Prologue4";
+
     this.dialog4 = [
       "She will die too.",
       "Unfortunately,",
@@ -27,6 +28,7 @@ class Prologue4 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog4[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
   }

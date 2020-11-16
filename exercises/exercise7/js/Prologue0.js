@@ -4,11 +4,13 @@ class Prologue0 extends State {
     super();
     this.name = "Prologue0";
     this.titleString2 = "Prologue";
+
     this.subtitle1 = [
       "To read the text, press Spacebar",
       "To turn a page,press Enter",
     ];
   }
+
   //Setting the Prologue title screen
   draw() {
     super.draw();

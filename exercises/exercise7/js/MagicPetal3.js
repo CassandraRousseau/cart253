@@ -11,10 +11,12 @@ class MagicPetal3 {
     this.image = magicPetalImage;
     this.active = true;
   }
+
   //Preloading images of the magic petal for level 3
   preload() {
     this.image.preload();
   }
+
   //Setting the magic petal
   move() {
     this.x += this.vx;

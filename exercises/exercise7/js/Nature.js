@@ -68,6 +68,7 @@ class Nature {
       this.minAlpha,
       this.maxAlpha
     );
+
     this.alpha = map(
       this.w,
       this.minWidth,

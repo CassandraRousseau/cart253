@@ -12,17 +12,22 @@ class MagicPetal1 {
     this.image = magicPetalImage;
     this.active = true;
   }
+
   //Preloading images of the magic petal for level 1
   preload() {
     this.image.preload();
   }
+
   //Setting the magic petal for level 1
   move() {
     let vx = this.speed * cos(this.angle);
+
     let vy = this.speed * sin(this.angle);
+
     this.x += this.vx;
     this.y += this.vy;
   }
+
   //Bringing the petal back once it goes off the screen
   wrap() {
     if (this.x > width) {
@@ -37,6 +42,7 @@ class MagicPetal1 {
       this.y += height;
     }
   }
+
   //Displaying the magic petal for level 1
   display() {
     push();

@@ -1,14 +1,15 @@
 class Prologue3 extends State {
   //Creating the third cutscene of Prologue
-
   constructor(w, h, zoomImage) {
     super(w, h, zoomImage);
     this.name = "Prologue3";
+
     this.dialog3 = [
       "A rose replaced her heart.",
       "If her rose dies...",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -37,6 +38,7 @@ class Prologue3 extends State {
     fill(0);
     textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog3[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();

@@ -3,11 +3,13 @@ class ChapterOne4 extends State {
   constructor(w, h, pathImage) {
     super(w, h, pathImage);
     this.name = "ChapterOne4";
+
     this.dialog8 = [
       "I cannot help you to find the petals but I can tell you that the mage lives in the castle at the top of the mountain right here.",
       "I wish you the best luck to find these precious artifacts!",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -20,6 +22,7 @@ class ChapterOne4 extends State {
     super.preload();
     this.image.preload();
   }
+
   //Setting the title screen
   draw() {
     super.draw();
@@ -35,6 +38,7 @@ class ChapterOne4 extends State {
     fill(0);
     textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog8[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
   }

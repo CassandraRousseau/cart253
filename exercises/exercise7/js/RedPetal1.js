@@ -14,7 +14,9 @@ class RedPetal1 extends Plant {
   //Setting the red petals for the first level
   move() {
     let vx = this.speed * cos(this.angle);
+
     let vy = this.speed * sin(this.angle);
+
     this.x += this.vx;
     this.y += this.vy;
   }
@@ -33,6 +35,7 @@ class RedPetal1 extends Plant {
       this.y += height;
     }
   }
+
   //Displaying tthe red petals for the first level
   display() {
     super.display();

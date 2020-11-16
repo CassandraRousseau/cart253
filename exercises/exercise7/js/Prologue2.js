@@ -1,14 +1,15 @@
 class Prologue2 extends State {
   //Creating the second cutscene of Prologue
-
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
     this.name = "Prologue2";
+
     this.dialog2 = [
       "A little girl... different from other children.",
       "This little girl was cursed",
       "Press Enter",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
@@ -37,6 +38,7 @@ class Prologue2 extends State {
     fill(0);
     textAlign(CENTER, TOP);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog2[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
     pop();

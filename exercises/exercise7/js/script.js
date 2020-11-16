@@ -1,9 +1,13 @@
 /**************************************************
-Project 02: Anything(Prototype)
+Exercise 7: Progress Report
 Cassandra Rousseau
-The prototype starts with the title screen, followed by the game instructions.
-The level (simulation) starts with multiple leaves and petals flying through the air.
-The user's purpose is to catch the magic petal (a white petal) through the wind before the
+The prototype starts with the title screen, followed by the prologue and first chapter cutscenes of the game.
+The story tells that a little girl is suffering of a curse.She has a rose instead of a heart.
+If her rose dies,she will die too.She learnes that she has to collect five magic petals to cure her curse.
+The first three levels (simulation) start. In the first level, the user has to catch
+the first magic petal through the wind.In the second level,the user has to scream inside a cave in order to make appear 4
+the second magic petal. In the third level, the user has to find the third maic petal under a bunch of leaves and petals
+The user's purpose is to catch the magic petal (a white petal) before the
 timer stops. If the user catches the petal, he won, but if time is out, it's game over...
 **************************************************/
 "use strict";
@@ -159,6 +163,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   noCursor();
+
   //Setting the microphone input
   mic = new p5.AudioIn();
   mic.start();
@@ -171,6 +176,7 @@ function setup() {
 // Setting the draw function for each states.
 function draw() {
   currentState.draw();
+
   //Setting how loud user's screams have to be during the level
   scream = mic.getLevel();
 
@@ -180,10 +186,12 @@ function draw() {
     screaming = false;
   }
 }
+
 //Setting all mouse inputs for each states
 function mousePressed() {
   currentState.mousePressed();
 }
+
 //Setting all keyboard inputs for each states.
 function keyPressed() {
   currentState.keyPressed();

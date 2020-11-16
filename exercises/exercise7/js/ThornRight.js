@@ -43,8 +43,8 @@ class ThornRight extends Nature {
   //Displaying the right side thorn based on screams
   display() {
     super.display();
-    push();
 
+    push();
     if (this.state === "running") {
       imageMode(CENTER);
       translate(this.x, this.y);
@@ -52,7 +52,6 @@ class ThornRight extends Nature {
       tint(255, 255, 255, this.alpha);
       image(thornImage, 0, 0, this.w, this.h);
     }
-
     pop();
   }
 }

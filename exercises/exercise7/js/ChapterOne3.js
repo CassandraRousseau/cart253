@@ -3,6 +3,7 @@ class ChapterOne3 extends State {
   constructor(w, h, mythImage) {
     super(w, h, mythImage);
     this.name = "ChapterOne3";
+
     this.dialog7 = [
       "A myth tells that five magic petals exist in this forest",
       "These five magic petals can cure any disease or curse!",
@@ -12,17 +13,20 @@ class ChapterOne3 extends State {
       "I wish you the best luck to find these precious artifacts!",
       "And it was a this moment that the little girl started her perilous journey...",
     ];
+
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
     this.image = mythImage;
   }
+
   //Preloading necessary images for the third cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
   }
+
   //Setting the third cutscene of Chapter One
   draw() {
     super.draw();
@@ -38,6 +42,7 @@ class ChapterOne3 extends State {
     fill(255);
     textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
+
     let dialog = this.dialog7[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
   }

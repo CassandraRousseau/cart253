@@ -31,6 +31,7 @@ class GoodEnding1 extends State {
     textFont("Fredericka the Great");
     textAlign(LEFT, TOP);
     text(this.goodJob, 10, 50, windowWidth, windowHeight);
+
     push();
     textSize(35);
     text("Press Enter", width / 2, (2 * height) / 3);
@@ -41,6 +42,7 @@ class GoodEnding1 extends State {
   //Setting keyPressed after first good ending screen
   keyPressed() {
     super.keyPressed();
+
     if (keyCode === 13) {
       currentState = new ChapterTwo0();
       currentLine = 0;

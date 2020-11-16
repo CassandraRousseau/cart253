@@ -3,6 +3,7 @@ class ChapterOne1 extends State {
   constructor() {
     super();
     this.name = "ChapterOne1";
+
     this.dialog5 = [
       "The little girl,",
       "Feeling more and more powerless each day,",

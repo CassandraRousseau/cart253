@@ -5,6 +5,7 @@ class Level1 extends State {
 
     this.name = "Level1";
     this.sky = new Sky(windowWidth, windowHeight, skyImage);
+
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -13,12 +14,19 @@ class Level1 extends State {
 
     //Creating the magic petal
     push();
+
     let x = random(0, width);
+
     let y = random(0, height);
+
     let angle = random(0, 360);
+
     let speed = random(5, 10);
+
     let vx = random(3, 8);
+
     let vy = random(3, 6);
+
     this.magicPetal = new MagicPetal1(
       x,
       y,
@@ -33,24 +41,38 @@ class Level1 extends State {
     //Creating the red petals
     for (let i = 0; i < numRedPetals1; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let vx = random(5, 15);
+
       let vy = random(5, 15);
+
       let angle = random(0, 360);
+
       let speed = random(5, 10);
+
       let redPetal = new RedPetal1(x, y, vx, vy, speed, angle, redPetalImage);
+
       this.plants.push(redPetal);
     }
 
     //Creating the leaves
     for (let i = 0; i < numLeaves1; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let vx = random(5, 15);
+
       let vy = random(5, 15);
+
       let angle = random(0, 360);
+
       let speed = random(5, 10);
+
       let leaf = new Leaf1(x, y, vx, vy, speed, angle, leafImage);
+
       this.plants.push(leaf);
     }
   }
@@ -69,6 +91,7 @@ class Level1 extends State {
     super.draw();
     push();
     this.sky.display();
+
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level1",
@@ -89,6 +112,7 @@ class Level1 extends State {
 
     //Displaying the elements
     this.user.display();
+
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.wrap();

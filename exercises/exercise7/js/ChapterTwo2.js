@@ -20,6 +20,7 @@ class ChapterTwo2 extends State {
     super.draw();
     this.display();
   }
+
   //Displaying the second cutscene of Chapter Two
   display() {
     push();

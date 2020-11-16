@@ -11,29 +11,43 @@ class Level3 extends State {
 
     //Creating the magic petal
     push();
+
     let x = random(0, width);
+
     let y = random(0, height);
+
     let speed = 0;
+
     let vx = 0;
+
     let vy = 0;
+
     this.magicPetal = new MagicPetal3(x, y, vx, vy, speed, magicPetalImage);
     pop();
 
     //Creating the red petals
     for (let i = 0; i < numRedPetals2; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let angle = random(0, 360);
+
       let redPetal = new RedPetal2(x, y, vx, vy, speed, angle, redPetalImage);
+
       this.plants.push(redPetal);
     }
 
     //Creating the leaves
     for (let i = 0; i < numLeaves2; i++) {
       let x = random(0, width);
+
       let y = random(0, height);
+
       let angle = random(0, 360);
+
       let leaf = new Leaf2(x, y, vx, vy, speed, angle, leafImage);
+
       this.plants.push(leaf);
     }
   }
@@ -73,6 +87,7 @@ class Level3 extends State {
 
     //Displaying the elements
     this.user.display();
+
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.display();
