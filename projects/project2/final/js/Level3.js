@@ -1,10 +1,8 @@
-class Level2 extends State {
+class Level3 extends State {
   //Creating level elements
   constructor() {
     super();
-
-    this.name = "Level2";
-    this.sky = new Sky(windowWidth, windowHeight, skyImage);
+    this.name = "Level3";
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -57,7 +55,7 @@ class Level2 extends State {
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(
-      "Level2",
+      "Level3",
       this.magicPetal,
       this.framecountSim
     );
@@ -65,8 +63,12 @@ class Level2 extends State {
     //Setting which states come after the level
     if (timerResult === "BadEnding") {
       currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
-    } else if (timerResult === "GoodEnding") {
-      currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
+    } else if (timerResult === "GoodEnding3") {
+      currentState = new GoodEnding3(
+        windowWidth,
+        windowHeight,
+        goodEndingImage
+      );
     }
 
     //Displaying the elements

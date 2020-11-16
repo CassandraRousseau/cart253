@@ -64,6 +64,14 @@ let thornLeft;
 
 let thornRight;
 
+let magicPetalUpLeftImage;
+
+let magicPetalUpRightImage;
+
+let magicPetalDownLeftImage;
+
+let magicPetalDownRightImage;
+
 let scream;
 
 let screaming = false;
@@ -101,6 +109,24 @@ let numMagicPetalDownLeft = 1;
 let titleImage;
 
 let girlImage;
+
+let zoomImage;
+
+let encounterImage;
+
+let mythImage;
+
+let pathImage;
+
+let beginningImage;
+
+let lookingImage;
+
+let holeImage;
+
+let bunchImage;
+
+let curiousImage;
 
 let skyImage;
 

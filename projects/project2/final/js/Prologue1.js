@@ -19,7 +19,7 @@ class Prologue1 extends State {
   display() {
     push();
     background(255);
-    textSize(115);
+    textSize(45);
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
@@ -31,7 +31,7 @@ class Prologue1 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Prologue2();
+      currentState = new Prologue2(windowWidth, windowHeight, girlImage);
       currentLine = 0;
     }
 

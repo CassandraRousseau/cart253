@@ -35,14 +35,14 @@ class ChapterThree0 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne2();
+      currentState = new ChapterThree1();
       currentLine = 0;
     }
 
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.dialog5.length && state === "ChapterOne1") {
+      if (currentLine === this.dialog5.length && state === "ChapterThree0") {
         currentLine = this.dialog5.length - 1;
       }
     }

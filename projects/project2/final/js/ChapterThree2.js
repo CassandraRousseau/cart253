@@ -1,8 +1,8 @@
-class ChapterOne1 extends State {
+class ChapterThree2 extends State {
   //Creating the title screen
   constructor(w, h, curiousImage) {
     super(w, h, curiousImage);
-    this.name = "ChapterOne1";
+    this.name = "ChapterThree2";
     this.dialog5 = [
       "The little girl,",
       "Feeling more and more powerless each day,",
@@ -43,14 +43,14 @@ class ChapterOne1 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne2();
+      currentState = new Instructions3();
       currentLine = 0;
     }
 
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.dialog5.length && state === "ChapterOne1") {
+      if (currentLine === this.dialog5.length && state === "ChapterThree2") {
         currentLine = this.dialog5.length - 1;
       }
     }

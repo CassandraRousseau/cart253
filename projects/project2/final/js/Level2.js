@@ -4,7 +4,7 @@ class Level2 extends State {
     super();
 
     //Naming level
-    this.name = "Level";
+    this.name = "Level2";
 
     //Creating microphone
     this.mic = mic;
@@ -87,7 +87,7 @@ class Level2 extends State {
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(
-      "Level",
+      "Level2",
       this.magicPetal,
       this.framecountSim
     );

@@ -13,16 +13,14 @@ class Level5 extends State {
 
     //Creating the magic petal
     push();
-    let x = width/3;
-    let y = height/4;
+    let x = width / 3;
+    let y = height / 4;
     let speed = 0;
-    let vx =0;
+    let vx = 0;
     let vy = 0;
-    this.magicPetal = new MagicPetal2(
-    x, y, vx, vy, speed, magicPetalImage
-    );
+    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
     pop();
-
+  }
   //Preloading necessary images for level 1
   preload() {
     super.preload();
@@ -55,7 +53,7 @@ class Level5 extends State {
       this.magicPetal.move();
       this.magicPetal.display();
     }
-
+  }
   //Setting the mousePressed method for the interactivity in the level
   mousePressed() {
     super.mousePressed();
