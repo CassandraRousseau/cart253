@@ -132,6 +132,8 @@ function preload() {
   beginningImage = loadImage("assets/images/ephemeralBeginning.png");
   lookingImage = loadImage("assets/images/ephemeralLooking.png");
   holeImage = loadImage("assets/images/ephemeralHole.png");
+  bunchImage = loadImage("assets/images/ephemeralBunch.png");
+  curiousImage = loadImage("assets/images/ephemeralBunch.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   castleImage = loadImage("assets/images/ephemeralCastle.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");

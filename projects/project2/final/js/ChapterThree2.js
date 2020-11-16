@@ -1,7 +1,7 @@
 class ChapterOne1 extends State {
   //Creating the title screen
-  constructor() {
-    super();
+  constructor(w, h, curiousImage) {
+    super(w, h, curiousImage);
     this.name = "ChapterOne1";
     this.dialog5 = [
       "The little girl,",
@@ -9,8 +9,17 @@ class ChapterOne1 extends State {
       "Searched desesperately a way to heal herself.",
       "Press Enter",
     ];
+    this.x = 0;
+    this.y = 0;
+    this.width = w;
+    this.height = h;
+    this.image = curiousImage;
   }
-
+  //Preloading necessary images for title screen
+  preload() {
+    super.preload();
+    this.image.preload();
+  }
   //Setting the title screen
   draw() {
     super.draw();
@@ -20,7 +29,8 @@ class ChapterOne1 extends State {
   //Displaying the title screen
   display() {
     push();
-    background(255);
+    image(this.image, this.x, this.y, this.w, this.h);
+    background(this.image);
     textSize(115);
     fill(0);
     textAlign(CENTER, CENTER);

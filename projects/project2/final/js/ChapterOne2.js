@@ -41,6 +41,7 @@ class ChapterOne2 extends State {
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
     text(this.dialog6, width / 2, height / 2);
+    pop();
   }
 
   //Setting keyPressed action after title screen

@@ -1,14 +1,10 @@
-class ChapterOne1 extends State {
+class ChapterThree0 extends State {
   //Creating the title screen
   constructor() {
     super();
-    this.name = "ChapterOne1";
-    this.dialog5 = [
-      "The little girl,",
-      "Feeling more and more powerless each day,",
-      "Searched desesperately a way to heal herself.",
-      "Press Enter",
-    ];
+    this.name = "ChapterThree0";
+    this.titleString5 = "Chapter Three";
+    this.subtitle4 = ["Bunch of leaves", "Press Enter"];
   }
 
   //Setting the title screen
@@ -25,7 +21,13 @@ class ChapterOne1 extends State {
     fill(0);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text(this.dialog5, width / 2, height / 2);
+    text(this.titleString3, width / 2, height / 2);
+
+    push();
+    textSize(45);
+    text(this.subtitle2, width / 2, (5 * height) / 6);
+    pop();
+    pop();
   }
 
   //Setting keyPressed action after title screen

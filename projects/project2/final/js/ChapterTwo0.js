@@ -1,9 +1,9 @@
-class ChapterOne0 extends State {
+class ChapterTwo0 extends State {
   //Creating the title screen
   constructor() {
     super();
-    this.name = "ChapterOne0";
-    this.titleString4 = "Chapter One";
+    this.name = "ChapterTwo0";
+    this.titleString4 = "Chapter Two";
     this.subtitle3 = ["The Cave", "Press Enter"];
   }
   //Setting the title screen
@@ -34,14 +34,14 @@ class ChapterOne0 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterOne1();
+      currentState = new ChapterTwo1();
       currentLine = 0;
     }
 
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.subtitle2.length && state === "ChapterOne0") {
+      if (currentLine === this.subtitle2.length && state === "ChapterTwo0") {
         currentLine = this.subtitle2.length - 1;
       }
     }
