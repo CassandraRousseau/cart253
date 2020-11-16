@@ -1,4 +1,4 @@
-class GoodEnding extends State {
+class GoodEnding2 extends State {
   //Creating good ending screen
   constructor(w, h, goodEndingImage) {
     super(w, h, goodEndingImage);
@@ -42,7 +42,7 @@ class GoodEnding extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      currentState = new ChapterTwo0();
+      currentState = new ChapterThree0();
       currentLine = 0;
     }
   }
