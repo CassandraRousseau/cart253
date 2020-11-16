@@ -1,5 +1,5 @@
 class ChapterTwo2 extends State {
-  //Creating the title screen
+  //Creating the second cutscene of Chapter Two
   constructor(w, h, holeImage) {
     super(w, h, holeImage);
     this.x = 0;
@@ -9,18 +9,18 @@ class ChapterTwo2 extends State {
     this.image = holeImage;
   }
 
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the second cutscene of Chapter Two
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the title screen
+  //Setting the second cutscene of Chapter Two
   draw() {
     super.draw();
     this.display();
   }
-  //Displaying the title screen
+  //Displaying the second cutscene of Chapter Two
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -33,7 +33,7 @@ class ChapterTwo2 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the second cutscene of Chapter Two
   keyPressed() {
     super.keyPressed();
 

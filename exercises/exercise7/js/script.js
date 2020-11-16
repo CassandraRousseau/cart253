@@ -142,7 +142,7 @@ function preload() {
   lookingImage = loadImage("assets/images/ephemeralLooking.png");
   holeImage = loadImage("assets/images/ephemeralHole.png");
   bunchImage = loadImage("assets/images/ephemeralBunch.png");
-  curiousImage = loadImage("assets/images/ephemeralBunch.png");
+  curiousImage = loadImage("assets/images/ephemeralCurious.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
@@ -162,6 +162,8 @@ function setup() {
   //Setting the microphone input
   mic = new p5.AudioIn();
   mic.start();
+
+  //Setting the first state
   let title = new Title(windowWidth, windowHeight, titleImage);
   currentState = title;
 }

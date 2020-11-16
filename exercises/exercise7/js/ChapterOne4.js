@@ -1,5 +1,5 @@
 class ChapterOne4 extends State {
-  //Creating the title screen
+  //Creating the fourth cutscene of Chapter One
   constructor(w, h, pathImage) {
     super(w, h, pathImage);
     this.name = "ChapterOne4";
@@ -15,7 +15,7 @@ class ChapterOne4 extends State {
     this.image = pathImage;
   }
 
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the fourth cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
@@ -26,7 +26,7 @@ class ChapterOne4 extends State {
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the fourth cutscene of Chapter One
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -39,7 +39,7 @@ class ChapterOne4 extends State {
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the fourth cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 

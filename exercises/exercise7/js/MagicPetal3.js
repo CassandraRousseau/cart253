@@ -1,5 +1,5 @@
 class MagicPetal3 {
-  //Creating the magic petal
+  //Creating the magic petal for level 3
   constructor(x, y, vx, vy, speed, magicPetalImage) {
     this.x = x;
     this.y = y;
@@ -11,7 +11,7 @@ class MagicPetal3 {
     this.image = magicPetalImage;
     this.active = true;
   }
-  //Preloading images of thee magic petal
+  //Preloading images of the magic petal for level 3
   preload() {
     this.image.preload();
   }

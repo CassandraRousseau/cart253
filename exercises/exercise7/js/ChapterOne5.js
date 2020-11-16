@@ -1,5 +1,5 @@
 class ChapterOne5 extends State {
-  //Creating the title screen
+  //Creating the fifth cutscene of Chapter One
   constructor(w, h, beginningImage) {
     super(w, h, beginningImage);
     this.name = "ChapterOne5";
@@ -13,19 +13,19 @@ class ChapterOne5 extends State {
     this.height = h;
     this.image = beginningImage;
   }
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the fifth cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the title screen
+  //Setting the fifth cutscene of Chapter One
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the fifth cutscene of Chapter One
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -38,7 +38,7 @@ class ChapterOne5 extends State {
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the fifth cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 

@@ -1,18 +1,18 @@
 class ChapterTwo0 extends State {
-  //Creating the title screen
+  //Creating the Chapter Two title screen
   constructor() {
     super();
     this.name = "ChapterTwo0";
     this.titleString4 = "Chapter Two";
     this.subtitle3 = ["The Cave", "Press Enter"];
   }
-  //Setting the title screen
+  //Setting the Chapter Two title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Chapter Two title screen
   display() {
     push();
     background(255);
@@ -30,7 +30,7 @@ class ChapterTwo0 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the Chapter Two title screen
   keyPressed() {
     super.keyPressed();
 

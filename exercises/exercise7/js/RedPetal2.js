@@ -1,5 +1,5 @@
 class RedPetal2 extends Plant {
-  //Creating the red petals
+  //Creating the red petals for the third level
   constructor(x, y, vx, vy, speed, angle, redPetalImage) {
     super(x, y, vx, vy, speed, angle, redPetalImage);
     this.x = x;
@@ -10,7 +10,7 @@ class RedPetal2 extends Plant {
     this.angle = angle;
     this.image = redPetalImage;
   }
-
+  //Setting the movements of the red petals for the third level
   move() {
     let dx = this.x - mouseX;
 
@@ -34,7 +34,7 @@ class RedPetal2 extends Plant {
     this.x = constrain(this.x, 0, width);
     this.y = constrain(this.y, 0, height);
   }
-  //Displaying the red petals
+  //Displaying the red petals for the third level
   display() {
     super.display();
     push();

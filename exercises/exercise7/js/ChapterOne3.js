@@ -1,5 +1,5 @@
 class ChapterOne3 extends State {
-  //Creating the title screen
+  //Creating the third cutscene of Chapter One
   constructor(w, h, mythImage) {
     super(w, h, mythImage);
     this.name = "ChapterOne3";
@@ -18,18 +18,18 @@ class ChapterOne3 extends State {
     this.height = h;
     this.image = mythImage;
   }
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the third cutscene of Chapter One
   preload() {
     super.preload();
     this.image.preload();
   }
-  //Setting the title screen
+  //Setting the third cutscene of Chapter One
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the third cutscene of Chapter One
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -42,7 +42,7 @@ class ChapterOne3 extends State {
     text(dialog, 0, 0, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the third cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 

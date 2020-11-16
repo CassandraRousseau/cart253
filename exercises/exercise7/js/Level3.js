@@ -1,5 +1,5 @@
 class Level3 extends State {
-  //Creating level elements
+  //Creating level 3 elements
   constructor() {
     super();
     this.name = "Level3";
@@ -16,7 +16,7 @@ class Level3 extends State {
     let speed = 0;
     let vx = 0;
     let vy = 0;
-    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
+    this.magicPetal = new MagicPetal3(x, y, vx, vy, speed, magicPetalImage);
     pop();
 
     //Creating the red petals
@@ -38,7 +38,7 @@ class Level3 extends State {
     }
   }
 
-  //Preloading necessary images for level 1
+  //Preloading necessary images for level 3
   preload() {
     super.preload();
 
@@ -47,7 +47,7 @@ class Level3 extends State {
     this.leaf.preload();
   }
 
-  //Setting level 1
+  //Setting level 3
   draw() {
     super.draw();
     background(75, 35, 25);

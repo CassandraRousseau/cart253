@@ -1,5 +1,5 @@
 class Prologue2 extends State {
-  //Creating the title screen
+  //Creating the second cutscene of Prologue
 
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
@@ -16,19 +16,19 @@ class Prologue2 extends State {
     this.image = girlImage;
   }
 
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the second cutscene of Prologue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the title screen
+  //Setting the second cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the second cutscene of Prologue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -42,7 +42,7 @@ class Prologue2 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the second cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

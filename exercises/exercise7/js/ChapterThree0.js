@@ -1,5 +1,5 @@
 class ChapterThree0 extends State {
-  //Creating the title screen
+  //Creating the Chapter Three title screen
   constructor() {
     super();
     this.name = "ChapterThree0";
@@ -7,13 +7,13 @@ class ChapterThree0 extends State {
     this.subtitle4 = ["Bunch of leaves", "Press Enter"];
   }
 
-  //Setting the title screen
+  //Setting the Chapter Three title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Chapter Three title screen
   display() {
     push();
     background(255);
@@ -31,7 +31,7 @@ class ChapterThree0 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the Chapter Three title screen
   keyPressed() {
     super.keyPressed();
 

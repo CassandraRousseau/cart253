@@ -1,5 +1,5 @@
 class GoodEnding3 extends State {
-  //Creating good ending screen
+  //Creating third good ending screen
   constructor(w, h, goodEndingImage) {
     super(w, h, goodEndingImage);
     this.x = 0;
@@ -7,21 +7,21 @@ class GoodEnding3 extends State {
     this.w = w;
     this.h = h;
     this.image = goodEndingImage;
-    this.goodJob = "Good Job!\nYou found the first magic petal!";
+    this.goodJob = "Good Job!\nYou found the third magic petal!";
   }
 
-  //Preloading background image for good ending
+  //Preloading background image for third good ending
   preload() {
     this.image.preload();
   }
 
-  //Setting good ending screen
+  //Setting third good ending screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying good ending screen
+  //Displaying third good ending screen
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -38,7 +38,7 @@ class GoodEnding3 extends State {
     pop();
   }
 
-  //Setting keyPressed after good ending screen
+  //Setting keyPressed after third good ending screen
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {

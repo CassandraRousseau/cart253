@@ -1,5 +1,5 @@
 class ChapterOne1 extends State {
-  //Creating the title screen
+  //Creating the first cutscene of Chapter One
   constructor() {
     super();
     this.name = "ChapterOne1";
@@ -11,13 +11,13 @@ class ChapterOne1 extends State {
     ];
   }
 
-  //Setting the title screen
+  //Setting the  first cutscene of Chapter One
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the  first cutscene of Chapter One
   display() {
     push();
     background(255);
@@ -29,7 +29,7 @@ class ChapterOne1 extends State {
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the  first cutscene of Chapter One
   keyPressed() {
     super.keyPressed();
 

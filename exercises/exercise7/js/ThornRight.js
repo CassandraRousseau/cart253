@@ -1,5 +1,5 @@
 class ThornRight extends Nature {
-  //Creating the right side thorn
+  //Creating the right side thorn for the second level
   constructor(x, y, thornImage, mic, alpha) {
     super(x, y, thornImage, mic, alpha);
     this.x = x;
@@ -13,7 +13,7 @@ class ThornRight extends Nature {
     this.mic = mic;
   }
 
-  //Moving right side thorn
+  //Moving right side thorn for the second level
   move() {
     super.move();
     push();

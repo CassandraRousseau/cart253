@@ -1,18 +1,18 @@
 class ChapterOne0 extends State {
-  //Creating the title screen
+  //Creating the Chapter One title screen
   constructor() {
     super();
     this.name = "ChapterOne0";
     this.titleString3 = "Chapter One";
     this.subtitle2 = ["The Encounter", "Press Enter"];
   }
-  //Setting the title screen
+  //Setting the Chapter One title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the Chapter One title screen
   display() {
     push();
     background(255);
@@ -22,6 +22,7 @@ class ChapterOne0 extends State {
     textFont("Fredericka the Great");
     text(this.titleString3, width / 2, height / 2);
 
+    //Displaying the subtitle of Chapter One title screen
     push();
     textSize(45);
     let subtitle = this.subtitle2[currentLine];
@@ -30,7 +31,7 @@ class ChapterOne0 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after Chapter One title screen
   keyPressed() {
     super.keyPressed();
 

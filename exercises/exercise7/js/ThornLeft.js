@@ -1,5 +1,5 @@
 class ThornLeft extends Nature {
-  //Creating the left side thorn
+  //Creating the left side thorn for the second level
   constructor(thornImage, mic, alpha) {
     super(thornImage, mic, alpha);
     this.x = 0;
@@ -13,12 +13,12 @@ class ThornLeft extends Nature {
     this.mic = mic;
   }
 
-  //Moving left side thorn
+  //Moving left side thorn for the second level
   move() {
     super.move();
     push();
 
-    // Check if left side thorn is  moving based on the screams
+    // Check if left side thorn is moving based on the screams
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;

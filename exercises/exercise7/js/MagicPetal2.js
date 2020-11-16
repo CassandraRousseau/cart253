@@ -1,5 +1,5 @@
 class MagicPetal2 extends Nature {
-  //Creating the magic petal
+  //Creating the magic petal for level 2
   constructor(magicPetalImage, mic) {
     super(magicPetalImage, mic);
     this.x = width / 2;
@@ -12,7 +12,7 @@ class MagicPetal2 extends Nature {
     this.mic = mic;
   }
 
-  //Setting the magic petal
+  //Setting he magic petal for level 2
   move() {
     super.move();
     push();

@@ -1,5 +1,5 @@
 class Level2 extends State {
-  //Creating level elements
+  //Creating level 2 elements
   constructor() {
     super();
 
@@ -16,7 +16,7 @@ class Level2 extends State {
     //Creating user circle
     this.user = new User();
 
-    //Creating nature elements array
+    //Creating nature elements' array
     this.natures = [];
 
     //Creating the cave
@@ -68,7 +68,7 @@ class Level2 extends State {
     }
   }
 
-  //Preloading necessary images for level
+  //Preloading necessary images for level 2
   preload() {
     super.preload();
     this.cave.preload();

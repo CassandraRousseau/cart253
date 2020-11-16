@@ -1,5 +1,5 @@
 class Prologue3 extends State {
-  //Creating the title screen
+  //Creating the third cutscene of Prologue
 
   constructor(w, h, zoomImage) {
     super(w, h, zoomImage);
@@ -16,19 +16,19 @@ class Prologue3 extends State {
     this.image = zoomImage;
   }
 
-  //Preloading necessary images for title screen
+  //Preloading necessary images for the third cutscene of Prologue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the title screen
+  //Setting the third cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the third cutscene of Prologue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -42,7 +42,7 @@ class Prologue3 extends State {
     pop();
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the third cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

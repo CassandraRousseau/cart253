@@ -1,11 +1,11 @@
 class Timer {
-  //Creating timer in level1
+  //Creating timer for each level
   constructor() {
-    //Creating the length of the level
+    //Creating the length of the levels
     this.gamelength = 1500;
   }
 
-  //Setting timer in level 1
+  //Setting timer in levels
   timeCheck(state, magicPetal, framecountSim) {
     if (state === "Level1") {
       //Bad ending when the user didn't catch the magic petal

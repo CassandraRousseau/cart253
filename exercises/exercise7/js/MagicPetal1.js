@@ -1,5 +1,5 @@
 class MagicPetal1 {
-  //Creating the magic petal
+  //Creating the magic petal for level 1
   constructor(x, y, vx, vy, speed, angle, magicPetalImage) {
     this.x = x;
     this.y = y;
@@ -12,11 +12,11 @@ class MagicPetal1 {
     this.image = magicPetalImage;
     this.active = true;
   }
-  //Preloading images of thee magic petal
+  //Preloading images of the magic petal for level 1
   preload() {
     this.image.preload();
   }
-  //Setting the magic petal
+  //Setting the magic petal for level 1
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
@@ -37,7 +37,7 @@ class MagicPetal1 {
       this.y += height;
     }
   }
-  //Displaying the magic petal
+  //Displaying the magic petal for level 1
   display() {
     push();
     translate(this.x, this.y);

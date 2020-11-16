@@ -1,18 +1,18 @@
 class Instructions3 extends State {
-  //Creating instructions screen
+  //Creating instructions screen for the third level
   constructor() {
     super();
     this.intro3 =
       "Search for the magic petal under the bunch of leaves and petals.\n\nPress your mouse once you find the magic petal.\n\nDon't forget, time is running out!";
   }
 
-  //Setting instructions screen
+  //Setting instructions screen for the third level
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying instructions screen
+  //Displaying instructions screen for the third level
   display() {
     push();
     background(255);
@@ -24,7 +24,7 @@ class Instructions3 extends State {
     pop();
   }
 
-  //Setting keyPressed after instructions screen
+  //Setting keyPressed after instructions screen for the third level
   keyPressed() {
     super.keyPressed();
 

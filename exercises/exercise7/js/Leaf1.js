@@ -1,5 +1,5 @@
 class Leaf1 extends Plant {
-  //Creating the red petals
+  //Creating the leaves for the first level
   constructor(x, y, vx, vy, speed, angle, leafImage) {
     super(x, y, vx, vy, speed, angle, leafImage);
     this.x = x;
@@ -11,7 +11,7 @@ class Leaf1 extends Plant {
     this.image = leafImage;
   }
 
-  //Setting plants
+  //Setting  the leaves for the first level
   move() {
     let vx = this.speed * cos(this.angle);
     let vy = this.speed * sin(this.angle);
@@ -19,7 +19,7 @@ class Leaf1 extends Plant {
     this.y += this.vy;
   }
 
-  //Bringing the plants back once they go off the screen
+  //Bringing  the leaves for the first level back once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -33,7 +33,7 @@ class Leaf1 extends Plant {
       this.y += height;
     }
   }
-  //Displaying the red petals
+  //Displaying t the leaves for the first level
   display() {
     super.display();
     push();

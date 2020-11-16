@@ -1,5 +1,5 @@
 class Level1 extends State {
-  //Creating level elements
+  //Creating level1 elements
   constructor() {
     super();
 

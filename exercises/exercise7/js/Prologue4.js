@@ -1,5 +1,5 @@
 class Prologue4 extends State {
-  //Creating the title screen
+  //Creating the fourth cutscene of Prologue
   constructor() {
     super();
     this.name = "Prologue4";
@@ -13,13 +13,13 @@ class Prologue4 extends State {
     ];
   }
 
-  //Setting the title screen
+  //Setting the fourth cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the fourth cutscene of Prologue
   display() {
     push();
     background(255);
@@ -31,7 +31,7 @@ class Prologue4 extends State {
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the fourth cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 

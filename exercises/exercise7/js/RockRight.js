@@ -1,5 +1,5 @@
 class RockRight extends Nature {
-  //Creating the right side rock
+  //Creating the right side rock for the second level
   constructor(rockImage, mic, alpha) {
     super(rockImage, alpha);
     this.x = (2 * width) / 3;
@@ -12,12 +12,12 @@ class RockRight extends Nature {
     this.mic = mic;
   }
 
-  //Moving right side rock
+  //Moving right side rock for the second level
   move() {
     super.move();
     push();
 
-    // Check if right side rock is  moving based on screams
+    // Check if right side rock is moving based on screams
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;

@@ -1,5 +1,5 @@
 class Prologue1 extends State {
-  //Creating the title screen
+  //Creating the first cutscene of Prologue
   constructor() {
     super();
     this.name = "Prologue1";
@@ -9,13 +9,13 @@ class Prologue1 extends State {
     ];
   }
 
-  //Setting the title screen
+  //Setting the first cutscene of Prologue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the title screen
+  //Displaying the first cutscene of Prologue
   display() {
     push();
     background(255);
@@ -27,7 +27,7 @@ class Prologue1 extends State {
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
 
-  //Setting keyPressed action after title screen
+  //Setting keyPressed action after the first cutscene of Prologue
   keyPressed() {
     super.keyPressed();
 
