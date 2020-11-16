@@ -39,12 +39,13 @@ class GoodEnding3 extends State {
     pop();
   }
 
-  //Setting keyPressed after third good ending screen
+  //Setting keyPressed after second good ending screen
   keyPressed() {
     super.keyPressed();
 
     if (keyCode === 13) {
-      location.reload();
+      currentState = new ChapterFour0();
+      currentLine = 0;
     }
   }
 }

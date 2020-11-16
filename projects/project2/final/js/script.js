@@ -20,11 +20,23 @@ let title;
 
 let instructions1;
 
+let instructions2;
+
+let instructions3;
+
+let instructions4;
+
+let instructions5;
+
 let level1;
 
 let level2;
 
 let level3;
+
+let level4;
+
+let level5;
 
 let badEnding;
 
@@ -33,6 +45,10 @@ let goodEnding1;
 let goodEnding2;
 
 let goodEnding3;
+
+let goodEnding4;
+
+let goodEnding5;
 
 let timer;
 
