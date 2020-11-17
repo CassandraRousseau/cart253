@@ -167,6 +167,9 @@ function preload() {
   monsterImage = loadImage("assets/images/ephemeralMonster.png");
   sleepImage = loadImage("assets/images/ephemeralSleep.png");
   lakeImage = loadImage("assets/images/ephemeralLake.png");
+  destinationImage = loadImage("assets/images/ephemeralDestination.png");
+  enterImage = loadImage("assets/images/ephemeralEnter.png");
+  roomImage = loadImage("assets/images/ephemeralRoom.png");
   curiousImage = loadImage("assets/images/ephemeralCurious.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");

@@ -1,4 +1,4 @@
-class MagicPetalUpRight extends MagicPetal4 {
+class MagicPetalUpRight extends MagicPetal {
   //Creating the magic petal
   constructor(magicPetalUpRightImage, mic, alpha) {
     super(magicPetalUpRightImage, mic, alpha);
