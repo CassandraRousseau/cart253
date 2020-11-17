@@ -40,7 +40,7 @@ class ChapterFour5 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new ChapterFour5();
+      currentState = new ChapterFour6(windowWidth, windowHeight, lakeImage);
       currentLine = 0;
     }
   }
