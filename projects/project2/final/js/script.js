@@ -173,6 +173,7 @@ function preload() {
   curiousImage = loadImage("assets/images/ephemeralCurious.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
+  castleImage = loadImage("assets/images/ephemeralCastle.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
   redPetalImage = loadImage("assets/images/redPetal.png");
   leafImage = loadImage("assets/images/leaf.png");
