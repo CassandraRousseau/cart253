@@ -42,7 +42,7 @@ class GoodEnding5 extends State {
   keyPressed() {
     super.keyPressed();
     if (keyCode === 13) {
-      currentState = new FinalChapter0();
+      currentState = new LastChapter1(windowWidth, windowHeight, surpriseImage);
       currentLine = 0;
     }
   }

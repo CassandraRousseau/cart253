@@ -171,6 +171,15 @@ function preload() {
   enterImage = loadImage("assets/images/ephemeralEnter.png");
   roomImage = loadImage("assets/images/ephemeralRoom.png");
   curiousImage = loadImage("assets/images/ephemeralCurious.png");
+  surpriseImage = loadImage("assets/images/ephemeralSurprise.png");
+  evilImage = loadImage("assets/images/ephemeralEvil.png");
+  surpriseImage = loadImage("assets/images/ephemeralSurprise.png");
+  catchImage = loadImage("assets/images/ephemeralCatch.png");
+  hitImage = loadImage("assets/images/ephemeralHit.png");
+  unconsciousImage = loadImage("assets/images/ephemeralUnconscious.png");
+  fleeImage = loadImage("assets/images/ephemeralFlee.png");
+  meetingImage = loadImage("assets/images/ephemeralMeeting.png");
+  smileImage = loadImage("assets/images/ephemeralSmile.png");
   skyImage = loadImage("assets/images/ephemeralSky.png");
   caveImage = loadImage("assets/images/ephemeralCave.png");
   castleImage = loadImage("assets/images/ephemeralCastle.png");
