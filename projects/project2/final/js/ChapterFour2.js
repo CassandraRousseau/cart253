@@ -4,7 +4,7 @@ class ChapterFour2 extends State {
     super(w, h, doctorImage);
     this.name = "ChapterFour2";
     this.dialog11 = [
-      "Madam, during your pregnancy, have you ever touch or pick some roses in the area",
+      "Madam, during your pregnancy, have you ever touch or pick some roses in the area?",
       "Uh...yes..One time while I was walking in the village...",
       "*Sigh*",
       "During the past few years, a strange bacteria spreads on the roses in the region",
@@ -17,7 +17,7 @@ class ChapterFour2 extends State {
     this.y = 0;
     this.width = w;
     this.height = h;
-    this.image = visitImage;
+    this.image = doctorImage;
   }
 
   //Preloading necessary images the second cutscene of Chapter One

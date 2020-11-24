@@ -31,7 +31,7 @@ class ChapterFour6 extends State {
     fill(0);
     textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text(dialog, 0, 0, windowWidth, windowHeight);
+    text("Press Enter", 0, 0, windowWidth, windowHeight);
     pop();
   }
 

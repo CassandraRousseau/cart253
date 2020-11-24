@@ -23,7 +23,7 @@ class ChapterFour4 extends State {
     background(255);
     textSize(45);
     fill(0);
-    textAlign(CENTER, BOTTOM);
+    textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
 
     let dialog = this.dialog13[currentLine];

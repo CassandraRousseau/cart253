@@ -4,21 +4,17 @@ class Level5 extends State {
     super();
 
     this.name = "Level5";
-    this.sky = new Castle(windowWidth, windowHeight, castleImage);
+    this.castle = new Castle(windowWidth, windowHeight, castleImage);
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
     this.user = new User();
-    this.plants = [];
 
     //Creating the magic petal
     push();
     let x = width / 3;
     let y = height / 4;
-    let speed = 0;
-    let vx = 0;
-    let vy = 0;
-    this.magicPetal = new MagicPetal2(x, y, vx, vy, speed, magicPetalImage);
+    this.magicPetal = new MagicPetal5(x, y, magicPetalImage);
     pop();
   }
   //Preloading necessary images for level 1
@@ -43,8 +39,12 @@ class Level5 extends State {
     //Setting which states come after the level
     if (timerResult === "BadEnding") {
       currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
-    } else if (timerResult === "GoodEnding") {
-      currentState = new GoodEnding(windowWidth, windowHeight, goodEndingImage);
+    } else if (timerResult === "GoodEnding5") {
+      currentState = new GoodEnding5(
+        windowWidth,
+        windowHeight,
+        goodEndingImage
+      );
     }
 
     //Displaying the elements

@@ -15,7 +15,6 @@ class MagicPetal {
     this.maxAlpha = 200;
     this.image = undefined;
     this.mic = mic;
-    this.active = true;
   }
 
   //Preloading images of nature elements
@@ -26,33 +25,15 @@ class MagicPetal {
   //Moving the nature elements
   move() {
     push();
-    //Setting when magic petal stops moving
-    if (this.x === width / 2 && this.y === height / 2) {
-      this.vx = this.stop;
-      this.vy = this.stop;
-    }
+
     pop();
   }
 
   //Changing the opacity of nature elements based on screams
   transparency() {
     push();
-    if (state === "running") {
-      this.alpha = map(
-        this.vx,
-        this.x,
-        this.stop,
-        this.minAlpha,
-        this.maxAlpha
-      );
-      this.alpha = map(
-        this.vy,
-        this.y,
-        this.stop,
-        this.minAlpha,
-        this.maxAlpha
-      );
-    }
+    this.alpha = map(this.vx, this.x, this.stop, this.minAlpha, this.maxAlpha);
+    this.alpha = map(this.vy, this.y, this.stop, this.minAlpha, this.maxAlpha);
 
     pop();
   }

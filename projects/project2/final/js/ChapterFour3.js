@@ -8,7 +8,7 @@ class ChapterFour3 extends State {
     this.y = 0;
     this.width = w;
     this.height = h;
-    this.image = visitImage;
+    this.image = monsterImage;
   }
 
   //Preloading necessary images the second cutscene of Chapter One

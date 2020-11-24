@@ -132,6 +132,14 @@ let numThornsLeft = 1;
 
 let numThornsRight = 1;
 
+let numMagicPetalUpLeft = 1;
+
+let numMagicPetalUpRight = 1;
+
+let numMagicPetalDownLeft = 1;
+
+let numMagicPetalDownRight = 1;
+
 let titleImage;
 
 let girlImage;
@@ -154,6 +162,42 @@ let bunchImage;
 
 let curiousImage;
 
+let visitImage;
+
+let doctorImage;
+
+let monsterImage;
+
+let sleepImage;
+
+let lakeImage;
+
+let destinationImage;
+
+let enterImage;
+
+let roomImage;
+
+let surpriseImage;
+
+let evilImage;
+
+let surviveImage;
+
+let catchImage;
+
+let hitImage;
+
+let unconsciousImage;
+
+let fleeImage;
+
+let meetingImage;
+
+let smileImage;
+
+let castleImage;
+
 let skyImage;
 
 let leafImage;
@@ -167,6 +211,14 @@ let rockImage;
 let thornImage;
 
 let magicPetalImage;
+
+let magicPetalUpLeftImage;
+
+let magicPetalUpRightImage;
+
+let magicPetalDownLeftImage;
+
+let magicPetalDownRightImage;
 
 let badEndingImage;
 
@@ -195,6 +247,7 @@ function preload() {
   curiousImage = loadImage("assets/images/ephemeralCurious.png");
   surpriseImage = loadImage("assets/images/ephemeralSurprise.png");
   evilImage = loadImage("assets/images/ephemeralEvil.png");
+  surviveImage = loadImage("assets/images/ephemeralSurvive.png");
   surpriseImage = loadImage("assets/images/ephemeralSurprise.png");
   catchImage = loadImage("assets/images/ephemeralCatch.png");
   hitImage = loadImage("assets/images/ephemeralHit.png");
@@ -206,6 +259,10 @@ function preload() {
   caveImage = loadImage("assets/images/ephemeralCave.png");
   castleImage = loadImage("assets/images/ephemeralCastle.png");
   magicPetalImage = loadImage("assets/images/magicPetal.png");
+  magicPetalUpLeftImage = loadImage("assets/images/magicPetalUpLeft.png");
+  magicPetalUpRightImage = loadImage("assets/images/magicPetalUpRight.png");
+  magicPetalDownLeftImage = loadImage("assets/images/magicPetalDownLeft.png");
+  magicPetalDownRightImage = loadImage("assets/images/magicPetalDownRight.png");
   redPetalImage = loadImage("assets/images/redPetal.png");
   leafImage = loadImage("assets/images/leaf.png");
   rockImage = loadImage("assets/images/rock.png");
@@ -225,7 +282,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new Title(windowWidth, windowHeight, titleImage);
+  let title = new ChapterFour0();
   currentState = title;
 }
 
@@ -241,15 +298,15 @@ function draw() {
   } else {
     screaming = false;
   }
-  if (clap > clapThreshold1) {
+  if (clap > clapThreshold1 && !clapping1) {
     clapping1 = true;
-  } else if (clap > clapThreshold2) {
+  } else if (clap > clapThreshold2 && !clapping2) {
     clapping2 = true;
-  } else if (clap > clapThreshold3) {
+  } else if (clap > clapThreshold3 && !clapping3) {
     clapping3 = true;
-  } else if (clap > clapThreshold4) {
+  } else if (clap > clapThreshold4 && !clapping4) {
     clapping4 = true;
-  } else if (clap > clapThreshold5) {
+  } else if (clap > clapThreshold5 && !clapping5) {
     clapping5 = true;
   }
 }

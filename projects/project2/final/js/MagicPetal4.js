@@ -1,24 +1,24 @@
 class MagicPetal4 {
   //Creating the magic petal for level 2
   constructor(magicPetalImage, mic) {
-    super(magicPetalImage, mic);
     this.x = width / 2;
     this.y = height / 2;
+    this.vx = 0;
+    this.vy = 0;
     this.maxWidth = 300;
     this.maxHeight = 300;
-    this.growthWidth = 2;
-    this.growthHeight = 2;
+    this.state = "still";
     this.image = magicPetalImage;
     this.mic = mic;
+    this.active = true;
   }
 
   //Setting he magic petal for level 2
   move() {
-    super.move();
     push();
 
     // Check if magic petal is  moving based on screams
-    if (screaming) {
+    if (clapping5) {
       this.state = "running";
     } else {
       this.state = "still";
@@ -37,7 +37,6 @@ class MagicPetal4 {
 
   //Displaying the magic petal based on screams
   display() {
-    super.display();
     push();
 
     if (this.state === "running") {

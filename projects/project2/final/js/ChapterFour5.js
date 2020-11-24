@@ -31,7 +31,7 @@ class ChapterFour5 extends State {
     fill(0);
     textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text(dialog, 0, 0, windowWidth, windowHeight);
+    text("Press Enter", 0, 0, windowWidth, windowHeight);
     pop();
   }
 
@@ -41,7 +41,6 @@ class ChapterFour5 extends State {
 
     if (keyCode === 13) {
       currentState = new ChapterFour6(windowWidth, windowHeight, lakeImage);
-      currentLine = 0;
     }
   }
 }
