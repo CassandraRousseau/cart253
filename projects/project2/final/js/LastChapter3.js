@@ -39,7 +39,7 @@ class LastChapter3 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      currentState = new Instructions6();
+      currentState = new LastLevel();
       currentLine = 0;
     }
   }

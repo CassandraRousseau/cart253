@@ -3,6 +3,8 @@ class MagicPetal4 {
   constructor(magicPetalImage, mic) {
     this.x = width / 2;
     this.y = height / 2;
+    this.w = 300;
+    this.h = 300;
     this.vx = 0;
     this.vy = 0;
     this.maxWidth = 300;

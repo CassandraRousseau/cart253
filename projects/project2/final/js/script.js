@@ -222,6 +222,8 @@ let magicPetalDownRightImage;
 
 let badEndingImage;
 
+let deathImage;
+
 let goodEndingImage;
 
 // Setting all the preloaded images
@@ -268,6 +270,7 @@ function preload() {
   rockImage = loadImage("assets/images/rock.png");
   thornImage = loadImage("assets/images/thorn.png");
   badEndingImage = loadImage("assets/images/ephemeralGameOver.png");
+  deathImage = loadImage("assets/images/ephemeralDeath.png");
   goodEndingImage = loadImage("assets/images/ephemeralFoundPetal.png");
 }
 
@@ -282,7 +285,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new ChapterFour0();
+  let title = new ChapterFive0();
   currentState = title;
 }
 

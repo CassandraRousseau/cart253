@@ -1,26 +1,25 @@
-class Level5 extends State {
+class LastLevel extends State {
   //Creating level elements
   constructor() {
     super();
 
-    this.name = "Level5";
-    this.castle = new Castle(windowWidth, windowHeight, castleImage);
+    this.name = "LastLevel";
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
     this.user = new User();
-
+    this.survival = new Survival(windowWidth, windowHeight, surviveImage);
     //Creating the magic petal
     push();
-    let x = (3 * width) / 4;
-    let y = (4 * height) / 6;
-    this.magicPetal = new MagicPetal5(x, y, magicPetalImage);
+    let x = (2 * width) / 3;
+    let y = height / 5;
+    this.magicPetal = new LastMagicPetal(x, y, magicPetalImage);
     pop();
   }
   //Preloading necessary images for level 1
   preload() {
     super.preload();
-    this.castle.preload();
+    this.survival.preload();
     this.magicPetal.preload();
   }
 
@@ -28,23 +27,21 @@ class Level5 extends State {
   draw() {
     super.draw();
     push();
-    this.castle.display();
+    background(255);
+    this.survival.move();
+    this.survival.display();
     //Setting the timer
     let timerResult = this.timer.timeCheck(
-      "Level5",
+      "LastLevel",
       this.magicPetal,
       this.framecountSim
     );
 
     //Setting which states come after the level
-    if (timerResult === "BadEnding") {
-      currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
-    } else if (timerResult === "GoodEnding5") {
-      currentState = new GoodEnding5(
-        windowWidth,
-        windowHeight,
-        goodEndingImage
-      );
+    if (timerResult === "DeathEnding") {
+      currentState = new DeathEnding(windowWidth, windowHeight, deathImage);
+    } else if (timerResult === "Epilogue1") {
+      currentState = new Epilogue1(windowWidth, windowHeight, catchImage);
     }
 
     //Displaying the elements

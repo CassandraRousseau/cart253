@@ -72,8 +72,20 @@ class Timer {
       ) {
         return "GoodEnding5";
       }
-    }
+    } else if (state === "LastLevel") {
+      //Bad ending when the user didn't catch the magic petal
+      if (magicPetal.active && frameCount > framecountSim + this.gamelength) {
+        return "DeathEnding";
+      }
 
+      //Good ending when the user catches the magic petal
+      else if (
+        !magicPetal.active &&
+        frameCount < framecountSim + this.gamelength
+      ) {
+        return "Epilogue1";
+      }
+    }
     //Game is running between the beginning and the end of the level
     return "stillRunning";
   }
