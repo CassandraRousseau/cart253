@@ -7,6 +7,11 @@ class Epilogue3 extends State {
     this.width = w;
     this.height = h;
     this.image = unconsciousImage;
+    this.name = "Epilogue3";
+    this.dialog15 = [
+      "I think it will be unconscious for a while",
+      "I will solve this case later",
+    ];
   }
 
   //Preloading necessary images for the first cutscene of Chapter Three
@@ -26,11 +31,13 @@ class Epilogue3 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    fill(0);
     textSize(45);
-    textAlign(CENTER, CENTER);
+    fill(0);
+    textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text("Press Enter", width / 2, (5 * height) / 6);
+
+    let dialog = this.dialog15[currentLine];
+    text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
   }
 
@@ -41,6 +48,13 @@ class Epilogue3 extends State {
     if (keyCode === 13) {
       currentState = new Epilogue4(windowWidth, windowHeight, fleeImage);
       currentLine = 0;
+    }
+    if (keyCode === 32) {
+      currentLine = currentLine + 1;
+
+      if (currentLine === this.dialog15.length && state === "Epilogue3") {
+        currentLine = this.dialog15.length - 1;
+      }
     }
   }
 }

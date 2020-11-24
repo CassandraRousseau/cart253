@@ -88,6 +88,28 @@ let screaming = false;
 
 let screamThreshold = 0.1;
 
+let clap;
+
+let clapping1 = false;
+
+let clapping2 = false;
+
+let clapping3 = false;
+
+let clapping4 = false;
+
+let clapping5 = false;
+
+let clapThreshold1 = 0.05;
+
+let clapThreshold2 = 0.1;
+
+let clapThreshold3 = 0.15;
+
+let clapThreshold4 = 0.2;
+
+let clapThreshold5 = 0.25;
+
 let natures = [];
 
 let numCaves = 1;
@@ -213,11 +235,22 @@ function draw() {
 
   //Setting how loud user's screams have to be during the level
   scream = mic.getLevel();
-
+  clap = mic.getLevel();
   if (scream > screamThreshold) {
     screaming = true;
   } else {
     screaming = false;
+  }
+  if (clap > clapThreshold1) {
+    clapping1 = true;
+  } else if (clap > clapThreshold2) {
+    clapping2 = true;
+  } else if (clap > clapThreshold3) {
+    clapping3 = true;
+  } else if (clap > clapThreshold4) {
+    clapping4 = true;
+  } else if (clap > clapThreshold5) {
+    clapping5 = true;
   }
 }
 

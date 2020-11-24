@@ -30,7 +30,7 @@ class LastChapter3 extends State {
     textSize(45);
     textAlign(CENTER, CENTER);
     textFont("Fredericka the Great");
-    text("Press Enter", width / 2, (5 * height) / 6);
+    text("THIS IS THE END!!!", width / 2, (5 * height) / 6);
     pop();
   }
 

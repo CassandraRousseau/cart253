@@ -26,15 +26,6 @@ class MagicPetal {
   //Moving the nature elements
   move() {
     push();
-    // Check if magic petal is  moving based on screams
-    if (screaming) {
-      this.state = "running";
-      this.vx += this.movingSpeed;
-      this.vy += this.movingSpeed;
-    } else {
-      this.state = "still";
-    }
-
     //Setting when magic petal stops moving
     if (this.x === width / 2 && this.y === height / 2) {
       this.vx = this.stop;

@@ -43,7 +43,7 @@ class ChapterFour4 extends State {
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 
-      if (currentLine === this.dialog13.length && state === "ChapterFour5") {
+      if (currentLine === this.dialog13.length && state === "ChapterFour4") {
         currentLine = this.dialog13.length - 1;
       }
     }

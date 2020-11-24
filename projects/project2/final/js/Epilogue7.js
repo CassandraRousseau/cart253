@@ -7,6 +7,13 @@ class Epilogue7 extends State {
     this.width = w;
     this.height = h;
     this.image = smileImage;
+    this.name = "Epilogue7";
+    this.dialog18 = [
+      "Tada!",
+      "Now you will be able to live your life as a human being",
+      "Without any concerns...",
+      "The End",
+    ];
   }
 
   //Preloading necessary images for the first cutscene of Chapter Three
@@ -26,11 +33,13 @@ class Epilogue7 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    fill(0);
     textSize(45);
-    textAlign(CENTER, CENTER);
+    fill(0);
+    textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text("Press Enter", width / 2, (5 * height) / 6);
+
+    let dialog = this.dialog18[currentLine];
+    text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
   }
 
@@ -40,6 +49,13 @@ class Epilogue7 extends State {
 
     if (keyCode === 13) {
       location.reload();
+    }
+    if (keyCode === 32) {
+      currentLine = currentLine + 1;
+
+      if (currentLine === this.dialog18.length && state === "Epilogue7") {
+        currentLine = this.dialog18.length - 1;
+      }
     }
   }
 }

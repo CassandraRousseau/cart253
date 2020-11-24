@@ -7,6 +7,8 @@ class Epilogue4 extends State {
     this.width = w;
     this.height = h;
     this.image = fleeImage;
+    this.name = "Epilogue4";
+    this.dialog16 = ["We have to go"];
   }
 
   //Preloading necessary images for the first cutscene of Chapter Three
@@ -26,11 +28,13 @@ class Epilogue4 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    fill(0);
     textSize(45);
-    textAlign(CENTER, CENTER);
+    fill(0);
+    textAlign(CENTER, BOTTOM);
     textFont("Fredericka the Great");
-    text("Press Enter", width / 2, (5 * height) / 6);
+
+    let dialog = this.dialog16[currentLine];
+    text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
   }
 
@@ -41,6 +45,13 @@ class Epilogue4 extends State {
     if (keyCode === 13) {
       currentState = new Epilogue5(windowWidth, windowHeight, meetingImage);
       currentLine = 0;
+    }
+    if (keyCode === 32) {
+      currentLine = currentLine + 1;
+
+      if (currentLine === this.dialog16.length && state === "Epilogue4") {
+        currentLine = this.dialog16.length - 1;
+      }
     }
   }
 }
