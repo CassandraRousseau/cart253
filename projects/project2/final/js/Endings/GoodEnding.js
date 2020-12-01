@@ -1,7 +1,7 @@
 class GoodEnding extends State {
   //Creating first good ending screen
   constructor(w, h, goodEndingImage, nextScene) {
-    super(w, h, goodEndingImage);
+    super(w, h, goodEndingImage, nextScene);
     this.x = 0;
     this.y = 0;
     this.w = w;
@@ -27,13 +27,12 @@ class GoodEnding extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(55);
-    fill(0);
+    textSize(80);
     textAlign(LEFT, TOP);
     text(this.goodJob, 10, 50, windowWidth, windowHeight);
 
     push();
-    textSize(35);
+    textSize(50);
     text("Press Enter", width / 2, (2 * height) / 3);
     pop();
     pop();

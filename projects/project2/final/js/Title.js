@@ -28,12 +28,12 @@ class Title extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(115);
+    textSize(140);
     textAlign(CENTER, CENTER);
     text(this.titleString, width / 2, height / 2);
 
     push();
-    textSize(45);
+    textSize(50);
     text("Press Enter to start", width / 2, (5 * height) / 6);
     pop();
     pop();

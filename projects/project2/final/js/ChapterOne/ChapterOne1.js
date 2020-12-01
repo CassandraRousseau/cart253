@@ -22,8 +22,7 @@ class ChapterOne1 extends State {
   display() {
     push();
     background(255);
-    textSize(45);
-    fill(0);
+    textSize(100);
     textAlign(CENTER, CENTER);
 
     let dialog = this.dialog5[currentLine];

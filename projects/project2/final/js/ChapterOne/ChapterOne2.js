@@ -41,8 +41,7 @@ class ChapterOne2 extends State {
     tint(255, 255, 255, 225);
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
-    fill(0);
+    textSize(80);
     textAlign(CENTER, BOTTOM);
 
     let dialog = this.dialog6[currentLine];

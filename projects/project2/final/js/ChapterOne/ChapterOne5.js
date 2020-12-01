@@ -33,12 +33,11 @@ class ChapterOne5 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
-    fill(255);
+    textSize(60);
     textAlign(CENTER, TOP);
 
     let dialog = this.dialog9[currentLine];
-    text(dialog, 10, 50, windowWidth, windowHeight);
+    text(dialog, 0, 125, windowWidth, windowHeight);
   }
 
   //Setting keyPressed action after the fifth cutscene of Chapter One

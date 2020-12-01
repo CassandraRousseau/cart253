@@ -21,7 +21,7 @@ class Prologue0 extends State {
   display() {
     push();
     background(255);
-    textSize(115);
+    textSize(140);
     textAlign(CENTER, CENTER);
     text(this.titleString2, width / 2, height / 2);
 

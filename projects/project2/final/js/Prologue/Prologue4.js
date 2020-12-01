@@ -24,11 +24,11 @@ class Prologue4 extends State {
   display() {
     push();
     background(255);
-    textSize(45);
+    textSize(100);
     textAlign(CENTER, CENTER);
 
     let dialog = this.dialog4[currentLine];
-    text(dialog, 10, 50, windowWidth, windowHeight);
+    text(dialog, 0, 0, windowWidth, windowHeight);
   }
 
   //Setting keyPressed action after the fourth cutscene of Prologue

@@ -34,7 +34,7 @@ class Prologue3 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
+    textSize(80);
     textAlign(CENTER, BOTTOM);
 
     let dialog = this.dialog3[currentLine];

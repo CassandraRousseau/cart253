@@ -34,11 +34,11 @@ class Prologue2 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
+    textSize(60);
     textAlign(CENTER, TOP);
 
     let dialog = this.dialog2[currentLine];
-    text(dialog, 10, 50, windowWidth, windowHeight);
+    text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
   }
 
