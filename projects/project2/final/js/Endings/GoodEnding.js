@@ -43,15 +43,15 @@ class GoodEnding extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      if (nextScene === 2) {
+      if (this.nextScene === 2) {
         currentState = new ChapterTwo0();
-      } else if (nextScene === 3) {
+      } else if (this.nextScene === 3) {
         currentState = new ChapterThree0();
-      } else if (nextScene === 4) {
+      } else if (this.nextScene === 4) {
         currentState = new ChapterFour0();
-      } else if (nextScene === 5) {
+      } else if (this.nextScene === 5) {
         currentState = new ChapterFive0();
-      } else if (nextScene === 6) {
+      } else if (this.nextScene === 6) {
         currentState = new LastChapter1(
           windowWidth,
           windowHeight,
