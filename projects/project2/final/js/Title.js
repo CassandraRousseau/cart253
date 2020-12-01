@@ -29,9 +29,7 @@ class Title extends State {
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
     textSize(115);
-    fill(0);
     textAlign(CENTER, CENTER);
-    textFont("Fredericka the Great");
     text(this.titleString, width / 2, height / 2);
 
     push();

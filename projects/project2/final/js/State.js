@@ -6,7 +6,10 @@ class State {
   preload() {}
 
   //Setting draw method for each states
-  draw() {}
+  draw() {
+    fill(0);
+    textFont("Amatic SC");
+  }
 
   //Setting mousePressed method for each states
   mousePressed() {}
