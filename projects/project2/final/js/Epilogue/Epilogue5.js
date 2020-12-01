@@ -44,12 +44,12 @@ class Epilogue5 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
+    textSize(60);
     fill(0);
-    textAlign(CENTER, BOTTOM);
+    textAlign(CENTER, TOP);
 
     let dialog = this.dialog17[currentLine];
-    text(dialog, 0, 0, windowWidth, windowHeight);
+    text(dialog, 0, 50, windowWidth, windowHeight);
     pop();
   }
 

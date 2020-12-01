@@ -47,8 +47,7 @@ class LastChapter2 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
-    fill(0);
+    textSize(80);
     textAlign(CENTER, BOTTOM);
 
     let dialog = this.dialog14[currentLine];

@@ -27,11 +27,10 @@ class BadEnding extends State {
     push();
     image(this.image, this.x, this.y, this.width, this.height);
     textSize(85);
-    fill(0);
     textAlign(LEFT, TOP);
     text(this.over, 10, (2 * height) / 6, windowWidth, windowHeight);
     push();
-    textSize(35);
+    textSize(50);
     text("Press Enter to restart", 10, (3 * height) / 6);
     pop();
     pop();

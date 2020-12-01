@@ -16,8 +16,7 @@ class Instructions4 extends State {
   display() {
     push();
     background(255);
-    textSize(45);
-    fill(0);
+    textSize(60);
     textAlign(LEFT, TOP);
     text(this.intro, 10, 50, windowWidth, windowHeight);
     pop();

@@ -23,7 +23,7 @@ class ChapterOne0 extends State {
 
     //Displaying the subtitle of Chapter One title screen
     push();
-    textSize(45);
+    textSize(55);
     let subtitle = this.subtitle2[currentLine];
     text(subtitle, width / 2, (5 * height) / 6);
     pop();

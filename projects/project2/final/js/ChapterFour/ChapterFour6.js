@@ -27,7 +27,7 @@ class ChapterFour6 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
+    textSize(55);
     fill(0);
     textAlign(CENTER, BOTTOM);
     text("Press Enter", 0, 0, windowWidth, windowHeight);

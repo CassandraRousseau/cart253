@@ -26,7 +26,7 @@ class Prologue0 extends State {
     text(this.titleString2, width / 2, height / 2);
 
     push();
-    textSize(45);
+    textSize(55);
     let subtitle = this.subtitle1[currentLine];
     text(subtitle, width / 2, (5 * height) / 6);
     pop();

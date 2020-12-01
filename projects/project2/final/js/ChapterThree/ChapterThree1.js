@@ -26,9 +26,8 @@ class ChapterThree1 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    fill(0);
-    textSize(45);
-    textAlign(CENTER, CENTER);
+    textSize(55);
+    textAlign(RIGHT, CENTER);
     text("Press Enter", width / 2, (5 * height) / 6);
     pop();
   }

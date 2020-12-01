@@ -17,7 +17,6 @@ class Instructions1 extends State {
     push();
     background(255);
     textSize(60);
-    fill(0);
     textAlign(LEFT, TOP);
     text(this.intro, 10, 50, windowWidth, windowHeight);
     pop();

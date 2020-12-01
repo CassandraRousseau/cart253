@@ -28,9 +28,8 @@ class ChapterFour3 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
-    fill(0);
-    textAlign(CENTER, BOTTOM);
+    textSize(60);
+    textAlign(RIGHT, BOTTOM);
 
     let dialog = this.dialog12[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);

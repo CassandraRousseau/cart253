@@ -33,12 +33,11 @@ class Epilogue7 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(45);
-    fill(0);
-    textAlign(CENTER, BOTTOM);
+    textSize(70);
+    textAlign(CENTER, TOP);
 
     let dialog = this.dialog18[currentLine];
-    text(dialog, 0, 0, windowWidth, windowHeight);
+    text(dialog, 0, 10, windowWidth, windowHeight);
     pop();
   }
 

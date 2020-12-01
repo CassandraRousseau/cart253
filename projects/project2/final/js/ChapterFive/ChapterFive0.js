@@ -17,13 +17,12 @@ class ChapterFive0 extends State {
   display() {
     push();
     background(255);
-    textSize(115);
-    fill(0);
+    textSize(140);
     textAlign(CENTER, CENTER);
     text(this.titleString5, width / 2, height / 2);
 
     push();
-    textSize(45);
+    textSize(55);
     let subtitle = this.subtitle4[currentLine];
     text(subtitle, width / 2, (5 * height) / 6);
     pop();

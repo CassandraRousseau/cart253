@@ -285,7 +285,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new Title(windowWidth, windowHeight, titleImage);
+  let title = new ChapterFive0();
   currentState = title;
 }
 

@@ -26,10 +26,9 @@ class Epilogue2 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    fill(0);
-    textSize(45);
+    textSize(60);
     textAlign(CENTER, CENTER);
-    text("Press Enter", width / 2, (5 * height) / 6);
+    text("Press Enter", width / 2, (7 * height) / 8);
     pop();
   }
 
