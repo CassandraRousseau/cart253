@@ -27,12 +27,10 @@ class DeathEnding extends State {
     push();
     image(this.image, this.x, this.y, this.width, this.height);
     textSize(85);
-    fill(0);
-    textAlign(LEFT, TOP);
-    text(this.over, 10, (2 * height) / 6, windowWidth, windowHeight);
+    text(this.over, width / 12, (4 * height) / 6, windowWidth, windowHeight);
     push();
-    textSize(35);
-    text("Press Enter to restart", 10, (3 * height) / 6);
+    textSize(55);
+    text("Press Enter to restart", width / 12, (6 * height) / 7);
     pop();
     pop();
   }
