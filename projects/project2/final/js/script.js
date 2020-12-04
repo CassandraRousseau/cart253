@@ -40,16 +40,6 @@ let level5;
 
 let badEnding;
 
-let goodEnding1;
-
-let goodEnding2;
-
-let goodEnding3;
-
-let goodEnding4;
-
-let goodEnding5;
-
 let timer;
 
 let sky;
@@ -285,7 +275,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new Title(windowWidth, windowHeight, titleImage);
+  let title = new LastChapter1(windowWidth, windowHeight, surpriseImage);
   currentState = title;
 }
 

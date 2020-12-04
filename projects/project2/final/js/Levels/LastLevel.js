@@ -48,6 +48,7 @@ class LastLevel extends State {
     this.user.display();
     if (this.magicPetal.active) {
       this.magicPetal.move();
+      this.magicPetal.follow(this.survival);
       this.magicPetal.display();
     }
   }
