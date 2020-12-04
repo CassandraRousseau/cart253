@@ -18,7 +18,7 @@ class State {
   keyPressed() {
     if (keyCode === 13) {
       pageSFX.play();
-      ost.rate(-1);
+      ost.rate(-0.4);
       if (!ost.isPlaying()) {
         ost.play();
       }

@@ -2,8 +2,8 @@ class ThornLeft extends Nature {
   //Creating the left side thorn for the second level
   constructor(thornImage, mic, alpha) {
     super(thornImage, mic, alpha);
-    this.x = 0;
-    this.y = 0;
+    this.x = undefined;
+    this.y = undefined;
     this.angle = 275;
     this.maxWidth = 700;
     this.maxHeight = 700;
@@ -29,14 +29,17 @@ class ThornLeft extends Nature {
     //Setting when left side thorn stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
+      this.vy = 0;
     }
+
+    //Setting where left side thorn stops moving
+    this.x = constrain(this.vx, width / 2, 0);
+    this.y = constrain(this.vy, height / 2, 0);
 
     //Setting left side thorn movements
     this.x -= this.vx;
     this.y -= this.vy;
 
-    //Setting where left side thorn stops moving
-    this.x = constrain(this.vx, this.x, width);
     pop();
   }
 

@@ -33,40 +33,28 @@ class Level2 extends State {
 
     //Creating the left side rock
     for (let i = 0; i < numRocksLeft; i++) {
-      let vx = 0.25;
-
-      let rockLeft = new RockLeft(vx, rockImage, this.mic);
+      let rockLeft = new RockLeft(rockImage, this.mic);
 
       this.natures.push(rockLeft);
     }
 
     //Creating the right side rock
     for (let i = 0; i < numRocksRight; i++) {
-      let vx = 0.25;
-
-      let rockRight = new RockRight(vx, rockImage, this.mic);
+      let rockRight = new RockRight(rockImage, this.mic);
 
       this.natures.push(rockRight);
     }
 
     //Creating the left side thorn
     for (let i = 0; i < numThornsLeft; i++) {
-      let vx = 0.25;
-
-      let thornLeft = new ThornLeft(vx, thornImage, this.mic);
+      let thornLeft = new ThornLeft(thornImage, this.mic);
 
       this.natures.push(thornLeft);
     }
 
     //Creating the right side thorn
     for (let i = 0; i < numThornsRight; i++) {
-      let x = (5 * width) / 6;
-
-      let y = height / 2;
-
-      let vx = 0.25;
-
-      let thornRight = new ThornRight(x, y, vx, thornImage, this.mic);
+      let thornRight = new ThornRight(thornImage, this.mic);
 
       this.natures.push(thornRight);
     }

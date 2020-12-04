@@ -2,8 +2,8 @@ class RockRight extends Nature {
   //Creating the right side rock for the second level
   constructor(rockImage, mic, alpha) {
     super(rockImage, alpha);
-    this.x = (2 * width) / 3;
-    this.y = (3 * height) / 4;
+    this.x = undefined;
+    this.y = undefined;
     this.maxWidth = 600;
     this.maxHeight = 600;
     this.growthWidth = 6;
@@ -28,14 +28,17 @@ class RockRight extends Nature {
     //Setting when right side rock stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
+      this.vy = 0;
     }
+
+    //Setting where right side rock stops moving
+    this.x = constrain(this.vx, width / 2, (2 * width) / 3);
+    this.y = constrain(this.vy, height / 2, (3 * height) / 4);
 
     //Setting right side rock movements
     this.x += this.vx;
     this.y += this.vy;
 
-    //Setting where right side rock stops moving
-    this.x = constrain(this.vx, this.x, width);
     pop();
   }
 
