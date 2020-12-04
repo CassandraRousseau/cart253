@@ -8,11 +8,11 @@ class ChapterOne2 extends State {
       "One day,",
       "She met an elderly",
       "The elder, shocked to see the weak girl, asks:",
-      "Poor Child! Why are you fragile?",
+      "'Poor Child! Why are you fragile?'",
       "The little girl shows her fading rose and responds:",
-      "I am ill madam, I need to find a solution to cure my disease...",
-      "Oh dear! I can help you!",
-      "But you have to be prepared, because the process might be risky",
+      "'I am ill madam, I need to find a solution to cure my disease...'",
+      "'Oh dear! I can help you!'",
+      "'But you have to be prepared, because the process might be risky'",
       "Press Enter",
     ];
 

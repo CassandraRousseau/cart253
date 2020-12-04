@@ -28,7 +28,7 @@ class LastChapter3 extends State {
     background(this.image);
     textSize(170);
     textAlign(CENTER, CENTER);
-    text("THIS IS THE END!!!", width / 2, height / 2);
+    text("'THIS IS THE END!!!'", width / 2, height / 2);
     pop();
   }
 

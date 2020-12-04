@@ -3,7 +3,7 @@ class ChapterFour3 extends State {
   constructor(w, h, monsterImage) {
     super(w, h, monsterImage);
     this.name = "ChapterFour3";
-    this.dialog12 = ["She will become..", "A monster..."];
+    this.dialog12 = ["'She will become..'", "'A monster...'"];
     this.x = 0;
     this.y = 0;
     this.width = w;

@@ -5,8 +5,8 @@ class ChapterOne4 extends State {
     this.name = "ChapterOne4";
 
     this.dialog8 = [
-      "I cannot help you to find the petals but I can tell you that the mage lives in the castle at the top of the mountain right here.",
-      "I wish you the best luck to find these precious artifacts!",
+      "'I cannot help you to find the petals but I can tell you that the mage lives in the castle at the top of the mountain right here.'",
+      "'I wish you the best luck to find these precious artifacts!'",
       "Press Enter",
     ];
 

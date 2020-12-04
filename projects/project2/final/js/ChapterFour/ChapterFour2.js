@@ -4,14 +4,14 @@ class ChapterFour2 extends State {
     super(w, h, doctorImage);
     this.name = "ChapterFour2";
     this.dialog11 = [
-      "Madam, during your pregnancy, have you ever touch or pick some roses in the area?",
-      "Uh...yes..One time while I was walking in the village...",
+      "'Madam, during your pregnancy, have you ever touch or pick some roses in the area?'",
+      "'Uh...yes..One time while I was walking in the village...'",
       "*Sigh*",
-      "During the past few years, a strange bacteria spreads on the roses in the region",
-      "This infection caused a lot of side effects on pregnant women who enter in contact with those flowers...",
-      "The new borns had heart defects, which turned a lot worse once they grew up..",
-      "Does our little girl will die?!?!",
-      "It worses...",
+      "'During the past few years, a strange bacteria spreads on the roses in the region'",
+      "'This infection caused a lot of side effects on pregnant women who enter in contact with those flowers...'",
+      "'The new borns had heart defects, which turned a lot worse once they grew up..'",
+      "'Does our little girl will die?!?!'",
+      "'It's worses...'",
     ];
     this.x = 0;
     this.y = 0;
