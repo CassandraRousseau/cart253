@@ -12,3 +12,5 @@ wanted to bring in this game. I putted quotation marks to each characters' dialo
 
 I did not forget the interactive aspect of this game. I wanted to create an interactive story by collecting the magic petals
 through the eyes of the main character. We are accompanying the main character in her journey. We are affecting the story in the levels if wheter or not are collecting the petals. The user collect them through various interactive levels. I tried to create the most various as possible the levels to not make repetitive and boring interactivity. By searching a petal through the to screaming in a cave to make the petal appear.
+
+I tried to build up a progressive storyline (i.e, like a usual story used to be) to grow the interest of the player more and more within the game progress. I tried to reveal bit by bit elements of the universe to not lose the interst of the user.
