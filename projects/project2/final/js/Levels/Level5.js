@@ -38,7 +38,12 @@ class Level5 extends State {
 
     //Setting which states come after the level
     if (timerResult === "BadEnding") {
-      currentState = new BadEnding(windowWidth, windowHeight, badEndingImage);
+      currentState = new BadEnding(
+        windowWidth,
+        windowHeight,
+        badEndingImage,
+        6
+      );
     } else if (timerResult === "GoodEnding5") {
       currentState = new GoodEnding(
         windowWidth,

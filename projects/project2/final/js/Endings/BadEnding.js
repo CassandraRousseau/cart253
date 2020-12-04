@@ -1,12 +1,13 @@
 class BadEnding extends State {
   //Creating bad ending screen
-  constructor(w, h, badEndingImage) {
-    super(w, h, badEndingImage);
+  constructor(w, h, badEndingImage, nextScene) {
+    super(w, h, badEndingImage, nextScene);
     this.x = 0;
     this.y = 0;
     this.width = w;
     this.height = h;
     this.image = badEndingImage;
+    this.nextScene = nextScene;
     this.over = "Game Over";
   }
 
@@ -41,7 +42,18 @@ class BadEnding extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
-      location.reload();
+      if (this.nextScene === 2) {
+        currentState = new ChapterOne0();
+      } else if (this.nextScene === 3) {
+        currentState = new ChapterTwo0();
+      } else if (this.nextScene === 4) {
+        currentState = new ChapterThree0();
+      } else if (this.nextScene === 5) {
+        currentState = new ChapterFour0();
+      } else if (this.nextScene === 6) {
+        currentState = new ChapterFive0();
+      }
+      currentLine = 0;
     }
   }
 }
