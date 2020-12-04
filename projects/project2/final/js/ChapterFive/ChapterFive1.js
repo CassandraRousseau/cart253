@@ -38,7 +38,6 @@ class ChapterFive1 extends State {
 
     if (keyCode === 13) {
       currentState = new ChapterFive2(windowWidth, windowHeight, enterImage);
-      currentLine = 0;
     }
   }
 }

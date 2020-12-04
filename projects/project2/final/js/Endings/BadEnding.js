@@ -53,7 +53,6 @@ class BadEnding extends State {
       } else if (this.nextScene === 6) {
         currentState = new ChapterFive0();
       }
-      currentLine = 0;
     }
   }
 }

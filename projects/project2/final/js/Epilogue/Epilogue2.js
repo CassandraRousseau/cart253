@@ -38,7 +38,6 @@ class Epilogue2 extends State {
 
     if (keyCode === 13) {
       currentState = new Epilogue3(windowWidth, windowHeight, unconsciousImage);
-      currentLine = 0;
     }
   }
 }

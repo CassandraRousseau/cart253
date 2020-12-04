@@ -35,7 +35,6 @@ class ChapterThree0 extends State {
 
     if (keyCode === 13) {
       currentState = new ChapterThree1(windowWidth, windowHeight, bunchImage);
-      currentLine = 0;
     }
 
     if (keyCode === 32) {

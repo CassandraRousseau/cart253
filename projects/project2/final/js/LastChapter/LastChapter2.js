@@ -61,7 +61,6 @@ class LastChapter2 extends State {
 
     if (keyCode === 13) {
       currentState = new LastChapter3(windowWidth, windowHeight, surviveImage);
-      currentLine = 0;
     }
     if (keyCode === 32) {
       currentLine = currentLine + 1;

@@ -45,7 +45,6 @@ class Epilogue3 extends State {
 
     if (keyCode === 13) {
       currentState = new Epilogue4(windowWidth, windowHeight, fleeImage);
-      currentLine = 0;
     }
     if (keyCode === 32) {
       currentLine = currentLine + 1;

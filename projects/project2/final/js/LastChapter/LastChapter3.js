@@ -38,7 +38,6 @@ class LastChapter3 extends State {
 
     if (keyCode === 13) {
       currentState = new LastLevel();
-      currentLine = 0;
     }
   }
 }

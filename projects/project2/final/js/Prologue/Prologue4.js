@@ -37,7 +37,6 @@ class Prologue4 extends State {
 
     if (keyCode === 13) {
       currentState = new ChapterOne0();
-      currentLine = 0;
     }
 
     if (keyCode === 32) {

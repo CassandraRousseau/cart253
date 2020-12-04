@@ -38,7 +38,6 @@ class ChapterTwo2 extends State {
 
     if (keyCode === 13) {
       currentState = new Instructions2();
-      currentLine = 0;
     }
   }
 }

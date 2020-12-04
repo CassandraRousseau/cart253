@@ -36,7 +36,6 @@ class ChapterOne0 extends State {
 
     if (keyCode === 13) {
       currentState = new ChapterOne1();
-      currentLine = 0;
     }
 
     if (keyCode === 32) {

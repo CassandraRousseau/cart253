@@ -58,7 +58,6 @@ class GoodEnding extends State {
           surpriseImage
         );
       }
-      currentLine = 0;
     }
   }
 }

@@ -48,7 +48,6 @@ class Prologue2 extends State {
 
     if (keyCode === 13) {
       currentState = new Prologue3(windowWidth, windowHeight, zoomImage);
-      currentLine = 0;
     }
 
     if (keyCode === 32) {

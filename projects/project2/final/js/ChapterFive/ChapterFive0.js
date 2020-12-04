@@ -39,7 +39,6 @@ class ChapterFive0 extends State {
         windowHeight,
         destinationImage
       );
-      currentLine = 0;
     }
 
     if (keyCode === 32) {
