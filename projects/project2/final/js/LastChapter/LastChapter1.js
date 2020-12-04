@@ -38,7 +38,6 @@ class LastChapter1 extends State {
 
     if (keyCode === 13) {
       currentState = new LastChapter2(windowWidth, windowHeight, evilImage);
-      currentLine = 0;
     }
   }
 }

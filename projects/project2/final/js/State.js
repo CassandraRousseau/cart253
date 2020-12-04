@@ -15,5 +15,14 @@ class State {
   mousePressed() {}
 
   //Setting keyPressed method for each states
-  keyPressed() {}
+  keyPressed() {
+    if (keyCode === 13) {
+      pageSFX.play();
+      ost.rate(-1);
+      if (!ost.isPlaying()) {
+        ost.play();
+      }
+      currentLine = 0;
+    }
+  }
 }

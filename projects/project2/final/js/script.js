@@ -16,6 +16,10 @@ let currentState;
 
 let currentLine = 0;
 
+let ost;
+
+let pageSFX;
+
 let title;
 
 let instructions1;
@@ -218,6 +222,8 @@ let goodEndingImage;
 
 // Setting all the preloaded images
 function preload() {
+  ost = loadSound("assets/sounds/FFVII.mp3");
+  pageSFX = loadSound("assets/sounds/pageFlip.mp3");
   titleImage = loadImage("assets/images/ephemeralTitle.png");
   girlImage = loadImage("assets/images/ephemeralGirl.png");
   zoomImage = loadImage("assets/images/ephemeralZoom.png");
