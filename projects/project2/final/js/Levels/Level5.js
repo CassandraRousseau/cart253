@@ -17,14 +17,14 @@ class Level5 extends State {
     this.magicPetal = new MagicPetal5(x, y, magicPetalImage);
     pop();
   }
-  //Preloading necessary images for level 1
+  //Preloading necessary images for level 5
   preload() {
     super.preload();
     this.castle.preload();
     this.magicPetal.preload();
   }
 
-  //Setting level 1
+  //Setting level 5
   draw() {
     super.draw();
     push();

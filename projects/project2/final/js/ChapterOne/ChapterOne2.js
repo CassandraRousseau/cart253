@@ -1,5 +1,5 @@
 class ChapterOne2 extends State {
-  //Creating the psecond cutscene of Chapter One
+  //Creating the second cutscene of Chapter One
   constructor(w, h, encounterImage) {
     super(w, h, encounterImage);
     this.name = "ChapterOne2";

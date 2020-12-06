@@ -1,5 +1,5 @@
 class Epilogue4 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the fourth cutscene of Epilogue
   constructor(w, h, fleeImage) {
     super(w, h, fleeImage);
     this.x = 0;
@@ -11,19 +11,19 @@ class Epilogue4 extends State {
     this.dialog16 = ["We have to go"];
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the fourth cutscene of Epilogue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the fourth cutscene of Epilogue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the fourth cutscene of Epilogue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -36,7 +36,7 @@ class Epilogue4 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the fourth cutscene of Epilogue
   keyPressed() {
     super.keyPressed();
 

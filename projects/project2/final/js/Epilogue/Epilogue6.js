@@ -1,5 +1,5 @@
 class Epilogue6 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the sixth cutscene of Epilogue
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
     this.x = 0;
@@ -9,19 +9,19 @@ class Epilogue6 extends State {
     this.image = girlImage;
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the sixth cutscene of Epilogue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the sixth cutscene of Epilogue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the sixth cutscene of Epilogue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -32,7 +32,7 @@ class Epilogue6 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the sixth cutscene of Epilogue
   keyPressed() {
     super.keyPressed();
 

@@ -1,5 +1,5 @@
 class ChapterFour6 extends State {
-  //Creating the psecond cutscene of Chapter One
+  //Creating the sixth cutscene of Chapter Four
   constructor(w, h, lakeImage) {
     super(w, h, lakeImage);
     this.name = "ChapterFour6";
@@ -10,19 +10,19 @@ class ChapterFour6 extends State {
     this.image = lakeImage;
   }
 
-  //Preloading necessary images the second cutscene of Chapter One
+  //Preloading necessary images the sixth cutscene of Chapter Four
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the second cutscene of Chapter One
+  //Setting the sixth cutscene of Chapter Four
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the second cutscene of Chapter One
+  //Displaying the sixth cutscene of Chapter Four
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -34,7 +34,7 @@ class ChapterFour6 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the second cutscene of Chapter One
+  //Setting keyPressed action after the sixth cutscene of Chapter Four
   keyPressed() {
     super.keyPressed();
 

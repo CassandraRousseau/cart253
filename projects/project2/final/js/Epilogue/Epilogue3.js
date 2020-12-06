@@ -1,5 +1,5 @@
 class Epilogue3 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the third cutscene of Epilogue
   constructor(w, h, unconsciousImage) {
     super(w, h, unconsciousImage);
     this.x = 0;
@@ -14,19 +14,19 @@ class Epilogue3 extends State {
     ];
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the third cutscene of Epilogue
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the third cutscene of Epilogue
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the third cutscene of Epilogue
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -39,7 +39,7 @@ class Epilogue3 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the third cutscene of Epilogue
   keyPressed() {
     super.keyPressed();
 

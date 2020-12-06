@@ -1,5 +1,5 @@
 class DeathEnding extends State {
-  //Creating bad ending screen
+  //Creating death ending screen
   constructor(w, h, deathImage) {
     super(w, h, deathImage);
     this.x = 0;
@@ -10,19 +10,19 @@ class DeathEnding extends State {
     this.over = "Game Over";
   }
 
-  //Preloading background image for bad ending
+  //Preloading background image for death ending
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting bad ending screen
+  //Setting death ending screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying bad ending screen
+  //Displaying death ending screen
   display() {
     push();
     image(this.image, this.x, this.y, this.width, this.height);
@@ -35,7 +35,7 @@ class DeathEnding extends State {
     pop();
   }
 
-  //Setting keyPressed action after bad ending screen
+  //Setting keyPressed action after death ending screen
   keyPressed() {
     super.keyPressed();
 

@@ -1,5 +1,5 @@
 class Epilogue7 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the last cutscene of the game
   constructor(w, h, smileImage) {
     super(w, h, smileImage);
     this.x = 0;
@@ -16,19 +16,19 @@ class Epilogue7 extends State {
     ];
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the last cutscene of the game
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the last cutscene of the game
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the last cutscene of the game
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -41,7 +41,7 @@ class Epilogue7 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the last cutscene of the game
   keyPressed() {
     super.keyPressed();
 

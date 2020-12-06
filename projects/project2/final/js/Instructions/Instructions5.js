@@ -1,18 +1,18 @@
 class Instructions5 extends State {
-  //Creating instructions screen
+  //Creating instructions screen for the fifth level
   constructor() {
     super();
     this.intro =
       "Search for the magic petal in the castle.\n\nClick with your mouse to catch the magic petal.\n\nDon't forget, time is running out!";
   }
 
-  //Setting instructions screen
+  //Setting instructions screen for the fifth level
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying instructions screen
+  //Displaying instructions screen for the fifth level
   display() {
     push();
     background(255);
@@ -22,7 +22,7 @@ class Instructions5 extends State {
     pop();
   }
 
-  //Setting keyPressed after instructions screen
+  //Setting keyPressed after instructions screen for the fifth level
   keyPressed() {
     super.keyPressed();
 

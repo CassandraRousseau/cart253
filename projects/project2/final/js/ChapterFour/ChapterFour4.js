@@ -1,5 +1,5 @@
 class ChapterFour4 extends State {
-  //Creating the psecond cutscene of Chapter One
+  //Creating the fourth cutscene of Chapter Four
   constructor() {
     super();
     this.name = "ChapterFour4";
@@ -11,13 +11,13 @@ class ChapterFour4 extends State {
       "'Or...'",
     ];
   }
-  //Setting the second cutscene of Chapter One
+  //Setting the fourth cutscene of Chapter Four
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the second cutscene of Chapter One
+  //Displaying the fourth cutscene of Chapter Four
   display() {
     push();
     background(255);
@@ -29,7 +29,7 @@ class ChapterFour4 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the second cutscene of Chapter One
+  //Setting keyPressed action after the fourth cutscene of Chapter Four
   keyPressed() {
     super.keyPressed();
 

@@ -16,14 +16,14 @@ class LastLevel extends State {
     this.magicPetal = new LastMagicPetal(x, y, magicPetalImage);
     pop();
   }
-  //Preloading necessary images for level 1
+  //Preloading necessary images for the last level
   preload() {
     super.preload();
     this.survival.preload();
     this.magicPetal.preload();
   }
 
-  //Setting level 1
+  //Setting last level
   draw() {
     super.draw();
     push();

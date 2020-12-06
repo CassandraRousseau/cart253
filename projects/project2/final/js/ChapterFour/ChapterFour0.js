@@ -1,5 +1,5 @@
 class ChapterFour0 extends State {
-  //Creating the Chapter One title screen
+  //Creating the Chapter Four title screen
   constructor() {
     super();
     this.name = "ChapterFour0";
@@ -7,13 +7,13 @@ class ChapterFour0 extends State {
     this.subtitle5 = ["Real Identity", "Press Enter"];
   }
 
-  //Setting the Chapter One title screen
+  //Setting the Chapter Four title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the Chapter One title screen
+  //Displaying the Chapter Four title screen
   display() {
     push();
     background(255);
@@ -21,7 +21,7 @@ class ChapterFour0 extends State {
     textAlign(CENTER, CENTER);
     text(this.titleString6, width / 2, height / 2);
 
-    //Displaying the subtitle of Chapter One title screen
+    //Displaying the subtitle of Chapter Four title screen
     push();
     textSize(55);
     let subtitle = this.subtitle5[currentLine];
@@ -30,7 +30,7 @@ class ChapterFour0 extends State {
     pop();
   }
 
-  //Setting keyPressed action after Chapter One title screen
+  //Setting keyPressed action after Chapter Four title screen
   keyPressed() {
     super.keyPressed();
 

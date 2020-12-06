@@ -1,5 +1,5 @@
 class Castle {
-  //Creating sky background for level 1
+  //Creating castle background for level 5
   constructor(w, h, castleImage) {
     this.x = 0;
     this.y = 0;
@@ -8,12 +8,12 @@ class Castle {
     this.image = castleImage;
   }
 
-  //Preloading background image for level 1
+  //Preloading background image for level 5
   preload() {
     this.image.preload();
   }
 
-  //Displaying sky background
+  //Displaying castle background
   display() {
     push();
     image(castleImage, this.x, this.y, this.width, this.height);

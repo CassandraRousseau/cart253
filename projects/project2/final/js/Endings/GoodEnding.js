@@ -1,5 +1,5 @@
 class GoodEnding extends State {
-  //Creating first good ending screen
+  //Creating good ending(catching a magic petal) screen
   constructor(w, h, goodEndingImage, nextScene) {
     super(w, h, goodEndingImage, nextScene);
     this.x = 0;
@@ -11,18 +11,18 @@ class GoodEnding extends State {
     this.goodJob = "Good Job!\nYou found the magic petal!";
   }
 
-  //Preloading background image for first good ending
+  //Preloading background image for good ending(catching a magic petal)
   preload() {
     this.image.preload();
   }
 
-  //Setting first good ending screen
+  //Setting good ending(catching a magic petal) screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying first good ending screen
+  //Displaying good ending(catching a magic petal) screen
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -38,7 +38,7 @@ class GoodEnding extends State {
     pop();
   }
 
-  //Setting keyPressed after first good ending screen
+  //Setting keyPressed after good ending(catching a magic petal) screen
   keyPressed() {
     super.keyPressed();
 

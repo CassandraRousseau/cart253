@@ -1,5 +1,5 @@
 class LastChapter3 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the third cutscene of the Last Chapter
   constructor(w, h, surviveImage) {
     super(w, h, surviveImage);
     this.x = 0;
@@ -9,19 +9,19 @@ class LastChapter3 extends State {
     this.image = surviveImage;
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the third cutscene of the Last Chapter
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the third cutscene of the Last Chapter
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the third cutscene of the Last Chapter
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -32,7 +32,7 @@ class LastChapter3 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the third cutscene of the Last Chapter
   keyPressed() {
     super.keyPressed();
 

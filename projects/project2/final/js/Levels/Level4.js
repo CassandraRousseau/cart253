@@ -18,7 +18,7 @@ class Level4 extends State {
 
     this.user = new User();
 
-    //Creating nature elements array
+    //Creating parts of magic petal array
     this.magicPetals = [];
 
     //Creating the magic petal

@@ -1,5 +1,5 @@
 class ChapterFive1 extends State {
-  //Creating the first cutscene of Chapter Three
+  //Creating the first cutscene of Chapter Five
   constructor(w, h, destinationImage) {
     super(w, h, destinationImage);
     this.x = 0;
@@ -9,19 +9,19 @@ class ChapterFive1 extends State {
     this.image = destinationImage;
   }
 
-  //Preloading necessary images for the first cutscene of Chapter Three
+  //Preloading necessary images for the first cutscene of Chapter Five
   preload() {
     super.preload();
     this.image.preload();
   }
 
-  //Setting the first cutscene of Chapter Three
+  //Setting the first cutscene of Chapter Five
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the first cutscene of Chapter Three
+  //Displaying the first cutscene of Chapter Five
   display() {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
@@ -32,7 +32,7 @@ class ChapterFive1 extends State {
     pop();
   }
 
-  //Setting keyPressed action after the first cutscene of Chapter Three
+  //Setting keyPressed action after the first cutscene of Chapter Five
   keyPressed() {
     super.keyPressed();
 

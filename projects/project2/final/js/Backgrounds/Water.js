@@ -1,5 +1,5 @@
 class Water {
-  //Creating sky background for level 1
+  //Creating lake background for level 4
   constructor(w, h, waterImage) {
     this.x = 0;
     this.y = 0;
@@ -8,12 +8,12 @@ class Water {
     this.image = waterImage;
   }
 
-  //Preloading background image for level 1
+  //Preloading background image for level 4
   preload() {
     this.image.preload();
   }
 
-  //Displaying sky background
+  //Displaying lake background
   display() {
     push();
     image(waterImage, this.x, this.y, this.width, this.height);

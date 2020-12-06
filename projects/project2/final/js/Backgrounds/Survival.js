@@ -1,5 +1,5 @@
 class Survival {
-  //Creating sky background for level 1
+  //Creating final battle background for the last level
   constructor(w, h, surviveImage) {
     this.x = 0;
     this.y = 0;
@@ -11,7 +11,7 @@ class Survival {
     this.image = surviveImage;
   }
 
-  //Preloading background image for level 1
+  //Preloading background image for the last level
   preload() {
     this.image.preload();
   }
@@ -23,7 +23,7 @@ class Survival {
     this.y += this.vy;
   }
 
-  //Displaying sky background
+  //Displaying final battle background
   display() {
     push();
     image(surviveImage, this.x, this.y, this.width, this.height);
