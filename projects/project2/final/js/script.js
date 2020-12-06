@@ -166,6 +166,8 @@ let sleepImage;
 
 let lakeImage;
 
+let waterImage;
+
 let destinationImage;
 
 let enterImage;
@@ -239,6 +241,7 @@ function preload() {
   monsterImage = loadImage("assets/images/ephemeralMonster.png");
   sleepImage = loadImage("assets/images/ephemeralSleep.png");
   lakeImage = loadImage("assets/images/ephemeralLake.png");
+  waterImage = loadImage("assets/images/ephemeralWater.png");
   destinationImage = loadImage("assets/images/ephemeralDestination.png");
   enterImage = loadImage("assets/images/ephemeralEnter.png");
   roomImage = loadImage("assets/images/ephemeralRoom.png");

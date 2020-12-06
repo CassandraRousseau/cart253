@@ -9,6 +9,7 @@ class Level4 extends State {
     //Creating microphone
     this.mic = mic;
 
+    this.water = new Water(windowWidth, windowHeight, waterImage);
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -73,7 +74,7 @@ class Level4 extends State {
   draw() {
     super.draw();
     push();
-    background(50, 150, 200);
+    this.water.display();
 
     //Setting the timer
     let timerResult = this.timer.timeCheck(
