@@ -1,5 +1,5 @@
 class MagicPetal {
-  //Creating nature elements
+  //Creating the pieces of magic petal in level 4 superclass
   constructor(x, y, mic, alpha, movingSpeed) {
     this.x = x;
     this.y = y;
@@ -17,19 +17,19 @@ class MagicPetal {
     this.mic = mic;
   }
 
-  //Preloading images of nature elements
+  //Preloading images for the pieces of magic petal in level 4 superclass
   preload() {
     this.image.preload();
   }
 
-  //Moving the nature elements
+  //Moving the pieces of magic petal in level 4 superclass
   move() {
     push();
 
     pop();
   }
 
-  //Changing the opacity of nature elements based on screams
+  //Changing the opacity  for the pieces of magic petal in level 4 superclass
   transparency() {
     push();
     this.alpha = map(this.vx, this.x, this.stop, this.minAlpha, this.maxAlpha);
@@ -38,6 +38,6 @@ class MagicPetal {
     pop();
   }
 
-  //Displaying the nature elements
+  //Displaying the pieces of magic petal in level 4 superclass
   display() {}
 }

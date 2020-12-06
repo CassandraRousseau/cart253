@@ -1,5 +1,5 @@
 class MagicPetal5 {
-  //Creating the magic petal for level 3
+  //Creating the magic petal for level 5
   constructor(x, y, magicPetalImage) {
     this.x = x;
     this.y = y;
@@ -11,7 +11,7 @@ class MagicPetal5 {
     this.active = true;
   }
 
-  //Preloading images of the magic petal for level 3
+  //Preloading images of the magic petal for level 5
   preload() {
     this.image.preload();
   }

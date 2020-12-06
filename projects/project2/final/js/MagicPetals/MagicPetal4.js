@@ -1,5 +1,5 @@
 class MagicPetal4 {
-  //Creating the magic petal for level 2
+  //Creating the magic petal for level 4
   constructor(magicPetalImage, mic) {
     this.x = width / 2;
     this.y = height / 2;
@@ -15,7 +15,7 @@ class MagicPetal4 {
     this.active = true;
   }
 
-  //Setting he magic petal for level 2
+  //Setting he magic petal for level 4
   move() {
     push();
 

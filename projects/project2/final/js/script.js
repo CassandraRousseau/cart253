@@ -1,13 +1,16 @@
 /**************************************************
 Project 02: Anything(Prototype)
 Cassandra Rousseau
-The prototype starts with the title screen, followed by the prologue and first chapter cutscenes of the game.
-The story tells that a little girl is suffering of a curse.She has a rose instead of a heart.
-If her rose dies,she will die too.She learnes that she has to collect five magic petals to cure her curse.
-The first three levels (simulation) start. In the first level, the user has to catch
+The prototype starts with a note screen, followed by the title screen. Once the user starts the game, the
+prologue and first chapter cutscenes start.The story is about a little girl suffering of a curse.
+She has a rose instead of a heart. If her rose dies,she will die too.
+She learned that she has to collect five magic petals to cure her curse.
+The levels (simulation) start. In the first level, the user has to catch
 the first magic petal through the wind.In the second level,the user has to scream inside a cave in order to make appear 4
-the second magic petal. In the third level, the user has to find the third maic petal under a bunch of leaves and petals
-The user's purpose is to catch the magic petal (a white petal) before the
+the second magic petal. In the third level, the user has to find the third magic petal under a bunch of leaves and petals.
+In the fourth level, the user has to create a magic petal by clapping his hands.In the fifth level, the user has to find
+the last magic petal inside a castle. In the last level, the user has to take back the petal that a rose monster took from
+the character. The user's purpose is to catch all the magic petals (a white petal) before the
 timer stops. If the user catches the petal, he won, but if time is out, it's game over...
 **************************************************/
 "use strict";
@@ -300,6 +303,7 @@ function draw() {
   } else {
     screaming = false;
   }
+  //Setting how loud user's claps have to be during the level
   if (clap > clapThreshold1 && !clapping1) {
     clapping1 = true;
   } else if (clap > clapThreshold2 && !clapping2) {

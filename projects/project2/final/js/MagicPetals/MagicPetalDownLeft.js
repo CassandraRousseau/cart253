@@ -1,5 +1,5 @@
 class MagicPetalDownLeft extends MagicPetal {
-  //Creating the magic petal
+  //Creating the part of magic petal in level 4 at the bottom left of the canvas
   constructor(magicPetalDownLeftImage, mic, alpha) {
     super(magicPetalDownLeftImage, mic, alpha);
     this.x = 0;
@@ -9,7 +9,7 @@ class MagicPetalDownLeft extends MagicPetal {
     this.mic = mic;
   }
 
-  //Setting the magic petal
+  //Setting the part of magic petal in level 4 at the bottom left of the canvas
   move() {
     super.move();
     push();
@@ -34,7 +34,7 @@ class MagicPetalDownLeft extends MagicPetal {
     pop();
   }
 
-  //Displaying the magic petal based on screams
+  //Displaying the magic petal based on clapping
   display() {
     super.display();
     push();

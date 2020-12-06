@@ -73,7 +73,7 @@ class Timer {
         return "GoodEnding5";
       }
     } else if (state === "LastLevel") {
-      //Bad ending when the user didn't catch the magic petal
+      //Death ending when the user didn't catch the magic petal
       if (magicPetal.active && frameCount > framecountSim + this.gamelength) {
         return "DeathEnding";
       }

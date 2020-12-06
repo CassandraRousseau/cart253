@@ -1,20 +1,20 @@
 class State {
-  //Setting all the variables for each states
+  //Setting all the variables for each state
   constructor() {}
 
-  //Setting preload method for each states
+  //Setting preload method for each state
   preload() {}
 
-  //Setting draw method for each states
+  //Setting draw method for each state
   draw() {
     fill(0);
     textFont("Amatic SC");
   }
 
-  //Setting mousePressed method for each states
+  //Setting mousePressed method for each state
   mousePressed() {}
 
-  //Setting keyPressed method for each states
+  //Setting keyPressed method for each state
   keyPressed() {
     if (keyCode === 13) {
       pageSFX.play();

@@ -1,16 +1,16 @@
 class Note extends State {
-  //Creating the Chapter One title screen
+  //Creating a user note screen at the beginning of the game
   constructor() {
     super();
   }
 
-  //Setting the Chapter One title screen
+  //Setting the note screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the Chapter One title screen
+  //Displaying the note screen
   display() {
     push();
     background(255);
@@ -26,7 +26,7 @@ class Note extends State {
     pop();
   }
 
-  //Setting keyPressed action after Chapter One title screen
+  //Setting keyPressed action after the note
   keyPressed() {
     super.keyPressed();
 

@@ -1,5 +1,5 @@
 class LastMagicPetal {
-  //Creating the magic petal for level 3
+  //Creating the magic petal for the last level
   constructor(x, y, magicPetalImage) {
     this.x = x;
     this.y = y;
@@ -13,7 +13,7 @@ class LastMagicPetal {
     this.active = true;
   }
 
-  //Preloading images of the magic petal for level 3
+  //Preloading images of the magic petal for the last level
   preload() {
     this.image.preload();
   }
