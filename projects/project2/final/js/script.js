@@ -16,6 +16,9 @@ timer stops. If the user catches the petal, he won, but if time is out, it's gam
 "use strict";
 //**Assistance from the instructor Pippin to know how to separate all my chapters cutscenes, levels
 //and similar elements into folders**
+//**Source for ost: King, Lucas. "Final Fantasy VII - Vincent Valentine Theme | Music Box Version | Nightmare's Beginning".
+// YouTube. February 17,2014. Video, 2:03. https://www.youtube.com/watch?v=gslhFcYXPDY&list=LL&index=1&ab_channel=LucasKing.**
+//**Source for pageSFX: Page Flip Sound Effect 1.Sound Jay. Audio SFX, 0:01. https://www.soundjay.com/page-flip-sounds-1.html.**
 
 let currentState;
 
