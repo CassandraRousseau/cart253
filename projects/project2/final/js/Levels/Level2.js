@@ -85,6 +85,7 @@ class Level2 extends State {
     );
 
     //Setting which states come after the level
+    //**Assistance from the instructor Pippin to know how to call at a specific state the common good ending for each level
     if (timerResult === "BadEnding") {
       currentState = new BadEnding(
         windowWidth,

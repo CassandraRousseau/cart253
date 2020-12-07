@@ -14,6 +14,8 @@ class MagicPetalDownRight extends MagicPetal {
     super.move();
     push();
     // Check if magic petal is  moving based on screams
+    //**Assistance from the instructor Pippin to create the movement based on claps
+    //and the moment where and when the part of magic petal stops moving**
     if (clapping4) {
       this.state = "running";
       this.vx += this.movingSpeed;

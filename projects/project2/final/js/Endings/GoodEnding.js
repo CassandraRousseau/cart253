@@ -41,7 +41,8 @@ class GoodEnding extends State {
   //Setting keyPressed after good ending(catching a magic petal) screen
   keyPressed() {
     super.keyPressed();
-
+    //**Assistance from the instructor Pippin to know how to create a common state after each level and how to call
+    //a previous state**
     if (keyCode === 13) {
       if (this.nextScene === 2) {
         currentState = new ChapterTwo0();

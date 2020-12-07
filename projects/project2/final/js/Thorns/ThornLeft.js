@@ -19,6 +19,9 @@ class ThornLeft extends Nature {
     push();
 
     // Check if left side thorn is moving based on the screams
+    //**Assistance from TA Samuel to create movements based on screams and how to make elements stops
+    // if the user is not screaming**
+
     if (screaming) {
       this.state = "running";
       this.vx += this.movingSpeed;

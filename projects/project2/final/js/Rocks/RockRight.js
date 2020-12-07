@@ -18,6 +18,8 @@ class RockRight extends Nature {
     push();
 
     // Check if right side rock is moving based on screams
+    //**Assistance from TA Samuel to create movements based on screams and how to make elements stops
+    // if the user is not screaming**
     if (screaming) {
       this.state = "running";
       this.vx += this.movingSpeed;

@@ -14,6 +14,8 @@ the character. The user's purpose is to catch all the magic petals (a white peta
 timer stops. If the user catches the petal, he won, but if time is out, it's game over...
 **************************************************/
 "use strict";
+//**Assistance from the instructor Pippin to know how to separate all my chapters cutscenes, levels
+//and similar elements into folders**
 
 let currentState;
 
@@ -25,60 +27,11 @@ let pageSFX;
 
 let title;
 
-let instructions1;
-
-let instructions2;
-
-let instructions3;
-
-let instructions4;
-
-let instructions5;
-
-let level1;
-
-let level2;
-
-let level3;
-
-let level4;
-
-let level5;
-
-let badEnding;
-
 let timer;
-
-let sky;
-
-let user;
-
-let leaf1;
-
-let leaf2;
-
-let redPetal1;
-
-let redPetal2;
-
-let magicPetal1;
-
-let magicPetal2;
-
-let magicPetal3;
-
-let plants = [];
 
 let mic;
 
-let rockLeft;
-
-let rockRight;
-
-let thornLeft;
-
-let thornRight;
-
+//**Asssitance from TA Samuel for screaming threshold
 let scream;
 
 let screaming = false;
@@ -106,6 +59,8 @@ let clapThreshold3 = 0.15;
 let clapThreshold4 = 0.2;
 
 let clapThreshold5 = 0.25;
+
+let plants = [];
 
 let natures = [];
 
@@ -287,7 +242,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new Level2();
+  let title = new Note();
   currentState = title;
 }
 
@@ -296,6 +251,7 @@ function draw() {
   currentState.draw();
 
   //Setting how loud user's screams have to be during the level
+  //Assistance from the TA Samuel to create the screaming threshold
   scream = mic.getLevel();
   clap = mic.getLevel();
   if (scream > screamThreshold) {
@@ -304,6 +260,7 @@ function draw() {
     screaming = false;
   }
   //Setting how loud user's claps have to be during the level
+  //**Assistance from the instructor Pippin to create the clapping threshold
   if (clap > clapThreshold1 && !clapping1) {
     clapping1 = true;
   } else if (clap > clapThreshold2 && !clapping2) {
