@@ -27,6 +27,7 @@ class LastChapter2 extends State {
       "'I guess I don't have a choice...'",
       "'You know...'",
       "'TO KILL YOU!!!'",
+      "Press Enter",
     ];
   }
 

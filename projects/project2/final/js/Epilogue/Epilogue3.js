@@ -11,6 +11,7 @@ class Epilogue3 extends State {
     this.dialog15 = [
       "I think it will be unconscious for a while",
       "I will solve this case later",
+      "Press Enter",
     ];
   }
 

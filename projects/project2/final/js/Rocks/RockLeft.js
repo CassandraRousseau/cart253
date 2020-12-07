@@ -21,6 +21,7 @@ class RockLeft extends Nature {
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;
+      this.vy = this.movingSpeed;
     } else {
       this.state = "still";
     }
@@ -36,7 +37,7 @@ class RockLeft extends Nature {
     this.y = constrain(this.vy, height / 2, (3 * height) / 4);
     //Setting left side rock movements
     this.x -= this.vx;
-    this.y -= this.vy;
+    this.y += this.vy;
     pop();
   }
 

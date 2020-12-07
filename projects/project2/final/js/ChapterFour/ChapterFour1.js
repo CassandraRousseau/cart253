@@ -9,6 +9,7 @@ class ChapterFour1 extends State {
       "'The poor child is not ill...'",
       "'She is cursed...'",
       "'Cursed?!?!'",
+      "Press Enter",
     ];
 
     this.x = 0;

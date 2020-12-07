@@ -24,6 +24,7 @@ class Epilogue5 extends State {
       "I will cure your curse",
       "You will be sure you will not finish like this humanly rose, haha!",
       "Let's get started before it's too late!",
+      "Press Enter",
     ];
   }
 

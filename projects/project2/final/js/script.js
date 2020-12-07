@@ -287,7 +287,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new Note();
+  let title = new Level2();
   currentState = title;
 }
 

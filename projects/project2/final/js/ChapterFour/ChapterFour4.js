@@ -9,6 +9,7 @@ class ChapterFour4 extends State {
       "'You only got two options'",
       "'Either you kill your daughter before she metamorphoses...'",
       "'Or...'",
+      "Press Enter",
     ];
   }
   //Setting the fourth cutscene of Chapter Four

@@ -13,6 +13,8 @@ class Epilogue7 extends State {
       "Now you will be able to live your life as a human being",
       "Without any concerns...",
       "The End",
+      "Thanks for playing!",
+      "If you want to replay the game, Press Enter",
     ];
   }
 

@@ -12,6 +12,7 @@ class ChapterFour2 extends State {
       "'The new borns had heart defects, which turned a lot worse once they grew up..'",
       "'Does our little girl will die?!?!'",
       "'It's worses...'",
+      "Press Enter",
     ];
     this.x = 0;
     this.y = 0;

@@ -8,7 +8,7 @@ class Epilogue4 extends State {
     this.height = h;
     this.image = fleeImage;
     this.name = "Epilogue4";
-    this.dialog16 = ["We have to go"];
+    this.dialog16 = ["We have to go", "Press Enter"];
   }
 
   //Preloading necessary images for the fourth cutscene of Epilogue

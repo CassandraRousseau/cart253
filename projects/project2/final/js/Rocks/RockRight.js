@@ -21,6 +21,7 @@ class RockRight extends Nature {
     if (screaming) {
       this.state = "running";
       this.vx = this.movingSpeed;
+      this.vy = this.movingSpeed;
     } else {
       this.state = "still";
     }
