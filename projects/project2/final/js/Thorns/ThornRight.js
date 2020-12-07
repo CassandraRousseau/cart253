@@ -21,8 +21,7 @@ class ThornRight extends Nature {
     // Check if right side thorn is  moving based on screams
     if (screaming) {
       this.state = "running";
-      this.vx = this.movingSpeed;
-      this.vy = this.movingSpeed;
+      this.vx += this.movingSpeed;
     } else {
       this.state = "still";
     }
@@ -30,16 +29,13 @@ class ThornRight extends Nature {
     //Setting when right side thorn stops moving
     if (this.w === this.maxWidth && this.h === this.maxHeight) {
       this.vx = 0;
-      this.vy = 0;
     }
 
     //Setting where right side thorn stops moving
     this.x = constrain(this.vx, width / 2, width);
-    this.y = constrain(this.vy, height / 2, height / 2);
 
     //Setting right side thorn movements
     this.x += this.vx;
-    this.y += this.vy;
 
     pop();
   }

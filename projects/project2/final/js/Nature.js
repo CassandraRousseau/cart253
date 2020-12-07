@@ -23,7 +23,7 @@ class Nature {
     this.maxHeight = maxHeight;
     this.growthWidth = growthWidth;
     this.growthHeight = growthHeight;
-    this.movingSpeed = 15;
+    this.movingSpeed = 5;
     this.state = "still";
     this.angle = angle;
     this.alpha = alpha;

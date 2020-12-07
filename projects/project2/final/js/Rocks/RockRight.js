@@ -20,8 +20,8 @@ class RockRight extends Nature {
     // Check if right side rock is moving based on screams
     if (screaming) {
       this.state = "running";
-      this.vx = this.movingSpeed;
-      this.vy = this.movingSpeed;
+      this.vx += this.movingSpeed;
+      this.vy += this.movingSpeed;
     } else {
       this.state = "still";
     }
@@ -31,7 +31,6 @@ class RockRight extends Nature {
       this.vx = 0;
       this.vy = 0;
     }
-
     //Setting where right side rock stops moving
     this.x = constrain(this.vx, width / 2, (2 * width) / 3);
     this.y = constrain(this.vy, height / 2, (3 * height) / 4);
