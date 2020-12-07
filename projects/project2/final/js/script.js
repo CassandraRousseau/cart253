@@ -68,11 +68,11 @@ let numCaves = 1;
 
 let numMagicPetals = 1;
 
-let numRedPetals1 = 10;
+let numRedPetals1 = 20;
 
 let numRedPetals2 = 500;
 
-let numLeaves1 = 10;
+let numLeaves1 = 20;
 
 let numLeaves2 = 500;
 
