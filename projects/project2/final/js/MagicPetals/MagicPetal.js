@@ -23,11 +23,7 @@ class MagicPetal {
   }
 
   //Moving the pieces of magic petal in level 4 superclass
-  move() {
-    push();
-
-    pop();
-  }
+  move() {}
 
   //Changing the opacity  for the pieces of magic petal in level 4 superclass
   transparency() {

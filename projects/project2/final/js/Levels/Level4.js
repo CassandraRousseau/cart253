@@ -25,7 +25,7 @@ class Level4 extends State {
     this.magicPetal = new MagicPetal4(magicPetalImage, this.mic);
 
     //Creating the bottom left piece of magic petal
-    console.log("numMagicPetalBottomLeft");
+    console.log("MagicPetalBottomLeft");
     for (let i = 0; i < numMagicPetalBottomLeft; i++) {
       let magicPetalBottomLeft = new MagicPetalBottomLeft(
         magicPetalBottomLeftImage,
