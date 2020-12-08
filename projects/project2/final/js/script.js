@@ -53,15 +53,15 @@ let clapping4 = false;
 
 let clapping5 = false;
 
-let clapThreshold1 = 0.05;
+let clapThreshold1 = 0.25;
 
-let clapThreshold2 = 0.1;
+let clapThreshold2 = 0.5;
 
-let clapThreshold3 = 0.15;
+let clapThreshold3 = 0.75;
 
-let clapThreshold4 = 0.2;
+let clapThreshold4 = 1;
 
-let clapThreshold5 = 0.25;
+let clapThreshold5 = 1.25;
 
 let plants = [];
 
