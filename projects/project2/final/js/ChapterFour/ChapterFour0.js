@@ -4,7 +4,7 @@ class ChapterFour0 extends State {
     super();
     this.name = "ChapterFour0";
     this.titleString6 = "Chapter Four";
-    this.subtitle5 = ["Real Identity", "Press Enter"];
+    this.subtitle5 = ["True Identity", "Press Enter"];
   }
 
   //Setting Chapter Four title screen

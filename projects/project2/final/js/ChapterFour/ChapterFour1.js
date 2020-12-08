@@ -4,9 +4,9 @@ class ChapterFour1 extends State {
     super(w, h, visitImage);
     this.name = "ChapterFour1";
     this.dialog10 = [
-      "'Doctor, what kind of disease our baby has?'",
+      "'Doctor, what kind of disease our child has?'",
       "'Unfortunately..'",
-      "'The poor child is not ill...'",
+      "'Your poor child is not ill...'",
       "'She is cursed...'",
       "'Cursed?!?!'",
       "Press Enter",
