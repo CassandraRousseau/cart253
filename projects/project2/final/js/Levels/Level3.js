@@ -13,7 +13,7 @@ class Level3 extends State {
     this.user = new User();
 
     //Crating leaves and red petals array
-    this.plants = [];
+    this.heaps = [];
 
     //Creating the magic petal
     push();
@@ -39,9 +39,9 @@ class Level3 extends State {
 
       let angle = random(0, 360);
 
-      let redPetal = new RedPetal2(x, y, vx, vy, speed, angle, redPetalImage);
+      let redPetal = new RedPetal2(x, y, angle, redPetalImage);
 
-      this.plants.push(redPetal);
+      this.heaps.push(redPetal);
     }
 
     //Creating the leaves
@@ -52,9 +52,9 @@ class Level3 extends State {
 
       let angle = random(0, 360);
 
-      let leaf = new Leaf2(x, y, vx, vy, speed, angle, leafImage);
+      let leaf = new Leaf2(x, y, angle, leafImage);
 
-      this.plants.push(leaf);
+      this.heaps.push(leaf);
     }
   }
 
@@ -102,9 +102,6 @@ class Level3 extends State {
 
     //Displaying the elements
 
-    //Displaying user
-    this.user.display();
-
     //Dispaying magic petal if active
     if (this.magicPetal.active) {
       this.magicPetal.move();
@@ -112,11 +109,14 @@ class Level3 extends State {
     }
 
     //Displaying the leaves and red petals
-    for (let i = 0; i < this.plants.length; i++) {
-      let plant = this.plants[i];
-      plant.move();
-      plant.display();
+    for (let i = 0; i < this.heaps.length; i++) {
+      let heap = this.heaps[i];
+      heap.move();
+      heap.display();
     }
+
+    //Displaying user
+    this.user.display();
     pop();
   }
 

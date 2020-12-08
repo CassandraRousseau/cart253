@@ -87,13 +87,13 @@ let numThornsLeft = 1;
 
 let numThornsRight = 1;
 
-let numMagicPetalUpLeft = 1;
+let numMagicPetalTopLeft = 1;
 
-let numMagicPetalUpRight = 1;
+let numMagicPetalTopRight = 1;
 
-let numMagicPetalDownLeft = 1;
+let numMagicPetalBottomLeft = 1;
 
-let numMagicPetalDownRight = 1;
+let numMagicPetalBottomRight = 1;
 
 let titleImage;
 

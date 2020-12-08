@@ -9,7 +9,6 @@ class MagicPetal3 {
     this.vy = vy;
     this.speed = speed;
     this.image = magicPetalImage;
-    this.state = "still";
     this.active = true;
   }
 
@@ -20,12 +19,6 @@ class MagicPetal3 {
 
   //Setting the magic petal
   move() {
-    //**Assistance from the instructor Pippin to create the movement based on claps
-    if (clapping5) {
-      this.state = "running";
-    } else {
-      this.state = "still";
-    }
     this.x += this.vx;
     this.y += this.vy;
   }

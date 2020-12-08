@@ -1,39 +1,11 @@
-class RedPetal2 extends Plant {
+class RedPetal2 extends Heap {
   //Creating the red petals for the third level
-  constructor(x, y, vx, vy, speed, angle, redPetalImage) {
-    super(x, y, vx, vy, speed, angle, redPetalImage);
+  constructor(x, y, angle, redPetalImage) {
+    super(x, y, angle, redPetalImage);
     this.x = x;
     this.y = y;
-    this.vx = 2;
-    this.vy = 2;
-    this.speed = 0.75;
     this.angle = angle;
     this.image = redPetalImage;
-  }
-
-  //Setting the movements of the red petals for the third level
-  move() {
-    let dx = this.x - mouseX;
-
-    let dy = this.y - mouseY;
-
-    if (dx < 0) {
-      this.vx = -this.speed;
-    } else if (dx > 0) {
-      this.vx = this.speed;
-    }
-
-    if (dy < 0) {
-      this.vy = -this.speed;
-    } else if (dy > 0) {
-      this.vy = this.speed;
-    }
-
-    this.x += this.vx;
-    this.y += this.vy;
-
-    this.x = constrain(this.x, 0, width);
-    this.y = constrain(this.y, 0, height);
   }
 
   //Displaying the red petals for the third level

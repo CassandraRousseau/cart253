@@ -57,15 +57,15 @@ class LastLevel extends State {
 
     //Displaying the elements
 
-    //Displaying user
-    this.user.display();
-
     //Displaying the last magic petal
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.follow(this.survival);
       this.magicPetal.display();
     }
+
+    //Displaying user
+    this.user.display();
   }
 
   //Setting the mousePressed method for the interactivity in the level

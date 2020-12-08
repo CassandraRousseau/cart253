@@ -104,9 +104,6 @@ class Level2 extends State {
 
     //Displaying the elements
 
-    //Displaying user
-    this.user.display();
-
     //Displaying nature elements
     for (let i = 0; i < this.natures.length; i++) {
       let nature = this.natures[i];
@@ -119,6 +116,9 @@ class Level2 extends State {
         nature.display();
       }
     }
+
+    //Displaying user
+    this.user.display();
     pop();
   }
 
