@@ -15,11 +15,11 @@ class MagicPetal4 {
     this.active = true;
   }
 
-  //Setting he magic petal for level 4
+  //Setting the magic petal for level 4
   move() {
     push();
 
-    // Check if magic petal is  moving based on screams
+    // Check if magic petal is moving based on screams
     if (clapping5) {
       this.state = "running";
     } else {

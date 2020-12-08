@@ -16,7 +16,7 @@ class MagicPetal5 {
     this.image.preload();
   }
 
-  //Setting the magic petal
+  //Setting magic petal movements
   move() {
     this.x += this.vx;
     this.y += this.vy;
