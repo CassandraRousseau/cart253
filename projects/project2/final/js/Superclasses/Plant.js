@@ -1,5 +1,5 @@
 class Plant {
-  //Creating the plants (leaves and red petal) for level 1
+  //Creating the plants (leaves, red petals and magic petal) for level 1
   constructor(x, y, vx, vy, speed, angle) {
     this.x = x;
     this.y = y;
@@ -12,13 +12,14 @@ class Plant {
     this.image = undefined;
   }
 
-  //Preloading images of plants
+  //Preloading images of leaves, red petals and magic petal
   preload() {
     this.image.preload();
   }
 
-  //Setting  the leaves for the first level
+  //Setting the elements(leaves, red petals and magic petal) for the first level
   move() {
+    //Creating a wind effect for elements movements
     let vx = this.speed * cos(this.angle);
 
     let vy = this.speed * sin(this.angle);
@@ -26,7 +27,7 @@ class Plant {
     this.x += this.vx;
     this.y += this.vy;
   }
-  //Bringing the red petals for the first level back once they go off the screen
+  //Bringing the elements (leaves, red petals and magic petal) of the first level back once they go off the screen
   wrap() {
     if (this.x > width) {
       this.x -= width;
@@ -40,6 +41,6 @@ class Plant {
       this.y += height;
     }
   }
-  //Displaying the plants for level 1
+  //Displaying the elements (leaves, red petals and magic petal) for level 1
   display() {}
 }

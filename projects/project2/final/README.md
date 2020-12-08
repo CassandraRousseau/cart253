@@ -1,6 +1,6 @@
 # **Project 02: Anything**
 
-## **Artist's statement**
+## **Cassandra Rousseau Artist's statement**
 
 _Ephemeral_ is a game with a strong story emphasis. I wanted the users to immerse themselves into an interactive
 universe in which they experience a similar feeling as when they are reading a book; a perspective that they are reading a storybook instead of playing a usual game.

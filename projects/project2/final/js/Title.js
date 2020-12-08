@@ -32,6 +32,7 @@ class Title extends State {
     textAlign(CENTER, CENTER);
     text(this.titleString, width / 2, height / 2);
 
+    //Added how user changes the state
     push();
     textSize(50);
     text("Press Enter to start", width / 2, (5 * height) / 6);
@@ -43,6 +44,7 @@ class Title extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Prologue0();
     }

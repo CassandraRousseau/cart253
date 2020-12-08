@@ -2,8 +2,11 @@ class Prologue4 extends State {
   //Creating the fourth cutscene of Prologue
   constructor() {
     super();
+
+    //Naming state
     this.name = "Prologue4";
 
+    //Creating fourth cutscene dialog of Prologue
     this.dialog4 = [
       "She will die too.",
       "Unfortunately,",
@@ -27,6 +30,7 @@ class Prologue4 extends State {
     textSize(100);
     textAlign(CENTER, CENTER);
 
+    //Displaying fourth cutscene dialog of Prologue
     let dialog = this.dialog4[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
   }
@@ -35,10 +39,12 @@ class Prologue4 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterOne0();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

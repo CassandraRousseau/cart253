@@ -24,6 +24,8 @@ class LastMagicPetal {
     this.x += this.vx;
     this.y += this.vy;
   }
+
+  //Last magic petal is following the background image
   follow(followed) {
     let dx = this.x - followed.x;
     if (this.dx < 0) {
@@ -32,6 +34,7 @@ class LastMagicPetal {
       this.vx = -this.speed;
     }
   }
+
   //Displaying the magic petal
   display() {
     push();

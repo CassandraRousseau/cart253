@@ -2,8 +2,11 @@ class Prologue3 extends State {
   //Creating the third cutscene of Prologue
   constructor(w, h, zoomImage) {
     super(w, h, zoomImage);
+
+    //Naming state
     this.name = "Prologue3";
 
+    //Creating third cutscene dialog of Prologue
     this.dialog3 = [
       "A rose replaced her heart.",
       "If her rose dies...",
@@ -37,6 +40,7 @@ class Prologue3 extends State {
     textSize(80);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying third cutscene dialog of Prologue
     let dialog = this.dialog3[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -46,10 +50,12 @@ class Prologue3 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Prologue4();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

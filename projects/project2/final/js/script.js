@@ -20,20 +20,26 @@ timer stops. If the user catches the petal, he won, but if time is out, it's gam
 // YouTube. February 17,2014. Video, 2:03. https://www.youtube.com/watch?v=gslhFcYXPDY&list=LL&index=1&ab_channel=LucasKing.**
 //**Source for pageSFX: Page Flip Sound Effect 1.Sound Jay. Audio SFX, 0:01. https://www.soundjay.com/page-flip-sounds-1.html.**
 
+//Called current state and line
 let currentState;
 
 let currentLine = 0;
 
+//Called sound effects
 let ost;
 
 let pageSFX;
 
+//Called title state
 let title;
 
+//Called timer
 let timer;
 
+//Called microphone
 let mic;
 
+//Called screaming and clapping thresholds
 //**Asssitance from TA Samuel for screaming threshold
 let scream;
 
@@ -63,10 +69,12 @@ let clapThreshold4 = 0.35;
 
 let clapThreshold5 = 0.4;
 
+//Called levels elements arrays
 let plants = [];
 
 let natures = [];
 
+//Called amount of levels elements
 let numCaves = 1;
 
 let numMagicPetals = 1;
@@ -95,6 +103,7 @@ let numMagicPetalBottomLeft = 1;
 
 let numMagicPetalBottomRight = 1;
 
+//Called illustrations/images
 let titleImage;
 
 let girlImage;
@@ -238,6 +247,7 @@ function preload() {
 
 //Setting all the setups for each states.
 function setup() {
+  //Created the canvas
   createCanvas(windowWidth, windowHeight);
 
   noCursor();

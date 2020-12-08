@@ -21,6 +21,7 @@ class User {
   mousePressed(magicPetal) {
     let d = dist(mouseX, mouseY, magicPetal.x, magicPetal.y);
 
+    //Magic petal will disappear once user clicks on it
     if (magicPetal.active && d < magicPetal.w / 2 + magicPetal.h / 2) {
       magicPetal.active = false;
     }

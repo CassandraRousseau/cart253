@@ -12,7 +12,7 @@ class MagicPetal2 extends Nature {
     this.mic = mic;
   }
 
-  //Setting he magic petal for level 2
+  //Setting the magic petal for level 2
   move() {
     super.move();
     push();

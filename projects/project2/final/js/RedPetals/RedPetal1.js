@@ -11,7 +11,7 @@ class RedPetal1 extends Plant {
     this.image = redPetalImage;
   }
 
-  //Displaying tthe red petals for the first level
+  //Displaying the red petals for the first level
   display() {
     super.display();
     push();

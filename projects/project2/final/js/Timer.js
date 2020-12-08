@@ -78,7 +78,7 @@ class Timer {
         return "DeathEnding";
       }
 
-      //Good ending when the user catches the magic petal
+      //Final ending when the user catches the magic petal
       else if (
         !magicPetal.active &&
         frameCount < framecountSim + this.gamelength

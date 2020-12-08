@@ -2,8 +2,11 @@ class Prologue1 extends State {
   //Creating the first cutscene of Prologue
   constructor() {
     super();
+
+    //Naming state
     this.name = "Prologue1";
 
+    //Creating first cutscene dialog of Prologue
     this.dialog1 = [
       "Once upon a time,(Press Spacebar)",
       "A little girl...(Press Enter)",
@@ -23,6 +26,7 @@ class Prologue1 extends State {
     textSize(100);
     textAlign(CENTER, CENTER);
 
+    //Displaying first cutscene dialog of Prologue
     let dialog = this.dialog1[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
   }
@@ -31,10 +35,12 @@ class Prologue1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Prologue2(windowWidth, windowHeight, girlImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

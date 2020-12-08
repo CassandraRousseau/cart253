@@ -23,6 +23,8 @@ class Note extends State {
       windowWidth,
       windowHeight
     );
+
+    //Added how user changes the state
     push();
     textSize(55);
     textAlign(LEFT, BOTTOM);
@@ -35,6 +37,7 @@ class Note extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Change state by pressing enter key
     if (keyCode === 13) {
       currentState = new Title(windowWidth, windowHeight, titleImage);
     }

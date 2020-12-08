@@ -2,8 +2,11 @@ class Prologue2 extends State {
   //Creating the second cutscene of Prologue
   constructor(w, h, girlImage) {
     super(w, h, girlImage);
+
+    //Naming state
     this.name = "Prologue2";
 
+    //Creating second cutscene dialog of Prologue
     this.dialog2 = [
       "A little girl... different from other children.",
       "This little girl was cursed",
@@ -37,6 +40,7 @@ class Prologue2 extends State {
     textSize(60);
     textAlign(CENTER, TOP);
 
+    //Displaying second cutscene dialog of Prologue
     let dialog = this.dialog2[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -46,10 +50,12 @@ class Prologue2 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Prologue3(windowWidth, windowHeight, zoomImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

@@ -2,9 +2,13 @@ class Prologue0 extends State {
   //Creating the Prologue title screen
   constructor() {
     super();
+    //Naming state
     this.name = "Prologue0";
+
+    //Creating title of prologue
     this.titleString2 = "Prologue";
 
+    //Creating subtitle of prologue
     this.subtitle1 = [
       "To read the text, press Spacebar",
       "To turn a page,press Enter",
@@ -25,6 +29,7 @@ class Prologue0 extends State {
     textAlign(CENTER, CENTER);
     text(this.titleString2, width / 2, height / 2);
 
+    //Displaying prologue subtitle
     push();
     textSize(55);
     let subtitle = this.subtitle1[currentLine];
@@ -37,10 +42,12 @@ class Prologue0 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Prologue1();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

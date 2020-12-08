@@ -23,6 +23,7 @@ class Heap {
 
     let dy = this.y - mouseY;
 
+    //Red petals and leaaves are moving awway from user cursor
     if (dx < 0) {
       this.vx = -this.speed;
     } else if (dx > 0) {
@@ -38,6 +39,7 @@ class Heap {
     this.x += this.vx;
     this.y += this.vy;
 
+    //Elements don't go beyond the frame of the screen
     this.x = constrain(this.x, 0, width);
     this.y = constrain(this.y, 0, height);
   }
