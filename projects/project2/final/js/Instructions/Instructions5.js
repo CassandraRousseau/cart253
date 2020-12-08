@@ -3,7 +3,7 @@ class Instructions5 extends State {
   constructor() {
     super();
     this.intro =
-      "Search for the magic petal in the castle.\n\nClick with your mouse to catch the magic petal.\n\nDon't forget, time is running out!";
+      "Search for the magic petal in the castle.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
 
   //Setting instructions screen for the fifth level

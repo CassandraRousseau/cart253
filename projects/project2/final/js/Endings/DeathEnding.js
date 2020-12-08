@@ -7,7 +7,7 @@ class DeathEnding extends State {
     this.width = w;
     this.height = h;
     this.image = deathImage;
-    this.over = "Game Over";
+    this.over = "Life is Over";
   }
 
   //Preloading background image for death ending
@@ -30,7 +30,7 @@ class DeathEnding extends State {
     text(this.over, width / 12, (4 * height) / 6, windowWidth, windowHeight);
     push();
     textSize(55);
-    text("Press Enter to restart", width / 12, (6 * height) / 7);
+    text("Press Enter", width / 12, (6 * height) / 7);
     pop();
     pop();
   }

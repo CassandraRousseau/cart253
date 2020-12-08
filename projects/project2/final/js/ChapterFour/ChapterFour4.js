@@ -5,9 +5,9 @@ class ChapterFour4 extends State {
     this.name = "ChapterFour4";
     this.dialog13 = [
       "'Unfortunately..'",
-      "'No scientist have found a remedy yet to heal this quite strange phenomenon...'",
+      "'No scientist has found a remedy to heal this quite strange phenomenon...'",
       "'You only got two options'",
-      "'Either you kill your daughter before she metamorphoses...'",
+      "'Either you kill your daughter before she transforms completely...'",
       "'Or...'",
       "Press Enter",
     ];

@@ -14,7 +14,7 @@ class Epilogue7 extends State {
       "Without any concerns...",
       "The End",
       "Thanks for playing!",
-      "If you want to replay the game, Press Enter",
+      "If you want to replay, Press Enter",
     ];
   }
 

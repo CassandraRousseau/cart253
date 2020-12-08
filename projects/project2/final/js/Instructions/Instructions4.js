@@ -3,7 +3,7 @@ class Instructions4 extends State {
   constructor() {
     super();
     this.intro =
-      "Clap your hands five times to assemble the magic petal.\n\nClick with your mouse to catch the magic petal.\n\nDon't forget, time is running out!";
+      "Clap your hands five times to assemble the magic petal.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
 
   //Setting instructions screen for the fourth level

@@ -5,9 +5,9 @@ class ChapterOne3 extends State {
     this.name = "ChapterOne3";
 
     this.dialog7 = [
-      "'A myth tells that five magic petals exist in this forest'",
+      "'A myth tells that five magic petals exist in the forest'",
       "'These five magic petals can cure any disease or curse!'",
-      "'You have to collect these five petals and meet the mage of the forest in order that the magic operates.'",
+      "'You have to collect these five petals and meet the mage of the forest to make the magic operates.'",
       "Press Enter",
     ];
 

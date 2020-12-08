@@ -12,7 +12,7 @@ class ChapterOne2 extends State {
       "The little girl shows her fading rose and responds:",
       "'I am ill madam, I need to find a solution to cure my disease...'",
       "'Oh dear! I can help you!'",
-      "'But you have to be prepared, because the process might be risky'",
+      "'But you have to be prepared, because the process might be dangerous'",
       "Press Enter",
     ];
 

@@ -25,7 +25,6 @@ class Level4 extends State {
     this.magicPetal = new MagicPetal4(magicPetalImage, this.mic);
 
     //Creating the bottom left piece of magic petal
-    console.log("MagicPetalBottomLeft");
     for (let i = 0; i < numMagicPetalBottomLeft; i++) {
       let magicPetalBottomLeft = new MagicPetalBottomLeft(
         magicPetalBottomLeftImage,
@@ -107,12 +106,6 @@ class Level4 extends State {
 
     //Displaying the elements
 
-    //Displaying full magic petal if active
-    if (this.magicPetal.active) {
-      this.magicPetal.move();
-      this.magicPetal.display();
-    }
-
     //Displaying pieces of magic petal
     for (let i = 0; i < this.magicPetals.length; i++) {
       let pieces = this.magicPetals[i];
@@ -121,6 +114,12 @@ class Level4 extends State {
       pieces.move();
       pieces.transparency();
       pieces.display();
+    }
+
+    //Displaying full magic petal if active
+    if (this.magicPetal.active) {
+      this.magicPetal.move();
+      this.magicPetal.display();
     }
 
     //Displaying user
