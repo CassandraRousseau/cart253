@@ -2,7 +2,6 @@ class MagicPetalBottomLeft extends MagicPetal {
   //Creating the part of magic petal in level 4 at the bottom left of the canvas
   constructor(magicPetalBottomLeftImage, mic, alpha) {
     super(magicPetalBottomLeftImage, mic, alpha);
-
     this.x = 0;
     this.y = height;
     this.movingSpeed = 0.25;
