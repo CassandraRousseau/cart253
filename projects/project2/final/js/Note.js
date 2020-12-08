@@ -23,6 +23,11 @@ class Note extends State {
       windowWidth,
       windowHeight
     );
+    push();
+    textSize(55);
+    textAlign(LEFT, BOTTOM);
+    text("Press Enter", (5 * width) / 6, (9 * height) / 10);
+    pop();
     pop();
   }
 
