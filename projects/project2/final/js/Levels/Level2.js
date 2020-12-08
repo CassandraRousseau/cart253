@@ -103,6 +103,8 @@ class Level2 extends State {
     }
 
     //Displaying the elements
+
+    //Displaying user
     this.user.display();
 
     //Displaying nature elements

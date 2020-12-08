@@ -1,7 +1,8 @@
 class MagicPetalTopLeft extends MagicPetal {
-  //Creating the part of magic petal in level 4 at the upper left of the canvas
+  //Creating the part of magic petal in level 4 at the top left of the canvas
   constructor(magicPetalTopLeftImage, mic, alpha) {
     super(magicPetalTopLeftImage, mic, alpha);
+
     this.x = 0;
     this.y = 0;
     this.movingSpeed = 0.25;
@@ -9,10 +10,11 @@ class MagicPetalTopLeft extends MagicPetal {
     this.mic = mic;
   }
 
-  //Setting the part of magic petal in level 4 at the upper left of the canvas
+  //Setting the part of magic petal in level 4 at the top left of the canvas
   move() {
     super.move();
     push();
+
     // Check if magic petal is  moving based on screams
     //**Assistance from the instructor Pippin to create the movement based on claps
     //and the moment where and when the part of magic petal stops moving**
@@ -23,6 +25,7 @@ class MagicPetalTopLeft extends MagicPetal {
     } else {
       this.state = "still";
     }
+
     //Setting when magic petal stops moving
     if (this.x >= width / 2 && this.y >= height / 2) {
       this.vx = this.stop;
@@ -30,6 +33,7 @@ class MagicPetalTopLeft extends MagicPetal {
       this.x = width / 2;
       this.y = height / 2;
     }
+
     //Setting magic petal movements
     this.x += this.vx;
     this.y += this.vy;

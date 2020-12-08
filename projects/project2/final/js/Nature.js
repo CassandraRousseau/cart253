@@ -1,5 +1,5 @@
 class Nature {
-  //Creating nature elements for level 2
+  //Creating nature elements (thorns, rocks,cave and magic petal) for level 2
   constructor(
     x,
     y,
@@ -34,12 +34,12 @@ class Nature {
     this.active = true;
   }
 
-  //Preloading images of nature elements
+  //Preloading images of nature elements (thorns, rocks,cave and magic petal)
   preload() {
     this.image.preload();
   }
 
-  //Moving the nature elements
+  //Moving the nature elements (thorns, rocks,cave and magic petal)
   move() {}
 
   //Making nature elements bigger based on screams
@@ -79,6 +79,6 @@ class Nature {
     pop();
   }
 
-  //Displaying the nature elements for level 2
+  //Displaying the nature elements (thorns, rocks,cave and magic petal) for level 2
   display() {}
 }

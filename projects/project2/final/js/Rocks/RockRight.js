@@ -2,6 +2,7 @@ class RockRight extends Nature {
   //Creating the right side rock for the second level
   constructor(rockImage, mic, alpha) {
     super(rockImage, alpha);
+
     this.x = undefined;
     this.y = undefined;
     this.maxWidth = 600;

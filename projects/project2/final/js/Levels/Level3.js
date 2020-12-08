@@ -2,11 +2,17 @@ class Level3 extends State {
   //Creating level 3 elements
   constructor() {
     super();
+
+    //Naming level
     this.name = "Level3";
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
+
+    //Creating user
     this.user = new User();
+
+    //Crating leaves and red petals array
     this.plants = [];
 
     //Creating the magic petal
@@ -64,6 +70,8 @@ class Level3 extends State {
   //Setting level 3
   draw() {
     super.draw();
+
+    //Creating the background
     background(75, 35, 25);
     push();
 
@@ -93,13 +101,17 @@ class Level3 extends State {
     }
 
     //Displaying the elements
+
+    //Displaying user
     this.user.display();
 
+    //Dispaying magic petal if active
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.display();
     }
 
+    //Displaying the leaves and red petals
     for (let i = 0; i < this.plants.length; i++) {
       let plant = this.plants[i];
       plant.move();

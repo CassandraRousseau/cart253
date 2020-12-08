@@ -3,11 +3,17 @@ class Level5 extends State {
   constructor() {
     super();
 
+    //Naming level
     this.name = "Level5";
+
+    //Creating castle background
     this.castle = new Castle(windowWidth, windowHeight, castleImage);
+
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
+
+    //Creating user
     this.user = new User();
 
     //Creating the magic petal
@@ -17,6 +23,7 @@ class Level5 extends State {
     this.magicPetal = new MagicPetal5(x, y, magicPetalImage);
     pop();
   }
+
   //Preloading necessary images for level 5
   preload() {
     super.preload();
@@ -28,7 +35,10 @@ class Level5 extends State {
   draw() {
     super.draw();
     push();
+
+    //Displaying castle background
     this.castle.display();
+
     //Setting the timer
     let timerResult = this.timer.timeCheck(
       "Level5",
@@ -55,12 +65,17 @@ class Level5 extends State {
     }
 
     //Displaying the elements
-    this.user.display();
+
+    //Displaying magic petal if active
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.display();
     }
+
+    //Displaying user
+    this.user.display();
   }
+
   //Setting the mousePressed method for the interactivity in the level
   mousePressed() {
     super.mousePressed();

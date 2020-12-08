@@ -2,6 +2,7 @@ class ThornLeft extends Nature {
   //Creating the left side thorn for the second level
   constructor(thornImage, mic, alpha) {
     super(thornImage, mic, alpha);
+
     this.x = undefined;
     this.y = undefined;
     this.angle = 275;

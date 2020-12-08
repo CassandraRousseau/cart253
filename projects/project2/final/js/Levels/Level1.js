@@ -3,7 +3,10 @@ class Level1 extends State {
   constructor() {
     super();
 
+    //Naming level
     this.name = "Level1";
+
+    //Creating thee sky background
     this.sky = new Sky(windowWidth, windowHeight, skyImage);
 
     //Creating timer
@@ -13,30 +16,31 @@ class Level1 extends State {
     this.plants = [];
 
     //Creating the magic petal
-    push();
+    for (let i = 0; i < numMagicPetals; i++) {
+      let x = random(0, width);
 
-    let x = random(0, width);
+      let y = random(0, height);
 
-    let y = random(0, height);
+      let angle = random(0, 360);
 
-    let angle = random(0, 360);
+      let speed = random(5, 10);
 
-    let speed = random(5, 10);
+      let vx = random(3, 8);
 
-    let vx = random(3, 8);
+      let vy = random(3, 6);
 
-    let vy = random(3, 6);
+      this.magicPetal = new MagicPetal1(
+        x,
+        y,
+        vx,
+        vy,
+        speed,
+        angle,
+        magicPetalImage
+      );
 
-    this.magicPetal = new MagicPetal1(
-      x,
-      y,
-      vx,
-      vy,
-      speed,
-      angle,
-      magicPetalImage
-    );
-    pop();
+      this.plants.push(this.magicPetal);
+    }
 
     //Creating the red petals
     for (let i = 0; i < numRedPetals1; i++) {
@@ -118,20 +122,20 @@ class Level1 extends State {
     }
 
     //Displaying the elements
-    this.user.display();
 
-    if (this.magicPetal.active) {
-      this.magicPetal.move();
-      this.magicPetal.wrap();
-      this.magicPetal.display();
-    }
+    //Displaying the first magic petal
 
+    //Displaying the leaves and red petals
     for (let i = 0; i < this.plants.length; i++) {
       let plant = this.plants[i];
-      plant.move();
-      plant.wrap();
-      plant.display();
+      if (this.magicPetal.active) {
+        plant.move();
+        plant.wrap();
+        plant.display();
+      }
     }
+    //Displaying the user
+    this.user.display();
     pop();
   }
 

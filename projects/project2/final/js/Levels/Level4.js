@@ -9,13 +9,13 @@ class Level4 extends State {
     //Creating microphone
     this.mic = mic;
 
+    //Creating the lake background
     this.water = new Water(windowWidth, windowHeight, waterImage);
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
 
     //Creating user circle
-
     this.user = new User();
 
     //Creating parts of magic petal array
@@ -23,6 +23,7 @@ class Level4 extends State {
 
     //Creating the magic petal
     this.magicPetal = new MagicPetal4(magicPetalImage, this.mic);
+
     //Creating the bottom left piece of magic petal
     for (let i = 0; i < numMagicPetalBottomLeft; i++) {
       let magicPetalBottomLeft = new MagicPetalBottomLeft(
@@ -74,6 +75,8 @@ class Level4 extends State {
   draw() {
     super.draw();
     push();
+
+    //Setting lake background
     this.water.display();
 
     //Setting the timer
@@ -103,19 +106,23 @@ class Level4 extends State {
 
     //Displaying the elements
 
+    //Displaying full magic petal if active
     if (this.magicPetal.active) {
       this.magicPetal.move();
       this.magicPetal.display();
     }
-    //Displaying nature elements
+
+    //Displaying pieces of magic petal
     for (let i = 0; i < this.magicPetals.length; i++) {
       let pieces = this.magicPetals[i];
 
-      //Displaying them only if magicPetal is active
+      //Displaying them only if they are active
       pieces.move();
       pieces.transparency();
       pieces.display();
     }
+
+    //Displaying user
     this.user.display();
     pop();
   }

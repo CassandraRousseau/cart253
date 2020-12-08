@@ -1,5 +1,5 @@
 class ChapterFour0 extends State {
-  //Creating the Chapter Four title screen
+  //Creating Chapter Four title screen
   constructor() {
     super();
     this.name = "ChapterFour0";
@@ -7,13 +7,13 @@ class ChapterFour0 extends State {
     this.subtitle5 = ["Real Identity", "Press Enter"];
   }
 
-  //Setting the Chapter Four title screen
+  //Setting Chapter Four title screen
   draw() {
     super.draw();
     this.display();
   }
 
-  //Displaying the Chapter Four title screen
+  //Displaying Chapter Four title screen
   display() {
     push();
     background(255);
