@@ -39,7 +39,7 @@ let scream;
 
 let screaming = false;
 
-let screamThreshold = 0.1;
+let screamThreshold = 0.05;
 
 let clap;
 
@@ -53,13 +53,13 @@ let clapping4 = false;
 
 let clapping5 = false;
 
-let clapThreshold1 = 0.1;
+let clapThreshold1 = 0.2;
 
-let clapThreshold2 = 0.2;
+let clapThreshold2 = 0.25;
 
-let clapThreshold3 = 0.25;
+let clapThreshold3 = 0.3;
 
-let clapThreshold4 = 0.3;
+let clapThreshold4 = 0.35;
 
 let clapThreshold5 = 0.4;
 
@@ -247,7 +247,7 @@ function setup() {
   mic.start();
 
   //Setting the first state
-  let title = new ChapterFour0();
+  let title = new Note();
   currentState = title;
 }
 
@@ -277,7 +277,6 @@ function draw() {
   } else if (clap > clapThreshold5 && !clapping5) {
     clapping5 = true;
   }
-  console.log(clap, clapping1, clapping2, clapping3, clapping4, clapping5);
 }
 
 //Setting all mouse inputs for each states
