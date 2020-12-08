@@ -1,11 +1,11 @@
-class MagicPetalDownRight extends MagicPetal {
+class MagicPetalBottomRight extends MagicPetal {
   //Creating the part of magic petal in level 4 at the bottom right of the canvas
-  constructor(magicPetalDownRightImage, mic, alpha) {
-    super(magicPetalDownRightImage, mic, alpha);
+  constructor(magicPetalBottomRightImage, mic, alpha) {
+    super(magicPetalBottomRightImage, mic, alpha);
     this.x = width;
     this.y = height;
     this.movingSpeed = 0.25;
-    this.image = magicPetalDownRightImage;
+    this.image = magicPetalBottomRightImage;
     this.mic = mic;
   }
 
@@ -44,7 +44,7 @@ class MagicPetalDownRight extends MagicPetal {
     if (this.state === "running") {
       imageMode(CENTER);
       tint(255, 255, 255, this.alpha);
-      image(magicPetalDownRightImage, this.x, this.y, this.w, this.h);
+      image(magicPetalBottomRightImage, this.x, this.y, this.w, this.h);
     }
     pop();
   }

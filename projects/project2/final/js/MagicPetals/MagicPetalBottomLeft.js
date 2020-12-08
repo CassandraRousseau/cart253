@@ -1,22 +1,22 @@
-class MagicPetalUpLeft extends MagicPetal {
-  //Creating the part of magic petal in level 4 at the upper left of the canvas
-  constructor(magicPetalUpLeftImage, mic, alpha) {
-    super(magicPetalUpLeftImage, mic, alpha);
+class MagicPetalBottomLeft extends MagicPetal {
+  //Creating the part of magic petal in level 4 at the bottom left of the canvas
+  constructor(magicPetalBottomLeftImage, mic, alpha) {
+    super(magicPetalBottomLeftImage, mic, alpha);
     this.x = 0;
-    this.y = 0;
+    this.y = height;
     this.movingSpeed = 0.25;
-    this.image = magicPetalUpLeftImage;
+    this.image = magicPetalBottomLeftImage;
     this.mic = mic;
   }
 
-  //Setting the part of magic petal in level 4 at the upper left of the canvas
+  //Setting the part of magic petal in level 4 at the bottom left of the canvas
   move() {
     super.move();
     push();
     // Check if magic petal is  moving based on screams
     //**Assistance from the instructor Pippin to create the movement based on claps
     //and the moment where and when the part of magic petal stops moving**
-    if (clapping1) {
+    if (clapping3) {
       this.state = "running";
       this.vx += this.movingSpeed;
       this.vy += this.movingSpeed;
@@ -24,7 +24,7 @@ class MagicPetalUpLeft extends MagicPetal {
       this.state = "still";
     }
     //Setting when magic petal stops moving
-    if (this.x >= width / 2 && this.y >= height / 2) {
+    if (this.x >= width / 2 && this.y <= height / 2) {
       this.vx = this.stop;
       this.vy = this.stop;
       this.x = width / 2;
@@ -32,7 +32,7 @@ class MagicPetalUpLeft extends MagicPetal {
     }
     //Setting magic petal movements
     this.x += this.vx;
-    this.y += this.vy;
+    this.y -= this.vy;
     pop();
   }
 
@@ -44,7 +44,7 @@ class MagicPetalUpLeft extends MagicPetal {
     if (this.state === "running") {
       imageMode(CENTER);
       tint(255, 255, 255, this.alpha);
-      image(magicPetalUpLeftImage, this.x, this.y, this.w, this.h);
+      image(magicPetalBottomLeftImage, this.x, this.y, this.w, this.h);
     }
     pop();
   }

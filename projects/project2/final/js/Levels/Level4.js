@@ -23,50 +23,50 @@ class Level4 extends State {
 
     //Creating the magic petal
     this.magicPetal = new MagicPetal4(magicPetalImage, this.mic);
-    //Creating the left side rock
-    for (let i = 0; i < numMagicPetalDownLeft; i++) {
-      let magicPetalDownLeft = new MagicPetalDownLeft(
-        magicPetalDownLeftImage,
+    //Creating the bottom left piece of magic petal
+    for (let i = 0; i < numMagicPetalBottomLeft; i++) {
+      let magicPetalBottomLeft = new MagicPetalBottomLeft(
+        magicPetalBottomLeftImage,
         this.mic
       );
-      this.magicPetals.push(magicPetalDownLeft);
+      this.magicPetals.push(magicPetalBottomLeft);
     }
 
-    //Creating the right side rock
-    for (let i = 0; i < numMagicPetalDownRight; i++) {
-      let magicPetalDownRight = new MagicPetalDownRight(
-        magicPetalDownRightImage,
+    //Creating the bottom right piece of magic petal
+    for (let i = 0; i < numMagicPetalBottomRight; i++) {
+      let magicPetalBottomRight = new MagicPetalBottomRight(
+        magicPetalBottomRightImage,
         this.mic
       );
-      this.magicPetals.push(magicPetalDownRight);
+      this.magicPetals.push(magicPetalBottomRight);
     }
 
-    //Creating the left side thorn
-    for (let i = 0; i < numMagicPetalUpLeft; i++) {
-      let magicPetalUpLeft = new MagicPetalUpLeft(
-        magicPetalUpLeftImage,
+    //Creating the top left piece of magic petal
+    for (let i = 0; i < numMagicPetalTopLeft; i++) {
+      let magicPetalTopLeft = new MagicPetalTopLeft(
+        magicPetalTopLeftImage,
         this.mic
       );
-      this.magicPetals.push(magicPetalUpLeft);
+      this.magicPetals.push(magicPetalTopLeft);
     }
 
-    //Creating the right side thorn
-    for (let i = 0; i < numMagicPetalUpRight; i++) {
-      let magicPetalUpRight = new MagicPetalUpRight(
-        magicPetalUpRightImage,
+    //Creating the top right piece of magic petal
+    for (let i = 0; i < numMagicPetalTopRight; i++) {
+      let magicPetalTopRight = new MagicPetalTopRight(
+        magicPetalTopRightImage,
         this.mic
       );
-      this.magicPetals.push(magicPetalUpRight);
+      this.magicPetals.push(magicPetalTopRight);
     }
   }
 
   //Preloading necessary images for level
   preload() {
     super.preload();
-    this.magicPetalUpRight.preload();
-    this.magicPetalUpLeft.preload();
-    this.magicPetalDownRight.preload();
-    this.magicPetalDownLeft.preload();
+    this.magicPetalTopRight.preload();
+    this.magicPetalTopLeft.preload();
+    this.magicPetalBottomRight.preload();
+    this.magicPetalBottomLeft.preload();
     this.magicPetal.preload();
   }
 
@@ -109,12 +109,12 @@ class Level4 extends State {
     }
     //Displaying nature elements
     for (let i = 0; i < this.magicPetals.length; i++) {
-      let parts = this.magicPetals[i];
+      let pieces = this.magicPetals[i];
 
       //Displaying them only if magicPetal is active
-      parts.move();
-      parts.transparency();
-      parts.display();
+      pieces.move();
+      pieces.transparency();
+      pieces.display();
     }
     this.user.display();
     pop();
