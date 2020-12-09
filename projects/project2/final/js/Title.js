@@ -28,7 +28,7 @@ class Title extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
-    textSize(140);
+    textSize(175);
     textAlign(CENTER, CENTER);
     text(this.titleString, width / 2, height / 2);
 
