@@ -26,8 +26,8 @@ class DeathEnding extends State {
   display() {
     push();
     image(this.image, this.x, this.y, this.width, this.height);
-    textSize(85);
-    text(this.over, width / 12, (4 * height) / 6, windowWidth, windowHeight);
+    textSize(100);
+    text(this.over, width / 8, (4 * height) / 6);
 
     //Adding how user changes the state
     push();
