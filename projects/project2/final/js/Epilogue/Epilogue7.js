@@ -7,7 +7,11 @@ class Epilogue7 extends State {
     this.width = w;
     this.height = h;
     this.image = smileImage;
+
+    //Naming state
     this.name = "Epilogue7";
+
+    //Creating last cutscene dialog of the game
     this.dialog18 = [
       "Tada!",
       "Now you will be able to live your life as a human being",
@@ -38,6 +42,7 @@ class Epilogue7 extends State {
     textSize(70);
     textAlign(CENTER, TOP);
 
+    //Displaying last cutscene dialog of the game
     let dialog = this.dialog18[currentLine];
     text(dialog, 0, 10, windowWidth, windowHeight);
     pop();
@@ -47,9 +52,12 @@ class Epilogue7 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       location.reload();
     }
+
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

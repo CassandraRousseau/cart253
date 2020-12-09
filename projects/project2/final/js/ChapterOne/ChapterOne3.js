@@ -2,8 +2,11 @@ class ChapterOne3 extends State {
   //Creating the third cutscene of Chapter One
   constructor(w, h, mythImage) {
     super(w, h, mythImage);
+
+    //Naming state
     this.name = "ChapterOne3";
 
+    //Creating third cutscene dialog of Chapter One
     this.dialog7 = [
       "'A myth tells that five magic petals exist in the forest'",
       "'These five magic petals can cure any disease or curse!'",
@@ -38,6 +41,7 @@ class ChapterOne3 extends State {
     textSize(60);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying third cutscene dialog of Chapter One
     let dialog = this.dialog7[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
   }
@@ -46,10 +50,12 @@ class ChapterOne3 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterOne4(windowWidth, windowHeight, pathImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

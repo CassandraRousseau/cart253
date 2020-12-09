@@ -26,6 +26,8 @@ class Epilogue2 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
+
+    //Adding how user changes the state
     textSize(60);
     textAlign(CENTER, CENTER);
     text("Press Enter", width / 2, (7 * height) / 8);
@@ -36,6 +38,7 @@ class Epilogue2 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Epilogue3(windowWidth, windowHeight, unconsciousImage);
     }

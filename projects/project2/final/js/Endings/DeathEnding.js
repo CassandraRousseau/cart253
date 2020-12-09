@@ -28,6 +28,8 @@ class DeathEnding extends State {
     image(this.image, this.x, this.y, this.width, this.height);
     textSize(85);
     text(this.over, width / 12, (4 * height) / 6, windowWidth, windowHeight);
+
+    //Adding how user changes the state
     push();
     textSize(55);
     text("Press Enter", width / 12, (6 * height) / 7);
@@ -39,6 +41,7 @@ class DeathEnding extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       location.reload();
     }

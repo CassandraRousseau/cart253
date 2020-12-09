@@ -1,8 +1,12 @@
 class ChapterFour2 extends State {
-  //Creating the psecond cutscene of Chapter Four
+  //Creating the second cutscene of Chapter Four
   constructor(w, h, doctorImage) {
     super(w, h, doctorImage);
+
+    //Naming state
     this.name = "ChapterFour2";
+
+    //Creating second cutscene dialog of Chapter Four
     this.dialog11 = [
       "'Madam, during your pregnancy, have you ever touch or pick some roses in the area?'",
       "'Uh...yes..One time while I was walking in the village...'",
@@ -41,6 +45,7 @@ class ChapterFour2 extends State {
     textSize(60);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying second cutscene dialog of Chapter Four
     let dialog = this.dialog11[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -50,10 +55,12 @@ class ChapterFour2 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterFour3(windowWidth, windowHeight, monsterImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

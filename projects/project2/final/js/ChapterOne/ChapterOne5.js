@@ -2,8 +2,11 @@ class ChapterOne5 extends State {
   //Creating the fifth cutscene of Chapter One
   constructor(w, h, beginningImage) {
     super(w, h, beginningImage);
+
+    //Naming state
     this.name = "ChapterOne5";
 
+    //Creating fifth cutscene dialog of Chapter One
     this.dialog9 = [
       "And it was a this moment that the little girl started her perilous journey...",
       "Press Enter",
@@ -36,6 +39,7 @@ class ChapterOne5 extends State {
     textSize(60);
     textAlign(CENTER, TOP);
 
+    //Displaying fifth cutscene dialog of Chapter One
     let dialog = this.dialog9[currentLine];
     text(dialog, 0, 125, windowWidth, windowHeight);
   }
@@ -44,10 +48,12 @@ class ChapterOne5 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Instructions1();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

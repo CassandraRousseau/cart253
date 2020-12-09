@@ -2,6 +2,8 @@ class Instructions5 extends State {
   //Creating instructions screen for the fifth level
   constructor() {
     super();
+
+    //Creating the text of instructions 4
     this.intro =
       "Search for the magic petal in the castle.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
@@ -26,6 +28,7 @@ class Instructions5 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Level5();
     }

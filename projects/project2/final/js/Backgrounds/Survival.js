@@ -19,6 +19,7 @@ class Survival {
     // Choose random velocities within the "speed limit"
     this.vx = random(-this.speed, this.speed);
 
+    //Setting background movements
     this.x += this.vx;
     this.y += this.vy;
   }

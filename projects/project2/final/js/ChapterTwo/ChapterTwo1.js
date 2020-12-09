@@ -26,6 +26,8 @@ class ChapterTwo1 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
+
+    //Adding how user changes the state
     textSize(55);
     textAlign(RIGHT, CENTER);
     text("Press Enter", width / 2, (5 * height) / 6);
@@ -36,6 +38,7 @@ class ChapterTwo1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterTwo2(windowWidth, windowHeight, holeImage);
     }

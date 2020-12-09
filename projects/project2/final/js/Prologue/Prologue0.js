@@ -2,13 +2,14 @@ class Prologue0 extends State {
   //Creating the Prologue title screen
   constructor() {
     super();
+
     //Naming state
     this.name = "Prologue0";
 
-    //Creating title of prologue
+    //Creating prologue title
     this.titleString2 = "Prologue";
 
-    //Creating subtitle of prologue
+    //Creating prologue subtitle
     this.subtitle1 = [
       "To read the text, press Spacebar",
       "To turn a page,press Enter",

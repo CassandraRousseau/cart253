@@ -28,6 +28,8 @@ class Epilogue6 extends State {
     background(this.image);
     textSize(55);
     textAlign(CENTER, TOP);
+
+    //Adding how user changes the state
     text("Press Enter", width / 2, 10);
     pop();
   }
@@ -36,6 +38,7 @@ class Epilogue6 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Epilogue7(windowWidth, windowHeight, smileImage);
     }

@@ -36,6 +36,7 @@ class ChapterFive3 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Instructions5();
     }

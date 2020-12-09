@@ -7,7 +7,11 @@ class Epilogue3 extends State {
     this.width = w;
     this.height = h;
     this.image = unconsciousImage;
+
+    //Naming state
     this.name = "Epilogue3";
+
+    //Creating third cutscene dialog of Epilogue
     this.dialog15 = [
       "I think it will be unconscious for a while",
       "I will solve this case later",
@@ -35,6 +39,7 @@ class Epilogue3 extends State {
     textSize(60);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying third cutscene dialog of Epilogue
     let dialog = this.dialog15[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -44,9 +49,12 @@ class Epilogue3 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Epilogue4(windowWidth, windowHeight, fleeImage);
     }
+
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

@@ -7,7 +7,11 @@ class Epilogue5 extends State {
     this.width = w;
     this.height = h;
     this.image = meetingImage;
+
+    //Naming state
     this.name = "Epilogue5";
+
+    //Creating fifth cutscene dialog of Epilogue
     this.dialog17 = [
       "As you probably see",
       "I am the mage living in this castle",
@@ -49,6 +53,7 @@ class Epilogue5 extends State {
     fill(0);
     textAlign(CENTER, TOP);
 
+    //Displaying fifth cutscene dialog of Epilogue
     let dialog = this.dialog17[currentLine];
     text(dialog, 0, 50, windowWidth, windowHeight);
     pop();
@@ -58,9 +63,12 @@ class Epilogue5 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Epilogue6(windowWidth, windowHeight, girlImage);
     }
+
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

@@ -2,8 +2,11 @@ class ChapterOne1 extends State {
   //Creating the first cutscene of Chapter One
   constructor() {
     super();
+
+    //Naming state
     this.name = "ChapterOne1";
 
+    //Creating first cutscene dialog of Chapter One
     this.dialog5 = [
       "The little girl,",
       "Feeling more and more powerless each day,",
@@ -25,6 +28,7 @@ class ChapterOne1 extends State {
     textSize(100);
     textAlign(CENTER, CENTER);
 
+    //Displaying first cutscene dialog of Chapter One
     let dialog = this.dialog5[currentLine];
     text(dialog, 10, 50, windowWidth, windowHeight);
   }
@@ -33,10 +37,12 @@ class ChapterOne1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterOne2(windowWidth, windowHeight, encounterImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

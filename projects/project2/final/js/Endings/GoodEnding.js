@@ -31,6 +31,7 @@ class GoodEnding extends State {
     textAlign(LEFT, TOP);
     text(this.goodJob, 10, 50, windowWidth, windowHeight);
 
+    //Adding how user changes the state
     push();
     textSize(50);
     text("Press Enter", width / 2, (2 * height) / 3);
@@ -43,6 +44,8 @@ class GoodEnding extends State {
     super.keyPressed();
     //**Assistance from the instructor Pippin to know how to create a common state after each level and how to call
     //a previous state**
+
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       if (this.nextScene === 2) {
         currentState = new ChapterTwo0();

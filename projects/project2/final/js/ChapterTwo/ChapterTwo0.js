@@ -2,8 +2,14 @@ class ChapterTwo0 extends State {
   //Creating the Chapter Two title screen
   constructor() {
     super();
+
+    //Naming state
     this.name = "ChapterTwo0";
+
+    //Creating Chapter Two title
     this.titleString4 = "Chapter Two";
+
+    //Creating Chapter Two subtitle
     this.subtitle3 = ["The Cave", "Press Enter"];
   }
 
@@ -21,6 +27,7 @@ class ChapterTwo0 extends State {
     textAlign(CENTER, CENTER);
     text(this.titleString4, width / 2, height / 2);
 
+    //Displaying Chapter Two subtitle
     push();
     textSize(55);
     let subtitle = this.subtitle3[currentLine];
@@ -33,10 +40,12 @@ class ChapterTwo0 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterTwo1(windowWidth, windowHeight, lookingImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

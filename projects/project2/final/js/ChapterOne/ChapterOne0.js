@@ -2,8 +2,14 @@ class ChapterOne0 extends State {
   //Creating the Chapter One title screen
   constructor() {
     super();
+
+    //Naming state
     this.name = "ChapterOne0";
+
+    //Creating Chapter One title
     this.titleString3 = "Chapter One";
+
+    //Creating Chapter One subtitle
     this.subtitle2 = ["The Encounter", "Press Enter"];
   }
 
@@ -34,10 +40,12 @@ class ChapterOne0 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterOne1();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

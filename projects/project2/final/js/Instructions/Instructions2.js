@@ -2,6 +2,8 @@ class Instructions2 extends State {
   //Creating instructions screen for the second level
   constructor() {
     super();
+
+    //Creating the text of instructions 2
     this.intro2 =
       "Scream until you reach the magic petal.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
@@ -26,6 +28,7 @@ class Instructions2 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Level2();
     }

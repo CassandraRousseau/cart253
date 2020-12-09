@@ -1,5 +1,5 @@
 class Cave extends Nature {
-  //Creating the cave for level2
+  //Creating the cave background for level2
   constructor(caveImage, mic) {
     super(caveImage, mic);
     this.x = width / 2;

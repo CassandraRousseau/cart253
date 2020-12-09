@@ -2,8 +2,14 @@ class ChapterFive0 extends State {
   //Creating the Chapter Five title screen
   constructor() {
     super();
+
+    //Naming state
     this.name = "ChapterFive0";
+
+    //Creating Chapter Five title
     this.titleString5 = "Chapter Five";
+
+    //Creating Chapter Five subtitle
     this.subtitle4 = ["Final destination", "Press Enter"];
   }
 
@@ -33,6 +39,7 @@ class ChapterFive0 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterFive1(
         windowWidth,
@@ -41,6 +48,7 @@ class ChapterFive0 extends State {
       );
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

@@ -32,6 +32,8 @@ class BadEnding extends State {
     text(this.over, 10, (2 * height) / 6, windowWidth, windowHeight);
     push();
     textSize(50);
+
+    //Adding how user changes the state
     text("Press Enter to restart", 10, (3 * height) / 6);
     pop();
     pop();
@@ -41,6 +43,7 @@ class BadEnding extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       if (this.nextScene === 2) {
         currentState = new ChapterOne0();

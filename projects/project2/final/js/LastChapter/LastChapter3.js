@@ -26,6 +26,8 @@ class LastChapter3 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
+
+    //Added how user changes the state
     textSize(170);
     textAlign(CENTER, CENTER);
     text("'THIS IS THE END!!!'", width / 2, height / 2);
@@ -37,6 +39,7 @@ class LastChapter3 extends State {
     super.keyPressed();
 
     if (keyCode === 13) {
+      //Changes state by pressing enter key
       currentState = new LastLevel();
     }
   }

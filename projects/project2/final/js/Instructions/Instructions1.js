@@ -2,6 +2,8 @@ class Instructions1 extends State {
   //Creating instructions screen for the first level
   constructor() {
     super();
+
+    //Creating the text of instructions 1
     this.intro =
       "Find and catch the magic petal through the wind.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
@@ -26,6 +28,7 @@ class Instructions1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Level1();
     }

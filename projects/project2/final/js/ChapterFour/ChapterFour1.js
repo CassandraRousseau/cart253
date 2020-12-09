@@ -2,7 +2,11 @@ class ChapterFour1 extends State {
   //Creating the first cutscene of Chapter Four
   constructor(w, h, visitImage) {
     super(w, h, visitImage);
+
+    //Naming state
     this.name = "ChapterFour1";
+
+    //Creating first cutscene dialog of Chapter Four
     this.dialog10 = [
       "'Doctor, what kind of disease our child has?'",
       "'Unfortunately..'",
@@ -39,6 +43,7 @@ class ChapterFour1 extends State {
     textSize(60);
     textAlign(CENTER, TOP);
 
+    //Displaying first cutscene dialog of Chapter Four
     let dialog = this.dialog10[currentLine];
     text(dialog, 0, 50, windowWidth, windowHeight);
     pop();
@@ -48,10 +53,12 @@ class ChapterFour1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterFour2(windowWidth, windowHeight, doctorImage);
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

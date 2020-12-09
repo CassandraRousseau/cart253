@@ -7,7 +7,11 @@ class Epilogue4 extends State {
     this.width = w;
     this.height = h;
     this.image = fleeImage;
+
+    //Naming state
     this.name = "Epilogue4";
+
+    //Creating fourth cutscene dialog of Epilogue
     this.dialog16 = ["We have to go", "Press Enter"];
   }
 
@@ -31,6 +35,7 @@ class Epilogue4 extends State {
     textSize(60);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying fourth cutscene dialog of Epilogue
     let dialog = this.dialog16[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -40,9 +45,12 @@ class Epilogue4 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Epilogue5(windowWidth, windowHeight, meetingImage);
     }
+
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

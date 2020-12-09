@@ -6,7 +6,7 @@ class Level1 extends State {
     //Naming level
     this.name = "Level1";
 
-    //Creating thee sky background
+    //Creating the sky background
     this.sky = new Sky(windowWidth, windowHeight, skyImage);
 
     //Creating timer

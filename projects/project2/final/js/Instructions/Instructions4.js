@@ -2,6 +2,8 @@ class Instructions4 extends State {
   //Creating instructions screen for the fourth level
   constructor() {
     super();
+
+    //Creating the text of instructions 4
     this.intro =
       "Clap your hands five times to assemble the magic petal.\n\nClick with your mouse to catch the petal.\n\nCollect the magic petal before it's too late!";
   }
@@ -26,6 +28,7 @@ class Instructions4 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Level4();
     }

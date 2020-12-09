@@ -11,7 +11,7 @@ class Leaf1 extends Plant {
     this.image = leafImage;
   }
 
-  //Displaying t the leaves for the first level
+  //Displaying the leaves for the first level
   display() {
     super.display();
     push();

@@ -2,6 +2,8 @@ class ChapterFour6 extends State {
   //Creating the sixth cutscene of Chapter Four
   constructor(w, h, lakeImage) {
     super(w, h, lakeImage);
+
+    //Naming state
     this.name = "ChapterFour6";
     this.x = 0;
     this.y = 0;
@@ -27,8 +29,9 @@ class ChapterFour6 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
+
+    //Adding how user changes the state
     textSize(55);
-    fill(0);
     textAlign(CENTER, BOTTOM);
     text("Press Enter", 0, 0, windowWidth, windowHeight);
     pop();
@@ -38,6 +41,7 @@ class ChapterFour6 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new Instructions4();
     }

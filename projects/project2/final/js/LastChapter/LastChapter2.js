@@ -7,7 +7,11 @@ class LastChapter2 extends State {
     this.width = w;
     this.height = h;
     this.image = evilImage;
+
+    //Naming state
     this.name = "LastChapter2";
+
+    //Creating second cutscene dialog of Last Chapter
     this.dialog14 = [
       "'Pretty surprising right?!?!'",
       "'You thought you will be the only one searching for this?'",
@@ -51,6 +55,7 @@ class LastChapter2 extends State {
     textSize(80);
     textAlign(CENTER, BOTTOM);
 
+    //Displaying second cutscene dialog of Last Chapter
     let dialog = this.dialog14[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -60,9 +65,12 @@ class LastChapter2 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new LastChapter3(windowWidth, windowHeight, surviveImage);
     }
+
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

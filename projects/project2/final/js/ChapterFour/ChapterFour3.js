@@ -2,7 +2,11 @@ class ChapterFour3 extends State {
   //Creating the third cutscene of Chapter Four
   constructor(w, h, monsterImage) {
     super(w, h, monsterImage);
+
+    //Naming state
     this.name = "ChapterFour3";
+
+    //Creating third cutscene dialog of Chapter Four
     this.dialog12 = ["'She will become..'", "'A monster...'", "Press Enter"];
     this.x = 0;
     this.y = 0;
@@ -31,6 +35,7 @@ class ChapterFour3 extends State {
     textSize(60);
     textAlign(RIGHT, BOTTOM);
 
+    //Displaying third cutscene dialog of Chapter Four
     let dialog = this.dialog12[currentLine];
     text(dialog, 0, 0, windowWidth, windowHeight);
     pop();
@@ -40,10 +45,12 @@ class ChapterFour3 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new ChapterFour4();
     }
 
+    //Changes line by pressing spacebar key
     if (keyCode === 32) {
       currentLine = currentLine + 1;
 

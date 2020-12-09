@@ -32,7 +32,7 @@ class Title extends State {
     textAlign(CENTER, CENTER);
     text(this.titleString, width / 2, height / 2);
 
-    //Added how user changes the state
+    //Adding how user changes the state
     push();
     textSize(50);
     text("Press Enter to start", width / 2, (5 * height) / 6);

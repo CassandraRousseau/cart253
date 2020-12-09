@@ -11,6 +11,7 @@ class Level4 extends State {
 
     //Creating the lake background
     this.water = new Water(windowWidth, windowHeight, waterImage);
+
     //Creating timer
     this.framecountSim = frameCount;
     this.timer = new Timer();
@@ -30,6 +31,7 @@ class Level4 extends State {
         magicPetalBottomLeftImage,
         this.mic
       );
+
       this.magicPetals.push(magicPetalBottomLeft);
     }
 
@@ -39,6 +41,7 @@ class Level4 extends State {
         magicPetalBottomRightImage,
         this.mic
       );
+
       this.magicPetals.push(magicPetalBottomRight);
     }
 
@@ -48,6 +51,7 @@ class Level4 extends State {
         magicPetalTopLeftImage,
         this.mic
       );
+
       this.magicPetals.push(magicPetalTopLeft);
     }
 
@@ -57,6 +61,7 @@ class Level4 extends State {
         magicPetalTopRightImage,
         this.mic
       );
+
       this.magicPetals.push(magicPetalTopRight);
     }
   }
@@ -110,7 +115,7 @@ class Level4 extends State {
     for (let i = 0; i < this.magicPetals.length; i++) {
       let pieces = this.magicPetals[i];
 
-      //Displaying them only if they are active
+      //Displaying the pieces of magic petal
       pieces.move();
       pieces.transparency();
       pieces.display();

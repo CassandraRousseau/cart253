@@ -26,6 +26,8 @@ class LastChapter1 extends State {
     push();
     image(this.image, this.x, this.y, this.w, this.h);
     background(this.image);
+
+    //Added how user changes the state
     textSize(55);
     textAlign(RIGHT, TOP);
     text("Press Enter", (5 * width) / 6, 50);
@@ -36,6 +38,7 @@ class LastChapter1 extends State {
   keyPressed() {
     super.keyPressed();
 
+    //Changes state by pressing enter key
     if (keyCode === 13) {
       currentState = new LastChapter2(windowWidth, windowHeight, evilImage);
     }
