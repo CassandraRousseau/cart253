@@ -13,8 +13,8 @@ class Epilogue3 extends State {
 
     //Creating third cutscene dialog of Epilogue
     this.dialog15 = [
-      "I think it will be unconscious for a while",
-      "I will solve this case later",
+      "'I think it will be unconscious for a while'",
+      "'I will solve this case later'",
       "Press Enter",
     ];
   }
