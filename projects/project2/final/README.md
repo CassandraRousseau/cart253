@@ -10,3 +10,5 @@ I think I succeeded in creating this immersive experience by separating the leve
 To create the interactive aspect of the game, users have to collect the magic petals through the eyes of the main character. We are accompanying the main character in her journey. Players are affecting the story by whether or not collecting the petals through the levels. The user collects them through various environments. I tried to create levels the most various as possible not to create repetitive and boring interactivity. From searching a petal by screaming into a cave, which makes the petal appear, to searching into a castle where the magic petal is hidden.
 
 I tried to build a progressive plot (i.e., like usual stories used to be) to grow the interest of the player more and more through the game. I tried to reveal bit-by-bit elements of the universe to not lose the interest of users.
+
+Checking if everything has transfered correctly in my new computer.
