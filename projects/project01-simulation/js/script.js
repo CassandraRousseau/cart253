@@ -14,7 +14,8 @@ let instructions =
 
 let bankrupt =
   "Coffeeccino goes bankrupt!\nYou will have to find another job...\nPress Spacebar to restart";
-
+let height = 1500;
+let width = 1500;
 let user = {
   x: 2500,
   y: 250,
@@ -143,7 +144,7 @@ let circle1 = {
 
 let circle2 = {
   x: 28,
-  y: 300,
+  y: height / 2,
   w: 35,
   h: 35,
   vx: 0,
@@ -160,7 +161,7 @@ let circle2 = {
 
 let circle3 = {
   x: -28,
-  y: 300,
+  y: height / 2,
   w: 35,
   h: 35,
   vx: 0,
@@ -177,7 +178,7 @@ let circle3 = {
 
 let circle4 = {
   x: 0,
-  y: 325,
+  y: height / 1.9,
   w: 30,
   h: 15,
   vx: 0,
@@ -194,7 +195,7 @@ let circle4 = {
 
 let circle5 = {
   x: 0,
-  y: 335,
+  y: height / 1.9,
   w: 70,
   h: 50,
   vx: 0,
@@ -209,26 +210,9 @@ let circle5 = {
   },
 };
 
-let rectangle1 = {
-  x: 0,
-  y: 355,
-  w: 25,
-  h: 30,
-  vx: 0,
-  vy: 0,
-  speed: 3,
-  strokeWeight: 3,
-  dragging: false,
-  stroke: {
-    r: 0,
-    g: 255,
-    b: 0,
-  },
-};
-
 let circle6 = {
-  x: -40,
-  y: 244,
+  x: -width / 55,
+  y: height / 2,
   w: 15,
   h: 30,
   vx: 0,
@@ -244,8 +228,8 @@ let circle6 = {
 };
 
 let circle7 = {
-  x: 40,
-  y: 244,
+  x: width / 55,
+  y: height / 2,
   w: 15,
   h: 30,
   vx: 0,
@@ -262,7 +246,7 @@ let circle7 = {
 
 let circle8 = {
   x: -40,
-  y: 235,
+  y: height / 2.23,
   w: 35,
   h: 45,
   vx: 0,
@@ -279,7 +263,7 @@ let circle8 = {
 
 let circle9 = {
   x: 40,
-  y: 235,
+  y: height / 2.23,
   w: 35,
   h: 45,
   vx: 0,
@@ -296,7 +280,7 @@ let circle9 = {
 
 let circle10 = {
   x: 33,
-  y: 300,
+  y: height / 2.05,
   w: 40,
   h: 15,
   vx: 0,
@@ -313,7 +297,7 @@ let circle10 = {
 
 let circle11 = {
   x: -33,
-  y: 300,
+  y: height / 2.05,
   w: 40,
   h: 15,
   vx: 0,
@@ -330,7 +314,7 @@ let circle11 = {
 
 let circle12 = {
   x: 64,
-  y: 250,
+  y: height / 2.2,
   w: 35,
   h: 35,
   vx: 0,
@@ -347,7 +331,7 @@ let circle12 = {
 
 let circle13 = {
   x: -64,
-  y: 250,
+  y: height / 2.2,
   w: 35,
   h: 35,
   vx: 0,
@@ -378,16 +362,32 @@ let circle14 = {
     b: 0,
   },
 };
+let rectangle1 = {
+  x: 0,
+  y: height / 1.85,
+  w: 25,
+  h: 30,
+  vx: 0,
+  vy: 0,
+  speed: 3,
+  strokeWeight: 3,
+  dragging: false,
+  stroke: {
+    r: 0,
+    g: 255,
+    b: 0,
+  },
+};
 
 let smile1 = {
   x1: -100,
-  y1: 250,
+  y1: height / 2.08,
   x2: -30,
-  y2: 350,
+  y2: height / 1.88,
   x3: 30,
-  y3: 350,
+  y3: height / 1.88,
   x4: 100,
-  y4: 250,
+  y4: height / 2.08,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -401,9 +401,9 @@ let smile1 = {
 
 let traitray1 = {
   x1: 0,
-  y1: 210,
+  y1: height / 2.33,
   x2: 0,
-  y2: 240,
+  y2: height / 2.23,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -417,9 +417,9 @@ let traitray1 = {
 
 let traitray2 = {
   x1: 0,
-  y1: 385,
+  y1: height / 1.82,
   x2: 0,
-  y2: 415,
+  y2: height / 1.75,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -433,9 +433,9 @@ let traitray2 = {
 
 let traitray3 = {
   x1: 73,
-  y1: 315,
+  y1: height / 2,
   x2: 100,
-  y2: 315,
+  y2: height / 2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -449,9 +449,9 @@ let traitray3 = {
 
 let traitray4 = {
   x1: -73,
-  y1: 315,
+  y1: height / 2,
   x2: -100,
-  y2: 315,
+  y2: height / 2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -465,9 +465,9 @@ let traitray4 = {
 
 let traitray5 = {
   x1: -70,
-  y1: 235,
+  y1: height / 1.82,
   x2: -50,
-  y2: 260,
+  y2: height / 1.88,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -481,9 +481,9 @@ let traitray5 = {
 
 let traitray6 = {
   x1: 70,
-  y1: 235,
+  y1: height / 1.82,
   x2: 50,
-  y2: 260,
+  y2: height / 1.88,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -497,9 +497,9 @@ let traitray6 = {
 
 let traitray7 = {
   x1: -70,
-  y1: 380,
+  y1: height / 2.2,
   x2: -50,
-  y2: 365,
+  y2: height / 2.15,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -513,9 +513,9 @@ let traitray7 = {
 
 let traitray8 = {
   x1: 70,
-  y1: 380,
+  y1: height / 2.2,
   x2: 50,
-  y2: 365,
+  y2: height / 2.15,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -529,9 +529,9 @@ let traitray8 = {
 
 let traitstick = {
   x1: 0,
-  y1: 300,
+  y1: height / 2,
   x2: 0,
-  y2: 400,
+  y2: height / 1.75,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -545,9 +545,9 @@ let traitstick = {
 
 let traitteeth = {
   x1: 0,
-  y1: 341,
+  y1: height / 1.88,
   x2: 0,
-  y2: 369,
+  y2: height / 1.82,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -561,11 +561,11 @@ let traitteeth = {
 
 let tri1 = {
   x1: 0,
-  y1: 340,
+  y1: height / 1.88,
   x2: 20,
-  y2: 370,
+  y2: height / 1.83,
   x3: -20,
-  y3: 370,
+  y3: height / 1.83,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -579,11 +579,11 @@ let tri1 = {
 
 let tri2 = {
   x1: -25,
-  y1: 330,
+  y1: height / 1.98,
   x2: 25,
-  y2: 330,
+  y2: height / 1.98,
   x3: 0,
-  y3: 370,
+  y3: height / 1.88,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -597,11 +597,11 @@ let tri2 = {
 
 let tri3 = {
   x1: 0,
-  y1: 230,
+  y1: height / 2.25,
   x2: 80,
-  y2: 300,
+  y2: height / 2,
   x3: -80,
-  y3: 300,
+  y3: height / 2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -615,11 +615,11 @@ let tri3 = {
 
 let tri4 = {
   x1: -55,
-  y1: 225,
+  y1: height / 2.3,
   x2: -60,
-  y2: 270,
+  y2: height / 2.11,
   x3: -30,
-  y3: 245,
+  y3: height / 2.2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -633,11 +633,11 @@ let tri4 = {
 
 let tri5 = {
   x1: 55,
-  y1: 225,
+  y1: height / 2.3,
   x2: 60,
-  y2: 270,
+  y2: height / 2.11,
   x3: 30,
-  y3: 245,
+  y3: height / 2.2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -650,10 +650,10 @@ let tri5 = {
 };
 
 let traitwhisker1 = {
-  x1: -20,
-  y1: 330,
-  x2: -85,
-  y2: 335,
+  x1: -width / 75,
+  y1: height / 1.9,
+  x2: -width / 20,
+  y2: height / 1.86,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -666,10 +666,10 @@ let traitwhisker1 = {
 };
 
 let traitwhisker2 = {
-  x1: -20,
-  y1: 340,
-  x2: -80,
-  y2: 365,
+  x1: -width / 75,
+  y1: height / 1.88,
+  x2: -width / 20,
+  y2: height / 1.82,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -682,10 +682,10 @@ let traitwhisker2 = {
 };
 
 let traitwhisker3 = {
-  x1: 20,
-  y1: 330,
-  x2: 85,
-  y2: 335,
+  x1: width / 75,
+  y1: height / 1.9,
+  x2: width / 20,
+  y2: height / 1.86,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -698,10 +698,10 @@ let traitwhisker3 = {
 };
 
 let traitwhisker4 = {
-  x1: 20,
-  y1: 340,
-  x2: 80,
-  y2: 365,
+  x1: width / 75,
+  y1: height / 1.88,
+  x2: width / 20,
+  y2: height / 1.82,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -744,7 +744,7 @@ function preload() {
 
 // Creating the canvas.
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1500, 1500);
 }
 
 //Setting the states of the game
@@ -1568,7 +1568,7 @@ function traitacceleration(trait) {
 function giveFeedback1() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1579,7 +1579,7 @@ function giveFeedback1() {
 function giveFeedback2() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1590,7 +1590,7 @@ function giveFeedback2() {
 function giveFeedback3() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1601,7 +1601,7 @@ function giveFeedback3() {
 function giveFeedback4() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1612,7 +1612,7 @@ function giveFeedback4() {
 function giveFeedback5() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1623,7 +1623,7 @@ function giveFeedback5() {
 function giveFeedback6() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
@@ -1634,7 +1634,7 @@ function giveFeedback6() {
 function giveFeedback7() {
   let r = random();
 
-  if (r < 0.8) {
+  if (r < 1) {
     mug.state = "leaving";
   } else {
     state = "closed";
