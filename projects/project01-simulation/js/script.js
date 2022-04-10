@@ -14,8 +14,8 @@ let instructions =
 
 let bankrupt =
   "Coffeeccino goes bankrupt!\nYou will have to find another job...\nPress Spacebar to restart";
-let height = 1500;
-let width = 1000;
+let height = 1000;
+let width = 1500;
 let user = {
   x: 2500,
   y: 250,
@@ -381,13 +381,13 @@ let rectangle1 = {
 
 let smile1 = {
   x1: -100,
-  y1: height / 2.08,
+  y1: height / 2.15,
   x2: -30,
-  y2: height / 1.88,
+  y2: height / 1.85,
   x3: 30,
-  y3: height / 1.88,
+  y3: height / 1.85,
   x4: 100,
-  y4: height / 2.08,
+  y4: height / 2.15,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -401,9 +401,9 @@ let smile1 = {
 
 let traitray1 = {
   x1: 0,
-  y1: height / 2.33,
+  y1: height / 2.5,
   x2: 0,
-  y2: height / 2.23,
+  y2: height / 2.3,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -417,7 +417,7 @@ let traitray1 = {
 
 let traitray2 = {
   x1: 0,
-  y1: height / 1.82,
+  y1: height / 1.65,
   x2: 0,
   y2: height / 1.75,
   vx: 0,
@@ -464,10 +464,10 @@ let traitray4 = {
 };
 
 let traitray5 = {
-  x1: -70,
-  y1: height / 1.82,
+  x1: -75,
+  y1: height / 1.75,
   x2: -50,
-  y2: height / 1.88,
+  y2: height / 1.85,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -481,9 +481,9 @@ let traitray5 = {
 
 let traitray6 = {
   x1: 70,
-  y1: height / 1.82,
+  y1: height / 1.75,
   x2: 50,
-  y2: height / 1.88,
+  y2: height /  1.85,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -496,10 +496,10 @@ let traitray6 = {
 };
 
 let traitray7 = {
-  x1: -70,
-  y1: height / 2.2,
+  x1: -75,
+  y1: height / 2.35,
   x2: -50,
-  y2: height / 2.15,
+  y2: height / 2.2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -512,10 +512,10 @@ let traitray7 = {
 };
 
 let traitray8 = {
-  x1: 70,
-  y1: height / 2.2,
+  x1: 75,
+  y1: height / 2.35,
   x2: 50,
-  y2: height / 2.15,
+  y2: height / 2.2,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -583,7 +583,7 @@ let tri2 = {
   x2: 25,
   y2: height / 1.98,
   x3: 0,
-  y3: height / 1.88,
+  y3: height / 1.83,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -597,7 +597,7 @@ let tri2 = {
 
 let tri3 = {
   x1: 0,
-  y1: height / 2.25,
+  y1: height / 2.35,
   x2: 80,
   y2: height / 2,
   x3: -80,
@@ -744,7 +744,7 @@ function preload() {
 
 // Creating the canvas.
 function setup() {
-  createCanvas(1500, 1500);
+  createCanvas(1500, 1000);
 }
 
 //Setting the states of the game
