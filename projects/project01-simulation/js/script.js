@@ -15,7 +15,7 @@ let instructions =
 let bankrupt =
   "Coffeeccino goes bankrupt!\nYou will have to find another job...\nPress Spacebar to restart";
 let height = 1500;
-let width = 1500;
+let width = 1000;
 let user = {
   x: 2500,
   y: 250,
