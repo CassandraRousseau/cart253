@@ -9,13 +9,13 @@ class ChapterOne2 extends State {
     //Creating second cutscene dialog of Chapter One
     this.dialog6 = [
       "One day,",
-      "She met an elderly",
-      "The elder, shocked to see the weak girl, asks:",
-      "'Poor Child! Why are you fragile?'",
-      "The little girl shows her fading rose and responds:",
-      "'I am ill madam, I need to find a solution to cure my disease...'",
-      "'Oh dear! I can help you!'",
-      "'But you have to be prepared, because the process might be dangerous'",
+      "She met an old woman",
+      "The elder, shocked to see this fragile girl, asked:",
+      "'Oh dear! Why do you look so pale???'",
+      "The little girl shows her fading rose and answers:",
+      "'I am ill madam, I need to find a remedy to cure my disease...'",
+      "'Oh my! I will help you!'",
+      "'But you have to be prepared, because the journey might be dangerous...'",
       "Press Enter",
     ];
 

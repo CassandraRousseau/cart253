@@ -8,9 +8,9 @@ class ChapterOne1 extends State {
 
     //Creating first cutscene dialog of Chapter One
     this.dialog5 = [
-      "The little girl,",
-      "Feeling more and more powerless each day,",
-      "Searched desesperately a way to heal herself.",
+      "Each day,",
+      "the poor child weakens...",
+      "She looked desesperately for a way to heal herself.",
       "Press Enter",
     ];
   }

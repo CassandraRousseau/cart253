@@ -37,8 +37,8 @@ let title;
 let timer;
 
 //Called microphone
-let mic;
-
+let micScream;
+let micClap;
 //Called screaming and clapping thresholds
 //**Asssitance from TA Samuel for screaming threshold
 let scream;
@@ -59,15 +59,15 @@ let clapping4 = false;
 
 let clapping5 = false;
 
-let clapThreshold1 = 0.2;
+let clapThreshold1 = 0.1;
 
-let clapThreshold2 = 0.25;
+let clapThreshold2 = 0.2;
 
 let clapThreshold3 = 0.3;
 
-let clapThreshold4 = 0.35;
+let clapThreshold4 = 0.4;
 
-let clapThreshold5 = 0.4;
+let clapThreshold5 = 0.5;
 
 //Called levels elements arrays
 let plants = [];
@@ -253,9 +253,10 @@ function setup() {
   noCursor();
 
   //Setting the microphone input
-  mic = new p5.AudioIn();
-  mic.start();
-
+  micScream = new p5.AudioIn();
+  micScream.start();
+  micClap = new p5.AudioIn();
+  micClap.start();
   //Setting the first state
   let title = new Note();
   currentState = title;
@@ -267,8 +268,8 @@ function draw() {
 
   //Setting how loud user's screams have to be during the level
   //Assistance from the TA Samuel to create the screaming threshold
-  scream = mic.getLevel();
-  clap = mic.getLevel();
+  scream = micScream.getLevel();
+  clap = micClap.getLevel();
   if (scream > screamThreshold) {
     screaming = true;
   } else {

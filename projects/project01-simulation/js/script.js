@@ -10,10 +10,10 @@ The user will win or lose randomly after each of his drawing.
 "use strict";
 
 let instructions =
-  "Hello new employee!\n\nWelcome to Coffeeccino!\nWe are glad to have you in our team!\nThis new cafe needs your talent to create succulent lattes!\n\nPress your mouse and drag it to make drawings on latte\nFollow the templates to create beautiful artworks!\nOnce you're done, press the spacebar to give the order to the customer.\n\nBe artsy, have fun and good luck!";
+  "Hello new employee!\n\nWelcome to Coffeeccino!\nWe are glad you joined our team!\nThis new cafe needs your talent to create succulent lattes!\n\nPress your mouse and drag it to make drawings on lattes\nFollow the templates to create beautiful artworks!\nOnce you're done, press spacebar to give the order to the customer.\n\nBe artsy, have fun and good luck!";
 
 let bankrupt =
-  "Coffeeccino goes bankrupt!\nYou will have to find another job...\nPress Spacebar to restart";
+  "Coffeeccino goes bankrupt!\nYou need to find another job...\nPress Spacebar to restart";
 let height = 1000;
 let width = 1500;
 let user = {
@@ -178,7 +178,7 @@ let circle3 = {
 
 let circle4 = {
   x: 0,
-  y: height / 1.9,
+  y: height / 1.85,
   w: 30,
   h: 15,
   vx: 0,
@@ -195,7 +195,7 @@ let circle4 = {
 
 let circle5 = {
   x: 0,
-  y: height / 1.9,
+  y: height / 1.85,
   w: 70,
   h: 50,
   vx: 0,
@@ -246,7 +246,7 @@ let circle7 = {
 
 let circle8 = {
   x: -40,
-  y: height / 2.23,
+  y: height / 2.37,
   w: 35,
   h: 45,
   vx: 0,
@@ -263,7 +263,7 @@ let circle8 = {
 
 let circle9 = {
   x: 40,
-  y: height / 2.23,
+  y: height / 2.37,
   w: 35,
   h: 45,
   vx: 0,
@@ -314,7 +314,7 @@ let circle11 = {
 
 let circle12 = {
   x: 64,
-  y: height / 2.2,
+  y: height / 2.3,
   w: 35,
   h: 35,
   vx: 0,
@@ -331,7 +331,7 @@ let circle12 = {
 
 let circle13 = {
   x: -64,
-  y: height / 2.2,
+  y: height / 2.3,
   w: 35,
   h: 35,
   vx: 0,
@@ -364,7 +364,7 @@ let circle14 = {
 };
 let rectangle1 = {
   x: 0,
-  y: height / 1.85,
+  y: height / 1.76,
   w: 25,
   h: 30,
   vx: 0,
@@ -545,9 +545,9 @@ let traitstick = {
 
 let traitteeth = {
   x1: 0,
-  y1: height / 1.88,
+  y1: height / 1.80,
   x2: 0,
-  y2: height / 1.82,
+  y2: height / 1.72,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -561,11 +561,11 @@ let traitteeth = {
 
 let tri1 = {
   x1: 0,
-  y1: height / 1.88,
+  y1: height / 1.82,
   x2: 20,
-  y2: height / 1.83,
+  y2: height / 1.77,
   x3: -20,
-  y3: height / 1.83,
+  y3: height / 1.77,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -615,11 +615,11 @@ let tri3 = {
 
 let tri4 = {
   x1: -55,
-  y1: height / 2.3,
+  y1: height / 2.45,
   x2: -60,
-  y2: height / 2.11,
+  y2: height / 2.20,
   x3: -30,
-  y3: height / 2.2,
+  y3: height / 2.30,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -633,11 +633,11 @@ let tri4 = {
 
 let tri5 = {
   x1: 55,
-  y1: height / 2.3,
+  y1: height / 2.45,
   x2: 60,
-  y2: height / 2.11,
+  y2: height / 2.20,
   x3: 30,
-  y3: height / 2.2,
+  y3: height / 2.30,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -651,9 +651,9 @@ let tri5 = {
 
 let traitwhisker1 = {
   x1: -width / 75,
-  y1: height / 1.9,
+  y1: height / 1.84,
   x2: -width / 20,
-  y2: height / 1.86,
+  y2: height / 1.78,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -667,9 +667,9 @@ let traitwhisker1 = {
 
 let traitwhisker2 = {
   x1: -width / 75,
-  y1: height / 1.88,
+  y1: height / 1.81,
   x2: -width / 20,
-  y2: height / 1.82,
+  y2: height / 1.75,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -683,9 +683,9 @@ let traitwhisker2 = {
 
 let traitwhisker3 = {
   x1: width / 75,
-  y1: height / 1.9,
+  y1: height / 1.84,
   x2: width / 20,
-  y2: height / 1.86,
+  y2: height / 1.78,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -699,9 +699,9 @@ let traitwhisker3 = {
 
 let traitwhisker4 = {
   x1: width / 75,
-  y1: height / 1.88,
+  y1: height / 1.81,
   x2: width / 20,
-  y2: height / 1.82,
+  y2: height / 1.75,
   vx: 0,
   vy: 0,
   speed: 3,
@@ -1441,7 +1441,7 @@ function simulationmessage5() {
   strokeWeight(5);
   textAlign(CENTER, CENTER);
   text(
-    "I'm sure you can't resist to this adorable bear!",
+    "I'm sure you can't resist this adorable bear!",
     width / 2,
     (6 * height) / 7
   );
@@ -1475,7 +1475,7 @@ function simulationmessage7() {
   strokeWeight(5);
   textAlign(CENTER, CENTER);
   text(
-    "Your shift is almost done! Give the best that you can!",
+    "Your shift is almost done! Final sprint!",
     width / 2,
     (6 * height) / 7
   );
@@ -1634,7 +1634,7 @@ function giveFeedback6() {
 function giveFeedback7() {
   let r = random();
 
-  if (r < 1) {
+  if (r < 0.8) {
     mug.state = "leaving";
   } else {
     state = "closed";

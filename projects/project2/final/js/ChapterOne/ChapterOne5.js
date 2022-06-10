@@ -8,7 +8,7 @@ class ChapterOne5 extends State {
 
     //Creating fifth cutscene dialog of Chapter One
     this.dialog9 = [
-      "And it was a this moment that the little girl started her perilous journey...",
+      "And it was a this moment that the little girl started her quest...",
       "Press Enter",
     ];
 

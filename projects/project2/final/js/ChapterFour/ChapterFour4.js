@@ -9,9 +9,9 @@ class ChapterFour4 extends State {
     //Creating fourth cutscene dialog of Chapter Four
     this.dialog13 = [
       "'Unfortunately..'",
-      "'No scientist has found a remedy to heal this quite strange phenomenon...'",
+      "'No scientist has found a remedy to heal this strange phenomenon...'",
       "'You only got two options'",
-      "'Either you kill your daughter before she transforms completely...'",
+      "'Either you kill your daughter before she transforms...'",
       "'Or...'",
       "Press Enter",
     ];

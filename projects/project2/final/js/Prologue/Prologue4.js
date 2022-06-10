@@ -9,10 +9,10 @@ class Prologue4 extends State {
     //Creating fourth cutscene dialog of Prologue
     this.dialog4 = [
       "She will die too.",
-      "Unfortunately,",
+      "One day,",
       "Her rose started to fade",
       "Slowly,",
-      "Surely...",
+      "But surely...",
       "Press Enter",
     ];
   }

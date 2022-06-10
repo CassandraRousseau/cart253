@@ -12,7 +12,7 @@ class Epilogue4 extends State {
     this.name = "Epilogue4";
 
     //Creating fourth cutscene dialog of Epilogue
-    this.dialog16 = ["'We have to go'", "Press Enter"];
+    this.dialog16 = ["'We have to go!!!'", "Press Enter"];
   }
 
   //Preloading necessary images for the fourth cutscene of Epilogue

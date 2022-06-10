@@ -13,21 +13,21 @@ class Epilogue5 extends State {
 
     //Creating fifth cutscene dialog of Epilogue
     this.dialog17 = [
-      "'As you probably see'",
-      "'I am the mage living in this castle'",
+      "'You see,'",
+      "'I am the wizard living in this castle'",
       "'This creature probably followed you the whole time'",
-      "'Seeking the right moment to grapple the petals you have found'",
+      "'Seeking the right moment to grapple the petals you found'",
       "'Unfortunately,'",
       "'The petals will do nothing for this poor being.'",
       "'Once you reach the state of becoming a monster,'",
-      "'There's no turn back...'",
+      "'There's no turning back...'",
       "'Anyway,'",
-      "'I probably forgot to mention this but congratulations!'",
+      "'I probably forgot to mention this but congratulations!!!'",
       "'You made it through this journey!'",
       "'As promised,'",
-      "'I will cure your curse'",
+      "'I will cure your curse!!'",
       "'I will make sure that you will not finish like this creature, haha!'",
-      "'Let's get started before it becomes too late!'",
+      "'Let's get started before it's too late!'",
       "Press Enter",
     ];
   }

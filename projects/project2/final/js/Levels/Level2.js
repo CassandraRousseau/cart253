@@ -7,7 +7,7 @@ class Level2 extends State {
     this.name = "Level2";
 
     //Creating microphone
-    this.mic = mic;
+    this.mic = micScream;
 
     //Creating timer
     this.framecountSim = frameCount;

@@ -8,9 +8,9 @@ class ChapterOne3 extends State {
 
     //Creating third cutscene dialog of Chapter One
     this.dialog7 = [
-      "'A myth tells that five magic petals exist in the forest'",
+      "'A legend says that five magic petals exist in this forest'",
       "'These five magic petals can cure any disease or curse!'",
-      "'You have to collect these five petals and meet the mage of the forest to make the magic operates.'",
+      "'You have to collect those five petals and meet the Mystical Healer to grant your wish...'",
       "Press Enter",
     ];
 

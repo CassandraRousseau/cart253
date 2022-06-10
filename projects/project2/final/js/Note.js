@@ -17,7 +17,7 @@ class Note extends State {
     textSize(100);
     textAlign(CENTER, CENTER);
     text(
-      "Note:Please allow your microphone to be open for further purposes in the game.",
+      "Note: Enable your microphone to play the game.",
       0,
       50,
       windowWidth,

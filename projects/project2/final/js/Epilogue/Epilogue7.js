@@ -13,12 +13,12 @@ class Epilogue7 extends State {
 
     //Creating last cutscene dialog of the game
     this.dialog18 = [
-      "'Tada!'",
+      "'Tadaa!!!'",
       "'Now you will be able to live your life as a human being'",
       "'Without any concerns...'",
       "The End",
-      "Thanks for playing!",
-      "If you want to replay, Press Enter",
+      "Thank you for playing!",
+      "If you want to replay, Press Enter!",
     ];
   }
 

@@ -8,8 +8,8 @@ class ChapterOne4 extends State {
 
     //Creating fourth cutscene dialog of Chapter One
     this.dialog8 = [
-      "'I cannot help you to find these petals but I can tell you that the mage lives in the castle at the top of the mountain right here.'",
-      "'I wish you the best luck to find these precious artifacts!'",
+      "'I cannot help you to find these petals but I can tell you that the healer lives in the castle at the top of the mountain right there...'",
+      "'I wish you the best in your journey, young one'",
       "Press Enter",
     ];
 

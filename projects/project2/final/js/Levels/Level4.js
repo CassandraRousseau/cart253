@@ -7,7 +7,7 @@ class Level4 extends State {
     this.name = "Level4";
 
     //Creating microphone
-    this.mic = mic;
+    this.mic = micClap;
 
     //Creating the lake background
     this.water = new Water(windowWidth, windowHeight, waterImage);
